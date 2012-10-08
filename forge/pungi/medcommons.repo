@@ -1,0 +1,23 @@
+[appliance-base]
+name=Appliance Base
+#baseurl=http://fedora.medcommons.net/7/$basearch/
+baseurl=file:///home/forge/work/services/trunk/forge/fedora/releases/7/Everything/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+
+[appliance-updates]
+name=Appliance Updates
+#baseurl=http://appliance.medcommons.net/0.1.2/updates/$basearch/
+baseurl=file:///home/forge/work/services/trunk/forge/fedora/updates/7/$basearch/
+exclude=yum yum-updatesd
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+
+[appliance-dist]
+name=Appliance Dist
+#baseurl=http://appliance.medcommons.net/0.1.2/dist/$basearch/
+baseurl=file:///home/forge/work/services/trunk/forge/medcommons/$basearch/
+enabled=1
+gpgcheck=0

@@ -1,0 +1,23 @@
+#!/bin/sh
+
+WWW_ROOT=/var/www
+CONSOLE_ROOT=${WWW_ROOT}/console
+
+cp ${CONSOLE_ROOT}/console.conf /etc/httpd/conf.d
+cp ${CONSOLE_ROOT}/publish ${WWW_ROOT}/cgi-bin
+
+/usr/sbin/useradd -c "MedCommons Admin" -M -d ${CONSOLE_ROOT} -s /sbin/nologin mc_admin
+
+##############################
+# MedCommons Incoming Email...
+/usr/sbin/useradd -c "MedCommons Incoming Email" -m -s /sbin/nologin mc_email
+
+cat >~mc_email/.procmailrc << EOF
+:0
+| ${CONSOLE_ROOT}/bin/mc-incoming-email
+EOF
+
+# ...MedCommons Incoming Email
+##############################
+
+chown -R mc_admin:mc_admin ${WWW_ROOT}/cgi-bin

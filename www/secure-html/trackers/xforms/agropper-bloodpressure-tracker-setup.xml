@@ -1,0 +1,15 @@
+<trackermsg xmlns="">
+  <sourceid deviceCode="bluetooth-bp-meter-" 
+            ownedBy="agropper@medcommons.net"
+            nikName ="Adrian's BP Meter">
+    38292038291938392
+  </sourceid>
+  <tracker>
+    <name>bp-systolic</name>
+    <value></value>
+  </tracker>
+  <tracker>
+    <name>bp-systolic</name>
+    <value></value>
+  </tracker>
+</trackermsg>

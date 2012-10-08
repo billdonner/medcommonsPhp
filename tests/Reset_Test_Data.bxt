@@ -1,0 +1,84 @@
+<WebScriptTool>
+	<DisplayName>Reset Test Data</DisplayName>
+	<Step v='4'>
+		<ver>10</ver>
+		<id>655</id>
+		<Summary v='2'>
+			<maxResponseTime/>
+			<averageResponseTime/>
+		</Summary>
+		<childCount>1</childCount>
+		<ChildItems>
+			<Request v='9'>
+				<ver>10</ver>
+				<id>656</id>
+				<Summary v='2'>
+					<maxResponseTime/>
+					<averageResponseTime/>
+				</Summary>
+				<childCount>2</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>10</ver>
+						<id>659</id>
+						<Summary v='2'>
+							<maxResponseTime/>
+							<averageResponseTime/>
+						</Summary>
+						<Summary v='2'>
+							<maxResponseTime/>
+							<averageResponseTime/>
+						</Summary>
+					</ResponsesItem>
+					<Parameter v='3'>
+						<ver>10</ver>
+						<id>657</id>
+						<name>refresh</name>
+						<value>true</value>
+						<sendEquals>true</sendEquals>
+						<method>1</method>
+					</Parameter>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<host>${host}</host>
+				<path>/${path}acct/testdata.php</path>
+				<protocol>http</protocol>
+				<resource/>
+				<targetFrame/>
+				<isActive>1</isActive>
+				<label/>
+				<headers/>
+				<multipartBoundary/>
+				<Object>null</Object>
+				<lenientSubrequestCount>false</lenientSubrequestCount>
+				<formCharset>iso-8859-1</formCharset>
+				<method>1</method>
+				<waitForSubRequests>false</waitForSubRequests>
+			</Request>
+		</ChildItems>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName/>
+		<documentation/>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>300</quiescenceTimeMs>
+		<name>Reset Test Data</name>
+		<repetitions>1</repetitions>
+		<repeatType>1</repeatType>
+		<repeatVariable/>
+		<incrementAutomatically>true</incrementAutomatically>
+		<incrementAll>true</incrementAll>
+		<expanded>1</expanded>
+	</Step>
+</WebScriptTool>

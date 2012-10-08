@@ -1,0 +1,26 @@
+name,type,attrs
+ci.myhealthespace.com,Globals - dev (MC/in-house)<small><a target='_new' href='https://ci.myhealthespace.com/router/SelfTest.action'title='monitor'>test</a></small>
+globals.myhealthespace.com,Globals - dev / DNS Alias (MC/in-house)
+healthurl.myhealthespace.com,Test (EC2/i-3eef2d57)
+hoover.wayforward.net,DISABLED
+laforge.ehealthglobaltech.com,DISABLED
+localhost.localdomain,DISABLED
+mcpurple01.homeip.net,VNC Server - HealthFrame Test (external)
+mcpurple05.homeip.net,Wave Server - BadBoy Test (external)
+mcpurple06.myhealthespace.com,Server (MC/in-house)
+osa-viewer-01.osa.demo,DISABLED
+qatest.myhealthespace.com,QA Test (EC2/i-a56cabcc)<small><a target='_new' href='https://qatest.myhealthespace.com/router/SelfTest.action' title='monitor'>test</a></small>
+stego.myhealthespace.com,Sean's Desktop (MC/in-house)
+testinstall.myhealthespace.com,Forge Build/HealthFrame Test (EC2/i-2c5e9945)
+www.myhealthespace.com,MedCommons Website for Myhealthespace (EC2/i-61c81808)
+box.medcommons.net,Mantis Database/Test (EC2/i-74923f1d)
+simtrak.medcommons.net,DISABLED
+tenth.medcommons.net,DISABLED
+www.medcommons.net,DISABLED
+healthurl.medcommons.net,DISABLED
+public.medcommons.net,DISABLED
+n0000.medcommons.net,DISABLED
+hot.medcommons.net,DISABLED
+s0900.myhealthespace.com,qatest.mh.c / DNS Alias
+s0902.myhealthespace.com,www.mh.c / DNS Alias
+s0905.myhealthespace.com,healthurl.mh.c / DNS Alias

@@ -1,0 +1,22 @@
+<service name="AccountCreation">
+    <description>
+      This service allows remote account creation and querying for created accounts.
+    </description>
+    <parameter name="ServiceClass" locked="false">net.medcommons.identity.ws.AccountCreationServiceImpl</parameter>
+    <operation name="register">
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+        <!-- actionMapping>urn:register</actionMapping -->
+    </operation>
+    <operation name="queryCreated">
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+        <!-- actionMapping>urn:queryCreated</actionMapping -->
+    </operation>
+    <operation name="next_mcid">
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+        <actionMapping>urn:next_mcid</actionMapping>
+    </operation>
+    <operation name="activate">
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+        <actionMapping>urn:activate</actionMapping>
+    </operation>
+</service>

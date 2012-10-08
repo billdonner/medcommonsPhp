@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Certificate Signing Request{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Security Certificates</a> &gt;
+<acronym title='Certificate Signing Request'>CSR</acronym>
+{% endblock %}
+
+{% block content %}
+
+<pre>
+<textarea cols='{{ cols }}' rows='{{ rows }}' name='csr'
+	  style='font-family: courier, monospace' readonly='readonly'>
+{{ cert.csr }}
+</textarea>
+</pre>
+<br />
+<a href='download_csr?id={{ cert.id }}'>download as file</a>
+
+{% endblock %}
+
+

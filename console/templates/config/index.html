@@ -1,0 +1,126 @@
+{% extends "form.html" %}
+
+{% block title %}Configuration{% endblock %}
+
+{% block sidebar %}
+<ul class='object-tools'>
+  <li><a href='backup' type='application/octet-stream'
+         class='viewsitelink'>Backup</a></li><li><a href='restore'>Restore</a></li>
+</ul>
+{% endblock sidebar %}
+
+{% block header %}
+<style type='text/css'><!--
+.group {
+	text-align: left
+}
+
+form {
+  display: inline;
+}
+
+// --></style>
+{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+Configuration
+{% endblock %}
+
+{% block content %}
+
+<p>
+An easy way to configure this appliance is to run
+the <a href='wizard'>Configuration Wizard</a>.
+</p>
+
+<table>
+  <tr>
+    <th class='group' rowspan='{{ name_fields|length }}'>Appliance Name<br />
+<a href='set_name'>change value{{ name_fields|pluralize }}</a></th>
+{% for field in name_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ location_fields|length }}'>Appliance Location<br />
+<a href='set_location'>change value{{ location_fields|pluralize }}</a></th>
+{% for field in location_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ web_fields|length }}'>Web Settings<br />
+<a href='set_web'>change value{{ web_fields|pluralize }}</a></th>
+{% for field in web_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ email_fields|length }}'>Email Settings<br />
+<a href='set_email'>change value{{ email_fields|pluralize }}</a></th>
+{% for field in email_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ style_fields|length }}'>Appliance Style<br />
+<a href='set_style'>change value{{ style_fields|pluralize }}</a></th>
+{% for field in style_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ settings_fields|length }}'>Appliance Settings<br />
+<a href='set_settings'>change value{{ settings_fields|pluralize }}</a></th>
+{% for field in settings_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ backup_fields|length }}'>Backup Settings<br />
+<a href='set_backup'>change value{{ backup_fields|pluralize }}</a></th>
+{% for field in backup_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ misc_fields|length }}'>Obsolete Settings</th>
+{% for field in misc_fields %}
+    <th>
+      <form method='post' action='delete'>
+	<input type='hidden' name='property' value='{{ field.key }}' />
+	<input type='image' name='delete' src='{{ media }}img/icon_deletelink.gif' width='10' height='10' alt='Delete Property' />
+      </form>{{ field.key }}</th>
+    <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+  </tr>
+</table>
+
+<div id='submit-row'>
+  <form method='post' action='preview' target='_new'>
+    <input type='submit' value='Preview' />
+  </form>
+
+  <form method='post' action='/cgi-bin/publish'>
+    <input type='submit' class='default' value='Publish' />
+  </form>
+</div>
+
+{% endblock %}

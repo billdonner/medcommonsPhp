@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% load medcommons %}
+
+{% block title %}Demo Data{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+Demo&nbsp;Data
+{% endblock %}
+
+{% block content %}
+
+{% if mcid %}
+<h3>Demo data present on this machine</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>MCID</th>
+      <th>First name</th>
+      <th>Last name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{ doctor.pretty_mcid }}</td>
+    <td>{{ doctor.first_name }}</td>
+    <td>{{ doctor.last_name }}</td>
+  </tr>
+{% for patient in patients %}
+  <tr>
+    <td>{{ patient.pretty_mcid }}</td>
+    <td>{{ patient.first_name }}</td>
+    <td>{{ patient.last_name }}</td>
+  </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+<div id='submit-row'>
+<form method='post' action='delete'>
+  <input type='submit' name='delete' class='default' value='Delete Demo Data' />
+</form>
+</div>
+
+{% else %}
+<h3>Demo data not loaded!</h3>
+
+<div id='submit-row'>
+<form method='post' action='create'>
+  <input type='submit' name='create' class='default' value='Create Demo Data' />
+</form>
+</div>
+
+{% endif %}
+
+{% endblock %}

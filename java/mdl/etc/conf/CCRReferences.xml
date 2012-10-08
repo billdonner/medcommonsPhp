@@ -1,0 +1,23 @@
+<Reference xmlns="urn:astm-org:CCR">
+			<ReferenceObjectID>REF0001</ReferenceObjectID>
+			<Type><Text></Text></Type>
+			<Source><ActorID>AA0002</ActorID></Source>
+			<Locations>
+				<Location>
+					<Description>
+						<ObjectAttribute>
+							<Attribute>URL</Attribute>
+							<AttributeValue>
+								<Value></Value>
+							</AttributeValue>
+						</ObjectAttribute>
+						<ObjectAttribute>
+							<Attribute>DisplayName</Attribute>
+							<AttributeValue>
+								<Value></Value>
+							</AttributeValue>
+						</ObjectAttribute>
+					</Description>
+				</Location>
+			</Locations>
+</Reference>

@@ -1,0 +1,72 @@
+{% extends "form.html" %}
+
+{% block content %}
+
+<form method='post' action='register'>
+  <table>
+    <tbody>
+      <tr>
+	<td><label for='username'>Username:</label></td>
+	<td>
+	  {% if already %}
+	  <p class='error'>Username already exists</p>
+	  {% endif %}
+
+	  <input type='text' name='username'
+		 value='{{ username }}' />
+	</td>
+      </tr>
+
+      <tr>
+	<td><label for='first_name'>First name:</label></td>
+	<td>
+	  <input type='text' name='first_name'
+		 value='{{ first_name }}' />
+	</td>
+      </tr>
+
+      <tr>
+	<td><label for='last_name'>Last name:</label></td>
+	<td>
+	  <input type='text' name='last_name'
+		 value='{{ last_name }}' />
+	</td>
+      </tr>
+
+      <tr>
+	<td><label for='email'>Email address:</label></td>
+	<td>
+	  <input type='text' name='email'
+		 value='{{ email }}' />
+	</td>
+      </tr>
+
+      <tr>
+	<td><label for='pw1'>Password:</label></td>
+	<td>
+	  {% if mismatch %}
+	  <p class='error'>Passwords must match</p>
+	  {% endif %}
+	  <input type='password' name='pw1' />
+	</td>
+      </tr>
+
+      <tr>
+	<td><label for='pw2'>Password (again):</label></td>
+	<td>
+	  <input type='password' name='pw2' />
+	</td>
+      </tr>
+
+      <tr>
+	<td></td>
+	<td>
+	  <input type='submit' value='Create new user' class='default' />
+	</td>
+      </tr>
+    </tbody>
+  </table>
+
+</form>
+
+{% endblock %}

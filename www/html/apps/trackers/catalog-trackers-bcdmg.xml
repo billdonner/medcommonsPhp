@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<trackerbundle>
+  <id>
+    32323b22567657222dabc
+  </id>
+  <name>
+    Complete Blood Count Trackers
+  </name>
+  <publisher>
+    BloodCounters.org
+  </publisher>
+  <graphics>
+    https://secure.test.medcommons.net/trackers/plugins/bcdmg/graphTracker.php
+  </graphics>
+  <input>
+    https://secure.test.medcommons.net/trackers/plugins/bcdmg/grabInput.php
+  </input>
+  <trackers>
+    <tracker>
+      <name>white blood count</name>
+      <abbrev>wbc</abbrev>
+      <units>cells/cmm</units>
+      <lowrange>4300</lowrange>
+      <highrange>10800</highrange>
+      <info>http://www.medicinenet.com/complete_blood_count/article.htm</info>
+    </tracker>
+    <tracker>
+      <name>red blood count</name>
+      <abbrev>rbc</abbrev>
+      <units>cells/cmm</units>
+      <lowrange>4200000</lowrange>
+      <highrange>5900000</highrange>
+      <info>http://www.medicinenet.com/complete_blood_count/article.htm</info>
+    </tracker>
+    <tracker>
+      <name>hemoglobin(m)</name>
+      <abbrev>Hb(m)</abbrev>
+      <units>g/dL</units>
+      <lowrange>13</lowrange>
+      <highrange>18</highrange>
+      <info>http://www.medicinenet.com/complete_blood_count/article.htm</info>
+    </tracker>
+    <tracker>
+      <name>hemoglobin(f)</name>
+      <abbrev>Hb(f)</abbrev>
+      <units>g/dL</units>
+      <lowrange>12</lowrange>
+      <highrange>16</highrange>
+      <info>http://www.medicinenet.com/complete_blood_count/article.htm</info>
+    </tracker>
+    <tracker>
+      <name>hematocrit(m)</name>
+      <abbrev>Hct(m)</abbrev>
+      <units>%</units>
+      <lowrange>45</lowrange>
+      <highrange>52</highrange>
+      <info>http://www.medicinenet.com/complete_blood_count/article.htm</info>
+    </tracker>
+    <tracker>
+      <name>hematocrit(f)</name>
+      <abbrev>Hct(f)</abbrev>
+      <units>%</units>
+      <lowrange>37</lowrange>
+      <highrange>48</highrange>
+      <info>http://www.medicinenet.com/complete_blood_count/article.htm</info>
+    </tracker>
+    <tracker>
+      <name>red cell distribution width</name>
+      <abbrev>rdw</abbrev>
+      <units>units</units>
+      <lowrange>11</lowrange>
+      <highrange>15</highrange>
+      <info>http://www.medicinenet.com/complete_blood_count/article.htm</info>
+    </tracker>
+    <tracker>
+      <name>platelet count</name>
+      <abbrev>platelet</abbrev>
+      <units>/cmm</units>
+      <lowrange>150000</lowrange>
+      <highrange>400000</highrange>
+      <info>http://www.medicinenet.com/complete_blood_count/article.htm</info>
+    </tracker>
+  </trackers>
+</trackerbundle>

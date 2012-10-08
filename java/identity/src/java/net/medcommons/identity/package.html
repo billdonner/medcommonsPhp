@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='US-ASCII' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+ <head>
+  <meta http-equiv='Content-Type' content='text/html; charset=US-ASCII' />
+ </head>
+ <body>
+
+  <p>The identity webapp handles user login and registration for MedCommons
+     users. </p>
+
+  <p>Once a user is validated, the user's web browser is redirected to the
+     gateway server that actually has the user data.</p>
+
+  <p>New users can create an account using the <tt>Register</tt> servlet.
+  </p>
+
+  <p>Existing users can login using the <tt>Login</tt> servlet.
+
+     Hospitals or other health-care organizations can
+     have their users automatically log in, if they support SAML.
+     Our SAML server validates their users, then forwards to our
+     <tt>Login</tt> servlet.</p>
+
+ </body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<trackerbundle>
+  <id>
+    36623b225676232344
+  </id>
+  <name>
+    GPS Trackers
+  </name>
+  <publisher>
+    motoallsports
+  </publisher>
+  <graphics>
+    https://secure.test.medcommons.net/trackers/plugins/mc/graphTracker.php
+  </graphics>
+  <input>
+    https://secure.test.medcommons.net/trackers/plugins/mc/grabInput.php
+  </input>
+  <trackers>
+    <tracker>
+      <name>time of day</name>
+      <abbrev>tod</abbrev>
+      <units>hhmmss</units>
+     <info>http://www.maps-gps-info.com/gpcp.html</info>
+    </tracker>
+    <tracker>
+      <name>latitude</name>
+      <abbrev>gps lat</abbrev>
+      <units>degrees</units>
+      <info>http://allsports.com/</info>
+    </tracker>
+    <tracker>
+      <name>longitude</name>
+      <abbrev>gps lon</abbrev>
+      <units>
+        degrees
+        </units>
+        <info>http://gislounge.com/features/aa120805a.shtml</info>
+      </tracker>
+   </trackers>
+</trackerbundle>
+
+

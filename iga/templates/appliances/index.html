@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<b>Appliances</b>
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <td>
+        <a href='{{ order_query }}order=name'>
+          <img src='{{ media }}img/dn.png' width='5' height='4'
+               alt='Sort by Name (increasing)' />
+        </a>
+        Name
+        <a href='{{ order_query }}order=-name'>
+          <img src='{{ media }}img/up.png' width='5' height='4'
+               alt='Sort by Name (decreasing)' />
+        </a>
+      </td>
+      <td>
+        <a href='{{ order_query }}order=appliance_type'>
+          <img src='{{ media }}img/dn.png' width='5' height='4'
+               alt='Sort by Type (increasing)' />
+        </a>
+        Type
+        <a href='{{ order_query }}order=-appliance_type'>
+          <img src='{{ media }}img/up.png' width='5' height='4'
+               alt='Sort by Type (decreasing)' />
+        </a>
+      </td>
+      <td>
+        <a href='{{ order_query }}order=url'>
+          <img src='{{ media }}img/dn.png' width='5' height='4'
+               alt='Sort by URL (increasing)' />
+        </a>
+        URL
+        <a href='{{ order_query }}order=-url'>
+          <img src='{{ media }}img/up.png' width='5' height='4'
+               alt='Sort by URL (decreasing)' />
+        </a>
+      </td>
+      <td>
+        <a href='{{ order_query }}order=email'>
+          <img src='{{ media }}img/dn.png' width='5' height='4'
+               alt='Sort by Email (increasing)' />
+        </a>
+        Email
+        <a href='{{ order_query }}order=-email'>
+          <img src='{{ media }}img/up.png' width='5' height='4'
+               alt='Sort by Email (decreasing)' />
+        </a>
+      </td>
+      <td><abbr title='Console'>C</abbr>
+           <abbr title='Database'>D</abbr>
+           <abbr title='Gateway'>G</abbr>
+           <abbr title='Locals'>L</abbr></td>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan='6'>
+        <span style='float: left'>
+{% if has_previous %}
+<a href='{{ search_query }}page=1'>&laquo; first</a>
+<a href='{{ search_query }}page={{ previous }}'>&lt; prev</a>
+{% endif %}
+        </span>
+        <span style='float: right'>
+{% if has_next %}
+<a href='{{ search_query }}page={{ next }}'>next &gt;</a>
+<a href='{{ search_query }}page={{ pages }}'>last &raquo;</a>
+{% endif %}
+        </span>
+      </td>
+    </tr>
+  </tfoot>
+  <tbody>
+{% for o in object_list %}
+    <tr class='{% cycle a,b %}'>
+      <td>
+	<a href='edit?id={{ o.id }}'><img src='{{ media }}img/icon_changelink.gif' width='10' height='10' alt='Edit Appliance Settings' /></a>
+	<a href='merge?id={{ o.id }}'><img src='{{ media }}img/icon_deletelink.gif' width='10' height='10' alt='Delete Appliance' /></a>
+      </td>
+      <td>{{ o.name }}</td>
+      <td>{{ o.appliance_type }}</td>
+      <td>
+	<a target='_new' href='{{ o.base }}/console/'>
+	  <img src='{{ media }}img/ComputerIn.png' width='20' height='20'
+	       alt='Connect to this Appliance's Console' />
+	</a>
+	<a href='{{ o.url }}'>{{ o.url }}
+      </td>
+      <td><a href='mailto:{{ o.email }}'>{{ o.email }}</td>
+      <td>
+	    <del><img src='{{ o.base }}/console/console-led.png'
+                  width='10' height='10' alt='C' /></del>
+	    <del><img src='{{ o.base }}/console/db-led.png'
+	              width='10' height='10' alt='D' /></del>
+	    <del><img src='{{ o.base }}/console/gateway-led.png'
+	              width='10' height='10' alt='G' /></del>
+	    <del><img src='{{ o.base }}/console/mclocals-led.png'
+	              width='10' height='10' alt='L' /></del>
+      </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

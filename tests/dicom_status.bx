@@ -1,0 +1,4469 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WebScript v='30027'>
+	<Variables>
+		<count>13</count>
+		<name>auth</name>
+		<value>f2add2c987ede19546fe2ffc3473192aa170e9fc</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>false</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>d</name>
+		<value>1/6/2009</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>false</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>doctor_auth</name>
+		<value>9e9596cc8117d36327370a219e5bb7692ca23137</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>true</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>group_accid</name>
+		<value>9243048680042048</value>
+		<dataSourceId>2879</dataSourceId>
+		<obfuscate>false</obfuscate>
+		<autoLink>false</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>gw</name>
+		<value>ci.myhealthespace.com</value>
+		<dataSourceId>624</dataSourceId>
+		<obfuscate>false</obfuscate>
+		<autoLink>true</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>host</name>
+		<value>ci.myhealthespace.com</value>
+		<dataSourceId>596</dataSourceId>
+		<obfuscate>false</obfuscate>
+		<autoLink>true</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>modified</name>
+		<value>1231478604227</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>false</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>patient_accid</name>
+		<value>9253178971613231</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>false</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>patient_auth</name>
+		<value>a78ead2f185c28f730dd6545fa13e20174af1eb6</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>false</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>rand</name>
+		<value>1232672339135</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>true</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>to_accid</name>
+		<value>9054828755247341</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>false</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>to_auth</name>
+		<value>ad807a30f3dc02963d963442197df5146ae9a71e</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>false</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+		<name>version</name>
+		<value>0</value>
+		<obfuscate>false</obfuscate>
+		<autoLink>false</autoLink>
+		<isAutoVariable>false</isAutoVariable>
+		<autoVariableExpression/>
+		<saveValues>true</saveValues>
+	</Variables>
+	<nextScriptId>2910</nextScriptId>
+	<Object>null</Object>
+	<dataSources>
+		<count>3</count>
+		<source>
+			<id>596</id>
+			<ValueListDataSource v='1'>
+				<ver>12</ver>
+				<id>596</id>
+				<VariableValueSet v='2'>
+					<name/>
+					<saveValues>true</saveValues>
+					<count>2</count>
+					<value>mc:7080</value>
+					<value>ci.myhealthespace.com</value>
+				</VariableValueSet>
+			</ValueListDataSource>
+		</source>
+		<source>
+			<id>624</id>
+			<ValueListDataSource v='1'>
+				<ver>12</ver>
+				<id>624</id>
+				<VariableValueSet v='2'>
+					<name/>
+					<saveValues>true</saveValues>
+					<count>2</count>
+					<value>yowie:9080</value>
+					<value>ci.myhealthespace.com</value>
+				</VariableValueSet>
+			</ValueListDataSource>
+		</source>
+		<source>
+			<id>2879</id>
+			<ValueListDataSource v='1'>
+				<ver>12</ver>
+				<id>2879</id>
+				<VariableValueSet v='2'>
+					<name/>
+					<saveValues>true</saveValues>
+					<count>1</count>
+					<value>9243048680042048</value>
+				</VariableValueSet>
+			</ValueListDataSource>
+		</source>
+	</dataSources>
+	<Script v='2'>
+		<ver>12</ver>
+		<id>1</id>
+		<Summary v='2'>
+			<played>27</played>
+			<succeeded>24</succeeded>
+			<failed>3</failed>
+			<warnings>3</warnings>
+			<maxResponseTime>24026</maxResponseTime>
+			<averageResponseTime>8706</averageResponseTime>
+			<timeouts>1</timeouts>
+		</Summary>
+		<childCount>2</childCount>
+		<ChildItems>
+			<SuiteItem v='1'>
+				<ver>12</ver>
+				<id>203</id>
+				<Summary v='2'>
+					<played>27</played>
+					<succeeded>24</succeeded>
+					<failed>3</failed>
+					<warnings>3</warnings>
+					<maxResponseTime>24026</maxResponseTime>
+					<averageResponseTime>8706</averageResponseTime>
+					<timeouts>1</timeouts>
+				</Summary>
+				<childCount>3</childCount>
+				<ChildItems>
+					<TestItem v='2'>
+						<ver>12</ver>
+						<id>278</id>
+						<Summary v='2'>
+							<played>18</played>
+							<succeeded>18</succeeded>
+							<maxResponseTime>24026</maxResponseTime>
+							<averageResponseTime>9311</averageResponseTime>
+						</Summary>
+						<childCount>3</childCount>
+						<ChildItems>
+							<Step v='4'>
+								<ver>12</ver>
+								<id>279</id>
+								<Summary v='2'>
+									<played>2</played>
+									<succeeded>2</succeeded>
+									<maxResponseTime>20723</maxResponseTime>
+									<averageResponseTime>12620</averageResponseTime>
+								</Summary>
+								<childCount>3</childCount>
+								<ChildItems>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>280</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>4516</maxResponseTime>
+											<averageResponseTime>4516</averageResponseTime>
+										</Summary>
+										<childCount>6</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>282</id>
+												<name>givenName</name>
+												<value>Test</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>283</id>
+												<name>familyName</name>
+												<value>Doctor-1</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>284</id>
+												<name>auth</name>
+												<value>84547f4c4a7085a8c9960883d0fc60e06556604a</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>285</id>
+												<name>password</name>
+												<value>tester</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>286</id>
+												<name>createCCR</name>
+												<value>false</value>
+												<sendEquals>false</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>287</id>
+												<name>email</name>
+												<value>onemctest%2Bbadboytest@gmail.com</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${gw}</host>
+										<path>/router/NewPatient.action</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers/>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>windows-1252</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Execute v='3'>
+										<ver>12</ver>
+										<id>288</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<name>set account id, auth</name>
+										<script>var x = eval(&apos;x=&apos;+document.body.innerText);
+badboy.setVariable(&apos;to_auth&apos;, x.auth);
+badboy.setVariable(&apos;to_accid&apos;, x.patientMedCommonsId);
+</script>
+										<imageId>4294967295</imageId>
+										<pluginAccess>false</pluginAccess>
+										<frameName/>
+									</Execute>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>289</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>20723</maxResponseTime>
+											<averageResponseTime>20723</averageResponseTime>
+										</Summary>
+										<childCount>3</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>291</id>
+												<name>mcid</name>
+												<value>%24%7Bto_accid%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>292</id>
+												<name>password</name>
+												<value>tester</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>293</id>
+												<name>next</name>
+												<value>http%3A%2F%2F%24%7Bhost%7D%2Facct%2Fhome.php%3Fexpand%3Dworklist</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/acct/login.php</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers/>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset/>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<name>Create New User</name>
+								<repetitions>1</repetitions>
+								<repeatType>1</repeatType>
+								<repeatVariable>accid</repeatVariable>
+								<incrementAutomatically>true</incrementAutomatically>
+								<incrementAll>true</incrementAll>
+								<expanded>2</expanded>
+							</Step>
+							<Step v='4'>
+								<ver>12</ver>
+								<id>294</id>
+								<Summary v='2'>
+									<played>3</played>
+									<succeeded>3</succeeded>
+									<maxResponseTime>24026</maxResponseTime>
+									<averageResponseTime>13420</averageResponseTime>
+								</Summary>
+								<childCount>7</childCount>
+								<ChildItems>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>295</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>15031</maxResponseTime>
+											<averageResponseTime>15031</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/acct/settings.php</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers/>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Navigation v='7'>
+										<ver>12</ver>
+										<id>297</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>1204</maxResponseTime>
+											<averageResponseTime>1204</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<Request v='10'>
+												<ver>12</ver>
+												<id>299</id>
+												<Summary v='2'>
+													<maxResponseTime>0</maxResponseTime>
+													<averageResponseTime>0</averageResponseTime>
+												</Summary>
+												<childCount>2</childCount>
+												<ChildItems>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>300</id>
+														<name>enc</name>
+														<value>95a021c30a4f4da03a37f8dfde30c16108235c4d</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>301</id>
+														<name>null</name>
+														<value/>
+														<sendEquals>false</sendEquals>
+														<method>1</method>
+													</Parameter>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<host>${host}</host>
+												<path>/acct/addresses.php</path>
+												<protocol>http</protocol>
+												<resource/>
+												<targetFrame/>
+												<label/>
+												<headers/>
+												<multipartBoundary/>
+												<newWindowWidth>6881364</newWindowWidth>
+												<newWindowHeight>21128560</newWindowHeight>
+												<Object>null</Object>
+												<lenientSubrequestCount>true</lenientSubrequestCount>
+												<formCharset/>
+												<method>7536748</method>
+												<waitForSubRequests>true</waitForSubRequests>
+											</Request>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<targetFrame/>
+										<continueOnFailure>true</continueOnFailure>
+										<references>
+											<count>2</count>
+											<VisibleTextReference v='2'>
+												<value>Group</value>
+												<filter>All</filter>
+											</VisibleTextReference>
+											<JavascriptReference v='2'>
+												<value>document.getElementById(&apos;profileTabs&apos;).getElementsByTagName(&apos;UL&apos;)[0].getElementsByTagName(&apos;LI&apos;)[5].getElementsByTagName(&apos;A&apos;)[0].getElementsByTagName(&apos;EM&apos;)[0]</value>
+												<filter>All</filter>
+											</JavascriptReference>
+										</references>
+										<isPassive>true</isPassive>
+										<passiveTimeoutMs>1000</passiveTimeoutMs>
+										<useRegex>false</useRegex>
+									</Navigation>
+									<Assertion v='8'>
+										<ver>12</ver>
+										<id>302</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>303</id>
+												<pattern>You are not currently a member of any group</pattern>
+												<bUseRegex>false</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>300</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<failureAction>
+											<Object>null</Object>
+										</failureAction>
+										<captureScreenShot>true</captureScreenShot>
+										<scalingPercent>65</scalingPercent>
+										<captureDuplicates>false</captureDuplicates>
+									</Assertion>
+									<Navigation v='7'>
+										<ver>12</ver>
+										<id>304</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>24026</maxResponseTime>
+											<averageResponseTime>24026</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<targetFrame/>
+										<continueOnFailure>true</continueOnFailure>
+										<references>
+											<count>2</count>
+											<VisibleTextReference v='2'>
+												<value>Create a Group</value>
+												<filter>Links</filter>
+											</VisibleTextReference>
+											<JavascriptReference v='2'>
+												<value>document.getElementById(&apos;groups&apos;).getElementsByTagName(&apos;P&apos;)[0].getElementsByTagName(&apos;A&apos;)[0]</value>
+												<filter>Links</filter>
+											</JavascriptReference>
+										</references>
+										<isPassive>false</isPassive>
+										<passiveTimeoutMs>1000</passiveTimeoutMs>
+										<useRegex>false</useRegex>
+									</Navigation>
+									<Assertion v='8'>
+										<ver>12</ver>
+										<id>306</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>307</id>
+												<pattern>Test Doctor-1 Group</pattern>
+												<bUseRegex>false</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>300</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<failureAction>
+											<Object>null</Object>
+										</failureAction>
+										<captureScreenShot>true</captureScreenShot>
+										<scalingPercent>65</scalingPercent>
+										<captureDuplicates>false</captureDuplicates>
+									</Assertion>
+									<Assertion v='8'>
+										<ver>12</ver>
+										<id>308</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>309</id>
+												<pattern>This page displays the details of your active Group</pattern>
+												<bUseRegex>false</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>300</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<failureAction>
+											<Object>null</Object>
+										</failureAction>
+										<captureScreenShot>true</captureScreenShot>
+										<scalingPercent>65</scalingPercent>
+										<captureDuplicates>false</captureDuplicates>
+									</Assertion>
+									<VariableSetter v='4'>
+										<ver>12</ver>
+										<id>663</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<variableName>group_accid</variableName>
+										<valueList/>
+										<type>2</type>
+										<regex>ActiveGroup\(&quot;([0-9]{16})&quot;\)</regex>
+										<targetFrame/>
+										<parseVariableReferences>false</parseVariableReferences>
+										<isCascading>false</isCascading>
+										<noOverWrite>false</noOverWrite>
+										<fileName/>
+									</VariableSetter>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<name>Create Group</name>
+								<repetitions>1</repetitions>
+								<repeatType>1</repeatType>
+								<repeatVariable>accid</repeatVariable>
+								<incrementAutomatically>true</incrementAutomatically>
+								<incrementAll>true</incrementAll>
+								<expanded>2</expanded>
+							</Step>
+							<Step v='4'>
+								<ver>12</ver>
+								<id>419</id>
+								<Summary v='2'>
+									<played>13</played>
+									<succeeded>13</succeeded>
+									<maxResponseTime>18929</maxResponseTime>
+									<averageResponseTime>7854</averageResponseTime>
+								</Summary>
+								<childCount>21</childCount>
+								<ChildItems>
+									<Step v='4'>
+										<ver>12</ver>
+										<id>894</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>2707</maxResponseTime>
+											<averageResponseTime>2707</averageResponseTime>
+										</Summary>
+										<childCount>2</childCount>
+										<ChildItems>
+											<Request v='10'>
+												<ver>12</ver>
+												<id>895</id>
+												<Summary v='2'>
+													<played>1</played>
+													<succeeded>1</succeeded>
+													<maxResponseTime>2707</maxResponseTime>
+													<averageResponseTime>2707</averageResponseTime>
+												</Summary>
+												<childCount>7</childCount>
+												<ChildItems>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>897</id>
+														<name>givenName</name>
+														<value>Test</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>898</id>
+														<name>familyName</name>
+														<value>Patient-2</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>899</id>
+														<name>auth</name>
+														<value>%24%7Bto_auth%7D</value>
+														<sendEquals>false</sendEquals>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>900</id>
+														<name>password</name>
+														<value>tester</value>
+														<sendEquals>false</sendEquals>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>901</id>
+														<name>createCCR</name>
+														<value>true</value>
+														<sendEquals>false</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>902</id>
+														<name>email</name>
+														<value>onemctest%2Bbadboytest@gmail.com</value>
+														<sendEquals>false</sendEquals>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>903</id>
+														<name>sponsorAccountId</name>
+														<value>%24%7Bto_accid%7D</value>
+														<sendEquals>false</sendEquals>
+													</Parameter>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<host>${gw}</host>
+												<path>/router/NewPatient.action</path>
+												<protocol>http</protocol>
+												<resource/>
+												<targetFrame/>
+												<isActive>1</isActive>
+												<label/>
+												<headers/>
+												<multipartBoundary/>
+												<Object>null</Object>
+												<lenientSubrequestCount>false</lenientSubrequestCount>
+												<formCharset>windows-1252</formCharset>
+												<method>1</method>
+												<waitForSubRequests>false</waitForSubRequests>
+											</Request>
+											<Execute v='3'>
+												<ver>12</ver>
+												<id>904</id>
+												<Summary v='2'>
+													<maxResponseTime>0</maxResponseTime>
+													<averageResponseTime>0</averageResponseTime>
+												</Summary>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<name>set account id, auth</name>
+												<script>var x = eval(&apos;x=&apos;+document.body.innerText);
+badboy.setVariable(&apos;patient_auth&apos;, x.auth);
+badboy.setVariable(&apos;patient_accid&apos;, x.patientMedCommonsId);
+</script>
+												<imageId>4294967295</imageId>
+												<pluginAccess>false</pluginAccess>
+												<frameName/>
+											</Execute>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<name>New Patient</name>
+										<repetitions>1</repetitions>
+										<repeatType>1</repeatType>
+										<repeatVariable>accid</repeatVariable>
+										<incrementAutomatically>true</incrementAutomatically>
+										<incrementAll>true</incrementAll>
+										<expanded>2</expanded>
+									</Step>
+									<CookieKiller v='1'>
+										<ver>12</ver>
+										<id>661</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+									</CookieKiller>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>500</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>17721</maxResponseTime>
+											<averageResponseTime>17721</averageResponseTime>
+										</Summary>
+										<childCount>3</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>504</id>
+												<name>mcid</name>
+												<value>%24%7Bto_accid%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>505</id>
+												<name>password</name>
+												<value>tester</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>506</id>
+												<name>next</name>
+												<value>http%3A%2F%2F%24%7Bhost%7D%2Facct%2Fhome.php%3Fexpand%3Dworklist</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/acct/login.php</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers/>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset/>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Execute v='3'>
+										<ver>12</ver>
+										<id>684</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<name>get auth</name>
+										<script>badboy.setVariable(&apos;auth&apos;,get_mc_attribute(&apos;auth&apos;));</script>
+										<imageId>4294967295</imageId>
+										<pluginAccess>false</pluginAccess>
+										<frameName/>
+									</Execute>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>507</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>2101</maxResponseTime>
+											<averageResponseTime>2101</averageResponseTime>
+										</Summary>
+										<childCount>6</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>509</id>
+												<name>put</name>
+												<value/>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>510</id>
+												<name>status.key</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>511</id>
+												<name>status.accountId</name>
+												<value>%24%7Bpatient_accid%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>512</id>
+												<name>status.status</name>
+												<value>Uploading</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>513</id>
+												<name>status.progress</name>
+												<value>0.125</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>573</id>
+												<name>status.ddlIdentifier</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/router/TransferState.action</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers>Referer: http://yowie:9080/router/NewPatient.action?givenName=joe&amp;familyName=shmoe&amp;password=tester&amp;createCCR=false
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Execute v='3'>
+										<ver>12</ver>
+										<id>783</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<name>get version</name>
+										<script>var ts = eval(&apos;x =&apos;+document.body.innerText);
+badboy.setVariable(&apos;version&apos;, ts.transferState.version);</script>
+										<imageId>4294967295</imageId>
+										<pluginAccess>false</pluginAccess>
+										<frameName/>
+									</Execute>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>517</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>15321</maxResponseTime>
+											<averageResponseTime>15321</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/acct/home.php</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers>Referer: http://mc:7080/acct/home.php
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Assertion v='8'>
+										<ver>12</ver>
+										<id>533</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>534</id>
+												<pattern>Data is uploading for this patient.*13%.*complete</pattern>
+												<bUseRegex>true</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>300</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<failureAction>
+											<Object>null</Object>
+										</failureAction>
+										<captureScreenShot>true</captureScreenShot>
+										<scalingPercent>65</scalingPercent>
+										<captureDuplicates>false</captureDuplicates>
+									</Assertion>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>535</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>2102</maxResponseTime>
+											<averageResponseTime>2102</averageResponseTime>
+										</Summary>
+										<childCount>7</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>539</id>
+												<name>put</name>
+												<value/>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>540</id>
+												<name>status.key</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>541</id>
+												<name>status.accountId</name>
+												<value>%24%7Bpatient_accid%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>542</id>
+												<name>status.status</name>
+												<value>Uploading</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>543</id>
+												<name>status.progress</name>
+												<value>0.674</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>677</id>
+												<name>status.ddlIdentifier</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>781</id>
+												<name>status.version</name>
+												<value>1234567890</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+										</ChildItems>
+										<timeoutSeconds>10</timeoutSeconds>
+										<timeoutEnabled>true</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/router/TransferState.action</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label>bad version</label>
+										<headers>Referer: http://yowie:9080/router/NewPatient.action?givenName=joe&amp;familyName=shmoe&amp;password=tester&amp;createCCR=false
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Assertion v='8'>
+										<ver>12</ver>
+										<id>796</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>797</id>
+												<pattern>invalid version</pattern>
+												<bUseRegex>false</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>300</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<failureAction>
+											<Object>null</Object>
+										</failureAction>
+										<captureScreenShot>true</captureScreenShot>
+										<scalingPercent>65</scalingPercent>
+										<captureDuplicates>false</captureDuplicates>
+									</Assertion>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>799</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>2096</maxResponseTime>
+											<averageResponseTime>2096</averageResponseTime>
+										</Summary>
+										<childCount>7</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>807</id>
+												<name>put</name>
+												<value/>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>808</id>
+												<name>status.key</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>809</id>
+												<name>status.accountId</name>
+												<value>%24%7Bpatient_accid%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>810</id>
+												<name>status.status</name>
+												<value>Uploading</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>811</id>
+												<name>status.progress</name>
+												<value>0.674</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>812</id>
+												<name>status.ddlIdentifier</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>813</id>
+												<name>status.version</name>
+												<value>%24%7Bversion%7D</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+										</ChildItems>
+										<timeoutSeconds>10</timeoutSeconds>
+										<timeoutEnabled>true</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/router/TransferState.action</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label>good version</label>
+										<headers>Referer: http://yowie:9080/router/NewPatient.action?givenName=joe&amp;familyName=shmoe&amp;password=tester&amp;createCCR=false
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Assertion v='8'>
+										<ver>12</ver>
+										<id>892</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>893</id>
+												<pattern>invalid version</pattern>
+												<type>1</type>
+												<bUseRegex>false</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>300</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<failureAction>
+											<Object>null</Object>
+										</failureAction>
+										<captureScreenShot>true</captureScreenShot>
+										<scalingPercent>65</scalingPercent>
+										<captureDuplicates>false</captureDuplicates>
+									</Assertion>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>553</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>18314</maxResponseTime>
+											<averageResponseTime>18314</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/acct/home.php</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers>Referer: http://mc:7080/acct/home.php
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Assertion v='8'>
+										<ver>12</ver>
+										<id>556</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>2</childCount>
+										<ChildItems>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>557</id>
+												<pattern>Data is uploading for this patient.*13%.*complete</pattern>
+												<type>1</type>
+												<bUseRegex>true</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>877</id>
+												<pattern>Data is uploading for this patient.* 67%</pattern>
+												<bUseRegex>true</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>300</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<failureAction>
+											<Object>null</Object>
+										</failureAction>
+										<captureScreenShot>true</captureScreenShot>
+										<scalingPercent>65</scalingPercent>
+										<captureDuplicates>false</captureDuplicates>
+									</Assertion>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>577</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>1805</maxResponseTime>
+											<averageResponseTime>1805</averageResponseTime>
+										</Summary>
+										<childCount>6</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>579</id>
+												<name>addMessage</name>
+												<value/>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>580</id>
+												<name>message.transferKey</name>
+												<value/>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>585</id>
+												<name>message.message</name>
+												<value>Hello+World%21</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>587</id>
+												<name>message.ddlIdentifier</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>590</id>
+												<name>message.category</name>
+												<value>INFO</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>592</id>
+												<name>auth</name>
+												<value>%24%7Bauth%7D</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/router/TransferState.action</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label>global msg</label>
+										<headers>Referer: http://yowie:9080/router/NewPatient.action?givenName=joe&amp;familyName=shmoe&amp;password=tester&amp;createCCR=false
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>2696</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>1798</maxResponseTime>
+											<averageResponseTime>1798</averageResponseTime>
+										</Summary>
+										<childCount>6</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>2700</id>
+												<name>addMessage</name>
+												<value/>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>2701</id>
+												<name>message.transferKey</name>
+												<value/>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>2702</id>
+												<name>message.message</name>
+												<value>Hello+World%21</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>2703</id>
+												<name>message.ddlIdentifier</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>2704</id>
+												<name>message.category</name>
+												<value>ERROR</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>2705</id>
+												<name>auth</name>
+												<value>%24%7Bauth%7D</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/router/TransferState.action</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label>global msg</label>
+										<headers>Referer: http://yowie:9080/router/NewPatient.action?givenName=joe&amp;familyName=shmoe&amp;password=tester&amp;createCCR=false
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>693</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>15010</maxResponseTime>
+											<averageResponseTime>15010</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/acct/home.php</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers>Referer: http://mc:7080/acct/home.php
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>732</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>2103</maxResponseTime>
+											<averageResponseTime>2103</averageResponseTime>
+										</Summary>
+										<childCount>6</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>734</id>
+												<name>addMessage</name>
+												<value/>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>735</id>
+												<name>message.transferKey</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>736</id>
+												<name>message.message</name>
+												<value>Hello+World%21</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>737</id>
+												<name>message.ddlIdentifier</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>738</id>
+												<name>message.category</name>
+												<value>INFO</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>739</id>
+												<name>auth</name>
+												<value>%24%7Bauth%7D</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/router/TransferState.action</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label>transfer msg</label>
+										<headers>Referer: http://yowie:9080/router/NewPatient.action?givenName=joe&amp;familyName=shmoe&amp;password=tester&amp;createCCR=false
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>915</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>18929</maxResponseTime>
+											<averageResponseTime>18929</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/acct/home.php</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers>Referer: http://mc:7080/acct/home.php
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Assertion v='8'>
+										<ver>12</ver>
+										<id>1483</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>1484</id>
+												<pattern>&lt;TD&gt;Hello World!</pattern>
+												<bUseRegex>false</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>300</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<failureAction>
+											<Object>null</Object>
+										</failureAction>
+										<captureScreenShot>true</captureScreenShot>
+										<scalingPercent>65</scalingPercent>
+										<captureDuplicates>false</captureDuplicates>
+									</Assertion>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>1672</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>2092</maxResponseTime>
+											<averageResponseTime>2092</averageResponseTime>
+										</Summary>
+										<childCount>7</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>1675</id>
+												<name>put</name>
+												<value/>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>1676</id>
+												<name>status.key</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>1677</id>
+												<name>status.accountId</name>
+												<value>%24%7Bpatient_accid%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>1678</id>
+												<name>status.status</name>
+												<value>Uploading</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>1679</id>
+												<name>status.progress</name>
+												<value>1.0</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>1680</id>
+												<name>status.ddlIdentifier</name>
+												<value>%24%7Bpatient_auth%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>1681</id>
+												<name>status.version</name>
+												<value>1</value>
+												<sendEquals>false</sendEquals>
+											</Parameter>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/router/TransferState.action</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label>complete</label>
+										<headers>Referer: http://yowie:9080/router/NewPatient.action?givenName=joe&amp;familyName=shmoe&amp;password=tester&amp;createCCR=false
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>true</ignoreErrors>
+								<errorFilter>localhost</errorFilter>
+								<name>View Dashboard</name>
+								<repetitions>1</repetitions>
+								<repeatType>1</repeatType>
+								<repeatVariable>gw</repeatVariable>
+								<incrementAutomatically>true</incrementAutomatically>
+								<incrementAll>true</incrementAll>
+								<expanded>1</expanded>
+							</Step>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<title>Test Transfer Statuses</title>
+						<template/>
+						<expanded>2</expanded>
+					</TestItem>
+					<TestItem v='2'>
+						<ver>12</ver>
+						<id>972</id>
+						<Summary v='2'>
+							<played>9</played>
+							<succeeded>6</succeeded>
+							<failed>3</failed>
+							<warnings>3</warnings>
+							<maxResponseTime>18921</maxResponseTime>
+							<averageResponseTime>7497</averageResponseTime>
+							<timeouts>1</timeouts>
+						</Summary>
+						<childCount>3</childCount>
+						<ChildItems>
+							<Step v='4'>
+								<ver>12</ver>
+								<id>1171</id>
+								<Summary v='2'>
+									<played>6</played>
+									<succeeded>6</succeeded>
+									<warnings>1</warnings>
+									<maxResponseTime>18921</maxResponseTime>
+									<averageResponseTime>10609</averageResponseTime>
+									<timeouts>1</timeouts>
+								</Summary>
+								<childCount>4</childCount>
+								<ChildItems>
+									<CookieKiller v='1'>
+										<ver>12</ver>
+										<id>1172</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+									</CookieKiller>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>1173</id>
+										<Summary v='2'>
+											<played>1</played>
+											<succeeded>1</succeeded>
+											<maxResponseTime>18921</maxResponseTime>
+											<averageResponseTime>18921</averageResponseTime>
+										</Summary>
+										<childCount>3</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>1176</id>
+												<name>mcid</name>
+												<value>%24%7Bto_accid%7D</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>1177</id>
+												<name>password</name>
+												<value>tester</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>1178</id>
+												<name>next</name>
+												<value>http%3A%2F%2F%24%7Bhost%7D%2Facct%2Fhome.php%3Fexpand%3Dworklist</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/acct/login.php</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers/>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset/>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Execute v='3'>
+										<ver>12</ver>
+										<id>1920</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>true</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<name>set rls interval</name>
+										<script>setCookie(&apos;rlsinterval&apos;,&apos;5000&apos;);</script>
+										<imageId>4294967295</imageId>
+										<pluginAccess>false</pluginAccess>
+										<frameName/>
+									</Execute>
+									<Step v='4'>
+										<ver>12</ver>
+										<id>1187</id>
+										<Summary v='2'>
+											<played>5</played>
+											<succeeded>5</succeeded>
+											<warnings>1</warnings>
+											<maxResponseTime>13513</maxResponseTime>
+											<averageResponseTime>8946</averageResponseTime>
+											<timeouts>1</timeouts>
+										</Summary>
+										<childCount>7</childCount>
+										<ChildItems>
+											<Request v='10'>
+												<ver>12</ver>
+												<id>1192</id>
+												<Summary v='2'>
+													<maxResponseTime>0</maxResponseTime>
+													<averageResponseTime>0</averageResponseTime>
+													<timeouts>1</timeouts>
+												</Summary>
+												<timeoutSeconds>3</timeoutSeconds>
+												<timeoutEnabled>true</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<host>${host}</host>
+												<path>/mod/svcsetup.php</path>
+												<protocol>http</protocol>
+												<resource/>
+												<targetFrame/>
+												<isActive>1</isActive>
+												<label/>
+												<headers>Referer: https://ci.myhealthespace.com/mod/svcsetup.php
+</headers>
+												<multipartBoundary/>
+												<Object>null</Object>
+												<lenientSubrequestCount>false</lenientSubrequestCount>
+												<formCharset>utf-8</formCharset>
+												<method>1</method>
+												<waitForSubRequests>false</waitForSubRequests>
+											</Request>
+											<Assertion v='8'>
+												<ver>12</ver>
+												<id>1293</id>
+												<Summary v='2'>
+													<maxResponseTime>0</maxResponseTime>
+													<averageResponseTime>0</averageResponseTime>
+												</Summary>
+												<childCount>1</childCount>
+												<ChildItems>
+													<ContentCheckItem v='1'>
+														<ver>12</ver>
+														<id>1294</id>
+														<pattern>DICOM Upload</pattern>
+														<type>1</type>
+														<bUseRegex>false</bUseRegex>
+														<checkMessageBoxes>false</checkMessageBoxes>
+														<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+													</ContentCheckItem>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>300</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<violationAction>2</violationAction>
+												<failureAction>
+													<JumpUpOneAction v='1'>
+													</JumpUpOneAction>
+												</failureAction>
+												<captureScreenShot>true</captureScreenShot>
+												<scalingPercent>65</scalingPercent>
+												<captureDuplicates>false</captureDuplicates>
+											</Assertion>
+											<FormPopulator v='7'>
+												<ver>12</ver>
+												<id>1245</id>
+												<Summary v='2'>
+													<maxResponseTime>0</maxResponseTime>
+													<averageResponseTime>0</averageResponseTime>
+												</Summary>
+												<childCount>1</childCount>
+												<ChildItems>
+													<FormValue v='3'>
+														<ver>12</ver>
+														<id>1246</id>
+														<name>svctemplatenum</name>
+														<value>0</value>
+														<matchVisibleText>false</matchVisibleText>
+													</FormValue>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<formName>&lt;Anonymous&gt;</formName>
+												<submit>false</submit>
+												<formIndex>0</formIndex>
+												<ignoreHiddenFields>true</ignoreHiddenFields>
+												<useRegex>false</useRegex>
+											</FormPopulator>
+											<Navigation v='7'>
+												<ver>12</ver>
+												<id>1247</id>
+												<Summary v='2'>
+													<played>1</played>
+													<succeeded>1</succeeded>
+													<maxResponseTime>6600</maxResponseTime>
+													<averageResponseTime>6600</averageResponseTime>
+												</Summary>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<targetFrame/>
+												<continueOnFailure>true</continueOnFailure>
+												<references>
+													<count>3</count>
+													<NameOrIdReference v='2'>
+														<value>svctemplatenum</value>
+														<filter>All</filter>
+													</NameOrIdReference>
+													<VisibleTextReference v='2'>
+														<value> Select a TemplateNew Generic Service Current Summary Medications Immunizations Complete Health Record</value>
+														<filter>All</filter>
+													</VisibleTextReference>
+													<JavascriptReference v='2'>
+														<value>document.getElementById(&apos;svctemplatenum&apos;);</value>
+														<filter>All</filter>
+													</JavascriptReference>
+												</references>
+												<eventType>1</eventType>
+												<isPassive>false</isPassive>
+												<passiveTimeoutMs>1000</passiveTimeoutMs>
+												<useRegex>false</useRegex>
+											</Navigation>
+											<FormPopulator v='7'>
+												<ver>12</ver>
+												<id>1277</id>
+												<Summary v='2'>
+													<maxResponseTime>0</maxResponseTime>
+													<averageResponseTime>0</averageResponseTime>
+												</Summary>
+												<childCount>3</childCount>
+												<ChildItems>
+													<FormValue v='3'>
+														<ver>12</ver>
+														<id>1278</id>
+														<name>servicename</name>
+														<value>DICOM Upload</value>
+														<matchVisibleText>false</matchVisibleText>
+													</FormValue>
+													<FormValue v='3'>
+														<ver>12</ver>
+														<id>1279</id>
+														<name>servicedescription</name>
+														<value>test dicom upload</value>
+														<matchVisibleText>false</matchVisibleText>
+													</FormValue>
+													<FormValue v='3'>
+														<ver>12</ver>
+														<id>1280</id>
+														<name>suggestedprice</name>
+														<value>0.00</value>
+														<matchVisibleText>false</matchVisibleText>
+													</FormValue>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<formName>svcsetupform</formName>
+												<submit>false</submit>
+												<formIndex>0</formIndex>
+												<ignoreHiddenFields>true</ignoreHiddenFields>
+												<useRegex>false</useRegex>
+											</FormPopulator>
+											<Navigation v='7'>
+												<ver>12</ver>
+												<id>1281</id>
+												<Summary v='2'>
+													<played>1</played>
+													<succeeded>1</succeeded>
+													<maxResponseTime>9915</maxResponseTime>
+													<averageResponseTime>9915</averageResponseTime>
+												</Summary>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<targetFrame/>
+												<continueOnFailure>true</continueOnFailure>
+												<references>
+													<count>2</count>
+													<VisibleTextReference v='2'>
+														<value>Add Service</value>
+														<filter>Buttons</filter>
+													</VisibleTextReference>
+													<JavascriptReference v='2'>
+														<value>document.svcsetupform.getElementsByTagName(&apos;DIV&apos;)[12].getElementsByTagName(&apos;SPAN&apos;)[1].getElementsByTagName(&apos;INPUT&apos;)[0]</value>
+														<filter>Buttons</filter>
+													</JavascriptReference>
+												</references>
+												<isPassive>false</isPassive>
+												<passiveTimeoutMs>1000</passiveTimeoutMs>
+												<useRegex>false</useRegex>
+											</Navigation>
+											<Step v='4'>
+												<ver>12</ver>
+												<id>1892</id>
+												<Summary v='2'>
+													<played>3</played>
+													<succeeded>3</succeeded>
+													<warnings>1</warnings>
+													<maxResponseTime>13513</maxResponseTime>
+													<averageResponseTime>9406</averageResponseTime>
+												</Summary>
+												<childCount>7</childCount>
+												<ChildItems>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>1893</id>
+														<Summary v='2'>
+															<played>1</played>
+															<succeeded>1</succeeded>
+															<maxResponseTime>12614</maxResponseTime>
+															<averageResponseTime>12614</averageResponseTime>
+														</Summary>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host>${host}</host>
+														<path>/modpay/console.php</path>
+														<protocol>http</protocol>
+														<resource/>
+														<targetFrame/>
+														<isActive>1</isActive>
+														<label/>
+														<headers>Referer: https://ci.myhealthespace.com/acct/home.php
+</headers>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset>utf-8</formCharset>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+													</Request>
+													<FormPopulator v='7'>
+														<ver>12</ver>
+														<id>1895</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>1</childCount>
+														<ChildItems>
+															<FormValue v='3'>
+																<ver>12</ver>
+																<id>1896</id>
+																<name>accid</name>
+																<value>${group_accid}</value>
+																<matchVisibleText>false</matchVisibleText>
+															</FormValue>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<formName>addAccountForm</formName>
+														<submit>false</submit>
+														<formIndex>0</formIndex>
+														<ignoreHiddenFields>true</ignoreHiddenFields>
+														<useRegex>false</useRegex>
+													</FormPopulator>
+													<MessageBoxItem v='5'>
+														<ver>12</ver>
+														<id>1897</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<message>.*</message>
+														<type>48</type>
+														<response>1</response>
+														<useRegex>true</useRegex>
+														<waitTimeSeconds>5</waitTimeSeconds>
+														<cascade>1</cascade>
+													</MessageBoxItem>
+													<Navigation v='7'>
+														<ver>12</ver>
+														<id>1898</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<targetFrame/>
+														<continueOnFailure>true</continueOnFailure>
+														<references>
+															<count>2</count>
+															<VisibleTextReference v='2'>
+																<value>Add Billing User</value>
+																<filter>Buttons</filter>
+															</VisibleTextReference>
+															<JavascriptReference v='2'>
+																<value>document.getElementById(&apos;addbutton&apos;).getElementsByTagName(&apos;SPAN&apos;)[0].getElementsByTagName(&apos;BUTTON&apos;)[0]</value>
+																<filter>Buttons</filter>
+															</JavascriptReference>
+														</references>
+														<isPassive>true</isPassive>
+														<passiveTimeoutMs>1000</passiveTimeoutMs>
+														<useRegex>false</useRegex>
+													</Navigation>
+													<Navigation v='7'>
+														<ver>12</ver>
+														<id>1899</id>
+														<Summary v='2'>
+															<warnings>1</warnings>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<targetFrame/>
+														<continueOnFailure>true</continueOnFailure>
+														<references>
+															<count>2</count>
+															<VisibleTextReference v='2'>
+																<value>OK</value>
+																<filter>Buttons</filter>
+															</VisibleTextReference>
+															<JavascriptReference v='2'>
+																<value>document.getElementById(&apos;yui-dt0-celleditor&apos;).getElementsByTagName(&apos;DIV&apos;)[0].getElementsByTagName(&apos;BUTTON&apos;)[0]</value>
+																<filter>Buttons</filter>
+															</JavascriptReference>
+														</references>
+														<isPassive>true</isPassive>
+														<passiveTimeoutMs>1000</passiveTimeoutMs>
+														<useRegex>false</useRegex>
+													</Navigation>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>1901</id>
+														<Summary v='2'>
+															<played>1</played>
+															<succeeded>1</succeeded>
+															<maxResponseTime>13513</maxResponseTime>
+															<averageResponseTime>13513</averageResponseTime>
+														</Summary>
+														<childCount>4</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>1903</id>
+																<name>update</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>1904</id>
+																<name>value</name>
+																<value>20</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>1905</id>
+																<name>counter</name>
+																<value>Accounts</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>1906</id>
+																<name>accid</name>
+																<value>%24%7Bgroup_accid%7D</value>
+																<sendEquals>false</sendEquals>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host>${host}</host>
+														<path>/modpay/console.php</path>
+														<protocol>http</protocol>
+														<resource/>
+														<targetFrame/>
+														<isActive>1</isActive>
+														<label/>
+														<headers>Referer: http://https//ci.myhealthespace.com/modpay/console.php?update&amp;billingId=82920ae12169540c24c5478228404f655d919e37&amp;value=20&amp;counter=DICOM
+</headers>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset>utf-8</formCharset>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+													</Request>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>1934</id>
+														<Summary v='2'>
+															<played>1</played>
+															<succeeded>1</succeeded>
+															<maxResponseTime>2090</maxResponseTime>
+															<averageResponseTime>2090</averageResponseTime>
+														</Summary>
+														<childCount>4</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>1936</id>
+																<name>update</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>1937</id>
+																<name>value</name>
+																<value>20</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>1938</id>
+																<name>counter</name>
+																<value>DICOM</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>1939</id>
+																<name>accid</name>
+																<value>%24%7Bgroup_accid%7D</value>
+																<sendEquals>false</sendEquals>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host>${host}</host>
+														<path>/modpay/console.php</path>
+														<protocol>http</protocol>
+														<resource/>
+														<targetFrame/>
+														<isActive>1</isActive>
+														<label/>
+														<headers>Referer: http://https//ci.myhealthespace.com/modpay/console.php?update&amp;billingId=82920ae12169540c24c5478228404f655d919e37&amp;value=20&amp;counter=DICOM
+</headers>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset>utf-8</formCharset>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+													</Request>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<name>Add Credits</name>
+												<repetitions>1</repetitions>
+												<repeatType>1</repeatType>
+												<repeatVariable>auth</repeatVariable>
+												<incrementAutomatically>true</incrementAutomatically>
+												<incrementAll>true</incrementAll>
+												<expanded>2</expanded>
+											</Step>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<name>Create DICOM Upload Service</name>
+										<repetitions>1</repetitions>
+										<repeatType>1</repeatType>
+										<repeatVariable>auth</repeatVariable>
+										<incrementAutomatically>true</incrementAutomatically>
+										<incrementAll>true</incrementAll>
+										<expanded>1</expanded>
+									</Step>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<name>Show Dashboard</name>
+								<repetitions>1</repetitions>
+								<repeatType>1</repeatType>
+								<repeatVariable>auth</repeatVariable>
+								<incrementAutomatically>true</incrementAutomatically>
+								<incrementAll>true</incrementAll>
+								<expanded>1</expanded>
+							</Step>
+							<Step v='4'>
+								<ver>12</ver>
+								<id>973</id>
+								<Summary v='2'>
+									<played>3</played>
+									<failed>3</failed>
+									<warnings>2</warnings>
+									<maxResponseTime>1716</maxResponseTime>
+									<averageResponseTime>1273</averageResponseTime>
+								</Summary>
+								<childCount>6</childCount>
+								<ChildItems>
+									<Step v='4'>
+										<ver>12</ver>
+										<id>2452</id>
+										<Summary v='2'>
+											<played>3</played>
+											<failed>3</failed>
+											<warnings>2</warnings>
+											<maxResponseTime>1716</maxResponseTime>
+											<averageResponseTime>1273</averageResponseTime>
+										</Summary>
+										<childCount>4</childCount>
+										<ChildItems>
+											<Execute v='3'>
+												<ver>12</ver>
+												<id>2453</id>
+												<Summary v='2'>
+													<maxResponseTime>0</maxResponseTime>
+													<averageResponseTime>0</averageResponseTime>
+												</Summary>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<name>set rand</name>
+												<script>badboy.setVariable(&apos;rand&apos;,new Date().getTime());</script>
+												<imageId>4294967295</imageId>
+												<pluginAccess>false</pluginAccess>
+												<frameName/>
+											</Execute>
+											<Request v='10'>
+												<ver>12</ver>
+												<id>2454</id>
+												<Summary v='2'>
+													<played>1</played>
+													<failed>1</failed>
+													<maxResponseTime>1716</maxResponseTime>
+													<averageResponseTime>1716</averageResponseTime>
+												</Summary>
+												<childCount>10</childCount>
+												<ChildItems>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>2456</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>2</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2457</id>
+																<name>getCxpUploads</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2458</id>
+																<name>dojo.preventCache</name>
+																<value>1231792648878</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host/>
+														<path>Status.action</path>
+														<protocol/>
+														<resource/>
+														<targetFrame/>
+														<label/>
+														<headers/>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset/>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+														<executionMode>1</executionMode>
+													</Request>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>2459</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>2</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2460</id>
+																<name>getCxpDownloads</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2461</id>
+																<name>dojo.preventCache</name>
+																<value>1231792649549</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host/>
+														<path>Status.action</path>
+														<protocol/>
+														<resource/>
+														<targetFrame/>
+														<label/>
+														<headers/>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset/>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+														<executionMode>1</executionMode>
+													</Request>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>2462</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>2</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2463</id>
+																<name>getDicomSCP</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2464</id>
+																<name>dojo.preventCache</name>
+																<value>1231792649639</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host/>
+														<path>Status.action</path>
+														<protocol/>
+														<resource/>
+														<targetFrame/>
+														<label/>
+														<headers/>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset/>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+														<executionMode>1</executionMode>
+													</Request>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>2465</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>2</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2466</id>
+																<name>getDicomSCU</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2467</id>
+																<name>dojo.preventCache</name>
+																<value>1231792649709</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host/>
+														<path>Status.action</path>
+														<protocol/>
+														<resource/>
+														<targetFrame/>
+														<label/>
+														<headers/>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset/>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+														<executionMode>1</executionMode>
+													</Request>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>2468</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>2</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2469</id>
+																<name>getCCRReferences</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2470</id>
+																<name>dojo.preventCache</name>
+																<value>1231792649779</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host/>
+														<path>Status.action</path>
+														<protocol/>
+														<resource/>
+														<targetFrame/>
+														<label/>
+														<headers/>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset/>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+														<executionMode>1</executionMode>
+													</Request>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>2471</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>2</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2472</id>
+																<name>getCxpUploads</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2473</id>
+																<name>dojo.preventCache</name>
+																<value>1231792650330</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host/>
+														<path>Status.action</path>
+														<protocol/>
+														<resource/>
+														<targetFrame/>
+														<label/>
+														<headers/>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset/>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+														<executionMode>1</executionMode>
+													</Request>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>2474</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>2</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2475</id>
+																<name>getCxpDownloads</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2476</id>
+																<name>dojo.preventCache</name>
+																<value>1231792650521</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host/>
+														<path>Status.action</path>
+														<protocol/>
+														<resource/>
+														<targetFrame/>
+														<label/>
+														<headers/>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset/>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+														<executionMode>1</executionMode>
+													</Request>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>2477</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>2</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2478</id>
+																<name>getDicomSCP</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2479</id>
+																<name>dojo.preventCache</name>
+																<value>1231792650571</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host/>
+														<path>Status.action</path>
+														<protocol/>
+														<resource/>
+														<targetFrame/>
+														<label/>
+														<headers/>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset/>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+														<executionMode>1</executionMode>
+													</Request>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>2480</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>2</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2481</id>
+																<name>getDicomSCU</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2482</id>
+																<name>dojo.preventCache</name>
+																<value>1231792650591</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host/>
+														<path>Status.action</path>
+														<protocol/>
+														<resource/>
+														<targetFrame/>
+														<label/>
+														<headers/>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset/>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+														<executionMode>1</executionMode>
+													</Request>
+													<Request v='10'>
+														<ver>12</ver>
+														<id>2483</id>
+														<Summary v='2'>
+															<maxResponseTime>0</maxResponseTime>
+															<averageResponseTime>0</averageResponseTime>
+														</Summary>
+														<childCount>2</childCount>
+														<ChildItems>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2484</id>
+																<name>getCCRReferences</name>
+																<value/>
+																<sendEquals>false</sendEquals>
+																<method>1</method>
+															</Parameter>
+															<Parameter v='4'>
+																<ver>12</ver>
+																<id>2485</id>
+																<name>dojo.preventCache</name>
+																<value>1231792650621</value>
+																<sendEquals>true</sendEquals>
+																<method>1</method>
+															</Parameter>
+														</ChildItems>
+														<timeoutEnabled>false</timeoutEnabled>
+														<Object>null</Object>
+														<targetWindow/>
+														<itemName/>
+														<documentation/>
+														<waitForPageToLoad>false</waitForPageToLoad>
+														<sourceLocation/>
+														<recordResponses>true</recordResponses>
+														<quiescenceTimeMs>500</quiescenceTimeMs>
+														<disabled>false</disabled>
+														<ignoreErrors>false</ignoreErrors>
+														<errorFilter/>
+														<host/>
+														<path>Status.action</path>
+														<protocol/>
+														<resource/>
+														<targetFrame/>
+														<label/>
+														<headers/>
+														<multipartBoundary/>
+														<Object>null</Object>
+														<lenientSubrequestCount>false</lenientSubrequestCount>
+														<formCharset/>
+														<method>1</method>
+														<waitForSubRequests>false</waitForSubRequests>
+														<executionMode>1</executionMode>
+													</Request>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<host>localhost:16092</host>
+												<path>/localDDL/status.html</path>
+												<protocol>http</protocol>
+												<resource/>
+												<targetFrame/>
+												<isActive>1</isActive>
+												<label/>
+												<headers>Referer: http://www.medcommons.net/privacy.php
+</headers>
+												<multipartBoundary/>
+												<Object>null</Object>
+												<lenientSubrequestCount>false</lenientSubrequestCount>
+												<formCharset>utf-8</formCharset>
+												<method>1</method>
+												<waitForSubRequests>false</waitForSubRequests>
+											</Request>
+											<Request v='10'>
+												<ver>12</ver>
+												<id>2486</id>
+												<Summary v='2'>
+													<played>1</played>
+													<failed>1</failed>
+													<warnings>1</warnings>
+													<maxResponseTime>1130</maxResponseTime>
+													<averageResponseTime>1130</averageResponseTime>
+												</Summary>
+												<childCount>3</childCount>
+												<ChildItems>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>2488</id>
+														<name>update</name>
+														<value/>
+														<sendEquals>false</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>2489</id>
+														<name>command</name>
+														<value>CLEAR_ALL</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>2490</id>
+														<name>dojo.preventCache</name>
+														<value>%24%7Brand%7D</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<host>localhost:16092</host>
+												<path>/localDDL/StatusUpdate.action</path>
+												<protocol>http</protocol>
+												<resource/>
+												<targetFrame/>
+												<isActive>1</isActive>
+												<label/>
+												<headers/>
+												<multipartBoundary/>
+												<Object>null</Object>
+												<lenientSubrequestCount>false</lenientSubrequestCount>
+												<formCharset/>
+												<method>1</method>
+												<waitForSubRequests>false</waitForSubRequests>
+												<executionMode>1</executionMode>
+											</Request>
+											<Request v='10'>
+												<ver>12</ver>
+												<id>2491</id>
+												<Summary v='2'>
+													<played>1</played>
+													<failed>1</failed>
+													<warnings>1</warnings>
+													<maxResponseTime>972</maxResponseTime>
+													<averageResponseTime>972</averageResponseTime>
+												</Summary>
+												<childCount>3</childCount>
+												<ChildItems>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>2493</id>
+														<name>update</name>
+														<value/>
+														<sendEquals>false</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>2494</id>
+														<name>command</name>
+														<value>CLEAR_DEMOGRAPHICS</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>2495</id>
+														<name>dojo.preventCache</name>
+														<value>%24%7Brand%7D</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<host>localhost:16092</host>
+												<path>/localDDL/StatusUpdate.action</path>
+												<protocol>http</protocol>
+												<resource/>
+												<targetFrame/>
+												<isActive>1</isActive>
+												<label/>
+												<headers/>
+												<multipartBoundary/>
+												<Object>null</Object>
+												<lenientSubrequestCount>false</lenientSubrequestCount>
+												<formCharset/>
+												<method>1</method>
+												<waitForSubRequests>false</waitForSubRequests>
+												<executionMode>1</executionMode>
+											</Request>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<name>Clear DDL State</name>
+										<repetitions>1</repetitions>
+										<repeatType>1</repeatType>
+										<repeatVariable>auth</repeatVariable>
+										<incrementAutomatically>true</incrementAutomatically>
+										<incrementAll>true</incrementAll>
+										<expanded>1</expanded>
+									</Step>
+									<ClickItem v='8'>
+										<ver>12</ver>
+										<id>975</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<xPosition>499</xPosition>
+										<yPosition>60</yPosition>
+										<windowName>DICOM On Demand</windowName>
+										<windowSizeX>612</windowSizeX>
+										<windowSizeY>249</windowSizeY>
+										<enableRestoreSize>false</enableRestoreSize>
+										<waitForPageLoad>false</waitForPageLoad>
+										<cascade>false</cascade>
+										<raiseToTop>true</raiseToTop>
+										<upXPosition>499</upXPosition>
+										<upYPosition>60</upYPosition>
+										<dragMouse>false</dragMouse>
+										<waitForWindow>false</waitForWindow>
+									</ClickItem>
+									<Timer v='4'>
+										<ver>12</ver>
+										<id>977</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<waitMs>2000</waitMs>
+										<cascade>false</cascade>
+										<lowerMs>1000</lowerMs>
+										<upperMs>2000</upperMs>
+									</Timer>
+									<KeysItem v='2'>
+										<ver>12</ver>
+										<id>976</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<keys>c:\mc\testdata\1259366818364933{VK_RETURN}</keys>
+										<runInBackground>false</runInBackground>
+										<windowCaption/>
+									</KeysItem>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>2502</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>${host}</host>
+										<path>/acct/home.php</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers>Referer: http://mc:7080/acct/home.php
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<Timer v='4'>
+										<ver>12</ver>
+										<id>2500</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<waitMs>2000</waitMs>
+										<cascade>false</cascade>
+										<lowerMs>1000</lowerMs>
+										<upperMs>2000</upperMs>
+									</Timer>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<name>Send DICOM</name>
+								<repetitions>1</repetitions>
+								<repeatType>1</repeatType>
+								<repeatVariable>auth</repeatVariable>
+								<incrementAutomatically>true</incrementAutomatically>
+								<incrementAll>true</incrementAll>
+								<expanded>1</expanded>
+							</Step>
+							<Step v='4'>
+								<ver>12</ver>
+								<id>1337</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<childCount>7</childCount>
+								<ChildItems>
+									<Timer v='4'>
+										<ver>12</ver>
+										<id>1338</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>1339</id>
+												<pattern>uploading.gif</pattern>
+												<bUseRegex>false</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<waitMs>1000</waitMs>
+										<cascade>false</cascade>
+										<lowerMs>1000</lowerMs>
+										<upperMs>2000</upperMs>
+									</Timer>
+									<Navigation v='7'>
+										<ver>12</ver>
+										<id>1340</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<targetFrame/>
+										<continueOnFailure>true</continueOnFailure>
+										<references>
+											<count>2</count>
+											<VisibleTextReference v='2'>
+												<value>uploading.gif</value>
+												<filter>Images</filter>
+											</VisibleTextReference>
+											<JavascriptReference v='2'>
+												<value>document.getElementById(&apos;row_9011575764245222&apos;).getElementsByTagName(&apos;TD&apos;)[4].getElementsByTagName(&apos;IMG&apos;)[0]</value>
+												<filter>All</filter>
+											</JavascriptReference>
+										</references>
+										<eventType>2</eventType>
+										<isPassive>true</isPassive>
+										<passiveTimeoutMs>1000</passiveTimeoutMs>
+										<useRegex>false</useRegex>
+									</Navigation>
+									<MessageBoxItem v='5'>
+										<ver>12</ver>
+										<id>1371</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<message>Are you sure you want to cancel this transfer?</message>
+										<type>33</type>
+										<response>1</response>
+										<useRegex>false</useRegex>
+										<waitTimeSeconds>0</waitTimeSeconds>
+									</MessageBoxItem>
+									<MessageBoxItem v='5'>
+										<ver>12</ver>
+										<id>1539</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<message>Transfer cancelled!</message>
+										<type>48</type>
+										<response>1</response>
+										<useRegex>false</useRegex>
+										<waitTimeSeconds>5</waitTimeSeconds>
+									</MessageBoxItem>
+									<Navigation v='7'>
+										<ver>12</ver>
+										<id>1356</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<Request v='10'>
+												<ver>12</ver>
+												<id>1357</id>
+												<Summary v='2'>
+													<maxResponseTime>0</maxResponseTime>
+													<averageResponseTime>0</averageResponseTime>
+												</Summary>
+												<childCount>7</childCount>
+												<ChildItems>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>1358</id>
+														<name>searchPatientName</name>
+														<value/>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>1359</id>
+														<name>searchLastUpdate</name>
+														<value>all</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>1360</id>
+														<name>searchPurpose</name>
+														<value/>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>1361</id>
+														<name>searchStatus</name>
+														<value/>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>1362</id>
+														<name>lt</name>
+														<value>2</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>1363</id>
+														<name>pid</name>
+														<value>1070</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>1364</id>
+														<name>page</name>
+														<value>1</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<host>${gw}</host>
+												<path>/acct/rls.php</path>
+												<protocol>https</protocol>
+												<resource/>
+												<targetFrame/>
+												<label/>
+												<headers/>
+												<multipartBoundary/>
+												<newWindowWidth>3801188</newWindowWidth>
+												<newWindowHeight>5046304</newWindowHeight>
+												<Object>null</Object>
+												<lenientSubrequestCount>false</lenientSubrequestCount>
+												<formCharset/>
+												<method>3145779</method>
+												<waitForSubRequests>true</waitForSubRequests>
+											</Request>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<targetFrame/>
+										<continueOnFailure>true</continueOnFailure>
+										<references>
+											<count>2</count>
+											<VisibleTextReference v='2'>
+												<value>Cancel</value>
+												<filter>Links</filter>
+											</VisibleTextReference>
+											<JavascriptReference v='2'>
+												<value>document.getElementById(&apos;transferTip&apos;).getElementsByTagName(&apos;A&apos;)[0]</value>
+												<filter>Links</filter>
+											</JavascriptReference>
+										</references>
+										<isPassive>true</isPassive>
+										<passiveTimeoutMs>1000</passiveTimeoutMs>
+										<useRegex>false</useRegex>
+									</Navigation>
+									<Timer v='4'>
+										<ver>12</ver>
+										<id>2662</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<waitMs>20000</waitMs>
+										<cascade>false</cascade>
+										<lowerMs>1000</lowerMs>
+										<upperMs>2000</upperMs>
+									</Timer>
+									<Assertion v='8'>
+										<ver>12</ver>
+										<id>2660</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>1</childCount>
+										<ChildItems>
+											<ContentCheckItem v='1'>
+												<ver>12</ver>
+												<id>2661</id>
+												<pattern>Upload cancelled</pattern>
+												<bUseRegex>false</bUseRegex>
+												<checkMessageBoxes>false</checkMessageBoxes>
+												<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+											</ContentCheckItem>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>300</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<failureAction>
+											<Object>null</Object>
+										</failureAction>
+										<captureScreenShot>true</captureScreenShot>
+										<scalingPercent>65</scalingPercent>
+										<captureDuplicates>false</captureDuplicates>
+									</Assertion>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<name>Cancel</name>
+								<repetitions>1</repetitions>
+								<repeatType>1</repeatType>
+								<repeatVariable>auth</repeatVariable>
+								<incrementAutomatically>true</incrementAutomatically>
+								<incrementAll>true</incrementAll>
+								<expanded>1</expanded>
+							</Step>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<title>DDL Upload</title>
+						<template/>
+						<expanded>1</expanded>
+					</TestItem>
+					<TestItem v='2'>
+						<ver>12</ver>
+						<id>2576</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<Step v='4'>
+								<ver>12</ver>
+								<id>2577</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<childCount>1</childCount>
+								<ChildItems>
+									<SaveItem v='8'>
+										<ver>12</ver>
+										<id>2578</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<writerClass>VariableWriter</writerClass>
+										<fileName>c:\mc\ddl\finished.txt</fileName>
+										<variableExpression>.</variableExpression>
+										<styleSheet/>
+										<exportImages>false</exportImages>
+										<showSavedFile>false</showSavedFile>
+										<includeResponseContent>false</includeResponseContent>
+										<emailTo/>
+										<emailCC/>
+										<emailSubject/>
+										<appendMode>false</appendMode>
+										<sendAsAttachment>false</sendAsAttachment>
+										<frameName/>
+									</SaveItem>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<name>Step 1</name>
+								<repetitions>1</repetitions>
+								<repeatType>1</repeatType>
+								<repeatVariable/>
+								<incrementAutomatically>true</incrementAutomatically>
+								<incrementAll>true</incrementAll>
+								<expanded>1</expanded>
+							</Step>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<title>Write Finished Flag</title>
+						<template/>
+						<expanded>1</expanded>
+					</TestItem>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName>Dicom Status</itemName>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<expanded>1</expanded>
+			</SuiteItem>
+			<SuiteItem v='1'>
+				<ver>12</ver>
+				<id>2718</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>1</childCount>
+				<ChildItems>
+					<TestItem v='2'>
+						<ver>12</ver>
+						<id>2719</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<Step v='4'>
+								<ver>12</ver>
+								<id>2720</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<childCount>3</childCount>
+								<ChildItems>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>2721</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>2</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>2722</id>
+												<name>time</name>
+												<value>1232359444425</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>2723</id>
+												<name>enc</name>
+												<value>fc4873bb673392d51aa97a13af7ff082f10189f8</value>
+												<sendEquals>true</sendEquals>
+												<method>2</method>
+											</Parameter>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>mc:7080</host>
+										<path>/acct/groupMessages.php</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers/>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset/>
+										<method>2</method>
+										<waitForSubRequests>false</waitForSubRequests>
+										<executionMode>1</executionMode>
+									</Request>
+									<Request v='10'>
+										<ver>12</ver>
+										<id>2740</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<childCount>2</childCount>
+										<ChildItems>
+											<Parameter v='4'>
+												<ver>12</ver>
+												<id>2741</id>
+												<name>command</name>
+												<value>upload</value>
+												<sendEquals>true</sendEquals>
+												<method>1</method>
+											</Parameter>
+											<Request v='10'>
+												<ver>12</ver>
+												<id>2742</id>
+												<Summary v='2'>
+													<maxResponseTime>0</maxResponseTime>
+													<averageResponseTime>0</averageResponseTime>
+												</Summary>
+												<childCount>1</childCount>
+												<ChildItems>
+													<Parameter v='4'>
+														<ver>12</ver>
+														<id>2743</id>
+														<name>command</name>
+														<value>upload</value>
+														<sendEquals>true</sendEquals>
+														<method>1</method>
+													</Parameter>
+												</ChildItems>
+												<timeoutEnabled>false</timeoutEnabled>
+												<Object>null</Object>
+												<targetWindow/>
+												<itemName/>
+												<documentation/>
+												<waitForPageToLoad>false</waitForPageToLoad>
+												<sourceLocation/>
+												<recordResponses>true</recordResponses>
+												<quiescenceTimeMs>500</quiescenceTimeMs>
+												<disabled>false</disabled>
+												<ignoreErrors>false</ignoreErrors>
+												<errorFilter/>
+												<host>localhost:16092</host>
+												<path>/CommandServlet/</path>
+												<protocol>http</protocol>
+												<resource/>
+												<targetFrame/>
+												<label/>
+												<headers/>
+												<multipartBoundary/>
+												<Object>null</Object>
+												<lenientSubrequestCount>false</lenientSubrequestCount>
+												<formCharset/>
+												<method>1</method>
+												<waitForSubRequests>false</waitForSubRequests>
+												<executionMode>2</executionMode>
+											</Request>
+										</ChildItems>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<host>localhost:16092</host>
+										<path>/CommandServlet</path>
+										<protocol>http</protocol>
+										<resource/>
+										<targetFrame/>
+										<isActive>1</isActive>
+										<label/>
+										<headers>Referer: http://localhost:16092/CommandServlet/command=upload
+</headers>
+										<multipartBoundary/>
+										<Object>null</Object>
+										<lenientSubrequestCount>false</lenientSubrequestCount>
+										<formCharset>iso-8859-1</formCharset>
+										<method>1</method>
+										<waitForSubRequests>false</waitForSubRequests>
+									</Request>
+									<ClickItem v='8'>
+										<ver>12</ver>
+										<id>2874</id>
+										<Summary v='2'>
+											<maxResponseTime>0</maxResponseTime>
+											<averageResponseTime>0</averageResponseTime>
+										</Summary>
+										<timeoutEnabled>false</timeoutEnabled>
+										<Object>null</Object>
+										<targetWindow/>
+										<itemName/>
+										<documentation/>
+										<waitForPageToLoad>false</waitForPageToLoad>
+										<sourceLocation/>
+										<recordResponses>true</recordResponses>
+										<quiescenceTimeMs>500</quiescenceTimeMs>
+										<disabled>false</disabled>
+										<ignoreErrors>false</ignoreErrors>
+										<errorFilter/>
+										<xPosition>247</xPosition>
+										<yPosition>367</yPosition>
+										<windowName>Script Tree</windowName>
+										<windowSizeX>407</windowSizeX>
+										<windowSizeY>819</windowSizeY>
+										<enableRestoreSize>false</enableRestoreSize>
+										<waitForPageLoad>false</waitForPageLoad>
+										<cascade>false</cascade>
+										<raiseToTop>false</raiseToTop>
+										<upXPosition>247</upXPosition>
+										<upYPosition>367</upYPosition>
+										<dragMouse>false</dragMouse>
+										<waitForWindow>false</waitForWindow>
+									</ClickItem>
+								</ChildItems>
+								<timeoutEnabled>false</timeoutEnabled>
+								<Object>null</Object>
+								<targetWindow/>
+								<itemName/>
+								<documentation/>
+								<waitForPageToLoad>false</waitForPageToLoad>
+								<sourceLocation/>
+								<recordResponses>true</recordResponses>
+								<quiescenceTimeMs>500</quiescenceTimeMs>
+								<disabled>false</disabled>
+								<ignoreErrors>false</ignoreErrors>
+								<errorFilter/>
+								<name>Step 1</name>
+								<repetitions>1</repetitions>
+								<repeatType>1</repeatType>
+								<repeatVariable/>
+								<incrementAutomatically>true</incrementAutomatically>
+								<incrementAll>true</incrementAll>
+								<expanded>1</expanded>
+							</Step>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<title>Test 4</title>
+						<template/>
+						<expanded>1</expanded>
+					</TestItem>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName>Launch Upload</itemName>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<expanded>1</expanded>
+			</SuiteItem>
+		</ChildItems>
+		<defaultHeaders>User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; (R1 1.5); .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; MS-RTC LM 8; .NET CLR 3.0.04506.648; .NET CLR 3.5.21022)
+Accept: */*
+Accept-Language: en-us
+</defaultHeaders>
+	</Script>
+</WebScript>

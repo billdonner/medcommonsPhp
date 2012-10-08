@@ -1,0 +1,12 @@
+ @import url("medCommonsStyles.css");
+ @import url("dropDown.css");
+ .menu {position:absolute;top:77px;left:27px; z-index:100;}
+ #ContentBox {position:relative; padding-top: 10px;}
+ .sitemap a {text-decoration: none}
+ .sitemap ul li {list-style: none}
+ .sitemap ul ul li {list-style: lower-greek}
+ body {
+
+}
+.iPhone { display: block}
+.notiPhone { display: none}

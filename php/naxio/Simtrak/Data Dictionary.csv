@@ -1,0 +1,652 @@
+Table,Field Name,Field Type,Length,Decimals,Field Description,Report Writer Heading
+
+FACILITY,FACILITYID,C,10,0,,
+FACILITY,CREATEUSER,C,4,0,User who created the record,UseC
+FACILITY,CREATEDATE,D,8,0,Date record was created,DateCr
+FACILITY,CREATETIME,C,8,0,Time record was created,TimeCr
+FACILITY,MODIFYUSER,C,4,0,User who last modified the record,UseM
+FACILITY,MODIFYDATE,D,8,0,Date record was last modified,DateMod
+FACILITY,MODIFYTIME,C,8,0,Time record was last modified,TimeMod
+FACILITY,FACTYPE,C,25,0,Facility type,Facility Type
+FACILITY,FACILITY,C,40,0,Facility name,Facility Name
+FACILITY,LNAME,C,20,0,Doctor last name,Facility Last Name
+FACILITY,FNAME,C,15,0,Doctor first name,Fac First Name
+FACILITY,MI,C,1,0,Doctor middle initial,M
+FACILITY,SPECIALTY,C,25,0,Doctor specialty,Facility Specialty
+FACILITY,ADDRESS1,C,30,0,Facility address line 1,Facility Address 1
+FACILITY,ADDRESS2,C,30,0,Facility address line 2,Facility Address 2
+FACILITY,CITY,C,20,0,Facility city,Facility City
+FACILITY,STATE,C,2,0,Facility state,FS
+FACILITY,ZIP,C,10,0,Facility zip code,Fac Zip
+FACILITY,PROVINCE,C,20,0,Facility province,Facility Province
+FACILITY,COUNTRY,C,20,0,Facility country,Facility Country
+FACILITY,WPHONE,C,20,0,Doctor work phone number,Facility WPhone
+FACILITY,HPHONE,C,20,0,Doctor home phone number,Facility HPhone
+FACILITY,FAX,C,20,0,Doctor fax number,Facility Fax
+FACILITY,EMAIL,C,30,0,Doctor e-mail address,Facility E-Mail
+FACILITY,CELL,C,20,0,Doctor cell phone number,Facility Cell
+FACILITY,PAGER,C,20,0,Doctor pager number,Facility Pager
+FACILITY,OTHER,M,4,0,Doctor other contact methods,Other Contact Methods
+FACILITY,CATEGORY,C,25,0,Physician category - SportPharm,Physician Category
+FACILITY,AOR,L,1,0,Agent of record,
+FACILITY,PA,L,1,0,Pharmacy authorization,
+FACILITY,UMEL,L,1,0,Unsecured medication exception list,
+FACILITY,TP,L,1,0,Treatment protocol,
+FACILITY,ATMO,L,1,0,ATMO information form,
+FACILITY,SIGNATURE,G,4,0,Physician digital signature,
+FACILITY,CHGMARK,C,1,0,,
+
+
+Table,Field Name,Field Type,Length,Decimals,Field Description,Report Writer Heading
+
+FACTRN,FACTRNID,C,10,0,,
+FACTRN,PERSONID,C,10,0,,
+FACTRN,FACILITYID,C,10,0,,
+FACTRN,INJURYID,C,10,0,,
+FACTRN,PROGRESSID,C,10,0,,
+FACTRN,CREATEUSER,C,4,0,User who created the record,UseC
+FACTRN,CREATEDATE,D,8,0,Date record was created,DateCr
+FACTRN,CREATETIME,C,8,0,Time record was created,TimeCr
+FACTRN,MODIFYUSER,C,4,0,User who last modified the record,UseM
+FACTRN,MODIFYDATE,D,8,0,Date record was last modified,DateMod
+FACTRN,MODIFYTIME,C,8,0,Time record was last modified,TimeMod
+FACTRN,SEASON,C,9,0,"Season (Year - 2000, etc.)",Season
+FACTRN,SPORT,C,40,0,Sport,Sport
+FACTRN,CONTACT,C,35,0,Contact person,Contact Person
+FACTRN,TYPETEST,C,40,0,Type of test performed,Type of Test
+FACTRN,TRANSDATE,D,8,0,Transaction (service) date,Trn Date
+FACTRN,TOTALCOST,N,10,2,Total cost of the transaction,Total Cost
+FACTRN,ASPIRATION,L,1,0,Was there an aspiration? (Y/N),A
+FACTRN,AMOUNT,N,3,0,Amount of fluid aspirated,Amt
+FACTRN,FLUIDCOLOR,C,20,0,Color of fluid aspirated,Color of Fluid
+FACTRN,INJECTION,L,1,0,Was there an injection? (Y/N),I
+FACTRN,INJECTTYPE,C,15,0,Type of injection,Inject Type
+FACTRN,INJECTMEDS,M,4,0,Medication injected,Medication
+FACTRN,DIAGNOSIS,M,4,0,Diagnosis,Diagnosis
+FACTRN,COMMENT,M,4,0,Comment,Comment
+FACTRN,CHGMARK,C,1,0,,
+
+Table,Field Name,Field Type,Length,Decimals,Field Description,Report Writer Heading
+
+INJURY,INJURYID,C,10,0,,
+INJURY,PERSONID,C,10,0,,
+INJURY,CREATEUSER,C,4,0,User who created the record,UseC
+INJURY,CREATEDATE,D,8,0,Date record was created,DateCr
+INJURY,CREATETIME,C,8,0,Time record was created,TimeCr
+INJURY,MODIFYUSER,C,4,0,User who last modified the record,UseM
+INJURY,MODIFYDATE,D,8,0,Date record was last modified,DateMod
+INJURY,MODIFYTIME,C,8,0,Time record was last modified,TimeMod
+INJURY,SEASON,C,9,0,"Season (Year - 2000, etc.)",Season
+INJURY,SPORT,C,40,0,Sport,Sport
+INJURY,TEAMNUMBER,C,2,0,Organization number,O#
+INJURY,TEAMNAME,C,35,0,Organization name,Organization Name
+INJURY,CLOSED,L,1,0,Is the injury closed? (Y/N),S
+INJURY,CLOSEDATE,D,8,0,Date injury was closed,Cls Date
+INJURY,SUBMITTED,L,1,0,Has this report been submitted? (Y/N),S
+INJURY,SUBMITDATE,D,8,0,Date report was submitted,Sub Date
+INJURY,INJURYNO,C,11,0,Injury number,Injury #
+INJURY,INJURYDATE,D,8,0,Date of injury,Inj Date
+INJURY,ENTERDATE,D,8,0,Date injury report was entered,Ent Date
+INJURY,REPORTDATE,D,8,0,Date injury was reported,Rep Date
+INJURY,RETURNDATE,D,8,0,Date returned from injury,Ret Date
+INJURY,WCOMP,L,1,0,Is this workers compensation? (Y/N),W
+INJURY,WORKRELATE,L,1,0,Non-work related? (Y/N),N
+INJURY,DISABLED,L,1,0,Person put on the disabled list? (Y/N),D
+INJURY,DATEON,D,8,0,Date on the disabled list,Date On
+INJURY,NUMBERDAYS,N,3,0,Number of days on the disabled list,# D
+INJURY,DATEOFF,D,8,0,Date eligible off the disabled list,Date Elg
+INJURY,DAYMISSED,N,4,0,Number of days missed,DMis
+INJURY,GAMEMISS1,N,4,0,Number of pre-season games missed,GMPr
+INJURY,GAMEMISS2,N,4,0,Number of regular season games missed,GMRe
+INJURY,DAYLIMITED,N,4,0,Number of days limited,DLim
+INJURY,DAYPRACTIC,N,4,0,Number of practices missed,Prac
+INJURY,POSITION,C,25,0,Position played when injured,Position
+INJURY,DESCRIP,C,30,0,Description of the injury,Nature of Injury
+INJURY,TYPEINJURY,M,4,0,Assessment of injury,Assessment of Injury
+INJURY,INJURY,M,4,0,Injury,Injury
+INJURY,BODYPART,M,4,0,Body part,Body Part
+INJURY,SEVERITY,C,20,0,Severity of injury,Severity of Injury
+INJURY,INJURYHOW,M,4,0,How the injury occurred,How Injury Occurred
+INJURY,ACTIVITY,C,25,0,Activity being performed when injured,Activity
+INJURY,NONACTIVE,M,4,0,Non-active treatment,Non-Active Treatment
+INJURY,ACTIVE,M,4,0,Active treatment,Active Treatment
+INJURY,MEDICATION,M,4,0,Medication,Medication
+INJURY,LOCATION,C,25,0,Location (city) when injury occurred,Location of Injury
+INJURY,WHERE,C,25,0,Where the injury occurred,Where Injury Occurred
+INJURY,SURFACE,C,20,0,Surface type,Surface Type
+INJURY,FIELD,C,20,0,Field conditions,Surface Condition
+INJURY,WEATHER,C,20,0,Weather,Weather
+INJURY,TEMPERATE,N,3,0,Temperature,Tmp
+INJURY,DAYNIGHT,C,20,0,Day or night game,Time of Injury
+INJURY,COMMENT,M,4,0,Comment,Comment
+INJURY,DICTATION,M,4,0,Doctor's dictation,Dictation
+INJURY,SUBJECTIVE,M,4,0,S.O.A.P. - Subjective,Subjective
+INJURY,OBJECTIVE,M,4,0,S.O.A.P. - Objective,Objective
+INJURY,ASSESSMENT,M,4,0,S.O.A.P. - Assessment,Assessment
+INJURY,PLAN,M,4,0,S.O.A.P. - Plan,Plan
+INJURY,DAYDL,N,4,0,Number of days missed due to D/L,DD/L
+INJURY,DLDAYOFF,D,8,0,Date off the disabled list,Day Off
+INJURY,IMAGES,M,4,0,,
+INJURY,INJURYTYPE,C,25,0,Injury type,Injury Type
+INJURY,ISS,L,1,0,Include in ISS report (Y/N),
+INJURY,ISSCHAR01,C,30,0,ISS Character 01,
+INJURY,ISSCHAR02,C,30,0,ISS Character 02,
+INJURY,ISSCHAR03,C,30,0,ISS Character 03,
+INJURY,ISSCHAR04,C,30,0,ISS Character 04,
+INJURY,ISSCHAR05,C,30,0,ISS Character 05,
+INJURY,ISSCHAR06,C,30,0,ISS Character 06,
+INJURY,ISSCHAR07,C,30,0,ISS Character 07,
+INJURY,ISSCHAR08,C,30,0,ISS Character 08,
+INJURY,ISSCHAR09,C,30,0,ISS Character 09,
+INJURY,ISSCHAR10,C,30,0,ISS Character 10,
+INJURY,ISSPD01,C,30,0,ISS Pull Down 01,
+INJURY,ISSPD02,C,30,0,ISS Pull Down 02,
+INJURY,ISSPD03,C,30,0,ISS Pull Down 03,
+INJURY,ISSPD04,C,30,0,ISS Pull Down 04,
+INJURY,ISSPD05,C,30,0,ISS Pull Down 05,
+INJURY,ISSPD06,C,30,0,ISS Pull Down 06,
+INJURY,ISSPD07,C,30,0,ISS Pull Down 07,
+INJURY,ISSPD08,C,30,0,ISS Pull Down 08,
+INJURY,ISSPD09,C,30,0,ISS Pull Down 09,
+INJURY,ISSPD10,C,30,0,ISS Pull Down 10,
+INJURY,ISSLOG01,L,1,0,ISS Logical 01,
+INJURY,ISSLOG02,L,1,0,ISS Logical 02,
+INJURY,ISSLOG03,L,1,0,ISS Logical 03,
+INJURY,ISSLOG04,L,1,0,ISS Logical 04,
+INJURY,ISSLOG05,L,1,0,ISS Logical 05,
+INJURY,ISSLOG06,L,1,0,ISS Logical 06,
+INJURY,ISSLOG07,L,1,0,ISS Logical 07,
+INJURY,ISSLOG08,L,1,0,ISS Logical 08,
+INJURY,ISSLOG09,L,1,0,ISS Logical 09,
+INJURY,ISSLOG10,L,1,0,ISS Logical 10,
+INJURY,ISSMEMO1,M,4,0,ISS Memo 01,
+INJURY,WORKREL2,L,1,0,Work related? (Y/N),R
+INJURY,INJURYTIME,C,10,0,Time of Injury,Inj. Time
+INJURY,CHGMARK,C,1,0,,
+,,,,,,
+Table,Field Name,Field Type,Length,Decimals,Field Description,Report Writer Heading
+
+PERSON,PERSONID,C,10,0,,
+PERSON,CREATEUSER,C,4,0,User who created the record,UseC
+PERSON,CREATEDATE,D,8,0,Date record was created,DateCr
+PERSON,CREATETIME,C,8,0,Time record was created,TimeCr
+PERSON,MODIFYUSER,C,4,0,User who last modified the record,UseM
+PERSON,MODIFYDATE,D,8,0,Date record was last modified,DateMod
+PERSON,MODIFYTIME,C,8,0,Time record was last modified,TimeMod
+PERSON,FNAME,C,15,0,First name,First Name
+PERSON,MI,C,1,0,Middle initial,M
+PERSON,LNAME,C,20,0,Last name,Last Name
+PERSON,STATUS,C,8,0,Status (Active/Inactive/Former),Status
+PERSON,SOCSEC,C,15,0,Social security number,Soc Sec #
+PERSON,INSNUMBER,C,20,0,League number or insurance number,League Number
+PERSON,TYPE,C,20,0,Personnel type,Personnel Type
+PERSON,GENDER,C,6,0,Gender,Gender
+PERSON,BIRTHDATE,D,8,0,Date of birth,Brthdate
+PERSON,HEIGHT,C,5,0,Height,Hght
+PERSON,WEIGHT,C,3,0,Weight,Wgt
+PERSON,GRADE,C,2,0,Grade,Gr
+PERSON,SPORT1,C,40,0,First sport played,Sport 1
+PERSON,SPORT2,C,40,0,Second sport played,Sport 2
+PERSON,SPORT3,C,40,0,Third sport played,Sport 3
+PERSON,ALLSPORT,C,120,0,,
+PERSON,POSITION1,C,25,0,Position of first sport,Position 1
+PERSON,POSITION2,C,25,0,Position of second sport,Position 2
+PERSON,POSITION3,C,25,0,Position of third sport,Position 3
+PERSON,DOMINANCE,C,5,0,Hand dominance,HDom
+PERSON,THROWS,C,5,0,Throws (Right or Left),Throw
+PERSON,BATS,C,5,0,"Hits (Right, Left or Both)",Bat
+PERSON,SHOOTS,C,5,0,Shoots (Right or Left),Shoot
+PERSON,KICKS,C,5,0,Kicks (Right or Left),Kick
+PERSON,PADDRESS1,C,30,0,Permanent address line 1,Permanent Address 1
+PERSON,PADDRESS2,C,30,0,Permanent address line 2,Permanent Address 2
+PERSON,PCITY,C,20,0,Permanent address city,Permanent City
+PERSON,PSTATE,C,2,0,Permanent address state,PS
+PERSON,PZIP,C,10,0,Permanent address zip code,Perm Zip
+PERSON,PPROVINCE,C,20,0,Permanent address province,Permanent Province
+PERSON,PCOUNTRY,C,20,0,Permanent address country,Permanent Country
+PERSON,PWPHONE,C,20,0,Permanent address work phone,Permanent WPhone
+PERSON,PHPHONE,C,20,0,Permanent address home phone,Permanent HPhone
+PERSON,PFAX,C,20,0,Permanent address fax,Permanent Fax
+PERSON,PEMAIL,C,40,0,Permanent address e-mail address,Permanent E-Mail
+PERSON,PCELL,C,20,0,Permanent address cell phone,Permanent Cell
+PERSON,PPAGER,C,20,0,Permanent address pager,Permanent Pager
+PERSON,SADDRESS1,C,30,0,Season address line 1,Season Address 1
+PERSON,SADDRESS2,C,30,0,Season address line 2,Season Address 2
+PERSON,SCITY,C,20,0,Season address city,Season City
+PERSON,SSTATE,C,2,0,Season address state,SS
+PERSON,SZIP,C,10,0,Season address zip code,Season Zip
+PERSON,SPROVINCE,C,20,0,Season address province,Season Province
+PERSON,SCOUNTRY,C,20,0,Season address country,Season Country
+PERSON,SWPHONE,C,20,0,Season address work phone,Season WPhone
+PERSON,SHPHONE,C,20,0,Season address home phone,Season HPhone
+PERSON,SFAX,C,20,0,Season address fax,Season Fax
+PERSON,SEMAIL,C,40,0,Season address e-mail address,Season E-Mail
+PERSON,SCELL,C,20,0,Season address cell phone,Season Cell
+PERSON,SPAGER,C,20,0,Season address pager,Season Pager
+PERSON,SPOUSE,C,35,0,Spouse name,Spouse
+PERSON,RELATIVE,C,35,0,Nearest relative name,Nearest Relative
+PERSON,RELATION,C,20,0,Relation of nearest relative,Relation
+PERSON,RADDRESS1,C,30,0,Relative address line 1,Relative Address 1
+PERSON,RADDRESS2,C,30,0,Relative address line 2,Relative Address 2
+PERSON,RCITY,C,20,0,Relative address city,Relative City
+PERSON,RSTATE,C,2,0,Relative address state,RS
+PERSON,RZIP,C,10,0,Relative address zip code,Rel Zip
+PERSON,RPROVINCE,C,20,0,Relative address province,Relative Province
+PERSON,RCOUNTRY,C,20,0,Relative address country,Relative Country
+PERSON,RWPHONE,C,20,0,Relative address work phone,Relative WPhone
+PERSON,RHPHONE,C,20,0,Relative address home phone,Relative HPhone
+PERSON,RFAX,C,20,0,Relative address fax,Relative Fax
+PERSON,REMAIL,C,40,0,Relative address e-mail address,Relative E-Mail
+PERSON,RCELL,C,20,0,Relative address cell phone,Relative Cell
+PERSON,RPAGER,C,20,0,Relative address pager,Relative Pager
+PERSON,PHYSICIAN,C,35,0,Personal physician,Personal Physician
+PERSON,PPADDRESS1,C,30,0,Personal physician address line 1,Physician Address 1
+PERSON,PPADDRESS2,C,30,0,Personal physician address line 2,Physician Address 2
+PERSON,PPCITY,C,20,0,Personal physician city,Physician City
+PERSON,PPSTATE,C,2,0,Personal physician state,DS
+PERSON,PPZIP,C,10,0,Personal physician zip code,Phys Zip
+PERSON,PPPROVINCE,C,20,0,Personal physician province,Physician Province
+PERSON,PPCOUNTRY,C,20,0,Personal physician country,Physician Country
+PERSON,PPWPHONE,C,20,0,Personal physician work phone,Physician WPhone
+PERSON,PPHPHONE,C,20,0,Personal physician home phone,Physician HPhone
+PERSON,PPFAX,C,20,0,Personal physician fax,Physician Fax
+PERSON,PPEMAIL,C,40,0,Personal physician e-mail address,Physician E-Mail
+PERSON,PPCELL,C,20,0,Personal physician cell phone,Physician Cell
+PERSON,PPPAGER,C,20,0,Personal physician pager,Physician Pager
+PERSON,GLASSES,L,1,0,Are glasses worn? (Y/N),G
+PERSON,GLASSESR,C,30,0,Strength of glasses - right eye,Glasses - Right
+PERSON,GLASSESL,C,30,0,Strength of glasses - left eye,Glasses - Left
+PERSON,GLASSESC,C,40,0,Glasses comment,Glasses - Comment
+PERSON,CONTACTS,L,1,0,Are contacts worn? (Y/N),C
+PERSON,CONTACTSR,C,30,0,Strength of contacts - right eye,Contacts - Right
+PERSON,CONTACTSL,C,30,0,Strength of contacts - left eye,Contacts - Left
+PERSON,CONTACTSC,C,40,0,Contacts comment,Contacts - Comment
+PERSON,EYEDOCTOR,C,35,0,Eye doctor,Eye Doctor
+PERSON,EDADDRESS1,C,30,0,Eye doctor address line 1,Eye Doctor Address 1
+PERSON,EDADDRESS2,C,30,0,Eye doctor address line 2,Eye Doctor Address 2
+PERSON,EDCITY,C,20,0,Eye doctor city,Eye Doctor City
+PERSON,EDSTATE,C,2,0,Eye doctor state,ES
+PERSON,EDZIP,C,10,0,Eye doctor zip,Eye D Zip
+PERSON,EDPROVINCE,C,20,0,Eye doctor province,Eye Doctor Province
+PERSON,EDCOUNTRY,C,20,0,Eye doctor country,Eye Doctor Country
+PERSON,EDWPHONE,C,20,0,Eye doctor work phone,Eye Doctor WPhone
+PERSON,EDHPHONE,C,20,0,Eye doctor home phone,Eye Doctor HPhone
+PERSON,EDFAX,C,20,0,Eye doctor fax,Eye Doctor Fax
+PERSON,EDEMAIL,C,40,0,Eye doctor e-mail address,Eye Doctor E-Mail
+PERSON,EDCELL,C,20,0,Eye doctor cell phone,Eye Doctor Cell
+PERSON,EDPAGER,C,20,0,Eye doctor pager,Eye Doctor Pager
+PERSON,ALLERGIES,C,50,0,Allergies,Allergies
+PERSON,MEDALLERGY,C,50,0,Medical alert allergies,Medical Alert Allergies
+PERSON,COMMENT,M,4,0,Comment,Comment
+PERSON,SRSURGERY,M,4,0,Sports related surgery,Sports Related Surgery
+PERSON,SRMEDICAL,M,4,0,Sports related major medical problems,Sports Related Major Medical
+PERSON,NSRSURGERY,M,4,0,Non-sports related surgery,Non-Sports Related Surgery
+PERSON,NSRMEDICAL,M,4,0,Non-sports related major medical problem,Non-Sports Related Major Medical
+PERSON,SCOUT,C,35,0,Scout name,Scout
+PERSON,SCOUTPHONE,C,20,0,Scout phone number,Scout Phone
+PERSON,SCOUTFAX,C,20,0,Scout fax number,Scout Fax
+PERSON,DATESIGNED,D,8,0,Date signed,SignDate
+PERSON,ACQUIRED,C,30,0,How acquired,How Acquired
+PERSON,RELEASEDTE,D,8,0,Date released,RelsDate
+PERSON,COLLEGE,C,30,0,College attended,College Attended
+PERSON,AGENTNAME,C,35,0,Agent name,Agent
+PERSON,AADDRESS1,C,30,0,Agent address line 1,Agent Address 1
+PERSON,AADDRESS2,C,30,0,Agent address line 2,Agent Address 2
+PERSON,ACITY,C,20,0,Agent city,Agent City
+PERSON,ASTATE,C,2,0,Agent state,AS
+PERSON,AZIP,C,10,0,Agent zip,Agent Zip
+PERSON,APROVINCE,C,20,0,Agent province,Agent Province
+PERSON,ACOUNTRY,C,20,0,Agent country,Agent Country
+PERSON,AWPHONE,C,20,0,Agent work phone,Agent WPhone
+PERSON,AHPHONE,C,20,0,Agent home phone,Agent HPhone
+PERSON,AFAX,C,20,0,Agent fax,Agent Fax
+PERSON,AEMAIL,C,40,0,Agent e-mail address,Agent E-Mail
+PERSON,ACELL,C,20,0,Agent cell phone,Agent Cell
+PERSON,APAGER,C,20,0,Agent pager,Agent Pager
+PERSON,PTPERSONID,C,20,0,Private insurance number,Private Insurance #
+PERSON,IMAGES,M,4,0,,
+PERSON,ELITE,L,1,0,Elite athlete,
+PERSON,OLYMPIC,L,1,0,Olympic athlete,
+PERSON,OTHERMEDS,C,50,0,Other medications taking,
+PERSON,AOB,L,1,0,Assignment of benefits,
+PERSON,SIGNATURE,G,4,0,Digital signature,
+PERSON,ISSCHAR01,C,30,0,ISS Character 01,
+PERSON,ISSCHAR02,C,30,0,ISS Character 02,
+PERSON,ISSCHAR03,C,30,0,ISS Character 03,
+PERSON,ISSCHAR04,C,30,0,ISS Character 04,
+PERSON,ISSCHAR05,C,30,0,ISS Character 05,
+PERSON,ISSPD01,C,30,0,ISS Pull Down 01,
+PERSON,ISSPD02,C,30,0,ISS Pull Down 02,
+PERSON,ISSPD03,C,30,0,ISS Pull Down 03,
+PERSON,ISSPD04,C,30,0,ISS Pull Down 04,
+PERSON,ISSPD05,C,30,0,ISS Pull Down 05,
+PERSON,CURRENTMED,C,50,0,Current medications,Current Medications
+PERSON,PERSTATUS1,L,1,0,Status 01,1
+PERSON,PERSTATUS2,L,1,0,Status 02,2
+PERSON,PERSTATUS3,L,1,0,Status 03,3
+PERSON,PERSTATUS4,L,1,0,Status 04,4
+PERSON,PERSTATUS5,L,1,0,Status 05,5
+PERSON,PERSTDATE1,D,8,0,Status Date 01,Stat Date1
+PERSON,PERSTDATE2,D,8,0,Status Date 02,Stat Date2
+PERSON,PERSTDATE3,D,8,0,Status Date 03,Stat Date3
+PERSON,PERSTDATE4,D,8,0,Status Date 04,Stat Date4
+PERSON,PERSTDATE5,D,8,0,Status Date 05,Stat Date5
+PERSON,I1TYPE,C,25,0,Ins 1 Type,Ins 1 Type
+PERSON,I1GROUPNO,C,30,0,Ins 1 Group Number,Ins 1 Group Number
+PERSON,I1POLICYNO,C,30,0,Ins 1 Policy Number,Ins 1 Policy Number
+PERSON,I1FEDID,C,20,0,Ins 1 Federal ID Number,Ins 1 Federal ID #
+PERSON,I1EXPDATE,D,8,0,Ins 1 Expiration Date,Ins1 ExpDt
+PERSON,I1COMPANY,C,40,0,Ins 1 Company,Ins 1 Company
+PERSON,I1CONTACT,C,35,0,Ins 1 Contact,Ins 1 Contact
+PERSON,I1ADDRESS1,C,30,0,Ins 1 Address 1,Ins 1 Address 1
+PERSON,I1ADDRESS2,C,30,0,Ins 1 Address 2,Ins 1 Address 2
+PERSON,I1CITY,C,20,0,Ins 1 City,Ins 1 City
+PERSON,I1STATE,C,2,0,Ins 1 State,St
+PERSON,I1ZIP,C,10,0,Ins 1 Zip,Ins 1 Zip
+PERSON,I1PROVINCE,C,20,0,Ins 1 Province,Ins 1 Province
+PERSON,I1COUNTRY,C,20,0,Ins 1 Country,Ins 1 Country
+PERSON,I1PHONE1,C,20,0,Ins 1 Phone 1,Ins 1 Phone 1
+PERSON,I1PHONE2,C,20,0,Ins 1 Phone 2,Ins 1 Phone 2
+PERSON,I1FAX,C,20,0,Ins 1 Fax,Ins 1 Fax
+PERSON,I1EMAIL,C,40,0,Ins 1 Email,Ins 1 Email
+PERSON,I2TYPE,C,25,0,Ins 2 Type,Ins 2 Type
+PERSON,I2GROUPNO,C,30,0,Ins 2 Group Number,Ins 2 Group Number
+PERSON,I2POLICYNO,C,30,0,Ins 2 Policy Number,Ins 2 Policy Number
+PERSON,I2FEDID,C,20,0,Ins 2 Federal ID Number,Ins 2 Federal ID #
+PERSON,I2EXPDATE,D,8,0,Ins 2 Expiration Date,Ins2 ExpDt
+PERSON,I2COMPANY,C,40,0,Ins 2 Company,Ins 2 Company
+PERSON,I2CONTACT,C,35,0,Ins 2 Contact,Ins 2 Contact
+PERSON,I2ADDRESS1,C,30,0,Ins 2 Address 1,Ins 2 Address 1
+PERSON,I2ADDRESS2,C,30,0,Ins 2 Address 2,Ins 2 Address 2
+PERSON,I2CITY,C,20,0,Ins 2 City,Ins 2 City
+PERSON,I2STATE,C,2,0,Ins 2 State,St
+PERSON,I2ZIP,C,10,0,Ins 2 Zip,Ins 2 Zip
+PERSON,I2PROVINCE,C,20,0,Ins 2 Province,Ins 2 Province
+PERSON,I2COUNTRY,C,20,0,Ins 2 Country,Ins 2 Country
+PERSON,I2PHONE1,C,20,0,Ins 2 Phone 1,Ins 2 Phone 1
+PERSON,I2PHONE2,C,20,0,Ins 2 Phone 2,Ins 2 Phone 2
+PERSON,I2FAX,C,20,0,Ins 2 Fax,Ins 2 Fax
+PERSON,I2EMAIL,C,40,0,Ins 2 Email,Ins 2 Email
+PERSON,CHGMARK,C,1,0,,
+
+Table,Field Name,Field Type,Length,Decimals,Field Description,Report Writer Heading
+
+PHYSIC,PHYSICALID,C,10,0,,
+PHYSIC,PERSONID,C,10,0,,
+PHYSIC,CREATEUSER,C,4,0,User who created the record,UseC
+PHYSIC,CREATEDATE,D,8,0,Date record was created,DateCr
+PHYSIC,CREATETIME,C,8,0,Time record was created,TimeCr
+PHYSIC,MODIFYUSER,C,4,0,User who last modified the record,UseM
+PHYSIC,MODIFYDATE,D,8,0,Date record was last modified,DateMod
+PHYSIC,MODIFYTIME,C,8,0,Time record was last modified,TimeMod
+PHYSIC,SEASON,C,9,0,"Season (Year - 2000, etc.)",Season
+PHYSIC,SPORT,C,40,0,Sport,Sport
+PHYSIC,TEAMNAME,C,35,0,Organization name,Organization Name
+PHYSIC,PHYSICDATE,D,8,0,Physical date,Phy Date
+PHYSIC,PHYSICIAN,C,40,0,Physician 1 (General Exam),General Exam Physician
+PHYSIC,DESCRIP,C,40,0,Purpose (description) of physical,Purpose of Physical
+PHYSIC,HEIGHT,C,10,0,Height,Height
+PHYSIC,WEIGHT,C,10,0,Weight,Weight
+PHYSIC,BODYFAT,C,10,0,Body fat percentage,Body Fat %
+PHYSIC,BLOODPRESS,C,10,0,Blood pressure,BloodPress
+PHYSIC,PULSE,C,10,0,Pulse,Pulse
+PHYSIC,BLOODTYPE,C,10,0,Blood type,Blood Type
+PHYSIC,TEMPERATUR,C,10,0,Temperature,Temperate
+PHYSIC,EYERIGHT,C,10,0,Right eye strength,Right Eye
+PHYSIC,EYELEFT,C,10,0,Left eye strength,Left Eye
+PHYSIC,TEST01DATE,D,8,0,Test 01 date,Test01Dt
+PHYSIC,TEST01COMM,C,30,0,Test 01 comment,Test 01 Comment
+PHYSIC,TEST02DATE,D,8,0,Test 02 date,Test02Dt
+PHYSIC,TEST02COMM,C,30,0,Test 02 comment,Test 02 Comment
+PHYSIC,TEST03DATE,D,8,0,Test 03 date,Test03Dt
+PHYSIC,TEST03COMM,C,30,0,Test 03 comment,Test 03 Comment
+PHYSIC,TEST04DATE,D,8,0,Test 04 date,Test04Dt
+PHYSIC,TEST04COMM,C,30,0,Test 04 comment,Test 04 Comment
+PHYSIC,TEST05DATE,D,8,0,Test 05 date,Test05Dt
+PHYSIC,TEST05COMM,C,30,0,Test 05 comment,Test 05 Comment
+PHYSIC,TEST06DATE,D,8,0,Test 06 date,Test06Dt
+PHYSIC,TEST06COMM,C,30,0,Test 06 comment,Test 06 Comment
+PHYSIC,TEST07DATE,D,8,0,Test 07 date,Test07Dt
+PHYSIC,TEST07COMM,C,30,0,Test 07 comment,Test 07 Comment
+PHYSIC,TEST08DATE,D,8,0,Test 08 date,Test08Dt
+PHYSIC,TEST08COMM,C,30,0,Test 08 comment,Test 08 Comment
+PHYSIC,TEST09DATE,D,8,0,Test 09 date,Test09Dt
+PHYSIC,TEST09COMM,C,30,0,Test 09 comment,Test 09 Comment
+PHYSIC,TEST10DATE,D,8,0,Test 10 date,Test10Dt
+PHYSIC,TEST10COMM,C,30,0,Test 10 comment,Test 10 Comment
+PHYSIC,TEST11DATE,D,8,0,Test 11 date,Test11Dt
+PHYSIC,TEST11COMM,C,30,0,Test 11 comment,Test 11 Comment
+PHYSIC,TEST12DATE,D,8,0,Test 12 date,Test12Dt
+PHYSIC,TEST12COMM,C,30,0,Test 12 comment,Test 12 Comment
+PHYSIC,TEST13DATE,D,8,0,Test 13 date,Test13Dt
+PHYSIC,TEST13COMM,C,30,0,Test 13 comment,Test 13 Comment
+PHYSIC,TEST14DATE,D,8,0,Test 14 date,Test14Dt
+PHYSIC,TEST14COMM,C,30,0,Test 14 comment,Test 14 Comment
+PHYSIC,TEST15DATE,D,8,0,Test 15 date,Test15Dt
+PHYSIC,TEST15COMM,C,30,0,Test 15 comment,Test 15 Comment
+PHYSIC,TEST16DATE,D,8,0,Test 16 date,Test16Dt
+PHYSIC,TEST16COMM,C,30,0,Test 16 comment,Test 16 Comment
+PHYSIC,TEST17DATE,D,8,0,Test 17 date,Test17Dt
+PHYSIC,TEST17COMM,C,30,0,Test 17 comment,Test 17 Comment
+PHYSIC,TEST18DATE,D,8,0,Test 18 date,Test18Dt
+PHYSIC,TEST18COMM,C,30,0,Test 18 comment,Test 18 Comment
+PHYSIC,TEST19DATE,D,8,0,Test 19 date,Test19Dt
+PHYSIC,TEST19COMM,C,30,0,Test 19 comment,Test 19 Comment
+PHYSIC,TEST20DATE,D,8,0,Test 20 date,Test20Dt
+PHYSIC,TEST20COMM,C,30,0,Test 20 comment,Test 20 Comment
+PHYSIC,TEST21DATE,D,8,0,Test 21 date,Test21Dt
+PHYSIC,TEST21COMM,C,30,0,Test 21 comment,Test 21 Comment
+PHYSIC,TEST22DATE,D,8,0,Test 22 date,Test22Dt
+PHYSIC,TEST22COMM,C,30,0,Test 22 comment,Test 22 Comment
+PHYSIC,TEST23DATE,D,8,0,Test 23 date,Test23Dt
+PHYSIC,TEST23COMM,C,30,0,Test 23 comment,Test 23 Comment
+PHYSIC,TEST24DATE,D,8,0,Test 24 date,Test24Dt
+PHYSIC,TEST24COMM,C,30,0,Test 24 comment,Test 24 Comment
+PHYSIC,TEST25DATE,D,8,0,Test 25 date,Test25Dt
+PHYSIC,TEST25COMM,C,30,0,Test 25 comment,Test 25 Comment
+PHYSIC,TEST26DATE,D,8,0,Test 26 date,Test26Dt
+PHYSIC,TEST26COMM,C,30,0,Test 26 comment,Test 26 Comment
+PHYSIC,TEST27DATE,D,8,0,Test 27 date,Test27Dt
+PHYSIC,TEST27COMM,C,30,0,Test 27 comment,Test 27 Comment
+PHYSIC,TEST28DATE,D,8,0,Test 28 date,Test28Dt
+PHYSIC,TEST28COMM,C,30,0,Test 28 comment,Test 28 Comment
+PHYSIC,TEST29DATE,D,8,0,Test 29 date,Test29Dt
+PHYSIC,TEST29COMM,C,30,0,Test 29 comment,Test 29 Comment
+PHYSIC,TEST30DATE,D,8,0,Test 30 date,Test30Dt
+PHYSIC,TEST30COMM,C,30,0,Test 30 comment,Test 30 Comment
+PHYSIC,IMMU01DATE,D,8,0,Immunization 01 date,Immu01Dt
+PHYSIC,IMMU01COMM,C,30,0,Immunization 01 comment,Immunization 01 Comment
+PHYSIC,IMMU02DATE,D,8,0,Immunization 02 date,Immu02Dt
+PHYSIC,IMMU02COMM,C,30,0,Immunization 02 comment,Immunization 02 Comment
+PHYSIC,IMMU03DATE,D,8,0,Immunization 03 date,Immu03Dt
+PHYSIC,IMMU03COMM,C,30,0,Immunization 03 comment,Immunization 03 Comment
+PHYSIC,IMMU04DATE,D,8,0,Immunization 04 date,Immu04Dt
+PHYSIC,IMMU04COMM,C,30,0,Immunization 04 comment,Immunization 04 Comment
+PHYSIC,IMMU05DATE,D,8,0,Immunization 05 date,Immu05Dt
+PHYSIC,IMMU05COMM,C,30,0,Immunization 05 comment,Immunization 05 Comment
+PHYSIC,IMMU06DATE,D,8,0,Immunization 06 date,Immu06Dt
+PHYSIC,IMMU06COMM,C,30,0,Immunization 06 comment,Immunization 06 Comment
+PHYSIC,IMMU07DATE,D,8,0,Immunization 07 date,Immu07Dt
+PHYSIC,IMMU07COMM,C,30,0,Immunization 07 comment,Immunization 07 Comment
+PHYSIC,IMMU08DATE,D,8,0,Immunization 08 date,Immu08Dt
+PHYSIC,IMMU08COMM,C,30,0,Immunization 08 comment,Immunization 08 Comment
+PHYSIC,IMMU09DATE,D,8,0,Immunization 09 date,Immu09Dt
+PHYSIC,IMMU09COMM,C,30,0,Immunization 09 comment,Immunization 09 Comment
+PHYSIC,IMMU10DATE,D,8,0,Immunization 10 date,Immu10Dt
+PHYSIC,IMMU10COMM,C,30,0,Immunization 10 comment,Immunization 10 Comment
+PHYSIC,IMMU11DATE,D,8,0,Immunization 11 date,Immu11Dt
+PHYSIC,IMMU11COMM,C,30,0,Immunization 11 comment,Immunization 11 Comment
+PHYSIC,IMMU12DATE,D,8,0,Immunization 12 date,Immu12Dt
+PHYSIC,IMMU12COMM,C,30,0,Immunization 12 comment,Immunization 12 Comment
+PHYSIC,IMMU13DATE,D,8,0,Immunization 13 date,Immu13Dt
+PHYSIC,IMMU13COMM,C,30,0,Immunization 13 comment,Immunization 13 Comment
+PHYSIC,IMMU14DATE,D,8,0,Immunization 14 date,Immu14Dt
+PHYSIC,IMMU14COMM,C,30,0,Immunization 14 comment,Immunization 14 Comment
+PHYSIC,IMMU15DATE,D,8,0,Immunization 15 date,Immu15Dt
+PHYSIC,IMMU15COMM,C,30,0,Immunization 15 comment,Immunization 15 Comment
+PHYSIC,NOTRISKFC,M,4,0,Notable risk factors concern,Notable Risk Factors Concern
+PHYSIC,NOTRISKFP,M,4,0,Notable risk factors plan,Notable Risk Factors Plan
+PHYSIC,NOTLABAC,M,4,0,Notable lab abnormalities concern,Notable Lab Abnormalities Concern
+PHYSIC,NOTLABAP,M,4,0,Notable lab abnormalities plan,Notable Lab Abnormalities Plan
+PHYSIC,NOTEKGAC,M,4,0,Notable EKG/Radio. abnormalities concern,Notable EKG/Radio. Abnormalities Concern
+PHYSIC,NOTEKBAP,M,4,0,Notable EKG/Radio. abnormalities plan,Notable EKG/Radio. Abnormalities Plan
+PHYSIC,NOTEXAMFC,M,4,0,Notable examination findings concern,Notable Examination Findings Concern
+PHYSIC,NOTEXAMFP,M,4,0,Notable examination findings plan,Notable Examination Findings Plan
+PHYSIC,INTPROBC,M,4,0,Internal problems concern,Internal Problems Concern
+PHYSIC,INTPROBP,M,4,0,Internal problems plan,Internal Problems Plan
+PHYSIC,OTHER,M,4,0,Other findings and comments,Other Findings and Comments
+PHYSIC,IMAGES,M,4,0,,
+PHYSIC,CURRENTMED,C,50,0,Current medications,Current medications
+PHYSIC,DICTATION,M,4,0,Dictation,Dictation
+PHYSIC,PHYSICIAN2,C,40,0,Physician 2 (Orthopedic Exam),Orthopedic Exam Physician
+PHYSIC,CHGMARK,C,1,0,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+Table,Field Name,Field Type,Length,Decimals,Field Description,Report Writer Heading
+
+PROGRS,PROGRESSID,C,10,0,,
+PROGRS,PERSONID,C,10,0,,
+PROGRS,INJURYID,C,10,0,,
+PROGRS,CREATEUSER,C,4,0,User who created the record,UseC
+PROGRS,CREATEDATE,D,8,0,Date record was created,DateCr
+PROGRS,CREATETIME,C,8,0,Time record was created,TimeCr
+PROGRS,MODIFYUSER,C,4,0,User who last modified the record,UseM
+PROGRS,MODIFYDATE,D,8,0,Date record was last modified,DateMod
+PROGRS,MODIFYTIME,C,8,0,Time record was last modified,TimeMod
+PROGRS,SEASON,C,9,0,"Season (Year - 2000, etc.)",Season
+PROGRS,SPORT,C,40,0,Sport,Sport
+PROGRS,TEAMNAME,C,35,0,Organization name,Organization Name
+PROGRS,SUBMITTED,L,1,0,Has this report been submitted? (Y/N),S
+PROGRS,SUBMITDATE,D,8,0,Date report was submitted,Sub Date
+PROGRS,PROGRSDATE,D,8,0,Date of the progress report,Prg Date
+PROGRS,STATUS,C,6,0,Status of the progress report (injury),Status
+PROGRS,PROGRESS,M,4,0,Progress of the injury,Progress of Injury
+PROGRS,NONACTIVE,M,4,0,Non-active treatment,Non-Active Treatment
+PROGRS,ACTIVE,M,4,0,Active treatment,Active Treatment
+PROGRS,MEDICATION,M,4,0,Medication,Medication
+PROGRS,FUNCACT,M,4,0,Functional Activity,Functional Activity
+PROGRS,COMMENT,M,4,0,Comment,Comment
+PROGRS,DICTATION,M,4,0,Doctor's dictation,Dictation
+PROGRS,SUBJECTIVE,M,4,0,S.O.A.P. - Subjective,Subjective
+PROGRS,OBJECTIVE,M,4,0,S.O.A.P. - Objective,Objective
+PROGRS,ASSESSMENT,M,4,0,S.O.A.P. - Assessment,Assessment
+PROGRS,PLAN,M,4,0,S.O.A.P. - Plan,Plan
+PROGRS,IMAGES,M,4,0,,
+PROGRS,CHGMARK,C,1,0,,
+
+Table,Field Name,Field Type,Length,Decimals,Field Description,Report Writer Heading
+
+SCHEDULE,SCHEDULEID,C,10,0,,
+SCHEDULE,CREATEUSER,C,4,0,User who created the record,UseC
+SCHEDULE,CREATEDATE,D,8,0,Date record was created,DateCr
+SCHEDULE,CREATETIME,C,8,0,Time record was created,TimeCr
+SCHEDULE,MODIFYUSER,C,4,0,User who last modified the record,UseM
+SCHEDULE,MODIFYDATE,D,8,0,Date record was last modified,DateMod
+SCHEDULE,MODIFYTIME,C,8,0,Time record was last modified,TimeMod
+SCHEDULE,TEAMNUMBER,C,2,0,Team number,O#
+SCHEDULE,YEAR,C,9,0,"Year (season - 2000, etc.)",Season
+SCHEDULE,SPORT,C,40,0,Sport,Sport
+SCHEDULE,SEASON,C,15,0,"Season (pre, regular, post)",Game Season
+SCHEDULE,SCHEDDATE,D,8,0,Date of game,Sch Date
+SCHEDULE,OPPONENT,C,25,0,Opponent,Opponent
+SCHEDULE,LOCATION,C,25,0,Location of game,Location
+SCHEDULE,DAYNIGHT,C,5,0,Day or night game,When
+SCHEDULE,GAMETIME,C,10,0,Time of game,Time
+SCHEDULE,NUMGAMES,N,1,0,Number of games,#
+SCHEDULE,RESULT1,C,4,0,Result of first game,Res1
+SCHEDULE,RESULT2,C,4,0,Result of second game,Res2
+SCHEDULE,ISSNUM01,N,5,0,ISS Numeric 01,
+SCHEDULE,ISSNUM02,N,5,0,ISS Numeric 02,
+SCHEDULE,ISSCHAR01,C,10,0,ISS Character 01,
+SCHEDULE,ISSCHAR02,C,10,0,ISS Character 02,
+SCHEDULE,TEMPERATE,N,3,0,Temperature,Tmp
+SCHEDULE,HUMIDITY,N,3,0,Humidity,Hum
+SCHEDULE,HEATINDEX,N,3,0,Heat Index,HIn
+SCHEDULE,DURATION,C,5,0,Duration,Dur.
+SCHEDULE,CHGMARK,C,1,0,,
+
+Table,Field Name,Field Type,Length,Decimals,Field Description,Report Writer Heading
+
+STATUS,CONTROLID,C,2,0,Control (organization) ID number,
+STATUS,FACILITYID,C,8,0,Next facility ID number,
+STATUS,SCHEDULEID,C,8,0,Next schedule ID number,
+STATUS,PERSONID,C,8,0,Next personnel ID number,
+STATUS,INJURYID,C,8,0,Next injury ID number,
+STATUS,PROGRESSID,C,8,0,Next progress ID number,
+STATUS,TREATMNTID,C,8,0,Next treatment ID number,
+STATUS,WEIGHTID,C,8,0,Next weight ID number,
+STATUS,FACTRNID,C,8,0,Next facility transaction ID number,
+STATUS,PHYSICALID,C,8,0,Next physical ID number,
+STATUS,WCHEADID,C,8,0,Next W/C header ID number,
+STATUS,WCLINEID,C,8,0,Next W/C line item ID number,
+STATUS,ORGEXPID,C,3,0,Next organization weekly export number,
+STATUS,MSTEXPID,C,3,0,Next master export number,
+
+Table,Field Name,Field Type,Length,Decimals,Field Description,Report Writer Heading
+
+TRTMNT,TREATMNTID,C,10,0,,
+TRTMNT,PERSONID,C,10,0,,
+TRTMNT,INJURYLINK,L,1,0,Treatment linked to an injury? (Y/N),I
+TRTMNT,INJURYID,C,10,0,,
+TRTMNT,CREATEUSER,C,4,0,User who created the record,UseC
+TRTMNT,CREATEDATE,D,8,0,Date record was created,DateCr
+TRTMNT,CREATETIME,C,8,0,Time record was created,TimeCr
+TRTMNT,MODIFYUSER,C,4,0,User who last modified the record,UseM
+TRTMNT,MODIFYDATE,D,8,0,Date record was last modified,DateMod
+TRTMNT,MODIFYTIME,C,8,0,Time record was last modified,TimeMod
+TRTMNT,SEASON,C,9,0,"Season (Year - 2000, etc.)",Season
+TRTMNT,SPORT,C,40,0,Sport,Sport
+TRTMNT,TEAMNUMBER,C,2,0,Organization number,O#
+TRTMNT,TEAMNAME,C,35,0,Organization name,Organization Name
+TRTMNT,TREATDATE,D,8,0,Treatment date,Trt Date
+TRTMNT,STATUS,C,8,0,"Status (Able, Not Able, Limited)",Status
+TRTMNT,MISSEDDAY,L,1,0,Is this a missed day? (Y/N),M
+TRTMNT,INJURY,M,4,0,Injury,Injury
+TRTMNT,BODYPART,M,4,0,Body part,Body Part
+TRTMNT,NONACTIVE,M,4,0,Non-active treatment,Non-Active Treatment
+TRTMNT,ACTIVE,M,4,0,Active treatment,Active Treatment
+TRTMNT,MEDICATION,M,4,0,Medication,Medication
+TRTMNT,FUNCACT,M,4,0,Functional activity,Functional Activity
+TRTMNT,LIMITATION,M,4,0,Limitation,Limitation
+TRTMNT,COMMENT,M,4,0,Comment,Comment
+TRTMNT,SUBJECTIVE,M,4,0,S.O.A.P. - Subjective,Subjective
+TRTMNT,OBJECTIVE,M,4,0,S.O.A.P. - Objective,Objective
+TRTMNT,ASSESSMENT,M,4,0,S.O.A.P. - Assessment,Assessment
+TRTMNT,PLAN,M,4,0,S.O.A.P. - Plan,Plan
+TRTMNT,DLDAY,L,1,0,D/L day? (Y/N),D
+TRTMNT,OSHA,C,3,0,OSHA recordable (Yes/No),OSH
+TRTMNT,IMAGES,M,4,0,,
+TRTMNT,PRINTONREP,L,1,0,Print on treatment reports (Y/N),P
+TRTMNT,PROGRAMID,C,20,0,Program ID,Program ID
+TRTMNT,PROGRAM,M,4,0,Program,Program
+TRTMNT,NEWINJURY,L,1,0,New injury? (Y/N),N
+TRTMNT,SURGDATE,D,8,0,Date of surgery,Surg Date
+TRTMNT,REPORTSTAT,C,30,0,Report status,Report Status
+TRTMNT,CHGMARK,C,1,0,,
+
+Table,Field Name,Field Type,Length,Decimals,Field Description,Report Writer Heading
+
+WEIGHT,WEIGHTID,C,10,0,,
+WEIGHT,PERSONID,C,10,0,,
+WEIGHT,CREATEUSER,C,4,0,User who created the record,UseC
+WEIGHT,CREATEDATE,D,8,0,Date record was created,DateCr
+WEIGHT,CREATETIME,C,8,0,Time record was created,TimeCr
+WEIGHT,MODIFYUSER,C,4,0,User who last modified the record,UseM
+WEIGHT,MODIFYDATE,D,8,0,Date record was last modified,DateMod
+WEIGHT,MODIFYTIME,C,8,0,Time record was last modified,TimeMod
+WEIGHT,SEASON,C,9,0,"Season (Year - 2000, etc.)",Season
+WEIGHT,SPORT,C,40,0,Sport,Sport
+WEIGHT,WEIGHTDATE,D,8,0,Date weighed,Wgt Date
+WEIGHT,WEIGHT,N,3,0,Weight,Wgt
+WEIGHT,BODYFAT,N,4,1,Percent body fat,BFat
+WEIGHT,METHOD,C,1,0,Method of measuring percent body fat,M
+WEIGHT,COMMENT,C,30,0,Body fat method comment,Body Fat Method Comment
+WEIGHT,CHGMARK,C,1,0,,
+
+
+,,,,,,
+,,,,,,
+,,,,,,

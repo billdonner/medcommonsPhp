@@ -1,0 +1,14 @@
+body {
+background-color: black;
+}
+#wrapper
+{background-color:  white;
+width: 80%;
+margin-top: 20px;
+padding: 10px 10px 10px 10px;
+border:  rgb(73,73,73);
+
+}
+.tiny {font-size:6px; color: #BBB;}
+#volatile {color: #BBB;}
+.menu {position:absolute;top:112px;left:27px; z-index:100; background: rgb(73,73,73)}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModulePrefs title="MedCommons - My Account" description="No need to logon" height="600" 
+               title_url="https://secure.test.medcommons.net/tracker/index.html"
+             author="bill donner" scaling="false" render_inline="optional" 
+                    author_affiliation="http://www.medcommons.net"/>
+  <UserPref name="mckey" required="true" display_name="medcommons tracker key (at www.medcommons.net/key)"/>
+  <Content type="url" href="https://secure.test.medcommons.net/acct/google.php "/>
+</Module>

@@ -1,0 +1,1102 @@
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd" xmlns:voc="urn:hl7-org:v3/voc" xmlns="urn:hl7-org:v3">
+	<realmCode code="US"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<templateId root="2.16.840.1.113883.10" extension="MPL_CDAR2_LEVEL1-2REF_US_I2_2005SEP"/>
+	<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.2"/>
+	<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5"/>
+	<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.7"/>
+	<id root="2.16.840.1.113883.3.106" extension="30ee39975c3949ba82969a2fe6a8b4ce"/>
+	<code displayName="Summary Of Episode Note" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="34133-9"/>
+	<title>CapMed XPHR Extract</title>
+	<effectiveTime value="20061116103011-0500"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en-US"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="0f5ace01227b4779bc64e219fcc63e20" root="2.16.840.1.113883.3.106"/>
+			<addr>
+				<streetAddressLine>758 Las Olas Dr.</streetAddressLine>
+				<city>Fort Lauderdale</city>
+				<state>FL</state>
+				<postalCode>33011</postalCode>
+			</addr>
+			<telecom use="HP" value="tel:415-555-1212"/>
+			<patient>
+				<name>
+					<family>PHR_CAPMED</family>
+					<given>capmed</given>
+				</name>
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19480116050000"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20061116103011-0500"/>
+		<assignedAuthor>
+			<id root="2.16.840.1.113883.3.106"/>
+			<addr>
+				<streetAddressLine>758 Las Olas Dr.</streetAddressLine>
+				<city>Fort Lauderdale</city>
+				<state>FL</state>
+				<postalCode>33011</postalCode>
+			</addr>
+			<assignedPerson>
+				<name>
+					<family>PHR_CAPMED</family>
+					<given>capmed</given>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+	<author>
+		<time value="20061116103011-0500"/>
+		<assignedAuthor>
+			<id root="2.16.840.1.113883.3.106" extension="4a2dd0531df34a20a9c0396b8e6bbfcf"/>
+			<assignedAuthoringDevice>
+				<softwareName>CapMed PHR</softwareName>
+			</assignedAuthoringDevice>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.3.106" extension="4f36a41bfd6445c9b025ebb54b625fd7"/>
+				<name>CapMed a division of BioImaging Technologies</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<participant typeCode="HLD">
+		<associatedEntity classCode="POLHOLD">
+			<id root="7a0ec8bb-b400-48f9-a273-805c5fc398f2" extension="079087"/>
+			<associatedPerson>
+				<name>Steven Hernandez</name>
+			</associatedPerson>
+			<scopingOrganization>
+				<name>Blue Cross Blue Shield of Florida BlueScript</name>
+			</scopingOrganization>
+		</associatedEntity>
+	</participant>
+	<participant typeCode="IND">
+		<associatedEntity classCode="ECON">
+			<id root="8355e40c-b6ef-4237-9d9b-23310c3eb3fd"/>
+			<telecom value="tel:223322223322" use="MC"/>
+			<associatedPerson>
+				<name>
+					<family>lName</family>
+					<given>fName</given>
+				</name>
+			</associatedPerson>
+			<scopingOrganization>
+				<addr>
+					<streetAddressLine>Addr1</streetAddressLine>
+					<city>Philly</city>
+					<state>PA</state>
+					<postalCode>19111</postalCode>
+				</addr>
+			</scopingOrganization>
+		</associatedEntity>
+	</participant>
+	<documentationOf>
+		<serviceEvent classCode="PCPR">
+			<performer typeCode="PPRF">
+				<functionCode nullFlavor="UNK"/>
+				<time nullFlavor="NA"/>
+				<assignedEntity>
+					<id root="56a97ab9-79fc-417f-9c38-50a0f3d20ccb"/>
+					<addr/>
+					<assignedPerson>
+						<name>
+							<family>Ganglion</family>
+							<given>Gary</given>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PPRF">
+				<functionCode nullFlavor="UNK"/>
+				<time nullFlavor="NA"/>
+				<assignedEntity>
+					<id root="faa411c8-ef8d-4f92-b269-e06151371d17"/>
+					<addr/>
+					<assignedPerson>
+						<name>
+							<family>Mitral</family>
+							<given>Myron</given>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+			<performer typeCode="PPRF">
+				<functionCode nullFlavor="UNK"/>
+				<time nullFlavor="NA"/>
+				<assignedEntity>
+					<id root="8b69f2a4-8de7-4a7a-824a-66ff3bbe1fd6"/>
+					<addr/>
+					<assignedPerson>
+						<name>
+							<family>Primary</family>
+							<given>Peter</given>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<documentationOf typeCode="DOC">
+		<serviceEvent classCode="CONS" moodCode="EVN">
+			<id root="545fab23-6640-45e1-8653-1ca69d60b6e2"/>
+			<effectiveTime>
+				<low value="20061116103011-0500"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+	<authorization>
+		<consent>
+			<code code="1.2.3.5.6" displayName="Clinical Use" codeSystem="1.2.3.5" codeSystemName="IHE Connectathon BPPC Policies"/>
+			<statusCode code="completed"/>
+		</consent>
+	</authorization>
+	<component>
+		<structuredBody>
+			<templateId root="2.16.840.1.113883.10" extension="MPL_CDAR2_LEVEL1-2REF_US_I2_2005SEP"/>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
+					<title>PROBLEM LIST</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Problem</th>
+									<th>Date</th>
+									<th>Status</th>
+									<th>Comments</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td ID="ref_49b46406c8bf4d9383acf224159a682e_phrCondition_Name_Active_1">Congestive Heart Failure</td>
+									<td>01-Apr-1999</td>
+									<td>Active</td>
+									<td>Test Problem Coment. Comments created by Smithers, John</td>
+								</tr>
+								<tr>
+									<td ID="ref_49b46406c8bf4d9383acf224159a682e_phrCondition_Name_Active_2">Diabetes Mellitus</td>
+									<td>01-Mar-1984</td>
+									<td>Active</td>
+									<td>
+                  </td>
+								</tr>
+								<tr>
+									<td ID="ref_49b46406c8bf4d9383acf224159a682e_phrCondition_Name_Active_3">Hypertension</td>
+									<td>08-Aug-1990</td>
+									<td>Active</td>
+									<td>
+                  </td>
+								</tr>
+								<tr>
+									<td ID="ref_49b46406c8bf4d9383acf224159a682e_phrCondition_Name_Active_4">Myocardial Infarction</td>
+									<td>25-Jan-2003</td>
+									<td>Active</td>
+									<td>
+                  </td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<id root="f310204b-04da-47e9-b8ba-06179ed882f7"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="19990401050000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN" negationInd="true">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id root="0c0aff2d-9131-42b2-a67b-07f6e78425c4"/>
+									<code code="PROBLEM" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="19990401050000"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<originalText>
+											<reference value="#ref_49b46406c8bf4d9383acf224159a682e_phrCondition_Name_Active_1"/>
+										</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<id root="b7bd08e9-a67f-4c45-b10e-4009ea3aa904"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="19840301050000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN" negationInd="true">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id root="a1b84466-8a72-4df5-9dd8-b13902210af7"/>
+									<code code="PROBLEM" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="19840301050000"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<originalText>
+											<reference value="#ref_49b46406c8bf4d9383acf224159a682e_phrCondition_Name_Active_2"/>
+										</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<id root="c4d899ed-6341-4560-aaed-af1a96965ec4"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="19900808040000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN" negationInd="true">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id root="fa0593a2-bf7b-4013-9350-2ad7015d1bf7"/>
+									<code code="PROBLEM" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="19900808040000"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<originalText>
+											<reference value="#ref_49b46406c8bf4d9383acf224159a682e_phrCondition_Name_Active_3"/>
+										</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<id root="adb4635d-f4cd-4712-bb20-5680974c890a"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low value="20030125050000"/>
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN" negationInd="true">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id root="64ee6d3b-3c82-4c45-b1c7-bb39d98c7b78"/>
+									<code code="PROBLEM" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20030125050000"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<originalText>
+											<reference value="#ref_49b46406c8bf4d9383acf224159a682e_phrCondition_Name_Active_4"/>
+										</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+					<code code="10155-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF ALLERGIES"/>
+					<title>Allergies and Adverse Reactions</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Allergen </th>
+									<th>Reaction </th>
+									<th>Comments</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td ID="ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_1">Penicillins</td>
+									<td ID="ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_reaction1">Rash/Eruption Severe</td>
+									<td>
+                  </td>
+								</tr>
+								<tr>
+									<td ID="ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_2">Sulfa (Sulfonamides)</td>
+									<td ID="ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_reaction2">Fever Moderate</td>
+									<td>
+                  </td>
+								</tr>
+								<tr>
+									<td ID="ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_3">Ragweed</td>
+									<td ID="ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_reaction3">Congestion Mild</td>
+									<td>
+                  </td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<observation classCode="COND" moodCode="EVN" negationInd="false">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+							<id root="f85d1ff0-041a-4a78-b65f-ffdc79c43269"/>
+							<code code="ALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="19700115050000"/>
+							</effectiveTime>
+							<value xsi:type="CD">
+								<originalText>
+									<reference value="#ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_1"/>
+								</originalText>
+							</value>
+							<participant typeCode="CSM">
+								<participantRole classCode="MANU">
+									<playingEntity classCode="MMAT">
+										<code>
+											<originalText>
+												<reference value="#ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_1"/>
+											</originalText>
+										</code>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="MFST">
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+								<observation classCode="OBS" moodCode="EVN" negationInd="false">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id root="9a0dbfa2-f881-45a2-8608-bc487c8072c0"/>
+									<code code="PROBLEM" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode"/>
+									<statusCode code="completed"/>
+									<value xsi:type="CD">
+										<originalText>
+											<reference value="#ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_reaction1"/>
+										</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+					<entry>
+						<observation classCode="COND" moodCode="EVN" negationInd="false">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+							<id root="b2ada46c-2f9f-42ef-b2d4-69100e112b07"/>
+							<code code="ALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20050329050000"/>
+							</effectiveTime>
+							<value xsi:type="CD">
+								<originalText>
+									<reference value="#ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_2"/>
+								</originalText>
+							</value>
+							<participant typeCode="CSM">
+								<participantRole classCode="MANU">
+									<playingEntity classCode="MMAT">
+										<code>
+											<originalText>
+												<reference value="#ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_2"/>
+											</originalText>
+										</code>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="MFST">
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+								<observation classCode="OBS" moodCode="EVN" negationInd="false">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id root="7402fb10-19a7-459c-9bb6-5afa32719b71"/>
+									<code code="PROBLEM" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode"/>
+									<statusCode code="completed"/>
+									<value xsi:type="CD">
+										<originalText>
+											<reference value="#ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_reaction2"/>
+										</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+					<entry>
+						<observation classCode="COND" moodCode="EVN" negationInd="false">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+							<id root="3aaa08c5-b22f-408c-8404-fb54ff0a68e1"/>
+							<code code="ALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType"/>
+							<statusCode code="completed"/>
+							<effectiveTime/>
+							<value xsi:type="CD">
+								<originalText>
+									<reference value="#ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_3"/>
+								</originalText>
+							</value>
+							<participant typeCode="CSM">
+								<participantRole classCode="MANU">
+									<playingEntity classCode="MMAT">
+										<code>
+											<originalText>
+												<reference value="#ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_3"/>
+											</originalText>
+										</code>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="MFST">
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+								<observation classCode="OBS" moodCode="EVN" negationInd="false">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id root="34ae4c3f-24af-4c52-9fe4-b1be0d96b8ab"/>
+									<code code="PROBLEM" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode"/>
+									<statusCode code="completed"/>
+									<value xsi:type="CD">
+										<originalText>
+											<reference value="#ref_62b3e81632cd4612ab7dffc23bf00614_phrAllergy_Name_reaction3"/>
+										</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF MEDICATION USE"/>
+					<title>Medications</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Medication</th>
+									<th>Frequency</th>
+									<th>Route</th>
+									<th>Dates of Use</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_1">metformin</td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__fr_1">bid</td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_1">PO</td>
+									<td>29-Mar-2005 - present</td>
+								</tr>
+								<tr>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_2">ezetimibe-simvastatin</td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__fr_2">bid</td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_2">PO</td>
+									<td>22-Jul-2005 - present</td>
+								</tr>
+								<tr>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_3">insulin lispro</td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__fr_3">
+                  </td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_3">
+                  </td>
+									<td>29-Oct-2005 - present</td>
+								</tr>
+								<tr>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_4">predniSONE</td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__fr_4">qd</td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_4">PO</td>
+									<td>29-Oct-2005 - present</td>
+								</tr>
+								<tr>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_5">nafcillin</td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__fr_5">q4h</td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_5">IVPB</td>
+									<td>29-Oct-2005 - present</td>
+								</tr>
+								<tr>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_6">influenza virus vaccine, live, trivalent</td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__fr_6">
+                  </td>
+									<td ID="ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_6">NAS</td>
+									<td>29-Oct-2005 - present</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<id root="325a7a1e-4df5-46fd-91f0-94904af0405b"/>
+							<code>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_1"/>
+								</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20050329050000"/>
+							</effectiveTime>
+							<routeCode>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_1"/>
+								</originalText>
+							</routeCode>
+							<doseQuantity value="100" unit="tablet"/>
+							<rateQuantity nullFlavor="UNK"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code>
+											<originalText>
+												<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_1"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<id root="c8b89278-5d3e-40cf-ba87-40f8afaff215"/>
+							<code>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_2"/>
+								</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20050722040000"/>
+							</effectiveTime>
+							<routeCode>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_2"/>
+								</originalText>
+							</routeCode>
+							<doseQuantity value="50" unit="tablet"/>
+							<rateQuantity nullFlavor="UNK"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code>
+											<originalText>
+												<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_2"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<id root="ef3639bf-1242-4a6f-85a1-f7f8095ba047"/>
+							<code>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_3"/>
+								</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20051029040000"/>
+							</effectiveTime>
+							<routeCode nullFlavor="UNK"/>
+							<doseQuantity value="100" unit="injection"/>
+							<rateQuantity nullFlavor="UNK"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code>
+											<originalText>
+												<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_3"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<id root="6cc45572-4b8e-46c0-93d4-0bb8e8afb3ee"/>
+							<code>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_4"/>
+								</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20051029040000"/>
+							</effectiveTime>
+							<routeCode>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_4"/>
+								</originalText>
+							</routeCode>
+							<doseQuantity value="15" unit="tablet"/>
+							<rateQuantity nullFlavor="UNK"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code>
+											<originalText>
+												<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_4"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<id root="37e51fca-7b98-4e4b-8e8b-364227980235"/>
+							<code>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_5"/>
+								</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20051029040000"/>
+							</effectiveTime>
+							<routeCode>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_5"/>
+								</originalText>
+							</routeCode>
+							<doseQuantity value="1"/>
+							<rateQuantity nullFlavor="UNK"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code>
+											<originalText>
+												<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_5"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+							<id root="c83645b7-d3e7-453b-93c5-d312616158c1"/>
+							<code>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_6"/>
+								</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20051029040000"/>
+							</effectiveTime>
+							<routeCode>
+								<originalText>
+									<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name__route_6"/>
+								</originalText>
+							</routeCode>
+							<doseQuantity value="1" unit="spray"/>
+							<rateQuantity nullFlavor="UNK"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code>
+											<originalText>
+												<reference value="#ref_77f902f77b27431287b3fafc8242b6e5_phrMed_Name_6"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
+					<code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>VITAL SIGNS</title>
+					<text>
+						<table border="1">
+							<thead>
+								<tr>
+									<th>Date / Time</th>
+									<th ID="ref_aeb15cf2631a452da63ccb58c51c0b8211793875851724767337">24-Aug-2005 4:00 AM</th>
+									<th ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251724767337">24-Sep-2005 4:00 AM</th>
+									<th ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251858657385">24-Sep-2005 4:01 AM</th>
+									<th ID="ref_aeb15cf2631a452da63ccb58c51c0b8248956625554695470">24-Sep-2005 4:11 AM</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82Diastolic">Diastolic</td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b8211793875851724767337Diastolic">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251724767337Diastolic">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251858657385Diastolic">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b8248956625554695470Diastolic">90 mm Hg</td>
+								</tr>
+								<tr>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82Height">Height</td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b8211793875851724767337Height">155 cm</td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251724767337Height">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251858657385Height">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b8248956625554695470Height">
+                  </td>
+								</tr>
+								<tr>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82Respiratory_Rate">Respiratory Rate</td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b8211793875851724767337Respiratory_Rate">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251724767337Respiratory_Rate">23 /min</td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251858657385Respiratory_Rate">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b8248956625554695470Respiratory_Rate">
+                  </td>
+								</tr>
+								<tr>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82Systolic">Systolic</td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b8211793875851724767337Systolic">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251724767337Systolic">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251858657385Systolic">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b8248956625554695470Systolic">130 mm Hg</td>
+								</tr>
+								<tr>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82Weight">Weight</td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b8211793875851724767337Weight">55 kg</td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251724767337Weight">
+                  </td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b82489566251858657385Weight">73 kg</td>
+									<td ID="ref_aeb15cf2631a452da63ccb58c51c0b8248956625554695470Weight">
+                  </td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+							<id root="55f705b7-837c-4618-95ec-2d0411a2e569"/>
+							<code>
+								<originalText>
+									<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b82Height"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b8211793875851724767337Height"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20050824040000"/>
+							<value xsi:type="ST">155 cm</value>
+						</observation>
+					</entry>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+							<id root="05d9dff1-5b44-4d9c-a6da-9703e2f7968c"/>
+							<code>
+								<originalText>
+									<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b82Weight"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b8211793875851724767337Weight"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20050824040000"/>
+							<value xsi:type="ST">55 kg</value>
+						</observation>
+					</entry>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+							<id root="763058cb-e8d6-4faa-a906-6f713ef1b9c6"/>
+							<code>
+								<originalText>
+									<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b82Weight"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b82489566251858657385Weight"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20050924040100"/>
+							<value xsi:type="ST">73 kg</value>
+						</observation>
+					</entry>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+							<id root="c02c23a6-29ad-4573-889c-1f8be347c54e"/>
+							<code>
+								<originalText>
+									<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b82Systolic"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b8248956625554695470Systolic"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20050924041100"/>
+							<value xsi:type="ST">130 mm Hg</value>
+						</observation>
+					</entry>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+							<id root="99ed2ef5-a90c-4706-98fa-9791da04e511"/>
+							<code>
+								<originalText>
+									<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b82Diastolic"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b8248956625554695470Diastolic"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20050924041100"/>
+							<value xsi:type="ST">90 mm Hg</value>
+						</observation>
+					</entry>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+							<id root="37e99d11-a606-4947-8172-90a33cbf3a86"/>
+							<code>
+								<originalText>
+									<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b82Respiratory_Rate"/>
+								</originalText>
+							</code>
+							<text>
+								<reference value="#ref_aeb15cf2631a452da63ccb58c51c0b82489566251724767337Respiratory_Rate"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime value="20050924040000"/>
+							<value xsi:type="ST">23 /min</value>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+					<code code="111369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF IMMUNIZATIONS"/>
+					<title>IMMUNIZATIONS</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Vaccine</th>
+									<th>Date</th>
+									<th>Notes</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td ID="ref_c458d731d70f4baa9ce32a81b36805c1_phrImmunization_1">Influenza</td>
+									<td>22-Sep-2005</td>
+									<td>
+                  </td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+							<id root="8e0e05cd-0804-484b-9a3e-de6d1b550431"/>
+							<code>
+								<originalText>
+									<reference value="#ref_c458d731d70f4baa9ce32a81b36805c1_phrImmunization_1"/>
+								</originalText>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime value="20050922040000"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code>
+											<originalText>
+												<reference value="#ref_c458d731d70f4baa9ce32a81b36805c1_phrImmunization_1"/>
+											</originalText>
+										</code>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3"/>
+					<code code="46240-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF HOSPITALIZATIONS+ HISTORY OF OUTPATIENT VISITS"/>
+					<title>Encounter Histories</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Visit Summary</th>
+									<th>Visit</th>
+									<th>Medical Contact</th>
+									<th>Location</th>
+									<th>Reason</th>
+									<th>Date</th>
+									<th>Notes</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Stephen Goldberg (Broward Medical Center) on 24-Sep-2005 </td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitTitle_1">Chest pain</td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitmedContact_1">Stephen Goldberg</td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitLocation_1">Broward Medical Center</td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitReason_1">Congestive Heart Failure</td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitDate_1">24-Sep-2005</td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitNotes_1">
+                  </td>
+								</tr>
+								<tr>
+									<td>Myron Mitral (CCR Physician Group) on 05-Sep-2005 </td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitTitle_2">Chest pain evaluation</td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitmedContact_2">Myron Mitral</td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitLocation_2">CCR Physician Group</td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitReason_2">Congestive Heart Failure</td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitDate_2">05-Sep-2005</td>
+									<td ID="ref_850881dff32d44fb981777b627e11fc7_phrDocVisit__visitNotes_2">
+                  </td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+							<id root="ed1c29df-9ffb-421d-ac7c-b8c702ec1237"/>
+							<code codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActEncounterCode" nullFlavor="UNK"/>
+							<effectiveTime value="20050924040000"/>
+							<performer>
+								<time value="20050924040000"/>
+								<assignedEntity>
+									<id root="68eed650-7428-46c4-8fa5-1b4ddbd7c36f"/>
+									<assignedPerson>
+										<name>Stephen Goldberg</name>
+									</assignedPerson>
+									<representedOrganization>
+										<name>Broward Medical Center</name>
+									</representedOrganization>
+								</assignedEntity>
+							</performer>
+						</encounter>
+					</entry>
+					<entry>
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+							<id root="a38807ac-99e8-438a-aeea-d484c8528010"/>
+							<code codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActEncounterCode" nullFlavor="UNK"/>
+							<effectiveTime value="20050905040000"/>
+							<performer>
+								<time value="20050905040000"/>
+								<assignedEntity>
+									<id root="1aa12574-b26b-4f89-a309-5b953e0b1823"/>
+									<assignedPerson>
+										<name>Myron Mitral</name>
+									</assignedPerson>
+									<representedOrganization>
+										<name>CCR Physician Group</name>
+									</representedOrganization>
+								</assignedEntity>
+							</performer>
+						</encounter>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+					<code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF MEDICAL DEVICE USE"/>
+					<title>Medical Devices</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Device Name</th>
+									<th>Device Manufacturer</th>
+									<th>Device Date</th>
+									<th>Notes</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>My Super monitor</td>
+									<td>Sony</td>
+									<td>
+                  </td>
+									<td>
+                  </td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.14"/>
+					<code code="10157-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Family History"/>
+					<title>Family History</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Relative</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Mother</td>
+									<td>ANEMIA UNSPECIFIED</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

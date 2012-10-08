@@ -1,0 +1,176 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="Patient">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" default="">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="11" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="FamilyName" type="xs:string" default="" minOccurs="0" />
+                <xs:element name="GivenNames" type="xs:string" default="" minOccurs="0" />
+                <xs:element name="Address" type="xs:string" default="" minOccurs="0" />
+                <xs:element name="PhoneEmail" type="xs:string" default="" minOccurs="0" />
+                <xs:element name="DateOfBirth" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Weight" type="xs:decimal" default="0" minOccurs="0" />
+                <xs:element name="Height" type="xs:decimal" default="0" minOccurs="0" />
+                <xs:element name="Sex" type="xs:int" default="-1" minOccurs="0" />
+                <xs:element name="Smoker" type="xs:int" default="-1" minOccurs="0" />
+                <xs:element name="Diabetic" type="xs:int" default="-1" minOccurs="0" />
+                <xs:element name="Cholestrol" type="xs:decimal" default="0" minOccurs="0" />
+                <xs:element name="FamilyHistory" type="xs:string" default="" minOccurs="0" />
+                <xs:element name="PatientNotes" type="xs:string" default="" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="MeasureRec">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" default="">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="11" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="RecID" type="xs:int" default="0" minOccurs="0" />
+                <xs:element name="MAM" type="xs:int" default="0" minOccurs="0" />
+                <xs:element name="Arrhythmia" type="xs:int" default="0" minOccurs="0" />
+                <xs:element name="ReadingDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Sys" type="xs:int" default="0" minOccurs="0" />
+                <xs:element name="Dia" type="xs:int" default="0" minOccurs="0" />
+                <xs:element name="Map" type="xs:int" default="0" minOccurs="0" />
+                <xs:element name="PP" type="xs:int" default="0" minOccurs="0" />
+                <xs:element name="Pulse" type="xs:int" default="0" minOccurs="0" />
+                <xs:element name="Error" type="xs:int" default="0" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Comment">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" default="">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="11" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="CommentID" type="xs:int" />
+                <xs:element name="Degree" type="xs:int" default="0" minOccurs="0" />
+                <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="EndDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Comment" type="xs:string" default="AAA" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="DataTransferLog">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" default="">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="11" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="RecID" type="xs:int" default="0" minOccurs="0" />
+                <xs:element name="TransferDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="NumofRecord" type="xs:int" default="0" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//Patient" />
+        <xs:field xpath="ID" />
+      </xs:unique>
+      <xs:unique name="MeasureRec_Constraint1" msdata:ConstraintName="Constraint1">
+        <xs:selector xpath=".//MeasureRec" />
+        <xs:field xpath="RecID" />
+      </xs:unique>
+      <xs:unique name="Comment_Constraint1" msdata:ConstraintName="Constraint1">
+        <xs:selector xpath=".//Comment" />
+        <xs:field xpath="CommentID" />
+      </xs:unique>
+      <xs:unique name="Constraint2" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//Comment" />
+        <xs:field xpath="ID" />
+        <xs:field xpath="CommentID" />
+      </xs:unique>
+      <xs:unique name="DataTransferLog_Constraint1" msdata:ConstraintName="Constraint1">
+        <xs:selector xpath=".//DataTransferLog" />
+        <xs:field xpath="RecID" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <Patient>
+    <ID>0172112852</ID>
+    <FamilyName>Gropper</FamilyName>
+    <GivenNames>Adrian</GivenNames>
+    <Address>52 Marshall St. Watertown MA 02472</Address>
+    <PhoneEmail>agropper@medcommons.net</PhoneEmail>
+    <DateOfBirth>1952-06-15T00:00:00.0000000-04:00</DateOfBirth>
+    <Weight>81.64672</Weight>
+    <Height>177.8</Height>
+    <Sex>1</Sex>
+    <Smoker>0</Smoker>
+    <Diabetic>0</Diabetic>
+    <Cholestrol>0</Cholestrol>
+    <FamilyHistory />
+    <PatientNotes />
+  </Patient>
+  <MeasureRec>
+    <ID>0172112852</ID>
+    <RecID>1000066</RecID>
+    <MAM>2</MAM>
+    <Arrhythmia>1</Arrhythmia>
+    <ReadingDate>2006-10-02T21:10:00.0000000-04:00</ReadingDate>
+    <Sys>119</Sys>
+    <Dia>75</Dia>
+    <Map>89</Map>
+    <PP>44</PP>
+    <Pulse>74</Pulse>
+    <Error>0</Error>
+  </MeasureRec>
+  <MeasureRec>
+    <ID>0172112852</ID>
+    <RecID>1000067</RecID>
+    <MAM>0</MAM>
+    <Arrhythmia>1</Arrhythmia>
+    <ReadingDate>2006-10-02T21:13:00.0000000-04:00</ReadingDate>
+    <Sys>111</Sys>
+    <Dia>68</Dia>
+    <Map>82</Map>
+    <PP>43</PP>
+    <Pulse>74</Pulse>
+    <Error>0</Error>
+  </MeasureRec>
+  <MeasureRec>
+    <ID>0172112852</ID>
+    <RecID>1000068</RecID>
+    <MAM>0</MAM>
+    <Arrhythmia>1</Arrhythmia>
+    <ReadingDate>2006-10-02T21:15:00.0000000-04:00</ReadingDate>
+    <Sys>128</Sys>
+    <Dia>75</Dia>
+    <Map>92</Map>
+    <PP>53</PP>
+    <Pulse>70</Pulse>
+    <Error>0</Error>
+  </MeasureRec>
+  <DataTransferLog>
+    <ID>0172112852</ID>
+    <RecID>100015</RecID>
+    <TransferDate>2006-10-02T21:40:39.9922864-04:00</TransferDate>
+    <NumofRecord>3</NumofRecord>
+  </DataTransferLog>
+</NewDataSet>

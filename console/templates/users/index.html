@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% load medcommons %}
+
+{% block title %}Account List{% endblock %}
+
+{% block sidebar %}
+<ul class='object-tools'>
+  <li><a href='create' class='addlink'>Create Account</a></li>
+</ul>
+{% endblock sidebar %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+Accounts
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td>
+	<a href='{{ order_query }}order=mcid'>
+	  <img src='{{ media }}img/up.png' width='5' height='4'
+	       alt='Sort by MCID (increasing)' />
+	</a>
+	MCID
+	<a href='{{ order_query }}order=-mcid'>
+	  <img src='{{ media }}img/dn.png' widht='5' height='4'
+	       alt='Sort by MCID (decreasing)' />
+	</a>
+      </td>
+      <td>
+	<a href='{{ order_query }}order=last_name,first_name'>
+	  <img src='{{ media }}img/up.png' width='5' height='4'
+	       alt='Sort by Name (increasing)' />
+	</a>
+	Name
+	<a href='{{ order_query }}order=-last_name,-first_name'>
+	  <img src='{{ media }}img/dn.png' width='5' height='4'
+	       alt='Sort by Name (decreasing)' />
+	</a>
+      </td>
+      <td>
+	<a href='{{ order_query }}order=email'>
+	  <img src='{{ media }}img/up.png' width='5' height='4'
+	       alt='Sort by Email (increasing)' />
+	</a>
+	Email
+	<a href='{{ order_query }}order=-email'>
+	  <img src='{{ media }}img/dn.png' width='5' height='4'
+	       alt='Sort by Email (decreasing)' />
+	</a>
+      </td>
+      <td>Status</td>
+      <td>
+    <a href='{{ order_query }}order=since'>
+      <img src='{{ media }}img/up.png' width='5' height='4'
+           alt='Sort by Account Created (increasing)' />
+    </a>
+    Account Created
+    <a href='{{ order_query }}order=-since'>
+      <img src='{{ media }}img/dn.png' width='5' height='4'
+           alt='Sort by Account Created (decreasing)' />
+    </a>
+      </td>
+      <td>
+    <a href='{{ order_query }}order=ccrlogupdatetime'>
+      <img src='{{ media }}img/up.png' width='5' height='4'
+           alt='Sort by Update Time (increasing)' />
+    </a>
+    CCR Log Updated
+    <a href='{{ order_query }}order=-ccrlogupdatetime'>
+      <img src='{{ media }}img/dn.png' width='5' height='4'
+           alt='Sort by Update Time (decreasing)' />
+    </a>
+      </td>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan='7'>
+	<span style='float: left'>
+{% if has_previous %}
+<a href='{{ search_query }}page=1'>&laquo; first</a>
+<a href='{{ search_query }}page={{ previous }}'>&lt; prev</a>
+{% endif %}
+	</span>
+	<span style='float: right'>
+{% if has_next %}
+<a href='{{ search_query }}page={{ next }}'>next &gt;</a>
+<a href='{{ search_query }}page={{ pages }}'>last &raquo;</a>
+{% endif %}
+	</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='7'>
+	<span style='float: left'>
+	  <a href='create'>
+	    <img src='{{ media }}img/CreateUser.png' width='20' height='20'
+		 alt='Create Account' />
+	    create account
+	  </a>
+	</span>
+	<span style='float: right'>
+Page {{ page }} of {{ pages }}.
+	</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='7'>
+<form method='get' action='search'>
+  <label>Search Accounts:
+    <input type='text' name='q' value='{{ q }}' size='30' /></label>
+  <input type='image' src='{{ media }}img/icon_searchbox.png' width='18' height='16'
+         name='search' alt='Search Accounts' />
+</form>
+      </td>
+    </tr>
+  </tfoot>
+
+  <tbody>
+{% for entry in object_list %}
+    <tr class='{% cycle a,b %}'>
+      <td>
+        <a href='edit?mcid={{ entry.mcid }}'>
+	  <img src='{{ media }}img/icon_changelink.gif' width='10' height='10'
+	       alt='Edit account' />
+	</a>
+	<a href='disable?mcid={{ entry.mcid }}'>
+	  <img src='{{ media }}img/icon_deletelink.gif' width='10' height='10'
+	       alt='Disable account' />
+	</a>
+      </td>
+      <td>
+        <a href='user?mcid={{ entry.mcid }}'>{{ entry.pretty_mcid }} </a>
+      </td>
+      <td>{{ entry.first_name }} {{ entry.last_name }}</td>
+      <td><a href='search?q={{ entry.email }}'>{{ entry.email }}</a></td>
+      <td>{{ entry.get_acctype_display }}</td>
+      <td>{{ entry.since }}</td>
+      <td>{{ entry.ccrlogupdatetime|timestamp }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

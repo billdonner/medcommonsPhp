@@ -1,0 +1,15 @@
+; /var/named/localhost.ref
+; Terence Way, June 28 2006
+
+$TTL	24h;
+
+@	IN	SOA	localhost. root.localhost. (
+				2006062800 ; serial
+				3h	   ; refresh
+				15	   ; retry
+				1w	   ; expire
+				3h	   ; minimum
+			)
+
+	IN	NS	localhost.
+1	IN	PTR	localhost.

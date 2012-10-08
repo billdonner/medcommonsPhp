@@ -1,0 +1,8 @@
+#!/bin/sh
+
+prog="/var/www/html/notifications/alerter.php"
+log="/var/log/mc_alerter.log"
+
+echo "Starting mc_alerter at `date`" >> ${log}
+php -f ${prog} >> ${log} 2>&1 &
+echo $! > /var/run/mc_alerter.pid

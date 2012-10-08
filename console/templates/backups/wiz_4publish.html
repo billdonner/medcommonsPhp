@@ -1,0 +1,67 @@
+{% extends "form.html" %}
+
+{% block title %}S3 Keys{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Backups</a> &gt;
+S3 Keys
+{% endblock %}
+
+{% block content %}
+
+<div class='breadcrumbs'>
+  <a href='keys'>1) S3 Keys</a> &gt;
+  <a href='buckets'>2) S3 Buckets</a> &gt;
+  <a href='encryption'>3) Encryption</a> &gt;
+  <b>4) Publish</b>
+</div>
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<img src='{{ media }}img/Circle_4.png' width='20' height='20'
+     alt='4' />
+<p>
+You're done configuring backups!
+</p>
+
+<p>
+Clicking on 'Finish' will publish the results to the various
+configuration files.
+</p>
+
+<p>
+You will need to restart the gateway:
+<pre>
+# /etc/init.d/gateway stop
+# /etc/init.d/gateway start
+</pre>
+</p>
+<p>
+You should also  make sure that the mc_backups daemon is running:
+<pre>
+# /etc/init.d/mc_backups restart
+</pre>
+</p>
+
+<table id='submit-row'>
+  <tr>
+    <td></td>
+    <td rowspan='2' style='vertical-align:bottom'>
+      <form method='post' action='/cgi-bin/publish'>
+        <input tabindex='2' type='submit' class='default' name='next' value='Finish' />
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <form method='post' action='publish'>
+        <input tabindex='1' type='submit' name='prev' value='&lt;&lt; Prev' />
+      </form>
+    </td>
+  </tr>
+</table>
+
+{% endblock %}

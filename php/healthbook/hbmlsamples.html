@@ -1,0 +1,151 @@
+<html><head><title>HBML Samples for Healthbook</title>
+	<style type="text/css">
+body {margin-left:auto; margin-right:auto; width:80%;}
+xmp {background-color:gray; color:white;}
+	a.tinylink  {font-size:xx-small; text-decoration:underline; color: gray;}
+	</style>
+</head>
+
+
+<body>
+<img src="http://profile.ak.facebook.com/object2/120/59/t5877746597_7985.jpg" />
+<h2>HBML Samples</h2>
+Please feel free to hack and redistribute. Please send contributions back to Healthbook via the Discussion Board
+<h3>
+A Simple Blood Pressure Tracker
+</h3>
+<p>This piece of HBML scoops up blood pressure, pulse, and comments from the form submitted and uses the associated 'pathmap' variables to map the entered values into different data elements in your health records</p>
+<p>You can play with this by pasting this code as is or with modifications into the Healthbook HBML Editor</p>
+<xmp>
+<fb:explanation>
+<fb:message>Keep Track of Your Blood Pressure</fb:message>
+<table><tr><td><img src='http://profile.ak.facebook.com/object2/613/13/n7849883337_8257.jpg'  /></td>
+<td>By periodically entering your blood pressure and pulse, you are building a history of your health that can be referenced by your Care Team</td></tr><table> <p>
+this was written by the good folks at <a href='http://www.facebook.com/group.php?gid=7849883337' >HBP of Lake Wobegone</a></p>
+<fb:editor action='hbmlposted.php' labelwidth="100">
+<input type=hidden name=retloc value='hbmlexec.php?stored'/>
+<input type=hidden name=title value='Simple Blood Pressure Gizmo from HBP Wobegone'/>
+     <fb:editor-text label="Systolic" name="systolic" value=""/>
+        <input type=hidden name='__var_1' value='systolic' />
+         <input type=hidden name='__var_1_pathmap' value='currentccr/bp/systolic' />
+     <fb:editor-text label="Diastolic" name="diastolic" value=""/>
+         <input type=hidden name='__var_2' value='diastolic' />
+        <input type=hidden name='__var_2_pathmap' value='currentccr/bp/diastolic' />
+     <fb:editor-text label="Pulse" name="pulse" value=""/>
+         <input type=hidden name='__var_3' value='pulse' />
+         <input type=hidden name='__var_3_pathmap' value='currentccr/pulse' />
+     <fb:editor-custom label="I'm feeling ">
+          <select name="state">
+               <option value="0" selected>no stars today :=(</option>
+               <option value="1">one star</option>
+               <option value="2">two stars</option>
+              <option value="3">three stars :=)</option>
+          </select>
+     </fb:editor-custom>     
+          <input type=hidden name='__var_4' value='state' />
+          <input type=hidden name='__var_4_pathmap' value='currentccr/mood' />
+      <fb:editor-textarea label="Comment" name="comment"/>
+           <input type=hidden name='__var_5' value='comment' />
+           <input type=hidden name='__var_5_pathmap' value='currentccr/comment' />
+     <fb:editor-buttonset>
+          <fb:editor-button value="Add"/>
+          <fb:editor-cancel />
+     </fb:editor-buttonset>
+</fb:editor>
+</fb:explanation>       
+</xmp>
+
+
+<h3>
+Blood Pressure Tracker with Error Checking
+</h3>
+<p>Building upon the previous example, this adds server-side field level error checking as specifed by the 'lb' and 'ub' variables that are added to the form by the designer</p>
+<p>You can play with this by pasting this code as is or with modifications into the Healthbook HBML Editor</p>
+<xmp>
+<fb:explanation>
+<fb:message>Keep Track of Your Blood Pressure</fb:message>
+<table><tr><td><img src='http://profile.ak.facebook.com/object2/613/13/n7849883337_8257.jpg'  /></td>
+<td>By periodically entering your blood pressure and pulse, you are building a history of your health that can be referenced by your Care Team</td></tr><table> <p>
+this was written by the good folks at <a href='http://www.facebook.com/group.php?gid=7849883337' >HBP of Lake Wobegone</a></p>
+<fb:editor action='hbmlposted.php' labelwidth="100">
+<input type=hidden name=retloc value='hbmlexec.php?stored'/>
+<input type=hidden name=title value='Blood Pressure Gizmo from HBP Wobegone'/>
+     <fb:editor-text label="Systolic" name="systolic" value=""/>
+        <input type=hidden name='__var_1' value='systolic' />
+         <input type=hidden name='__var_1_lb' value='30' />
+         <input type=hidden name='__var_1_ub' value='300' />
+         <input type=hidden name='__var_1_pathmap' value='currentccr/bp/systolic' />
+     <fb:editor-text label="Diastolic" name="diastolic" value=""/>
+         <input type=hidden name='__var_2' value='diastolic' />
+         <input type=hidden name='__var_2_lb' value='50' />
+         <input type=hidden name='__var_2_ub' value='300' />
+        <input type=hidden name='__var_2_pathmap' value='currentccr/bp/diastolic' />
+     <fb:editor-text label="Pulse" name="pulse" value=""/>
+         <input type=hidden name='__var_3' value='pulse' />
+         <input type=hidden name='__var_3_lb' value='20' />
+         <input type=hidden name='__var_3_pathmap' value='currentccr/pulse' />
+     <fb:editor-custom label="I'm feeling ">
+          <select name="state">
+               <option value="0" selected>no stars today :=(</option>
+               <option value="1">one star</option>
+               <option value="2">two stars</option>
+              <option value="3">three stars :=)</option>
+          </select>
+     </fb:editor-custom>     
+          <input type=hidden name='__var_4' value='state' />
+          <input type=hidden name='__var_4_pathmap' value='currentccr/mood' />
+      <fb:editor-textarea label="Comment" name="comment"/>
+           <input type=hidden name='__var_5' value='comment' />
+           <input type=hidden name='__var_5_pathmap' value='currentccr/comment' />
+     <fb:editor-buttonset>
+          <fb:editor-button value="Add"/>
+          <fb:editor-cancel />
+     </fb:editor-buttonset>
+</fb:editor>
+</fb:explanation>       
+</xmp>
+
+<h3>
+Glucose  Tracker with Javascript Error Checking
+</h3>
+<p>In this example, the error checking is first done in the browser</p>
+<p>You can play with this by pasting this code as is or with modifications into the Healthbook HBML Editor</p>
+<xmp>
+<fb:explanation>
+<fb:message>Keep Track of Your Blood Glucose</fb:message>
+<table><tr><td><img src='http://profile.ak.facebook.com/object2/429/26/s5946983684_9746.jpg'  /></td>
+<td>By periodically entering your blood sugar levels you are building a history of your health that can be referenced by your Care Team</td></tr><table> <p>
+this was written by the good folks at <a href='http://www.facebook.com/group.php?gid=5946983684' >MedCommons HealthBook Alliance</a></p>
+<fb:editor action='hbmlposted.php' labelwidth="100">
+<input type=hidden name=retloc value='hbmlexec.php?stored'/>
+<input type=hidden name=title value='Blood Glucose Gizmo from MedCommons Health Alliance'/>
+     <fb:editor-text label="Level" name="level" value=""/>
+        <input type=hidden name='__var_1' value='level' />
+         <input type=hidden name='__var_1_lb' value='30' />
+         <input type=hidden name='__var_1_ub' value='300' />
+         <input type=hidden name='__var_1_pathmap' value='currentccr/glucose' />
+     <fb:editor-custom label="I'm feeling ">
+          <select name="state">
+               <option value="0" selected>no stars today :=(</option>
+               <option value="1">one star</option>
+               <option value="2">two stars</option>
+              <option value="3">three stars :=)</option>
+          </select>
+     </fb:editor-custom>     
+          <input type=hidden name='__var_2' value='state' />
+          <input type=hidden name='__var_2_pathmap' value='currentccr/mood' />
+      <fb:editor-textarea label="Comment" name="comment"/>
+           <input type=hidden name='__var_3' value='comment' />
+           <input type=hidden name='__var_3_pathmap' value='currentccr/comment' />
+     <fb:editor-buttonset>
+          <fb:editor-button value="Add"/>
+          <fb:editor-cancel />
+     </fb:editor-buttonset>
+</fb:editor>
+</fb:explanation>       
+</xmp>
+
+</body>
+
+
+</html>

@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Use cron to have this run daily:
+# Simply put a symbolic link to this file into
+# /etc/cron.daily
+#
+PATH=/bin:/usr/bin:/var/www/console/bin
+mc-backup-gw
+mc-backup-db
+s3purge.py -mcproperties

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appservices>
+  <service>
+    <id>
+      32323b8232383900ab3edf33
+    </id>
+    <visible>
+      there is no visible manifestation for this component
+    </visible>
+    <init>https://secure.test.medcommons.net/trackers/createTrackerDb.php</init>
+    <remove>https://secure.test.medcommons.net/trackers/removeTrackerDb.php</remove>
+    <viewer>https://secure.test.medcommons.net/trackers/viewTrackers.php</viewer>
+    <editor>https://secure.test.medcommons.net/trackers/trackerEditor.php</editor>
+    <name>
+     Basic Trackers
+    </name>
+    <comment>
+      There are no prerequisites for this module, but installing this is necessary prior to installing other trackers
+    </comment>
+    <explanation>
+      <![CDATA[
+      <div>Basic Trackers from MedCommons</div>
+      ]]>
+    </explanation>
+    <publisher>
+      <![CDATA[
+      <img src="http://medcommons.net/images/MEDcommons_logo_246x50.gif" alt="medcommons,inc."></img>
+         ]]>
+    </publisher>
+    <charges>
+      <chargeclass>
+        <name>bronze</name>
+        <setup>1000</setup>
+        <permonth>400</permonth>
+        <perclick>10</perclick>
+        <perxmtgb>20</perxmtgb>
+        <perrcvgb>25</perrcvgb>
+      </chargeclass>
+      <chargeclass>
+        <name>gold</name>
+        <setup>2000</setup>
+        <permonth>700</permonth>
+        <perclick>5</perclick>
+        <perxmtgb>33</perxmtgb>
+        <perrcvgb>37</perrcvgb>
+      </chargeclass>
+    </charges>
+    <technical>
+      <![CDATA[
+      This module provides the general capability to support Trackers within your MedCommons Account.
+      ]]>
+    </technical>
+  </service>
+</appservices>
+

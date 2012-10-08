@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}
+Configure Appliance Wizard
+{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Configuration</a> &gt;
+Configure Appliance
+{% endblock breadcrumbs %}
+
+{% block content %}
+<div class='breadcrumbs'>
+<a href='wiz_name'>1) Name</a> &gt;
+<b>2) Location</b> &gt;
+3) Web &gt;
+4) Email &gt;
+5) Style &gt;
+6) Settings
+7) Publish
+</div>
+
+<table style='width: 400px'>
+  <tr>
+    <td>
+<img src='{{ media }}img/Circle_2.png' width='20' height='20' alt='2' />
+    </td>
+    <td>
+<p>
+Next, we configure the <em>location</em> of this appliance.
+</p>
+<p>
+The <em>Locality</em>, <em>State</em>, and <em>Country</em> fields
+are used for security certificates, and for X500 directory entries.
+</p>
+<p>
+<em>Latitude</em> and <em>Longitude</em> are used to display
+a map of the Appliance location, or the location of the office
+supported by the Appliance.
+</p>
+    </td>
+  </tr>
+</table>
+
+<form method='post' action='wiz_location'>
+  <table>
+    {{ form }}
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit' name='prev' value='&lt;&lt; Prev' />
+    <input type='submit' name='next' value='Next &gt;&gt;' class='default' />
+  </div>
+</form>
+
+{% endblock %}
+
+

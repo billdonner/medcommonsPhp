@@ -1,0 +1,57 @@
+{% extends "www/base.html" %} {% block main %}
+
+    <div id="content">
+        <div id="pageHeading">
+            <h2>
+                Search This Appliance</h2>
+            <form method='get' action='https://globals.myhealthespace.com/qmcid.php'>
+                <table>
+                    <tr>
+                        <td width='150' align='left'>
+                            <a class='tiny' href="searchExamples.html">help on Health URL Lookup</a></td>
+                    </tr>
+                    <tr>
+                        <td width='150' align='left'>
+                            <input class='infield' type='text' name='q' value='' />
+                            <input type='hidden' name='p' value='m37' />
+                        </td>
+                        <td>
+                            <input type='image' src='/images/search-icon.jpg' width='20' alt='HealthURL Search'
+                                name='search' value='all' class='logo' /></td>
+                    </tr>
+                </table>
+            </form>
+            <br />
+            <span id='m37' class='err'></span>
+            <br />
+        </div>
+        <h2>
+            Search Examples</h2>
+        <h3>
+        Find a MedCommons Account ID</h3>
+        <ul>
+            <li>https://demo.myhealthespace.com/1234567890123456 </li>
+            <li>1234567890123456 </li>
+            <li>1234-5678-9012-3456 </li>
+        </ul>
+        <h3>
+        Find a MedCommons Tracking Number</h3>
+        <ul>
+            <li>https://demo.myhealthespace.com/tracking/123456789012 </li>
+            <li>123456789012 </li>
+            <li>1234-5678-9012 </li>
+        </ul>
+        <p>
+            Health URLs point to a user's health records portfolio as hosted by a MedCommons
+            licensee. Some hosts may not participate in the global search feature and can be
+            located only by using the full Health URL (e.g.: https://demo.myhealthespace.com/1234567890123456
+            ). Tracking numbers provide access to a limited subset of a Health URL, usually
+            intended to serve as a secure message to the recipient.</p>
+        <p>
+            An Emergency CCR may be available for some accounts as indicated by the + icon.</p>
+        <p>
+            Example accounts can be found at 9999-9999-9999-9999 (Password: demo) and 9999-9999-9999
+            (PIN: 12345).</p>
+    </div>
+
+{% endblock main %} 

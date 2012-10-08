@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.medcommons.modules.services.interfaces.TransferState" table="transfer_state">
+        <id name="key" column="ts_key">
+        </id>
+        <property name="accountId" column="ts_account_id"/>
+        <property name="status" column="ts_status"/>
+        <property name="typeValue" column="ts_type"/>
+        <property name="message" column="ts_message"/>
+        <property name="ownerAccountId" column="ts_owner_account_id"/>
+        <property name="progress" column="ts_progress"/>
+        <property name="created" column="ts_create_date_time"/>
+        <property name="modified" column="ts_modified_date_time"/>
+        <property name="numSeries" column="ts_num_series"/>
+        <property name="totalImages" column="ts_total_images"/>
+        <property name="totalBytes" column="ts_total_bytes"/>
+        <property name="bytesTransferred" column="ts_bytes_transferred"/>
+        <property name="ccrFileName" column="ts_ccr_file_name"/>
+        <property name="viewUrl" column="ts_view_url"/>
+        <property name="studyInstanceUID" column="ts_study_instance_uid"/>
+        <property name="kbPerSecond" column="ts_kb_per_second"/>
+        <property name="host" column="ts_host"/>
+        <property name="path" column="ts_path"/>
+        <property name="protocol" column="ts_protocol"/>
+        <property name="groupAccountId" column="ts_group_account_id"/>
+        <property name="groupName" column="ts_group_name"/>
+        <property name="auth" column="ts_auth"/>
+        <property name="version" column="ts_version"/>
+    </class>
+
+    <class name="net.medcommons.modules.services.interfaces.TransferMessage" table="transfer_message">
+        <id name="id" column="tm_id"><generator class="native"/></id>
+        <property name="ddlIdentifier" column="tm_ddl_identifier"/>
+        <property name="transferKey" column="tm_transfer_key"/>
+        <property name="accountId" column="tm_account_id"/>
+        <property name="category" column="tm_message_category"/>
+        <property name="message" column="tm_message"/>
+        <property name="createDateTime" column="tm_create_date_time"/>
+    </class>
+
+</hibernate-mapping>

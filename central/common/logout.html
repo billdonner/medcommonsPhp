@@ -1,0 +1,18 @@
+<?php
+
+/* this hack is needed to get the mc cookie deleted in advance of terry fixing the framework */
+
+
+header("Location: http://secure.test.medcommons.net:8080/identity/logout");
+echo "Redirecting to http://secure.test.medcommons.net:8080/identity/logout";
+exit;
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>MedCommons.Net Logout Redirection</title>
+<meta http-equiv="REFRESH" content="0;url=http://secure.test.medcommons.net:8080/identity/logout"></HEAD>
+<BODY>
+You are being redirected to MedCommons.Net Logout Service
+</BODY>
+</HTML>

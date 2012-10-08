@@ -1,0 +1,91 @@
+<project name="identity" basedir="." default="dist" xmlns:ivy="antlib:org.apache.ivy.ant" >
+
+    <property file="build.local.properties"/>
+    <property file="build.properties"/>
+
+    <!-- By default put the medcommons repo in the user's home directory under .mc -->
+    <property name="mc.ivy.repo" value="${user.home}/.mc"/>
+
+    <patternset id="jars.patternset">
+        <include name="*.jar" />
+    </patternset>
+    <patternset id="zips.patternset">
+        <include name="*.zip" />
+    </patternset>
+  
+    <patternset id="libraries.patternset">
+        <patternset refid="jars.patternset" />
+        <patternset refid="zips.patternset" />
+    </patternset>
+
+    <path id="shared.compile.classpath">
+        <fileset dir="${lib.build.dir}">
+            <patternset refid="libraries.patternset" />
+        </fileset>
+        <fileset dir="${lib.common.dir}">
+            <patternset refid="libraries.patternset" />
+        </fileset>
+        <fileset dir="${lib.common.dir}/dependencies">
+            <patternset refid="libraries.patternset" />
+        </fileset>
+    </path>
+
+    <target name="init">
+        <echo message="Initializing build ..." />
+        <ivy:configure file="ivy-settings.xml" />
+        <ivy:retrieve pattern="${lib.common.dir}/dependencies/[artifact]-[revision].[ext]" sync="true"/> 
+    </target>
+
+    <target name="compile-classes" depends="init">
+        <mkdir dir="${build.classes.dir}" />
+        <javac classpathref="shared.compile.classpath" destdir="${build.classes.dir}"
+	       srcdir="${src.java.dir}" debug="${build.debug}"
+	       deprecation="on" includeAntRuntime="false" />
+    </target>
+
+    <target name='pfagent-properties'>
+      <copy file='${src.config.dir}/pfagent.properties'
+	    todir='${build.classes.dir}' />
+    </target>
+
+    <target name="package-war" depends="compile-classes, pfagent-properties">
+        <mkdir dir="${build.stage.dir}" />
+        <copy todir="${build.classes.dir}">
+          <fileset dir="${src.java.dir}"><include name="**/**.hbm.xml"/></fileset>
+          <fileset dir="${src.meta.dir}/xfire"><include name="services.xml"/></fileset>
+        </copy>
+        <war destfile="${build.stage.dir}/${war.name}" webxml="${src.meta.dir}/web.xml">
+            <lib dir="${lib.common.dir}">
+                <patternset refid="libraries.patternset" />
+            </lib>
+            <lib dir="${lib.common.dir}/dependencies">
+                <patternset refid="libraries.patternset" />
+            </lib>
+            <lib dir="${build.stage.dir}">
+                <patternset refid="libraries.patternset" />
+            </lib>
+            <fileset dir="${src.web.dir}"/>
+      	    <classes dir="${build.classes.dir}"/>  
+      	    <classes file="${src.config.dir}/hibernate.properties"/>  
+        </war>
+    </target>
+ 
+    <target name="dist" depends="package-war">
+        <copy todir="${dist.dir}" file="${build.stage.dir}/${war.name}"/>
+    </target>
+
+    <target name="deploy" depends="package-war">
+        <copy todir="${deploy.dir}" file="${build.stage.dir}/${war.name}"/>
+    </target>
+
+    <target name="javadocs">
+	<javadoc packagenames="net.medcommons.identity"
+	         sourcepath="${src.java.dir}"
+		 classpathref="shared.compile.classpath"
+		 destdir="docs" />
+    </target>
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+</project>

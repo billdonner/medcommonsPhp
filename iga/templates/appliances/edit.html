@@ -1,0 +1,39 @@
+{% extends "form.html" %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Appliances</a> &gt;
+<b>Edit Appliance</b>
+{% endblock %}
+
+{% block content %}
+
+<form method='post' action='edit'>
+  <table>
+    <tbody>
+      <tr>
+	<th><label for='id_name'>Name:</label></th>
+	<td><input type='text' readonly='readonly' value='{{ object.name }}'
+		   name='name' id='id_name' /></td>
+      </tr>
+{{ form.as_table }}
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+    <input type='hidden' value='{{ object.id }}' name='id' />
+
+    <input type='submit'
+	   name='add'
+	   value='Save and add another' />
+
+    <input type='submit'
+	   name='edit'
+	   value='Save and continue editing' />
+
+    <input type='submit' value='Save' class='default' />
+  </div>
+</form>
+
+{% endblock content %}
+

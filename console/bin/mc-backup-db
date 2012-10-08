@@ -1,0 +1,33 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin:/var/www/console/bin
+ETC=/var/www
+
+dt=`date +%Y-%m-%d`
+host=`hostname`
+
+prefix=${host}-${dt}.sql.bz2.enc
+
+  mysqldump			\
+	--all-databases		\
+	--add-drop-database	\
+	--comments		\
+	--create-options	\
+	-R			\
+	--single-transaction	\
+	--quick			\
+	--triggers		\
+	--flush-privileges	\
+	--force			\
+| bzip2				\
+	--stdout		\
+	--compress		\
+	--quiet			\
+| openssl			\
+	enc			\
+	-e			\
+	-aes-256-cbc		\
+	-kfile ${ETC}/.aes-key	\
+| s3backup.py			\
+	-mcproperties		\
+	${prefix}

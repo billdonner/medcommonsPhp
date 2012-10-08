@@ -1,0 +1,13 @@
+#!/bin/tcsh
+
+pushd /root
+
+/var/www/console/bin/mc-reset-mysql-password
+ln -s ./.mcdb/mcx.ini ./.my.cnf
+
+cp ./.my.cnf ~boxer/.my.cnf; chown boxer:boxer ~boxer/.my.cnf
+cp ./.my.cnf ~sean/.my.cnf; chown sean:sean ~sean/.my.cnf
+cp ./.my.cnf ~simon/.my.cnf; chown simon:simon ~simon/.my.cnf
+cp ./.my.cnf ~bill/.my.cnf; chown bill:bill ~bill/.my.cnf
+
+popd

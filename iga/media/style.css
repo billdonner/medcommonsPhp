@@ -1,0 +1,24 @@
+tr.a { background-color: #ccffcc; }
+
+ul.object-tools li { 
+  display: block;
+  margin: 3px;
+}
+
+thead th { 
+  text-align: center;
+}
+
+thead th {
+  vertical-align: bottom;
+}
+
+tbody th {
+  text-align: right;
+  vertical-align: top;
+}
+
+td.number { 
+  text-align: right;
+}
+ 

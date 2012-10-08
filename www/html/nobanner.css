@@ -1,0 +1,7 @@
+#intro,#menubar,#actionLinks,#status {
+  display: none;
+}
+
+#linkList {
+  top: 0px;
+}

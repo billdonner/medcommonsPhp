@@ -1,0 +1,114 @@
+{% extends "form.html" %}
+
+{% block title %}Configure Backup{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+Backups
+{% endblock %}
+
+{% block content %}
+
+<h1>MySQL status</h1>
+
+{% if master %}
+<h2>Master</h2>
+
+<table>
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Position</td>
+    </tr>
+  </thead>
+  <tbody>
+{% for row in master %}
+    <tr class='{% cycle a,b %}'>
+      <td>{{ row.file }}</td>
+      <td class='number'>{{ row.position }}</td>
+   </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endif %}
+{% if slave %}
+<h2>Slave</h2>
+<table>
+  <thead>
+    <tr>
+      <td>State</td>
+      <td>Master</td>
+      <td>Log file</td>
+      <td>Position</td>
+    </tr>
+  </thead>
+  <tbody>
+{% for row in slave %}
+    <tr class='{% cycle a,b %}'>
+      <td>{{ row.slave_io_state }}</td>
+      <td><a href='https://{{ row.master_host }}/console/backups/'>{{ row.master_host }}</a></td>
+      <td>{{ row.master_log_file }}</td>
+      <td class='number'>{{ row.read_master_log_pos }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+{% if backups %}
+<h1>Patient Data</h1>
+<table cellpadding='0' cellborder='0' border='1px solid black'
+       style='padding: 0; border: 0; width: 400'>
+  <tbody style='padding: 0; border: 0'>
+    <tr style='padding: 0; border: 0'>
+{% if backup_permerrs %}
+<td style='background-color: red' width='{{ backup_permerrs }}%'>
+</td>
+{% endif %}
+{% if backup_temperrs %}
+<td style='background-color: yellow' width='{{ backup_temperrs }}%'>
+</td>
+{% endif %}
+{% if backup_finished %}
+<td style='background-color: green' width='{{ backup_finished }}%'>
+</td>
+{% endif %}
+{% if backup_pending %}
+<td style='background-color: blue' width='{{ backup_pending }}%'>
+</td>
+{% endif %}
+<td></td>
+    </tr>
+  </tbody>
+</table>
+{% endif %}
+
+<table>
+  <tbody>
+    <tr>
+      <th style='background-color: red; color: white'>Permanent errors:</th>
+      <td>{{ permerrs }}</td>
+    </tr>
+    <tr>
+      <th style='background-color: yellow; color: black'>Temporary errors:</th>
+      <td>{{ temperrs }}</td>
+    </tr>
+    <tr>
+      <th style='background-color: blue; color: white'>Pending:</th>
+      <td>{{ pending }}</td>
+    </tr>
+    <tr>
+      <th style='background-color: green; color: white'>Finished:</th>
+      <td>{{ finished }}</td>
+    </tr>
+    <tr>
+      <th>Total:</th>
+      <td>{{ total }}</td>
+    </tr>
+  </tbody>
+</table>
+  
+<a href='keys'>Configure Wizard</a>
+
+{% endblock %}

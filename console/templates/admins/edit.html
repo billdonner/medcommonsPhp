@@ -1,0 +1,41 @@
+{% extends "form.html" %}
+
+{% block title %}Edit Administrator{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Administrators</a> &gt;
+Edit
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<form method='post'
+      action='edit'>
+
+  <input name='id' type='hidden' value='{{ object.id }}' />
+
+  <table>
+    <tbody>
+{{ form }}
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit' value='Save' class='default' />
+
+    <input type='submit'
+           name='create'
+           value='Save and create another' />
+
+    <input type='submit'
+           name='edit'
+           value='Save and continue editing' />
+  </div>
+</form>
+
+{% endblock %}

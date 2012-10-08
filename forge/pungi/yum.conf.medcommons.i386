@@ -1,0 +1,13 @@
+[main]
+#keepcache=0
+#debuglevel=2
+pkgpolicy=newest
+distroverpkg=redhat-release
+tolerant=1
+exactarch=1
+obsoletes=1
+gpgcheck=1
+reposdir=/home/forge/work/services/trunk/forge/pungi
+#plugins=1
+metadata_expire=1800
+#exclude=\*.i?86

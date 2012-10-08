@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% load medcommons %}
+
+{% block title %}MedCommons Groups Search Result{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Groups</a> &gt;
+Search Results
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td>Group Name</td>
+      <td>Owner</td>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan='3'>
+	<span style='float: left'>
+{% if has_previous %}
+	  <a href='?page=1'>&laquo; first</a>
+	  <a href='?page={{ previous }}'>&lt; prev</a>
+{% endif %}
+	</span>
+	<span style='float: right'>
+{% if has_next %}
+	  <a href='?page={{ next }}'>next &gt;</a>
+	  <a href='?page={{ pages }}'>last &raquo;</a>
+{% endif %}
+	</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='3'>
+	<span style='float: right'>
+Page {{ page }} of {{ pages }}.
+	</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='3'>
+<form method='get' action='search'>
+  <label>Search again:
+    <input type='text' name='q' value='{{ q }}' />
+    <input type='image' src='{{ media }}img/icon_searchbox.png'
+	   width='20' height='20' alt='Search Groups' />
+</form>
+
+  </tfoot>
+      
+  <tbody>
+{% for entry in object_list %}
+    <tr class='{% cycle a,b %}'>
+      <td>
+	<a href='delete?id={{ entry.groupinstanceid }}'>
+	  <img src='{{ media }}img/icon_deletelink.gif' width='10' height='10'
+	       alt='Delete Group' />
+	</a>
+      </td>
+      <td>
+        <a href='group?id={{ entry.groupinstanceid }}'>
+	  {{ entry.name }}
+	</a>
+      </td>
+      <td>
+        <a href='../users/user?mcid={{ entry.accid.mcid }}'>
+          {{ entry.accid.pretty_mcid }}
+	</a>
+	{{ entry.accid.first_name }} {{ entry.accid.last_name }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

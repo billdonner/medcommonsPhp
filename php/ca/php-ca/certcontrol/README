@@ -1,0 +1,14 @@
+You need to place a file called xenroll.dll in this directory.
+
+Specifically you need to put version 5.131.3659.0 of xenroll.dll in this directory.
+
+You may have this file in your Windows/system32 directory if you have the latest security patches. If the file is there, right click it and check that the version is "5.131.3659.0".
+
+If it is not, you can download and install the security patch from:
+	http://support.microsoft.com/default.aspx?scid=KB;EN-US;q323172
+which will install the correct version of the dll, so you can copy it into this directory,
+
+This is necessary, so that people who don't have the correct version of the DLL on their systems can get it when they need to install their certificate into Internet Explorer.
+
+Due to the fact that this file is licenced to Microsoft, I cannot include it here. You will have to get it yourself.
+

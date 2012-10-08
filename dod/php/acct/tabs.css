@@ -1,0 +1,44 @@
+.nav {
+  position: relative;
+  left: 10px;
+}
+
+.nav li {
+  display: inline; 
+} 
+
+.nav li img {
+  position: relative;
+  top: 4px;
+  z-index: 200;
+}
+
+.currentTab {
+  position: relative;
+  top: 1px;
+  color: white;
+  padding-left: 15px;
+  font-size: 13px;
+  background-color: white;
+  z-index: 101;
+}
+
+.normalTab {
+  background-color: white;
+  z-index: 0;
+}
+
+.normalTab,.currentTab {
+  position: relative;
+  color: black;
+  cursor: pointer;
+  padding: 4px;
+  border-top-style: solid;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-width: 1px;
+  border-color: black;
+ /* font-style: italic; */
+}
+

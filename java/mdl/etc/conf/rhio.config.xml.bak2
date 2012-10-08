@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ohf:rhioConfigurations xmlns:ohf="http://model.conf.bridge.ohf.eclipse.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ohf.eclipse.org rhio.xsd ">
+    <!--rhio>
+        <name>localhostSOAP-ibmod235MLLP</name>
+        <config>
+            <registry>
+                <url>http://localhost:9080/ihii/registry/soap</url>
+                <mllp>mllp://ibmod235.dal-ebis.ihost.com:2100</mllp>
+            </registry>
+            <repository>http://localhost:9080/IHIIRepository/SubmissionSetReceiver</repository>
+            <audit>
+                <useAudit>false</useAudit>
+                <url></url>
+            </audit>
+            <pix>
+                <mllp>mllp://ibmod235.dal-ebis.ihost.com:3600</mllp>
+
+                <facility>IBM</facility>
+                <applicationName>PAT_IDENTITY_X_REF_MGR_IBM1</applicationName>
+                <assigningAuthorityName>HIMSS2005</assigningAuthorityName>
+                <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+                <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+
+                <defaultSourceClientApplication>OTHER_KIOSK</defaultSourceClientApplication>
+                <defaultConsumerClientApplication>OHFConsumer1</defaultConsumerClientApplication>
+                <defaultFacilityClient>HIMSSSANDIEGO</defaultFacilityClient>
+                <defaultClientAssigningAuthorityName>OHF1</defaultClientAssigningAuthorityName>
+            </pix>
+        </config>
+    </rhio-->
+    <rhio>
+        <name>ibmod235-all</name>
+        <config>
+            <registry>
+                <url>http://ibmod235.dal-ebis.ihost.com:9080/ihii/registry/soap</url>
+                <mllp>mllp://ibmod235.dal-ebis.ihost.com:2100</mllp>
+            </registry>
+            <repository>http://ibmod235.dal-ebis.ihost.com:9080/IHIIRepository/SubmissionSetReceiver</repository>
+            <audit>
+                <useAudit>false</useAudit>
+                <url></url>
+            </audit>
+            <pix>
+                <mllp>mllp://ibmod235.dal-ebis.ihost.com:3600</mllp>
+
+                <facility>IBM</facility>
+                <applicationName>PAT_IDENTITY_X_REF_MGR_IBM1</applicationName>
+                <assigningAuthorityName>HIMSS2005</assigningAuthorityName>
+                <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+                <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+
+                <defaultSourceClientApplication>OTHER_KIOSK</defaultSourceClientApplication>
+                <defaultConsumerClientApplication>OHFConsumer1</defaultConsumerClientApplication>
+                <defaultFacilityClient>HIMSSSANDIEGO</defaultFacilityClient>
+                <defaultClientAssigningAuthorityName>OHF1</defaultClientAssigningAuthorityName>
+            </pix>
+        </config>
+    </rhio>
+    <rhio>
+        <name>lswin10-xds, ibmod235-pix</name>
+        <config>
+            <registry>
+                <url>http://lswin10.dfw.ibm.com:9080/ihii/registry/soap</url>
+                <mllp>mllp://lswin10.dfw.ibm.com:2100</mllp>
+            </registry>
+            <repository>http://lswin10.dfw.ibm.com:9080/IHIIRepository/SubmissionSetReceiver</repository>
+            <audit>
+                <useAudit>false</useAudit>
+                <url></url>
+            </audit>
+            <pix>
+                <mllp>mllp://ibmod235.dal-ebis.ihost.com:3600</mllp>
+
+                <facility>IBM</facility>
+                <applicationName>PAT_IDENTITY_X_REF_MGR_IBM1</applicationName>
+                <assigningAuthorityName>HIMSS2005</assigningAuthorityName>
+                <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+                <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+
+                <defaultSourceClientApplication>OTHER_KIOSK</defaultSourceClientApplication>
+                <defaultConsumerClientApplication>OHFConsumer1</defaultConsumerClientApplication>
+                <defaultFacilityClient>HIMSSSANDIEGO</defaultFacilityClient>
+                <defaultClientAssigningAuthorityName>OHF1</defaultClientAssigningAuthorityName>
+            </pix>
+        </config>
+    </rhio>
+    <rhio>
+        <name>NIST</name>
+        <config>
+            <registry>
+                <url>http://hcxw2k1.nist.gov:8080/xdsServices2/registry/soap/portals/yr3a/query</url>
+                <mllp></mllp>
+            </registry>
+            <repository>http://hcxw2k1.nist.gov:8080/xdsServices2/registry/soap/portals/yr3a/repository</repository>
+            <audit>
+                <useAudit>false</useAudit>
+                <url></url>
+            </audit>
+            <pix>
+                <mllp></mllp>
+
+                <facility></facility>
+                <applicationName></applicationName>
+                <assigningAuthorityName>HIMSS2005</assigningAuthorityName>
+                <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+                <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+
+                <defaultSourceClientApplication>OTHER_KIOSK</defaultSourceClientApplication>
+                <defaultConsumerClientApplication>OHFConsumer1</defaultConsumerClientApplication>
+                <defaultFacilityClient>HIMSSSANDIEGO</defaultFacilityClient>
+                <defaultClientAssigningAuthorityName>OHF1</defaultClientAssigningAuthorityName>
+            </pix>
+        </config>
+    </rhio>
+    <rhio>
+        <name>Practice Partner PIX MESA Only </name>
+        <config>
+            <registry>
+                <url>http://hcxw2k1.nist.gov:8080/xdsServices2/registry/soap/portals/yr3a/query</url>
+                <mllp></mllp>
+            </registry>
+            <repository>http://hcxw2k1.nist.gov:8080/xdsServices2/registry/soap/portals/yr3a/repository</repository>
+            <audit>
+                <useAudit>false</useAudit>
+                <url></url>
+            </audit>
+            <pix>
+                <mllp>mllp://63.113.199.225:3600</mllp>
+
+                <facility>IBM</facility>
+                <applicationName>PAT_IDENTITY_X_REF_MGR_IBM1</applicationName>
+                <assigningAuthorityName>HIMSS2005</assigningAuthorityName>
+                <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+                <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+
+                <defaultSourceClientApplication>OTHER_KIOSK</defaultSourceClientApplication>
+                <defaultConsumerClientApplication>OHFConsumer1</defaultConsumerClientApplication>
+                <defaultFacilityClient>HIMSSSANDIEGO</defaultFacilityClient>
+                <defaultClientAssigningAuthorityName>OHF1</defaultClientAssigningAuthorityName>
+            </pix>
+        </config>
+    </rhio>
+</ohf:rhioConfigurations>

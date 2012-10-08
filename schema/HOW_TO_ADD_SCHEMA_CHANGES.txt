@@ -1,0 +1,41 @@
+SIMPLE CHANGES
+
+1. Before you check in new changes, do an svn update to make sure you have 
+gotten the latest schema from SVN.
+
+2. Create a text file containing the sql to implement the change, make sure
+it's name ends in  the following way:  <database name>.sql.   
+
+So for example, if you are creating sql to be applied to the 'mcidentity' database,
+create a file like so:
+
+   some_description_mcidentity.sql
+
+3. Prefix the name of the file such that it is sequenced as the last file
+(highest number), eg. if the last sql added was 005_foo_mcx.sql then make yours
+006_bar_mcidentity.sql.  This is important to ensure that scripts get executed *in order*.
+
+NOTE: changes to existing tables must always be implemented as ALTERs, never do
+a "drop and recreate".  These files are upgrade scripts as well as create
+scripts and they must preserve existing data!
+
+ADVANCED CHANGES
+
+Sometimes it is necessary to do something that goes beyond what can be done
+in SQL (eg. complex data migrations).  In these cases you can achieve what
+you want by writing a python script to do the upgrade.  The process is exactly
+the same as above, but you create an identically named *.py file.
+
+1. create a SQL script, eg:  
+
+  103_migrate_tracking_number_rights_mcx.sql
+
+  (if there is no raw sql to execute, just make it blank)
+
+2. create a python script wth same name, eg: 
+
+   103_migrate_tracking_number_rights_mcx.py
+
+Now both your SQL and your python will run.  See existing examples
+for how to write your python so that it can find the database credentials
+in a standard MedCommons install.

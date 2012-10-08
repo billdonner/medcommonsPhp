@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ <globalConfiguration>
+  <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="disablePrettyXML" value="true"/>
+  <parameter name="adminPassword" value="admin"/>
+  <parameter name="dotNetSoapEncFix" value="true"/>
+  <parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <parameter name="sendXMLDeclaration" value="true"/>
+  <parameter name="sendXsiTypes" value="true"/>
+
+  <requestFlow>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="session"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="request"/>
+    <parameter name="extension" value=".jwr"/>
+   </handler>
+  </requestFlow>
+ </globalConfiguration>
+
+ <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+
+<service name="ohf-bridge" provider="java:RPC">
+  <parameter name="allowedMethods" value="RegisterOutpatient FindDocuments FindDocumentsByPatientId GetDocumentByUUID GetDocumentByUniqueId SubmitDocument SubmitRawDocument SearchPatient AuditLogin AuditLogout AuditLoginFailure GetRhios"/>
+  <parameter name="className" value="org.eclipse.ohf.bridge.ws.OHFBridge"/>
+  <beanMapping qname="ns:xdsDocType" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.type.XDSDocType"/>
+  <beanMapping qname="ns:patientInfoType" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.type.PatientInfoType"/>
+  <beanMapping qname="ns:ohfBridgeRequest" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.type.OHFBridgeRequest"/>
+  <beanMapping qname="ns:pdqQueryObject" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.pdq.PDQQueryObject"/>
+  <beanMapping qname="ns:xdsDocCollectoin" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.type.XDSDocCollection"/>
+  <beanMapping qname="ns:pidType" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.type.PIDType"/>
+  <beanMapping qname="ns:addressType" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.type.AddressType"/>
+  <beanMapping qname="ns:patientNameType" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.type.PatientNameType"/>
+  <beanMapping qname="ns:phoneType" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.type.PhoneType"/>
+  <beanMapping qname="ns:rhioConfig" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.conf.RhioConfig"/>
+  <beanMapping qname="ns:sessionContext" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.conf.SessionContext"/>
+  <beanMapping qname="ns:documentSearchType" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.type.DocumentSearchType"/>
+  <beanMapping qname="ns:dateTimeRangeType" xmlns:ns="OHFBridge" languageSpecificType="java:org.eclipse.ohf.bridge.type.DateTimeRangeType"/>
+ </service>
+
+ <transport name="http">
+  <requestFlow>
+   <handler type="URLMapper"/>
+  </requestFlow>
+  <parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </transport>
+ <transport name="local">
+  <responseFlow>
+   <handler type="LocalResponder"/>
+  </responseFlow>
+ </transport>
+</deployment>

@@ -1,0 +1,59 @@
+body, p, h1, h2, h3, td, th {
+  font-family: arial;
+}
+
+html,body {
+  padding: 0px;
+  margin: 0px;
+}
+
+#header {
+  margin: 0px;
+  padding: 10px;
+  background-color: #e0e0e0;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: #555;
+}
+
+#user_tools {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  padding: 1.2em 10px;
+  font-size: 11pt;
+}
+
+h1 {
+  font-size: 12pt;
+}
+
+#contents {
+  margin-top: 8px;
+  padding: 0px  8px;
+}
+
+#users tr th {
+  background-color: #f0f0f0;
+}
+
+#users tr td {
+  font-size: smaller;
+}
+
+#users tr th, #users tr td {
+  padding: 2px 2px;
+  margin: 2px 5px;
+}
+
+#groupsLink {
+  font-size: smaller;
+}
+
+/* All links are dynamic, don't color them visited */
+a:link, a:visited {
+  color: blue;
+}
+
+

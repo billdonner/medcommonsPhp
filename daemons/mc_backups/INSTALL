@@ -1,0 +1,31 @@
+1.  Create a directory /opt/mc_backups
+
+	# mkdir /opt/mc_backups
+
+2.  Create a user 'mc_backups'
+
+	# /usr/sbin/useradd -c "Medcommons Backup" -d /opt/mc_backups -s /bin/nologin  mc_backups -M
+
+3.  Copy the file 'mc_backups' to /etc/init.d, install as a service
+
+	# cp mc_backups /etc/init.d
+	# /sbin/chkconfig mc_backups on
+
+4.  Copy the python code and the .RC file to /opt/mc_backups
+
+	# cp *.py mc_backups.rc /opt/mc_backups
+
+5.  Ensure owned by the 'mc_backups' user
+
+	# chown mc_backups:mc_backups -R /opt/mc_backups
+
+6.  The backups are configured with three files
+
+	/opt/mc_backups/.s3/key
+	/opt/mc_backups/.s3/key_id
+	/opt/mc_backups/.aes-key
+
+	# chown -R mc_backups:mc_backups /opt/mc_backups/.s3 /opt/mc_backups/.aes-key
+	# chmod 700 /opt/mc_backups/.s3
+	# chmod 600 /opt/mc_backups/.s3/* /opt/mc_backups/.aes-key
+

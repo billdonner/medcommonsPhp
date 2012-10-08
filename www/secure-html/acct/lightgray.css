@@ -1,0 +1,23 @@
+#footer {
+  display: none;
+}
+
+#patientCard {
+  background-color: white;
+}
+
+.insecureFormInput,.formInput {
+  border: none;
+  border-bottom: dotted;
+  border-width: 1px;
+  border-color: #777;
+}
+
+.tabbody {
+  background-color: transparent;
+}
+
+.tabbody th {
+  background: #ccc;
+}
+

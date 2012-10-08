@@ -1,0 +1,8 @@
+body {font:.75em/150% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+.thead {font-size:1.2em; font-weight: 700; }
+.thead td, .tfm {padding-top:25px;padding-bottom:20px;}
+td.lcol {width: 200px;}
+td.rcol {width: 560px;}
+.tinst {border:2px; padding: 10px; margin:10px; background-color:#EEE;}
+form {display: inline;}
+input{display: inline;}

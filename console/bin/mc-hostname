@@ -1,0 +1,155 @@
+#!/usr/bin/env python
+
+from sys import argv, path
+from os import getenv, putenv, environ
+from os.path import exists, dirname, join
+
+# Set up so Django db settings can be used
+if exists(join(dirname(argv[0]), '..', 'settings.py')):
+	path.append(join(dirname(argv[0]), '..'))
+
+DJANGO_SETTINGS_MODULE = 'DJANGO_SETTINGS_MODULE'
+if not getenv(DJANGO_SETTINGS_MODULE):
+	environ[DJANGO_SETTINGS_MODULE] = 'settings'
+	putenv(DJANGO_SETTINGS_MODULE, environ[DJANGO_SETTINGS_MODULE])
+
+from config.models import MCProperty
+from process import spawn
+
+from sys import argv, exit, stderr
+from os import fdopen, pipe, waitpid
+
+import re
+
+DOMAINNAME_RE = re.compile(r'^[a-zA-Z0-9\.-]+$')
+
+USAGE = """Usage: python mc-hostname [hostname]
+
+If [hostname] is not specified, pulls the hostname from the MedCommons
+property table mcx/mcproperties.
+
+If [hostname] is specified, sets the hostname in the MedCommons property
+table mcx/mcproperties.
+
+1. Edits the system configuration file %(SYSCONFIG)s
+
+2. Adds entries in %(HOSTS)s, with all the IP addresses of this machine:
+   x.y.z.t	{domainname} # mc-hostname
+
+3. Creates a single %(APACHE_CONF)s file
+
+4. Calls hostname {domainname} to set the hostname immediately
+"""
+
+SYSCONFIG = '/etc/sysconfig/network'
+APACHE_CONF = '/etc/httpd/conf.d/server_name.conf'
+HOSTS = '/etc/hosts'
+
+APACHE_CONF_FMT = 'ServerName %s'
+
+REMINDER = """Reminder: after setting the hostname, be sure to:
+
+1.  Create a Security Certificate (https://%(hostname)s/console/security/)
+
+2.  Edit the PHP and Gateway settings:
+    # console/bin/mc-edit-settings
+
+3.  Publish the web site:
+    # console/bin/mc-publish
+
+4.  Install any security certificates created in step 1:
+    # console/bin/mc-install-certificate
+"""
+
+def main(args):
+	save = False
+
+	if len(args) == 1:
+		p = MCProperty.objects.get(property='acDomain')
+		hostname = p.value
+	elif len(args) != 2:
+		print >>stderr, USAGE % globals()
+		exit(1)
+	elif args[1].startswith('-'):
+		print USAGE % globals()
+		exit(0)
+	else:
+		hostname = args[1]
+		save = True
+
+	# Input validation
+	if not DOMAINNAME_RE.match(hostname):
+		print >>stderr, "%s: not a valid domain name" % hostname
+		exit(2)
+
+	edit_sysconfig(hostname)
+	edit_hosts(hostname)
+	edit_apache(hostname)
+	set_hostname(hostname)
+
+	if save:
+		p = MCProperty('acDomain', hostname)
+		p.save()
+
+		print REMINDER % locals()
+	else:
+		print hostname
+
+def edit_sysconfig(hostname):
+	status = sed(SYSCONFIG, 's/^HOSTNAME=.*$/HOSTNAME=%s/' % hostname)
+
+	if status % 1024 != 0:
+		print >>stderr, "Cannot set hostname"
+		exit(3)
+
+def edit_apache(hostname):
+	file(APACHE_CONF, 'w').write(APACHE_CONF_FMT % hostname)
+
+from os import close
+
+INET_ADDR_RE = re.compile(r'inet addr:([0-9\.]+)')
+
+def edit_hosts(hostname):
+	# First, get all IP addresses
+	p = pipe()
+	pid = spawn(['/sbin/ifconfig'], stdout = p)
+
+	fdin, fdout = p
+	close(fdout)
+
+	addrs = []
+
+	for line in fdopen(fdin):
+		addrs += INET_ADDR_RE.findall(line)
+
+	if '127.0.0.1' in addrs: addrs.remove('127.0.0.1')
+
+	# Delete previous mc-hostname lines
+	sed(HOSTS, '/# mc-hostname$/d')
+
+	f = file(HOSTS, 'a')
+	try:
+		for addr in addrs:
+			print >>f, '%s %s # mc-hostname' % (addr, hostname)
+	finally:
+		f.close()
+
+def set_hostname(hostname):
+	pid = spawn(['/bin/hostname', hostname], stdout = 1, stderr = 2)
+	pid, status = waitpid(pid, 0)
+
+	if status != 0:
+		print >>stderr, "Cannot set hostname"
+		exit(4)
+
+def sed(filename, script):
+	cmd = ['sed', '--posix', '--expression', script,
+	       '--in-place=.bck', '--copy', filename]
+
+	pid = spawn(cmd, stderr = 2)
+	pid, status = waitpid(pid, 0)
+
+	return status
+
+if __name__ == '__main__':
+	main(argv)

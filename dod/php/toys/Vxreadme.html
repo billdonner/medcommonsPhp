@@ -1,0 +1,82 @@
+<html><head><title>MedCommons Readme - Vx Translator Service</title>
+<script type="text/javascript" >
+               <!-- 
+function widgetkeypopup(url) {
+	newwindow=window.open(url,'_widget','height=200,width=700');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+// --> 
+			</script>
+</head>
+<body>
+<h2>MedCommons Vx Translator Service</h2>
+This is a singular REST based API used to build CCR and other XML based formats. 
+
+Vx expects that its callers will have already done half the translation job and constructed a neutral format Vx API call. Vx then uses
+a special xml template specified by the caller to generate the final format document. 
+</p>
+<p> It is easy to build a new template with the  (<a href=VxUploadCode.php target='_new'>Vx code upload utility</a>). 
+Please send comments to cmo@medcommons.net. You can see all the installed templates <a href=listcodes.php>here</a>.
+
+</p>The Vx service is available via both GET and POST interfaces. The GET variant is useful for creating bookmarks and using the 
+interface via smart hyperlinks. The POST interface can respond directly to a Form submisssion and can thus be utilized immediately
+from within your application, or blog, wiki, or web page. 
+<p>
+<b>https://beta.medcommons.org/toys/Vx.api</b>
+<br>
+<h4>HTTP GET</h4>
+<i>args:</i>
+<br>
+mckey = optional medcommons <a  onclick="return widgetkeypopup('../acct/widgetkey.php');" 
+                                     href='../acct/widgetkey.php' >widget key</a>
+<i> Necessary for CXP option if not logged on</i>
+
+<br>
+t = templatename //supplied as the name of the template
+<i> To access a template in MedCommons Account nnn use a templatename of nnn:template</i>
+<br>
+a = arglist // a pipe delimited argument list of up to 10 arguments for substitution in the selected tempalte
+<br>
+c = command // a command code currently limited to 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'xml' - return plain xml/ccr to caller
+				<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'do' - return signed message with embedded ccr to caller
+				<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'cxp' - send signed message to MedCommons cxp service 
+<br>
+u = url of cxpserver// only if c = cxp 
+<h4>HTTP POST</h4>
+<i>args:</i>
+<br>
+mckey = medcommons //(as above) <a  onclick="return widgetkeypopup('../acct/widgetkey.php');" 
+                                     href='../acct/widgetkey.php' >widget key</a>
+<br>
+t = templatename //  (as above)
+
+<br>
+c = command  //(as above) 
+<br>
+u = url of cxpserver // only if c = cxp 
+<br><br>
+arga = first supplied argument
+<br>argb = second supplied argument
+<br>...
+<br>argj = tenth supplied argument
+</p>
+
+<h3>Examples</h3>
+Here are some straightforward functions that you can load into your account and access via the Vx api. You can embed your own calls to the Vx api wherever you like, or use
+your favorite programming language to call the Vx web service directly.
+<p>You must obtain and supply your own MedCommons Developer Key as part of the function signature.
+After adding the function to your account you will be invited to test your code.
+<h4>Vx function to reverse api arguments and build output</h4>
+<p>Copy and paste the following function into your account via the <a href=VxUploadCode.php target='_new'>code upload utility</a><br>
+<iframe src='rev.ccr.txt' frameborder=0 width=700 height=200>rev.ccr.txt not found</iframe>
+<h4>Glucometer Message Conversion to CCR</h4>
+<p>This call made by a device vendor to get Vx to push a message into MedCommons.
+<p>Copy and paste the following function into your account via the <a href=VxUploadCode.php target='_new'>code upload utility</a><br>
+<iframe src='dev.ccr.txt' frameborder=0 width=700 height=280>dev.ccr.txt not found</iframe>
+</body>
+</html>

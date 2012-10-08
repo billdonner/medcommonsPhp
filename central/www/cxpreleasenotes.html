@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+        <meta name="author" content="MedCommons"/>
+        <meta name="keywords" content="ccr, phr, privacy, patient, health, records, medical, w3c,
+            web standards"/>
+        <meta name="description" content="MedCommons  CXP Continuous Connectathon Release Notes"/>
+        <meta name="robots" content="all"/>
+        <title>MedCommons - CXP  Continuous Connectathon Release Notes</title>
+        <link rel="stylesheet" type="text/css" media="print" href="print.css"/>
+        <link rel="shortcut icon" href="images/favicon.gif" type="image/gif"/>
+        <style type="text/css" media="all"> @import "main.css"; </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="intro">
+                <div id="pageHeader">
+                    <a href="index.html"><img alt="MedCommons" src="images/MEDcommons_logo_246x50.gif"/></a>
+                    <iframe src="uinfo.php" height="50"  width="246" scrolling="no" name="uinfo" frameborder="0" ></iframe>
+                </div>
+                <div id="quickSummary">
+                    <p class="p2">
+                        <span>a patient centric ccr transport and storage network</span>
+                    </p>
+                </div>
+            </div>
+            <div id="supportingText" title="mouse over any acronym to reveal its definition">
+                <div id="preamble"> 
+                    <h3>Continuous Connectathon </h3> 
+                    <!-- Begin Page Content //--> 
+                    <div id="content"> 
+
+                        <table border="2">
+                            <tbody>
+                                
+                                <tr>
+                                    <th>Component</th><th>Version</th>
+                                </tr>
+                                <tr>
+                                    <td>CCR FireFox Client</td><td>0.9.21</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>CXP</td><td>0.9.3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Nov 2, 2006</p>
+                        <h2>Overview</h2>
+                        <ol>
+                            
+                            
+                            <li>The CCR Continuous Connectathon Server is running at http://gateway001.test.medcommons.net:9080/router/CxpServlet and 
+                                https://gateway001.medcommons.net:8443/router/CxpServlet. . Either one of these endpoints works with the MedCommons CCR FireFox client. Note that these are the web service endpoints and are not clickable interfaces from this document.
+                            </li>
+                            
+                            <li>All previous versions of the MedCommons CCR FireFox Client are now obsolete. Install the new <a href="http://www.medcommons.net/ccr_client/1.22/mccxp_0.9.22.xpi" >MedCommons CCR FireFox Client 
+                            </a> before testing. This client is specifically configured for validation testing by the CCR Accel group and if you install it it will overwrite your previous CCR Server Settings with the new validation server.</li>
+                            <li>A SOAP interface is now available. The <a href="http://gateway001.test.medcommons.net:9080/router/services/CCRServiceSoap?wsdl">wsdl</a> file should look very familar - it is nearly identical with the
+                                one posted by Roberto Ruggeri from Microsoft (Roberto.Ruggeri@microsoft.com) on the ccraccel list. More details on this below</li>
+                            <li>The CCR Continuous Connectathon Server now peforms validation for both REST and SOAP interfaces. This validation differs from the validation services on the AAFP site and is explained below.</li>
+                            
+                            <li>The XSLT used in the MedCommons viewer is of fairly recent origin (from Steven Waldren's posting of ccr20061102.xsl to ccr-accel on 11/02/2006) but will undoubtedly be obsolete very soon. </li>
+                            <li>The CXP Specfication will be updated shortly. The older version of the spec is <a href="http://gateway001.test.medcommons.net:9080/router/documentation/CXP_Protocol_Specification.pdf">available</a>.</li>
+                            <li>The <a href="https://ops.medcommons.net/cxpblog.php">CCR Continuous Connectathon Problem Log</a> reports errors or issues issued from the CCR FireFox client. The functionality of this log is the same as in earlier releases of our client; it will be improved based on community input.  We've been thinking of putting validation warnings in this log along with a 'delete' function so that there is a publically available place to share data, error messages, and other issues. </li>
+                            <li>The REST version of CXP includes versioning information which can be used to detect out of date clients or protocol implementations.</li>
+                            
+                            
+                            
+                        </ol>
+                        
+                        
+                        
+                        
+                        
+                        <h2>SOAP interface</h2>
+                        <h3>Commands</h3>
+                        In keeping with Ruggeri's suggestion - the CXP SOAP interface is not a repository interface - it's just a transport mechanism and it provides the glue between two information systems. Thus - only a 'submitCCR' command is needed. Other use cases may require other services - but leaving these out of CXP for the moment means that CXP is simple, clean, and good enough for everyone to start learning with. 
+                        
+                        <h3>WSDL</h3>
+                        The 
+                        <a href="http://gateway001.test.medcommons.net:9080/router/services/CCRServiceSoap?wsdl">WSDL</a>  used in the CCR Continuous Connecthon server is nearly identical to the  <a href="http://gateway001.test.medcommons.net:9080/router/documentation/CCR_RR_Original.wsdl">WSDL</a> from Ruggeri. The only purposeful difference is the soap location URL. However- there are other small differences that may need to be fixed. The CCR Continuous Connectation WDSL was generated in the following manner:
+                        <ul>
+                            
+                            <li>The original WSDL file was edited with the new location URL</li>
+                            <li>The Apache Axis tool wsdl2java was used to generate Java bindings from the WSDL</li>
+                            <li>The new WDSL is then generated from the code that was created by Axis</li>
+                        </ul>
+                        The differences between the two WSDL are small and perhaps insignificant. If they aren't we should figure out how to change things to make them insignificant. Here is one example:
+                        <ul>
+                            <li>Original: &lt;s:complexType mixed="true"&gt;</li>
+                            
+                            <li>New:&lt;complexType&gt;</li>
+                        </ul>
+                        The namespace difference appears to be trivial - but the omission of 'mixed="true"' may not be. Any help on converging this will be much appreciated.
+                        
+                        <h2>Validation</h2>
+                        The  CCR Continuous Connectathon Server  is configured to validate against an XSD in <i>LENIENT</i> mode. There are three modes supported on our server:
+                        <ul>
+                            <li>NONE. Validation is turned off. This may be useful for testing; it may be removed in the future.</li>
+                            
+                            <li>LENIENT. Validation is performed but any warning or error messages are reported back to the CXP client in the ErrorDescription. Fatal errors will throw an error.</li>
+                            <li>STRICT. Any warning, error, or fatal error will cause the CXP transaction to fail.</li>
+                        </ul>
+                        <p/>
+                        The definition of warning/error/fatal is from the <a href="http://java.sun.com/j2se/1.5.0/docs/api/org/xml/sax/ErrorHandler.html">SAX parser documentation</a> in Sun's standard Java libraries. These definitions seem very generic.
+                        <p/>
+                        The current schema being used is CCR_20061018_Final.xsd.
+                        <p/>
+                        
+                        The main rationale for LENIENT validation is that the schema and the sample CCRs are currently in a state of flux. Permitting the CCRs to be transmitted while returning typed warning messages seemed like the friendliest thing to do.
+                        <b>Note:</b>For the next few weeks it may be the case that most CXP transfers will generate a warning message until the schema is finalized. It make take a few days from the release of a new XSD until it makes it into the CCR Continuous Connectathon build. 
+                        
+                        <h2>Example Client source</h2>
+                        
+                        We have a simple client application written in Java. Please see the <a href="http://gateway001.test.medcommons.net:9080/router/documentation/CXP_ReadMe.html">CXP_ReadMe</a> document for a link to the source code.
+                        However, anyone with access to the wsdl should be able to build their own client
+                        <p/>
+                        The output displays three values
+                        <ol>
+                            <li>Error code</li>
+                            
+                            <li>Error description</li>
+                            <li>UUID</li>
+                        </ol>
+                        The output from the client appears on the command line:
+                        <pre>
+                            Response:
+                            <b>ErrorCode</b>=220
+                            <b>ErrorDescription</b>=
+                            Error: cvc-complex-type.2.4.a: Invalid content starting with element 'ns1:Insurance'. One of '{"urn:astm-org:CCR":Payers
+                            , "urn:astm-org:CCR":AdvanceDirectives, "urn:astm-org:CCR":Support, "urn:astm-org:CCR":FunctionalStatus, "urn:astm-org:C
+                            CR":Problems, "urn:astm-org:CCR":FamilyHistory, "urn:astm-org:CCR":SocialHistory, "urn:astm-org:CCR":Alerts, "urn:astm-o
+                            rg:CCR":Medications, "urn:astm-org:CCR":MedicalEquipment, "urn:astm-org:CCR":Immunizations, "urn:astm-org:CCR":VitalSign
+                            s, "urn:astm-org:CCR":Results, "urn:astm-org:CCR":Procedures, "urn:astm-org:CCR":Encounters, "urn:astm-org:CCR":PlanOfCa
+                            re, "urn:astm-org:CCR":HealthCareProviders}' is expected. at line 39, column 18 in entity null
+                            <b>UUID</b>  =be41922ea2f5e29cc5fd78f5bbbbf59c3ad34375
+                        </pre>
+                        
+                        As described in the CXP Specification - a 2xx error code is succesful (just like in HTTP). A 220 means that in <i>LENIENT</i> validation mode there were non-Fatal validation errors but that the CCR was accepted.
+                        
+                        
+                        <h2>CCR-derived email notifications</h2>
+                        Notification implementation
+                        The ASTM CCR specfication does not describe a notification nor a notification reply mechanism. MedCommons has implemented the following mechanism: an Actor is defined with an email Address and an ActorLink is placed into either the &lt;To&gt; or &lt;From&gt; sections. A notification email is sent to the Actor specified in the &lt;To&gt; section; replies are routed to the email specified in the Actor specified in the &lt;From&gt; section.
+                        
+                        For example - when the CCR Client has an entry in the Notify: dialog box containing the text 'johndoe@gmail.com' the following data is inserted into the CCR. An ActorLink is put into the &lt;To&gt; section:
+                        
+                        <pre>
+                            
+                            &lt;ActorLink&gt;
+                            &lt;ActorID&gt;AA662904095&lt;/ActorID&gt;
+                            &lt;ActorRole&gt;
+                            &lt;Text&gt;Notification&lt;/Text&gt;
+                            &lt;/ActorRole&gt;
+                            
+                            &lt;/ActorLink&gt;
+                        </pre>
+                        
+                        
+                        And the following &gt;Actor&lt; is placed into the &lt;Actors&gt; section.
+                        
+                        <pre>
+                            &lt;Actor&gt;;
+                            &lt;ActorObjectID&gt;AA662904095&lt;/ActorObjectID&gt;
+                            
+                            &lt;InformationSystem&gt;
+                            &lt;Name&gt;MedCommons Notification&lt;/Name&gt;
+                            &gt;Type&lt;Repository&lt;/Type&gt;
+                            &lt;Version&gt;0.9.16&lt;/Version&gt;
+                            
+                            &lt;/InformationSystem&gt;
+                            &lt;EMail&gt;
+                            &lt;Value&gt;johndoe@gmail.com&lt;/Value&gt;
+                            &lt;/EMail&gt;
+                            &lt;Source&gt;
+                            
+                            &gt;Actor&lt;
+                            &lt;ActorID&gt;AA662904095&lt;/ActorID&gt;
+                            &lt;/Actor&gt;
+                            &lt;/Source&gt;
+                            &lt;/Actor&gt;
+                        </pre>
+                        
+                        When the CCR with these fields is transmitted to MedCommons via CXP (either the CCR Client or the SOAP interface) a notifcation email message is generated. The recipient of the notification emails requires a PIN to access the CCR. There are two cases:
+                        <ol>
+                            <li>The CCR FireFox client has a user interface which permits PIN values to be set or random values to be generated by a program</li>
+                            <li>The CXP SOAP client generates an email but there is no field currently in the WSDL that permits the reporting of the PIN value. The current implementation generates the five digit value 00000 for these notifications. </li>
+                        </ol>
+                        There will be more details in the next version of the CXP Protocol Specification.
+                        <p/>
+                        If you want to discuss PINS please talk with Adrian in Dallas next week.
+                    </div> 
+                    <!-- End Page Content //--> 
+                    
+                </div> 
+            </div>
+            <div id="trackingBox">
+                <form method="post"
+                    action="https://secure.medcommons.net/trackinghandler.php">
+                    <input type="hidden" name="returnurl"
+                        value="badtracknum.html"/> MedCommons
+                    Tracking Number <p>
+                        <input type="text" name="trackingNumber" size="16" maxlength="16"/>
+                    </p>
+                    <input type="submit" value="Go"/>
+                </form>
+            </div>
+            <div id="linkList">
+                <!--extra div for flexibility - this list will probably be the trickiest spot you'll deal with -->
+                <div id="linkList2">
+                    <!-- If you're wondering about the extra &nbsp; at the end of the link, it's a hack to meet WCAG 1 Accessibility. -->
+                    <!-- I don't like having to do it, but this is a visual exercise. It's a compromise. -->
+                    <div class="lside">
+                        <h3 class="resources">
+                            <span>BASICS</span>
+                        </h3>
+                        <!-- list of links begins here. There will be no more than 8 links per page -->
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="tour.html">Tour</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">
+                                    <acronym title="Frequently Asked Questions">FA<span
+                                        class="accesskey">Q</span></acronym>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a href="termsofuse.html">Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="sendccr.html">Send a Private
+                                    <acronym title="Continuity of Care Record">CCR</acronym></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lside">
+                        <h3 class="archives">
+                            <span>PAPERS</span>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a
+                                    href="http://www.medcommons.net/affinity-driven_health_care_networks.pdf" target="_new"
+                                    ><span class="accesskey">A</span>ffinity Driven Health
+                                    Information Networks</a>&nbsp;</li>
+                            
+                            <li>
+                                <a href="http://www.medcommons.net/cxp/collateral/cxp_protocol_specification.pdf" target="_new"
+                                    title="Patient-centered medical information transport." ><acronym title="CCR Exchange Protocol">C<span
+                                        class="accesskey">XP</span></acronym> - A Public Domain
+                                    <acronym title="Continuity of Care Record">CCR</acronym>
+                                    Transfer Protocol</a>
+                            </li>
+                            <li>
+                                <a href="http://www.medcommons.net/whitepapers/nhinrfiresponse.pdf" target="_new"
+                                    title="MedCommons Response to Request for Information from Dr.
+                                    David Brailer"><span class="accesskey">M</span>edCommons
+                                    Response to <acronym title="National Health Information Network"
+                                        >NHIN</acronym>
+                                    <acronym title="Request for Information">RFI</acronym></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lside">
+                        <h3 class="resources">
+                            <span>LINKS</span>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="http://www.centerforhit.org/x1556.xml" target="_new"><span>CCR-</span>Compatible
+                                    Product  <acronym title="Continuity of Care Record"
+                                        >Gallery</acronym></a>
+                            </li>
+                            <li>
+                                <a href="http://www.centerforhit.org/x201.xml" target="_new"><span>M</span>ore
+                                    information on the <acronym title="Continuity of Care Record"
+                                        >CCR</acronym> standard</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lside">
+                        <h3 class="resources">
+                            <span>DOWNLOAD</span>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="cxpclient.html" target="_new"
+                                    ><acronym title="Continuity of Care Record">CCR</acronym>
+                                    <span class="accesskey">P</span>lugin for Firefox</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <a href="http://validator.w3.org/check/referer" title="Check the validity of this
+                site&#8217;s XHTML">xhtml</a> &nbsp; <a
+                    href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of
+                    this site&#8217;s CSS">css</a> &nbsp; <a
+                        href="http://creativecommons.org/licenses/by-nc-sa/1.0/" title="View details of the
+                        license of this site, courtesy of Creative Commons.">cc</a> &nbsp; <a
+                            href="http://bobby.watchfire.com/bobby/bobbyServlet?URL=http%3A%2F%2Fwww.mezzoblue.com%2Fzengarden%2F&amp;output=Submit&amp;gl=sec508&amp;test="
+                            title="Check the accessibility of this site according to U.S. Section 508">508</a>
+            &nbsp; <a
+                href="http://bobby.watchfire.com/bobby/bobbyServlet?URL=http%3A%2F%2Fwww.mezzoblue.com%2Fzengarden%2F&amp;output=Submit&amp;gl=wcag1-aaa&amp;test="
+                title="Check the accessibility of this site according to Web Content Accessibility
+                Guidelines 1.0">aaa</a>
+            <p class="p1">&#169; MedCommons 2006</p>
+        </div>
+    </body>
+</html>
+
+

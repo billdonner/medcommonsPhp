@@ -1,0 +1,27 @@
+<div id="ContentBoxInterior" mainTitle="Embed a ROI Form in Your Own Website">
+
+<h2>How to Embed an ROI Form in Your Own Website</h2>
+<p>Just supply MedCommons with an HTTP POST of an  html form that you offer to your users on your website. 
+When filled by the user, it is always posted to 
+https://www.medcommons.net/hipaaroireq.php. Once a valid form is entered by the user, MedCommons generates a receipt with an ROI ID that can be
+utilized to retrieve the original form.  </p>
+<h3>Form Specification</h3>
+<p>This is a web developer dump of the form you must supply. Any of the fields can be hidden or not at your discretion. You can leave the checkboxes as is,
+or set them to type hidden and change their values from 'on' to ''</p>
+<img src = "images/roireqpost.gif" alt=roiform />
+<p>MedCommons will error check the three required fields (name, dob, and email) and any supplied optional fields</p>
+<h3>Handling Errors</h3>
+<p>MedCommons will error check all fields to ensure only safe requests are entered. Any errors encountered will either be displayed on a Mod form
+to the end user, or will be posted to another program if the "repost" variable is supplied with a non blank URL</p>
+<h3>Examples</h3>
+<ul>
+  <li>
+  from our own site at <a href=embedexample.html>embedexample.html</a>
+  </li>
+    <li>
+  from  some other examples from the <a href='http://apps.medcommons.net/is12/axioexample.html'>axio sports site</a>
+  </li>
+  
+</ul>
+
+</div>

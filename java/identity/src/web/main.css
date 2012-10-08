@@ -1,0 +1,268 @@
+/* global----------------------------------------------- */
+
+body {background: #fff url(images/bg.gif) no-repeat fixed top left;
+font-family: verdana, helvetica, arial, sans-serif;
+margin: 0 20px 0 20px;
+color: #333;}
+
+/* layout----------------------------------------------- */
+
+#container {position: relative;
+background: url() no-repeat top left;
+margin: 0 auto 0px auto;
+padding-top: 0px;
+xwidth: 710px;
+/*border-bottom: 5px solid #09345f;
+*/}
+
+#pageHeader {display: inline;}
+
+#quickSummary, #tableSummary {width: 100%;
+text-align: left;}
+
+#quickSummary p.p1, #tableSummary p.p1 {display: none;}
+
+#quickSummary p.p2, #tableSummary p.p2 {margin-top: 0;
+padding-right: 5px;}
+
+#supportingText {margin-top: 20px;}
+
+#patientCCRLog {margin: 0 0 0 0;
+width: 705px;}
+
+#preamble {margin: 0 0 0 176px;
+width: 529px;}
+
+#participation, #benefits, #requirements {margin: 25px 0 0 176px;
+width: 529px;}
+
+#footer {margin: 0 0 5px 0;
+padding: 10px 0 0 0;
+width: 100%;
+text-align: center;}
+
+#linkList {position: absolute;
+width: 150px;
+left: 0px;
+top: 74px;}
+
+
+#faqBody{position: absolute;
+width: 710px;
+left: 0px;
+top: 74px;}
+
+#trackingBox {position: absolute;
+left: 495px;
+top: 12px;
+border: 1px solid #09345f;
+padding: 10px;
+text-align: center;}
+
+
+
+#trackingBox form {margin-top: 2px;
+margin-bottom: 2px;
+font-size:10px;}
+
+#personalInfo {position: absolute;
+left: 495px;
+top: 12px;
+border: 1px solid #09345f;
+padding: 10px;
+font-size:12px;
+text-align: left;}
+
+#personalInfo h3 {width: 190px;
+height: 20px;
+margin-top: 5px;
+padding-top: 5px;
+background: #ccc url("images/ringradient.jpg") repeat-x top left;
+font-size: 12px;
+line-height: 23px;
+font-weight: bold;
+color: #000;
+padding-left: 5px ;}
+
+#personalInfo a, #personalInfo a:link, #personalInfo a:visited {color: #999;
+font-size:8px;
+background: #fff;}
+
+#personalInfo a:hover {color: #333;
+background: #fff;}
+
+#explanation {margin: 0px 0 0 176px;
+width: 529px;}
+
+/* text----------------------------------------------- */
+
+table {font-size: 12px;}
+
+th {font-size: 14px;
+background: #ccc url("images/ringradient.jpg");
+font-weight: bold;}
+
+td.editCCR {background: #fff url("images/b_edit.png") no-repeat;}
+td.viewCCR {background: #fff url("images/magnifier.png") no-repeat;}
+p {font-size: 12px;}
+
+#preamble p.p1, #supportingText p.p1 , #patientCCRLog p.p1 {margin-top: 10px;}
+
+#preamble p, #supportingText p, #patientCCRLog p {line-height: 18px;}
+
+#quickSummary p.p2 {font-size: 9px;
+background: #fff;
+color: #999;}
+
+#tableSummary p.p2 {font-size: 11px;
+background: #fff;
+color: #999;}
+
+#footer {font-size: 9px;}
+
+/* lists----------------------------------------------- */
+
+#linkList ul {font-size: 12px;
+list-style:none;
+margin: 5px 0 0 0;
+padding: 0 0 0 0;
+background: #fff;
+color: #663333;}
+
+#linkList ul li {margin: 0;
+padding: 0 0 0 5px;
+line-height: 14px;
+background: #fff;
+color: #ccc;}
+
+/* links-------------------------------------------was ccc- then 000-- */
+
+a, a:link, a:visited {color: #999;
+background: #fff;}
+
+a:hover {color: #333;
+background: #fff;}
+
+
+#quickSummary a, #quickSummary a:link, #quickSummary a:visited {
+text-transform: lowercase;
+color: #ccc;
+background: #fff;
+text-decoration: none;}
+
+
+#quickSummary a:hover {text-decoration: underline;}
+
+#linkList a, #linkList a:link, #linkList a:visited {list-style: none;
+/*
+margin-left: 1em;
+*/
+padding: 1px 0 1px 1.5em;
+background: transparent url("images/rinbulletOver.gif") no-repeat left top;
+/*center;
+*/
+font-size: 11px;
+font-weight: bold;
+text-decoration: none;
+color: #000;}
+
+#linkList a:hover {background: transparent url("images/rinbullet.gif") no-repeat left top;
+/*center;
+*/}
+
+#footer a, #footer a:link, #footer a:visited {font-weight: bold;
+
+text-transform: uppercase;
+text-decoration: none;}
+
+#footer a:hover {text-decoration: underline;}
+
+/* headings----------------------------------------------- */
+
+h3 {margin-bottom: 0px;}
+
+h3 span {display: inline}
+
+#supportingText h3 {width: 529px;
+height: 15px;
+padding-top: 5px;}
+
+#linkList h3 {width: 150px;
+height: 20px;
+margin-top: 20px;
+padding-top: 5px;
+background: #ccc url("images/ringradient.jpg") repeat-x top left;
+font-size: 11px;
+line-height: 23px;
+font-weight: bold;
+color: #000;
+padding-left: 5px ;}
+
+#preamble h3 {background: transparent url() no-repeat top left;
+width: 529px;
+height: 26px;}
+
+#patientCCRLog h3 {background: transparent url() no-repeat top left;
+width: 529px;
+height: 26px;}
+
+
+
+/* misc--------------------------------- */
+
+acronym {border-width: 0;}
+
+img {border-width:0}
+
+/* tour -------------------------------------*/
+
+	
+#tour {
+	position:absolute;
+	width:750px;
+	margin:0;
+	border:3px double #000;
+	height:900px;
+	padding:0;
+	}
+
+#tour p {width: 230px;  padding: 0 0 0 0; margin: 0; overflow:hidden; font-size:10px;}
+#tour p a:link, p a:visited, #tour p a:active {
+	font-size:10px;
+	position:relative;
+	font-weight:bold;
+	color:#0000FF;
+	text-decoration:none;
+	}
+#tour p  a:hover {
+	font-size:10px;
+	color:#000;
+	text-decoration:underline;
+}
+
+.showTour {
+	width:500px;
+	height:600px;
+	margin:0; padding:0;
+	float:left;
+	border-right:1px solid #000;
+	}
+.hideTour {
+	display:none;
+	}
+#tour p.current_slide {
+	font-size:12px;
+	height:auto;	
+	}
+#tour p.current_slide a {
+	color:#000;
+	}
+#tour p.dormant_slide {
+	font-size:8px;
+	
+	}
+#tour p.dormant_slide a {
+	color:#000;
+	}	
+	
+	

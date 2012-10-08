@@ -1,0 +1,31 @@
+This note describes the format of the CXPCMD input file. 
+
+This format is local to this particular utility and is unrelated to the CXP protocol.
+
+The entire xml document is enclosed in matching <cxpcommand> ... </cxpcommand>
+
+The remote CXPServer to contact is enclosed in <remoteurl> tags - right now only http is supported
+
+Optionally a <repeatinterval> tag specifies an interval in seconds to repeat the entire command stream via an http Refresh header
+
+Optionally a <repeatcount> tag specifies how many times to execute the set of commands that follow
+
+Optionally, the caller may specify a key within the <callerskey> tags to pass a string that will be turned around and passed back to the caller in the future
+
+Optionally, the <opcode> field specifies the operation to perform
+
+If no <opcode> field is present, then the cxpcommand is an implied TRANSFER
+In this case there is but one additional tag, the <ccrfile> which is the CCR to transfer
+
+If an <opcode> tag is present, it can have any of the following values:
+
+If QUERY, then a query string parameter can be passed as part of the <querystring> field and optionally a notification URL can be passed as <querynotificationurl>
+
+If TRANSFER, additional attachments can be specified as part of the <attachments> section
+
+The <attachments> section consists of single line <attachment>entries for each file to be attached:
+The TYPE attribute specifies the kind of file to be transmitted (txt,xml,pdf,etc)
+The LINK attribute specifies the name of the reference in the CCR for this attachment
+The value of the entry itslef is the file specification for the document to be attached.
+
+Please examine the testcases for working examples.

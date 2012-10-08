@@ -1,0 +1,303 @@
+<div id="ContentBoxInterior" mainTitle="Concepts and Facilities">
+	<div id="pageHeading">
+		<h1>Concepts &amp; Facilities</h1>
+	</div>
+	<p><img src="images/HealthURLDiagram.jpg" alt="" height="450" width="600">
+	</p>
+	<h3>Archival Healthcare Document Repository </h3>
+	<p>MedCommons, at the most basic level, keeps document archives in 
+	perpetuity and provides healthcare domain-specific applications for access 
+	to these documents. A Personal Health Record (PHR) is a particular 
+	collection of standards-based personal documents and is the prime component 
+	of a MedCommons Account.</p>
+	<p>The builtin document types imported /exported by a MedCommons Account 
+	are:
+	</p>
+	<div id="indentList"><ul>
+		<li>CCR - the ASTM-standard structuring framework for the MedCommons PHR 
+		</li>
+		<li>DICOM - cardiology and radiology imaging </li>
+		<li>PDF - including signed documents </li>
+		<li>JPEG - still images, including those from digital cameras and 
+		cellphones 
+		</li>
+		
+	</ul></div>
+	<p>MedCommons includes applications that allow for the generation, editing, 
+	transfer, and viewing of these builtin document types on a variety of form 
+	factor devices. </p>
+	<p>Additionally, MedCommons maintains private files for each account 
+	including
+	</p>
+	<div id="Div1"><ul>
+		<li>Audit Log A detailed human-readable audit log proves traces of all 
+		individual updates to the PHR. </li>
+		<li>Forensic Log A detailed forensic log supports rollback of a PHR to 
+		any point in time </li>
+		<li>ISF - A SQLite database used to optimize access to the documents in 
+		the account. </li>
+	</ul></div>
+	<p>The PHR and CCR are normally structured as several dozen sections, 
+	including medicines, allergies, demographics. When viewing a PHR, each user 
+	can potentially choose a plug-in UI for each separate section supplied by 
+	MedCommons, the enterprise, or third party vendors. </p>
+	<p>MedCommons is both standards compliant and future-proof: As a lifetime 
+	personal archive, every new document that is added to the phr is 'merged' 
+	into the current personal health record. The specification of these merge 
+	rules is scripted and customizable. MedCommons applies the document type 
+	specific customer supplied or default merge rules in order to adjust the 
+	current personal health record. Over time, new document types will be added 
+	as healthcare information standards evolve</p>
+	<h3>Health URLs </h3>
+	<p>The MedCommons Health URL&nbsp; is the web address of a MedCommons 
+	account. Any user of the Health URL with Read authorization can see the 
+	actual Account ID. A Health URL can be further qualified with a Tracking 
+	Number or Document GUID to select a particular CCR. Entering the Health URL 
+	into a browser box displays the Current CCR or challenges the user to 
+	authenticate himself if necessary. A user with Write authorization may 
+	update a CCR using a POST request to the Health URL.&nbsp; An XPATH 
+	interface to the Health URL allows for updating individual CCR elements.</p>
+	<h3>Federation </h3>
+	<p>MedCommons, Inc., markets and licenses separate MedCommons installations, 
+	referred to as Instances. Each Instance interoperates with every other 
+	Instance unless the licensee deliberately opts-out. Each Instance contains a 
+	built-in system for creating and managing user accounts and identities, but 
+	consistent with current best practices in Identity Management, each Instance 
+	can also act as a Liberty Alliance Service Provider, and will run as a 
+	service provider (SP) with other federation schemes in the future. When 
+	using Liberty, the MedCommons SP supports multiple Identity Providers 
+	concurrently, allows the licensee to offer Single Sign On using his existing 
+	system of IDs, and to support completely pseudonymous accounts. </p>
+	<h3>Global Services </h3>
+	<p>In order to allow separate instances to interoperate, redirection service 
+	is provided that allows a licensee to find a MedCommons document on any 
+	other MedCommons system via a unique ID known as a Tracking Number Like the 
+	Credit Card networks, all MedCommons Account IDs are unique regardless of 
+	the actual MedCommons licensee or sponsor and any account and any separate 
+	instance can be accessed if the requisite consents are in place.</p>
+	<p>A redundant central coordination facility for both Tracking Numbers and 
+	Account Identitifers is maintained by MedCommons, Inc at www.medcommons.net. 
+	These tokens are handed out in large batches (by the thousands) to allow 
+	licensees to create their own accounts and documents without constant 
+	communications with MedCommons.</p>
+	<h3>Accounts </h3>
+	<p>Any action involving private information in MedCommons requires an 
+	Account. Accounts can be created via an API or via a self-service web page.</p>
+	<p>There are three distinguishing properties of each MedCommons accounts:
+	</p>
+	<div id="Div2"><ul>
+		<li>an account can have a sponsor, in which case the sponsor pays the 
+		bill; otherwise the bill is paid by the account creator </li>
+		<li>verified patient - some administrator has checked the 'patient 
+		verified' box, presumably after vetting the patient's identity </li>
+		<li>archival vs temporary - an archival account has extra data 
+		safeguards and backup optionss whereas a temporary account is 
+		short-lived. </li>
+	</ul></div>
+	<p>Anyone with Write privilege can control who can see this information and 
+	such access may be revoked by the verified patient at any time. Access 
+	authorization privilege including inviting other users and groups to have 
+	access is not separated from any other account modification privilege at 
+	this time.</p>
+	<p>A verified patient can control what information is in their medical 
+	records. The verified patient can change their mind at any point. They may 
+	change access to a medical record; they may delete something that they 
+	decide to delete.</p>
+	<p>A patient can see the same thing as the doctor or other viewer with Read 
+	access will see. This is the Current CCR (both views) and other tabs. Anyone 
+	can see who the list of people and groups who will see their record and who 
+	has ever seen their medical records.</p>
+	<p>Anyone may delegate certain actions to another user such as a family 
+	member who may be able to edit/delete a patient's medical record or a 
+	clinical practitioner of some sort may be given control. The verified 
+	surrogate can trump the others.</p>
+	<h3>Consents </h3>
+	<p>A consent (a.k.a. authorization) is an optionally signed document 
+	associated with an Account. Typically, but not necessarily, a Consent grants 
+	some entity (Doctor, Hospital, Computer System) access to a portion of the 
+	Account. MedCommons stores the Consent Documents currently associated with 
+	an Account. MedCommons also supports multiple forms of consents that can be 
+	modified by Licensees.</p>
+	<p>There are three kinds of consent implemented in MedCommons: </p>
+	<div id="Div3"><ul>
+		<li>plain paper like consents, which are printed with a barcode for 
+		possible faxback to MedCommons. These are then faxed back to the account 
+		and stored as titled PDFs attached to the XACML policy document. </li>
+		<li>interactive consents, where the user 'signs' a document on the 
+		screen, possibly with an additional 2 factor check like a custom sms 
+		delivered PIN 
+		</li>
+		<li>digitally signed XML consents, where some other authority is 
+		identifying the user and providing non-repudiation of the users 
+		signature (not yet implemented)
+		</li>
+	</ul></div>
+	<p>Consents, including most Plain Paper types, are created as a result or 
+	side-effect of a form such as an authorization or order form. The form's 
+	content will be reflected into XACML as needed.</p>
+	<p>Plain paper consents, once just imported to the Account&nbsp; require 
+	review and independent online enablement. Enablement (verification of the 
+	scanned PDF) matches the XACML consent document that created the human 
+	readable consent and specifies precisely the privileges of users and 
+	group(s) that have access under this consent this is a form of 
+	countersignature.</p>
+	<p>All access to the Account is mediated by processing the (set of) XACML 
+	document(s) or equivalent SQLite entries. The group or user identifier is 
+	referred to in the XACML document(s).</p>
+	<p>The XACML document(s) has entries that refer to Authorization Documents 
+	to support its assertions. The pdf of the signed fax consent, log entry of 
+	interactive consent or digitally signed XML consent are all examples 
+	Authorization documents.</p>
+	<h3>Groups </h3>
+	<p>PHR Documents are routinely shared between patients, family members, 
+	doctors, and 3rd parties. Access to a PHR and its associated documents in 
+	MedCommons is provided by three mechanisms: </p>
+	<div id="Div4"><ul>
+		<li>A tracking number/pin which permits anonymous access </li>
+		<li>A consent provides a means of providing permission to share 
+		documents 
+		</li>
+		<li>Direct login to the account </li>
+	</ul></div>
+	<p>In MedCommons 1.0, the only documents subject to sharing are CCR but 
+	other types can be referenced and thereby explicitly shared in the CCR.</p>
+	<p>MedCommons provides for optional patient control of all document sharing. 
+	Patient control requires verified patient status. New Accounts created in 
+	the context of a Group (eg by clicking New Account in the Worklist frame) 
+	automatically grant sharing consent to that Group. Beyond the original 
+	creator group, other users and groups can be invited to access the Account.</p>
+	<h3>Import/Export </h3>
+	<p>These are the various means of importing documents and other info into a 
+	MedCommons Account with Account ID nnnnnnnnnnn: </p>
+	<div id="Div5"><ul>
+		<li>send a barcoded fax to a toll free number, with the nnnnnnnnnn 
+		encoded in the barcode </li>
+		<li>upload a CCR using the MedCommons UI </li>
+		<li>send DICOM from OSIRIX or DICOM Data Liberator </li>
+		<li>send CXP from just about anywhere, including google gadgets, blood 
+		pressure meters and glucometers </li>
+		<li>restore an account save-set made with the Export Backup Screen </li>
+	</ul></div>
+	<p>These are the various means of exporting documents&nbsp; and other info 
+	from a MedCommons Account with Account ID nnnnnnnnnnn: </p>
+	<div id="Div6"><ul>
+		<li>Export by Save CCR to file </li>
+		<li>Export by Save As a PDF in Acrobat or Preview </li>
+		<li>Export by download CCR, PDF, DICOM and all other attachments. </li>
+	</ul></div>
+	
+	<h3>Notifications </h3>
+	<p>MedCommons Notifications are one-way messages delivered to users via 
+	Email, IM, RSS, SMS, Fax and Audio. The current implementation supports only 
+	Email. Notifications are delivered on a best-efforts basis and may be 
+	insecure from a HIPAA PHI perspective. The MedCommons applications do not 
+	depend on the delivery of notifications.</p>
+	<p>Any registered user can use the web interface to view past notifications 
+	related to any account under his administrative control.</p>
+	<p>A Notification consists of a body text which is usually produced via a 
+	templating system and a subject line. A Notification's body text may include 
+	embedded hyperlinks to bring the user back to the MedCommons service. </p>
+	<hr style="width: 100%; height: 2px;">
+	<h3>Appliances </h3>
+	<p>MedCommons Appliance supports a licensee&#8217;s PHR Accounts in a virtual 
+	configuration (currently running on Amazon's EC2) or as a physical appliance 
+	in the licensee's data center. The appliance is composed of various logical 
+	servers, which are then mapped to physical servers as required for 
+	performance. A variety of storage options allow for either server-based RAID 
+	or SAN or NAS storage arrays. A console interface for system operators 
+	allows for control and customization of the MedCommons Instance, but the 
+	primary user interface is offered in a co-branded interface for patients and 
+	providers.</p>
+	<h3>Components </h3>
+	<p>When delivered as an appliance, the database, appserver, and gateway 
+	components are pre-configured and ready to go. As the appliance needs to 
+	grow, the Operations console can be used to add additional capacity.</p>
+	<h3>DataBase </h3>
+	<p>The internal Service Oriented Architecture is built around four 
+	databases, which can be serviced on different machines if needed. No PHI is 
+	maintained in any of these tables but is instead kept in the Gateway 
+	Servers.&nbsp; The databases are implemented in MySQL and are accessed over 
+	a gigabit lan from app server code written in multiple languages. As the 
+	database grows, additional disks, CPUs, and finally clustering can&nbsp; be 
+	applied to support a larger patient population.</p>
+	<h3>App Servers </h3>
+	<p>App Servers are cheap, commodity execution servers that connect to the 
+	database and support the web service and user interfaces written in Java, 
+	PHP, and Python. Only temporary disk storage is used by these servers: they 
+	can fail without impact on the application.</p>
+	<h3>Gateway Servers </h3>
+	<p>MedCommons Gateway Servers handle all PHI processing and storage, manage 
+	the sandboxed MedCommons account, support merging of incoming messages, fax, 
+	DICOM, emails. The Gateway runs the varied user interface applications 
+	against account storage.</p>
+	<p>The Gateway Server can store documents in user accounts on local disks, 
+	on networked storage arrays, and on remote service repositories such as S3. 
+	The local storage can be configured to operate as a cache in front of S3, 
+	allowing the gateway to fail without serious impact.</p>
+	<p>DICOM is always stored as an attachment to a CCR and CCRs are rooted in 
+	Patient Accounts. There are no loose DICOM files.The Web based DICOM Viewer 
+	is a plug-in to the MedCommons Viewer framework. Trusted third party 
+	developers can build additional tools and features into the DICOM Viewer. 
+	Different Users have the ability to move DICOM from PHRs to different 
+	Workstations and Viewers and vice/versa, the MedCommons enabled OSIRIX 
+	workstation being the first example.</p>
+	<p>Fax is a first class format for MedCommons A MedCommons Account Holder 
+	can select a template and print a cover sheet containing a bar code that 
+	will route faxes to their MedCommons Account as PDFs wrapped in a CCR. An 
+	incoming fax for an account will be merged into Current CCR as an attachment 
+	with the name of the template as its title.</p>
+	<p>CXP is a family of SOAP and REST based Apis for manipulating CCRs, 
+	creating Accounts, and performing other useful MedCommons functions under 
+	remote control. Every CXP call is logged by MedCommons for future forensic 
+	or billing purposes.</p>
+	<p>Orders -&nbsp; are instructions or requests for service that may live for 
+	a long time. The order is a complex CCR that represents an Order from a 
+	Requesting Organization that is somehow augmented and 'filled' by one or 
+	more Providing Organizations . Orders are defined in the section. Each Order 
+	is encoded in a . There is a special Order-oriented CCR Edit form for 
+	Concierge applications.</p>
+	<hr style="width: 100%; height: 2px;">
+	<h3>Operations </h3>
+	<p>The setup of a new MedCommons Instance is a one-time dialogue which sets 
+	up basic federation relationships and generates a customized set of user 
+	interface pages for patients and doctors, Once set up, the system is 
+	generally approached via the Console.</p>
+	<h3>Console </h3>
+	<p>The MedCommons Console is the primary access point for the system 
+	operator. A separate operations id and password is required to utilize the 
+	console. The console allows an administrator to manage users, groups, fax 
+	service, to backup and restore patient and doctor keys, to review access 
+	logs, and to review and manage the licensee&#8217;s MedCommons Bill. The Console 
+	also displays a self updated health indicator for each of the servers within 
+	the Licensee&#8217;s system.</p>
+	<h3>Logging </h3>
+	<p>The MedCommons system maintains a variety of logs including both System 
+	Logs and Account Level Logs and provides for easy console access. The system 
+	logs include Apache, boot, tomcat, rpm and other server logs. The 
+	application logs include a Log of Account Accesses, and CCR Merge Logs.The 
+	Account Activity Log is special. It is designed for both the Doctor and 
+	Patient to understand so it labels things plainly. It is accessible only to 
+	users authorized to read the Account (as the expanded Current Patient 
+	gadget) so that it can contain PHI.</p>
+	<h3>Performance </h3>
+	<p>The system can scale as needed each instance of MedCommons consists of a 
+	scalable Central system and a collection of Gateway systems:the central 
+	system scales by adding additional processors to a simple MedCommons 
+	systems, and then by clustering separate machines into a large complex all 
+	working on a common database under a common dns banner; the system of 
+	Gateways scales by simply adding more gateways as needed for cpu power or 
+	storage.</p>
+	<p>The smallest complete MedCommons system can run on a single processor on 
+	a laptop or appliance/server. Separate federated instances of MedCommons can 
+	be conjoined thru Liberty - thus providing endless scalability</p>
+	<h3>Automated Component Update </h3>
+	<p>There is an automated mechanism for distributing new and updated 
+	MedCommons components onto an appliance using RPM</p>
+	<h3>Fallback </h3>
+	<p>The basic requirements for continuing operations after appliance failure 
+	provide for a reasonably warm switchover in minutes and do not require 
+	network DNS adjustments. The basic mechanism backs ups all appliance data to 
+	S3 including accounts and tables. A restore from S3 to a new appliance that 
+	has loaded the MedCommons Live CD and downloaded MedCommons components&lt;</p>
+
+</div>

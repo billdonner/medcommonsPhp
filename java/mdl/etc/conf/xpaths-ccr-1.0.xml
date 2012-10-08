@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mapping file to map CCR 1.0 Spec values to the MedCommons internal values.
+
+  This file is a central repository of XPath statements used throughout
+  the MedCommons codebase.  
+
+  Notes:
+    -   By default all XPath statements are qualified with the default
+        namespace of the XML document they are acting upon.  This means
+        you can write the XPath as if the document is in the default namespace.
+
+    -   The namespace qualification is currently done as a rather simplistic
+        regex replacement on the XPath expression.  This sometimes screws up
+        complex XPath statements which fool it into inserting a namespace where it
+        shouldn't. If you don't want this namespace hack, add a  
+        'noAddNs="true"' attribute to your <path> element and specify the namespace explicitly
+        using 'x:' for the default namespace of the document.
+
+  Copyright 2005 MedCommons Inc.   All Rights Reserved.
+  -->
+<!DOCTYPE paths [
+  <!ENTITY toActor "/ContinuityOfCareRecord/Actors/Actor[ActorObjectID=/ContinuityOfCareRecord/To/ActorLink[1]/ActorID]">
+  <!ENTITY toActors "/ContinuityOfCareRecord/Actors/Actor[ActorObjectID=/ContinuityOfCareRecord/To/ActorLink/ActorID]">
+  <!ENTITY allMcToActors "/ContinuityOfCareRecord/Actors/Actor[ActorObjectID=/ContinuityOfCareRecord/To/ActorLink/ActorID and ./InformationSystem/Name='MedCommons Notification']">
+  <!ENTITY nonMcToActors "/ContinuityOfCareRecord/Actors/Actor[ActorObjectID=/ContinuityOfCareRecord/To/ActorLink/ActorID and count(./InformationSystem[Name='MedCommons Notification'])=0]">
+  <!ENTITY firstMcToActor "/ContinuityOfCareRecord/Actors/Actor[ActorObjectID=(/ContinuityOfCareRecord/To/ActorLink[/ContinuityOfCareRecord/Actors/Actor[InformationSystem/Name='MedCommons Notification']/ActorObjectID = x:ActorID]/ActorID)[1]]">
+  <!ENTITY fromActor "/ContinuityOfCareRecord/Actors/Actor[ActorObjectID=/ContinuityOfCareRecord/From/ActorLink[1]/ActorID]">
+  <!ENTITY patientActor "/ContinuityOfCareRecord/Actors/Actor[ActorObjectID=/ContinuityOfCareRecord/Patient/ActorID]">
+]>
+
+<paths>
+  <path name="ccrDateTime">/ContinuityOfCareRecord/DateTime/ExactDateTime</path>
+  <path name="toEmail">&toActor;/EMail/Value</path>
+  <path name="firstMcToEmail">&firstMcToActor;/EMail/Value</path>
+  <path name="mcToEmails">&allMcToActors;/EMail/Value</path>
+  <path name="toEmails">&toActors;/EMail/Value</path>
+  <path name="nonMcToEmails">&nonMcToActors;/EMail/Value</path>
+  <path name="sourceEmail">&fromActor;/EMail/Value</path>
+  <path name="toActor">&toActor;</path>
+  <path name="patientActor">&patientActor;</path>
+  <path name="patientActorID">/ContinuityOfCareRecord/Patient/ActorID</path>
+  <path name="patientEmail">&patientActor;/EMail/Value</path>
+  <path name="bodySections">/ContinuityOfCareRecord/Body/*</path>
+  <path name="bodySectionCount" noAddNs="true" notest="true">count(//x:Body/*[local-name()=translate($section,' ','')])</path>
+  <path name="sourceName">concat(&fromActor;/Person/Name/CurrentName/Given,' ',&fromActor;/Person/Name/CurrentName/Family)</path>
+  <path name="patientName">concat(&patientActor;/Person/Name/CurrentName/Given,' ',&patientActor;/Person/Name/CurrentName/Family)</path>
+  <path name="patientGivenName">&patientActor;/Person/Name/CurrentName/Given</path>
+  <path name="patientMiddleName">&patientActor;/Person/Name/CurrentName/Middle</path>
+  <path name="patientFamilyName">&patientActor;/Person/Name/CurrentName/Family</path>
+  <path name="patientAddress1">&patientActor;/Address[1]/Line1</path>
+  <path name="patientCity">&patientActor;/Address[1]/City</path>
+  <path name="patientState">&patientActor;/Address[1]/State</path>
+  <path name="patientPostalCode">&patientActor;/Address[1]/PostalCode</path>
+  <path name="patientCountry">&patientActor;/Address[1]/Country</path>
+  <path name="CCRDocumentObjectID">/ContinuityOfCareRecord/CCRDocumentObjectID</path>
+  <path name="ccrDateTime">/ContinuityOfCareRecord/DateTime/ExactDateTime</path>
+
+  <path name="purposeText">/ContinuityOfCareRecord/Comments/Comment[Type/Text='MedCommons User Comment']/Description/Text</path>
+  <path name="objectiveText">/ContinuityOfCareRecord/Comments/Comment[Type/Text='MedCommons Objective']/Description/Text</path>
+  <path name="assessmentText">/ContinuityOfCareRecord/Comments/Comment[Type/Text='MedCommons Assessment']/Description/Text</path>
+  <path name="planText">/ContinuityOfCareRecord/Comments/Comment[Type/Text='MedCommons Plan']/Description/Text</path>
+  <path name="ccrPurpose" noAddNs="true" >/x:ContinuityOfCareRecord/x:Purpose/x:Description[1]/x:Text</path>
+  <path name="commentFromId">/ContinuityOfCareRecord/Comments/Comment[CommentObjectID=$commentId]/Description/Text</path>
+  
+  <path name="patientApproxDateOfBirth">&patientActor;/Person/DateOfBirth/ApproximateDateTime/Text</path>
+  <path name="patientExactDateOfBirth">&patientActor;/Person/DateOfBirth/ExactDateTime</path>
+  <path name="patientAge">&patientActor;/Person/DateOfBirth/Age/Value</path>
+  <path name="patientGender">&patientActor;/Person/Gender/Text</path>
+  <path name="references">/ContinuityOfCareRecord/References</path>
+  <path name="referenceFromId">/ContinuityOfCareRecord/References/Reference[ReferenceObjectID=$ref]</path>
+  <path name="familyHistories">/ContinuityOfCareRecord/FamilyHistory/FamilyProblemHistory</path>
+
+  <!-- Patient ID -->
+  <path name="patientMedCommonsId">(&patientActor;/IDs[Type/Text='MedCommons Account Id']/ID)[1]</path>
+  <path name="patientDICOMId">&patientActor;/IDs[Type/Text='DICOM Patient Id']/ID</path>
+  <path name="patientIdByType">&patientActor;/IDs[Type/Text=$patientIdType]/ID</path>
+  <path name="patientFirstID">&patientActor;/IDs[1]</path>
+  <path name="patientIdByIndex">&patientActor;/IDs[$index=position()]</path>
+  <path name="patientIds">&patientActor;/IDs</path>
+  <path name="patientFirstNonMedCommonsId">(&patientActor;/IDs[Type/Text!='MedCommons Account Id'])[1]</path>
+
+  <!-- Information about a specific ID (relative path) -->
+  <path name="idType" notest="true">Type/Text</path>
+  <path name="idValue" notest="true">ID</path>
+
+  <!-- Actor or info from ID -->
+  <path name="actorFromID">/ContinuityOfCareRecord/Actors/Actor[ActorObjectID=$actorId]</path>
+  <path name="actorFromRelation">/ContinuityOfCareRecord/Actors/Actor[ActorObjectID=$actorId]</path>
+  <path name="emailFromActorID">/ContinuityOfCareRecord/Actors/Actor[ActorObjectID=$actorId]/EMail/Value</path>
+  
+
+  <!-- Actor IDs -->
+  <path name="toActorId">/ContinuityOfCareRecord/To/ActorLink[1]/ActorID</path>
+  <path name="fromActorId">/ContinuityOfCareRecord/From/ActorLink[1]/ActorID</path>
+
+  <!-- Source title and name -->
+  <path name="sourceTitle">&fromActor;/Person/Name/CurrentName/Title</path>
+  <path name="sourceFamilyName">&fromActor;/Person/Name/CurrentName/Family</path>
+  <path name="sourceGivenName">&fromActor;/Person/Name/CurrentName/Given</path>
+
+  <!-- The value of the first patient phone number -->
+  <path name="patientPhoneNumber">&patientActor;/Telephone[1]/Value</path>
+
+  <!-- location of various people within the CCR -->
+  <path name="patientPerson" notest="true">&patientActor;/Person</path>
+  <path name="sourcePerson" notest="true">&fromActor;/Person</path>
+  <path name="toPerson" notest="true">/ContinuityOfCareRecord/To/Person</path>
+
+  <!-- Details of a Person : all relative to the Person element -->
+  <path name="personName" notest="true">concat(./Name/CurrentName/Given,' ',./Name/CurrentName/Family)</path>
+  <path name="personMedCommonsId" notest="true">(../IDs[Type/Text='MedCommons Account Id']/ID)[0]</path>
+  <path name="personOrg" notest="true">../../Actor/Organization/Name</path>
+  <path name="personAddress1" notest="true">../Address/Line1</path>
+  <path name="personCityStatePostal" notest="true">concat(../Address/City,', ',../Address/State,', ',../Address/PostalCode)</path>
+  <path name="personPhoneList" notest="true">../Telephone</path>
+  <path name="personEmail" notest="true">../EMail[1=position()]/Value</path>
+
+  <!-- Details of a telephone number : relative to Telephone -->
+  <path name="telephoneNumber" notest="true">Value</path>
+  <path name="telephoneNumberType" notest="true">Type</path>
+
+  <!-- Details within a Reference -->
+  <path name="referenceType" notest="true">Type/Text</path>
+  <path name="referenceActorID" notest="true">Source/ActorID</path>
+  <path name="referenceURL" noAddNs="true" notest="true">x:Locations/x:Location/x:Description/x:ObjectAttribute[x:Attribute='URL']/x:AttributeValue/x:Value</path>
+  <path name="referenceDisplayName" noAddNs="true" notest="true">x:Locations/x:Location/x:Description/x:ObjectAttribute[x:Attribute='DisplayName']/x:AttributeValue/x:Value</path>
+  <path name="referenceConfirmed" noAddNs="true" notest="true">(x:Locations/x:Location/x:Description/x:ObjectAttribute[x:Attribute='ConfirmationRequired']/x:AttributeValue/x:Value)[1]</path>
+
+  <!-- WebDAV metadata properties content type -->
+  <path name="getcontenttype">/data/descriptor/revisions/properties/property[@name='getcontenttype']</path>
+  <path name="getcontentlength">/data/descriptor/revisions/properties/property[@name='getcontentlength']</path>
+
+</paths>
+

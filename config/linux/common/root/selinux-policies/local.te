@@ -1,0 +1,24 @@
+module local 1.0;
+
+require {
+	attribute httpdcontent;
+	type httpd_t, http_port_t, mysqld_port_t, http_cache_port_t,httpd_php_t;
+	class process execheap;
+	class tcp_socket name_connect;
+	type crond_t; 
+	type http_port_t; 
+	type port_t;
+	type httpd_t; 
+	type mysqld_port_t; 
+	type http_cache_port_t;
+	type httpd_php_t;
+	role system_r; 
+}
+
+allow httpd_t http_port_t:tcp_socket name_connect;
+allow httpd_t mysqld_port_t:tcp_socket name_connect;
+allow httpd_t http_port_t:tcp_socket name_connect;
+allow httpd_t port_t:tcp_socket name_connect;
+allow crond_t self:process execheap;
+
+

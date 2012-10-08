@@ -1,0 +1,1422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost:8090/bridge/services/ohf-bridge" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://localhost:8090/bridge/services/ohf-bridge" xmlns:intf="http://localhost:8090/bridge/services/ohf-bridge" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="OHFBridge" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.3
+Built on Oct 05, 2005 (05:23:37 EDT)-->
+ <wsdl:types>
+  <schema targetNamespace="OHFBridge" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://localhost:8090/bridge/services/ohf-bridge"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="sessionContext">
+    <sequence>
+     <element name="returnLogLevel" nillable="true" type="xsd:string"/>
+     <element name="rhioName" nillable="true" type="xsd:string"/>
+     <element name="sessionID" nillable="true" type="xsd:string"/>
+     <element name="useSecuredConnectionWhenAvaliable" type="xsd:boolean"/>
+     <element name="user" nillable="true" type="xsd:string"/>
+     <element name="userApplicationName" nillable="true" type="xsd:string"/>
+     <element name="userFacilityName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="assigningAuthorityType">
+    <sequence>
+     <element name="namespaceId" nillable="true" type="xsd:string"/>
+     <element name="universalId" nillable="true" type="xsd:string"/>
+     <element name="universalIdType" nillable="true" type="xsd:string"/>
+     <element name="universalIdTypeCode" nillable="true" type="xsd:string"/>
+     <element name="useDefaultAssigningAuthority" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="patientIdType">
+    <sequence>
+     <element name="assigningAuthorityType" nillable="true" type="tns1:assigningAuthorityType"/>
+     <element name="idNumber" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="documentQueryPreferencesType">
+    <sequence>
+     <element name="returnReferencesOnly" type="xsd:boolean"/>
+     <element name="storedQuery" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="responseType">
+    <sequence>
+     <element name="failMessage" nillable="true" type="xsd:string"/>
+     <element name="log" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="sessionID" nillable="true" type="xsd:string"/>
+     <element name="success" type="xsd:boolean"/>
+     <element name="successMessage" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="genericAdtValue">
+    <sequence>
+     <element name="data" nillable="true" type="xsd:string"/>
+     <element name="path" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="addressType">
+    <sequence>
+     <element name="city" nillable="true" type="xsd:string"/>
+     <element name="country" nillable="true" type="xsd:string"/>
+     <element name="countyParishCode" nillable="true" type="xsd:string"/>
+     <element name="otherDesignation" nillable="true" type="xsd:string"/>
+     <element name="stateOrProvince" nillable="true" type="xsd:string"/>
+     <element name="streetAddress" nillable="true" type="xsd:string"/>
+     <element name="zipOrPostalCode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="patientNameType">
+    <sequence>
+     <element name="familyName" nillable="true" type="xsd:string"/>
+     <element name="givenName" nillable="true" type="xsd:string"/>
+     <element name="otherName" nillable="true" type="xsd:string"/>
+     <element name="prefix" nillable="true" type="xsd:string"/>
+     <element name="suffix" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="phoneType">
+    <sequence>
+     <element name="unformattedTelephoneNumber" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="patientInfoType">
+    <sequence>
+     <element name="genericAdtValues" nillable="true" type="impl:ArrayOf_tns1_genericAdtValue"/>
+     <element name="patientAddress" nillable="true" type="tns1:addressType"/>
+     <element name="patientDateOfBirth" nillable="true" type="xsd:string"/>
+     <element name="patientIdentifier" nillable="true" type="tns1:patientIdType"/>
+     <element name="patientName" nillable="true" type="tns1:patientNameType"/>
+     <element name="patientPhoneBusiness" nillable="true" type="tns1:phoneType"/>
+     <element name="patientPhoneHome" nillable="true" type="tns1:phoneType"/>
+     <element name="patientSex" nillable="true" type="xsd:string"/>
+     <element name="patientSuffixName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="codedMetadataType">
+    <sequence>
+     <element name="codeName" nillable="true" type="xsd:string"/>
+     <element name="displayName" nillable="true" type="xsd:string"/>
+     <element name="schemeName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="xdsDocType">
+    <sequence>
+     <element name="authorInstitution" nillable="true" type="xsd:string"/>
+     <element name="authors" nillable="true" type="impl:ArrayOf_tns1_patientInfoType"/>
+     <element name="availabilityStatus" nillable="true" type="xsd:string"/>
+     <element name="base64EncodedDocument" nillable="true" type="xsd:string"/>
+     <element name="classCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="comments" nillable="true" type="xsd:string"/>
+     <element name="confidentialityCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="creationTime" nillable="true" type="xsd:string"/>
+     <element name="decodedDocument" nillable="true" type="xsd:string"/>
+     <element name="documentSize" nillable="true" type="xsd:string"/>
+     <element name="documentTitle" nillable="true" type="xsd:string"/>
+     <element name="effectiveTime" nillable="true" type="xsd:string"/>
+     <element name="encodingType" nillable="true" type="xsd:string"/>
+     <element name="eventCodes" nillable="true" type="impl:ArrayOf_tns1_codedMetadataType"/>
+     <element name="formatCode" nillable="true" type="xsd:string"/>
+     <element name="healthCareFacilityTypeCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="languageCode" nillable="true" type="xsd:string"/>
+     <element name="mimeType" nillable="true" type="xsd:string"/>
+     <element name="parentDocumentId" nillable="true" type="xsd:string"/>
+     <element name="parentDocumentRelationship" nillable="true" type="xsd:string"/>
+     <element name="patientInfo" nillable="true" type="tns1:patientInfoType"/>
+     <element name="practiceSettingCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="serviceStartTime" nillable="true" type="xsd:string"/>
+     <element name="serviceStopTime" nillable="true" type="xsd:string"/>
+     <element name="sourcePatientId" nillable="true" type="tns1:patientIdType"/>
+     <element name="typeCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="uniqueId" nillable="true" type="xsd:string"/>
+     <element name="uri" nillable="true" type="xsd:string"/>
+     <element name="uuid" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="queryDocumentsResponseType">
+    <complexContent>
+     <extension base="tns1:responseType">
+      <sequence>
+       <element name="documentTypeArray" nillable="true" type="impl:ArrayOf_tns1_xdsDocType"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="dateTimeRangeType">
+    <sequence>
+     <element name="attributeName" nillable="true" type="xsd:string"/>
+     <element name="from" nillable="true" type="xsd:string"/>
+     <element name="to" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="findDocumentQueryType">
+    <sequence>
+     <element name="classCodes" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="confidentialityCodes" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="dateTimeRanges" nillable="true" type="impl:ArrayOf_tns1_dateTimeRangeType"/>
+     <element name="eventCodes" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="formatCodes" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="healthCareFacilityCodes" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="patientID" nillable="true" type="tns1:patientIdType"/>
+     <element name="practiceSettingCodes" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="status" nillable="true" type="impl:ArrayOf_xsd_string"/>
+    </sequence>
+   </complexType>
+   <complexType name="getDocumentQueryType">
+    <sequence>
+     <element name="UUID" type="xsd:boolean"/>
+     <element name="documentIds" nillable="true" type="impl:ArrayOf_xsd_string"/>
+    </sequence>
+   </complexType>
+   <complexType name="retrieveDocumentResponseType">
+    <complexContent>
+     <extension base="tns1:responseType">
+      <sequence>
+       <element name="document" nillable="true" type="tns1:xdsDocType"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="submitDocumentResponseType">
+    <complexContent>
+     <extension base="tns1:responseType">
+      <sequence>
+       <element name="documentEntryUUID" nillable="true" type="xsd:string"/>
+       <element name="submissioSetUniqueId" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="documentSubmissionMetadataType">
+    <sequence>
+     <element name="documentEntryClassCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="documentEntryConfidentialityCodeCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="documentEntryFormatCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="documentEntryHealthcareFacilityCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="documentEntryParentDocumentId" nillable="true" type="xsd:string"/>
+     <element name="documentEntryPracticeSettingCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="documentEntryTypeCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="documentType" nillable="true" type="xsd:string"/>
+     <element name="patientId" nillable="true" type="tns1:patientIdType"/>
+     <element name="submissionSetContentTypeCode" nillable="true" type="tns1:codedMetadataType"/>
+     <element name="submissionSetSourceId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="patientSearchPreferencesType">
+    <sequence>
+     <element name="domainsReturned" nillable="true" type="impl:ArrayOf_tns1_assigningAuthorityType"/>
+     <element name="quantityLimit" type="xsd:int"/>
+     <element name="withoutDemographics" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="searchPatientResponseType">
+    <complexContent>
+     <extension base="tns1:responseType">
+      <sequence>
+       <element name="patients" nillable="true" type="impl:ArrayOf_tns1_patientInfoType"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="iheUri">
+    <sequence>
+     <element name="secured" nillable="true" type="xsd:string"/>
+     <element name="unsecured" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="auditConfig">
+    <sequence>
+     <element name="auditUri" nillable="true" type="tns1:iheUri"/>
+    </sequence>
+   </complexType>
+   <complexType name="defaultMessageQueryName">
+    <sequence>
+     <element name="qpd11Identifier" nillable="true" type="xsd:string"/>
+     <element name="qpd12Text" nillable="true" type="xsd:string"/>
+     <element name="qpd13NameOfCodingSystem" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ApplicationAndFacilityProperties">
+    <sequence>
+     <element name="application" nillable="true" type="xsd:string"/>
+     <element name="facility" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ApplicationFacilityAndAuthorityProperties">
+    <complexContent>
+     <extension base="tns1:ApplicationAndFacilityProperties">
+      <sequence>
+       <element name="assigningAuthorityNamespaceId" nillable="true" type="xsd:string"/>
+       <element name="assigningAuthorityUniversalId" nillable="true" type="xsd:string"/>
+       <element name="assigningAuthorityUniversalIdType" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="pixConfig">
+    <sequence>
+     <element name="defaultMessageQueryName" nillable="true" type="tns1:defaultMessageQueryName"/>
+     <element name="defaultPixUri" nillable="true" type="tns1:iheUri"/>
+     <element name="pdqConsumerProperties" nillable="true" type="tns1:ApplicationAndFacilityProperties"/>
+     <element name="pdqServerProperties" nillable="true" type="tns1:ApplicationAndFacilityProperties"/>
+     <element name="pixConsumerProperties" nillable="true" type="tns1:ApplicationFacilityAndAuthorityProperties"/>
+     <element name="pixServerProperties" nillable="true" type="tns1:ApplicationFacilityAndAuthorityProperties"/>
+     <element name="pixSourceProperties" nillable="true" type="tns1:ApplicationFacilityAndAuthorityProperties"/>
+     <element name="queryPixUri" nillable="true" type="tns1:iheUri"/>
+    </sequence>
+   </complexType>
+   <complexType name="xdsRegistryConfig">
+    <sequence>
+     <element name="mllp" nillable="true" type="tns1:iheUri"/>
+     <element name="noneStoredQueriesUrl" nillable="true" type="tns1:iheUri"/>
+     <element name="storedQueriesUrl" nillable="true" type="tns1:iheUri"/>
+    </sequence>
+   </complexType>
+   <complexType name="xdsRepositoryConfig">
+    <sequence>
+     <element name="url" nillable="true" type="tns1:iheUri"/>
+    </sequence>
+   </complexType>
+   <complexType name="rhioConfig">
+    <sequence>
+     <element name="auditConfig" nillable="true" type="tns1:auditConfig"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="hidden" type="xsd:boolean"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="pixConfig" nillable="true" type="tns1:pixConfig"/>
+     <element name="publicHealthcareAffinityDomain" type="xsd:boolean"/>
+     <element name="xdsRegistryConfig" nillable="true" type="tns1:xdsRegistryConfig"/>
+     <element name="xdsRepositoryConfig" nillable="true" type="tns1:xdsRepositoryConfig"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://localhost:8090/bridge/services/ohf-bridge" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="OHFBridge"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOf_xsd_string">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_genericAdtValue">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:genericAdtValue[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_patientInfoType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:patientInfoType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_codedMetadataType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:codedMetadataType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_xdsDocType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:xdsDocType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_dateTimeRangeType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:dateTimeRangeType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_assigningAuthorityType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:assigningAuthorityType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_patientIdType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:patientIdType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_rhioConfig">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:rhioConfig[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="WrapInCdaAndSubmitDocumentResponse">
+
+      <wsdl:part name="WrapInCdaAndSubmitDocumentReturn" type="tns1:submitDocumentResponseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="RegisterOutpatientRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="patientInfo" type="tns1:patientInfoType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateInPatientRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="patientInfo" type="tns1:patientInfoType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="QueryDocumentsFindRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="queryDocumentQueryType" type="tns1:findDocumentQueryType"/>
+
+      <wsdl:part name="queryPreferences" type="tns1:documentQueryPreferencesType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="QueryDocumentsByPatientIdRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="patientId" type="tns1:patientIdType"/>
+
+      <wsdl:part name="queryPreferences" type="tns1:documentQueryPreferencesType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="QueryDocumentsByPatientIdResponse">
+
+      <wsdl:part name="QueryDocumentsByPatientIdReturn" type="tns1:queryDocumentsResponseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="RetrieveDocumentByUrlResponse">
+
+      <wsdl:part name="RetrieveDocumentByUrlReturn" type="tns1:retrieveDocumentResponseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditUserAuthenticationLoginEventResponse">
+
+      <wsdl:part name="AuditUserAuthenticationLoginEventReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetMyLogRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="startingAtLine" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="RegisterOutpatientResponse">
+
+      <wsdl:part name="RegisterOutpatientReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="RetrieveDocumentByUniqueIdResponse">
+
+      <wsdl:part name="RetrieveDocumentByUniqueIdReturn" type="tns1:retrieveDocumentResponseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPatientRecordReadEventRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+      <wsdl:part name="patientId" type="tns1:patientIdType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="WrapInCdaAndSubmitDocumentRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="doc" type="tns1:xdsDocType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="QueryDocumentsGetResponse">
+
+      <wsdl:part name="QueryDocumentsGetReturn" type="tns1:queryDocumentsResponseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPatientRecordUpdateEventResponse">
+
+      <wsdl:part name="AuditPatientRecordUpdateEventReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditActorStartEventResponse">
+
+      <wsdl:part name="AuditActorStartEventReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPhiImportRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+      <wsdl:part name="dataSourceId" type="xsd:string"/>
+
+      <wsdl:part name="patientIds" type="impl:ArrayOf_tns1_patientIdType"/>
+
+      <wsdl:part name="importedDataId" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SearchPatientRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="patientInfo" type="tns1:patientInfoType"/>
+
+      <wsdl:part name="queryPreferences" type="tns1:patientSearchPreferencesType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPatientRecordDeleteEventResponse">
+
+      <wsdl:part name="AuditPatientRecordDeleteEventReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPatientRecordReadEventResponse">
+
+      <wsdl:part name="AuditPatientRecordReadEventReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="QueryDocumentsFindResponse">
+
+      <wsdl:part name="QueryDocumentsFindReturn" type="tns1:queryDocumentsResponseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="RetrieveDocumentByUniqueIdRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="uniqueId" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPatientRecordUpdateEventRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+      <wsdl:part name="patientId" type="tns1:patientIdType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditActorStartEventRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SearchPatientResponse">
+
+      <wsdl:part name="SearchPatientReturn" type="tns1:searchPatientResponseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateOutPatientRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="patientInfo" type="tns1:patientInfoType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPhiExportResponse">
+
+      <wsdl:part name="AuditPhiExportReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditQueryEventRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+      <wsdl:part name="registryID" type="xsd:string"/>
+
+      <wsdl:part name="queryText" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditUserAuthenticationLogoutEventResponse">
+
+      <wsdl:part name="AuditUserAuthenticationLogoutEventReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditUserAuthenticationLogoutEventRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+      <wsdl:part name="initiatingUserName" type="xsd:string"/>
+
+      <wsdl:part name="initiatingUserNodeIP" type="xsd:string"/>
+
+      <wsdl:part name="authenticatingNodeIP" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetRhiosRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateOutPatientResponse">
+
+      <wsdl:part name="UpdateOutPatientReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditQueryEventResponse">
+
+      <wsdl:part name="AuditQueryEventReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPhiExportRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+      <wsdl:part name="dataRecipientId" type="xsd:string"/>
+
+      <wsdl:part name="exportedDataId" type="xsd:string"/>
+
+      <wsdl:part name="patientId" type="tns1:patientIdType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditActorStopEventRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditUserAuthenticationLoginEventRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+      <wsdl:part name="initiatingUserName" type="xsd:string"/>
+
+      <wsdl:part name="initiatingUserNodeIP" type="xsd:string"/>
+
+      <wsdl:part name="authenticatingNodeIP" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="RetrieveDocumentByUUIDRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="UUID" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="QueryDocumentsGetRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="getDocumentQueryType" type="tns1:getDocumentQueryType"/>
+
+      <wsdl:part name="queryPreferences" type="tns1:documentQueryPreferencesType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetMyLogResponse">
+
+      <wsdl:part name="GetMyLogReturn" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetRhiosResponse">
+
+      <wsdl:part name="GetRhiosReturn" type="impl:ArrayOf_tns1_rhioConfig"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPatientRecordCreateEventRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+      <wsdl:part name="patientId" type="tns1:patientIdType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SubmitDocumentRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="base64EncodedDocument" type="xsd:string"/>
+
+      <wsdl:part name="metadata" type="tns1:documentSubmissionMetadataType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPhiImportResponse">
+
+      <wsdl:part name="AuditPhiImportReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="UpdateInPatientResponse">
+
+      <wsdl:part name="UpdateInPatientReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPatientRecordDeleteEventRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="eventOutcome" type="xsd:int"/>
+
+      <wsdl:part name="patientId" type="tns1:patientIdType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="RetrieveDocumentByUrlRequest">
+
+      <wsdl:part name="sessionContext" type="tns1:sessionContext"/>
+
+      <wsdl:part name="url" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="RetrieveDocumentByUUIDResponse">
+
+      <wsdl:part name="RetrieveDocumentByUUIDReturn" type="tns1:retrieveDocumentResponseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditActorStopEventResponse">
+
+      <wsdl:part name="AuditActorStopEventReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuditPatientRecordCreateEventResponse">
+
+      <wsdl:part name="AuditPatientRecordCreateEventReturn" type="tns1:responseType"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SubmitDocumentResponse">
+
+      <wsdl:part name="SubmitDocumentReturn" type="tns1:submitDocumentResponseType"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="OHFBridge">
+
+      <wsdl:operation name="QueryDocumentsByPatientId" parameterOrder="sessionContext patientId queryPreferences">
+
+         <wsdl:input message="impl:QueryDocumentsByPatientIdRequest" name="QueryDocumentsByPatientIdRequest"/>
+
+         <wsdl:output message="impl:QueryDocumentsByPatientIdResponse" name="QueryDocumentsByPatientIdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="QueryDocumentsFind" parameterOrder="sessionContext queryDocumentQueryType queryPreferences">
+
+         <wsdl:input message="impl:QueryDocumentsFindRequest" name="QueryDocumentsFindRequest"/>
+
+         <wsdl:output message="impl:QueryDocumentsFindResponse" name="QueryDocumentsFindResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="QueryDocumentsGet" parameterOrder="sessionContext getDocumentQueryType queryPreferences">
+
+         <wsdl:input message="impl:QueryDocumentsGetRequest" name="QueryDocumentsGetRequest"/>
+
+         <wsdl:output message="impl:QueryDocumentsGetResponse" name="QueryDocumentsGetResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RetrieveDocumentByUUID" parameterOrder="sessionContext UUID">
+
+         <wsdl:input message="impl:RetrieveDocumentByUUIDRequest" name="RetrieveDocumentByUUIDRequest"/>
+
+         <wsdl:output message="impl:RetrieveDocumentByUUIDResponse" name="RetrieveDocumentByUUIDResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RetrieveDocumentByUrl" parameterOrder="sessionContext url">
+
+         <wsdl:input message="impl:RetrieveDocumentByUrlRequest" name="RetrieveDocumentByUrlRequest"/>
+
+         <wsdl:output message="impl:RetrieveDocumentByUrlResponse" name="RetrieveDocumentByUrlResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RetrieveDocumentByUniqueId" parameterOrder="sessionContext uniqueId">
+
+         <wsdl:input message="impl:RetrieveDocumentByUniqueIdRequest" name="RetrieveDocumentByUniqueIdRequest"/>
+
+         <wsdl:output message="impl:RetrieveDocumentByUniqueIdResponse" name="RetrieveDocumentByUniqueIdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="WrapInCdaAndSubmitDocument" parameterOrder="sessionContext doc">
+
+         <wsdl:input message="impl:WrapInCdaAndSubmitDocumentRequest" name="WrapInCdaAndSubmitDocumentRequest"/>
+
+         <wsdl:output message="impl:WrapInCdaAndSubmitDocumentResponse" name="WrapInCdaAndSubmitDocumentResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SubmitDocument" parameterOrder="sessionContext base64EncodedDocument metadata">
+
+         <wsdl:input message="impl:SubmitDocumentRequest" name="SubmitDocumentRequest"/>
+
+         <wsdl:output message="impl:SubmitDocumentResponse" name="SubmitDocumentResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SearchPatient" parameterOrder="sessionContext patientInfo queryPreferences">
+
+         <wsdl:input message="impl:SearchPatientRequest" name="SearchPatientRequest"/>
+
+         <wsdl:output message="impl:SearchPatientResponse" name="SearchPatientResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RegisterOutpatient" parameterOrder="sessionContext patientInfo">
+
+         <wsdl:input message="impl:RegisterOutpatientRequest" name="RegisterOutpatientRequest"/>
+
+         <wsdl:output message="impl:RegisterOutpatientResponse" name="RegisterOutpatientResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateOutPatient" parameterOrder="sessionContext patientInfo">
+
+         <wsdl:input message="impl:UpdateOutPatientRequest" name="UpdateOutPatientRequest"/>
+
+         <wsdl:output message="impl:UpdateOutPatientResponse" name="UpdateOutPatientResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateInPatient" parameterOrder="sessionContext patientInfo">
+
+         <wsdl:input message="impl:UpdateInPatientRequest" name="UpdateInPatientRequest"/>
+
+         <wsdl:output message="impl:UpdateInPatientResponse" name="UpdateInPatientResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPhiImport" parameterOrder="sessionContext eventOutcome dataSourceId patientIds importedDataId">
+
+         <wsdl:input message="impl:AuditPhiImportRequest" name="AuditPhiImportRequest"/>
+
+         <wsdl:output message="impl:AuditPhiImportResponse" name="AuditPhiImportResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPhiExport" parameterOrder="sessionContext eventOutcome dataRecipientId exportedDataId patientId">
+
+         <wsdl:input message="impl:AuditPhiExportRequest" name="AuditPhiExportRequest"/>
+
+         <wsdl:output message="impl:AuditPhiExportResponse" name="AuditPhiExportResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditActorStartEvent" parameterOrder="sessionContext eventOutcome">
+
+         <wsdl:input message="impl:AuditActorStartEventRequest" name="AuditActorStartEventRequest"/>
+
+         <wsdl:output message="impl:AuditActorStartEventResponse" name="AuditActorStartEventResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditActorStopEvent" parameterOrder="sessionContext eventOutcome">
+
+         <wsdl:input message="impl:AuditActorStopEventRequest" name="AuditActorStopEventRequest"/>
+
+         <wsdl:output message="impl:AuditActorStopEventResponse" name="AuditActorStopEventResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditUserAuthenticationLoginEvent" parameterOrder="sessionContext eventOutcome initiatingUserName initiatingUserNodeIP authenticatingNodeIP">
+
+         <wsdl:input message="impl:AuditUserAuthenticationLoginEventRequest" name="AuditUserAuthenticationLoginEventRequest"/>
+
+         <wsdl:output message="impl:AuditUserAuthenticationLoginEventResponse" name="AuditUserAuthenticationLoginEventResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditUserAuthenticationLogoutEvent" parameterOrder="sessionContext eventOutcome initiatingUserName initiatingUserNodeIP authenticatingNodeIP">
+
+         <wsdl:input message="impl:AuditUserAuthenticationLogoutEventRequest" name="AuditUserAuthenticationLogoutEventRequest"/>
+
+         <wsdl:output message="impl:AuditUserAuthenticationLogoutEventResponse" name="AuditUserAuthenticationLogoutEventResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditQueryEvent" parameterOrder="sessionContext eventOutcome registryID queryText">
+
+         <wsdl:input message="impl:AuditQueryEventRequest" name="AuditQueryEventRequest"/>
+
+         <wsdl:output message="impl:AuditQueryEventResponse" name="AuditQueryEventResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPatientRecordReadEvent" parameterOrder="sessionContext eventOutcome patientId">
+
+         <wsdl:input message="impl:AuditPatientRecordReadEventRequest" name="AuditPatientRecordReadEventRequest"/>
+
+         <wsdl:output message="impl:AuditPatientRecordReadEventResponse" name="AuditPatientRecordReadEventResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPatientRecordCreateEvent" parameterOrder="sessionContext eventOutcome patientId">
+
+         <wsdl:input message="impl:AuditPatientRecordCreateEventRequest" name="AuditPatientRecordCreateEventRequest"/>
+
+         <wsdl:output message="impl:AuditPatientRecordCreateEventResponse" name="AuditPatientRecordCreateEventResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPatientRecordUpdateEvent" parameterOrder="sessionContext eventOutcome patientId">
+
+         <wsdl:input message="impl:AuditPatientRecordUpdateEventRequest" name="AuditPatientRecordUpdateEventRequest"/>
+
+         <wsdl:output message="impl:AuditPatientRecordUpdateEventResponse" name="AuditPatientRecordUpdateEventResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPatientRecordDeleteEvent" parameterOrder="sessionContext eventOutcome patientId">
+
+         <wsdl:input message="impl:AuditPatientRecordDeleteEventRequest" name="AuditPatientRecordDeleteEventRequest"/>
+
+         <wsdl:output message="impl:AuditPatientRecordDeleteEventResponse" name="AuditPatientRecordDeleteEventResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetRhios">
+
+         <wsdl:input message="impl:GetRhiosRequest" name="GetRhiosRequest"/>
+
+         <wsdl:output message="impl:GetRhiosResponse" name="GetRhiosResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetMyLog" parameterOrder="sessionContext startingAtLine">
+
+         <wsdl:input message="impl:GetMyLogRequest" name="GetMyLogRequest"/>
+
+         <wsdl:output message="impl:GetMyLogResponse" name="GetMyLogResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ohf-bridgeSoapBinding" type="impl:OHFBridge">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="QueryDocumentsByPatientId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="QueryDocumentsByPatientIdRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="QueryDocumentsByPatientIdResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="QueryDocumentsFind">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="QueryDocumentsFindRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="QueryDocumentsFindResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="QueryDocumentsGet">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="QueryDocumentsGetRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="QueryDocumentsGetResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RetrieveDocumentByUUID">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="RetrieveDocumentByUUIDRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="RetrieveDocumentByUUIDResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RetrieveDocumentByUrl">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="RetrieveDocumentByUrlRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="RetrieveDocumentByUrlResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RetrieveDocumentByUniqueId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="RetrieveDocumentByUniqueIdRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="RetrieveDocumentByUniqueIdResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="WrapInCdaAndSubmitDocument">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="WrapInCdaAndSubmitDocumentRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="WrapInCdaAndSubmitDocumentResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SubmitDocument">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="SubmitDocumentRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="SubmitDocumentResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SearchPatient">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="SearchPatientRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="SearchPatientResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RegisterOutpatient">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="RegisterOutpatientRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="RegisterOutpatientResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateOutPatient">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="UpdateOutPatientRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="UpdateOutPatientResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="UpdateInPatient">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="UpdateInPatientRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="UpdateInPatientResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPhiImport">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditPhiImportRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditPhiImportResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPhiExport">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditPhiExportRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditPhiExportResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditActorStartEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditActorStartEventRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditActorStartEventResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditActorStopEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditActorStopEventRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditActorStopEventResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditUserAuthenticationLoginEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditUserAuthenticationLoginEventRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditUserAuthenticationLoginEventResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditUserAuthenticationLogoutEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditUserAuthenticationLogoutEventRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditUserAuthenticationLogoutEventResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditQueryEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditQueryEventRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditQueryEventResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPatientRecordReadEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditPatientRecordReadEventRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditPatientRecordReadEventResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPatientRecordCreateEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditPatientRecordCreateEventRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditPatientRecordCreateEventResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPatientRecordUpdateEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditPatientRecordUpdateEventRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditPatientRecordUpdateEventResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AuditPatientRecordDeleteEvent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AuditPatientRecordDeleteEventRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AuditPatientRecordDeleteEventResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetRhios">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetRhiosRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetRhiosResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetMyLog">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetMyLogRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.bridge.ohf.eclipse.org" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetMyLogResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8090/bridge/services/ohf-bridge" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="OHFBridgeService">
+
+      <wsdl:port binding="impl:ohf-bridgeSoapBinding" name="ohf-bridge">
+
+         <wsdlsoap:address location="http://localhost:8090/bridge/services/ohf-bridge"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Identity Provider{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Identity Providers</a> &gt;
+{{ object.source_id }}
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <tbody>
+    <tr>
+      <th>Source ID:</th>
+      <td>{{ object.source_id }}</td>
+    </tr>
+    <tr>
+      <th>Name:</th>
+      <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+      <th>URL:</th>
+      <td><a href='{{ object.website }}'>{{ object.website }}</a></td>
+    </tr>
+    <tr>
+      <th>Format:</th>
+      <td>{{ object.format }}</td>
+    </tr>
+    <tr>
+      <th>{{ count }} User{{ count|pluralize }}:</th>
+      <td>
+{% if count %}
+<table class='subtable'>
+  <thead>
+    <tr>
+      <td>External Username</td>
+      <td>MCID</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan='3'>
+	<span style='float: left'>
+{% if has_previous %}
+<a href='details?id={{ object.id }}&page=1'>&laquo; first</a>
+<a href='details?id={{ object.id }}&page={{ previous }}'>&lt; prev</a>
+{% endif %}
+	</span>
+	<span style='float: right'>
+{% if has_next %}
+<a href='details?id={{ object.id }}&page={{ next }}'>next &gt;</a>
+<a href='details?id={{ object.id }}&page={{ pages }}'>last &raquo;</a>
+{% endif %}
+	</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='3'>
+	<span style='float: right'>
+Page {{ page }} of {{ pages }}.
+	</span>
+      </td>
+    </tr>
+  </tfoot>
+
+  <tbody>
+{% for entry in object_list %}
+    <tr class='{% cycle a,b %}'>
+      <td>{{ entry.username }}</td>
+      <td>
+	<a href='../users/user?mcid={{ entry.mcid }}'>
+	  {{ entry.pretty_mcid }}
+	</a>
+      </td>
+      <td>
+	<form method='post' action='unlink_user'>
+	  <input type='hidden' name='idp' value='{{ object.id }}' />
+	  <input type='hidden' name='mcid' value='{{ entry.mcid }}' />
+	  <input type='hidden' name='username' value='{{ entry.username }}' />
+	  <input type='image' src='{{ media }}img/icon_deletelink.gif'
+		 width='10' height='10' alt='Unlink User' />
+	</form>
+      </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% else %}
+<em>None</em>
+{% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+	<a href='delete?id={{ object.id }}'>
+	  <img src='{{ media }}img/icon_deletelink.gif' width='10' height='10'
+		alt='Delete this IDP' />
+	  delete this IDP
+	</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

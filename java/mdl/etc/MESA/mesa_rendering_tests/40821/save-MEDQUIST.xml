@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <typeId      root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <templateId  root="2.16.840.1.113883.10" extension="IMPL_CDAR2_LEVEL1-2REF_US_I2_2005SEP"/>
+  <templateId  root="1.3.6.1.4.1.19376.1.5.3.1.1.2" extension="Medical Summary"  />
+  <templateId  root="1.3.6.1.4.1.19376.1.5.3.1.1.4" extension="Discharge Summary"  />
+  <id      root="1.3.6.1.4.1.11050.2" extension="50207592"/>
+  <code code="18842.5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DISCHARGE SUMMARIZATION NOTE" />
+  <title>MedQuist Discharge Summary</title>
+  <effectiveTime value="20060525055238+0500" />
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+  <languageCode code="en_US" />
+  <setId root="DE808A79-0B25-42E8-AAEF-B85EA8F2AFB1" extension="MedQuist-DEP" />
+  <versionNumber value="1" />
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.3.933" extension="565656" />
+      <addr>
+        <streetAddressLine>1000 Bishops Blvd.</streetAddressLine>
+        <city>Mt. Laurel</city>
+        <state>NJ</state>
+        <postalCode>08054</postalCode>
+        <country>USA</country>
+      </addr>
+      <telecom value="tel:(781)555-1212" use="HP" />
+      <patient>
+        <name>
+          <prefix />
+          <given>Test</given>
+          <family>Two</family>
+          <suffix />
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" />
+        <birthTime value="19351111" />
+      </patient>
+      <providerOrganization>
+        <id root="2.16.840.1.113883.3.933" extension="MedQuist-DEP" />
+        <name>MedQuist Hospital</name>
+        <telecom value="tel:(800)233-3030" use="HP" />
+        <addr>
+          <streetAddressLine>1000 Bishops Blvd.</streetAddressLine>
+          <city>Mt. Laurel</city>
+          <state>NJ</state>
+          <postalCode>08054</postalCode>
+          <country>USA</country>
+        </addr>
+      </providerOrganization>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value="20060525055238+0500" />
+    <assignedAuthor>
+      <id root="1.3.6.4.1.4.1.2835.1" extension="682153" />
+      <code code="SELF" codeSystem="2.16.840.1.113883.5.111" codeSystemName="LONIC" />
+      <addr>
+        <streetAddressLine>1000 Bishops Blvd.</streetAddressLine>
+        <city>Mt. Laurel</city>
+        <state>NJ</state>
+        <postalCode>08054</postalCode>
+        <country>USA</country>
+      </addr>
+      <telecom value="tel:(800)233-3030" use="HP" />
+      <assignedPerson>
+        <name>
+          <prefix>Dr.</prefix>
+          <given>derek</given>
+          <family>nichols</family>
+          <suffix />
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="2.16.840.1.113883.19.5" />
+        <name>101230</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <componentOf>
+    <encompassingEncounter classCode="ENC" moodCode="EVN">
+      <id root="1.3.6.4.1.4.1.2835.12" extension="9937012" />
+      <code code="99213" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Discharge Summary" />
+      <effectiveTime>
+        <high value="20060525" />
+      </effectiveTime>
+      <dischargeDispositionCode code="01" codeSystem="2.16.840.1.113883.6.21" codeSystemName="UB92" displayName="Routine Discharge" />
+    </encompassingEncounter>
+  </componentOf>
+  <documentationOf     >
+    <serviceEvent classCode="PCPR">
+      <effectiveTime>
+        <low value="19600127"/>
+        <high value="20050329"/>
+      </effectiveTime>
+      <performer typeCode="PRF">
+        <functionCode codeSystem="2.16.840.1.113883.5.88" code="PCP"/>
+        <time>
+          <low value="1998"/>
+          <high value="2005"/>
+        </time>
+        <assignedEntity>
+          <id root="1.3.6.1.4.1.4.1.2835.1" extension="1"/>
+          <code code="59058001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="General Physician"/>
+          <addr>
+            <streetAddressLine>21 Mystic Ave</streetAddressLine>
+            <city>Medford</city>
+            <state>NH</state>
+            <postalCode>02893</postalCode>
+            <country>USA</country>
+          </addr>
+          <telecom use="WP" value="tel:(999)555-1212"/>
+          <assignedPerson>
+            <name>
+              <given>Berl</given>
+              <family>Carlson</family>
+            </name>
+          </assignedPerson>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  <component>
+    <structuredBody classCode="DOCBODY" moodCode="EVN">
+      <component>
+        <section>
+          <!--New-->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6" extension="PROBLEM LIST Template"/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="11450-4" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
+          <title>Conditions</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Problem</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td ID="d697e2615">Accessory spleen</td>
+                  <td>01Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3019">Angioedema</td>
+                  <td>12Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2961">Dyspepsia</td>
+                  <td>01Feb2006</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2673">Accessory auricle</td>
+                  <td>01Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3189">Family history of cardiovascular disease</td>
+                  <td/>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3134">Coronary artery bypass</td>
+                  <td>20Apr05</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2730">Angina decubitus</td>
+                  <td>01Feb2006</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3077">Ear abrasion</td>
+                  <td>12Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3302">Hypercholesterolemia</td>
+                  <td>20 years</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2787">Angiodysplasia</td>
+                  <td>12Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3246">Hypertension</td>
+                  <td>20 years</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2845">Ascariasis</td>
+                  <td>01Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3359">Angina</td>
+                  <td>22Feb04</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2903">Anxiety reaction</td>
+                  <td>01Feb2006</td>
+                  <td>Current</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+        </section>
+      </component>
+	  <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.7" />
+          <code code="11535-2" codeSystem="2.16.840.1.113883.6.1" displayName="HOSPITAL DISCHARGE DX" />
+          <title>DISCHARGE DIAGNOSES</title>
+          <text>1.  Bradycardia.
+2.  Atypical chest pain.</text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root='1.3.6.1.4.1.19376.1.5.3.1.3.8' extension='HISTORY OF PAST ILLNESS TEMPLATE'/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="11348-0" codeSystemName="LOINC" displayName="HISTORY OF PAST ILLNESS"/>
+          <title>History of Present Illness</title>
+          <text>
+            <paragraph/>
+          </text>
+        </section>
+      </component>
+	  <component>
+        <section>
+          <templateId root='1.3.6.1.4.1.19376.1.5.3.1.3.31' extension='Plan of Care Template'/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="18776-5" codeSystemName="LOINC" displayName="TREATMENT PLAN"/>
+          <title>Plan of Care</title>
+          <text>A.  Disposition:  The patient is to follow up with Dr. Feel Good in 1 week.
+B.  Activity:  Routine.
+C.  Diet:  Cardiac. Unrestricted, or as tolerated with supervision.
+         </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13" extension="HOSPITAL DISCHARGE MEDICATIONS Template"/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="10183-2" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE MEDICATIONS"/>
+          <title>Discharge Medications</title>
+ 		  <text>1.  Flomax 0.8 mg daily.
+                2.  Aspirin 325 mg daily.
+		  </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root='1.3.6.1.4.1.19376.1.5.3.1.3.3' extension='HOSPITAL ADMISSION DX Template'/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="46241-6" codeSystemName="LOINC" displayName="HOSPITAL ADMISSION DX"/>
+          <title>Hospital Admission Diagnosis</title>
+          <text>
+            <paragraph/>
+          </text>
+        </section>
+      </component>
+	  <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.22" extension="HISTORY OF ALLERGIES Template"/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="10155-0" codeSystemName="LOINC" displayName="HISTORY OF ALLERGIES"/>
+          <title>Allergies and Adverse Reactions</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Allergen</th>
+                  <th>Reaction</th>
+                  <th>Severity</th>
+                  <th>Onset</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ANABAR</td>
+                  <td>  Hive</td>
+                  <td>Mild</td>
+                  <td>01Feb2006</td>
+                </tr>
+                <tr>
+                  <td>PENICILLINS</td>
+                  <td> Rash</td>
+                  <td>Mild</td>
+                  <td>18Jan05</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+        </section>
+      </component>
+	  <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.5" />
+          <code code="8648-8" codeSystem="2.16.840.1.113883.6.1" displayName="HOSPITAL COURSE">
+          </code>
+          <title>HOSPITAL COURSE</title>
+          <text>The patient presented to the Emergency
+Department with complaints of chest pain and dizziness.  The patient states that he awoke that morning with a sharp chest pain without radiation, no diaphoresis and no nausea or vomiting.  He took between 6 and 7 nitroglycerins throughout the course of the morning which helped some and his chest pain abated upon arrival to the Emergency Department.  His dizziness occurred when he stood and when he moved.  In the Emergency Department, he was found to
+have a heart rate of 30.  An EKG showed sinus bradycardia and a chest x-ray showed no acute pulmonary processes. Cardiac enzymes to rule out MI were negative x3.  The patient was monitored on telemetry overnight without any events.  At admission his beta blocker metoprolol was held.  His heart rate and blood pressure stabilized off his
+beta blocker and the heart rate was 65 at discharge and blood pressure was 130/70.  A cardiology consult was considered, but as his heart rate increased off the beta blocker and his dizziness did not reoccur, it was decided that this should be followed up as an outpatient if necessary.  The patient was able to ambulate without any dizziness or chest pain.  He was instructed to return to the ED if his chest pain should return or if he were to become dizzy again.  Additionally, he was instructed to take his heart rate and blood pressure at home with the cuff that he owns and record it twice a day to take to his primary care follow up with Dr. Feel Good.  He was
+instructed hold his metoprolol until his follow up.</text>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

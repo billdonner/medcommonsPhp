@@ -1,0 +1,10 @@
+name,type,attrs
+apps.medcommons.net,old facebook and apps home (JohnCo/s002)
+fb01.medcommons.net,Facebook Primary MOD Server (EC2/i-8ad80be3) <small><a target='_new'  href='http://apps.facebook.com/hbmonitor' title='monitor'>monitor</a></small>
+fb02.medcommons.net,Facebook Backup MOD Server (EC2/i-8dd80be4) <small><a target='_new'  href='http://apps.facebook.com/hbmonitor' title='monitor'>monitor</a></small>
+healthurl.medcommons.net,Healthurl Online (EC2/i-ca65baa3)
+n0000.medcommons.net,Service Node Online (EC2/i-f570d19c)
+n0001.medcommons.net,Service Node Online (EC2/i-016ecf68)
+tenth.medcommons.net,MOD Vouchers System/IS Home (EC2/i-3397675a)
+public.medcommons.net,CCR Commons (EC2/i-31728358)
+www.medcommons.net,Main MedCommons Website for MOD (JohnCo/s000)

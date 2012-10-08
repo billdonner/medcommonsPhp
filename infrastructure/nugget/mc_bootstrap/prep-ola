@@ -1,0 +1,54 @@
+echo "Environment";
+echo " basearch - $basearch";
+echo " MC_PROD - $MC_PROD";
+echo " MC_TEST - $MC_TEST";
+echo " MC_DEFAULT_PW - $MC_DEFAULT_PW";
+
+echo "Yum";
+cd /etc/yum.repos.d
+rm *
+wget -O medcommons.repo http://appliance.medcommons.net/0.3.repo
+#vi medcommons.repo
+yum install medcommons
+
+echo "Repository -- skip (Have you remounted /dev/sda2 on /opt)";
+echo "Don't -- mv /opt/gateway/data/Repository /mnt";
+echo "Don't -- ln -s /mnt/Repository /opt/gateway/data/Repository";
+
+echo "Passwds";
+passwd --stdin root <<XXX
+$MC_DEFAULT_PW
+XXX
+/usr/sbin/usermod -G mc_admin root
+passwd --stdin adrian <<XXX
+$MC_DEFAULT_PW
+XXX
+/usr/sbin/usermod -G mc_admin adrian
+passwd --stdin bill <<XXX
+$MC_DEFAULT_PW
+XXX
+/usr/sbin/usermod -G mc_admin bill
+passwd --stdin caroline <<XXX
+$MC_DEFAULT_PW
+XXX
+/usr/sbin/usermod -G mc_admin caroline
+passwd --stdin donald <<XXX
+$MC_DEFAULT_PW
+XXX
+/usr/sbin/usermod -G mc_admin donald
+passwd --stdin boxer <<XXX
+$MC_DEFAULT_PW
+XXX
+/usr/sbin/usermod -G mc_admin boxer
+passwd --stdin sean <<XXX
+$MC_DEFAULT_PW
+XXX
+/usr/sbin/usermod -G mc_admin sean
+passwd --stdin simon <<XXX
+$MC_DEFAULT_PW
+XXX
+/usr/sbin/usermod -G mc_admin simon
+passwd --stdin terry <<XXX
+$MC_DEFAULT_PW
+XXX
+/usr/sbin/usermod -G mc_admin terry

@@ -1,0 +1,132 @@
+#!/usr/bin/env python
+
+from sys import argv, path
+from os import getenv, putenv, environ
+from os.path import exists, dirname, join
+
+# Set up so Django db settings can be used
+if exists(join(dirname(argv[0]), '..', 'settings.py')):
+	path.append(join(dirname(argv[0]), '..'))
+
+DJANGO_SETTINGS_MODULE = 'DJANGO_SETTINGS_MODULE'
+if not getenv(DJANGO_SETTINGS_MODULE):
+	environ[DJANGO_SETTINGS_MODULE] = 'settings'
+	putenv(DJANGO_SETTINGS_MODULE, environ[DJANGO_SETTINGS_MODULE])
+
+from sys import stderr
+from datetime import datetime
+
+from django.db import connection, transaction
+
+from config.properties import get_properties
+from security.views import genrsa, req
+from security.models import Certificate
+
+from socket import getfqdn
+from getpass import getpass
+
+def main(args):
+    properties = get_properties()
+    subject = {}
+
+    c = connection.cursor()
+
+    q = "SELECT CN, issued, crt"
+    q += " FROM security_certificate"
+
+    params = []
+
+    if len(args) == 1:
+	pass
+    elif len(args) == 2:
+	q += ' WHERE CN = %s'
+	params.append(args[1])
+
+    q += ' ORDER BY issued DESC'
+
+    r = c.execute(q, params)
+    l = c.fetchall()
+
+    if l:
+	cn_len = issued_len  = 0
+
+	for cn, issued, crt in l:
+	    cn_len = max(cn_len, len(str(cn)))
+	    issued_len = max(issued_len, len(str(issued)))
+
+	print 'Common Name'.ljust(cn_len),
+	print 'Issued'.ljust(issued_len),
+	print 'Installed'
+	print '-----------'.ljust(cn_len),
+	print '------'.ljust(issued_len),
+	print '---------'
+
+	for cn, issued, crt in l:
+	    print str(cn).ljust(cn_len),
+	    print str(issued).ljust(issued_len),
+	    print 'NY'[int(crt is not None)]
+
+    print
+    print 'Generating a new Certificate Signing Request (CSR)'
+    print
+    certificate = Certificate()
+
+    while True:
+	pw1 = getpass('Password: ').strip()
+
+	if len(pw1) < 8:
+	    print >>stderr, "Password too short"
+	    continue
+
+	pw2 = getpass('Password (again): ').strip()
+
+	if pw1 != pw2:
+	    print >>stderr, "Passwords must match"
+	    continue
+
+	break
+
+    certificate.key = genrsa(pw1)
+
+    subject['CN'] = query(properties, 'Domain', getfqdn())
+    subject['O'] = query(properties, 'Organization')
+    subject['C'] = query(properties, 'Country', 'US')
+    subject['ST'] = query(properties, 'State')
+    subject['L'] = query(properties, 'Locality')
+
+    certificate.csr = req(certificate.key, subject, pw1)
+    certificate.issued = datetime.now()
+
+    certificate.CN = subject['CN']
+    certificate.C = subject['C']
+    certificate.ST = subject['ST']
+    certificate.L = subject['L']
+    certificate.O = subject['O']
+
+    certificate.save()
+
+def query(properties, value, default_value = None):
+    while True:
+	prompt = '%s?' % value
+
+	default_value = properties.get(value, default_value)
+	if default_value:
+	    prompt += ' [%s]' % default_value
+
+	prompt += ' '
+
+	x = raw_input(prompt).strip()
+
+	if not x and default_value:
+	    x = default_value
+
+	if x:
+	    return x
+
+if __name__ == '__main__':
+    try:
+	main(argv)
+    except KeyboardInterrupt:
+	print
+    except EOFError:
+	print

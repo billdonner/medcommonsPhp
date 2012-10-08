@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="MedCommons, Inc." />
+    <meta name="keywords" content="Appliance,CCR,PHR,HealthRecords" />
+    <meta name="description" content="MedCommons Health Records Appliance" />
+    <meta name="robots" content="all" />
+      <title>eHealthChart - Sign In</title>
+    <link rel="shortcut icon" href="/images/favicon.gif" type="image/gif" />
+
+    <LINK rel="alternate" TYPE="application/rss+xml" TITLE="RSS" HREF="/acct/rss.php"/>
+    <style type="text/css" media="all">
+@import "/style.css";
+
+@import "/ehgtstyle.css";
+
+</style>
+
+    <script type="text/javascript" src="/base.js"></script>
+
+    <script type="text/javascript">
+    if(getCookie('mc'))
+      document.write("<style type='text/css'> #loggedon, #visi { display: block; }</style>");
+    </script>
+
+    
+
+
+</head>
+<body id='' onload='www_init()'>
+
+   
+    <div id='wrapper'>
+        <div id='header'>
+            <a href='/'>
+                <img alt='eHealthGlobal Technologies' id='logo' src="/images/ehCHART.gif" />
+            </a>
+            <div id='info'>
+                <table>
+                    <tbody>
+                        <tr>
+
+                            <td >
+                                eHealthGlobal Technologies <a class='tiny' href="http://www.ehgt.com/">info></a>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td>
+               <div id="navcontainer">
+                    
+                </div>               
+               </td></tr>
+
+                    </tbody>
+                </table>
+            </div>
+              <div align=right>
+                <a href='#'>
+                    <img alt='' id='stamp' src='/images/ehealth.color.gif' /></a>
+                <br />
+              
+          </div>
+            </div>
+
+        <br />
+        <div id='main'>
+                   
+<div id = 'content'>
+<h2>Please Sign In</h2>
+<form method='post' action='https://{{ Domain }}/acct/login.php' id='login' name='login'>
+
+  <fieldset>
+    <legend>Log in</legend>
+
+
+
+    <p id='p_mcid'>
+      <label>Email or Account ID
+        <input class='infield'   type='text' name='mcid' id='mcid'
+               value='' />
+       </label><br />
+
+  </p>
+
+  <p id='p_password'>
+    <label>Password
+      <input  class='infield'  type='password' name='password' id='password' />
+
+    </label>
+  </p>
+
+  <input    type='hidden' name='next' value='/acct/home.php' />
+
+  <input  type='submit' value='Login' style='display:none;' />
+
+  <p class='p_forgot'>
+    <a href='forgot.php?next=/acct/home.php'
+       class='login'>
+      forgot password
+    </a> &mdash; sends a new password to your registered email address
+  </p>
+
+  </fieldset>
+
+  
+</form>
+
+</div>
+
+        </div>
+        <div id='footer'>
+            
+<div id='footer-left'>
+<em>&#169; 2007 eHealth Global Technologies, Inc. </em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="/tu.html">terms of use</a>
+ &nbsp;|&nbsp;<a href='http://ehealthglobaltech.com/ehealth_contactus.html'>contact us</a>
+ </div>
+ <a href='http://www.medcommons.net'>
+    <img  src='/images/poweredby.gif' 
+    alt='Powered By MedCommons' /></a>
+
+        </div>
+
+    </div>
+</body>
+</html>

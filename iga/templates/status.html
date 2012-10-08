@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block header %}
+<meta http-equiv='Refresh' content='60' />
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <td> Name </td>
+      <td> Type </td>
+      <td><abbr title='Website'>W</abbr>
+          <abbr title='Console'>C</abbr>
+          <abbr title='Database'>D</abbr>
+          <abbr title='Gateway'>G</abbr>
+          <abbr title='Locals'>L</abbr></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th colspan='3' style='float: left'>Globals</th></tr>
+
+    <tr>
+      <td><a href='.' target='_new'>{{ META.SERVER_NAME }}</a></td>
+      <td>Medcommons Main/IGA Host (EC2/i-fc895395) <small><a target='_new' href='https://my.rightscale.com/clouds/1/ec2_instances/430311' title='(rs/aws)'>(rs/aws)</a></small></td>
+      <td>
+        <del><img src='/images/greenball.png' width='10' height='10' alt='W' /></del>
+        <del><img src='iga-led.png' width='10' height='10' alt='I' /></del>
+        <del><img src='db-led.png' width='10' height='10' alt='D' /></del>
+        <del><img src='mcglobals-led.png' width='10' height='10' alt='G' /></del>
+      </td>
+    </tr>
+     <tr><th colspan='3' style='float: left'>Appliance Nodes</th></tr>
+
+{% for o in appliances %}
+{% ifnotequal o.appliance_type 'DISABLED' %}
+    <tr>
+      <td>
+	    <a target='_new' href='{{ o.base }}/console/'>
+        {{ o.name }}
+        </a>
+      </td>
+      <td>{{ o.appliance_type }}</td>
+      <td>
+        <del><img src='{{ o.base }}/images/greenball.png'
+                  width='10' height='10' alt='W' /></del>
+	    <del><img src='{{ o.base }}/console/console-led.png'
+                  width='10' height='10' alt='C' /></del>
+	    <del><img src='{{ o.base }}/console/db-led.png'
+	              width='10' height='10' alt='D' /></del>
+	    <del><img src='{{ o.base }}/console/gateway-led.png'
+	              width='10' height='10' alt='G' /></del>
+	    <del><img src='{{ o.base }}/console/mclocals-led.png'
+	              width='10' height='10' alt='L' /></del>
+        <del><a href='{{ o.base }}/console/backups/master'>
+               <img src='{{ o.base }}/console/backups/status-led.png'
+                    width='200' height='11' alt='backups' /></a></del>
+      </td>
+    </tr>
+{% endifnotequal %}
+{% endfor %}
+
+    <tr><th colspan='3' style='float: left'>Service Nodes</th></tr>
+
+{% for m in machines %}
+{% ifnotequal m.attrs 'BACKUP' %}
+    <tr>
+      <td><a href='https://{{ m.name }}'>{{ m.name }}</a></td>
+      <td>{{ m.type }}</td>
+      <td>
+        <del><img src='http://{{ m.name }}/images/greenball.png'
+                  width='10' height='10' alt='W' /></del>
+      </td>
+    </tr>
+{% endifnotequal %}
+{% endfor %}
+
+{% for m in other %}
+    <tr>
+      <td><a href='https://{{ m }}'>{{ m }}</a></td>
+      <td>Unknown</td>
+      <td>
+        <del><img src='http://{{ m }}/images/greenball.png'
+                  width='10' height='10' alt='W' /></del>
+      </td>
+    </tr>
+{% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock content %}

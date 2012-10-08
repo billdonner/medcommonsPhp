@@ -1,0 +1,87 @@
+<div id="ContentBoxInterior" mainTitle="MedCommons on Facebook">
+	<div id="pageHeading"><h1>MedCommons on  Facebook</h1></div>
+	<div class="content">
+
+		<h3>Use MedCommons from Facebook</h3>
+			<p>MedCommons on Facebook is your portal into your personal health records on MedCommons. Using MedCommons , you and your friends can form a Care Team to manage your health and well being or that of a loved one. Your Healthcare Providers, and other parties access your account via MedCommons, but only with your explicit permission.
+			This application is currently in beta. </p>
+			<ul>
+			<li><a href="http://apps.facebook.com/medcommons"><img src='http://photos-h.ak.facebook.com/photos-ak-sctm/v43/135/6471872199/app_3_6471872199_8600.gif' />visit MedCommons on Facebook</a></li>
+			</ul>
+	
+		
+		<h3>Build and Deploy a Custom Facebook App for your Group</h3>
+			<p>Any officer of a Facebook Group can build a custom MedCommons Facebook app that adds group-specific content and branding to the standard 
+			 app. It's a great way to get an instant Social Networking Presence. </p>
+			 
+			 <h4>Step 1 - Planning</h4>
+			 <p>You'll need to pick a name for your group's app, organize your branding graphics, decide on special links and other customizations. It is simplest to name your app the same as the group. So if you choose <i>MySpecial Group</i> as your name, you will end up with
+			 <code> http://apps.facebook.com/MySpecialGroup</code> 
+			 as your Facebook url. You will also see that the relavant entries in your Activity Log are labeled with <i>MySpecialGroup</i> </p>
+			  <h4>Step 2 - Setup Facebook Developer Keys and Parameters</h4>
+			  <p>You will interact with Facebook in order to reserve a name and space for your auto-generated facebook application. You will be given some keys and other information for use in Step 4</p>
+			  <ul>
+			  <li>You need a Facebook Account. You can get one <a href='http://facebook.com' >here</a></li>
+			  <li>Test the <a href='http://apps.facebook.com/medcommons' >standard MedCommons app</a></li>
+			  <li>Add the <a  http='http://www.facebook.com/developers' >Facebook Developers App</a>. Don't worry, it is harmless</li>
+			  <li>Hit the <i>setup new application</i> button and choose a name for your app. You may be suprised by this, but your name will not necessarily be unique throughout facebook</li>
+			  <li>Go to the edit settings paged and edit the developer and user support emails to your liking.</li>
+			  <li>  Change the TOS  URL to your group's Terms of Service. Change your application icon if you like.</li>
+			  <li> The Canvas Page URL must be negotiated as you will see that some names are already taken. Do the best you can, but you will be letting this out into the wild Internet under the url as indicated above and will need to keep it active</li>
+			  <li>Check Yes to 'Can your application be added to Facebook?'</li>
+			  <li>Check Users as answer to 'Who can add your application...'</li>
+			  <li>Set the Privacy URL to a privacy statement for your application</li>
+			
+			  
+			  
+			  </ul>
+			  <p>This is almost setup, and will be finished in Step 5.  Keep the Facebook Deveoper Window open </p>
+			   <h4>Step 3 - Setup MedCommons Appliance Keys and Parameters</h4>
+			   <p>You will interact with a MedCommons Appliance in order to reserve a name and space for your auto-generated facebook application. If possible you should use the same name in Steps 2 and 3.</p>
+			   <ul>
+			   <li>Contact the owner of the MedCommons Appliance and ask her to add your Application. A standard form for this is available <a href='#'>here</a></li> 
+			   <li>Obtain the keys from the owner (who obtained then from her appliance console) and keep them for step 4 </li>
+			   </ul>
+			    <h4>Step 4 - Generate Your Facebook Application</h4>
+			    <p>Enter all the various keys, names, values, images, and other branding into the form at the bottom of this page. You will be given a <i>facebook callback url</i> for your facebook application.  The url is arbitrary, but you wont be able to call the url without the correct keys </p>
+			    <h4>Step 5 - Finish Facebook Application Setup</h4>
+			    <p>Go back to the Facebook Developer page for your application and set the <i>facebook callback url</i> as returned in step 4. Also set this same url into Side Nav URL</p>
+			        <h4>Step 6 - Test Your Facebook Application</h4>
+			    <p>Confirm that your application is working. Try comparing your applications behavior against the <a href="http://apps.facebook.com/medcommons">standard app</a>. </p>
+			    <h4>Step 7 - Notify Your Group</h4>
+			    <p>When you are happy with your app and your group, you should notify your friends and group members:</p>
+			 
+			<ul>
+			<li>go to your group page and use the notify members link to tell them all about it </li>
+			<li>invite your friends to your group using the invite link on the group page </li>
+			<li>send emails to invite your non-facebook colleagues to join your group and benefit from your app</li>
+			</ul>
+			
+			
+			<h3>Custom App Generation Form</h3>
+			<p>Generate Your Facebook App Right Here. <i>You'll have 24 hours to complete the installation and testing process, or your application will be automatically deleted</i></p><p>You will be given a Facebook Canvas and Side Nav URL for use in Step 5</p>
+			<form>
+			<p><label><small>from step 1</small> group image url   <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			<p><label><small>from step 1</small> group publisher  <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			<p><label><small>from step 1</small> group external url  <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			<p><label><small>from step 1</small> group auto careteam  <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			
+			<p><label><small>from step 1</small> group marquee fbmll  <input  class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			<p><label><small>from step 2</small> facebook application name <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			
+			<p><label><small>from step 2</small> facebook api key <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			<p><label><small>from step 2</small> facebook api secret <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			<p><label><small>from step 2</small> facebook application url <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			<p><label><small>from step 3</small> new account appliance name  <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			<p><label><small>from step 3</small> new account appliance oauth key  <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			<p><label><small>from step 3</small> new account appliance oauth secret <input class='infield'  type='text' name='email' id='email'   value='' /></label></p>
+			<input type='submit' value='generate app'  />
+			</form>
+			
+			
+			
+	</div>
+			
+</div>
+			
+			

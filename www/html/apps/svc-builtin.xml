@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appservices>
+  <service>
+    <id>
+      1234567890
+    </id>
+    <visible>
+      this is builtin, adds accounts 
+    </visible>
+    <name>
+      Personal MedCommons Account
+    </name>
+    <comment>
+      There are no prerequisites for this module
+    </comment>
+    <explanation>
+      <![CDATA[
+      <div>Holds all your stuff. Allows you to securely send and receive ccrs. </div>
+      ]]>
+    </explanation>
+    <publisher>
+      <![CDATA[
+      <img src="http://medcommons.net/images/MEDcommons_logo_246x50.gif" alt="medcommons,inc."></img>
+         ]]>
+    </publisher>
+    <charges>
+      <chargeclass>
+        <name>silver</name>
+        <setup>1000</setup>
+        <perclick>10</perclick>
+        <perxmtgb>20</perxmtgb>
+        <perrcvgb>25</perrcvgb>
+      </chargeclass>
+      <chargeclass>
+        <name>bronze</name>
+        <permonth>150</permonth>
+        <perclick>13</perclick>
+        <perxmtgb>29</perxmtgb>
+        <perrcvgb>25</perrcvgb>
+      </chargeclass>
+      <chargeclass>
+        <name>gold</name>
+        <setup>2000</setup>
+        <perclick>5</perclick>
+        <perxmtgb>55</perxmtgb>
+        <perrcvgb>88</perrcvgb>
+      </chargeclass>
+    </charges>
+    <technical>
+      <![CDATA[
+      This is builtin 
+      ]]>
+    </technical>
+  </service>
+</appservices>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://medcommons.net/AccountCreationService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AccountCreationService" targetNamespace="http://medcommons.net/AccountCreationService/">
+<wsdl:types>
+<xsd:schema targetNamespace="http://medcommons.net/AccountCreationService/">
+<xsd:element name="NewOperationResponse" type="xsd:string"/>
+<xsd:element name="bar" type="xsd:string"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="NewOperationResponse">
+<wsdl:part element="tns:NewOperationResponse" name="NewOperationResponse"/>
+</wsdl:message>
+<wsdl:message name="NewOperationRequest">
+<wsdl:part name="bar" type="xsd:string"/>
+</wsdl:message>
+<wsdl:portType name="AccountCreationService">
+<wsdl:operation name="NewOperation">
+<wsdl:input message="tns:NewOperationRequest"/>
+<wsdl:output message="tns:NewOperationResponse"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="AccountCreationServiceSOAP" type="tns:AccountCreationService">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="NewOperation">
+<soap:operation soapAction="http://medcommons.net/AccountCreationService/NewOperation"/>
+<wsdl:input>
+<soap:body parts=" NewOperationRequest" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body parts=" NewOperationResponse" use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="AccountCreationService">
+<wsdl:port binding="tns:AccountCreationServiceSOAP" name="AccountCreationServiceSOAP">
+<soap:address location="http://www.example.org/"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

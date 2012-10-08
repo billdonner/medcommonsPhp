@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>MedCommons CXP Demo Instructions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="icon" href="favicon.gif" type="image/gif">
+<link rel="shortcut icon" href="favicon.gif" type="image/gif">
+<link href="css/header.css" rel="stylesheet" type="text/css">
+<link href="css/demoinst.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<a name="top"></a> 
+<div class="menu"> 
+  <ul>
+<li id="mmenu1"><a href="hp.html"><img src="images/mmtab_off_01.gif" border="0"></a></li>
+<li id="mmenu2"><a href="ui/logon.php?err=You%20must%20be%20logged%20in%20to%20reply%20to%20a%20CCR."><img src="images/mmtab_off_02.gif" border="0"></a></li>
+<li id="mmenu4"><a href="ui/logon.php?err=You%20must%20be%20logged%20in%20to%20view%20a%20CCR."><img src="images/mmtab_off_04.gif" border="0"></a></li>
+</ul> 
+</div> 
+<div id="topframe"><a href="hp.html" target="_top"><img id="logo" src="../images/logo.php?page=DEMOINST" border="0" alt="MedCommons" width="364" height="69"></a></div> 
+<iframe id="trkframe" src="trackform.htm" scrolling="no"></iframe> 
+<div class="textmenu"> 
+  <ul> 
+    <li><a href="terms_of_use.htm">Terms of Use</a></li> 
+    <li><a href="about.htm">About Us</a>&nbsp;&nbsp;||&nbsp;&nbsp;</li> 
+    <li><a href="faq.htm">FAQ</a>&nbsp;&nbsp;||&nbsp;&nbsp;</li> 
+  </ul> 
+</div> 
+<!-- Begin Page Content //--> 
+<div id="content"> 
+  <h4>MedCommons CXP/CCR Client Demo Instructions 9/1/05</h4> 
+  <div id="warningbox"> 
+    <h1>WARNING:</h1> 
+    <h2>INSECURE PUBLIC DEMO. DO NOT USE ANY IDENTIFYABLE PATIENT INFORMATION!</h2> 
+  </div> 
+  <h2>Contents:</h2> 
+  <ul> 
+    <li><a href="#1">About the CXP Protocol</a></li> 
+    <li><a href="#2">About the MedCommons CCR Client</a></li> 
+    <li><a href="#3">CCR Client Installation Instructions</a></li> 
+  </ul> 
+  <a name="1"></a> 
+  <h1>CXP Protocol</h1> 
+  <h2>CXP is an example of point-to-point CCR transport between EHR systems. MedCommons has placed CXP into the public domain in order to stimulate comment from EHR vendors and other interested parties.</h2> 
+  <h2>The CXP protocols are demonstrated by a Firefox extension (PC/Mac) that makes it convenient to cross firewalls separating EHR applications by using a Web accessible CXP server as intermediary. You are free to install your own CXP server from the public domain distribution. </h2> 
+  <h2>MedCommons operates an enhanced CXP server (<a href="https://gateway001.private.medcommons.net:8443/router/CxpServlet">https://gateway001.private.medcommons.net:8443/router/CxpServlet</a>) that anyone can use. This server will send a MedCommons email notification based on any emails found in the TO, FROM or PATIENT actors of a CCR. MedCommons tracks this email activity. We hope you will use the MedCommons server as much as possible - it's free - please send feedback to <a href="mailto:cmo@medcommons.net">cmo@medcommons.net</a> or to the CCR Accelerator Group. </h2> 
+  <h2>This note, and the public domain CXP software it refers to is located at <a href="https://secure.medcommons.net/mc/cxp">https://secure.medcommons.net/mc/cxp</a> </h2> 
+  <h2>The documentation for the CXP protocol is at <a href="https://secure.medcommons.net/mc/cxp/collateral/cxprotocol.pdf">https://secure.medcommons.net/mc/cxp/collateral/cxprotocol.pdf</a> </h2> 
+  <a name="2"></a> 
+  <h1>CCR Client</h1> 
+  <img class="inlinepic" src="images/demoshot_1.jpg"> 
+  <h2>The CCR Client demonstrates EHR to EHR transport using the CXP Protocol. A CCR saved from a EHR is picked up by the local CCR Client, transported by MedCommons using CXP and becomes available to any other EHR that has a CCR Client installed.</h2> 
+  <h2>MedCommons, acting as the intermediary transport agent, facilitates interoperability testing by adding:</h2> 
+  <ul> 
+    <li>an email notification feature based on Actors in the CCR itself, </li> 
+    <li>an online CCR viewer, and </li> 
+    <li>a central problem blog to facilitate community-based resolution of incompatibilities and other interoperability problems.</li> 
+  </ul> 
+  <h2>The CCR Client is just an interoperability testing tool. It is assumed that all CCRs are completely anonymous and created explicitly to demonstrate the implementation of various features of the ASTM CCR standard by participating EHR vendors.</h2> 
+  <a name="3"></a> 
+  <h1>CCR Client Installation</h1> 
+  <ol> 
+    <li>Install Firefox and the CCR Client Firefox Extension
+      <ul> 
+        <li>Download and install Firefox (FF go to <a href="http://www.mozilla.org">www.mozilla.org</a> to get a copy). Please ensure yor Firefox is at version 1.0.6 or later.</li> 
+        <li>Download <a href="https://secure.medcommons.net/mc/cxp/mccxp_0.9.5.xpi">https://secure.medcommons.net/mc/cxp/mccxp_0.9.5.xpi</a> to your hard disk.</li> 
+        <li>Open the extension file with Firefox and click the Install button when it appears </li> 
+        <li>Note: you must have "allow websites to install plug-ins" checked in your prefs</li> 
+        <li>After installation, be sure to restart Firefox completely - all windows must close for the extension to install properly.</li> 
+        <li>When installation is successful and the client is installed, an option labelled &quot;CCR Client&quot; will appear in the <span style="font-weight:bold;">Tools</span> menu as pictured below:</li> 
+        <li><img style="border:1px solid #000;" src="images/demoshot_2.jpg"></li> 
+      </ul> 
+    </li> 
+    <li>Prepare a CCR with Embedded Email Address(es) (optional)
+      <ul> 
+        <li>If you are utilizing the MedCommons test server as preset in the CCR Client Settings, a notification email can be sent to the TO, FROM or PATIENT Actors in the CCR when your CCR is processed. If you are using the barebones CXP public domain software, the contents of the CCR will be ignored. </li> 
+        <li>Create or open a CCR in your EHR. CCR samples are in <a href="https://secure.medcommons.net/mc/cxp/collateral">https://secure.medcommons.net/mc/cxp/collateral</a>. /li> 
+        <li>If possible, enter a notification email address for MedCommons to use, otherwise you will have an opportunity to enter a notification address in Step 3. </li> 
+        <li>Save the file as myccr.xml (or another name if you like) on your local file system </li> 
+      </ul> 
+    </li> 
+    <li>Run CCR Client to Send CCR
+      <ul> 
+        <li>Open FF if not already open, go to Tools>CCR Client</li> 
+        <li>Accept the PKI Certificates if offered.</li> 
+        <li>Browse to the file myccr.xml wherever it is stored in local file system</li> 
+        <li>Enter the email address of the party you would like MedCommons to notify, and click Send. The CCR Client will add or change the email address of the TO Actor accordingly. </li> 
+        <li>When accepted, note that a Transaction ID and the PIN are added to your History list </li> 
+      </ul> 
+    </li> 
+    <li>View the CCR via MedCommons
+      <ul> 
+        <li>Double click the entry in History to preview what others will see the CCR online.</li> 
+        <li>Anyone can view the CCR you sent by clicking on the Tracking Number link in the Notification email sent by MedCommons, by clicking in the community blog at <a href="https://secure.medcommons.net/ui/cxpblog.php">https://secure.medcommons.net/ui/cxpblog.php</a> or by entering the Tracking Number as displayed in History on the MedCommons Home Page at <a href="https://secure.private.medcommons.net">https://secure.private.medcommons.net</a>. </li> 
+        <li>They will need to get the PIN from you by some means and enter it when challenged to prove that they are your intended recipient. </li> 
+      </ul> 
+    </li> 
+    <li>Get the CCR into Destination EHR
+      <ul> 
+        <li>The destination needs to install Firefox and the CCR Client as in step 1, above.</li> 
+        <li>Click the Get. button</li> 
+        <li>Enter Tracking ID and PIN</li> 
+        <li>Enter a somename.xml and click Save</li> 
+        <li>Open somename.xml in the EHR</li> 
+      </ul> 
+    </li> 
+    <li>Report Problems
+      <ul> 
+        <li>The &quot;Report a Problem with a CCR&quot; link on the CCR Client will add the Tracking ID and PIN along with your free text comment to a running blog that is accessible to all. </li> 
+        <li>Do not post a CCR or a report that you don't want to share with the world.</li> 
+        <li>You may review the blog at <a href="https://secure.private.medcommons.net/ui/cxpblog.php">https://secure.private.medcommons.net/ui/cxpblog.php</a></li> 
+      </ul> 
+    </li> 
+  </ol> 
+  <h2>Please send feedback and comments to <a href="mailto:cmo@medcommons.net">cmo@medcommons.net</a></h2> 
+  <h2>Thank you!</h2> 
+</div> 
+<!-- End Page Content //--> 
+<div id="footer">&copy; 2005 MedCommons all rights reserved.&nbsp;&nbsp;&nbsp;page last modified:&nbsp; 
+  <script type="text/javascript"> document.write(document.lastModified); </script> 
+</div> 
+</body>
+</html>
+<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal>&nbsp;</p>
+</div>
+</body>
+</html>

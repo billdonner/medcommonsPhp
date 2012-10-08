@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+Configure Appliance Wizard
+{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Configuration</a> &gt;
+Configure Appliance
+{% endblock %}
+
+{% block content %}
+<div class='breadcrumbs'>
+<b>1) Name</b> &gt;
+2) Location &gt;
+3) Web &gt;
+4) Email &gt;
+5) Style &gt;
+6) Settings
+7) Publish
+</div>
+
+<table style='width: 400px'>
+  <tr>
+    <td>
+<img src='{{ media }}img/Circle_1.png' width='20' height='20' alt='1' />
+    </td>
+    <td>
+<p>
+First we configure the names that this appliance might be known as.
+</p>
+<p>
+This includes its <em>Internet Name</em>, or <em>Domain</em>.
+</p>
+<p>
+The <em>Organization</em> and <em>Organizational Unit</em> names
+are used to construct secure certificates, and are also used for
+X500 directory entries.
+</p>
+<p>
+The <em>Common Name</em> is used throughout the Appliance web pages.
+</p>
+    </td>
+  </tr>
+</table>
+
+<form method='post' action='wiz_name'>
+  <table>
+{{ form }}
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit' class='default' value='Next &gt;&gt;' name='next' />
+  </div>
+</form>
+
+{% endblock content %}

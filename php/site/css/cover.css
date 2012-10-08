@@ -1,0 +1,30 @@
+body {font:.75em/150% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+.thead {font-size:1.2em; font-weight: 700; }
+.thead td, .tfm {padding-top:10px;padding-bottom:5px;}
+td.lcol {width: 200px;}
+td.rcol {width: 560px;}
+.tinst {border:1px; padding: 10px 0 10px 3px ; margin:6px 0 6px 0 ; background-color:#EEE;}
+form {display: inline;}
+input{display: inline;}
+
+.pageBreakDiv {
+  float: left; 
+  width: 2.5in;
+  margin: 0px 10px;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+}
+
+#pageBreakContainer {
+  margin-top: 0.2in;
+  display: none;
+  width: 100%;
+  height: 0.3in;
+}
+
+@media screen {
+  #pageBreakContainer {
+    display: block;
+  }
+}
+

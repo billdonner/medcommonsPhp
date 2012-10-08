@@ -1,0 +1,121 @@
+#!/usr/bin/env python
+
+import re
+
+from os import stat, chmod
+from sys import exit, argv
+from cStringIO import StringIO
+from socket import inet_aton, error as socketerror
+
+NAMESERVER_RE = re.compile(r'^\s*nameserver\s*([0-9a-fA-FxX\.]+)\s*')
+
+def main(args):
+    while True:
+	o = StringIO()
+
+	nameservers = []
+
+	for line in file('/etc/resolv.conf'):
+	    m = NAMESERVER_RE.match(line)
+	    if m:
+		ns = m.group(1)
+		if ns not in nameservers:
+		    nameservers.append(ns)
+	    else:
+		o.write(line)
+
+	if args:
+	    nameservers = args
+	    args = []
+	else:
+	    i = 1
+
+	    new_nameservers = []
+	    for ns in nameservers:
+		x = ip_input('%s name server?' % suffix_numeric(i), ns)
+
+		new_nameservers.append(x)
+		i += 1
+
+	    while True:
+		x = ip_input('Additional name server? ', None)
+
+		if not x:
+		    break
+
+		new_nameservers.append(x)
+
+	    nameservers = new_nameservers
+
+	for ns in nameservers:
+	    print >>o, 'nameserver', ns, '# mc-nameservers'
+
+	print
+	print '#######################'
+	print '# New /etc/resolv.conf:'
+	print '#'
+	print o.getvalue()
+	print '#'
+	print '#######################'
+	print
+	yn = raw_input('Okay to replace /etc/resolv.conf [y/N/q]? ')
+	yn = yn.strip().lower()
+
+	if not yn:
+	    continue
+
+	if yn[0] == 'y':
+	    break
+
+	if yn[0] == 'q':
+	    exit(0)
+
+    mode = stat('/etc/resolv.conf').st_mode
+    file('/etc/resolv.conf', 'w').write(o.getvalue())
+    chmod('/etc/resolv.conf', mode)
+
+def ip_input(prompt, default_ipaddr):
+    if default_ipaddr:
+	prompt += ' [%s] ' % default_ipaddr
+
+    while True:
+	ipaddr = raw_input(prompt)
+
+	ipaddr = ipaddr.strip()
+
+	if ipaddr:
+	    try:
+		inet_aton(ipaddr)
+		return ipaddr
+	    except socketerror, x:
+		print x
+	else:
+	    return default_ipaddr
+
+def suffix_numeric(i):
+    """Add human suffix to number.
+
+    Examples::
+	>>> suffix_numeric(0)
+	'0th'
+
+	>>> suffix_numeric(100)
+	'100th'
+
+	>>> suffix_numeric(1)
+	'1st'
+
+	>>> suffix_numeric(2)
+	'2nd'
+
+	>>> suffix_numeric(3)
+	'3rd'
+    """
+    if 0 < i < 4:
+	return str(i) + ['', 'st', 'nd', 'rd'][i]
+    else:
+	return str(i) + 'th'
+
+if __name__ == '__main__':
+    main(argv[1:])
+

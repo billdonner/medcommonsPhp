@@ -1,0 +1,180 @@
+.hidden {
+  display: none;
+}
+
+.editStatusImg {
+  cursor: pointer;
+}
+
+.statusInput {
+  border: none 0px transparent;
+  background-color: transparent;
+}
+
+#records {
+  padding: 10px 30px 10px 2px;
+}
+
+#practiceHeading {
+  text-align: left; 
+  font-size: 0.2in;
+  padding:0px; 
+  margin: 3px 0px 0px 30px;
+}
+
+
+.liveTable tbody tr td
+{
+  text-align: left;
+}
+
+.liveTable tr td a {
+  text-decoration: none;
+}
+
+.liveTable tr td.rlsTm {
+  white-space: nowrap;
+}
+
+td#pageLinks {
+  text-align: right;
+}
+
+/*.liveTable tr.odd {
+  background-color: #f2f2f2;
+}*/
+
+div.registryTableHeader {
+  background-color: #958F6D;
+}
+
+#registryTable,
+.liveTable thead tr th.rounded {
+  background-color: white;
+}
+
+
+div.registryTableHeader h5 {
+  color:white;
+  padding: 0px 0px 4px 5px;
+  margin:  5px 0px 0px 5px;
+  white-space: nowrap;
+}
+
+/* Override for rounded corners */
+.rounded div.registryTableHeader h5 {
+  margin: 0px 0px 0px 5px;
+  padding-bottom: 5px;
+  padding-top: 0px;
+
+}
+.registryTableHeader {
+  padding-top: 1px;
+}
+
+.rounded .registryTableHeader {
+  padding: 0px;
+}
+
+
+.liveTable tr a:link, .liveTable tr a:visited {
+  font-family: verdana;
+  font-size: 13px;
+  color: #4b719e;
+}
+
+.liveTable tr a:hover, .liveTable tr a:active  {
+  font-family: verdana;
+  font-size: 13px;
+  color: #527DFF;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+#newCCRButton {
+  margin-right: 30px;
+}
+
+.liveTable tr.searchRow th {
+  background-color: white;
+  padding-top: 5px;
+}
+
+.liveTable tr.searchRow th a {
+  color: #BA8545;
+}
+
+.liveTable thead th input, .liveTable thead th select  {
+  font-weight: normal;
+  width: 95%;
+  font-family: verdana;
+  font-size: 11px;
+}
+
+/*
+ * Hidden patients
+ */
+.liveTable tr.hiddenPatient td {
+  color: #999;
+  font-style: italic;
+}
+
+.liveTable tr.hiddenPatient a:link, .liveTable a:visited {
+  color: #999;
+}
+.liveTable tr.hiddenPatient a:hover, .liveTable a:active {
+  color: #527DFF;
+}
+
+.liveTable tr #pageLinks a {
+  color: #ba8545;
+}
+
+.liveTable tr a.deleteLink {
+  color: #ba8545;
+  font-weight: bold;
+  font-family: verdana;
+  font-size: 12px;
+  font-style: normal;
+  position: relative;
+  top: -1px;
+  text-decoration: none;
+}
+.liveTable tr a.deleteLink:hover, .liveTable tr a.deleteLink:active {
+  color: #f02222;
+  text-decoration: none;
+}
+
+.liveTable td.iconCell {
+ text-align: left;
+  white-space: nowrap;
+}
+
+.liveTable td.iconCell * {
+  vertical-align: middle;
+}
+.liveTable td.iconCell a img {
+  position: relative;
+}
+
+
+.liveTable tr td#pageLinks {
+  text-align: right;
+}
+
+.liveTable tr#registryTableBottomRow td {
+  border-top-style: solid; 
+  border-top-width: 2px;
+  border-top-color: #CFC6A5;
+  border-bottom-style: solid; 
+  border-bottom-width: 2px;
+  border-bottom-color: #CFC6A5;
+  text-align: right;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: bold;
+}
+
+

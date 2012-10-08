@@ -1,0 +1,41 @@
+{% extends "form.html" %}
+
+{% block title %}Edit Group{% endblock %}
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Groups</a> &gt;
+Edit Group
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<form method='post' action='edit'>
+  <table>
+    <tbody>
+
+{{ form.as_table }}
+
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+    <input type='hidden' name='id' value='{{ group.groupinstanceid }}' />
+
+    <input type='submit' value='Save' class='default' />
+
+    <input type='submit'
+	   name='create'
+	   value='Save and create another' />
+
+    <input type='submit'
+	   name='edit'
+	   value='Save and continue editing' />
+
+  </div>
+</form>
+
+{% endblock %}

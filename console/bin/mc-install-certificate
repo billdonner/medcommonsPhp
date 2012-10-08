@@ -1,0 +1,398 @@
+#!/usr/bin/env python
+
+from sys import argv, path
+from os import getenv, putenv, environ
+from os.path import exists, dirname, join
+
+# Set up so Django db settings can be used
+if exists(join(dirname(argv[0]), '..', 'settings.py')):
+	path.append(join(dirname(argv[0]), '..'))
+
+DJANGO_SETTINGS_MODULE = 'DJANGO_SETTINGS_MODULE'
+if not getenv(DJANGO_SETTINGS_MODULE):
+	environ[DJANGO_SETTINGS_MODULE] = 'settings'
+	putenv(DJANGO_SETTINGS_MODULE, environ[DJANGO_SETTINGS_MODULE])
+
+from tempfile import mkstemp
+from os import chmod, close, dup2, execlp, fdopen, fork, open, pipe, \
+	       read, remove, rename, spawnvp, stat, write, O_RDONLY, P_WAIT
+from stat import S_IRUSR, S_IWUSR, S_IRGRP
+from sys import exit, stderr
+from cStringIO import StringIO
+
+import re
+
+TLS_PATH = '/etc/pki/tls'
+CRT_PATH = TLS_PATH + '/certs'
+KEY_PATH = TLS_PATH + '/private'
+
+TOMCAT_PATH = getenv('CATALINA_BASE', '/opt/gateway')
+TOMCAT_CONF_PATH = TOMCAT_PATH + '/conf'
+PFS_PATH = TOMCAT_CONF_PATH
+XML_PATH = TOMCAT_CONF_PATH 
+SSL_CONF = '/etc/httpd/conf.d/ssl.conf'
+ 
+START_RE = re.compile(r'^<VirtualHost ([a-zA-Z0-9\-\_]+):[0-9]+>$')
+END_RE = re.compile(r'^[ \t]*</VirtualHost>')
+CRT_RE = re.compile(r'^[ \t]*\#?[ \t]*SSLCertificateFile .*')
+KEY_RE = re.compile(r'^[ \t]*\#?[ \t]*SSLCertificateKeyFile .*')
+
+# attr :==       attr_name '=' attr_value
+# attr_name :==  [a-zA-Z0-9_]+
+# attr_value :== '[^']*' | "[^"]*"
+
+ATTR_RE = re.compile(r'([a-zA-Z0-9_]+)[ \t\n]*\=[ \t\n]*((\'[^\']*\')|(\"[^\"]*\"))')
+
+ENDTAG_RE = re.compile(r'/>')
+
+from django.db import connection, transaction
+
+def main(args):
+    c = connection.cursor()
+
+    q = "SELECT CN, security_certificate.key, csr, crt"
+    q += " FROM security_certificate"
+
+    params = []
+
+    if len(args) == 1:
+	pass
+    elif len(args) == 2:
+	q += ' WHERE CN = %s'
+	params.append(args[1])
+
+    q += ' ORDER BY issued DESC'
+
+    r = c.execute(q, params)
+    l = c.fetchall()
+
+    if not l:
+	print >>stderr, ' '.join(["Unknown certificate"] + params)
+	exit(1)
+
+    CN, key, csr, crt = l[0]
+
+    if not crt:
+	print "Self-signing and installing a certificate for '%s'" % CN
+    else:
+	print "Installing a CA-signed certificate for '%s'" % CN
+
+    yn = raw_input("Is this okay? (y/N) ")
+
+    if not yn.upper().strip().startswith('Y'):
+	return
+
+    crt_file = '%s/%s.crt' % (CRT_PATH, CN)
+    key_file = '%s/%s.key' % (KEY_PATH, CN)
+    pfs_file = '%s/%s.pfs' % (PFS_PATH, CN)
+
+    if crt:
+	f = file(crt_file, 'w')
+	f.write(crt)
+	f.close()
+
+	print '1. Installed CA-signed certificate into'
+	print '   "%s"' % crt_file
+	print
+
+    fd, fn = mkstemp()
+    write(fd, key)
+    close(fd)
+
+    if spawnvp(P_WAIT, 'openssl', 
+	       ['openssl', 'rsa', '-in', fn, '-out', key_file]) != 0:
+	print >>stderr, "Error running openssl"
+	exit(1)
+
+    remove(fn)
+
+    chmod(key_file, S_IRUSR)
+
+    if not crt:
+	# openssl x509 -req -days 365 -in *.csr -signkey *.key -out *.crt
+
+	fd, fn = mkstemp()
+	write(fd, csr)
+	close(fd)
+
+	spawnvp(P_WAIT, 'openssl',
+		['openssl', 'x509', '-req', '-days', '365',
+		 '-in', fn, '-signkey', key_file,
+		 '-out', crt_file])
+
+	remove(fn)
+
+	print '1.  Installed self-signed certificate into'
+	print '    "%s"' % crt_file
+	print
+
+    print '2. Installed key file into'
+    print '   "%s"' % key_file
+    print
+
+    edit_apache_ssl_conf(SSL_CONF, key_file = key_file, crt_file = crt_file)
+
+    print '3. Edited Apache configuration file'
+    print '   "%s"' % SSL_CONF
+    print
+
+    pkcs12_export(key_file = key_file, crt_file = crt_file,
+		  pfs_file = pfs_file,
+		  password = 'changeit')
+
+    print '4. Installed PKCS#12 certificate into'
+    print '    "%s"' % pfs_file
+    print
+
+    edit_tomcat_conf(XML_PATH + "/ssl_cert_conf.xml", pfs_file)
+
+    print '5. Created Tomcat configuration fragment'
+    print '   "%s/ssl_cert_conf.xml"' % XML_PATH
+    print
+
+    print 'To have Tomcat use the new certificate, make sure that the'
+    print '"server.xml" file has an entity reference to "ssl_cert_conf.xml"'
+    print 'Notes on how to do that are contained in "ssl_cert_conf.xml"'
+    print
+    print 'You will also need to restart both Apache and Tomcat before'
+    print 'the certificates take effect.'
+
+TOMCAT_CONF = """<!--
+
+     This file is automatically created by the 'mc-install-certificate'
+     script.
+
+     To have Tomcat use this file, place the following declaration at
+     the top of the 'server.xml' file.
+
+	<!DOCTYPE Server [
+		<!ENTITY ssl_cert_conf SYSTEM "ssl_cert_conf.xml">
+	]>
+
+     Then, replace the Connector element that specifies the SSL
+     server connector with the XML entity:
+
+	&ssl_cert_conf;
+
+     And restart Tomcat!
+
+     You may edit this file, but the 'keystoreFile', 'keystoreType',
+     'scheme', 'secure', and 'SSLEnabled' attributes will be edited
+     by the 'mc-install-certificate' script.
+-->
+
+<Connector protocol="org.apache.coyote.http11.Http11Protocol"
+	   port="8443" minSpareThreads="5" maxSpareThreads="75"
+	   enableLookups="false" disableUploadTimeout="true"
+	   acceptCount="100" maxThreads="200"
+           keystoreFile="conf/common-name.pfs"
+	   keystoreType="pkcs12"
+	   scheme="https" secure="true" SSLEnabled="true" />
+"""
+
+def edit_tomcat_conf(filename, pfs_file):
+    map = dict(keystoreFile=pfs_file, keystoreType='pkcs12', scheme='https',
+	       secure='true', SSLEnabled='true')
+    edit_xml('/opt/gateway/conf/ssl_cert_conf.xml', map)
+ 
+def edit_xml(filename, map):
+    try:
+	fi = file(filename)
+    except IOError:
+	fi = StringIO(TOMCAT_CONF)
+
+    fd, tmp_name = mkstemp(dir = dirname(filename))
+    fo = fdopen(fd, 'w')
+
+    for line in fi:
+	line = edit_line(line, map)
+
+	m = ENDTAG_RE.search(line)
+	if m:
+	    ms, me = m.span()
+	    l = StringIO()
+	    l.write(line[:ms])
+	    for k, v in map.items():
+		l.write("%s=%s " % (k, xml_escape(v)))
+	    l.write(line[ms:])
+	    line = l.getvalue()
+	    map = {}
+
+	fo.write(line)
+
+    fi.close()
+    fo.close()
+
+    try:
+	mode = stat(filename).st_mode
+	rename(filename, filename + '.bck')
+    except:
+	mode = S_IRUSR | S_IRGRP | S_IWUSR
+
+    rename(tmp_name, filename)
+    chmod(filename, mode)
+
+    try:
+	from pwd import getpwnam
+	from os import chown
+
+	pw = getpwnam('gateway')
+	chown(filename, 0, pw.pw_gid)
+    except ImportError:
+	pass
+ 
+def edit_line(line, map):
+    s = ATTR_RE.scanner(line)
+    newline = ''
+    start = 0
+
+    m = s.search()
+    while m:
+	key = m.group(1)
+	value = map.pop(key, None)
+
+	if value:
+	    gstart, gend = m.span()
+	    newline += line[start:gstart] + '%s=%s' % (key, xml_escape(value))
+	    start = gend
+
+	m = s.search()
+
+    return newline + line[start:]
+
+def xml_escape(attr):
+    """Intelligently escape XML attribute values.
+
+    Examples:
+
+    >>> xml_escape(5)
+    "'5'"
+
+    >>> xml_escape('test')
+    "'test'"
+
+    >>> xml_escape("has 'single-quotes'")
+    '"has \'single-quotes\'"'
+
+    >>> xml_escape('has "double-quotes"')
+    '\'has "double-quotes"\''
+
+    >>> xml_escape('''has both 'single' and "double" quotes''')
+    '"has both \'single\' and &quot;double&quot; quotes"'
+    """
+    s = attr.count("'")
+    d = attr.count('"')
+
+    if s == 0:
+	return "'%s'" % attr
+
+    elif d == 0:
+	return '"%s"' % attr
+
+    elif s < d:
+	return "'%s'" % attr.replace("'", "&apos;")
+
+    else:
+	return '"%s"' % attr.replace('"', "&quot;")
+
+   
+def edit_apache_ssl_conf(filename, key_file, crt_file):
+    i = file(filename, 'r')
+
+    fd, tmp_name = mkstemp(dir = dirname(filename))
+    o = fdopen(fd, 'w')
+
+    # state
+    host = None
+    crt_lines = key_lines = 0
+
+    for line in i:
+	m = START_RE.match(line)
+
+	if m:
+	    host = m.group(1)
+	    crt_lines = key_lines = 0
+	elif host:
+	    m = CRT_RE.match(line)
+	    if m:
+		if crt_lines == 0:
+		    line = 'SSLCertificateFile %s\n' % crt_file
+		else:
+		    line = '#' + line
+
+		crt_lines += 1
+
+	    else:
+		m = KEY_RE.match(line)
+		if m:
+		    if key_lines == 0:
+			line = 'SSLCertificateKeyFile %s\n' % key_file
+		    else:
+			line = '#' + line
+		    key_lines += 1
+
+	if END_RE.match(line):
+	    host = None
+
+	o.write(line)
+
+    i.close()
+    o.close()
+    rename(filename, filename + '.bck')
+    rename(tmp_name, filename)
+
+def pkcs12_export(key_file, crt_file, pfs_file, password):
+    # r_in, w_in file descriptors to new process's standard input
+    r_in, w_in = pipe()
+
+    # r_out, w_out file descriptors to new process's standard output
+    r_out, w_out = pipe()
+
+    cmd = ['openssl', 'pkcs12', '-export', '-in', crt_file,
+	   '-inkey', key_file, '-passout', 'stdin', '-out', pfs_file,
+	   '-name', 'tomcat']
+
+    pid = fork()
+
+    if pid == 0:
+	# Child process
+
+	# standard input...
+	close(w_in)
+	dup2(r_in, 0)
+	close(r_in)
+
+	# standard output...
+	close(r_out)
+	dup2(w_out, 1)
+	close(w_out)
+
+	# standard error...
+	fd = open('/dev/null', O_RDONLY)
+	dup2(fd, 2)
+	close(fd)
+
+	execlp(cmd[0], *cmd)
+
+    close(r_in)
+    close(w_out)
+
+    write(w_in, password)
+    close(w_in)
+
+    x = read(r_out, 8192)
+    close(r_out)
+
+    try:
+	from pwd import getpwnam
+	from os import chown
+
+	pw = getpwnam('gateway')
+
+	chown(pfs_file, 0, pw.pw_gid)
+	chmod(pfs_file, S_IWUSR | S_IRUSR | S_IRGRP)
+    except ImportError:
+	pass
+
+if __name__ == '__main__':
+    main(argv)

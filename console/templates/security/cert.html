@@ -1,0 +1,48 @@
+{% extends "form.html" %}
+
+{% block title %}Load Certificate{% endblock %}
+
+{% block header %}
+<style type='text/css'><!--
+
+textarea {
+    font-family: courier, monospace;
+}
+// --></style>
+{% endblock header %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Security Certificates</a> &gt;
+Load Certificate
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<form method='post' action='cert?id={{ cert.id }}'
+      enctype='multipart/form-data'>
+  <table>
+    <thead>
+      <tr>
+	<td colspan='2'>
+Either paste your new certificate into the "text" field,
+or upload your new certificate using the "file" field.
+	</td>
+      </tr>
+    </thead>
+    <tbody>
+{{ form }}
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit' value='Upload Certificate' />
+  </div>
+</form>
+
+{% endblock content %}
+

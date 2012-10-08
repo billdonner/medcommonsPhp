@@ -1,0 +1,203 @@
+#!/usr/bin/env python
+
+from sys import argv, path
+from os import getenv, putenv, environ
+from os.path import exists, dirname, join
+
+# Set up so Django db settings can be used
+if exists(join(dirname(argv[0]), '..', 'settings.py')):
+	path.append(join(dirname(argv[0]), '..'))
+
+DJANGO_SETTINGS_MODULE = 'DJANGO_SETTINGS_MODULE'
+if not getenv(DJANGO_SETTINGS_MODULE):
+	environ[DJANGO_SETTINGS_MODULE] = 'settings'
+	putenv(DJANGO_SETTINGS_MODULE, environ[DJANGO_SETTINGS_MODULE])
+
+from sys import stdin, exit
+from email.Parser import Parser
+from time import strftime
+from cgi import parse_qs
+from urlparse import urlsplit
+from urllib import urlencode
+from httplib import HTTPConnection, HTTPSConnection
+
+from config.properties import get_properties
+
+GATEWAY_URL = \
+'https://gateway001.private.medcommons.net/router/addAccountDocument.do'
+
+CENTRAL_URL = \
+'https://www.medcommons.net/acct/addDocument.php'
+
+DESIRED_MIMETYPES = {'image': True, 'video': True}
+
+def main(args):
+    global GATEWAY_URL, CENTRAL_URL
+
+    properties = get_properties()
+
+    if not properties.get('IncomingEmailEnabled', 0):
+	return
+
+    GATEWAY_URL = properties['Site'] + '/router/addAccountDocument.do'
+    CENTRAL_URL = properties['Site'] + '/acct/addDocument.php'
+
+    if len(args) == 0:
+	handle(stdin)
+    else:
+	for a in args:
+	    handle(file(a))
+
+def handle(file_input):
+    incoming = Parser()
+    email = incoming.parse(file_input)
+
+    recipient = email.get('To').split('@')[0]
+    recipient = recipient.replace('-', '').replace('.', '')
+    subject   = email.get('Subject')
+
+    if not recipient.isdigit() or len(recipient) != 16:
+	# Not an MCID
+	return
+
+    errors = []
+
+    for a in email.walk():
+	if is_desired_attachment(a):
+	    # Post attached image|video to gateway
+	    fields = dict(documentType='PATPHOTO',
+			  returnUrl='http://secure.test.medcommons.net/here',
+			  comment='Hello')
+	    status, message, headers, body = \
+		post_multipart(GATEWAY_URL, fields.items(), [a])
+	    if status == 302:
+		params = parse_qs(urlsplit(headers.getheader('Location'))[3])
+		guid = params['guid'][0]
+
+		# Tell central about new document
+		url = CENTRAL_URL + '?' + urlencode(dict(accid=recipient,
+                                                         comment=subject,
+                                                         guid=guid))
+
+		status, message, headers = get_url(url)
+
+		if status == 200:
+		    print >>file('mail.log', 'a'), strftime('%D %T'), \
+				guid, 'added to account', recipient
+		else:
+		    print >>file('mail.err', 'a'), strftime('%D %T'), \
+				status, message, headers
+		    errors.append( (CENTRAL_URL, status, message, headers) )
+
+	    else:
+		print >>file('mail.err', 'a'), strftime('%D %T'), \
+			status, message, headers, body
+		errors.append( (GATEWAY_URL, status, message, headers) )
+
+    if len(errors) > 0:
+	print >>file('mail.log', 'a'), strftime('%D %T'), errors
+	# Bounce
+	pass
+
+
+def is_desired_attachment(m):
+    """Should this email attachment be sent up to medcommons?
+
+    Filter on its content main type ('image' in 'image/jpeg') and
+    its content type ('image/jpeg').
+    """
+    return m.get_content_maintype() in DESIRED_MIMETYPES or \
+	   m.get_content_type()     in DESIRED_MIMETYPES
+
+def get_url(url):
+    h, selector, headers = connect(url)
+    h.request('GET', selector, headers=headers)
+    r = h.getresponse()
+    return r.status, r.reason, r.msg
+
+def post_multipart(url, fields, files):
+    """
+    Post fields and files to an HTTP host as multipart/form-data.
+    Fields is a sequence of (name, value) elements for regular form fields.
+    Files is a sequence of MIME attachments for data to be
+    uploaded as file.  Returns the server's response page.
+    """
+    content_type, body = encode_multipart_formdata(fields, files)
+    h, selector, headers = connect(url)
+    headers['Content-Type'] = content_type
+    h.request('POST', selector, body, headers)
+    r = h.getresponse()
+
+    return r.status, r.reason, r.msg, r.read()
+
+def connect(url):
+    """Given a URL, return an initialized HTTPConnection or
+    HTTPSConnection, a selector suitable for the GET or POST
+    request, and an initialized set of headers including the 'Host'
+    header.
+
+    For example:
+    >>> connect('http://localhost:81/foo?test#fragment')
+    will return the tuple
+    (HTTPConnection('localhost', 81), '/foo?test', {'Host': 'localhost:81'})
+    """
+    scheme, netloc, path, query, fragment = urlsplit(url, 'http')
+
+    if scheme == 'http':
+        conn = HTTPConnection
+    elif scheme == 'https':
+        conn = HTTPSConnection
+    else:
+        raise "Scheme '%s' must be either 'http' or 'https'" % scheme
+
+    a = netloc.split(':', 1)
+    if len(a) == 1:
+        host = netloc
+        port = None
+    else:
+        host = a[0]
+        port = int(a[1])
+
+    if not path:
+        selector = '/'
+    else:
+        selector = path
+
+    if query:
+        selector += '?' + query
+
+    c = conn(host, port)
+
+    return c, selector, {'Host': netloc}
+
+def encode_multipart_formdata(fields, files):
+    """fields is a sequence of (name, value) elements for regular form fields.
+    files is a sequence of email attachments as elements for data to be
+    uploaded as files.  Returns (content_type, body) ready for httplib.HTTP
+    instance.
+    """
+    BOUNDARY = '----------ThIs_Is_tHe_bouNdaRY_$'
+    CRLF = '\r\n'
+    L = []
+    for key, value in fields:
+	L.append('--' + BOUNDARY)
+	L.append('Content-Disposition: form-data; name="%s"' % key)
+	L.append('')
+	L.append(value)
+    for attachment in files:
+	L.append('--' + BOUNDARY)
+	L.append('Content-Disposition: form-data; name="uploadedFile"; filename="%s"' % \
+		 attachment.get_filename())
+
+	L.append('Content-Type: %s' % attachment.get_content_type())
+	L.append('')
+	L.append(attachment.get_payload(decode=True))
+
+    L.append('--' + BOUNDARY + '--')
+    L.append('')
+    body = CRLF.join(L)
+    content_type = 'multipart/form-data; boundary=%s' % BOUNDARY
+    return content_type, body
+
+if __name__ == '__main__':
+    main(argv[1:])

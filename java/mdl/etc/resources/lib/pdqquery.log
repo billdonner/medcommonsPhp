@@ -1,0 +1,183 @@
+[DEBUG][ClientPdqQuery.java:47] ClientPdqQueryTest: main - Enter 
+[DEBUG][PdqConsumer.java:131] PdqConsumer: createQuery - Entry 
+[DEBUG][PdqConsumerQuery.java:544] PdqConsumerQuery: createQueryMsg - Entry 
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField MSH-7 : MSH-7
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField MSH-10 : MSH-10
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField QPD-2 : QPD-2
+[DEBUG][PdqConsumerQuery.java:610] PdqConsumerQuery: createQueryMsg MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113224021.EST||QBP^Q22^QBP_Q21|0869472709668217879|P|2.5QPD|Q22^Find Candidates|6210805903489214620141055786437RCP|I
+[DEBUG][PdqConsumer.java:143] PdqConsumer: createQuery - Exit controlId: 0869472709668217879
+[DEBUG][PdqConsumerQuery.java:465] PdqConsumerQuery: addOptionalDemographicSearch - @PID.8^F
+[DEBUG][PdqConsumerQuery.java:472] PdqConsumerQuery: addOptionalDemographicSearch 
+[DEBUG][PdqConsumerQuery.java:465] PdqConsumerQuery: addOptionalDemographicSearch - @PID.11.4^WI
+[DEBUG][PdqConsumerQuery.java:472] PdqConsumerQuery: addOptionalDemographicSearch 
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField RCP-2-1 : RCP-2
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField RCP-2-2-1 : RCP-2
+[DEBUG][PdqConsumerQuery.java:497] PdqConsumerQuery: addOptionalQuantityLimit 
+[DEBUG][PdqConsumer.java:170] PdqConsumer: sendQuery - Entry controlId: 0869472709668217879 run verification? true user: pdqQueryUser
+[DEBUG][Client.java:505] Client: sendMsg -- Entry 
+[DEBUG][Client.java:519] Client: sendMsg - Verify Begin 
+[DEBUG][Client.java:604] Client: verifyMessage - Entry 
+[DEBUG][Client.java:648] Client: verifyMessage - definition validation check complete. There were 1 events documented 
+[INFO ][Client.java:655] Client: verifyMessage - level 3 - QPD:1-3:0 - Found repeats when non were expected
+[DEBUG][Client.java:678] Client: verifyMessage - cp validation check complete. There were 0 events documented 
+[DEBUG][Client.java:632] Client: verifyMessage - Exit 
+[DEBUG][Client.java:525] Client: sendMsg - Verify End 
+[DEBUG][Client.java:709] Client: send - Entry 
+[DEBUG][Client.java:717] Client: send - Enter SEND_MLLP_DEST MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113224021.EST||QBP^Q22^QBP_Q21|0869472709668217879|P|2.5QPD|Q22^Find Candidates|6210805903489214620141055786437|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:258] MLLPDestination: sendMessage - Entry 
+[INFO ][MLLPDestination.java:283] *** Sending message to ibmod235.dal-ebis.ihost.com on port 3600
+MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113224021.EST||QBP^Q22^QBP_Q21|0869472709668217879|P|2.5QPD|Q22^Find Candidates|6210805903489214620141055786437|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:709] MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113224021.EST||QBP^Q22^QBP_Q21|0869472709668217879|P|2.5QPD|Q22^Find Candidates|6210805903489214620141055786437|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:352] sending the server: MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113224021.EST||QBP^Q22^QBP_Q21|0869472709668217879|P|2.5QPD|Q22^Find Candidates|6210805903489214620141055786437|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:709] MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113224021.EST||QBP^Q22^QBP_Q21|0869472709668217879|P|2.5QPD|Q22^Find Candidates|6210805903489214620141055786437|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:357] done sending the message to the server
+[DEBUG][MLLPDestination.java:390] Response was: MSH|^~\&|OTHER_KIOSK|HIMSSSANDIEGO|OHFConsumer1|OHFFacility1|20061113214026-0600||RSP^K22|116347562676852ibmod|P|2.5|MSA|AA|0869472709668217879|QAK|6210805903489214620141055786437|OK|QPD|Q22^Find Candidates|6210805903489214620141055786437|@PID.8^F~@PID.11.4^WIPID|||JM19400814^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID50^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7301^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7718^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3052^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID1122^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID9871^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID657^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3469^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID2466^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4522^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID604^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4890^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Murphy^Joyce^Marie||||||903 Susan Pl^^Lacrosse^WI^54603||^PRN^PH|QRI|174.0PID|||DeckSally^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Deck^Marcella^Mary|Schock|19380110|F||WH^White|My Wonderful Mom^^Waumandee^WI^54622||^PRN^PH^^^608^3233495|||M^Married|||||||Arcadia|QRI|174.0PID|||KW12345^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Wheeler^Kara||19710101|F|||1104 Wells Rd^^Onalaska^WI^54650^USA||^PRN^PH|QRI|174.0
+[INFO ][MLLPDestination.java:289] *** Response from ibmod235.dal-ebis.ihost.com on port 3600 was:
+MSH|^~\&|OTHER_KIOSK|HIMSSSANDIEGO|OHFConsumer1|OHFFacility1|20061113214026-0600||RSP^K22|116347562676852ibmod|P|2.5|MSA|AA|0869472709668217879|QAK|6210805903489214620141055786437|OK|QPD|Q22^Find Candidates|6210805903489214620141055786437|@PID.8^F~@PID.11.4^WIPID|||JM19400814^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID50^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7301^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7718^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3052^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID1122^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID9871^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID657^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3469^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID2466^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4522^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID604^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4890^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Murphy^Joyce^Marie||||||903 Susan Pl^^Lacrosse^WI^54603||^PRN^PH|QRI|174.0PID|||DeckSally^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Deck^Marcella^Mary|Schock|19380110|F||WH^White|My Wonderful Mom^^Waumandee^WI^54622||^PRN^PH^^^608^3233495|||M^Married|||||||Arcadia|QRI|174.0PID|||KW12345^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Wheeler^Kara||19710101|F|||1104 Wells Rd^^Onalaska^WI^54650^USA||^PRN^PH|QRI|174.0
+[DEBUG][MLLPDestination.java:308] MLLPDestination: sendMessage - Exit
+[DEBUG][Client.java:733] Client: send - Exit SEND_MLLP_DEST 
+[DEBUG][Client.java:770] Client: send - Exit 
+[DEBUG][Client.java:544] Client: sendMsg - Exit 
+[DEBUG][PdqConsumer.java:202] PdqConsumer: sendQuery - Exit controlId: 0869472709668217879
+[DEBUG][ClientPdqQuery.java:160] ClientPdqQueryTest: main - QBP^Q22 MSH|^~\&|OTHER_KIOSK|HIMSSSANDIEGO|OHFConsumer1|OHFFacility1|20061113214026-0600||RSP^K22|116347562676852ibmod|P|2.5MSA|AA|0869472709668217879QAK|6210805903489214620141055786437|OKQPD|Q22^Find Candidates|6210805903489214620141055786437|^F~^WIPID|||JM19400814^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID50^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7301^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7718^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3052^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID1122^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID9871^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID657^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3469^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID2466^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4522^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID604^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4890^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Murphy^Joyce^Marie||||||903 Susan Pl^^Lacrosse^WI^54603||^PRN^PHQRI|174.0PID|||DeckSally^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Deck^Marcella^Mary|Schock|19380110|F||WH^White|My Wonderful Mom^^Waumandee^WI^54622||^PRN^PH^^^608^3233495|||M^Married|||||||ArcadiaQRI|174.0PID|||KW12345^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Wheeler^Kara||19710101|F|||1104 Wells Rd^^Onalaska^WI^54650^USA||^PRN^PHQRI|174.0
+[DEBUG][ClientPdqQuery.java:166] Query Status: Data found, no errors (this is the default)
+[DEBUG][ClientPdqQuery.java:167] ResponseACK Code: AA
+[DEBUG][ClientPdqQuery.java:168] ResponseACK Desc: Original mode: Application Accept - Enhanced mode: Application acknowledgment: Accept
+[DEBUG][ClientPdqQuery.java:172] Sending App: OTHER_KIOSK
+[DEBUG][ClientPdqQuery.java:173] Sending Fac: HIMSSSANDIEGO
+[DEBUG][ClientPdqQuery.java:174] Receiving App: OHFConsumer1
+[DEBUG][ClientPdqQuery.java:175] Receiving Fac: OHFFacility1
+[DEBUG][ClientPdqQuery.java:180] Control ID: 0869472709668217879
+[DEBUG][ClientPdqQuery.java:211] Patients returned: 3
+[DEBUG][ClientPdqQuery.java:216]   Patient: JM19400814-Murphy, Joyce
+[DEBUG][ClientPdqQuery.java:218]     Address: WI
+[DEBUG][ClientPdqQuery.java:219]       Phone: 
+[DEBUG][ClientPdqQuery.java:216]   Patient: DeckSally-Deck, Marcella
+[DEBUG][ClientPdqQuery.java:218]     Address: WI
+[DEBUG][ClientPdqQuery.java:219]       Phone: 
+[DEBUG][ClientPdqQuery.java:216]   Patient: KW12345-Wheeler, Kara
+[DEBUG][ClientPdqQuery.java:218]     Address: WI
+[DEBUG][ClientPdqQuery.java:219]       Phone: 
+[DEBUG][ClientPdqQuery.java:103] ClientPdqQueryTest Main - Exit 
+[DEBUG][ClientPdqQuery.java:47] ClientPdqQueryTest: main - Enter 
+[DEBUG][PdqConsumer.java:131] PdqConsumer: createQuery - Entry 
+[DEBUG][PdqConsumerQuery.java:544] PdqConsumerQuery: createQueryMsg - Entry 
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField MSH-7 : MSH-7
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField MSH-10 : MSH-10
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField QPD-2 : QPD-2
+[DEBUG][PdqConsumerQuery.java:610] PdqConsumerQuery: createQueryMsg MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113225107.EST||QBP^Q22^QBP_Q21|4289243009624188279|P|2.5QPD|Q22^Find Candidates|3929097169578822521800557320066RCP|I
+[DEBUG][PdqConsumer.java:143] PdqConsumer: createQuery - Exit controlId: 4289243009624188279
+[DEBUG][PdqConsumerQuery.java:465] PdqConsumerQuery: addOptionalDemographicSearch - @PID.8^F
+[DEBUG][PdqConsumerQuery.java:472] PdqConsumerQuery: addOptionalDemographicSearch 
+[DEBUG][PdqConsumerQuery.java:465] PdqConsumerQuery: addOptionalDemographicSearch - @PID.11.4^WI
+[DEBUG][PdqConsumerQuery.java:472] PdqConsumerQuery: addOptionalDemographicSearch 
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField RCP-2-1 : RCP-2
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField RCP-2-2-1 : RCP-2
+[DEBUG][PdqConsumerQuery.java:497] PdqConsumerQuery: addOptionalQuantityLimit 
+[DEBUG][PdqConsumer.java:170] PdqConsumer: sendQuery - Entry controlId: 4289243009624188279 run verification? true user: pdqQueryUser
+[DEBUG][Client.java:505] Client: sendMsg -- Entry 
+[DEBUG][Client.java:519] Client: sendMsg - Verify Begin 
+[DEBUG][Client.java:604] Client: verifyMessage - Entry 
+[DEBUG][Client.java:648] Client: verifyMessage - definition validation check complete. There were 1 events documented 
+[INFO ][Client.java:655] Client: verifyMessage - level 3 - QPD:1-3:0 - Found repeats when non were expected
+[DEBUG][Client.java:678] Client: verifyMessage - cp validation check complete. There were 0 events documented 
+[DEBUG][Client.java:632] Client: verifyMessage - Exit 
+[DEBUG][Client.java:525] Client: sendMsg - Verify End 
+[DEBUG][Client.java:709] Client: send - Entry 
+[DEBUG][Client.java:717] Client: send - Enter SEND_MLLP_DEST MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113225107.EST||QBP^Q22^QBP_Q21|4289243009624188279|P|2.5QPD|Q22^Find Candidates|3929097169578822521800557320066|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:258] MLLPDestination: sendMessage - Entry 
+[INFO ][MLLPDestination.java:283] *** Sending message to ibmod235.dal-ebis.ihost.com on port 3600
+MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113225107.EST||QBP^Q22^QBP_Q21|4289243009624188279|P|2.5QPD|Q22^Find Candidates|3929097169578822521800557320066|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:709] MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113225107.EST||QBP^Q22^QBP_Q21|4289243009624188279|P|2.5QPD|Q22^Find Candidates|3929097169578822521800557320066|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:352] sending the server: MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113225107.EST||QBP^Q22^QBP_Q21|4289243009624188279|P|2.5QPD|Q22^Find Candidates|3929097169578822521800557320066|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:709] MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061113225107.EST||QBP^Q22^QBP_Q21|4289243009624188279|P|2.5QPD|Q22^Find Candidates|3929097169578822521800557320066|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:357] done sending the message to the server
+[DEBUG][MLLPDestination.java:390] Response was: MSH|^~\&|OTHER_KIOSK|HIMSSSANDIEGO|OHFConsumer1|OHFFacility1|20061113215109-0600||RSP^K22|116347626986353ibmod|P|2.5|MSA|AA|4289243009624188279|QAK|3929097169578822521800557320066|OK|QPD|Q22^Find Candidates|3929097169578822521800557320066|@PID.8^F~@PID.11.4^WIPID|||JM19400814^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID50^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7301^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7718^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3052^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID1122^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID9871^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID657^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3469^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID2466^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4522^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID604^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4890^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Murphy^Joyce^Marie||||||903 Susan Pl^^Lacrosse^WI^54603||^PRN^PH|QRI|174.0PID|||DeckSally^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Deck^Marcella^Mary|Schock|19380110|F||WH^White|My Wonderful Mom^^Waumandee^WI^54622||^PRN^PH^^^608^3233495|||M^Married|||||||Arcadia|QRI|174.0PID|||KW12345^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Wheeler^Kara||19710101|F|||1104 Wells Rd^^Onalaska^WI^54650^USA||^PRN^PH|QRI|174.0
+[INFO ][MLLPDestination.java:289] *** Response from ibmod235.dal-ebis.ihost.com on port 3600 was:
+MSH|^~\&|OTHER_KIOSK|HIMSSSANDIEGO|OHFConsumer1|OHFFacility1|20061113215109-0600||RSP^K22|116347626986353ibmod|P|2.5|MSA|AA|4289243009624188279|QAK|3929097169578822521800557320066|OK|QPD|Q22^Find Candidates|3929097169578822521800557320066|@PID.8^F~@PID.11.4^WIPID|||JM19400814^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID50^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7301^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7718^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3052^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID1122^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID9871^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID657^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3469^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID2466^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4522^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID604^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4890^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Murphy^Joyce^Marie||||||903 Susan Pl^^Lacrosse^WI^54603||^PRN^PH|QRI|174.0PID|||DeckSally^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Deck^Marcella^Mary|Schock|19380110|F||WH^White|My Wonderful Mom^^Waumandee^WI^54622||^PRN^PH^^^608^3233495|||M^Married|||||||Arcadia|QRI|174.0PID|||KW12345^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Wheeler^Kara||19710101|F|||1104 Wells Rd^^Onalaska^WI^54650^USA||^PRN^PH|QRI|174.0
+[DEBUG][MLLPDestination.java:308] MLLPDestination: sendMessage - Exit
+[DEBUG][Client.java:733] Client: send - Exit SEND_MLLP_DEST 
+[DEBUG][Client.java:770] Client: send - Exit 
+[DEBUG][Client.java:544] Client: sendMsg - Exit 
+[DEBUG][PdqConsumer.java:202] PdqConsumer: sendQuery - Exit controlId: 4289243009624188279
+[DEBUG][ClientPdqQuery.java:160] ClientPdqQueryTest: main - QBP^Q22 MSH|^~\&|OTHER_KIOSK|HIMSSSANDIEGO|OHFConsumer1|OHFFacility1|20061113215109-0600||RSP^K22|116347626986353ibmod|P|2.5MSA|AA|4289243009624188279QAK|3929097169578822521800557320066|OKQPD|Q22^Find Candidates|3929097169578822521800557320066|^F~^WIPID|||JM19400814^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID50^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7301^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7718^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3052^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID1122^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID9871^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID657^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3469^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID2466^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4522^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID604^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4890^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Murphy^Joyce^Marie||||||903 Susan Pl^^Lacrosse^WI^54603||^PRN^PHQRI|174.0PID|||DeckSally^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Deck^Marcella^Mary|Schock|19380110|F||WH^White|My Wonderful Mom^^Waumandee^WI^54622||^PRN^PH^^^608^3233495|||M^Married|||||||ArcadiaQRI|174.0PID|||KW12345^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Wheeler^Kara||19710101|F|||1104 Wells Rd^^Onalaska^WI^54650^USA||^PRN^PHQRI|174.0
+[DEBUG][ClientPdqQuery.java:166] Query Status: Data found, no errors (this is the default)
+[DEBUG][ClientPdqQuery.java:167] ResponseACK Code: AA
+[DEBUG][ClientPdqQuery.java:168] ResponseACK Desc: Original mode: Application Accept - Enhanced mode: Application acknowledgment: Accept
+[DEBUG][ClientPdqQuery.java:172] Sending App: OTHER_KIOSK
+[DEBUG][ClientPdqQuery.java:173] Sending Fac: HIMSSSANDIEGO
+[DEBUG][ClientPdqQuery.java:174] Receiving App: OHFConsumer1
+[DEBUG][ClientPdqQuery.java:175] Receiving Fac: OHFFacility1
+[DEBUG][ClientPdqQuery.java:180] Control ID: 4289243009624188279
+[DEBUG][ClientPdqQuery.java:211] Patients returned: 3
+[DEBUG][ClientPdqQuery.java:216]   Patient: JM19400814-Murphy, Joyce
+[DEBUG][ClientPdqQuery.java:218]     Address: WI
+[DEBUG][ClientPdqQuery.java:219]       Phone: 
+[DEBUG][ClientPdqQuery.java:216]   Patient: DeckSally-Deck, Marcella
+[DEBUG][ClientPdqQuery.java:218]     Address: WI
+[DEBUG][ClientPdqQuery.java:219]       Phone: 
+[DEBUG][ClientPdqQuery.java:216]   Patient: KW12345-Wheeler, Kara
+[DEBUG][ClientPdqQuery.java:218]     Address: WI
+[DEBUG][ClientPdqQuery.java:219]       Phone: 
+[DEBUG][ClientPdqQuery.java:103] ClientPdqQueryTest Main - Exit 
+[DEBUG][ClientPdqQuery.java:47] ClientPdqQueryTest: main - Enter 
+[DEBUG][PdqConsumer.java:131] PdqConsumer: createQuery - Entry 
+[DEBUG][PdqConsumerQuery.java:544] PdqConsumerQuery: createQueryMsg - Entry 
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField MSH-7 : MSH-7
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField MSH-10 : MSH-10
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField QPD-2 : QPD-2
+[DEBUG][PdqConsumerQuery.java:610] PdqConsumerQuery: createQueryMsg MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061114152339.EST||QBP^Q22^QBP_Q21|7890565909830541229|P|2.5QPD|Q22^Find Candidates|7228250391538171402733978451514RCP|I
+[DEBUG][PdqConsumer.java:143] PdqConsumer: createQuery - Exit controlId: 7890565909830541229
+[DEBUG][PdqConsumerQuery.java:465] PdqConsumerQuery: addOptionalDemographicSearch - @PID.8^F
+[DEBUG][PdqConsumerQuery.java:472] PdqConsumerQuery: addOptionalDemographicSearch 
+[DEBUG][PdqConsumerQuery.java:465] PdqConsumerQuery: addOptionalDemographicSearch - @PID.11.4^WI
+[DEBUG][PdqConsumerQuery.java:472] PdqConsumerQuery: addOptionalDemographicSearch 
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField RCP-2-1 : RCP-2
+[DEBUG][PixPdqMessage.java:377] PixMsgADT: setField RCP-2-2-1 : RCP-2
+[DEBUG][PdqConsumerQuery.java:497] PdqConsumerQuery: addOptionalQuantityLimit 
+[DEBUG][PdqConsumer.java:170] PdqConsumer: sendQuery - Entry controlId: 7890565909830541229 run verification? true user: pdqQueryUser
+[DEBUG][Client.java:505] Client: sendMsg -- Entry 
+[DEBUG][Client.java:519] Client: sendMsg - Verify Begin 
+[DEBUG][Client.java:604] Client: verifyMessage - Entry 
+[DEBUG][Client.java:648] Client: verifyMessage - definition validation check complete. There were 1 events documented 
+[INFO ][Client.java:655] Client: verifyMessage - level 3 - QPD:1-3:0 - Found repeats when non were expected
+[DEBUG][Client.java:678] Client: verifyMessage - cp validation check complete. There were 0 events documented 
+[DEBUG][Client.java:632] Client: verifyMessage - Exit 
+[DEBUG][Client.java:525] Client: sendMsg - Verify End 
+[DEBUG][Client.java:709] Client: send - Entry 
+[DEBUG][Client.java:717] Client: send - Enter SEND_MLLP_DEST MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061114152339.EST||QBP^Q22^QBP_Q21|7890565909830541229|P|2.5QPD|Q22^Find Candidates|7228250391538171402733978451514|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:258] MLLPDestination: sendMessage - Entry 
+[INFO ][MLLPDestination.java:283] *** Sending message to ibmod235.dal-ebis.ihost.com on port 3600
+MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061114152339.EST||QBP^Q22^QBP_Q21|7890565909830541229|P|2.5QPD|Q22^Find Candidates|7228250391538171402733978451514|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:709] MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061114152339.EST||QBP^Q22^QBP_Q21|7890565909830541229|P|2.5QPD|Q22^Find Candidates|7228250391538171402733978451514|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:352] sending the server: MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061114152339.EST||QBP^Q22^QBP_Q21|7890565909830541229|P|2.5QPD|Q22^Find Candidates|7228250391538171402733978451514|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:709] MSH|^~\&|OHFConsumer1|OHFFacility1|OTHER_KIOSK|HIMSSSANDIEGO|20061114152339.EST||QBP^Q22^QBP_Q21|7890565909830541229|P|2.5QPD|Q22^Find Candidates|7228250391538171402733978451514|@PID.8^F~@PID.11.4^WIRCP|I|5^RD
+[DEBUG][MLLPDestination.java:357] done sending the message to the server
+[DEBUG][MLLPDestination.java:390] Response was: MSH|^~\&|OTHER_KIOSK|HIMSSSANDIEGO|OHFConsumer1|OHFFacility1|20061114142342-0600||RSP^K22|1163535822184105ibmo|P|2.5|MSA|AA|7890565909830541229|QAK|7228250391538171402733978451514|OK|QPD|Q22^Find Candidates|7228250391538171402733978451514|@PID.8^F~@PID.11.4^WIPID|||JM19400814^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID50^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7301^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7718^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3052^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID1122^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID9871^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID657^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3469^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID2466^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4522^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID604^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4890^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Murphy^Joyce^Marie||||||903 Susan Pl^^Lacrosse^WI^54603||^PRN^PH|QRI|174.0PID|||DeckSally^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Deck^Marcella^Mary|Schock|19380110|F||WH^White|My Wonderful Mom^^Waumandee^WI^54622||^PRN^PH^^^608^3233495|||M^Married|||||||Arcadia|QRI|174.0PID|||KW12345^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Wheeler^Kara||19710101|F|||1104 Wells Rd^^Onalaska^WI^54650^USA||^PRN^PH|QRI|174.0
+[INFO ][MLLPDestination.java:289] *** Response from ibmod235.dal-ebis.ihost.com on port 3600 was:
+MSH|^~\&|OTHER_KIOSK|HIMSSSANDIEGO|OHFConsumer1|OHFFacility1|20061114142342-0600||RSP^K22|1163535822184105ibmo|P|2.5|MSA|AA|7890565909830541229|QAK|7228250391538171402733978451514|OK|QPD|Q22^Find Candidates|7228250391538171402733978451514|@PID.8^F~@PID.11.4^WIPID|||JM19400814^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID50^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7301^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7718^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3052^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID1122^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID9871^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID657^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3469^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID2466^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4522^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID604^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4890^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Murphy^Joyce^Marie||||||903 Susan Pl^^Lacrosse^WI^54603||^PRN^PH|QRI|174.0PID|||DeckSally^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Deck^Marcella^Mary|Schock|19380110|F||WH^White|My Wonderful Mom^^Waumandee^WI^54622||^PRN^PH^^^608^3233495|||M^Married|||||||Arcadia|QRI|174.0PID|||KW12345^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Wheeler^Kara||19710101|F|||1104 Wells Rd^^Onalaska^WI^54650^USA||^PRN^PH|QRI|174.0
+[DEBUG][MLLPDestination.java:308] MLLPDestination: sendMessage - Exit
+[DEBUG][Client.java:733] Client: send - Exit SEND_MLLP_DEST 
+[DEBUG][Client.java:770] Client: send - Exit 
+[DEBUG][Client.java:544] Client: sendMsg - Exit 
+[DEBUG][PdqConsumer.java:202] PdqConsumer: sendQuery - Exit controlId: 7890565909830541229
+[DEBUG][ClientPdqQuery.java:160] ClientPdqQueryTest: main - QBP^Q22 MSH|^~\&|OTHER_KIOSK|HIMSSSANDIEGO|OHFConsumer1|OHFFacility1|20061114142342-0600||RSP^K22|1163535822184105ibmo|P|2.5MSA|AA|7890565909830541229QAK|7228250391538171402733978451514|OKQPD|Q22^Find Candidates|7228250391538171402733978451514|^F~^WIPID|||JM19400814^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID50^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7301^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID7718^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3052^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID1122^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID9871^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID657^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID3469^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID2466^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4522^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID604^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO~RID4890^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Murphy^Joyce^Marie||||||903 Susan Pl^^Lacrosse^WI^54603||^PRN^PHQRI|174.0PID|||DeckSally^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Deck^Marcella^Mary|Schock|19380110|F||WH^White|My Wonderful Mom^^Waumandee^WI^54622||^PRN^PH^^^608^3233495|||M^Married|||||||ArcadiaQRI|174.0PID|||KW12345^^^HIMSS2005&1.3.6.1.4.1.21367.2005.1.1&ISO||Wheeler^Kara||19710101|F|||1104 Wells Rd^^Onalaska^WI^54650^USA||^PRN^PHQRI|174.0
+[DEBUG][ClientPdqQuery.java:166] Query Status: Data found, no errors (this is the default)
+[DEBUG][ClientPdqQuery.java:167] ResponseACK Code: AA
+[DEBUG][ClientPdqQuery.java:168] ResponseACK Desc: Original mode: Application Accept - Enhanced mode: Application acknowledgment: Accept
+[DEBUG][ClientPdqQuery.java:172] Sending App: OTHER_KIOSK
+[DEBUG][ClientPdqQuery.java:173] Sending Fac: HIMSSSANDIEGO
+[DEBUG][ClientPdqQuery.java:174] Receiving App: OHFConsumer1
+[DEBUG][ClientPdqQuery.java:175] Receiving Fac: OHFFacility1
+[DEBUG][ClientPdqQuery.java:180] Control ID: 7890565909830541229
+[DEBUG][ClientPdqQuery.java:211] Patients returned: 3
+[DEBUG][ClientPdqQuery.java:216]   Patient: JM19400814-Murphy, Joyce
+[DEBUG][ClientPdqQuery.java:218]     Address: WI
+[DEBUG][ClientPdqQuery.java:219]       Phone: 
+[DEBUG][ClientPdqQuery.java:216]   Patient: DeckSally-Deck, Marcella
+[DEBUG][ClientPdqQuery.java:218]     Address: WI
+[DEBUG][ClientPdqQuery.java:219]       Phone: 
+[DEBUG][ClientPdqQuery.java:216]   Patient: KW12345-Wheeler, Kara
+[DEBUG][ClientPdqQuery.java:218]     Address: WI
+[DEBUG][ClientPdqQuery.java:219]       Phone: 
+[DEBUG][ClientPdqQuery.java:103] ClientPdqQueryTest Main - Exit 

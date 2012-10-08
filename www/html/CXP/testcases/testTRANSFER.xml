@@ -1,0 +1,12 @@
+<cxpcommand>
+<repeatcount>1</repeatcount>
+<repeatinterval>0</repeatinterval>
+<remoteurl>http://mcpurple01.homeip.net/cxp/cxpserv.php</remoteurl>
+<opcode>TRANSFER</opcode>
+<notificationurl>http://mcpurple01.homeip.net/cxp/nothand.php</notificationurl>
+<ccrfile>collateral/sampleCCR_v2.xml</ccrfile>
+<attachments>
+<attachment type="pdf" link="att2">collateral/attachment2.pdf</attachment>
+<attachment type="txt" link="link1">collateral/attachment1.txt</attachment>
+</attachments>
+</cxpcommand>

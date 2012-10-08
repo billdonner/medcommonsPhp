@@ -1,0 +1,25 @@
+<html><head><title>CXPCMD Command Utility and Test Cases</title></head>
+<body>
+<h3>CXPCMD - CXP Command Utility Information</h3>
+<p>CXPCMD Command Utility uses the <a href=cxprotocol.pdf>CXP Protocol</a> to allow CCRs and Attachments to be Transferred and Queried to and from a Remote CXPServer  
+<p>The utility has no user interface. It is instead driven by an xml file that describes the operation(s) for the CXP Command Utility to Perform
+.<small>The format of the xml file is <a href=cxpcmd.txt>described here</small></a>
+<p>
+<p>To invoke CXPCMD via a URL:<br><br>
+http://localhost/cxpcmd.php?cfg=xmlfile.xml where xmlfile is as described above
+<p>Or, if you are feeling lazy you can just execute one of the pre-canned test cases down below:
+<h3>CXP Data Logs</h3>
+<p>CXPServ and CXPCMD leave trails in several directories:
+<br> 
+<p><small>examine <a href="../serverdata">/serverdata</a> recorded by CXPServ
+<br>examine <a href="../clientdata">/clientdata</a> recorded by CXPCommand
+<br>examine <a href="../notificationdata">/notificationdata</a> recorded by Client Notification Handlers
+</small>
+<p>This is pretty much where we are leaving this demo software. Please feel free to improve the software.
+
+<h3>CXP Test Cases</h3>
+<p><a href="../cxp.php?cfg=testcases/testCCRONLY.xml">Send a CCR</a> all by itself<small> <a href="../testcases/testCCRONLY.xml">show CXP command</a></small>
+<p><a href="../cxp.php?cfg=testcases/testTRANSFER.xml">Send a CCR</a> with TXT and PDF attachments<small> <a href="../testcases/testTRANSFER.xml">show CXP command</a></small>
+<p><a href="../cxp.php?cfg=testcases/testQUERYbad.xml">Query for a CCR</a> with a bad Transaction ID<small> <a href="../testcases/testQUERYbad.xml">show CXP command</a></small>
+<p><a href="../cxp.php?cfg=testcases/testQUERYgood.xml">Query for a CCR</a> with a good TransactionID<small> <a href="../testcases/testQUERYgood.xml">show CXP command</a></small>
+</body>

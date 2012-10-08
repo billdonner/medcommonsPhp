@@ -1,0 +1,25 @@
+echo ">>->> Gateway directories (possibly fixed in repo - check)";
+mkdir /opt/gateway/logs 
+mkdir /opt/gateway/temp
+chown gateway /opt/gateway/logs /opt/gateway/temp
+chgrp gateway /opt/gateway/logs /opt/gateway/temp
+
+echo ">>->> Images (possibly fixed in repo -- check)";
+chown mc_admin /var/www/html/images/*
+
+echo ">>->> Sendmail";
+yum install sendmail-cf
+/var/www/console/bin/mc-set-mail-server
+/etc/init.d/sendmail restart
+
+echo ">>->> phpMyAdmin";
+yum install phpMyAdmin
+vi /etc/phpMyAdmin/config.inc.php
+vi /etc/httpd/conf.d/phpMyAdmin.conf
+
+echo ">>->> php error display";
+vi /etc/php.ini
+
+echo ">>->> HTTP_Request and Crypt_HMAC";
+pear install HTTP_Request
+pear install Crypt_HMAC

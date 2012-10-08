@@ -1,0 +1,858 @@
+<?xml version="1.0"?>
+<ContinuityOfCareRecord xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:astm-org:CCR">
+  <CCRDocumentObjectID>e-Mds_DocID_1369</CCRDocumentObjectID>
+  <Language>
+    <Text>English</Text>
+  </Language>
+  <Version>1.0</Version>
+  <DateTime>
+    <ExactDateTime>2005-07-18T17:42:36-05:00</ExactDateTime>
+  </DateTime>
+  <Patient>
+    <ActorID>AA0001</ActorID>
+  </Patient>
+  <From>
+    <ActorLink>
+      <ActorID>AA0002</ActorID>
+      <ActorRole>
+        <Text>Provider</Text>
+      </ActorRole>
+    </ActorLink>
+  </From>
+  <Purpose>
+    <Description>
+      <ObjectAttribute>
+        <Attribute>Data Transfer</Attribute>
+        <AttributeValue>
+          <Value xsi:type="xsd:string">To Transport Patient Data From EHR System To EHR System</Value>
+        </AttributeValue>
+      </ObjectAttribute>
+    </Description>
+  </Purpose>
+  <Body>
+    <Insurance>
+      <Payer>
+        <CCRDataObjectID>EMD_INSURANCEID_BB0001</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Effective Date</Text>
+          </Type>
+          <ExactDateTime>2005-01-01T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Group Policy</Text>
+          <Code>
+            <Value>GP</Value>
+          </Code>
+        </Type>
+        <Description>
+          <Text>Aetna</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0001</ActorID>
+            <ActorRole>
+              <Text>Patient</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <PaymentProvider>
+          <ActorID>AA0003</ActorID>
+          <ActorRole>
+            <Text>Payer</Text>
+          </ActorRole>
+        </PaymentProvider>
+        <Subscriber>
+          <ActorID>AA0001</ActorID>
+          <ActorRole>
+            <Text>Patient: Policy Holder</Text>
+          </ActorRole>
+        </Subscriber>
+        <IDs>
+          <IDNumber>
+            <Type>
+              <Text>Subscriber Insurance Policy Number</Text>
+            </Type>
+            <ID>888888888</ID>
+          </IDNumber>
+          <IDNumber>
+            <Type>
+              <Text>Member Number</Text>
+            </Type>
+            <ID>888888888</ID>
+          </IDNumber>
+          <IDNumber>
+            <Type>
+              <Text>Group Policy Number</Text>
+            </Type>
+            <ID>00057F</ID>
+          </IDNumber>
+        </IDs>
+      </Payer>
+      <Payer>
+        <CCRDataObjectID>EMD_INSURANCEID_BB0002</CCRDataObjectID>
+        <Type>
+          <Text>ANSI Commercial Ins</Text>
+          <Code>
+            <Value>C1</Value>
+          </Code>
+        </Type>
+        <Description>
+          <Text>Blue Cross Blue Shield of California</Text>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Actor>
+            <ActorID>AA0001</ActorID>
+            <ActorRole>
+              <Text>Patient</Text>
+            </ActorRole>
+          </Actor>
+        </Source>
+        <PaymentProvider>
+          <ActorID>AA0005</ActorID>
+          <ActorRole>
+            <Text>Payer</Text>
+          </ActorRole>
+        </PaymentProvider>
+        <Subscriber>
+          <ActorID>AA0004</ActorID>
+          <ActorRole>
+            <Text>Spouse</Text>
+          </ActorRole>
+        </Subscriber>
+        <IDs>
+          <IDNumber>
+            <Type>
+              <Text>Subscriber Insurance Policy Number</Text>
+            </Type>
+            <ID>121212122</ID>
+          </IDNumber>
+          <IDNumber>
+            <Type>
+              <Text>Member Number</Text>
+            </Type>
+            <ID>121212122</ID>
+          </IDNumber>
+          <IDNumber>
+            <Type>
+              <Text>Group Policy Number</Text>
+            </Type>
+            <ID>1259</ID>
+          </IDNumber>
+        </IDs>
+      </Payer>
+    </Insurance>
+    <Problems>
+      <Problem>
+        <CCRDataObjectID>PID_BB0009</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>On Set</Text>
+          </Type>
+          <ExactDateTime>2003-01-25T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <DateTime>
+          <Type>
+            <Text>Problem Resolved</Text>
+          </Type>
+          <ExactDateTime>2005-07-21T12:51:16-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Myocardial Infarction</Text>
+          <Code>
+            <Value>410.80</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2005</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+        </Source>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0010</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>On Set</Text>
+          </Type>
+          <ExactDateTime>1990-08-08T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <DateTime>
+          <Type>
+            <Text>Problem Resolved</Text>
+          </Type>
+          <ExactDateTime>2005-07-14T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Hypertension</Text>
+          <Code>
+            <Value>403.10</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2005</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Chronic</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+        </Source>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0011</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>On Set</Text>
+          </Type>
+          <ExactDateTime>1984-03-01T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Diabetes Mellitus</Text>
+          <Code>
+            <Value>250.02</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2005</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Chronic</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+        </Source>
+      </Problem>
+      <Problem>
+        <CCRDataObjectID>PID_BB0012</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>On Set</Text>
+          </Type>
+          <ExactDateTime>1999-04-01T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Diagnosis</Text>
+        </Type>
+        <Description>
+          <Text>Congestive Heart Failure</Text>
+          <Code>
+            <Value>402.11</Value>
+            <CodingSystem>ICD9-CM</CodingSystem>
+            <Version>2005</Version>
+          </Code>
+        </Description>
+        <Status>
+          <Text>Chronic</Text>
+        </Status>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+        </Source>
+      </Problem>
+    </Problems>
+    <SocialHistory />
+    <Alerts>
+      <Alert>
+        <CCRDataObjectID>AID_BB0003</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Initial Occurrence</Text>
+          </Type>
+          <ExactDateTime>1970-01-01T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Allergy</Text>
+        </Type>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Agent>
+          <Products>
+            <Product>
+              <CCRDataObjectID>AID_BB0004</CCRDataObjectID>
+              <Description>
+                <Text>Penicillins</Text>
+              </Description>
+            </Product>
+          </Products>
+        </Agent>
+        <Reaction>
+          <Severity>
+            <Text>Moderate</Text>
+          </Severity>
+        </Reaction>
+      </Alert>
+      <Alert>
+        <CCRDataObjectID>AID_BB0006</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Initial Occurrence</Text>
+          </Type>
+          <ExactDateTime>2005-03-29T00:00:00-06:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Allergy</Text>
+        </Type>
+        <Status>
+          <Text>Current</Text>
+        </Status>
+        <Agent>
+          <Products>
+            <Product>
+              <CCRDataObjectID>AID_BB0007</CCRDataObjectID>
+              <Description>
+                <Text>Sulfas</Text>
+              </Description>
+            </Product>
+          </Products>
+        </Agent>
+        <Reaction>
+          <Severity>
+            <Text>Moderate</Text>
+          </Severity>
+        </Reaction>
+      </Alert>
+    </Alerts>
+    <Medications>
+      <Medication>
+        <CCRDataObjectID>MID_BB0013</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2005-07-07T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+        </Source>
+        <CommentID>BB0014</CommentID>
+        <Product>
+          <BrandName>
+            <Text>Furosemide</Text>
+          </BrandName>
+          <Strength>
+            <Value>80</Value>
+            <Units>mg</Units>
+          </Strength>
+          <Form>
+            <Text>Tablet</Text>
+          </Form>
+          <Size>
+            <Text>tablet(s)</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>100</Value>
+          <Units>Tablets </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Furosemide 80mg Tablets
+Take 1 tablet(s) by mouth bid.  May increase dose by one tablet qd prn shortness of breath.
+ #100 (One Hundred) tablet(s)</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication />
+          </Direction>
+        </Directions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0015</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2005-07-07T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+        </Source>
+        <Product>
+          <ProductName>
+            <Text>Metformin</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Glucophage XR</Text>
+          </BrandName>
+          <Strength>
+            <Value>500</Value>
+            <Units>mg</Units>
+          </Strength>
+          <Form>
+            <Text>Tablets, Extended Release</Text>
+          </Form>
+          <Size>
+            <Text>tablet(s)</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>100</Value>
+          <Units>Tablets, Extended Release </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Glucophage XR 500mg Tablets, Extended Release
+Take 1 tablet(s) by mouth bid.  Hold dose if patient becomes markedly light headed.
+ #100 (One Hundred) tablet(s)</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication />
+          </Direction>
+        </Directions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0017</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2005-07-18T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+        </Source>
+        <Product>
+          <ProductName>
+            <Text>Oxycodone HCl</Text>
+          </ProductName>
+          <BrandName>
+            <Text>Oxycontin</Text>
+          </BrandName>
+          <Strength>
+            <Value>160</Value>
+            <Units>mg</Units>
+          </Strength>
+          <Form>
+            <Text>Tablets, Controlled Release</Text>
+          </Form>
+          <Size>
+            <Text>&lt;none&gt;</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>0</Value>
+          <Units>Tablets, Controlled Release </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Oxycontin 160mg Tablets, Controlled Release Take 1 tablet(s) by mouth q12h</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication />
+          </Direction>
+        </Directions>
+      </Medication>
+      <Medication>
+        <CCRDataObjectID>MID_BB0019</CCRDataObjectID>
+        <DateTime>
+          <Type>
+            <Text>Medication Start Date</Text>
+          </Type>
+          <ExactDateTime>2005-07-07T00:00:00-05:00</ExactDateTime>
+        </DateTime>
+        <Type>
+          <Text>Medication</Text>
+        </Type>
+        <Source>
+          <Description>
+            <Text>Healthcare Provider</Text>
+          </Description>
+        </Source>
+        <Product>
+          <BrandName>
+            <Text>Potassium Chloride</Text>
+          </BrandName>
+          <Strength>
+            <Value>15</Value>
+            <Units>ml</Units>
+          </Strength>
+          <Strength>
+            <Value>15</Value>
+            <Units>ml</Units>
+          </Strength>
+          <Form>
+            <Text>Oral Liquid</Text>
+          </Form>
+          <Size>
+            <Text>ml</Text>
+          </Size>
+        </Product>
+        <Quantity>
+          <Value>100</Value>
+          <Units>Oral Liquid </Units>
+        </Quantity>
+        <Directions>
+          <Direction>
+            <Description>
+              <Text>Potassium Chloride 40mEq/15ml Oral Liquid
+15 ml po qid.  Increase potassium by 15mL qd for each additional dose of Furosemide taken per day.
+ #100 (One Hundred) ml</Text>
+            </Description>
+            <Route>
+              <Text>Oral</Text>
+            </Route>
+            <Indication />
+          </Direction>
+        </Directions>
+      </Medication>
+    </Medications>
+  </Body>
+  <Actors>
+    <Actor>
+      <ActorObjectID>AA0001</ActorObjectID>
+      <Person>
+        <Name>
+          <BirthName>
+            <Given>John</Given>
+          </BirthName>
+          <CurrentName>
+            <Given>John</Given>
+            <Family>Doqit</Family>
+          </CurrentName>
+        </Name>
+        <DateOfBirth>
+          <Type>
+            <Text>Date of Birth</Text>
+          </Type>
+          <ApproximateDateTime>
+            <Text>1/16/1938 12:00:00 AM</Text>
+          </ApproximateDateTime>
+        </DateOfBirth>
+        <Gender>
+          <Text>male</Text>
+        </Gender>
+      </Person>
+      <IDs>
+        <Type>
+          <Text>Social Security Number</Text>
+        </Type>
+        <ID>888-88-8888</ID>
+      </IDs>
+      <Address>
+        <Type>
+          <Text>Home</Text>
+        </Type>
+        <Line1>603 Electronic Medical Record Lane</Line1>
+        <City>Leander</City>
+        <State>TX</State>
+        <PostalCode>78641</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+    </Actor>
+    <Actor>
+      <ActorObjectID>AA0002</ActorObjectID>
+      <Person>
+        <Name>
+          <BirthName>
+            <Given>Timmy</Given>
+            <Middle>B</Middle>
+          </BirthName>
+          <CurrentName>
+            <Given>Timmy</Given>
+            <Middle>B</Middle>
+            <Family>Trauterman</Family>
+            <Title>M.D.</Title>
+          </CurrentName>
+        </Name>
+        <DateOfBirth>
+          <Type>
+            <Text>Date of Birth</Text>
+          </Type>
+          <ApproximateDateTime />
+        </DateOfBirth>
+        <Gender>
+          <Text>male</Text>
+        </Gender>
+      </Person>
+      <Address>
+        <Type>
+          <Text>Billing Address</Text>
+        </Type>
+        <Line1>74432 Limerick</Line1>
+        <City>Cedar Park</City>
+        <State>TX</State>
+        <PostalCode>78613</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Address>
+        <Type>
+          <Text>Business</Text>
+        </Type>
+        <Line1>54943 Trail Ridge Dr</Line1>
+        <City>Cedar Park</City>
+        <State>TX</State>
+        <PostalCode>78613</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Telephone>
+        <Value>(059)526-8232</Value>
+        <Type>
+          <Text>Home</Text>
+        </Type>
+        <Priority>1</Priority>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Telephone>
+      <Telephone>
+        <Value>(516)002-3934</Value>
+        <Type>
+          <Text>Office</Text>
+        </Type>
+        <Priority>1</Priority>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Telephone>
+      <Telephone>
+        <Value>(479)024-4466</Value>
+        <Type>
+          <Text>Office Fax</Text>
+        </Type>
+        <Priority>1</Priority>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Telephone>
+      <Telephone>
+        <Value>(733)649-1202</Value>
+        <Type>
+          <Text>Pager</Text>
+        </Type>
+        <Priority>1</Priority>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Telephone>
+    </Actor>
+    <Actor>
+      <ActorObjectID>AA0003</ActorObjectID>
+      <Organization>
+        <Name>Aetna</Name>
+      </Organization>
+      <Address>
+        <Type>
+          <Text>Business</Text>
+        </Type>
+        <Line1>9364 Forest Oaks Path</Line1>
+        <City>Blue Bell</City>
+        <State>PA</State>
+        <PostalCode>19422</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Telephone>
+        <Value>(644)043-3709</Value>
+        <Type>
+          <Text>Office</Text>
+        </Type>
+        <Priority>1</Priority>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Telephone>
+      <Telephone>
+        <Value>(164)132-3951</Value>
+        <Type>
+          <Text>Claims</Text>
+        </Type>
+        <Priority>1</Priority>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Telephone>
+    </Actor>
+    <Actor>
+      <ActorObjectID>AA0004</ActorObjectID>
+      <Person>
+        <Name>
+          <BirthName>
+            <Given>Jane</Given>
+            <Middle>B</Middle>
+          </BirthName>
+          <CurrentName>
+            <Given>Jane</Given>
+            <Middle>B</Middle>
+            <Family>Doqit</Family>
+          </CurrentName>
+        </Name>
+        <DateOfBirth>
+          <Type>
+            <Text>Date of Birth</Text>
+          </Type>
+          <ApproximateDateTime>
+            <Text>5/18/1940 12:00:00 AM</Text>
+          </ApproximateDateTime>
+        </DateOfBirth>
+        <Gender>
+          <Text>female</Text>
+        </Gender>
+      </Person>
+      <IDs>
+        <Type>
+          <Text>Social Security Number</Text>
+        </Type>
+        <ID>121-21-2122</ID>
+      </IDs>
+      <Address>
+        <Type>
+          <Text>Home</Text>
+        </Type>
+        <Line1>603 Electronic Medical Record Lane</Line1>
+        <City>Leander</City>
+        <State>TX</State>
+        <PostalCode>78641</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+    </Actor>
+    <Actor>
+      <ActorObjectID>AA0005</ActorObjectID>
+      <Organization>
+        <Name>Blue Cross Blue Shield of California</Name>
+      </Organization>
+      <Address>
+        <Type>
+          <Text>Business</Text>
+        </Type>
+        <Line1>1 BCBS Drive</Line1>
+        <City>San Francisco</City>
+        <State>CA</State>
+        <PostalCode>94304</PostalCode>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Address>
+      <Telephone>
+        <Value>(410)555-1212</Value>
+        <Type>
+          <Text>Office</Text>
+        </Type>
+        <Priority>1</Priority>
+        <Status>
+          <Text>Active</Text>
+        </Status>
+      </Telephone>
+    </Actor>
+    <Actor>
+      <ActorObjectID>eMDs_BB0027</ActorObjectID>
+      <InformationSystem>
+        <Name>e-MDs Top Suite</Name>
+        <Type>Electronic Medical Database Record System</Type>
+        <Version>1.7.0.0</Version>
+      </InformationSystem>
+      <Address>
+        <Type>
+          <Text>Physical Address</Text>
+        </Type>
+        <Line1>500 West Whitestone</Line1>
+        <Line2>ste. 200</Line2>
+        <City>Cedar Park</City>
+        <State>Texas</State>
+        <PostalCode>78613</PostalCode>
+      </Address>
+      <Address>
+        <Type>
+          <Text>Billing Address</Text>
+        </Type>
+        <Line1>P.O. Box 2889</Line1>
+        <City>Cedar Park</City>
+        <State>Texas</State>
+        <PostalCode>78630</PostalCode>
+      </Address>
+      <Telephone>
+        <Value>888-344-9836</Value>
+        <Type>
+          <Text>Sales</Text>
+        </Type>
+      </Telephone>
+      <Telephone>
+        <Value>800-565-5564</Value>
+        <Type>
+          <Text>Support</Text>
+        </Type>
+      </Telephone>
+      <Telephone>
+        <Value>512-335-4375</Value>
+        <Type>
+          <Text>Fax</Text>
+        </Type>
+      </Telephone>
+      <URL>
+        <Value>www.e-mds.com</Value>
+        <Type>
+          <Text>eMDs Main Website</Text>
+        </Type>
+      </URL>
+      <Status>
+        <Text>Active</Text>
+      </Status>
+    </Actor>
+  </Actors>
+  <Comments>
+    <Comment>
+      <CommentObjectID>BB0014</CommentObjectID>
+      <Description>
+        <Text>The prescriber is aware of the following potential:
+Allergies: Patient has an allergy to SULFAS and the medication you are prescribing has the potential for a CROSS SENSITIVITY REACTION.
+Interactions:</Text>
+      </Description>
+    </Comment>
+  </Comments>
+</ContinuityOfCareRecord>

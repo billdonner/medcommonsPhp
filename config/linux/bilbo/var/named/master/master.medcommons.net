@@ -1,0 +1,30 @@
+@ IN SOA ns1.medcommons.net. root.medcommons.net. (
+	2006062801	; serial
+	3h		; refresh
+	1h		; retry
+	7d		; expire
+	1d		; minimum ttl
+	)
+
+	in	ns	ns1.medcommons.net.
+	in	ns	ns2.medcommons.net.
+
+	in	mx	30 mx1.medcommons.net.
+	in	mx	40 mx2.medcommons.net.
+
+	in	a	67.15.178.46
+
+	in	txt	"v=spf1 mx -all"
+
+www	in	a	67.15.178.46
+
+bilbo	in	a	67.15.178.38
+ns1	in	a	67.15.178.38
+mail	in	a	67.15.178.38
+mx1	in	a	67.15.178.38
+	in	txt	"v=spf1 mx -all"
+
+frodo	in	a	67.15.178.42
+ns2	in	a	67.15.178.42
+mx2	in	a	67.15.178.42
+	in	txt	"v=spf1 mx -all"

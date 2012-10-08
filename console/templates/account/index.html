@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <style type='text/css'><!--
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+}
+
+table#main td {
+  border-bottom: solid #cccccc;
+}
+
+h3, .icon_label {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.main_icon {
+  vertical-align: bottom;
+}
+
+.icon {
+  vertical-align: middle;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 14pt;
+  margin-top: 4px;
+}
+
+// --></style>
+  </head>
+
+      <table border='0' id='main'>
+        <tbody>
+	  <tr>
+	    <td>
+      <a href='admins/'>
+        <img src='{{ media }}img/Gearwheel.png' width='20' height='20' border='0'
+	     alt='Administrators' class='main_icon' /></a>
+      <a href='admins/' class='icon_label'>Administrators</a>
+<br />
+	WHAT Administrators
+            </td>
+	    <td>
+<h2>Manage Administrators</h2>
+<p>
+Administrators are special separate user accounts that
+have the authority to use this console, and manage the system.
+</p>
+<form method='get' action='admins.php'>
+<a href='admins/add'>
+    <img src='{{ media }}img/icon_addlink.gif' width='10' height='10' border='0'
+         alt='Add Administrator' class='icon' /></a>
+  <a href='admins/add'>add</a>
+&nbsp;|&nbsp;
+<a href='admins/'>
+  <img src='{{ media }}media/img/icon_list.gif' width='16' height='16' border='0'
+       alt='List Administrators' class='icon' /></a>
+<a href='admins/'>list</a>
+&nbsp;|&nbsp;
+
+  <input type='text' name='q' value='search'/>
+
+  <input type='image' src='{{ media }}media/img/icon_searchbox.png' width='18' height='16'
+         name='search' alt='Search Users' />
+</form>
+            </td>
+	  </tr>
+
+          <tr>
+            <td>
+      <a href='users/'>
+        <img src='{{ media }}img/User.png' width='20' height='20' border='0'
+	     alt='Manage Users' class='main_icon' /></a>
+
+      <a href='users/' class='icon_label'>Users</a>
+<br />
+  WHAT Users
+            </td>
+            <td>
+<h2>Manage Users</h2>
+<p>
+Manage  Patient and Doctor  Accounts
+</p>
+
+<form method='get' action='users/search'>
+<a href='add_user.html'>
+    <img src='{{ media }}img/icon_addlink.gif' width='10' height='10' border='0'
+         alt='Add User' /></a>
+  <a href='users/add'>add</a>
+&nbsp;|&nbsp;
+<a href='users/'>
+  <img src='{{ media }}media/img/icon_list.gif' width='16' height='16' border='0'
+       alt='List Users' class='icon' /></a>
+<a href='users/'>list</a>
+&nbsp;|&nbsp;
+
+  <input type='text' name='q' value='search' />
+
+  <input type='image' src='{{ media }}img/icon_searchbox.png' width='18' height='16'
+         name='search' alt='Search Users' />
+</form>
+            <td>
+          </tr>
+
+          <tr>
+            <td>
+      <a href='groups.html'>
+        <img src='{{ media }}img/Users.png' width='20' height='20' border='0'
+	     alt='Manage Groups' class='main_icon' /></a>
+      <a href='groups.html' class='icon_label'>Groups</a>
+<br />
+  WHAT Groups
+            </td>
+            <td>
+<h2>Manage Groups</h2>
+<p>
+Manage  Patient and Doctor  Groups
+</p>
+
+<form>
+ <a href='add_group.html'>
+    <img src='{{ media }}img/icon_addlink.gif' width='10' height='10' border='0'
+         alt='Add Group' /></a>
+    <a href='add_group.html'>add</a>
+
+&nbsp;|&nbsp;
+<a href='list_groups.html'>
+  <img src='{{ media }]media/img/icon_list.gif' width='16' height='16' border='0'
+       alt='List Groups' class='icon' /></a>
+<a href='list_groups.html'>list</a>
+&nbsp;|&nbsp;
+
+  <input type='text' name='search' value='search' />
+
+  <input type='image' src='{{ media }}img/icon_searchbox.png' width='18' height='16'
+         name='search' alt='Search Groups' />
+
+</form>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <a href='servers.html'>
+                <img src='{{ media }}img/Computer.png' width='20' height='20' border='0'
+                     alt='Server Management' class='main_icon' /></a>
+              <a href='servers.html' class='icon_label'>Servers</a>
+            </td>
+            <td>
+<h2>Manage Servers</h2>
+<table border='0'>
+  <tbody>
+    <tr>
+      <td>
+<img src='mpng.php?t=db&url=https://beta.medcommons.org/centralstatus.php&name=beta DB' alt='beta DB' />
+      </td>
+      <td>
+<img src='mpng.php?t=ap&url=https://beta.medcommons.org/appsrvstatus.php&name=beta AP' alt='beta AP' />
+      </td>
+      <td>
+<img src="mpng.php?t=gw&url=https://gateway001.test.medcommons.net/router/status.do?fmt=xml&name=gw01test" alt="gw01test" />
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='status'>apache</a>
+<a href='php.php'>php</a>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+            </td>
+          </tr>
+
+	  <tr>
+            <td>
+              <a href='fax.html'>
+	        <img src='{{ media }}img/Print.png' width='20' height='20' border='0'
+		     alt='Fax Management' class='main_icon' />
+              </a>
+	      <a href='fax.html' class='icon_label'>
+	        Fax
+	      </a>
+            </td>
+            <td>
+<h2>Manage Fax Services</h2>
+<p>
+</p>
+            </td>
+          </tr>
+
+	  <tr>
+	    <td>
+<a href='keys.html'>
+  <img src='{{ media }}img/Key.png' width='20' height='20' border='0'
+       alt='Account Keys' class='main_icon' /></a>
+<a href='keys.html' class='icon_label'>Keys</a>
+            </td>
+            <td>
+<h2>Account Keys</h2>
+<p>
+Backup and Restore Patient and Doctor Account Keys
+</p>
+
+            </td>
+          </tr>
+
+	  <tr>
+	    <td>
+<a href='logs/'>
+  <img src='{{ media }}img/EditBook.png' width='20' height='20' border='0'
+       alt='Access Logs' class='main_icon' /></a>
+<a href='logs/' class='icon_label'>Logs</a>
+            </td>
+            <td>
+<h2>Review Access Logs</h2>
+<p>
+</p>
+            </td>
+          </tr>
+
+	  <tr>
+	    <td>
+<a href='bill.html'>
+  <img src='{{ media }}img/Calculator.png' width='20' height='20' border='0'
+       alt='MedCommons Bill' class='main_icon' /></a>
+<a href='bill.html' class='icon_label'>Bill</a>
+	    </td>
+	    <td>
+<h2>Review your MedCommons Bill</h2>
+<p>
+</p>
+            </td>
+	  </tr>
+        </tbody>
+      </table>
+
+{% endblock %}
+

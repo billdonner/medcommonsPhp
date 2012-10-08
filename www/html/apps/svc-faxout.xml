@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appservices>
+  <service>
+    <id>
+      232308402384082304abc3930
+    </id>
+    <name>
+      Outbound CCR to Fax Service
+    </name>
+    <visible> 
+      A new selection appears on the yellow sticky inside the MedCommons Viewer
+    </visible>
+    <comment>
+      There are no prerequisites for this module
+    </comment>
+    <explanation>
+      <![CDATA[<div>Allows you to send faxes to your healthcare providers directly from your MedCommons Account</div>
+      ]]>
+    </explanation>
+    <publisher>
+      <![CDATA[<img src="http://medcommons.net/images/MEDcommons_logo_246x50.gif" alt="medcommons,inc."></img>
+      ]]>
+    </publisher>
+    <charges>
+      <![CDATA[<div>There will be a setup fee and a per page fee</div>
+      ]]>
+    </charges>
+    <technical>
+      <![CDATA[The CCR is rendered according to a variation of the ASTM standard stylesheet. There will be an opportunity for the user to specify the quality
+      and the sections she wishes to transfer.
+      ]]>
+    </technical>
+  </service>
+</appservices>

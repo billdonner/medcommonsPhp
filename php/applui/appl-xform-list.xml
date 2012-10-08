@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<content_list>
+  <frame>
+    appl_page_frame.htm
+  </frame>
+  <transforms>
+    <transform>
+      <incoming>
+        tu.htm
+      </incoming>
+      <outgoing>
+        $$$$HOME$$$$/tu.html
+      </outgoing>
+      <title>
+        Terms of Use
+      </title>
+    </transform>
+      <transform>
+      <incoming>
+        pd.htm
+      </incoming>
+      <outgoing>
+        $$$$HOME$$$$/pd.html
+      </outgoing>
+      <title>
+        Patient Demo
+      </title>
+    </transform>
+    <transform>
+      <incoming>
+        dd.htm
+      </incoming>
+      <outgoing>
+        $$$$HOME$$$$/dd.html
+      </outgoing>
+      <title>
+        Doctor Demo
+      </title>
+    </transform>
+      <transform>
+      <incoming>
+        rg.htm
+      </incoming>
+      <outgoing>
+        $$$$HOME$$$$/rg.html
+      </outgoing>
+      <title>
+        Register
+      </title>
+    </transform>
+    <transform>
+      <incoming>
+        fg.htm
+      </incoming>
+      <outgoing>
+        $$$$HOME$$$$/fg.html
+      </outgoing>
+      <title>
+        Recover Password
+      </title>
+    </transform>
+    <transform>
+      <incoming>
+        ft.htm
+      </incoming>
+      <outgoing>
+        $$$$HOME$$$$/ft.html
+      </outgoing>
+      <title>
+        Feature Tour
+      </title>
+    </transform>
+    <transform>
+      <incoming>
+        fq.htm
+      </incoming>
+      <outgoing>
+        $$$$HOME$$$$/fq.html
+      </outgoing>
+      <title>
+        Frequently Asked Questions
+      </title>
+    </transform>
+    <transform>
+      <incoming>
+        hp.htm
+      </incoming>
+      <outgoing>
+        $$$$HOME$$$$/hp.html
+      </outgoing>
+      <title>
+        Health URL Service and Appliances
+      </title>
+    </transform>
+    <transform>
+      <incoming>
+        hp.htm
+      </incoming>
+      <outgoing>
+        $$$$HOME$$$$/index.html
+      </outgoing>
+      <title>
+        Health URL Service and Appliances
+      </title>
+    </transform>
+    <transform>
+      <incoming>
+        th.htm
+      </incoming>
+      <outgoing>
+        $$$$HOME$$$$/th.html
+      </outgoing>
+      <title>
+        Redirecting to Home Page
+      </title>
+    </transform>
+  </transforms>
+  <copies>
+    <copy>
+      <incoming>appl.js</incoming>
+      <outgoing>$$$$HOME$$$$/appl.js</outgoing>
+    </copy>
+    <copy>
+      <incoming>applstyle.css</incoming>
+      <outgoing>$$$$HOME$$$$/applstyle.css</outgoing>
+    </copy>
+  </copies>
+</content_list>

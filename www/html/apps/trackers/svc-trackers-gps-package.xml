@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appservices>
+  <service>
+    <id>
+      32345345234abc
+    </id>
+    <visible>
+      once loaded, additional trackers are presented in the Tracker Editor
+    </visible>
+    <init>https://secure.test.medcommons.net/trackers/loadTrackerCatalog.php?f=http://www.medcommons.net/apps/trackers/catalog-trackers-gps.xml</init>
+    <viewer>https://secure.test.medcommons.net/trackers/viewTrackers.php</viewer>
+    <editor>https://secure.test.medcommons.net/trackers/trackerEditor.php</editor>
+    <name>
+      A collection of GPS Trackers for the AllSport Moto Cellphone GPS Service
+    </name>
+    <comment>
+      The Personal Tracker Platform service must be installed
+    </comment>
+    <prerequisites>
+      <prereqid>32323b8232383900ab3edf33</prereqid>
+    </prerequisites>
+    <explanation>
+      <![CDATA[
+      <div>Allows you to add GPS Trackers to your MedCommons Account</div>
+      ]]>
+    </explanation>
+    <publisher>
+      <![CDATA[
+      <h4>Moto</h4>
+         ]]>
+    </publisher>
+    <charges>
+      <![CDATA[
+<div class='fees'>There is no fee for this module</div>
+]]>
+    </charges>
+    <technical>
+      <![CDATA[
+      These additional Trackers are presented to the user for inclusion.
+      ]]>
+    </technical>
+  </service>
+</appservices>
+
+

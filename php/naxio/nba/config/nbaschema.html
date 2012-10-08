@@ -1,0 +1,74 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.0.2
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Oct 21, 2007 at 07:13 AM
+-- Server version: 5.0.27
+-- PHP Version: 5.1.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Database: `teamforce`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `alerts`
+-- 
+
+CREATE TABLE `alerts` (
+  `alertid` int(11) NOT NULL auto_increment,
+  `player` varchar(255) NOT NULL,
+  `team` varchar(255) NOT NULL,
+  `type` tinyint(4) NOT NULL,
+  `priority` tinyint(4) NOT NULL,
+  `text` varchar(255) NOT NULL,
+  `time` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`alertid`),
+  KEY `player` (`player`),
+  KEY `team` (`team`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `players`
+-- 
+
+CREATE TABLE `players` (
+  `name` varchar(255) NOT NULL,
+  `team` varchar(255) NOT NULL,
+  `born` varchar(255) NOT NULL,
+  `homepageurl` varchar(255) NOT NULL,
+  `imageurl` varchar(255) NOT NULL,
+  `healthurl` varchar(255) NOT NULL,
+  `height` varchar(255) NOT NULL,
+  `weight` varchar(255) NOT NULL,
+  `college` varchar(255) NOT NULL,
+  `years` tinyint(4) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `playerid` smallint(6) NOT NULL auto_increment,
+  PRIMARY KEY  (`playerid`),
+  KEY `team` (`team`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='built by spider' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `teams`
+-- 
+
+CREATE TABLE `teams` (
+  `teamid` tinyint(4) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL,
+  `homepageurl` varchar(255) NOT NULL,
+  `schedurl` varchar(255) NOT NULL,
+  `newsurl` varchar(255) NOT NULL,
+  `logourl` varchar(255) NOT NULL,
+  PRIMARY KEY  (`teamid`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

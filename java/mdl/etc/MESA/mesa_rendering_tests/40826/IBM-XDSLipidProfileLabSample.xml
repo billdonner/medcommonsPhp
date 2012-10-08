@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href='_support_files\IDX_CDA.xslt'?>
+<!--?xml-stylesheet type="text/xsl" href="infrastructure/cda/CDA.xsl"?-->
+<!--  some.hospital.oid = 0.0.0.0.0 
+	some.hospital.crr.oid = 0.0.0.0.1
+	some.hospital.person.oid = 0.0.0.0.2
+	some.code.oid = 0.0.0.0.3
+-->
+<ClinicalDocument classCode="DOCCLIN" moodCode="EVN"
+	xmlns="urn:hl7-org:v3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../schema/infrastructure/cda/CDA.xsd ">
+	<realmCode code="US" />
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+	<templateId root="2.16.840.1.113883.3.27.1776" />
+	<id extension="lab.sample.document" root="0.0.0.0.0" />
+	<code code="11502-2" codeSystem="2.16.840.1.113883.6.1"
+		codeSystemName="LOINC" displayName="LABORATORY REPORT.TOTAL" />
+	<title>Hospital USA Lab Report</title>
+	<effectiveTime value="20061016113617" />
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"
+		displayName="Normal" />
+	<languageCode code="en-US" />
+	<versionNumber value="1" />
+	<recordTarget typeCode="RCT">
+		<patientRole classCode="PAT">
+			<id extension="284092" root="0.0.0.0.2" />
+			<addr use="H">
+				<streetAddressLine>
+					1313 Mockingbird Ln.
+				</streetAddressLine>
+				<city>La Crosse</city>
+				<state>WI</state>
+				<postalCode>54603</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom use="H" value="1-608-999-9999" />
+			<patient classCode="PSN">
+				<name>
+					<given>Nancy</given>
+					<family>Munoz</family>
+				</name>
+				<administrativeGenderCode code="F"
+					codeSystem="2.16.840.1.113883.5.1" />
+				<birthTime value="19750614" />
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT">
+		<time value="20061016" />
+		<assignedAuthor classCode="ASSIGNED">
+			<id extension="doctor.employee.number" root="0.0.0.0.2" />
+			<addr>
+				<streetAddressLine>Hospital USA Lab</streetAddressLine>
+				<streetAddressLine>20 Main St.</streetAddressLine>
+				<city>La Crosse</city>
+				<state>WI</state>
+				<postalCode>54603</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom use="WP" value="1-414-777-7777" />
+			<assignedPerson classCode="PSN">
+				<name>
+					<given>John</given>
+					<family>Copenaugh</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG"
+				determinerCode="INSTANCE">
+				<id extension="some.extension" root="0.0.0.0.0" />
+				<name>Hospital USA Lab</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization>
+				<id extension="some.extension" root="0.0.0.0.0" />
+				<name use="">Some Hospital USA</name>
+				<telecom use="H" value="1-555-555-5555" />
+				<addr>
+					<streetAddressLine>20 Main St.</streetAddressLine>
+					<city>La Crosse</city>
+					<state>WI</state>
+					<postalCode>54603</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20061016"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="employee.number" root="0.0.0.0.2" />
+			<assignedPerson classCode="PSN">
+				<name>
+					<given>Douglas</given>
+					<family>Trenton</family>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</legalAuthenticator>
+	<documentationOf>
+		<serviceEvent>
+			<effectiveTime>
+				<low value="20061016" />
+				<high value="20061016" />
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+	<authorization typeCode="AUTH">
+		<consent classCode="CONS" moodCode="EVN">
+			<statusCode code="completed" />
+		</consent>
+	</authorization>
+
+
+	<!-- Body -->
+	<component typeCode="COMP">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component typeCode="COMP">
+				<section classCode="DOCSECT">
+					<code code="18719-5"
+						codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="CHEMISTRY STUDIES" />
+					<title>Lipid Profile for Nancy Munoz</title>
+					<text>
+						<paragraph ID="h1">
+							Nancy has high cholesterol.
+							<br />
+						</paragraph>
+						<table border="1">
+							<thead align="center">
+								<tr>
+									<th styleCode="Bold">Component</th>
+									<th styleCode="Bold">
+										Result Value
+									</th>
+									<th styleCode="Bold">
+										Result Flags
+									</th>
+									<th styleCode="Bold">
+										Result Unit
+									</th>
+									<th styleCode="Bold">
+										Reference Range
+									</th>
+									<th styleCode="Bold">Comments</th>
+								</tr>
+							</thead>
+							<tbody align="center">
+								<tr ID="a1">
+									<td>Cholesterol</td>
+									<td>276</td>
+									<td>Abn</td>
+									<td>mg/dL</td>
+									<td>&lt; 180 mg/dL</td>
+									<td />
+								</tr>
+								<tr ID="a2">
+									<td>Triglycerides</td>
+									<td>215</td>
+									<td>Abn</td>
+									<td>mg/dL</td>
+									<td>&lt; 200 mg/dL</td>
+									<td />
+								</tr>
+								<tr ID="a3">
+									<td>HDL</td>
+									<td>40</td>
+									<td />
+									<td>mg/dL</td>
+									<td>&gt; 45 mg/dL</td>
+									<td />
+								</tr>
+								<tr ID="a4">
+									<td>LDL</td>
+									<td>193</td>
+									<td>Abn</td>
+									<td>mg/dL</td>
+									<td>&lt; 120 mg/dL</td>
+									<td />
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<templateId
+							extension="Lab.Report.Data.Processing.Entry"
+							root="1.3.6.1.4.1.19376.1.3" />
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<code code="lipid.profile.code"
+								codeSystem="0.0.0.0.3" displayName="Lipid Profile" />
+							<statusCode code="completed" />
+							<effectiveTime>
+								<high value="20060924" />
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<assignedEntity>
+									<id extension="some.extension"
+										root="0.0.0.0.0" />
+									<addr>
+										<streetAddressLine>
+											20 Main St.
+										</streetAddressLine>
+										<city>La Crosse</city>
+										<state>WI</state>
+										<postalCode>54603</postalCode>
+										<country>USA</country>
+									</addr>
+									<telecom value="1-555-555-5555" />
+									<representedOrganization>
+										<name>Some Hospital USA</name>
+									</representedOrganization>
+								</assignedEntity>
+							</performer>
+							<participant typeCode="ATND">
+								<participantRole>
+									<id extension="doctor.number"
+										root="0.0.0.0.2" />
+									<addr>
+										<streetAddressLine>
+											20 Main St.
+										</streetAddressLine>
+										<city>La Crosse</city>
+										<state>WI</state>
+										<postalCode>54603</postalCode>
+										<country>USA</country>
+									</addr>
+									<telecom value="1-888-888-8888" />
+									<playingEntity>
+										<name>
+											<family>Gordon</family>
+											<given>David</given>
+										</name>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<participant typeCode="AUT">
+								<participantRole>
+									<id extension="doctor.number"
+										root="0.0.0.0.0" />
+									<!-- Work-around the conrolled vocabulary, need to document the author as an "orderer" -->
+									<code code="Orderer" />
+									<addr>
+										<streetAddressLine>
+											20 Main St.
+										</streetAddressLine>
+										<city>La Crosse</city>
+										<state>WI</state>
+										<postalCode>54603</postalCode>
+										<country>USA</country>
+									</addr>
+									<telecom value="1-777-777-7777" />
+									<playingEntity>
+										<name>
+											<given>Herman</given>
+											<family>Munster</family>
+										</name>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<component typeCode="COMP">
+								<observation classCode="OBS"
+									moodCode="EVN">
+									<id extension="test.1.id"
+										root="0.0.0.0.0" />
+									<code code="cholesterol.code"
+										codeSystem="0.0.0.0.3" displayName="Cholesterol">
+										<originalText>
+											<reference value="#a1" />
+										</originalText>
+									</code>
+									<statusCode code="completed" />
+									<effectiveTime
+										value="20060923235800.0000+0500" />
+									<value xsi:type="PQ" value="276"
+										unit="mg/dL" />
+									<interpretationCode code="A"
+										codeSystem="0.0.0.0.3" displayName="Abormal" />
+									<referenceRange typeCode="REFV">
+										<observationRange
+											classCode="OBS" moodCode="EVN.CRT">
+											<value xsi:type="IVL_PQ">
+												<low />
+												<high value="180"
+													unit="mg/dL" inclusive="false" />
+											</value>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component typeCode="COMP">
+								<observation classCode="OBS"
+									moodCode="EVN">
+									<id extension="test.2.id"
+										root="0.0.0.0.0" />
+									<code code="triglyceride.code"
+										codeSystem="0.0.0.0.3" displayName="Triglycerides">
+										<originalText>
+											<reference value="#a2" />
+										</originalText>
+									</code>
+									<statusCode code="completed" />
+									<effectiveTime
+										value="20060923235800.0000+0500" />
+									<value xsi:type="PQ" value="215"
+										unit="mg/dL" />
+									<interpretationCode code="A"
+										codeSystem="0.0.0.0.3" displayName="Abormal" />
+									<referenceRange typeCode="REFV">
+										<observationRange
+											classCode="OBS" moodCode="EVN.CRT">
+											<value xsi:type="IVL_PQ">
+												<low />
+												<high value="200"
+													unit="mg/dL" inclusive="false" />
+											</value>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component typeCode="COMP">
+								<observation classCode="OBS"
+									moodCode="EVN">
+									<id extension="test.3.id"
+										root="0.0.0.0.0" />
+									<code code="hdl.code"
+										codeSystem="0.0.0.0.3" displayName="HDL">
+										<originalText>
+											<reference value="#a3" />
+										</originalText>
+									</code>
+									<statusCode code="completed" />
+									<effectiveTime
+										value="20060923235800.0000+0500" />
+									<value xsi:type="PQ" value="40"
+										unit="mg/dL" />
+									<interpretationCode code="N"
+										codeSystem="0.0.0.0.3" displayName="Normal" />
+									<referenceRange typeCode="REFV">
+										<observationRange
+											classCode="OBS" moodCode="EVN.CRT">
+											<value xsi:type="IVL_PQ">
+												<low value="45"
+													unit="mg/dL" inclusive="false" />
+												<high />
+											</value>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component typeCode="COMP">
+								<observation classCode="OBS"
+									moodCode="EVN">
+									<id extension="test.4.id"
+										root="0.0.0.0.0" />
+									<code code="ldl.code"
+										codeSystem="0.0.0.0.3" displayName="LDL">
+										<originalText>
+											<reference value="#a4" />
+										</originalText>
+									</code>
+									<statusCode code="completed" />
+									<effectiveTime
+										value="20060923235800.0000+0500" />
+									<value xsi:type="PQ" value="193"
+										unit="mg/dL" />
+									<interpretationCode code="A"
+										codeSystem="0.0.0.0.3" displayName="Abormal" />
+									<referenceRange typeCode="REFV">
+										<observationRange
+											classCode="OBS" moodCode="EVN.CRT">
+											<value xsi:type="IVL_PQ">
+												<low />
+												<high value="120"
+													unit="mg/dL" inclusive="false" />
+											</value>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component typeCode="COMP">
+								<act classCode="ACT" moodCode="EVN">
+									<code>
+										<originalText>
+											<reference value="#h1" />
+										</originalText>
+									</code>
+									<text>
+										Nancy has high cholesterol.
+									</text>
+								</act>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

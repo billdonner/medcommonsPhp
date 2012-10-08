@@ -1,0 +1,65 @@
+
+body {
+  margin: 0pt 10pt 0pt 10pt;
+  font-size: 11pt;
+  width: 6.5in;
+  height: 10in;
+}
+
+
+* {
+  font-family: arial,helvetica;
+}
+
+h1 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.annotation {
+  font-size: 80%;
+  font-style: italic;
+}
+
+.importantnumber {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.smallinstructions {
+  font-size: 0.7em;
+  clear: right;
+}
+
+.ul {
+  border-bottom: solid 1px black;
+}
+
+hr {
+  color: black;
+  background-color: black;
+}
+
+.pageBreakDiv {
+  float: left; 
+  width: 2.5in;
+  margin: 0px 10px;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+}
+
+#pageBreakContainer {
+  display: none;
+  width: 100%;
+  height: 0.6in;
+}
+
+@media screen {
+  #page1, #page2 {
+    height: 5.5in;
+  }
+  #pageBreakContainer {
+    display: block;
+  }
+}
+

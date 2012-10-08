@@ -1,0 +1,92 @@
+#!/usr/bin/env python
+#
+# console/bin/mc-set-mail-server
+#
+"""Sets the sendmail SMART_HOST parameter to use an external SMTP
+server to send mail.
+"""
+
+__author__ = 'Terence Way'
+__email__ = 'tway@medcommons.net'
+__version__ = '1.0: July 10, 2008'
+
+from cStringIO import StringIO
+from getpass import getpass
+from os import chmod, system
+from os.path import join
+from re import compile
+from sys import argv, exit, stderr
+
+USAGE = """mc-set-mail-server [host [user [password]]]
+
+Edits %(MAIL_DIRECTORY)s/sendmail.mc and %(MAIL_DIRECTORY)s/authinfo
+so sendmail uses a specified smarthost.
+"""
+
+DEFAULT_SERVER = 'smtp.1and1.com'
+DEFAULT_USERNAME = 'appliance@medcommons.net'
+
+MAIL_DIRECTORY = '/etc/mail'
+
+AUTHINFO_RE = compile(r"FEATURE[ \t]*\([ \t]*\`authinfo\'")
+
+if __name__ == '__main__':
+    if len(argv) > 1:
+        smtphost = argv[1]
+    else:
+        smtphost = raw_input('SMTP server [%s]: ' % DEFAULT_SERVER)
+
+    if len(argv) > 2:
+        username = argv[2]
+    else:
+        username = raw_input('SMTP server username [%s]: ' % DEFAULT_USERNAME)
+
+    if len(argv) > 3:
+        password = argv[3]
+    else:
+        password = getpass('SMTP server password: ')
+
+    if len(argv) > 4:
+        print >>stderr, USAGE % globals()
+        exit(1)
+
+    smtphost = smtphost or DEFAULT_SERVER
+    username = username or DEFAULT_USERNAME
+
+    buffer = StringIO()
+
+    sendmail_fn = join(MAIL_DIRECTORY, 'sendmail.mc')
+    authinfo_fn = join(MAIL_DIRECTORY, 'authinfo')
+
+    # Edit /etc/mail/sendmail.cf
+    input = file(sendmail_fn)
+    for line in input:
+        if """`SMART_HOST'""" in line:
+            break
+
+        if not AUTHINFO_RE.match(line):
+            buffer.write(line)
+
+    print >>buffer, """define(`SMART_HOST',`[%s]')dnl""" % smtphost
+    print >>buffer, """FEATURE(`authinfo',`hash -o %s.db')dnl""" % authinfo_fn
+
+    for line in input:
+        if not AUTHINFO_RE.match(line):
+            buffer.write(line)
+
+    input.close()
+    file(sendmail_fn, 'w').write(buffer.getvalue())
+
+    system('make -C %s' % MAIL_DIRECTORY)
+
+    # Edit /etc/mail/authinfo
+    #
+    print >>file(authinfo_fn, 'w'), \
+          'AuthInfo: "U:%s" "P:%s" "M:plain"' % (username, password)
+
+    system('/usr/bin/makemap hash %s <%s' % (authinfo_fn, authinfo_fn))
+    chmod(authinfo_fn, 0640)
+
+    print
+    print 'Now restart the sendmail service:'
+    print '    # /etc/init.d/sendmail restart'

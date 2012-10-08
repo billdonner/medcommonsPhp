@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appservices>
+  <service>
+    <id>
+      4040493040234dd3
+    </id>
+    <name>
+      Free Diagnosis of Your Personal Trackers
+    </name>
+    <visible>
+      A new option appears on the yellow sticky in the MedCommons Viewer
+    </visible>
+    <comment>
+      The Personal Tracker Platform service must be installed
+    </comment>
+    <prerequisites>
+      <prereqid>32323b8232383900ab3edf33</prereqid>
+    </prerequisites>
+    <viewer>http://www.medcommons.net/apps/diagnose/diagnosesimulator.php</viewer>
+    <explanation>
+      <![CDATA[
+      <div>Your Trackers are analyzed and a report is inserted into your MedCommons Account</div>
+      ]]>
+    </explanation>
+    <publisher>
+      <![CDATA[
+      <img src="http://medcommons.net/apps/images/diagnose.jpg" alt="diagnose.com"></img>
+      ]]>
+    </publisher>
+    <charges>
+      <![CDATA[
+      <div>This service is totally free</div>
+      ]]>
+    </charges>
+    <technical>
+      <![CDATA[
+    The CINA Service is called with the 'Current CCR', using the XXXX from Lewis Pringle and Records for Living
+    ]]>
+    </technical>
+  </service>
+</appservices>
+

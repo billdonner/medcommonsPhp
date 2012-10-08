@@ -1,0 +1,60 @@
+{% extends "form.html" %}
+
+{% block title %}Login As Account{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Accounts</a> &gt;
+Login As {{ mcuser.pretty_mcid }} {{ mcuser.first_name }} {{ mcuser.last_name }}
+{% endblock %}
+
+{% block sidebar %}
+<ul class='object-tools'>
+{% include "users/tools.inc" %}
+  <li><a href='user?mcid={{ mcuser.mcid }}'>View Account</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<p>
+Please login again,  using <strong>your</strong>
+console username.
+</p>
+<form method='post'
+      action='https://{{ META.SERVER_NAME }}/acct/console.php'>
+  <table>
+    <tr>
+      <td><label for='user'>&nbsp;</label></td>
+      <td>
+  <input type='text'
+         readonly='readonly'
+         name='user'
+         value='{{ user }}' />
+      </td>
+    </tr>
+    <tr>
+      <td><label for='mcid'>MCID</label></td>
+      <td>
+  <input type='text'
+         name='mcid'
+         readonly='readonly'
+         value='{{ mcid }}' />
+      </td>
+    </tr>
+    <tr>
+      <td><label for='password'>Password</label></td>
+      <td>
+  <input type='password'
+         name='password' />
+      </td>
+    </tr>
+  </table>
+
+  <div id='submit-row'>
+<input type='submit'
+       class='default'
+       value='Sign On' />
+  </div>
+</form>
+
+{% endblock %}

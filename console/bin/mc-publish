@@ -1,0 +1,260 @@
+#!/usr/bin/env python
+
+from sys import argv, path
+from os import getenv, putenv, environ
+from os.path import exists, dirname, join
+
+# Set up so Django db settings can be used
+if exists(join(dirname(argv[0]), '..', 'settings.py')):
+	path.append(join(dirname(argv[0]), '..'))
+
+DJANGO_SETTINGS_MODULE = 'DJANGO_SETTINGS_MODULE'
+if not getenv(DJANGO_SETTINGS_MODULE):
+	environ[DJANGO_SETTINGS_MODULE] = 'settings'
+	putenv(DJANGO_SETTINGS_MODULE, environ[DJANGO_SETTINGS_MODULE])
+
+from cgi import escape
+from sys import exc_info
+from xml.dom.minidom import parse, parseString
+
+from django.conf import settings
+from django.db import connection, transaction
+from django.template import Context, Template
+from django.template.loader import get_template, render_to_string
+
+from os import getenv, mkdir, listdir, chdir
+from shutil import copy
+from glob import fnmatch
+import os.path
+
+from config.properties import get_properties, get_idps
+
+"""Template Processing Handler for creating static versions of Appliance User
+Interface from Templates.  Can be used as a library or stand alone as a
+command line utility.
+
+Command Line Usage:  mc-publish <param>=<value> ...  <config file>
+
+The configuration file is a predefined XML format that specifies which files to 
+process and various settings for how they should be handled.
+
+If present, a file called build.properties will be read from the local directory
+and used to load configuration settings for database and template path.  
+See build.properties.template for an example.
+"""
+def main():
+    global HTML, log, log_error
+
+    HTML = bool(getenv('REQUEST_METHOD'))
+    OUTDIR = getenv('MCPUBLISH_OUTDIR')
+
+    if HTML:
+	log = log_html
+	log_error = error_html
+    else:
+	log = log_text
+	log_error = error_text
+
+    map = get_properties()
+    map['idps'] = get_idps()
+
+    if OUTDIR:
+      map['outdir'] = OUTDIR
+    else:
+      map['outdir'] = '/var/www'
+    
+
+    rendered_files = 0
+
+    for a in argv[1:]:
+        if '=' in a:
+            name, value = a.split('=', 1)
+            map[name] = render_string(value, map)
+        else:
+            renderFile(a, map)
+	    rendered_files += 1
+
+    if rendered_files == 0:
+        for d in settings.TEMPLATE_DIRS:
+            fn = join(d, 'www.xml')
+            if exists(fn):
+                renderFile(fn, map)
+                break
+
+def log_html(infn, outfn):
+    print '    <tr>'
+    print '      <td>%s</td>' % escape(infn)
+    print '      <td>%s</td>' % escape(outfn)
+    print '    </tr>'
+
+def error_html(op, fn, err):
+    print '    <tr>'
+    print "      <td colspan='2' class='error'>"
+    print '        Cannot %s to %s:<br />' % (escape(op), escape(fn))
+    print '        %s' % escape(repr(err))
+    print '      </td>'
+    print '    </tr>'
+
+def error_text(op, fn, err):
+    print 'Cannot %s to %s: %s' % (op, fn, repr(err))
+ 
+def log_text(infn, outfn):
+    print infn, '=>', outfn
+
+def renderFile(file_name, map):
+    renderGroup(parse(file_name), map)
+
+def renderTemplate(template_name, map):
+    renderGroup(parseString(render_to_string(template_name, map)), map)
+
+def renderGroup(n, map):
+    for s in n.childNodes:
+        if s.attributes:
+            submap = map.copy()
+
+            c = Context(map)
+            for k, v in s.attributes.items():
+		if k == 'out':
+		    submap[k] = v
+		    continue
+
+                v = Template(v).render(c)
+
+                if k == 'indir':
+                    v = td_join(map.get('indir'), v)
+                elif k == 'outdir':
+                    v = os.path.join(map.get('outdir', '.'), v)
+
+                    if not os.path.isdir(v):
+                        try:
+                            mkdir(v)
+                        except (IOError, OSError), e:
+                            log_error('create', v, e)
+
+                submap[k] = v
+        else:
+            submap = map
+
+        if s.nodeName == 'group':
+            renderGroup(s, submap)
+        elif s.nodeName == 'template':
+            render(submap)
+
+	elif s.nodeName == 'directory':
+	    renderDirectory(submap['indir'], submap['outdir'], submap)
+	elif s.nodeName == 'blobs':
+	    renderBlobs(submap)
+
+def renderBlobs(map):
+    sql = map['sql']
+    c = Context(map)
+
+    cursor = connection.cursor()
+    cursor.execute(Template(sql).render(c))
+
+    t = Template(map['out'])
+
+    for row in cursor.fetchall():
+	for i in range(len(cursor.description)):
+	    c[cursor.description[i][0]] = row[i]
+
+	fn = os.path.join(map.get('outdir', '.'), t.render(c))
+
+	image = c[map['blob_column']]
+
+	if image is None: continue
+
+        try:
+            f = file(fn, 'w')
+            if isinstance(image, str):
+                f.write(image)
+            else:
+                image.write(f)
+            f.close()
+        except (IOError, OSError), e:
+            log_error('write', fn, e)
+        else:
+            log('SQL', fn)
+
+def td_join(parent, base):
+    if parent is None: return base
+    if base.startswith('/'): return base[1:]
+    if parent.endswith('/'): return parent + base
+    if base == '.': return parent
+
+    return parent + '/' + base
+
+def render_string(s, d):
+    return Template(s).render(Context(d))
+
+def render(d):
+    c = Context(d)
+    infn = td_join(d.get('indir'), d['in'])
+
+    outfn = os.path.join(d.get('outdir', '.'),
+                         render_string(d.get('out', os.path.basename(infn)), d))
+
+    try:
+        t = get_template(infn)
+
+        x = t.render(c)
+    except Exception, args:
+        log_error('read', infn, args)
+    else:
+        try:
+            file(outfn, 'w').write(x)
+
+            log(infn, outfn)
+        except Exception, args:
+            log_error('write', outfn, args)
+
+def renderDirectory(inspec, outdir, map):
+    ignore = map.get('ignore', '').split()
+
+    files = {}
+    dirs = {}
+
+    for d in settings.TEMPLATE_DIRS:
+	# construct a real directory name, given that template dirspecs
+	# use '/' irregardless of the OS we're on
+	#
+	indir = td_join(d, inspec).replace('/', os.path.sep)
+
+	if not os.path.exists(indir):
+	    continue
+
+        for fn in listdir(indir):
+	    for i in ignore:
+		if fnmatch.fnmatch(fn, i):
+		    break
+	    else:
+		tpath = td_join(inspec, fn)
+		dpath = os.path.join(indir, fn)
+
+		if os.path.isdir(dpath):
+		    dirs[fn] = True
+		elif fn not in files:
+		    files[fn] = dpath
+
+    for key, value in files.items():
+	new_outfn = os.path.join(outdir, key)
+        try:
+            copy(value, new_outfn)
+        except (IOError, OSError), e:
+            log_error('write', new_outfn, e)
+        else:
+            log(td_join(inspec, key), new_outfn)
+
+    for fn in dirs:
+	new_outdir = os.path.join(outdir, fn)
+	if not os.path.exists(new_outdir):
+            try:
+                mkdir(new_outdir)
+            except (IOError, OSError), e:
+                log_error('create', new_outdir, e)
+
+	renderDirectory(td_join(inspec, fn), new_outdir, map)
+
+if __name__ == '__main__':
+    main()
+    

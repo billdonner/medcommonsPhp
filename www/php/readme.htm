@@ -1,0 +1,55 @@
+<html><head><title>Hacking Your Own MedCommons Page</title></head>
+<body>
+<h1>Your Very Own MedCommons</h1>
+This document describes how to install, optionally customize, and then run your own copy of the MedCommons Central Services. The audience at this point shold be employees and 
+friends of MedCommons.
+<h2>Finding and Installing the Central System</h2>
+<i>this presumes we have fixed the php tree</i>
+<ul>
+<li>Install Apache2.x, PHP5.x and MySQL4.x</li>
+<li>Make sure you have a dedicated url or at least a clear IP address that is reachable over the internet.</li>
+<li>Go to Subversion /trunk/www and export the full tree. As of 06 Sept 06 there were 748 files totalling 5.5MB in the distro, all rooted right here.</il>
+<li>Push the whole tree up to your central site</li>
+<li>Edit the /php/urls.inc.php file.</li>
+<li>Configure Tables</li>
+<li>Configure Federation</li>
+<li>Obtain and start an Identity Server</li>
+</ul>
+<h3>urls.inc.php</h3>
+/var/php/urls.inc.php is the center of the configuration universe. You can modify this file and stretch the different MedCommons Services
+over a collection of servers, or you can leave them alone and make only two edits. You only need to specify the base urls or your
+unprotected (http) and protected (https) web services 
+<h3>Table Configuration</h3>
+/var/php/medcommons.sql contains a full schema with some initial data for inclusion into your new system. Do not modify this file.
+Load it directly into MySQL using your preferred tool. It will create four databases. that are used by the application.
+<p>You may need to adjust the Nodes Table if it does not already contain the gateway(s) you are going to be using</p>
+<p>You must adjust the table mcproperties in the mcx database. Your need to change the value of the CCRNodeID to the value of the gateway where 
+you want new CCRs to be created.</p>
+<h3>Setting Up A Gateway</h3>
+If you are not very interested in creating new CCRs you can probably get by without setting up a gateway. But for most applications you will
+need to set one up. 
+<h2>Pimp My StartPage</h2>
+If you have any experience with PHP  you can rig up your own personal start page on MedCommons. What's a start page? It's the place
+you go automatically when you successfully log on.
+<p>Here's how:
+<h3>General Flow</h3>
+<p>Upon Successful Logon the Identity Server sets the MC cookie and takes you to the location identitied in the Servers Table, slot 1. This has probably been
+wired to <i>accountsURL</i>/goStart.php</o>
+<p>goStart.php reads the user;s cookie and then the user record to obtain the users 'rolehack' value. Rolehack is interpreted by goStart.php
+as a general selector, but might be utilized differently (eg to contain a particular URL) with appropriate editing</p>
+<p>Most of the pages that goStart invokes utlize the layout() and stdlayout() apis in <i>accountsURL</i>/layout.inc.php to build a general page, and a standard page
+respectively. The general page is composed of five sections (top, left, center, right, bottom) all of which can be set by you. Typically, you will want most of the standard sections 
+and thus will use stdlayout() which only allows for modification of the central section
+<p>The general account page built from <i>accountsURL</i>/mypage.inc.php is composed of separate sections identified by lowercase letters a-z and could easily be extended
+to A-Z as well These sections are available as Google Gadgets, alone, or in combination, and can also be blended right into the middle sectin of  your start page.
+<h3>Adding a new section to mypage.inc.php</h3>
+You can write a bunch of your own code, and either put it into MedCommons, or iframe it.
+</ul>
+<li>Modify the tables in <i>accountsURL</i>/pickcomp.php to identity and label the new section</li>
+<li>Write your PHP, typically putting it in <i>accountsURL</i>, but that is not required </li>
+<li>Add the corresponding glue code in <i>accountsURL</i>/mypage.inc.php taking care to not break anything else</li>
+</ul>
+<p>That's about it. For instructions on how to configure sections for google see <a href=http://medcommons.net/trackers>this</a></p>
+
+</body>
+</html>

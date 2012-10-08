@@ -1,0 +1,42 @@
+ehgt Customizations
+by
+bill donnerCHANGES TO CONSOLE /CUSTOMIZE DIRECTORY
+A bunch of changes were made to the standard appliance templates in order to meet the requirements of EHGT. These changes are checked into the standard /trunk/php tree under /_ehgt
+BASE.HTML
+was altered to add ehgt’s direct contact page on their website, and to remove the sitemap link, which is also broken in the generic template anyway
+INDEX.HTML
+stripped to almost nothing but a login box, as per ehgt specification - currently this still goes to the actual /acct/login.php page, but we might move the password box from there onto index.html to completely eliminate that
+LOGIN.INC
+was altered despite the warnings, in order to say “Email or Account ID” as per ehgt specs
+LOGIN.TPL.PHP
+was altered to say “Email or Account ID”
+ROOT.HTML
+was altered to make the small info> link on top point to an ehgt page
+a new div to be shown instead of the stamp in the upper right hand corner was introduced as “invisi” instead of the normal “visi” id
+the small bit of javascript that actually makes “visi” visible was altered in order to make “invisi” visible in the case only when there is no “MC” cookie
+STYLE.CSS
+was altered to support the “invisi” id
+
+Export the subversion php/_ehgt directory, zip it, scp it to the target machine, then unzip it at the target.
+
+WHAT TO DO AFTER AN APPLIANCE UPGRADE
+0) su to root on target appliance (in this case - ehgt.myhealthespace.com)
+1) Copy all the files from _ehtg/customize to /var/www/console/customize on the target appliance
+2) Copy /trunk/php/_ehgt/customize/images/* to /var/www/console/templates/www/images
+3) Copy /trunk/php/_ehgt/index.html to /var/www/console/templates/www/index.html 
+   (Note: must edit index.html to refer to 'ehgt2' instead of 'ehgt') (Or whatever the real machine's hostname is - there is now more than one ehgt machine).
+4) Copy /trunk/php/_ehgt/templates/www/* to /var/www/console/templates/www
+5) Copy _ehgt/templates/tu.html to /var/www/console/templates/
+6) Go to /var/www/console/bin/; enter ./mc-permissions to set permissions so that the console can read 
+   new files.
+7) Log into appliance's console https://ehgt.myhealthespace.com/console/
+   goto the configuration section and re-publish
+
+You should see a bunch of files processed by the console; if not check the logs in /var/log/httpd. Note there 
+will be an error for the index.html file from step 3. 
+
+Clear your own browser cache or you may not see your changes
+
+Some OF THESE CHANGES SHOULD BE CONSIDERED FOR THE GENERAL DISTRO
+Certainly the “invisi” feature would be useful for everyone who wants to show something in the upper right hand corner
+

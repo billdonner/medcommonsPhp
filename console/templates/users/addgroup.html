@@ -1,0 +1,41 @@
+{% extends "form.html" %}
+
+{% block title %}Add Group{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Accounts</a> &gt;
+<a href='user?mcid={{ mcuser.mcid }}'>{{ mcuser.pretty_mcid }}</a> &gt;
+Add Group
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<form action='addgroup' method='post'>
+  <input type='hidden' name='mcid' value='{{ mcuser.mcid }}' />
+
+  <table>
+    <tbody>
+{{ form }}
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit'
+	   value='Save' class='default' />
+
+    <input type='submit'
+	   name='add'
+	   value='Save and add another' />
+
+    <input type='submit'
+	   name='edit'
+	   value='Save and continue editing' />
+  </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,2282 @@
+<WebScriptTool>
+	<DisplayName>Create a User with Services</DisplayName>
+	<Step v='4'>
+		<ver>12</ver>
+		<id>12329</id>
+		<Summary v='2'>
+			<played>3</played>
+			<succeeded>3</succeeded>
+			<maxResponseTime>8103</maxResponseTime>
+			<averageResponseTime>4893</averageResponseTime>
+		</Summary>
+		<childCount>9</childCount>
+		<ChildItems>
+			<Request v='10'>
+				<ver>12</ver>
+				<id>12330</id>
+				<Summary v='2'>
+					<played>1</played>
+					<succeeded>1</succeeded>
+					<maxResponseTime>8103</maxResponseTime>
+					<averageResponseTime>8103</averageResponseTime>
+				</Summary>
+				<childCount>7</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>12</ver>
+						<id>12331</id>
+						<Summary v='2'>
+							<played>1</played>
+							<succeeded>1</succeeded>
+							<maxResponseTime>8103</maxResponseTime>
+							<averageResponseTime>8103</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<Response v='3'>
+								<ver>12</ver>
+								<id>12383</id>
+								<Summary v='2'>
+									<played>1</played>
+									<succeeded>1</succeeded>
+									<maxResponseTime>8103</maxResponseTime>
+									<averageResponseTime>8103</averageResponseTime>
+								</Summary>
+								<timeMs>8103</timeMs>
+								<size>362</size>
+								<encodedContent>false</encodedContent>
+								<content>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;META http-equiv=Content-Type content=&quot;text/html; charset=iso-8859-1&quot;&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;&lt;PRE&gt;{status:&apos;ok&apos;,patientMedCommonsId:&apos;1278192526382736&apos;,currentCCRGuid:&apos;null&apos;,auth:&apos;02e350292307f2bc69561945b2426dbf811e7b04&apos;,secret:&apos;7ff0f0c18983369bce0ac8f6dbbbc6241fd195c8&apos;}&lt;/PRE&gt;&lt;/BODY&gt;&lt;/HTML&gt;
+</content>
+								<totalSize>172</totalSize>
+								<timeStamp>2008-09-01 02:22:30</timeStamp>
+								<logContent>12:22:22,878 INFO  [ExpressionValidator] Expression validation will be performed using: net.sourceforge.stripes.validation.expression.CommonsElExpressionExecutor
+12:22:22,988 INFO  [NewPatientAction] Creating new patient with name Test Patient-1 DOB=null
+12:22:22,988 INFO  [NewPatientAction] Using supplied auth 84547f4c4a7085a8c9960883d0fc60e06556604a
+[GC 16084K-&gt;12360K(65088K), 0.0095143 secs]
+[GC 16456K-&gt;12414K(65088K), 0.0070302 secs]
+[GC 16510K-&gt;12539K(65088K), 0.0053247 secs]
+[Full GC[Unloading class sun.reflect.GeneratedConstructorAccessor6]
+[Unloading class sun.reflect.GeneratedConstructorAccessor5]
+[Unloading class sun.reflect.GeneratedConstructorAccessor4]
+ 14553K-&gt;10127K(65088K), 0.3696079 secs]
+12:22:24,991 DEBUG [XFireConfigurableServlet] Loading configuration files relative to c:\mc\svn\router\demo\stage\tomcat\webapps\identity\WEB-INF
+12:22:25,241 INFO  [XBeanXmlBeanDefinitionReader] Loading XML bean definitions from class path resource [org/codehaus/xfire/spring/xfire.xml]
+12:22:25,251 DEBUG [ResourceEntityResolver] Trying to resolve XML entity with public ID [-//SPRING//DTD BEAN//EN] and system ID [http://www.springframework.org/dtd/spring-beans.dtd]
+12:22:25,251 DEBUG [ResourceEntityResolver] Trying to locate [spring-beans.dtd] in Spring jar
+12:22:25,251 DEBUG [ResourceEntityResolver] Found beans DTD [http://www.springframework.org/dtd/spring-beans.dtd] in classpath
+12:22:25,271 INFO  [XBeanXmlBeanDefinitionReader] Loading XML bean definitions from class path resource [org/codehaus/xfire/spring/customEditors.xml]
+12:22:25,281 DEBUG [ResourceEntityResolver] Trying to resolve XML entity with public ID [-//SPRING//DTD BEAN//EN] and system ID [http://www.springframework.org/dtd/spring-beans.dtd]
+12:22:25,281 DEBUG [ResourceEntityResolver] Trying to locate [spring-beans.dtd] in Spring jar
+12:22:25,281 DEBUG [ResourceEntityResolver] Found beans DTD [http://www.springframework.org/dtd/spring-beans.dtd] in classpath
+12:22:25,341 INFO  [CollectionFactory] Commons Collections 3.x available
+12:22:25,341 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.map.LinkedMap]
+[GC 14223K-&gt;10394K(65088K), 0.0094283 secs]
+12:22:25,852 INFO  [XBeanXmlBeanDefinitionReader] Loading XML bean definitions from class path resource [services.xml]
+12:22:25,922 INFO  [GenericApplicationContext] 11 beans defined in application context [org.codehaus.xfire.spring.GenericApplicationContext;hashCode=32780219]
+12:22:25,922 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;customEditorConfigurer&apos;
+12:22:25,922 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;customEditorConfigurer&apos; with merged definition [Root bean: class [org.springframework.beans.factory.config.CustomEditorConfigurer]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=null; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/customEditors.xml]]
+12:22:25,922 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;customEditorConfigurer&apos;
+12:22:25,972 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.springframework.beans.factory.config.CustomEditorConfigurer]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.springframework.beans.factory.config.CustomEditorConfigurer]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;customEditors&apos; of type [java.util.Map]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;order&apos; of type [int]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Class [org.springframework.beans.factory.config.CustomEditorConfigurer] is cache-safe
+12:22:25,972 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.map.LinkedMap]
+12:22:25,972 DEBUG [BeanDefinitionValueResolver] Resolving inner bean definition &apos;org.codehaus.xfire.spring.editors.ServiceFactoryEditor#1b6903f&apos; of bean &apos;customEditorConfigurer&apos;
+12:22:25,972 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;org.codehaus.xfire.spring.editors.ServiceFactoryEditor#1b6903f&apos; with merged definition [Root bean: class [org.codehaus.xfire.spring.editors.ServiceFactoryEditor]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=null; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/customEditors.xml]]
+12:22:25,972 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;org.codehaus.xfire.spring.editors.ServiceFactoryEditor#1b6903f&apos;
+12:22:25,972 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.codehaus.xfire.spring.editors.ServiceFactoryEditor]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.codehaus.xfire.spring.editors.ServiceFactoryEditor]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;asText&apos; of type [java.lang.String]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;customEditor&apos; of type [java.awt.Component]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;javaInitializationString&apos; of type [java.lang.String]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;paintable&apos; of type [boolean]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;source&apos; of type [java.lang.Object]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;tags&apos; of type [[Ljava.lang.String;]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;transportManager&apos; of type [org.codehaus.xfire.transport.TransportManager]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Found property &apos;value&apos; of type [java.lang.Object]
+12:22:25,972 DEBUG [CachedIntrospectionResults] Class [org.codehaus.xfire.spring.editors.ServiceFactoryEditor] is cache-safe
+12:22:25,972 DEBUG [BeanDefinitionValueResolver] Resolving reference from property &apos;transportManager&apos; in bean &apos;org.codehaus.xfire.spring.editors.ServiceFactoryEditor#1b6903f&apos; to bean &apos;xfire.transportManager&apos;
+12:22:25,972 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.set.ListOrderedSet]
+12:22:25,982 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;xfire.transportManager&apos;
+12:22:25,982 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;xfire.transportManager&apos; with merged definition [Root bean: class [org.codehaus.xfire.transport.DefaultTransportManager]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=initialize; destroyMethodName=dispose; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/xfire.xml]]
+12:22:25,982 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;xfire.transportManager&apos;
+12:22:25,982 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.codehaus.xfire.transport.DefaultTransportManager]
+12:22:25,982 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.codehaus.xfire.transport.DefaultTransportManager]
+12:22:25,982 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:25,982 DEBUG [CachedIntrospectionResults] Found property &apos;transports&apos; of type [java.util.Collection]
+12:22:25,982 DEBUG [CachedIntrospectionResults] Class [org.codehaus.xfire.transport.DefaultTransportManager] is cache-safe
+12:22:25,982 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;xfire.transportManager&apos;
+12:22:25,982 DEBUG [DefaultListableBeanFactory] Invoking custom init method &apos;initialize&apos; on bean with name &apos;xfire.transportManager&apos;
+12:22:25,992 DEBUG [DefaultTransportManager] Registered transport org.codehaus.xfire.transport.local.LocalTransport@1f3b8bc
+12:22:25,992 DEBUG [DefaultTransportManager] Registered transport org.codehaus.xfire.transport.dead.DeadLetterTransport@1641957
+12:22:25,992 DEBUG [DefaultTransportManager] Registered transport org.codehaus.xfire.transport.http.SoapHttpTransport@af55e7
+12:22:25,992 DEBUG [DefaultTransportManager] Registered transport org.codehaus.xfire.transport.http.HttpTransport@130e03a
+12:22:25,992 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;xfire.transportManager&apos;
+12:22:26,032 DEBUG [BeanWrapperImpl] About to invoke write method [public void org.codehaus.xfire.spring.editors.ServiceFactoryEditor.setTransportManager(org.codehaus.xfire.transport.TransportManager)] on object of class [org.codehaus.xfire.spring.editors.ServiceFactoryEditor]
+12:22:26,032 DEBUG [BeanWrapperImpl] Invoked write method [public void org.codehaus.xfire.spring.editors.ServiceFactoryEditor.setTransportManager(org.codehaus.xfire.transport.TransportManager)] with value of type [org.codehaus.xfire.transport.TransportManager]
+12:22:26,032 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;org.codehaus.xfire.spring.editors.ServiceFactoryEditor#1b6903f&apos;
+12:22:26,032 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;org.codehaus.xfire.spring.editors.ServiceFactoryEditor#1b6903f&apos;
+12:22:26,032 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.set.ListOrderedSet]
+12:22:26,032 DEBUG [BeanWrapperImpl] About to invoke write method [public void org.springframework.beans.factory.config.CustomEditorConfigurer.setCustomEditors(java.util.Map)] on object of class [org.springframework.beans.factory.config.CustomEditorConfigurer]
+12:22:26,032 DEBUG [BeanWrapperImpl] Invoked write method [public void org.springframework.beans.factory.config.CustomEditorConfigurer.setCustomEditors(java.util.Map)] with value of type [java.util.Map]
+12:22:26,032 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;customEditorConfigurer&apos;
+12:22:26,032 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;customEditorConfigurer&apos;
+12:22:26,042 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.map.LinkedMap]
+12:22:26,062 INFO  [GenericApplicationContext] Unable to locate MessageSource with name &apos;messageSource&apos;: using default [org.springframework.context.support.DelegatingMessageSource@bbddbf]
+12:22:26,062 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.set.ListOrderedSet]
+12:22:26,062 INFO  [GenericApplicationContext] Unable to locate ApplicationEventMulticaster with name &apos;applicationEventMulticaster&apos;: using default [org.springframework.context.event.SimpleApplicationEventMulticaster@1bb0ff0]
+12:22:26,062 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.map.LinkedMap]
+12:22:26,062 INFO  [DefaultListableBeanFactory] Pre-instantiating singletons in factory [org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [customEditorConfigurer,xfire.serviceRegistry,xfire.transportManager,xfire,xfire.typeMappingRegistry,xfire.aegisBindingProvider,xfire.serviceFactory,xfire.servletController,xfire.messageServiceFactory,xfire.messageBindingProvider,org.codehaus.xfire.spring.ServiceBean]; root of BeanFactory hierarchy]
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;customEditorConfigurer&apos;
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;xfire.serviceRegistry&apos;
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;xfire.serviceRegistry&apos; with merged definition [Root bean: class [org.codehaus.xfire.service.DefaultServiceRegistry]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=null; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/xfire.xml]]
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;xfire.serviceRegistry&apos;
+12:22:26,092 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.codehaus.xfire.service.DefaultServiceRegistry]
+12:22:26,092 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.codehaus.xfire.service.DefaultServiceRegistry]
+12:22:26,092 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:26,092 DEBUG [CachedIntrospectionResults] Found property &apos;services&apos; of type [java.util.Collection]
+12:22:26,092 DEBUG [CachedIntrospectionResults] Class [org.codehaus.xfire.service.DefaultServiceRegistry] is cache-safe
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;xfire.serviceRegistry&apos;
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;xfire.serviceRegistry&apos;
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire.transportManager&apos;
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;xfire&apos;
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;xfire&apos; with merged definition [Root bean: class [org.codehaus.xfire.DefaultXFire]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=null; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/xfire.xml]]
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;xfire&apos;
+12:22:26,092 DEBUG [BeanDefinitionValueResolver] Resolving reference from property &apos;constructor argument with index 0&apos; in bean &apos;xfire&apos; to bean &apos;xfire.serviceRegistry&apos;
+12:22:26,092 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.set.ListOrderedSet]
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire.serviceRegistry&apos;
+12:22:26,092 DEBUG [BeanDefinitionValueResolver] Resolving reference from property &apos;constructor argument with index 1&apos; in bean &apos;xfire&apos; to bean &apos;xfire.transportManager&apos;
+12:22:26,092 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire.transportManager&apos;
+12:22:26,102 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.codehaus.xfire.DefaultXFire]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.codehaus.xfire.DefaultXFire]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;faultHandlers&apos; of type [java.util.List]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;inHandlers&apos; of type [java.util.List]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;inPhases&apos; of type [java.util.List]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;outHandlers&apos; of type [java.util.List]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;outPhases&apos; of type [java.util.List]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;serviceRegistry&apos; of type [org.codehaus.xfire.service.ServiceRegistry]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;transportManager&apos; of type [org.codehaus.xfire.transport.TransportManager]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Class [org.codehaus.xfire.DefaultXFire] is cache-safe
+12:22:26,102 DEBUG [DefaultListableBeanFactory] Bean &apos;xfire&apos; instantiated via constructor [public org.codehaus.xfire.DefaultXFire(org.codehaus.xfire.service.ServiceRegistry,org.codehaus.xfire.transport.TransportManager)]
+12:22:26,102 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;xfire&apos;
+12:22:26,102 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;xfire&apos;
+12:22:26,102 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;xfire.typeMappingRegistry&apos;
+12:22:26,102 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;xfire.typeMappingRegistry&apos; with merged definition [Root bean: class [org.codehaus.xfire.aegis.type.DefaultTypeMappingRegistry]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=createDefaultMappings; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/xfire.xml]]
+12:22:26,102 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;xfire.typeMappingRegistry&apos;
+12:22:26,102 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.codehaus.xfire.aegis.type.DefaultTypeMappingRegistry]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.codehaus.xfire.aegis.type.DefaultTypeMappingRegistry]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;configuration&apos; of type [org.codehaus.xfire.aegis.type.Configuration]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;defaultTypeMapping&apos; of type [org.codehaus.xfire.aegis.type.TypeMapping]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;registeredEncodingStyleURIs&apos; of type [[Ljava.lang.String;]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Found property &apos;typeCreator&apos; of type [org.codehaus.xfire.aegis.type.TypeCreator]
+12:22:26,102 DEBUG [CachedIntrospectionResults] Class [org.codehaus.xfire.aegis.type.DefaultTypeMappingRegistry] is cache-safe
+12:22:26,102 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;xfire.typeMappingRegistry&apos;
+12:22:26,102 DEBUG [DefaultListableBeanFactory] Invoking custom init method &apos;createDefaultMappings&apos; on bean with name &apos;xfire.typeMappingRegistry&apos;
+[GC 14490K-&gt;10385K(65088K), 0.0052613 secs]
+12:22:26,283 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;xfire.typeMappingRegistry&apos;
+12:22:26,283 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;xfire.aegisBindingProvider&apos;
+12:22:26,283 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;xfire.aegisBindingProvider&apos; with merged definition [Root bean: class [org.codehaus.xfire.aegis.AegisBindingProvider]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=null; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/xfire.xml]]
+12:22:26,283 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;xfire.aegisBindingProvider&apos;
+12:22:26,283 DEBUG [BeanDefinitionValueResolver] Resolving reference from property &apos;constructor argument with index 0&apos; in bean &apos;xfire.aegisBindingProvider&apos; to bean &apos;xfire.typeMappingRegistry&apos;
+12:22:26,283 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.set.ListOrderedSet]
+12:22:26,283 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire.typeMappingRegistry&apos;
+12:22:26,283 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.codehaus.xfire.aegis.AegisBindingProvider]
+12:22:26,283 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.codehaus.xfire.aegis.AegisBindingProvider]
+12:22:26,283 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:26,283 DEBUG [CachedIntrospectionResults] Found property &apos;typeMappingRegistry&apos; of type [org.codehaus.xfire.aegis.type.TypeMappingRegistry]
+12:22:26,283 DEBUG [CachedIntrospectionResults] Class [org.codehaus.xfire.aegis.AegisBindingProvider] is cache-safe
+12:22:26,283 DEBUG [DefaultListableBeanFactory] Bean &apos;xfire.aegisBindingProvider&apos; instantiated via constructor [public org.codehaus.xfire.aegis.AegisBindingProvider(org.codehaus.xfire.aegis.type.TypeMappingRegistry)]
+12:22:26,313 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;xfire.aegisBindingProvider&apos;
+12:22:26,313 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;xfire.aegisBindingProvider&apos;
+12:22:26,313 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;xfire.serviceFactory&apos;
+12:22:26,313 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;xfire.serviceFactory&apos; with merged definition [Root bean: class [org.codehaus.xfire.service.binding.ObjectServiceFactory]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=null; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/xfire.xml]]
+12:22:26,313 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;xfire.serviceFactory&apos;
+12:22:26,313 DEBUG [BeanDefinitionValueResolver] Resolving reference from property &apos;constructor argument with index 0&apos; in bean &apos;xfire.serviceFactory&apos; to bean &apos;xfire.transportManager&apos;
+12:22:26,313 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire.transportManager&apos;
+12:22:26,313 DEBUG [BeanDefinitionValueResolver] Resolving reference from property &apos;constructor argument with index 1&apos; in bean &apos;xfire.serviceFactory&apos; to bean &apos;xfire.aegisBindingProvider&apos;
+12:22:26,313 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.set.ListOrderedSet]
+12:22:26,313 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire.aegisBindingProvider&apos;
+12:22:26,393 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.codehaus.xfire.service.binding.ObjectServiceFactory]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.codehaus.xfire.service.binding.ObjectServiceFactory]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;bindingCreationEnabled&apos; of type [boolean]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;bindingProvider&apos; of type [org.codehaus.xfire.service.binding.BindingProvider]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;customFaultsEnabled&apos; of type [boolean]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;ignoredClasses&apos; of type [java.util.Set]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;serviceConfigurations&apos; of type [java.util.List]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;soap11Transports&apos; of type [java.util.Collection]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;soap12Transports&apos; of type [java.util.Collection]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;style&apos; of type [java.lang.String]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;transportManager&apos; of type [org.codehaus.xfire.transport.TransportManager]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;use&apos; of type [java.lang.String]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;voidOneWay&apos; of type [boolean]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;wsdlBuilderFactory&apos; of type [org.codehaus.xfire.wsdl11.builder.WSDLBuilderFactory]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Class [org.codehaus.xfire.service.binding.ObjectServiceFactory] is cache-safe
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Bean &apos;xfire.serviceFactory&apos; instantiated via constructor [public org.codehaus.xfire.service.binding.ObjectServiceFactory(org.codehaus.xfire.transport.TransportManager,org.codehaus.xfire.service.binding.BindingProvider)]
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;xfire.serviceFactory&apos;
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;xfire.serviceFactory&apos;
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;xfire.servletController&apos;
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;xfire.servletController&apos; with merged definition [Root bean: class [org.codehaus.xfire.transport.http.XFireServletController]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=null; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/xfire.xml]]
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;xfire.servletController&apos;
+12:22:26,393 DEBUG [BeanDefinitionValueResolver] Resolving reference from property &apos;constructor argument&apos; in bean &apos;xfire.servletController&apos; to bean &apos;xfire&apos;
+12:22:26,393 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.set.ListOrderedSet]
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire&apos;
+12:22:26,393 DEBUG [DefaultTransportManager] Registered transport org.codehaus.xfire.transport.http.XFireServletTransport@18620c7
+12:22:26,393 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.codehaus.xfire.transport.http.XFireServletController]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.codehaus.xfire.transport.http.XFireServletController]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;XFire&apos; of type [org.codehaus.xfire.XFire]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;serviceRegistry&apos; of type [org.codehaus.xfire.service.ServiceRegistry]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Class [org.codehaus.xfire.transport.http.XFireServletController] is cache-safe
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Bean &apos;xfire.servletController&apos; instantiated via constructor [public org.codehaus.xfire.transport.http.XFireServletController(org.codehaus.xfire.XFire)]
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;xfire.servletController&apos;
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;xfire.servletController&apos;
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;xfire.messageServiceFactory&apos;
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;xfire.messageServiceFactory&apos; with merged definition [Root bean: class [org.codehaus.xfire.service.binding.ObjectServiceFactory]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=null; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/xfire.xml]]
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;xfire.messageServiceFactory&apos;
+12:22:26,393 DEBUG [BeanDefinitionValueResolver] Resolving reference from property &apos;constructor argument with index 0&apos; in bean &apos;xfire.messageServiceFactory&apos; to bean &apos;xfire.transportManager&apos;
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire.transportManager&apos;
+12:22:26,393 DEBUG [BeanDefinitionValueResolver] Resolving reference from property &apos;constructor argument with index 1&apos; in bean &apos;xfire.messageServiceFactory&apos; to bean &apos;xfire.messageBindingProvider&apos;
+12:22:26,393 DEBUG [CollectionFactory] Creating [org.apache.commons.collections.set.ListOrderedSet]
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;xfire.messageBindingProvider&apos;
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;xfire.messageBindingProvider&apos; with merged definition [Root bean: class [org.codehaus.xfire.service.binding.MessageBindingProvider]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=null; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [org/codehaus/xfire/spring/xfire.xml]]
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;xfire.messageBindingProvider&apos;
+12:22:26,393 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.codehaus.xfire.service.binding.MessageBindingProvider]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.codehaus.xfire.service.binding.MessageBindingProvider]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:26,393 DEBUG [CachedIntrospectionResults] Class [org.codehaus.xfire.service.binding.MessageBindingProvider] is cache-safe
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;xfire.messageBindingProvider&apos;
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;xfire.messageBindingProvider&apos;
+12:22:26,393 DEBUG [CachedIntrospectionResults] Using cached introspection results for class [org.codehaus.xfire.service.binding.ObjectServiceFactory]
+12:22:26,393 DEBUG [DefaultListableBeanFactory] Bean &apos;xfire.messageServiceFactory&apos; instantiated via constructor [public org.codehaus.xfire.service.binding.ObjectServiceFactory(org.codehaus.xfire.transport.TransportManager,org.codehaus.xfire.service.binding.BindingProvider)]
+12:22:26,403 DEBUG [BeanWrapperImpl] About to invoke write method [public void org.codehaus.xfire.service.binding.ObjectServiceFactory.setStyle(java.lang.String)] on object of class [org.codehaus.xfire.service.binding.ObjectServiceFactory]
+12:22:26,403 DEBUG [BeanWrapperImpl] Invoked write method [public void org.codehaus.xfire.service.binding.ObjectServiceFactory.setStyle(java.lang.String)] with value of type [java.lang.String]
+12:22:26,403 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;xfire.messageServiceFactory&apos;
+12:22:26,403 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;xfire.messageServiceFactory&apos;
+12:22:26,403 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire.messageBindingProvider&apos;
+12:22:26,403 DEBUG [DefaultListableBeanFactory] Creating shared instance of singleton bean &apos;org.codehaus.xfire.spring.ServiceBean&apos;
+12:22:26,403 DEBUG [DefaultListableBeanFactory] Creating instance of bean &apos;org.codehaus.xfire.spring.ServiceBean&apos; with merged definition [Root bean: class [org.codehaus.xfire.spring.ServiceBean]; abstract=false; singleton=true; lazyInit=false; autowire=0; dependencyCheck=0; initMethodName=null; destroyMethodName=null; factoryMethodName=null; factoryBeanName=null; defined in class path resource [services.xml]]
+12:22:26,403 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before instantiation of bean &apos;org.codehaus.xfire.spring.ServiceBean&apos;
+12:22:26,403 DEBUG [CachedIntrospectionResults] Getting BeanInfo for class [org.codehaus.xfire.spring.ServiceBean]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Caching PropertyDescriptors for class [org.codehaus.xfire.spring.ServiceBean]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;XFireService&apos; of type [org.codehaus.xfire.service.Service]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;applicationContext&apos; of type [org.springframework.context.ApplicationContext]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;bindings&apos; of type [java.util.List]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;class&apos; of type [java.lang.Class]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;createDefaultBindings&apos; of type [boolean]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;executor&apos; of type [java.lang.Object]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;faultHandlers&apos; of type [java.util.List]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;implementationClass&apos; of type [java.lang.Class]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;inHandlers&apos; of type [java.util.List]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;invoker&apos; of type [org.codehaus.xfire.service.invoker.Invoker]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;methods&apos; of type [java.util.List]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;name&apos; of type [java.lang.String]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;namespace&apos; of type [java.lang.String]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;outHandlers&apos; of type [java.util.List]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;properties&apos; of type [java.util.Map]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;schemas&apos; of type [java.util.List]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;scope&apos; of type [java.lang.String]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;serviceBean&apos; of type [java.lang.Object]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;serviceClass&apos; of type [java.lang.Class]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;serviceFactory&apos; of type [org.codehaus.xfire.service.ServiceFactory]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;style&apos; of type [java.lang.String]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;use&apos; of type [java.lang.String]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;wsdlURL&apos; of type [java.lang.String]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Found property &apos;xfire&apos; of type [org.codehaus.xfire.XFire]
+12:22:26,403 DEBUG [CachedIntrospectionResults] Class [org.codehaus.xfire.spring.ServiceBean] is cache-safe
+12:22:26,403 DEBUG [BeanWrapperImpl] Converting String to [class java.lang.Class] using property editor [org.springframework.beans.propertyeditors.ClassEditor@1fdfa36]
+12:22:26,443 DEBUG [BeanWrapperImpl] About to invoke write method [public void org.codehaus.xfire.spring.ServiceBean.setServiceClass(java.lang.Class)] on object of class [org.codehaus.xfire.spring.ServiceBean]
+12:22:26,443 DEBUG [BeanWrapperImpl] Invoked write method [public void org.codehaus.xfire.spring.ServiceBean.setServiceClass(java.lang.Class)] with value of type [java.lang.Class]
+12:22:26,443 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors before initialization of bean &apos;org.codehaus.xfire.spring.ServiceBean&apos;
+12:22:26,443 DEBUG [ApplicationContextAwareProcessor] Invoking setApplicationContext on ApplicationContextAware bean &apos;org.codehaus.xfire.spring.ServiceBean&apos;
+12:22:26,443 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire&apos;
+12:22:26,443 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire.serviceFactory&apos;
+12:22:26,443 DEBUG [DefaultListableBeanFactory] Invoking afterPropertiesSet() on bean with name &apos;org.codehaus.xfire.spring.ServiceBean&apos;
+[GC 14474K-&gt;10557K(65088K), 0.0051565 secs]
+[GC 14653K-&gt;10595K(65088K), 0.0044726 secs]
+12:22:27,274 INFO  [ServiceBean] Exposing service with name {http://ws.identity.medcommons.net}AccountCreationServiceImpl
+12:22:27,274 DEBUG [DefaultListableBeanFactory] Invoking BeanPostProcessors after initialization of bean &apos;org.codehaus.xfire.spring.ServiceBean&apos;
+12:22:27,374 DEBUG [GenericApplicationContext] Publishing event in context [org.codehaus.xfire.spring.GenericApplicationContext;hashCode=32780219]: org.springframework.context.event.ContextRefreshedEvent[source=org.codehaus.xfire.spring.GenericApplicationContext: display name [org.codehaus.xfire.spring.GenericApplicationContext;hashCode=32780219]; startup date [Mon Sep 01 12:22:25 EST 2008]; root of context hierarchy]
+12:22:27,414 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire&apos;
+12:22:27,414 DEBUG [XFireConfigLoader] Setting XFire instance: org.codehaus.xfire.DefaultXFire@120bffd
+12:22:27,414 DEBUG [DefaultTransportManager] Registered transport org.codehaus.xfire.transport.local.LocalTransport@1c21535
+12:22:27,414 DEBUG [DefaultTransportManager] Registered transport org.codehaus.xfire.transport.dead.DeadLetterTransport@fe83e5
+12:22:27,414 DEBUG [DefaultTransportManager] Registered transport org.codehaus.xfire.transport.http.SoapHttpTransport@185477d
+12:22:27,414 DEBUG [DefaultTransportManager] Registered transport org.codehaus.xfire.transport.http.HttpTransport@1188439
+12:22:27,414 DEBUG [DefaultListableBeanFactory] Returning cached instance of singleton bean &apos;xfire&apos;
+12:22:27,414 DEBUG [DefaultTransportManager] Registered transport org.codehaus.xfire.transport.http.XFireServletTransport@90fb5f
+12:22:27,765 DEBUG [DefaultEndpoint] Received message to /identity//ws/AccountCreationServiceImpl
+12:22:27,775 DEBUG [HandlerPipeline] adding handler org.codehaus.xfire.handler.DispatchServiceHandler@713a72 to phase dispatch
+12:22:27,775 DEBUG [HandlerPipeline] adding handler org.codehaus.xfire.soap.handler.ReadHeadersHandler@1b42301 to phase parse
+12:22:27,775 DEBUG [HandlerPipeline] adding handler org.codehaus.xfire.soap.handler.ValidateHeadersHandler@1664cde to phase pre-invoke
+12:22:27,775 DEBUG [HandlerPipeline] adding handler org.codehaus.xfire.handler.LocateBindingHandler@1409c28 to phase dispatch
+12:22:27,775 DEBUG [HandlerPipeline] adding handler org.codehaus.xfire.soap.handler.SoapActionInHandler@cc2061 to phase dispatch
+12:22:27,775 DEBUG [HandlerPipeline] adding handler org.codehaus.xfire.soap.handler.SoapBodyHandler@161eccb to phase dispatch
+12:22:27,775 DEBUG [HandlerPipeline] adding handler org.codehaus.xfire.service.binding.ServiceInvocationHandler@13e9b to phase service
+12:22:27,775 DEBUG [HandlerPipeline] Invoking phase transport
+12:22:27,775 DEBUG [HandlerPipeline] Invoking phase parse
+12:22:27,775 DEBUG [HandlerPipeline] Invoking handler org.codehaus.xfire.soap.handler.ReadHeadersHandler in phase parse
+12:22:27,775 DEBUG [HandlerPipeline] Invoking phase pre-dispatch
+12:22:27,775 DEBUG [HandlerPipeline] Invoking phase dispatch
+12:22:27,775 DEBUG [HandlerPipeline] Invoking handler org.codehaus.xfire.handler.LocateBindingHandler in phase dispatch
+12:22:27,775 DEBUG [HandlerPipeline] Invoking handler org.codehaus.xfire.soap.handler.SoapBodyHandler in phase dispatch
+12:22:27,785 DEBUG [HandlerPipeline] Invoking handler org.codehaus.xfire.soap.handler.SoapActionInHandler in phase dispatch
+12:22:27,785 DEBUG [HandlerPipeline] Invoking handler org.codehaus.xfire.handler.DispatchServiceHandler in phase dispatch
+12:22:27,785 DEBUG [HandlerPipeline] adding handler org.codehaus.xfire.handler.OutMessageSender@1edd56f to phase send
+12:22:27,785 DEBUG [HandlerPipeline] adding handler org.codehaus.xfire.soap.handler.SoapActionOutHandler@157a7ec to phase transport
+12:22:27,785 DEBUG [HandlerPipeline] adding handler org.codehaus.xfire.soap.handler.SoapSerializerHandler@1d18707 to phase post-invoke
+12:22:27,785 DEBUG [HandlerPipeline] Invoking phase policy
+12:22:27,785 DEBUG [HandlerPipeline] Invoking phase user
+12:22:27,785 DEBUG [HandlerPipeline] Invoking phase pre-invoke
+12:22:27,785 DEBUG [HandlerPipeline] Invoking handler org.codehaus.xfire.soap.handler.ValidateHeadersHandler in phase pre-invoke
+12:22:27,785 DEBUG [HandlerPipeline] Invoking phase service
+12:22:27,785 DEBUG [HandlerPipeline] Invoking handler org.codehaus.xfire.service.binding.ServiceInvocationHandler in phase service
+[GC 14691K-&gt;10728K(65088K), 0.0060438 secs]
+12:22:27,905 DEBUG [SessionImpl] opened session at timestamp: 12202357477
+12:22:27,905 DEBUG [SessionImpl] opened session at timestamp: 12202357479
+12:22:27,905 DEBUG [JDBCTransaction] begin
+12:22:27,905 DEBUG [ConnectionManager] opening JDBC connection
+12:22:27,915 DEBUG [BasicResourcePool] trace com.mchange.v2.resourcepool.BasicResourcePool@d9799d [managed: 2, unused: 1, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@11ce4fe)
+12:22:27,915 DEBUG [JDBCTransaction] current autocommit status: false
+12:22:27,915 DEBUG [JDBCContext] after transaction begin
+12:22:27,915 DEBUG [QueryPlanCache] unable to locate HQL query plan in cache; generating (select max(u.id) from User u)
+12:22:28,025 DEBUG [QueryTranslatorImpl] parse() - HQL: select max(u.id) from net.medcommons.identity.model.User u
+12:22:28,065 DEBUG [AST] --- HQL AST ---
+ \-[QUERY] &apos;query&apos;
+    \-[SELECT_FROM] &apos;SELECT_FROM&apos;
+       +-[FROM] &apos;from&apos;
+       |  \-[RANGE] &apos;RANGE&apos;
+       |     +-[DOT] &apos;.&apos;
+       |     |  +-[DOT] &apos;.&apos;
+       |     |  |  +-[DOT] &apos;.&apos;
+       |     |  |  |  +-[DOT] &apos;.&apos;
+       |     |  |  |  |  +-[IDENT] &apos;net&apos;
+       |     |  |  |  |  \-[IDENT] &apos;medcommons&apos;
+       |     |  |  |  \-[IDENT] &apos;identity&apos;
+       |     |  |  \-[IDENT] &apos;model&apos;
+       |     |  \-[IDENT] &apos;User&apos;
+       |     \-[ALIAS] &apos;u&apos;
+       \-[SELECT] &apos;select&apos;
+          \-[AGGREGATE] &apos;max&apos;
+             \-[DOT] &apos;.&apos;
+                +-[IDENT] &apos;u&apos;
+                \-[IDENT] &apos;id&apos;
+
+12:22:28,065 DEBUG [ErrorCounter] throwQueryException() : no errors
+12:22:28,145 DEBUG [HqlSqlBaseWalker] select &lt;&lt; begin [level=1, statement=select]
+12:22:28,165 DEBUG [FromElement] FromClause{level=1} :  net.medcommons.identity.model.User (u) -&gt; user0_
+12:22:28,165 DEBUG [FromReferenceNode] Resolved :  u -&gt; user0_.mcid
+12:22:28,165 DEBUG [FromElement] handling property dereference [net.medcommons.identity.model.User (u) -&gt; id (class)]
+12:22:28,165 DEBUG [DotNode] getDataType() : id -&gt; org.hibernate.type.LongType@136836c
+12:22:28,175 DEBUG [FromReferenceNode] Resolved :  u.id -&gt; user0_.mcid
+12:22:28,175 DEBUG [HqlSqlBaseWalker] select : finishing up [level=1, statement=select]
+12:22:28,175 DEBUG [HqlSqlWalker] processQuery() :  ( SELECT ( {select clause} ( max ( user0_.mcid user0_.mcid id ) ) ) ( FromClause{level=1} users user0_ ) )
+12:22:28,195 DEBUG [JoinProcessor] Using FROM fragment [users user0_]
+12:22:28,195 DEBUG [HqlSqlBaseWalker] select &gt;&gt; end [level=1, statement=select]
+12:22:28,225 DEBUG [AST] --- SQL AST ---
+ \-[SELECT] QueryNode: &apos;SELECT&apos;  querySpaces (users)
+    +-[SELECT_CLAUSE] SelectClause: &apos;{select clause}&apos;
+    |  +-[AGGREGATE] AggregateNode: &apos;max&apos;
+    |  |  \-[DOT] DotNode: &apos;user0_.mcid&apos; {propertyName=id,dereferenceType=4,propertyPath=id,path=u.id,tableAlias=user0_,className=net.medcommons.identity.model.User,classAlias=u}
+    |  |     +-[ALIAS_REF] IdentNode: &apos;user0_.mcid&apos; {alias=u, className=net.medcommons.identity.model.User, tableAlias=user0_}
+    |  |     \-[IDENT] IdentNode: &apos;id&apos; {originalText=id}
+    |  \-[SELECT_COLUMNS] SqlNode: &apos; as col_0_0_&apos;
+    \-[FROM] FromClause: &apos;from&apos; FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[u], fromElementByTableAlias=[user0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: &apos;users user0_&apos; FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=u,role=null,tableName=users,tableAlias=user0_,origin=null,colums={,className=net.medcommons.identity.model.User}}
+
+12:22:28,225 DEBUG [ErrorCounter] throwQueryException() : no errors
+12:22:28,245 DEBUG [QueryTranslatorImpl] HQL: select max(u.id) from net.medcommons.identity.model.User u
+12:22:28,245 DEBUG [QueryTranslatorImpl] SQL: select max(user0_.mcid) as col_0_0_ from users user0_
+12:22:28,245 DEBUG [ErrorCounter] throwQueryException() : no errors
+12:22:28,245 DEBUG [HQLQueryPlan] HQL param location recognition took 0 mills (select max(u.id) from User u)
+12:22:28,255 DEBUG [QueryPlanCache] located HQL query plan in cache (select max(u.id) from User u)
+12:22:28,255 DEBUG [HQLQueryPlan] find: select max(u.id) from User u
+12:22:28,255 DEBUG [QueryParameters] named parameters: {}
+12:22:28,265 DEBUG [AbstractBatcher] about to open PreparedStatement (open PreparedStatements: 0, globally: 0)
+12:22:28,265 DEBUG [SQL] select max(user0_.mcid) as col_0_0_ from users user0_
+Hibernate: select max(user0_.mcid) as col_0_0_ from users user0_
+12:22:28,265 DEBUG [AbstractBatcher] preparing statement
+12:22:28,406 DEBUG [GooGooStatementCache] cxnStmtMgr.statementSet( com.mysql.jdbc.Connection@e0eb3f ).size(): 1
+12:22:28,406 DEBUG [GooGooStatementCache] checkoutStatement: com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 1; checked out: 1; num connections: 1; num keys: 1
+[GC 14824K-&gt;10961K(65088K), 0.0068802 secs]
+12:22:28,456 DEBUG [AbstractBatcher] about to open ResultSet (open ResultSets: 0, globally: 0)
+12:22:28,456 DEBUG [Loader] processing result set
+12:22:28,456 DEBUG [Loader] result set row: 0
+12:22:28,456 DEBUG [Loader] result row: 
+12:22:28,456 DEBUG [LongType] returning &apos;1278192526382303&apos; as column: col_0_0_
+12:22:28,456 DEBUG [Loader] done processing result set (1 rows)
+12:22:28,456 DEBUG [AbstractBatcher] about to close ResultSet (open ResultSets: 1, globally: 1)
+12:22:28,456 DEBUG [AbstractBatcher] about to close PreparedStatement (open PreparedStatements: 1, globally: 1)
+12:22:28,456 DEBUG [AbstractBatcher] closing statement
+12:22:28,456 DEBUG [GooGooStatementCache] checkinStatement(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 1; checked out: 0; num connections: 1; num keys: 1
+12:22:28,466 DEBUG [StatefulPersistenceContext] initializing non-lazy collections
+12:22:28,466 INFO  [LocalMCIDGenerator] mcid range initialized at 1278192526382304
+12:22:28,466 INFO  [LocalMCIDGenerator] Initialized mcids in 0 ms
+12:22:28,466 DEBUG [JDBCTransaction] commit
+12:22:28,466 DEBUG [SessionImpl] automatically flushing session
+12:22:28,466 DEBUG [JDBCContext] before transaction completion
+12:22:28,466 DEBUG [SessionImpl] before transaction completion
+12:22:28,466 DEBUG [JDBCTransaction] committed JDBC Connection
+12:22:28,466 DEBUG [JDBCContext] after transaction completion
+12:22:28,466 DEBUG [ConnectionManager] aggressively releasing JDBC connection
+12:22:28,466 DEBUG [ConnectionManager] releasing JDBC connection [ (open PreparedStatements: 0, globally: 0) (open ResultSets: 0, globally: 0)]
+12:22:28,466 DEBUG [GooGooStatementCache] checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 1; checked out: 0; num connections: 1; num keys: 1
+12:22:28,466 DEBUG [BasicResourcePool] trace com.mchange.v2.resourcepool.BasicResourcePool@d9799d [managed: 2, unused: 1, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@11ce4fe)
+12:22:28,466 DEBUG [GooGooStatementCache] checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 1; checked out: 0; num connections: 1; num keys: 1
+12:22:28,476 DEBUG [SessionImpl] after transaction completion
+12:22:28,476 DEBUG [SessionImpl] closing session
+12:22:28,476 DEBUG [ConnectionManager] connection already null in cleanup : no action
+12:22:28,476 DEBUG [JDBCTransaction] begin
+12:22:28,476 DEBUG [ConnectionManager] opening JDBC connection
+12:22:28,476 DEBUG [BasicResourcePool] trace com.mchange.v2.resourcepool.BasicResourcePool@d9799d [managed: 2, unused: 1, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@11ce4fe)
+12:22:28,476 DEBUG [JDBCTransaction] current autocommit status: false
+12:22:28,476 DEBUG [JDBCContext] after transaction begin
+1/09/2008 12:22:28 net.medcommons.identity.ws.AccountCreationServiceImpl saveRls
+INFO: Setting rls url  for new user 1278192526382736
+12:22:28,486 DEBUG [DefaultSaveOrUpdateEventListener] saving transient instance
+12:22:28,486 DEBUG [AbstractSaveEventListener] generated identifier: 1278192526382736, using strategy: org.hibernate.id.Assigned
+12:22:28,486 DEBUG [AbstractSaveEventListener] saving [net.medcommons.identity.model.AccountRLS#1278192526382736]
+12:22:28,686 DEBUG [DefaultSaveOrUpdateEventListener] saving transient instance
+12:22:28,686 DEBUG [AbstractSaveEventListener] generated identifier: 1278192526382736, using strategy: org.hibernate.id.Assigned
+12:22:28,686 DEBUG [AbstractSaveEventListener] saving [net.medcommons.identity.model.User#1278192526382736]
+12:22:28,686 DEBUG [Cascade] processing cascade ACTION_SAVE_UPDATE for: net.medcommons.identity.model.User
+12:22:28,686 DEBUG [Cascade] done processing cascade ACTION_SAVE_UPDATE for: net.medcommons.identity.model.User
+12:22:28,896 DEBUG [WrapVisitor] Wrapped collection in role: net.medcommons.identity.model.User.rlsSet
+12:22:28,896 DEBUG [Cascade] processing cascade ACTION_SAVE_UPDATE for: net.medcommons.identity.model.User
+12:22:28,896 DEBUG [Cascade] cascade ACTION_SAVE_UPDATE for collection: net.medcommons.identity.model.User.rlsSet
+12:22:28,896 DEBUG [CascadingAction] cascading to saveOrUpdate: net.medcommons.identity.model.AccountRLS
+12:22:28,926 DEBUG [AbstractSaveEventListener] persistent instance of: net.medcommons.identity.model.AccountRLS
+12:22:28,926 DEBUG [DefaultSaveOrUpdateEventListener] ignoring persistent instance
+12:22:28,926 DEBUG [DefaultSaveOrUpdateEventListener] object already associated with session: [net.medcommons.identity.model.AccountRLS#1278192526382736]
+12:22:28,926 DEBUG [Cascade] done cascade ACTION_SAVE_UPDATE for collection: net.medcommons.identity.model.User.rlsSet
+12:22:28,926 DEBUG [Cascade] done processing cascade ACTION_SAVE_UPDATE for: net.medcommons.identity.model.User
+12:22:28,926 INFO  [RESTUtil] SSL Cert validation is enabled.
+12:22:28,926 INFO  [RESTUtil] Sending JSON Request: http://yowie:7080/mctest/secure/ws/createAuthenticationToken.php?auth=&amp;accountIds=1278192526382736&amp;auth=84547f4c4a7085a8c9960883d0fc60e06556604a
+12:22:29,237 DEBUG [JDBCTransaction] commit
+12:22:29,237 DEBUG [SessionImpl] automatically flushing session
+12:22:29,237 DEBUG [AbstractFlushingEventListener] flushing session
+12:22:29,237 DEBUG [AbstractFlushingEventListener] processing flush-time cascades
+12:22:29,237 DEBUG [Cascade] processing cascade ACTION_SAVE_UPDATE for: net.medcommons.identity.model.User
+12:22:29,237 DEBUG [Cascade] cascade ACTION_SAVE_UPDATE for collection: net.medcommons.identity.model.User.rlsSet
+12:22:29,237 DEBUG [CascadingAction] cascading to saveOrUpdate: net.medcommons.identity.model.AccountRLS
+12:22:29,237 DEBUG [AbstractSaveEventListener] persistent instance of: net.medcommons.identity.model.AccountRLS
+12:22:29,237 DEBUG [DefaultSaveOrUpdateEventListener] ignoring persistent instance
+12:22:29,237 DEBUG [DefaultSaveOrUpdateEventListener] object already associated with session: [net.medcommons.identity.model.AccountRLS#1278192526382736]
+12:22:29,237 DEBUG [Cascade] done cascade ACTION_SAVE_UPDATE for collection: net.medcommons.identity.model.User.rlsSet
+12:22:29,237 DEBUG [Cascade] done processing cascade ACTION_SAVE_UPDATE for: net.medcommons.identity.model.User
+12:22:29,237 DEBUG [AbstractFlushingEventListener] dirty checking collections
+12:22:29,237 DEBUG [AbstractFlushingEventListener] Flushing entities and processing referenced collections
+12:22:29,247 DEBUG [Collections] Collection found: [net.medcommons.identity.model.User.rlsSet#1278192526382736], was: [&lt;unreferenced&gt;] (initialized)
+12:22:29,247 DEBUG [AbstractFlushingEventListener] Processing unreferenced collections
+12:22:29,247 DEBUG [AbstractFlushingEventListener] Scheduling collection removes/(re)creates/updates
+12:22:29,247 DEBUG [AbstractFlushingEventListener] Flushed: 2 insertions, 0 updates, 0 deletions to 2 objects
+12:22:29,247 DEBUG [AbstractFlushingEventListener] Flushed: 1 (re)creations, 0 updates, 0 removals to 1 collections
+12:22:29,247 DEBUG [Printer] listing entities:
+12:22:29,247 DEBUG [Printer] net.medcommons.identity.model.User{server_id=1, updatetime=1220235748, amazonUserToken=null, amazonProductToken=null, enableVouchers=null, sha1=2B975F7D5DB317F333A6C7EE0A00898587A95499, since=2008-09-01 12:22:28, rlsSet=[net.medcommons.identity.model.AccountRLS#1278192526382736], amazonPID=null, first_name=Test, ccrlogupdatetime=0, email=ssadedin+badboytest@gmail.com, accountType=SPONSORED, last_name=Patient-1, photoUrl=null, smslogin=null, groups=null, mcid=1278192526382736, mobile=null}
+12:22:29,247 DEBUG [Printer] net.medcommons.identity.model.AccountRLS{rlsUrl=, accountId=1278192526382736}
+12:22:29,247 DEBUG [AbstractFlushingEventListener] executing flush
+12:22:29,247 DEBUG [ConnectionManager] registering flush begin
+12:22:29,247 DEBUG [AbstractEntityPersister] Inserting entity: [net.medcommons.identity.model.AccountRLS#1278192526382736]
+12:22:29,257 DEBUG [AbstractBatcher] about to open PreparedStatement (open PreparedStatements: 0, globally: 0)
+12:22:29,257 DEBUG [SQL] insert into account_rls (ar_rls_url, ar_accid) values (?, ?)
+Hibernate: insert into account_rls (ar_rls_url, ar_accid) values (?, ?)
+12:22:29,257 DEBUG [AbstractBatcher] preparing statement
+12:22:29,357 DEBUG [GooGooStatementCache] cxnStmtMgr.statementSet( com.mysql.jdbc.Connection@e0eb3f ).size(): 2
+12:22:29,357 DEBUG [GooGooStatementCache] checkoutStatement: com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 2; checked out: 1; num connections: 1; num keys: 2
+12:22:29,357 DEBUG [AbstractEntityPersister] Dehydrating entity: [net.medcommons.identity.model.AccountRLS#1278192526382736]
+12:22:29,357 DEBUG [StringType] binding &apos;&apos; to parameter: 1
+12:22:29,357 DEBUG [StringType] binding &apos;1278192526382736&apos; to parameter: 2
+12:22:29,357 DEBUG [AbstractEntityPersister] Inserting entity: [net.medcommons.identity.model.User#1278192526382736]
+12:22:29,357 DEBUG [AbstractBatcher] Executing batch size: 1
+12:22:29,377 DEBUG [AbstractBatcher] about to close PreparedStatement (open PreparedStatements: 1, globally: 1)
+12:22:29,377 DEBUG [AbstractBatcher] closing statement
+12:22:29,377 DEBUG [GooGooStatementCache] checkinStatement(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 2; checked out: 0; num connections: 1; num keys: 2
+12:22:29,377 DEBUG [AbstractBatcher] about to open PreparedStatement (open PreparedStatements: 0, globally: 0)
+12:22:29,377 DEBUG [SQL] insert into users (email, sha1, server_id, since, first_name, last_name, photoUrl, mobile, smslogin, updatetime, ccrlogupdatetime, enable_vouchers, acctype, amazon_user_token, amazon_product_token, amazon_pid, mcid) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into users (email, sha1, server_id, since, first_name, last_name, photoUrl, mobile, smslogin, updatetime, ccrlogupdatetime, enable_vouchers, acctype, amazon_user_token, amazon_product_token, amazon_pid, mcid) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+12:22:29,377 DEBUG [AbstractBatcher] preparing statement
+12:22:29,377 DEBUG [GooGooStatementCache] cxnStmtMgr.statementSet( com.mysql.jdbc.Connection@e0eb3f ).size(): 3
+12:22:29,377 DEBUG [GooGooStatementCache] checkoutStatement: com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 3; checked out: 1; num connections: 1; num keys: 3
+12:22:29,377 DEBUG [AbstractEntityPersister] Dehydrating entity: [net.medcommons.identity.model.User#1278192526382736]
+12:22:29,377 DEBUG [StringType] binding &apos;ssadedin+badboytest@gmail.com&apos; to parameter: 1
+12:22:29,377 DEBUG [StringType] binding &apos;2B975F7D5DB317F333A6C7EE0A00898587A95499&apos; to parameter: 2
+12:22:29,377 DEBUG [LongType] binding &apos;1&apos; to parameter: 3
+12:22:29,377 DEBUG [TimestampType] binding &apos;2008-09-01 12:22:28&apos; to parameter: 4
+12:22:29,387 DEBUG [StringType] binding &apos;Test&apos; to parameter: 5
+12:22:29,387 DEBUG [StringType] binding &apos;Patient-1&apos; to parameter: 6
+12:22:29,387 DEBUG [StringType] binding null to parameter: 7
+12:22:29,387 DEBUG [StringType] binding null to parameter: 8
+12:22:29,387 DEBUG [IntegerType] binding null to parameter: 9
+12:22:29,387 DEBUG [IntegerType] binding &apos;1220235748&apos; to parameter: 10
+12:22:29,387 DEBUG [LongType] binding &apos;0&apos; to parameter: 11
+12:22:29,387 DEBUG [IntegerType] binding null to parameter: 12
+12:22:29,387 DEBUG [StringType] binding &apos;SPONSORED&apos; to parameter: 13
+12:22:29,387 DEBUG [StringType] binding null to parameter: 14
+12:22:29,387 DEBUG [StringType] binding null to parameter: 15
+12:22:29,387 DEBUG [StringType] binding null to parameter: 16
+12:22:29,387 DEBUG [LongType] binding &apos;1278192526382736&apos; to parameter: 17
+12:22:29,387 DEBUG [AbstractBatcher] Executing batch size: 1
+12:22:29,407 DEBUG [AbstractBatcher] about to close PreparedStatement (open PreparedStatements: 1, globally: 1)
+12:22:29,407 DEBUG [AbstractBatcher] closing statement
+12:22:29,407 DEBUG [GooGooStatementCache] checkinStatement(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 3; checked out: 0; num connections: 1; num keys: 3
+12:22:29,407 DEBUG [AbstractCollectionPersister] Inserting collection: [net.medcommons.identity.model.User.rlsSet#1278192526382736]
+12:22:29,407 DEBUG [AbstractBatcher] about to open PreparedStatement (open PreparedStatements: 0, globally: 0)
+12:22:29,407 DEBUG [SQL] update account_rls set ar_accid=? where ar_accid=?
+Hibernate: update account_rls set ar_accid=? where ar_accid=?
+12:22:29,407 DEBUG [AbstractBatcher] preparing statement
+12:22:29,407 DEBUG [GooGooStatementCache] cxnStmtMgr.statementSet( com.mysql.jdbc.Connection@e0eb3f ).size(): 4
+12:22:29,407 DEBUG [GooGooStatementCache] checkoutStatement: com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 4; checked out: 1; num connections: 1; num keys: 4
+12:22:29,407 DEBUG [LongType] binding &apos;1278192526382736&apos; to parameter: 1
+12:22:29,407 DEBUG [StringType] binding &apos;1278192526382736&apos; to parameter: 2
+12:22:29,407 DEBUG [AbstractCollectionPersister] done inserting collection: 1 rows inserted
+12:22:29,407 DEBUG [AbstractBatcher] Executing batch size: 1
+12:22:29,407 DEBUG [AbstractBatcher] about to close PreparedStatement (open PreparedStatements: 1, globally: 1)
+12:22:29,407 DEBUG [AbstractBatcher] closing statement
+12:22:29,407 DEBUG [GooGooStatementCache] checkinStatement(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 4; checked out: 0; num connections: 1; num keys: 4
+12:22:29,407 DEBUG [ConnectionManager] registering flush end
+12:22:29,407 DEBUG [AbstractFlushingEventListener] post flush
+12:22:29,417 DEBUG [JDBCContext] before transaction completion
+12:22:29,417 DEBUG [SessionImpl] before transaction completion
+12:22:29,417 DEBUG [JDBCTransaction] committed JDBC Connection
+12:22:29,417 DEBUG [JDBCContext] after transaction completion
+12:22:29,417 DEBUG [ConnectionManager] aggressively releasing JDBC connection
+12:22:29,417 DEBUG [ConnectionManager] releasing JDBC connection [ (open PreparedStatements: 0, globally: 0) (open ResultSets: 0, globally: 0)]
+12:22:29,417 DEBUG [GooGooStatementCache] checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 4; checked out: 0; num connections: 1; num keys: 4
+12:22:29,417 DEBUG [BasicResourcePool] trace com.mchange.v2.resourcepool.BasicResourcePool@d9799d [managed: 2, unused: 1, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@11ce4fe)
+12:22:29,417 DEBUG [SessionImpl] after transaction completion
+12:22:29,417 DEBUG [SessionImpl] closing session
+12:22:29,417 DEBUG [ConnectionManager] connection already null in cleanup : no action
+12:22:29,417 DEBUG [HandlerPipeline] Invoking phase post-invoke
+12:22:29,417 DEBUG [HandlerPipeline] Invoking handler org.codehaus.xfire.soap.handler.SoapSerializerHandler in phase post-invoke
+12:22:29,417 DEBUG [HandlerPipeline] Invoking phase policy
+12:22:29,417 DEBUG [HandlerPipeline] Invoking phase user
+12:22:29,417 DEBUG [HandlerPipeline] Invoking phase transport
+12:22:29,417 DEBUG [HandlerPipeline] Invoking handler org.codehaus.xfire.soap.handler.SoapActionOutHandler in phase transport
+12:22:29,417 DEBUG [HandlerPipeline] Invoking phase send
+12:22:29,417 DEBUG [HandlerPipeline] Invoking handler org.codehaus.xfire.handler.OutMessageSender in phase send
+12:22:29,427 DEBUG [GooGooStatementCache] checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 4; checked out: 0; num connections: 1; num keys: 4
+[Full GC 14016K-&gt;11179K(65088K), 0.3003946 secs]
+12:22:29,988 INFO  [NewPatientAction] Created patient 1278192526382736 for new patient CCR
+</logContent>
+							</Response>
+						</ChildItems>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+					</ResponsesItem>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>12332</id>
+						<name>givenName</name>
+						<value>Test</value>
+						<sendEquals>true</sendEquals>
+						<method>1</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>12333</id>
+						<name>familyName</name>
+						<value>Patient-1</value>
+						<sendEquals>true</sendEquals>
+						<method>1</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>12334</id>
+						<name>auth</name>
+						<value>84547f4c4a7085a8c9960883d0fc60e06556604a</value>
+						<sendEquals>false</sendEquals>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>12335</id>
+						<name>password</name>
+						<value>tester</value>
+						<sendEquals>false</sendEquals>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>12336</id>
+						<name>createCCR</name>
+						<value>false</value>
+						<sendEquals>false</sendEquals>
+						<method>1</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>12337</id>
+						<name>email</name>
+						<value>onemctest%2Bbadboytest@gmail.com</value>
+						<sendEquals>false</sendEquals>
+					</Parameter>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<host>${gw}</host>
+				<path>/router/NewPatient.action</path>
+				<protocol>http</protocol>
+				<resource/>
+				<targetFrame/>
+				<isActive>1</isActive>
+				<label/>
+				<headers/>
+				<multipartBoundary/>
+				<Object>null</Object>
+				<lenientSubrequestCount>false</lenientSubrequestCount>
+				<formCharset>windows-1252</formCharset>
+				<method>1</method>
+				<waitForSubRequests>false</waitForSubRequests>
+			</Request>
+			<Execute v='3'>
+				<ver>12</ver>
+				<id>12338</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<name>set account id, auth</name>
+				<script>var x = eval(&apos;x=&apos;+document.body.innerText);
+badboy.setVariable(&apos;to_auth&apos;, x.auth);
+badboy.setVariable(&apos;to_accid&apos;, x.patientMedCommonsId);
+</script>
+				<imageId>4294967295</imageId>
+				<pluginAccess>false</pluginAccess>
+				<frameName/>
+			</Execute>
+			<Request v='10'>
+				<ver>12</ver>
+				<id>12339</id>
+				<Summary v='2'>
+					<played>1</played>
+					<succeeded>1</succeeded>
+					<maxResponseTime>2684</maxResponseTime>
+					<averageResponseTime>2684</averageResponseTime>
+				</Summary>
+				<childCount>4</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>12</ver>
+						<id>12340</id>
+						<Summary v='2'>
+							<played>1</played>
+							<succeeded>1</succeeded>
+							<maxResponseTime>2684</maxResponseTime>
+							<averageResponseTime>2684</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<Response v='3'>
+								<ver>12</ver>
+								<id>12384</id>
+								<Summary v='2'>
+									<played>1</played>
+									<succeeded>1</succeeded>
+									<maxResponseTime>2684</maxResponseTime>
+									<averageResponseTime>2684</averageResponseTime>
+								</Summary>
+								<timeMs>2684</timeMs>
+								<size>11994</size>
+								<encodedContent>false</encodedContent>
+								<content>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;MedCommons, Inc.&quot; /&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;MedCommons Website Version 1.0 Page $$$htmltitle$$$&quot; /&gt;
+    &lt;meta name=&quot;keywords&quot; 
+    content=&quot;medcommons, personal health records,ccr, phr, privacy, patient, health, records, medical records,
+						emergencyccr&quot;/&gt;
+    &lt;meta name=&quot;robots&quot; content=&quot;all&quot;/&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=320&quot; /&gt;
+&lt;title&gt;Dashboard - &lt;/title&gt;
+   
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;../images/favicon.gif&quot; type=&quot;image/gif&quot; /&gt;
+    &lt;link media=&quot;all&quot; href=&quot;../css/medCommonsStyles.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    function el(id) {
+      return document.getElementById(id);
+    }
+    function popuploginpage(page) {
+    	window.open(  page, &quot;IdentityWindow&quot;, &quot;status = 1, height = 400, width = 750, resizable = 0&quot; );
+    	return false;
+    }
+      function setvalue(id,innerhtml)
+    {
+    	if (el( id ))
+    	el( id ).innerHTML =innerhtml;
+    }
+    /* shows a particlur div */
+    function showinline(id)
+    {
+    	if (el( id ))
+    	el( id ).style.display = &apos;inline&apos;;
+    }
+    function showblock(id)
+    {
+    	if (el( id ))
+    	el( id ).style.display = &apos;block&apos;;
+    }
+    function dontshow(id)
+    {
+    	if (el( id ))
+    	el( id ).style.display = &apos;none&apos;;
+    }
+        function toggle(id)
+    {
+    	if (el( id ))
+    	{
+    	if  (el( id ).style.display == &apos;none&apos;)
+    	el( id ).style.display = &apos;block&apos;; else
+    	el( id ).style.display = &apos;none&apos;;
+    	}
+    	return true;
+    		
+    }
+    /**
+    * gets the value of the specified cookie.
+    */
+    function getCookie(name)
+    {
+    	var dc = document.cookie;
+    	var prefix = name + &quot;=&quot;;
+    	var begin = dc.indexOf(&quot;; &quot; + prefix);
+    	if (begin == -1) {
+    		begin = dc.indexOf(prefix);
+    		if (begin != 0) return null;
+    	}
+    	else {
+    		begin += 2;
+    	}
+    	var end = document.cookie.indexOf(&quot;;&quot;, begin);
+    	if (end == -1) {
+    		end = dc.length;
+    	}
+    	return unescape(dc.substring(begin + prefix.length, end));
+    }
+
+    // This function is included to overcome a bug in Netscape&apos;s implementation
+    // of the escape () function:
+
+    function myunescape (str)
+    {
+    	str = &apos;&apos; + str;
+    	while (true)
+    	{
+    		var i = str . indexOf (&apos;+&apos;);
+    		if (i &lt; 0)
+    		break;
+    		str = str . substring (0, i) + &apos; &apos; + str . substring (i + 1, str . length);
+    	}
+    	return unescape (str);
+    }
+
+    // This function creates the args [] array and populates it with data
+    // found in the URL&apos;s search string:
+
+    var args;
+
+    function args_init ()
+    {
+    	args = new Array ();
+    	var argstring = window . location . search;
+    	if (argstring . charAt (0) != &apos;?&apos;)
+    	return;
+    	argstring = argstring . substring (1, argstring . length);
+    	var argarray = argstring . split (&apos;&amp;&apos;);
+    	var i;
+    	var singlearg;
+    	for (i = 0; i &lt; argarray . length; ++ i)
+    	{
+    		singlearg = argarray [i] . split (&apos;=&apos;);
+    		if (singlearg . length != 2)
+    		continue;
+    		var key = myunescape (singlearg [0]);
+    		var value = myunescape (singlearg [1]);
+    		args [key] = value;
+    	}
+    }
+
+    var signed_on; 
+
+    var top_nav = [
+      { text: &apos;Help&apos;, href: &apos;/help.php&apos; },
+      { text: &apos;Dashboard&apos;, href: &apos;http://mc:7080/acct/home.php&apos; },
+      { text: &apos;Services&apos;, href: &apos;http://mc:7080/mod/svcsetup.php&apos;, hidden: true },
+      { text: &apos;Vouchers&apos;, href: &apos;http://mc:7080/mod/voucherlist.php&apos;, hidden: true },
+      { text: &apos;Settings&apos;, href: &apos;http://mc:7080/acct/settings.php&apos; },
+      { text: &apos;Sign In&apos;, href: &apos;http://mc:7080/site/personal.php&apos;, hidden: true },
+      { text: &apos;Logout&apos;, href: &apos;http://mc:7080/acct/logout.php&apos; }
+    ];
+
+    function render_top_nav() {
+      var h = &apos;&apos;;
+      for(var i=0; i&lt;top_nav.length; ++i) {
+        var item = top_nav[i];
+        if(item.hidden)
+          continue;
+        if(i!=0)
+          h += &apos;&amp;nbsp;|&amp;nbsp; &apos;; // trailing space helps wrapping
+        if(item.disabled)
+          h += &apos;&lt;li class=&quot;light&quot;&gt;&apos;+item.text+&apos;&lt;/li&gt;&apos;;
+        else 
+          h += &apos;&lt;li&gt;&lt;a class=&quot;menu_&apos;+item.text.toLowerCase().replace(/ /g,&apos;&apos;)+&apos;&quot; href=&quot;&apos;+item.href+&apos;&quot;&gt;&apos;+item.text+&apos;&lt;/a&gt;&lt;/li&gt;&apos;;
+      }
+      el(&apos;navcontainer&apos;).innerHTML=(&apos;&lt;ul id=&quot;navlist&quot; class=&quot;listinlinetiny&quot;&gt;&apos; + h +&apos;&lt;/ul&gt;&apos;);
+    }
+
+    function nav(txt) {
+      for(var i=0; i&lt;top_nav.length; ++i) {
+        if(top_nav[i].text == txt)
+          return top_nav[i];
+      }
+    }
+
+    function get_mc_attribute(att) {
+      var mc = getCookie(&apos;mc&apos;);
+      if(!mc)
+        return null;
+      var atts = mc.split(&apos;,&apos;);
+      for(var i=0; i&lt;atts.length; ++i) { 
+        if(atts[i].match(new RegExp(&apos;^&apos;+att+&apos;=&apos;))) {
+          return atts[i].split(&apos;=&apos;)[1];
+        }
+      }
+      return null;
+    }
+
+    function wsinit()
+    {
+    	args_init();
+    	if (getCookie(&apos;mc&apos;))	{
+    		signed_on = true;
+    		showblock(&apos;loggedon&apos;);
+    		dontshow(&apos;notloggedon&apos;);
+    		showinline(&apos;visi&apos;);
+        nav(&apos;Logout&apos;).hidden = false;
+        nav(&apos;Dashboard&apos;).hidden = false;
+        nav(&apos;Settings&apos;).hidden = false;
+        nav(&apos;Sign In&apos;).hidden = true;
+        var s = get_mc_attribute(&apos;s&apos;);
+        if((s &amp; 2) &gt; 0) {
+          nav(&apos;Vouchers&apos;).hidden = false;
+          nav(&apos;Services&apos;).hidden = false;
+        }
+        if((s &amp; 4) &gt; 0) {
+          nav(&apos;Settings&apos;).hidden = true;
+        }
+    	}
+    	else
+    	{
+    		signed_on = false;
+    		showblock(&apos;notloggedon&apos;);
+    		dontshow(&apos;loggedon&apos;);
+    		dontshow(&apos;visi&apos;);
+        nav(&apos;Sign In&apos;).hidden = false;
+        for(i in menu=[&apos;Dashboard&apos;,&apos;Logout&apos;,&apos;Settings&apos;,&apos;Vouchers&apos;, &apos;Services&apos;]) {
+          nav(menu[i]).hidden = true;
+        }
+    	}
+     render_top_nav();
+
+    	for (ix = 0; ix&lt;10 ; ++ ix)
+    	{
+    		if (args[&apos;e&apos;+ix])
+    	
+    		if (args[&apos;p&apos;+ix])
+    		{
+    			p = args[&apos;p&apos;+ix];
+    			el(p).innerHTML = &apos;** &apos; + args[&apos;e&apos;+ix] + &apos;**&apos;;
+    		}
+    		
+    	}
+    }
+
+    &lt;/script&gt;
+    
+
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;http://mc:7080/acct/acct_all.css.php&quot; type=&quot;text/css&quot;/&gt;
+      &lt;script type=&quot;text/javascript&quot; src=&quot;http://mc:7080/acct/acct_all.js.php&quot;&gt;This page needs Javascript to work properly.&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+        function calculateHeight() {
+          if($(&apos;featureboxes&apos;)) { // prevents errors on load
+            var h = $(&apos;featureboxes&apos;).scrollHeight + 12;
+            return h;
+          }
+          else
+            return 0;
+        }
+    &lt;/script&gt;
+    &lt;!--[if lt IE 7]&gt;
+      &lt;script type=&quot;text/javascript&quot;&gt;
+        function calculateHeight() {
+          if (document.body.scrollHeight &gt; document.body.offsetHeight){ // all but Explorer Mac
+            h = document.body.scrollHeight;
+          } 
+          else { // works in Explorer 6 Strict, Mozilla (not FF) and Safari
+            h = document.body.offsetHeight;
+          }
+          return h;
+        }
+      &lt;/script&gt;
+    &lt;![endif]--&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+      function init() {
+      	www_init();
+
+                addHeightSync();
+
+                                              }
+    &lt;/script&gt;
+
+
+    &lt;style type=&apos;text/css&apos;&gt;
+      #main h2 {
+	color:#3B5269;
+	font-family: Rockwell,Georgia,&quot;Times New Roman&quot;,Times,serif;
+	font-size:170%;
+	margin-top:1em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+      }
+    &lt;/style&gt;
+    &lt;/head&gt;
+&lt;body  id=&apos;$$$pageid$$$&apos; onload=&quot;init();&quot;&gt;
+&lt;table id=&apos;topheader&apos;&gt;&lt;tr&gt;
+&lt;td id =&apos;topleft&apos; &gt;
+&lt;a href=&apos;http://www.medcommons.net/&apos; title=&apos;MedCommons Homepage&apos;&gt;&lt;img  border=&quot;0&quot; src=&quot;/images/MEDcommons_logo_246x50.gif&quot; /&gt;&lt;/a&gt;&lt;div id=&quot;navcontainer&quot;&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td width=100% &gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td  id=&apos;topright&apos; &gt;
+ &lt;span id=&apos;visi&apos; class=right &gt;
+                &lt;a href=&apos;../acct/home.php&apos;&gt;&lt;img alt=&apos;&apos; border=0 id=&apos;stamp&apos; src=&apos;../acct/stamp.php&apos;  /&gt;&lt;/a&gt;
+ &lt;/span&gt;
+&lt;/td&gt;
+ &lt;/tr&gt;&lt;/table&gt;
+        &lt;div id=&apos;main&apos;&gt;
+                   
+    &lt;script type=&quot;text/javascript&quot;&gt;
+  var closeTimer = null;
+  function updateContents(req) {
+    $(&apos;patientDetails&apos;).innerHTML = req.responseText;
+  }
+  function reloadGW() {
+    doSimpleXMLHttpRequest(&apos;home.php?template=pdframe&apos;).addCallback(updateContents);
+  }
+  function setGWCookie(url) {
+    var c = (url? url + &quot;;1278192526382736&quot; : &apos;&apos;);
+    setCookie(&quot;mcgw&quot;,c, null, &quot;/&quot;,null);
+    log(&apos;set gw to &apos; + url);
+    return true;
+  }
+  ce_connect(&apos;closeCCR&apos;,function(guid) {
+    closeTimer = setTimeout(reloadGW,3000);
+    setGWCookie(null);
+  });
+  ce_connect(&apos;clearGateway&apos;,function(gwUrl) {
+    setGWCookie(null);
+    reloadGW();
+  });
+  ce_connect(&apos;openCCR&apos;,function(guid,gwUrl) {
+    // don&apos;t reload if no gwurl provided.  otherwise this may cause actual current gwUrl to get lost.
+    if((guid != &apos;import&apos;) &amp;&amp; gwUrl) { 
+      setGWCookie(gwUrl);
+      reloadGW();
+    }
+    if(closeTimer != null) {
+      window.clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+  });
+  ce_connect(&apos;openCCRUpdated&apos;, function() {
+    if(!document.getElementById(&apos;patientDetailFrameMarker&apos;)) {
+      reloadGW();
+    }
+  });
+&lt;/script&gt;
+
+&lt;h2&gt;Welcome to MedCommons&lt;/h2&gt;
+
+&lt;table id=&apos;introoptions&apos;&gt;
+  &lt;tr&gt;
+    &lt;td width=&apos;40%&apos;&gt;
+        &lt;div class=&apos;patientintro rounded&apos;&gt;
+          &lt;div class=&apos;introcontent&apos;&gt;
+            &lt;h4&gt;Get Started as a Patient&lt;/h4&gt;
+            &lt;p&gt;Are you a patient or carer 
+               looking to create and manage a health record?&lt;/p&gt;
+               &lt;form action=&apos;http://yowie:9080/router/tracking.jsp?tracking=new&amp;accid=1278192526382736&amp;auth=c44e47994a9f152d8a64649998634c898dce8864&amp;am=p&apos; method=&apos;post&apos; target=&apos;ccr&apos;&gt;
+               &lt;input type=&apos;submit&apos; value=&apos;Create a Current CCR&apos; class=&apos;mainlarge&apos;/&gt;
+               &lt;/form&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/td&gt;
+    &lt;td width=&apos;40%&apos;&gt;
+        &lt;div class=&apos;providerintro rounded&apos;&gt;
+          &lt;div class=&apos;introcontent&apos;&gt;
+            &lt;h4&gt;Get Started as a Provider&lt;/h4&gt;
+             &lt;p&gt;Are you a health services provider who needs to provide
+                records to others?&lt;/p&gt;
+            &lt;form action=&apos;enable_mod.php&apos; method=&apos;post&apos;&gt;
+              &lt;input type=&apos;hidden&apos; name=&apos;enable_mod&apos; value=&apos;true&apos;/&gt;
+              &lt;input type=&apos;submit&apos; value=&apos;Enable Services&apos; class=&apos;mainlarge&apos;/&gt;
+            &lt;/form&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;script type=&apos;text/javascript&apos;&gt;
+addLoadEvent(function() {
+  roundClass(&apos;div&apos;,&apos;rounded&apos;);
+  $(&apos;introoptions&apos;).style.visibility = &apos;visible&apos;;
+});
+ce_connect(&apos;openCCRUpdated&apos;,function() {
+  document.location.reload();
+});
+&lt;/script&gt;
+
+        &lt;/div&gt;
+
+            
+   
+    &amp;nbsp;&lt;br/&gt;
+     &lt;div id=&quot;footer&quot;&gt;
+	&lt;ul class=&quot;listinlinetiny&quot;&gt;
+			&lt;li&gt;Copyright &amp;copy; 2008 MedCommons, Inc.&lt;/li&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                   &lt;li&gt;&lt;a href=&quot;http://www.medcommons.net/index.php&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+                     &lt;li&gt;&lt;a href=&quot;http://www.medcommons.net/termsofuse.php&quot;&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+                         &lt;li&gt;&lt;a href=&apos;http://www.medcommons.net/privacy.php&apos;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+                         &lt;li&gt;&lt;a target=&apos;_new&apos; href=&quot;http://ccrcommons.com&quot;&gt;Public HealthURLs&lt;/a&gt;&lt;/li&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+                            &lt;li&gt;&lt;a href=&quot;http://forum.medcommons.net/&quot;&gt;Forums&lt;/a&gt;&lt;/li&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+                       &lt;li&gt;&lt;a href=&apos;mailto:info@medcommons.net&apos;&gt;Support&lt;/a&gt;&lt;/li&gt; &amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;    
+                    &lt;li class=&quot;notiPhone&quot;&gt;&lt;a href=&quot;http://www.medcommons.net/contact.php&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+
+        &lt;/div&gt; &lt;!-- footer  end --&gt;
+              &lt;script  type=&quot;text/javascript&quot;&gt;wsinit();&lt;/script&gt;
+  
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  // prevent original www_init() defined in base.js from being called
+  function www_init() {
+  }
+  if(getCookie(&apos;mc&apos;))
+    document.write(&quot;&lt;style type=&apos;text/css&apos;&gt; #loggedon, #visi { display: block; }&lt;/style&gt;&quot;);
+  &lt;/script&gt;
+   
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+								<totalSize>11994</totalSize>
+								<timeStamp>2008-09-01 02:22:33</timeStamp>
+								<logContent/>
+							</Response>
+						</ChildItems>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+					</ResponsesItem>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>12341</id>
+						<name>mcid</name>
+						<value>%24%7Bto_accid%7D</value>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>12342</id>
+						<name>password</name>
+						<value>tester</value>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+					<Parameter v='4'>
+						<ver>12</ver>
+						<id>12343</id>
+						<name>next</name>
+						<value>http%3A%2F%2F%24%7Bhost%7D%2Facct%2Fhome.php%3Fexpand%3Dworklist</value>
+						<sendEquals>true</sendEquals>
+						<method>2</method>
+					</Parameter>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<host>${host}</host>
+				<path>/acct/login.php</path>
+				<protocol>http</protocol>
+				<resource/>
+				<targetFrame/>
+				<isActive>1</isActive>
+				<label/>
+				<headers/>
+				<multipartBoundary/>
+				<Object>null</Object>
+				<lenientSubrequestCount>false</lenientSubrequestCount>
+				<formCharset/>
+				<method>1</method>
+				<waitForSubRequests>false</waitForSubRequests>
+			</Request>
+			<Timer v='4'>
+				<ver>12</ver>
+				<id>12344</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<waitMs>2000</waitMs>
+				<cascade>false</cascade>
+				<lowerMs>1000</lowerMs>
+				<upperMs>2000</upperMs>
+			</Timer>
+			<Assertion v='8'>
+				<ver>12</ver>
+				<id>12345</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>1</childCount>
+				<ChildItems>
+					<ContentCheckItem v='1'>
+						<ver>12</ver>
+						<id>12346</id>
+						<pattern>Welcome to MedCommons</pattern>
+						<bUseRegex>false</bUseRegex>
+						<checkMessageBoxes>false</checkMessageBoxes>
+						<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+					</ContentCheckItem>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<failureAction>
+					<Object>null</Object>
+				</failureAction>
+				<captureScreenShot>true</captureScreenShot>
+				<scalingPercent>50</scalingPercent>
+				<captureDuplicates>false</captureDuplicates>
+			</Assertion>
+			<Navigation v='7'>
+				<ver>12</ver>
+				<id>12347</id>
+				<Summary v='2'>
+					<played>1</played>
+					<succeeded>1</succeeded>
+					<maxResponseTime>3893</maxResponseTime>
+					<averageResponseTime>3893</averageResponseTime>
+				</Summary>
+				<childCount>1</childCount>
+				<ChildItems>
+					<ResponsesItem v='4'>
+						<ver>12</ver>
+						<id>12348</id>
+						<Summary v='2'>
+							<played>1</played>
+							<succeeded>1</succeeded>
+							<maxResponseTime>3893</maxResponseTime>
+							<averageResponseTime>3893</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<Response v='3'>
+								<ver>12</ver>
+								<id>12385</id>
+								<Summary v='2'>
+									<played>1</played>
+									<succeeded>1</succeeded>
+									<maxResponseTime>3893</maxResponseTime>
+									<averageResponseTime>3893</averageResponseTime>
+								</Summary>
+								<timeMs>3893</timeMs>
+								<size>21223</size>
+								<encodedContent>false</encodedContent>
+								<content>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;MedCommons, Inc.&quot; /&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;MedCommons Website Version 1.0 Page $$$htmltitle$$$&quot; /&gt;
+    &lt;meta name=&quot;keywords&quot; 
+    content=&quot;medcommons, personal health records,ccr, phr, privacy, patient, health, records, medical records,
+						emergencyccr&quot;/&gt;
+    &lt;meta name=&quot;robots&quot; content=&quot;all&quot;/&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=320&quot; /&gt;
+&lt;title&gt;User Settings - &lt;/title&gt;
+   
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;../images/favicon.gif&quot; type=&quot;image/gif&quot; /&gt;
+    &lt;link media=&quot;all&quot; href=&quot;../css/medCommonsStyles.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    function el(id) {
+      return document.getElementById(id);
+    }
+    function popuploginpage(page) {
+    	window.open(  page, &quot;IdentityWindow&quot;, &quot;status = 1, height = 400, width = 750, resizable = 0&quot; );
+    	return false;
+    }
+      function setvalue(id,innerhtml)
+    {
+    	if (el( id ))
+    	el( id ).innerHTML =innerhtml;
+    }
+    /* shows a particlur div */
+    function showinline(id)
+    {
+    	if (el( id ))
+    	el( id ).style.display = &apos;inline&apos;;
+    }
+    function showblock(id)
+    {
+    	if (el( id ))
+    	el( id ).style.display = &apos;block&apos;;
+    }
+    function dontshow(id)
+    {
+    	if (el( id ))
+    	el( id ).style.display = &apos;none&apos;;
+    }
+        function toggle(id)
+    {
+    	if (el( id ))
+    	{
+    	if  (el( id ).style.display == &apos;none&apos;)
+    	el( id ).style.display = &apos;block&apos;; else
+    	el( id ).style.display = &apos;none&apos;;
+    	}
+    	return true;
+    		
+    }
+    /**
+    * gets the value of the specified cookie.
+    */
+    function getCookie(name)
+    {
+    	var dc = document.cookie;
+    	var prefix = name + &quot;=&quot;;
+    	var begin = dc.indexOf(&quot;; &quot; + prefix);
+    	if (begin == -1) {
+    		begin = dc.indexOf(prefix);
+    		if (begin != 0) return null;
+    	}
+    	else {
+    		begin += 2;
+    	}
+    	var end = document.cookie.indexOf(&quot;;&quot;, begin);
+    	if (end == -1) {
+    		end = dc.length;
+    	}
+    	return unescape(dc.substring(begin + prefix.length, end));
+    }
+
+    // This function is included to overcome a bug in Netscape&apos;s implementation
+    // of the escape () function:
+
+    function myunescape (str)
+    {
+    	str = &apos;&apos; + str;
+    	while (true)
+    	{
+    		var i = str . indexOf (&apos;+&apos;);
+    		if (i &lt; 0)
+    		break;
+    		str = str . substring (0, i) + &apos; &apos; + str . substring (i + 1, str . length);
+    	}
+    	return unescape (str);
+    }
+
+    // This function creates the args [] array and populates it with data
+    // found in the URL&apos;s search string:
+
+    var args;
+
+    function args_init ()
+    {
+    	args = new Array ();
+    	var argstring = window . location . search;
+    	if (argstring . charAt (0) != &apos;?&apos;)
+    	return;
+    	argstring = argstring . substring (1, argstring . length);
+    	var argarray = argstring . split (&apos;&amp;&apos;);
+    	var i;
+    	var singlearg;
+    	for (i = 0; i &lt; argarray . length; ++ i)
+    	{
+    		singlearg = argarray [i] . split (&apos;=&apos;);
+    		if (singlearg . length != 2)
+    		continue;
+    		var key = myunescape (singlearg [0]);
+    		var value = myunescape (singlearg [1]);
+    		args [key] = value;
+    	}
+    }
+
+    var signed_on; 
+
+    var top_nav = [
+      { text: &apos;Help&apos;, href: &apos;/help.php&apos; },
+      { text: &apos;Dashboard&apos;, href: &apos;http://mc:7080/acct/home.php&apos; },
+      { text: &apos;Services&apos;, href: &apos;http://mc:7080/mod/svcsetup.php&apos;, hidden: true },
+      { text: &apos;Vouchers&apos;, href: &apos;http://mc:7080/mod/voucherlist.php&apos;, hidden: true },
+      { text: &apos;Settings&apos;, href: &apos;http://mc:7080/acct/settings.php&apos; },
+      { text: &apos;Sign In&apos;, href: &apos;http://mc:7080/site/personal.php&apos;, hidden: true },
+      { text: &apos;Logout&apos;, href: &apos;http://mc:7080/acct/logout.php&apos; }
+    ];
+
+    function render_top_nav() {
+      var h = &apos;&apos;;
+      for(var i=0; i&lt;top_nav.length; ++i) {
+        var item = top_nav[i];
+        if(item.hidden)
+          continue;
+        if(i!=0)
+          h += &apos;&amp;nbsp;|&amp;nbsp; &apos;; // trailing space helps wrapping
+        if(item.disabled)
+          h += &apos;&lt;li class=&quot;light&quot;&gt;&apos;+item.text+&apos;&lt;/li&gt;&apos;;
+        else 
+          h += &apos;&lt;li&gt;&lt;a class=&quot;menu_&apos;+item.text.toLowerCase().replace(/ /g,&apos;&apos;)+&apos;&quot; href=&quot;&apos;+item.href+&apos;&quot;&gt;&apos;+item.text+&apos;&lt;/a&gt;&lt;/li&gt;&apos;;
+      }
+      el(&apos;navcontainer&apos;).innerHTML=(&apos;&lt;ul id=&quot;navlist&quot; class=&quot;listinlinetiny&quot;&gt;&apos; + h +&apos;&lt;/ul&gt;&apos;);
+    }
+
+    function nav(txt) {
+      for(var i=0; i&lt;top_nav.length; ++i) {
+        if(top_nav[i].text == txt)
+          return top_nav[i];
+      }
+    }
+
+    function get_mc_attribute(att) {
+      var mc = getCookie(&apos;mc&apos;);
+      if(!mc)
+        return null;
+      var atts = mc.split(&apos;,&apos;);
+      for(var i=0; i&lt;atts.length; ++i) { 
+        if(atts[i].match(new RegExp(&apos;^&apos;+att+&apos;=&apos;))) {
+          return atts[i].split(&apos;=&apos;)[1];
+        }
+      }
+      return null;
+    }
+
+    function wsinit()
+    {
+    	args_init();
+    	if (getCookie(&apos;mc&apos;))	{
+    		signed_on = true;
+    		showblock(&apos;loggedon&apos;);
+    		dontshow(&apos;notloggedon&apos;);
+    		showinline(&apos;visi&apos;);
+        nav(&apos;Logout&apos;).hidden = false;
+        nav(&apos;Dashboard&apos;).hidden = false;
+        nav(&apos;Settings&apos;).hidden = false;
+        nav(&apos;Sign In&apos;).hidden = true;
+        var s = get_mc_attribute(&apos;s&apos;);
+        if((s &amp; 2) &gt; 0) {
+          nav(&apos;Vouchers&apos;).hidden = false;
+          nav(&apos;Services&apos;).hidden = false;
+        }
+        if((s &amp; 4) &gt; 0) {
+          nav(&apos;Settings&apos;).hidden = true;
+        }
+    	}
+    	else
+    	{
+    		signed_on = false;
+    		showblock(&apos;notloggedon&apos;);
+    		dontshow(&apos;loggedon&apos;);
+    		dontshow(&apos;visi&apos;);
+        nav(&apos;Sign In&apos;).hidden = false;
+        for(i in menu=[&apos;Dashboard&apos;,&apos;Logout&apos;,&apos;Settings&apos;,&apos;Vouchers&apos;, &apos;Services&apos;]) {
+          nav(menu[i]).hidden = true;
+        }
+    	}
+     render_top_nav();
+
+    	for (ix = 0; ix&lt;10 ; ++ ix)
+    	{
+    		if (args[&apos;e&apos;+ix])
+    	
+    		if (args[&apos;p&apos;+ix])
+    		{
+    			p = args[&apos;p&apos;+ix];
+    			el(p).innerHTML = &apos;** &apos; + args[&apos;e&apos;+ix] + &apos;**&apos;;
+    		}
+    		
+    	}
+    }
+
+    &lt;/script&gt;
+    
+&lt;!-- Sam Skin CSS for TabView --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://mc:7080/zip/yui/2.5.2/tabview/assets/skins/sam/tabview.css&quot;&gt;
+
+&lt;style type=&apos;text/css&apos;&gt;
+.yui-skin-sam .yui-navset .yui-content {
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+.yui-skin-sam .yui-navset li a em {
+  color: #333;
+}
+.yui-skin-sam .yui-navset li.selected a em {
+  color: white;
+  font-weight: bold;
+}
+#wrapper .yui-navset a:hover
+{
+    text-decoration: none;
+}
+
+table.creditsTable {
+  text-align: center;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 20px;
+}
+table.creditsTable tr th {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #333;
+  color: #333;
+}
+
+table.creditsTable tr th, 
+table.creditsTable tr td {
+  text-align: center;
+  padding: 5px 25px;
+}
+&lt;/style&gt;
+
+
+    &lt;style type=&apos;text/css&apos;&gt;
+      #main h2 {
+	color:#3B5269;
+	font-family: Rockwell,Georgia,&quot;Times New Roman&quot;,Times,serif;
+	font-size:170%;
+	margin-top:1em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+      }
+    &lt;/style&gt;
+    &lt;/head&gt;
+&lt;body  id=&apos;$$$pageid$$$&apos;  class=&apos;yui-skin-sam&apos; &gt;
+&lt;table id=&apos;topheader&apos;&gt;&lt;tr&gt;
+&lt;td id =&apos;topleft&apos; &gt;
+&lt;a href=&apos;http://www.medcommons.net/&apos; title=&apos;MedCommons Homepage&apos;&gt;&lt;img  border=&quot;0&quot; src=&quot;/images/MEDcommons_logo_246x50.gif&quot; /&gt;&lt;/a&gt;&lt;div id=&quot;navcontainer&quot;&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td width=100% &gt;&amp;nbsp;&lt;/td&gt;
+  &lt;td  id=&apos;topright&apos; &gt;
+ &lt;span id=&apos;visi&apos; class=right &gt;
+                &lt;a href=&apos;../acct/home.php&apos;&gt;&lt;img alt=&apos;&apos; border=0 id=&apos;stamp&apos; src=&apos;../acct/stamp.php&apos;  /&gt;&lt;/a&gt;
+ &lt;/span&gt;
+&lt;/td&gt;
+ &lt;/tr&gt;&lt;/table&gt;
+        &lt;div id=&apos;main&apos;&gt;
+                   
+
+&lt;div id=&apos;content&apos;&gt;
+&lt;h2&gt;Personal Profile&lt;/h2&gt;
+
+&lt;div id=&apos;profileTabs&apos; class=&apos;yui-navset&apos; style=&apos;display:none;&apos;&gt;
+  &lt;ul class=&apos;yui-nav&apos;&gt;
+      &lt;li  &gt;&lt;a href=&quot;#personalDetails&quot;&gt;&lt;em&gt;Personal&amp;nbsp;Details&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li  &gt;&lt;a href=&quot;#password&quot;&gt;&lt;em&gt;Password&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li  &gt;&lt;a href=&quot;#identities&quot;&gt;&lt;em&gt;Identities&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li  &gt;&lt;a href=&quot;#personalAccount&quot;&gt;&lt;em&gt;My&amp;nbsp;HealthURL&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li  class=&apos;selected&apos; &gt;&lt;a href=&quot;#amazon&quot;&gt;&lt;em&gt;Purchased&amp;nbsp;Services&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li  &gt;&lt;a href=&quot;#extraDownloads&quot;&gt;&lt;em&gt;Plugins&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div class=&apos;yui-content&apos;&gt;
+    &lt;div id=&apos;personalDetails&apos;&gt;
+    &lt;fieldset&gt;
+      &lt;legend&gt;Details&lt;/legend&gt;
+      &lt;table width=&apos;100%&apos;&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Name:&lt;/th&gt;
+            &lt;td&gt;
+              Test Patient-1&lt;br /&gt;
+              &lt;a href=&apos;edituser.php&apos;&gt;change&lt;/a&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Email:&lt;/th&gt;
+            &lt;td&gt;
+              ssadedin+badboytest@gmail.com&lt;br /&gt;
+              &lt;a href=&apos;setemail.php&apos;&gt;change&lt;/a&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/fieldset&gt;
+    &lt;form method=&apos;post&apos; action=&apos;picture.php&apos; enctype=&apos;multipart/form-data&apos;
+          id=&apos;picture&apos;&gt;
+      &lt;fieldset&gt;
+        &lt;legend&gt;Your Picture&lt;/legend&gt;
+        &lt;a href=&quot;http://mc:7080/images/unknown-user.png&quot;&gt;
+          &lt;img src=&quot;http://mc:7080/images/unknown-user.png&quot; 
+               align=&apos;left&apos; style=&apos;border: 0; margin: 10px&apos; alt=&apos;User Photo&apos; /&gt;
+        &lt;/a&gt;
+        &lt;p id=&apos;p_picture&apos;&gt;
+          &lt;label&gt;Upload Image File:&lt;br /&gt;
+            &lt;input class=&apos;infield&apos;  type=&apos;file&apos; name=&apos;picture&apos; id=&apos;picture&apos; /&gt;
+          &lt;/label&gt;
+        &lt;/p&gt;
+        &lt;input  type=&apos;submit&apos; value=&apos;Change Picture&apos; /&gt;
+      &lt;/fieldset&gt;
+    &lt;/form&gt;
+    &lt;/div&gt;
+
+  &lt;div id=&apos;password&apos;&gt;
+    &lt;fieldset&gt;
+      &lt;legend&gt;Change Password&lt;/legend&gt;
+    &lt;form class=&apos;p&apos; method=&apos;post&apos; action=&apos;settings.php&apos; id=&apos;password&apos;&gt;
+        &lt;div class=&apos;f&apos; id=&apos;p_pw0&apos;&gt;
+          &lt;label for=&apos;password&apos;&gt;Current Password&lt;/label&gt;
+          &lt;span class=&apos;q&apos;&gt;
+            &lt;input class=&apos;infield&apos;  type=&apos;password&apos; name=&apos;pw0&apos; id=&apos;pw0&apos; /&gt;
+
+              &lt;/span&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&apos;f&apos; id=&apos;p_pw1&apos;&gt;
+          &lt;label for=&apos;pw1&apos;&gt;New password&lt;/label&gt;
+          &lt;span class=&apos;q&apos;&gt;
+            &lt;input class=&apos;infield&apos;  type=&apos;password&apos; name=&apos;pw1&apos; id=&apos;pw1&apos; /&gt;
+
+              &lt;/span&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&apos;f&apos; id=&apos;p_pw2&apos;&gt;
+          &lt;label for=&apos;pw2&apos;&gt;New password (again)&lt;/label&gt;
+          &lt;span class=&apos;q&apos;&gt;
+            &lt;input class=&apos;infield&apos;  type=&apos;password&apos; name=&apos;pw2&apos; id=&apos;pw2&apos; /&gt;
+
+              &lt;/span&gt;
+        &lt;/div&gt;
+
+    
+        &lt;div class=&apos;f&apos;&gt;
+          &lt;span class=&apos;n&apos;&gt;&amp;nbsp;&lt;/span&gt;
+          &lt;span class=&apos;q&apos;&gt;
+            &lt;input type=&apos;submit&apos; value=&apos;Change Password&apos; /&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+
+  &lt;div id=&apos;identities&apos;&gt;
+    &lt;fieldset&gt;
+      &lt;legend&gt;Identities&lt;/legend&gt;
+    
+        &lt;form class=&apos;p&apos; method=&apos;post&apos; action=&apos;link_user.php&apos; id=&apos;login&apos;&gt;
+      &lt;input type=&apos;hidden&apos; name=&apos;page&apos; value=&apos;identities&apos;/&gt;
+      &lt;input type=&apos;hidden&apos; name=&apos;next&apos; value=&apos;http://mc:7080/acct/settings.php&apos; /&gt;
+      &lt;div class=&apos;f&apos;&gt;
+        &lt;label for=&apos;openid_url&apos;&gt;Link&lt;/label&gt;
+        &lt;span class=&apos;q&apos;&gt;
+          &lt;input class=&apos;infield&apos; type=&apos;text&apos; name=&apos;openid_url&apos; id=&apos;openid_url&apos; size=&apos;30&apos; /&gt;
+          &lt;div class=&apos;r&apos;&gt;
+            &lt;em&gt;
+              &lt;div&gt;http://user.openid.com&lt;/div&gt;
+            &lt;/em&gt;
+              &lt;/div&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&apos;f&apos;&gt;
+        &lt;span class=&apos;n&apos;&gt;
+
+
+OpenID Providers
+        &lt;/span&gt;
+        &lt;span class=&apos;q&apos;&gt;
+    
+    &lt;input type=&apos;image&apos; src=&apos;/images/idps/aol.png&apos;
+           width=&apos;16&apos; height=&apos;16&apos; alt=&apos;AOL OpenID&apos;
+           name=&apos;idp&apos; value=&apos;aol&apos; class=&apos;logo&apos; /&gt;
+    link &lt;a href=&apos;&apos;&gt;AOL&lt;/a&gt; account&lt;br /&gt;
+    
+    &lt;input type=&apos;image&apos; src=&apos;/images/idps/demo.png&apos;
+           width=&apos;16&apos; height=&apos;16&apos; alt=&apos;Demo OpenID&apos;
+           name=&apos;idp&apos; value=&apos;demo&apos; class=&apos;logo&apos; /&gt;
+    link &lt;a href=&apos;&apos;&gt;Demo&lt;/a&gt; account&lt;br /&gt;
+    
+    &lt;input type=&apos;image&apos; src=&apos;/images/idps/verisign.png&apos;
+           width=&apos;16&apos; height=&apos;16&apos; alt=&apos;pip.verisign OpenID&apos;
+           name=&apos;idp&apos; value=&apos;verisign&apos; class=&apos;logo&apos; /&gt;
+    link &lt;a href=&apos;&apos;&gt;pip.verisign&lt;/a&gt; account&lt;br /&gt;
+    
+    &lt;input type=&apos;image&apos; src=&apos;/images/idps/facebook.png&apos;
+           width=&apos;16&apos; height=&apos;16&apos; alt=&apos;Facebook OpenID&apos;
+           name=&apos;idp&apos; value=&apos;facebook&apos; class=&apos;logo&apos; /&gt;
+    link &lt;a href=&apos;&apos;&gt;Facebook&lt;/a&gt; account&lt;br /&gt;
+    
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+    
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+
+  &lt;!-- p&gt;
+  &lt;a href=&apos;http://mc:7080//version.php&apos;&gt;Version Information&lt;/a&gt; about this MedCommons Appliance
+  &lt;/p --&gt;
+  &lt;div id=&apos;personalAccount&apos;&gt;
+    &lt;form id=&apos;phrs&apos;&gt;
+        &lt;h3&gt;Show on Dashboard&lt;/h3&gt;
+        &lt;table border=&apos;0&apos;&gt;
+          &lt;tr&gt;&lt;td&gt;
+            &lt;input type=&apos;radio&apos; 
+                   name=&apos;mode&apos; 
+                   value=&apos;patient&apos; 
+                   onclick=&apos;saveDashboardMode(&quot;patient&quot;)&apos;
+                    /&gt; My HealthURL&lt;/td&gt;
+            &lt;td style=&apos;padding-left: 60px;&apos;&gt;Shows only the personal HealthURL of the signed-in user.&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr  &gt;
+            &lt;td&gt;
+            &lt;input type=&apos;radio&apos; name=&apos;mode&apos; value=&apos;group&apos;
+                   onclick=&apos;saveDashboardMode(&quot;group&quot;)&apos;
+                    checked=&apos;true&apos; 
+                                    /&gt; Patient List 
+            &lt;/td&gt;
+            &lt;td style=&apos;padding-left: 60px;&apos;&gt;Shows a list of family members or patients accessible to the signed-in user.&lt;/td&gt; 
+            &lt;/tr&gt;
+          &lt;/table&gt;
+      &lt;br/&gt;
+    &lt;/form&gt;
+
+    &lt;form method=&apos;post&apos; action=&apos;gwredir.php?dest=PersonalBackup&apos; id=&apos;documentsForm&apos;&gt;
+      &lt;h3&gt;Your Documents&lt;/h3&gt;
+      &lt;a href=&quot;accountDocuments.php&quot;&gt;View Documents&lt;/a&gt;
+      &lt;br/&gt;
+      You can &lt;a href=&apos;gwredir.php?dest=PersonalBackup%3FstorageId%3D1278192526382736&apos;&gt;download all your documents&lt;/a&gt; as a ZIP archive to save them for future reference.
+    &lt;/form&gt;
+
+    &lt;h3 style=&apos;margin-top: 1em;&apos;&gt;Delete Account&lt;/h3&gt;
+    &lt;p&gt;You can delete all data from your HealthURL.  &lt;a href=&apos;javascript:deleteAccount();&apos;&gt;Delete My HealthURL Now&lt;/a&gt;.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&apos;amazon&apos;&gt;
+    &lt;h3&gt;Services and Vouchers&lt;/h3&gt;
+    &lt;form method=&apos;post&apos; action=&apos;enable_mod.php&apos;&gt;
+      &lt;p&gt;&lt;input type=&apos;checkbox&apos; name=&apos;enable_mod&apos; value=&quot;true&quot;
+        checked=&quot;true&quot;          onclick=&apos;form.submit();&apos;&gt; Enable MedCommons on Demand Vouchers and Services&lt;/p&gt;
+    &lt;/form&gt;
+    &lt;br/&gt;
+    &lt;h3&gt;Your Account Storage&lt;/h3&gt;
+          &lt;p&gt;Storage for your account is paid for by the operator of this appliance.&lt;/p&gt;
+        &lt;br/&gt;
+
+    &lt;h3&gt;Your Credit&lt;/h3&gt;
+    &lt;p&gt;The table shows current credit available for purchased services on MedCommons accounts. 
+       Review your purchases on the 
+      &lt;a href=&apos;https://payments.amazon.com/&apos; target=&apos;_new&apos;&gt;Amazon Payments Account Management&lt;/a&gt; page.
+    &lt;/p&gt;
+    &lt;p style=&apos;text-align: center;&apos;&gt;
+    &lt;table class=&apos;creditsTable&apos; border=&apos;0&apos;&gt;
+      &lt;tr&gt;&lt;th&gt;DICOM&lt;/th&gt;&lt;th&gt;Inbound Fax (Pages)&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;
+            &lt;form action=&apos;https://authorize.payments.amazon.com/pba/paypipeline&apos; method=&quot;post&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;accessKey&quot; value=&quot;075Q8TW5Y9HFW4ZZAG02&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;amount&quot; value=&quot;USD .50&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;description&quot; value=&quot;10 DICOM Uploads&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;immediateReturn&quot; value=&quot;1&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;processImmediate&quot; value=&quot;1&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;referenceId&quot; value=&quot;1278192526382736-0-10-DICOM10&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;returnUrl&quot; value=&quot;http://mc:7080/mod/fpscounters.php?next=http%3A%2F%2Fmc%3A7080%2Facct%2Fsettings.php%3Fpage%3Damazon&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;signature&quot; value=&quot;ZxKJcP73QbjMsHfyEzm+7tqJj3U=&quot; /&gt;
+&lt;input type=&apos;image&apos; alt=&apos;pay via Amazon&apos;
+	                                src=&apos;https://authorize.payments.amazon.com/pba/images/payNowButton.png&apos; border=&apos;0&apos; /&gt;&lt;/form&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;form action=&apos;https://authorize.payments.amazon.com/pba/paypipeline&apos; method=&quot;post&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;accessKey&quot; value=&quot;075Q8TW5Y9HFW4ZZAG02&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;amount&quot; value=&quot;USD .20&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;description&quot; value=&quot;20 Inbound Fax Pages&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;immediateReturn&quot; value=&quot;1&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;processImmediate&quot; value=&quot;1&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;referenceId&quot; value=&quot;1278192526382736-20-0-FAX20&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;returnUrl&quot; value=&quot;http://mc:7080/mod/fpscounters.php?next=http%3A%2F%2Fmc%3A7080%2Facct%2Fsettings.php%3Fpage%3Damazon&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;signature&quot; value=&quot;eBj8trhak7s7kG8ooCPd3RlZCTA=&quot; /&gt;
+&lt;input type=&apos;image&apos; alt=&apos;pay via Amazon&apos;
+	                                src=&apos;https://authorize.payments.amazon.com/pba/images/payNowButton.png&apos; border=&apos;0&apos; /&gt;&lt;/form&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+                      &lt;td&gt;Purchase 10 DICOM Uploads for USD .50&lt;/td&gt;
+                      &lt;td&gt;Purchase 20 Inbound Fax Pages for USD .20&lt;/td&gt;
+                  &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div id=&apos;extraDownloads&apos;&gt;
+    &lt;form id=&apos;extradownloads&apos;&gt;
+       &lt;fieldset&gt;
+        &lt;legend&gt;Plug-in Components&lt;/legend&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+
+        &lt;tr&gt;
+          &lt;th&gt;DDL:&lt;/th&gt;
+          &lt;td&gt;
+            &lt;a href=&apos;/DDL/&apos;&gt;install&lt;/a&gt;
+          &lt;/td&gt;
+     
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;th&gt;OsiriX:&lt;/th&gt;
+          &lt;td&gt;
+            &lt;a href=&apos;/osirix.html&apos;&gt;install&lt;/a&gt;
+          &lt;/td&gt;
+
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    &lt;div id=&apos;deleteAccountRequest&apos; style=&apos;display: none;&apos;&gt;
+      &lt;p&gt;Deleting your account permanently removes all existing data from your account.&lt;/p&gt;
+      &lt;br/&gt;
+      &lt;p&gt;&lt;b&gt;This operation cannot be undone.&lt;/b&gt;&lt;/p&gt;
+      &lt;br/&gt;
+      &lt;p&gt;Your account will not be deleted immediately.  You will receive an email when 
+         the account contents have been deleted.&lt;/p&gt;
+    &lt;/div&gt;
+
+
+        &lt;/div&gt;
+
+            
+   
+    &amp;nbsp;&lt;br/&gt;
+     &lt;div id=&quot;footer&quot;&gt;
+	&lt;ul class=&quot;listinlinetiny&quot;&gt;
+			&lt;li&gt;Copyright &amp;copy; 2008 MedCommons, Inc.&lt;/li&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                   &lt;li&gt;&lt;a href=&quot;http://www.medcommons.net/index.php&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+                     &lt;li&gt;&lt;a href=&quot;http://www.medcommons.net/termsofuse.php&quot;&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+                         &lt;li&gt;&lt;a href=&apos;http://www.medcommons.net/privacy.php&apos;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+                         &lt;li&gt;&lt;a target=&apos;_new&apos; href=&quot;http://ccrcommons.com&quot;&gt;Public HealthURLs&lt;/a&gt;&lt;/li&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+                            &lt;li&gt;&lt;a href=&quot;http://forum.medcommons.net/&quot;&gt;Forums&lt;/a&gt;&lt;/li&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+                       &lt;li&gt;&lt;a href=&apos;mailto:info@medcommons.net&apos;&gt;Support&lt;/a&gt;&lt;/li&gt; &amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;    
+                    &lt;li class=&quot;notiPhone&quot;&gt;&lt;a href=&quot;http://www.medcommons.net/contact.php&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+
+        &lt;/div&gt; &lt;!-- footer  end --&gt;
+              &lt;script  type=&quot;text/javascript&quot;&gt;wsinit();&lt;/script&gt;
+  
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  // prevent original www_init() defined in base.js from being called
+  function www_init() {
+  }
+  if(getCookie(&apos;mc&apos;))
+    document.write(&quot;&lt;style type=&apos;text/css&apos;&gt; #loggedon, #visi { display: block; }&lt;/style&gt;&quot;);
+  &lt;/script&gt;
+  
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://mc:7080/zip/yui/2.5.2/utilities/utilities.js,yui/2.5.2/tabview/tabview-min.js,acct/utils.js,acct/sha1.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script type=&apos;text/javascript&apos;&gt;YAHOO.util.Event.onDOMReady(function() { 
+      window.tabs = new YAHOO.widget.TabView(&quot;profileTabs&quot;);
+      if(www_init)
+        www_init();
+            document.getElementById(&apos;profileTabs&apos;).style.display=&apos;block&apos;;
+      // Get full yui loading in background
+      // window.setTimeout(yuiLoader(),1500);
+    });
+    &lt;/script&gt;
+
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+      /**
+       * Mode - patient vs group
+       */
+      function switchToPatientMode() {
+        setAccessMode(&apos;patient&apos;);
+        document.location=&apos;home.php&apos;;
+      }
+      function setAccessMode(m) {
+        if(m==&apos;patient&apos;) {
+          setCookie(&apos;mode&apos;,&apos;p&apos;,null,&apos;/&apos;);
+        }
+        else
+          setCookie(&apos;mode&apos;,&apos;g&apos;,null,&apos;/&apos;);
+      }
+      function saveDashboardMode(value) {
+        YAHOO.util.Connect.asyncRequest(&apos;POST&apos;, &apos;set_dashboard_mode.php&apos;, {
+          success: function(req) { },
+          failure: function(req) { alert(&apos;failed: &apos;+req.responseText);  window.location.reload();}
+        }, &apos;mode=&apos;+value+&apos;&amp;enc=&apos;+hex_sha1(getCookie(&apos;mc&apos;)));
+      }
+      function sendDeleteRequest() {
+        window.location = &apos;delete_account_request.php&apos;;
+      }
+      function deleteAccount() {
+        yuiLoader().insert(function() {
+          var dlg = new YAHOO.widget.SimpleDialog(&apos;deleteWarnDlg&apos;, { 
+              width: &apos;500px&apos;,
+              fixedcenter:true,
+              modal:true,
+              visible:true,
+              draggable:true,
+              buttons: [ {text: &apos;OK - Send Delete Request&apos;, handler: sendDeleteRequest}, { text: &apos;Cancel&apos;, handler: function(){dlg.destroy();}} ]
+          });
+          dlg.setHeader(&apos;Delete Account Request - Confirmation&apos;);
+          dlg.setBody(el(&apos;deleteAccountRequest&apos;).innerHTML);
+          dlg.render(document.body);
+        });
+      }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+								<totalSize>21223</totalSize>
+								<timeStamp>2008-09-01 02:22:40</timeStamp>
+								<logContent/>
+							</Response>
+						</ChildItems>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+					</ResponsesItem>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<targetFrame/>
+				<continueOnFailure>true</continueOnFailure>
+				<references>
+					<count>2</count>
+					<VisibleTextReference v='2'>
+						<value>Enable Services</value>
+						<filter>Buttons</filter>
+					</VisibleTextReference>
+					<JavascriptReference v='2'>
+						<value>document.forms[1].getElementsByTagName(&apos;INPUT&apos;)[1]</value>
+						<filter>Buttons</filter>
+					</JavascriptReference>
+				</references>
+				<isPassive>false</isPassive>
+				<passiveTimeoutMs>1000</passiveTimeoutMs>
+				<useRegex>false</useRegex>
+			</Navigation>
+			<Assertion v='8'>
+				<ver>12</ver>
+				<id>12349</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>1</childCount>
+				<ChildItems>
+					<ContentCheckItem v='1'>
+						<ver>12</ver>
+						<id>12350</id>
+						<pattern>Enable MedCommons on Demand Vouchers and Services</pattern>
+						<bUseRegex>false</bUseRegex>
+						<checkMessageBoxes>false</checkMessageBoxes>
+						<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+					</ContentCheckItem>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<failureAction>
+					<Object>null</Object>
+				</failureAction>
+				<captureScreenShot>true</captureScreenShot>
+				<scalingPercent>50</scalingPercent>
+				<captureDuplicates>false</captureDuplicates>
+			</Assertion>
+			<Assertion v='8'>
+				<ver>12</ver>
+				<id>12351</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>1</childCount>
+				<ChildItems>
+					<ContentCheckItem v='1'>
+						<ver>12</ver>
+						<id>12352</id>
+						<pattern>Services&lt;/A&gt;&lt;/LI&gt;</pattern>
+						<bUseRegex>false</bUseRegex>
+						<checkMessageBoxes>false</checkMessageBoxes>
+						<checkRuntimeBodyContent>true</checkRuntimeBodyContent>
+					</ContentCheckItem>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>300</quiescenceTimeMs>
+				<disabled>false</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<failureAction>
+					<Object>null</Object>
+				</failureAction>
+				<captureScreenShot>true</captureScreenShot>
+				<scalingPercent>50</scalingPercent>
+				<captureDuplicates>false</captureDuplicates>
+			</Assertion>
+			<Step v='4'>
+				<ver>12</ver>
+				<id>12353</id>
+				<Summary v='2'>
+					<maxResponseTime>0</maxResponseTime>
+					<averageResponseTime>0</averageResponseTime>
+				</Summary>
+				<childCount>5</childCount>
+				<ChildItems>
+					<Navigation v='7'>
+						<ver>12</ver>
+						<id>12354</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>12</ver>
+								<id>12355</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<references>
+							<count>2</count>
+							<VisibleTextReference v='2'>
+								<value>Services</value>
+								<filter>Links</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>document.getElementById(&apos;navlist&apos;).getElementsByTagName(&apos;LI&apos;)[2].getElementsByTagName(&apos;A&apos;)[0]</value>
+								<filter>Links</filter>
+							</JavascriptReference>
+						</references>
+						<isPassive>false</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+					<Execute v='3'>
+						<ver>12</ver>
+						<id>12356</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<name>set template</name>
+						<script>document.getElementById(&apos;svctemplatenum&apos;).selectedIndex = 1;</script>
+						<imageId>4294967295</imageId>
+						<pluginAccess>false</pluginAccess>
+						<frameName/>
+					</Execute>
+					<Navigation v='7'>
+						<ver>12</ver>
+						<id>12357</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>12</ver>
+								<id>12358</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<references>
+							<count>3</count>
+							<NameOrIdReference v='2'>
+								<value>svctemplatenum</value>
+								<filter>All</filter>
+							</NameOrIdReference>
+							<VisibleTextReference v='2'>
+								<value> Select a TemplateNew Generic Service sonogram online mamogram online Tumor Metrics Diagnostic Imaging Release Results Report</value>
+								<filter>All</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>document.getElementById(&apos;svctemplatenum&apos;);</value>
+								<filter>All</filter>
+							</JavascriptReference>
+						</references>
+						<eventType>1</eventType>
+						<isPassive>false</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+					<FormPopulator v='7'>
+						<ver>12</ver>
+						<id>12359</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<FormValue v='3'>
+								<ver>12</ver>
+								<id>12360</id>
+								<name>suggestedprice</name>
+								<value>1.00</value>
+								<matchVisibleText>false</matchVisibleText>
+							</FormValue>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<formName>svcsetupform</formName>
+						<submit>false</submit>
+						<formIndex>0</formIndex>
+						<ignoreHiddenFields>true</ignoreHiddenFields>
+						<useRegex>false</useRegex>
+					</FormPopulator>
+					<Navigation v='7'>
+						<ver>12</ver>
+						<id>12361</id>
+						<Summary v='2'>
+							<maxResponseTime>0</maxResponseTime>
+							<averageResponseTime>0</averageResponseTime>
+						</Summary>
+						<childCount>1</childCount>
+						<ChildItems>
+							<ResponsesItem v='4'>
+								<ver>12</ver>
+								<id>12362</id>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+								<Summary v='2'>
+									<maxResponseTime>0</maxResponseTime>
+									<averageResponseTime>0</averageResponseTime>
+								</Summary>
+							</ResponsesItem>
+						</ChildItems>
+						<timeoutEnabled>false</timeoutEnabled>
+						<Object>null</Object>
+						<targetWindow/>
+						<itemName/>
+						<documentation/>
+						<waitForPageToLoad>false</waitForPageToLoad>
+						<sourceLocation/>
+						<recordResponses>true</recordResponses>
+						<quiescenceTimeMs>500</quiescenceTimeMs>
+						<disabled>false</disabled>
+						<ignoreErrors>false</ignoreErrors>
+						<errorFilter/>
+						<targetFrame/>
+						<continueOnFailure>true</continueOnFailure>
+						<references>
+							<count>2</count>
+							<VisibleTextReference v='2'>
+								<value>Add Service</value>
+								<filter>Buttons</filter>
+							</VisibleTextReference>
+							<JavascriptReference v='2'>
+								<value>document.svcsetupform.getElementsByTagName(&apos;DIV&apos;)[11].getElementsByTagName(&apos;SPAN&apos;)[1].getElementsByTagName(&apos;INPUT&apos;)[0]</value>
+								<filter>Buttons</filter>
+							</JavascriptReference>
+						</references>
+						<isPassive>false</isPassive>
+						<passiveTimeoutMs>1000</passiveTimeoutMs>
+						<useRegex>false</useRegex>
+					</Navigation>
+				</ChildItems>
+				<timeoutEnabled>false</timeoutEnabled>
+				<Object>null</Object>
+				<targetWindow/>
+				<itemName/>
+				<documentation/>
+				<waitForPageToLoad>false</waitForPageToLoad>
+				<sourceLocation/>
+				<recordResponses>true</recordResponses>
+				<quiescenceTimeMs>500</quiescenceTimeMs>
+				<disabled>true</disabled>
+				<ignoreErrors>false</ignoreErrors>
+				<errorFilter/>
+				<name>Add a Service</name>
+				<repetitions>1</repetitions>
+				<repeatType>1</repeatType>
+				<repeatVariable>email</repeatVariable>
+				<incrementAutomatically>true</incrementAutomatically>
+				<incrementAll>true</incrementAll>
+				<expanded>2</expanded>
+			</Step>
+		</ChildItems>
+		<timeoutEnabled>false</timeoutEnabled>
+		<Object>null</Object>
+		<targetWindow/>
+		<itemName/>
+		<documentation/>
+		<waitForPageToLoad>false</waitForPageToLoad>
+		<sourceLocation/>
+		<recordResponses>true</recordResponses>
+		<quiescenceTimeMs>500</quiescenceTimeMs>
+		<disabled>false</disabled>
+		<ignoreErrors>false</ignoreErrors>
+		<errorFilter/>
+		<name>Create a User with Services</name>
+		<repetitions>1</repetitions>
+		<repeatType>1</repeatType>
+		<repeatVariable>email</repeatVariable>
+		<incrementAutomatically>true</incrementAutomatically>
+		<incrementAll>true</incrementAll>
+		<expanded>1</expanded>
+	</Step>
+</WebScriptTool>

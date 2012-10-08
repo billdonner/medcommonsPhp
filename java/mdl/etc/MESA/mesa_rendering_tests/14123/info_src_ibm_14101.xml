@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+    <id root="2.16.840.1.113883.3.18.10"/>
+    <code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vital Signs, Physical Findings"/>
+    <title>Personal Care Connect Reading</title>
+    <effectiveTime value="20061122185601"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+    <languageCode code="en-US"/>
+    <recordTarget>
+        <patientRole>
+            <id extension="40003" root="1.3.6.1.4.1.21367.2006.1.2.103.1"/>
+            <addr>
+                <streetAddressLine>4525 Scott Ave</streetAddressLine>
+                <city>St. Louis</city>
+                <state>MO</state>
+                <postalCode>63110</postalCode>
+                <country>USA</country>
+            </addr>
+            <telecom use="HP" value="tel:(314)555-1671"/>
+            <patient>
+                <name>
+                    <given>Frederick</given>
+                    <family>Randolph</family>
+                </name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                <birthTime value="19590203"/>
+            </patient>
+            <providerOrganization>
+                <id root="2.16.840.1.113883.3.18.10"/>
+                <name>Gateway Hospital</name>
+                <addr>
+                    <streetAddressLine>600 Euclid Ave</streetAddressLine>
+                    <city>St. Louis</city>
+                    <state>MO</state>
+                    <postalCode>63110</postalCode>
+                    <country>USA</country>
+                </addr>
+            </providerOrganization>
+        </patientRole>
+    </recordTarget>
+    <author>
+        <time value="20061122185601"/>
+        <assignedAuthor>
+            <id extension="80155" root="2.16.840.1.113883.3.18.10"/>
+            <addr>
+                <streetAddressLine>700 Euclid Ave</streetAddressLine>
+                <city>St. Louis</city>
+                <state>MO</state>
+                <postalCode>63110</postalCode>
+                <country>USA</country>
+            </addr>
+            <assignedPerson>
+                <name>
+                    <given>Brian</given>
+                    <family>Hasselfeld</family>
+                </name>
+            </assignedPerson>
+        </assignedAuthor>
+    </author>
+    <author>
+        <time value="20061122185601"/>
+        <assignedAuthor>
+            <id root="1.3.6.1.4.1.21367.2005.3.7"/>
+            <assignedAuthoringDevice>
+                <code code="WST" codeSystem="1.2.840.10008.2.16.4" displayName="Workstation"/>
+                <manufacturerModelName>IBM Personal Care Connect XDS Adapter</manufacturerModelName>
+                <softwareName>IBM Personal Care Connect XDS Adapter</softwareName>
+            </assignedAuthoringDevice>
+            <representedOrganization>
+                <id root="1.3.6.1.4.1.21367.2005.3.7"/>
+                <name>Research Triangle Park Hospital</name>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <dataEnterer>
+        <time value="20061122185601"/>
+        <assignedEntity>
+            <id extension="40003" root="1.3.6.1.4.1.21367.2005.3.7"/>
+        </assignedEntity>
+    </dataEnterer>
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="2.16.840.1.113883.3.18.10"/>
+                <name>Gateway Hospital</name>
+                <addr>
+                    <streetAddressLine>600 Euclid Ave</streetAddressLine>
+                    <city>St. Louis</city>
+                    <state>MO</state>
+                    <postalCode>63110</postalCode>
+                    <country>USA</country>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <documentationOf>
+        <serviceEvent>
+            <effectiveTime>
+                <low value="20061122185601"/>
+                <high value="20061122185601"/>
+            </effectiveTime>
+        </serviceEvent>
+    </documentationOf>
+    <component>
+        <nonXMLBody>
+            <text mediaType="text/plain" representation="B64">ClBhdGllbnQgTmFtZTogICAgICAgRnJlZGVyaWNrIFJhbmRvbHBoClRpbWUgb2YgcmVhZGluZzog
+ICAgTm92ZW1iZXIgMjIsIDIwMDYgMDE6NTY6MDAgUE0gRVNUClN5c3RvbGljOiAgICAgICAgICAg
+ODAgbW1IZwpEaWFzdG9saWM6ICAgICAgICAgIDEzMCBtbUhn</text>
+        </nonXMLBody>
+    </component>
+</ClinicalDocument>

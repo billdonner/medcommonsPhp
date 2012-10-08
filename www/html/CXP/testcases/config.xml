@@ -1,0 +1,7 @@
+<cxpcommand>
+<callerskey>382938293829389</callerskey>
+<remoteurl>http://127.0.0.1/cxp/cxpserv.php</remoteurl>
+<opcode>QUERY</opcode>
+<querynotificationurl>http://127.0.0.1/cxp/nothand.php</querynotificationurl>
+<querystring>443487838583</querystring>
+</cxpcommand>

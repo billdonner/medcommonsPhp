@@ -1,0 +1,6 @@
+<cxpcommand>
+<repeatcount>1</repeatcount>
+<repeatinterval>0</repeatinterval>
+<remoteurl>http://mcpurple01.homeip.net/cxp/cxpserv.php</remoteurl>
+<ccrfile>collateral/sampleCCR_v2.xml</ccrfile>
+</cxpcommand>

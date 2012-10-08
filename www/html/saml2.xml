@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:EntitiesDescriptor xmlns:urn="urn:oasis:names:tc:SAML:2.0:metadata">
+    <urn:EntityDescriptor entityID="MedCommons">
+        <urn:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+            <urn:ArtifactResolutionService isDefault="true"
+                Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-SOAP"
+                Location="https://secure.test.medcommons.net:9031/sp/ARS.ssaml2" index="0"/>
+            <urn:SingleLogoutService Location="https://secure.test.medcommons.net:9031/sp/SLO.saml2"
+                Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"/>
+            <urn:SingleLogoutService Location="https://secure.test.medcommons.net:9031/sp/SLO.saml2"
+                Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"/>
+            <urn:SingleLogoutService Location="https://secure.test.medcommons.net:9031/sp/SLO.saml2"
+                Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"/>
+            <urn:AssertionConsumerService
+                Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
+                Location="https://secure.test.medcommons.net:9031/sp/ACS.saml2" index="1"/>
+            <urn:AssertionConsumerService isDefault="true"
+                Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                Location="https://secure.test.medcommons.net:9031/sp/ACS.saml2" index="0"/>
+            <urn:AttributeConsumingService index="0">
+                <urn:ServiceName xml:lang="en">AttributeContract</urn:ServiceName>
+                <urn:RequestedAttribute
+                    NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                    Name="SAML_SUBJECT"/>
+            </urn:AttributeConsumingService>
+        </urn:SPSSODescriptor>
+        <urn:ContactPerson contactType="administrative">
+            <urn:Company>MedCommons Inc.</urn:Company>
+            <urn:GivenName>Terence</urn:GivenName>
+            <urn:SurName>Way</urn:SurName>
+            <urn:EmailAddress>tway@medcommons.net</urn:EmailAddress>
+            <urn:TelephoneNumber>1.808.965.9811</urn:TelephoneNumber>
+        </urn:ContactPerson>
+    </urn:EntityDescriptor>
+</urn:EntitiesDescriptor>

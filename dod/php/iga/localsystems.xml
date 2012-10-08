@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <Template>
+    servers
+  </Template>
+  <PageName>
+    My Local Instance
+  </PageName>
+  <InstanceId>
+    23409234082308402934
+  <ServerPic>
+    servers_files/yourserverherepic
+  </ServerPic>
+  <UsersPic>
+    servers_files/userspic
+  </UsersPic>
+  <GroupsPic>
+    servers_files/groupspic
+  </GroupsPic>
+  <Servers>
+    <Server>
+      <Type>DB</Type>
+      <Name>local DB</Name>
+      <Poll>http://localhost/www/centralstatus.php</Poll>
+      <OnClick>http://localhost/www/centralstatus.php</OnClick>
+    </Server>
+    <Server>
+      <Type>AP</Type>
+      <Name>local AP</Name>
+      <Poll>http://localhost/www/appsrvstatus.php</Poll>
+      <OnClick>http://localhost/www/appsrvstatus.php</OnClick>
+    </Server>
+     <Server>
+      <Type>GW</Type>
+      <Name>gwlocal</Name>
+      <Poll>http://localhost:9090/router/status.do?fmt=xml</Poll>
+      <OnClick>http://localhost:9090/router/status.do</OnClick>
+    </Server>
+    </Servers>
+</Config>
+
+

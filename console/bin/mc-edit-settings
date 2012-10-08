@@ -1,0 +1,248 @@
+#!/usr/bin/env python
+
+from sys import argv, path
+from os import getenv, putenv, environ
+from os.path import exists, dirname, join
+
+# Set up so Django db settings can be used
+if exists(join(dirname(argv[0]), '..', 'settings.py')):
+	path.append(join(dirname(argv[0]), '..'))
+
+DJANGO_SETTINGS_MODULE = 'DJANGO_SETTINGS_MODULE'
+if not getenv(DJANGO_SETTINGS_MODULE):
+	environ[DJANGO_SETTINGS_MODULE] = 'settings'
+	putenv(DJANGO_SETTINGS_MODULE, environ[DJANGO_SETTINGS_MODULE])
+	
+import re
+
+from cgi import escape
+from cStringIO import StringIO
+
+from config.properties import get_properties
+
+PHP_VAR = re.compile(r'^[ \t]*\$ac([a-zA-Z0-9_]*)[ \t]*=')
+
+PROPS_VAR = re.compile(r'^[ \t]*ac([a-zA-Z0-9_]*)[ \t]*[:=]')
+
+TOMCAT_PATH = getenv('CATALINA_BASE', '/opt/gateway')
+PROPS_FILE = join(TOMCAT_PATH, 'conf', 'LocalBootParameters.properties')
+
+errors = 0
+
+BACKUPS_RC = {'-bucket': 'S3Bucket',
+              '-a': 'S3Key_ID',
+              '-s': 'S3Secret'}
+
+LOCALS_RC = {'-url': 'GlobalsUrl'}
+
+def main():
+    global HTML
+
+    HTML = bool(getenv('REQUEST_METHOD'))
+
+    edit_settings(get_properties())
+
+def write_file(filename, contents):
+    try:
+	file(filename, 'w').write(contents)
+    except IOError, e:
+	log_error(filename, e)
+    else:
+	log_file(filename)
+
+def copy_file(srcfile, dstfile):
+    from shutil import copyfile
+
+    try:
+	copyfile(srcfile, dstfile)
+    except IOError, e:
+	log_error(dstfile, e)
+    else:
+	log_file(dstfile)
+
+def log_file(filename):
+    if HTML:
+	print '<tr><td></td><td>%s</td></tr>' % escape(filename)
+    else:
+        print filename
+
+def log_error(filename, e):
+    global errors
+
+    errors += 1
+
+    if HTML:
+	print '<tr><td></td><td class="error">%s<br />%s</td></tr>' % (\
+		escape(filename), e)
+    else:
+	print e
+
+def edit_settings(properties):
+    from os.path import expanduser
+
+    # Allow location of web root and php include dir to be
+    # overridden by acWebRoot property.
+    #
+    web_root = properties.get('WebRoot', '/var/www')
+    php_file = join(web_root, 'php', 'local_settings.php')
+    backups_root = expanduser('~mc_backups')
+
+    write_php(php_file, properties)
+    write_props(properties)
+    edit_rc(join(backups_root, 'mc_backups.rc'), properties, BACKUPS_RC)
+
+    # quick and dirty override:
+    # 1. console user sets ApplianceMode
+    # 2. if ApplianceMode is '3', console sets GlobalsRoot to
+    #       http://globals.medcommons.net/
+    #    otherwise, sets GlobalsRoot to
+    #       http://globals.myhealthespace.com/
+    # 3. mc_locals.rc needs to be edited to look like:
+    #       -url {GlobalsRoot}/globals/
+    #
+    properties['GlobalsUrl'] = properties.get('GlobalsRoot',
+                                              'http://globals.myhealthespace.com/') + 'globals/'
+
+    edit_rc(join(expanduser('~mc_locals'), 'mc_locals.rc'), properties,
+            LOCALS_RC)
+
+    copy_file(join(web_root, '.aes-key'),
+	      join(backups_root, '.aes-key'))
+    copy_file(join(web_root, '.aes-key'),
+	      join(TOMCAT_PATH, '.aes-key'))
+
+def write_php(fn, properties):
+    from sys import stdout
+
+    fo = StringIO()
+
+    # We're going to pop values as we write them
+    properties = properties.copy()
+
+    has_php_start = False
+
+    try:
+        fi = file(fn)
+
+        for line in fi:
+            a = line.strip()
+
+	    if '<?' in line: has_php_start = True
+
+            if a == '?>':
+                break
+
+            b = PHP_VAR.findall(a)
+
+            if b and b[0] in properties:
+                key = b[0]
+		if not has_php_start:
+		    print >>fo, "<?php"
+		    has_php_start = True
+
+                print >>fo, "  $ac%s = %s;" % (key, php_escape(properties[key]))
+                properties.pop(key)
+            else:
+                fo.write(line)
+
+    except IOError:
+	pass
+
+    if not has_php_start:
+        print >>fo, '<?php'
+
+    for key, value in properties.items():
+        print >>fo, "  $ac%s = %s;" % (key, php_escape(value))
+
+    print >>fo, '?>'
+
+    write_file(fn, fo.getvalue())
+
+def edit_rc(fn, properties, substitutions):
+    fo = StringIO()
+
+    # We're going to pop (remove) values as we write them
+    properties = properties.copy()
+
+    try:
+	fi = file(fn)
+
+	for line in fi:
+	    a = line.split()
+	    if len(a) == 2 and a[0] in substitutions and substitutions[a[0]] in properties:
+		print >>fo, a[0], properties.pop(substitutions[a[0]])
+	    else:
+		fo.write(line)
+
+    except IOError:
+	pass
+
+    for key, value in substitutions.items():
+	if value in properties:
+	    print >>fo, key, properties[value]
+
+    write_file(fn, fo.getvalue())
+
+# Order is important, substitutions are made in order
+PHP_TABLE = [('\\', r'\\'),
+	     ('\"', r'\"'),
+	     ('\n', r'\n'),
+             ('\r', r''),
+	     ('\t', r'\t')]
+
+def php_escape(value):
+	"""Convert _value_ into a fully-escaped string suitable for PHP.
+
+	Examples:
+	>> php_escape('test')
+	'test'
+
+	>> php_escape('test\nstring')
+	'test\\\nstring'
+	"""
+	if isinstance(value, unicode):
+		value = value.encode('UTF-8')
+		quote = True
+	elif isinstance(value, str):
+		quote = True
+	else:
+		value = str(value)
+		quote = False
+
+	for mapfrom, mapto in PHP_TABLE:
+		value = mapto.join(value.split(mapfrom))
+
+	if quote:
+		return '"' + value + '"'
+	else:
+		return value
+
+def write_props(properties):
+    from sys import stdout
+
+    fo = StringIO()
+
+    try:
+        fi = file(PROPS_FILE)
+
+        for line in fi:
+            a = line.strip()
+
+            b = PROPS_VAR.findall(a)
+
+            if b and b[0] in properties:
+		key = b[0]
+                print >>fo, "ac%s=%s" % (key, props_escape(properties[key]))
+            else:
+                fo.write(line)
+
+    except IOError:
+        pass
+
+    write_file(PROPS_FILE, fo.getvalue())
+
+def props_escape(value):
+    return '\\n'.join(str(value).split('\n'))
+
+if __name__ == '__main__':
+    main()

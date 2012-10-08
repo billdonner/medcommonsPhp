@@ -1,0 +1,110 @@
+Initial Setup for ev1servers
+============================
+
+Root Password
+-------------
+Change the root password to something amazingly random.  All admin
+access should be through 'sudo' -- no real need for logging in as
+root::
+
+    # passwd
+    ...
+
+Users
+-----
+Before we start adding users, a couple of things need to be done.
+
+We're using Maildir for incoming mail.  So add the following
+directories to '/etc/skel' so new users automatically get the right
+directories created::
+
+    # mkdir /etc/skel/Maildir
+    # mkdir /etc/skel/Maildir/cur
+    # mkdir /etc/skel/Maildir/new
+    # mkdir /etc/skel/Maildir/tmp
+
+And change the permissions::
+    # chmod -R 700 /etc/skel/Maildir
+
+Note that 'ev1servers.net' made the mistake of adding the 'pegasus'
+group with the same group ID as 'admin', so group IDs are off by one.
+I think this is dangerous, so either delete the 'pegasus' user/group
+before adding users, or change the pegasus group ID back to 100::
+
+    # vi /etc/group
+    ; change pegasus:x:500:
+    ;     to pegasus:x:100
+
+    # vi /etc/passwd
+    ; change pegasus:x:100:500:...
+    ;     to pegasus:x:100:100:...
+
+Add users for all the technical people.  The style is just to use
+first names::
+
+    # /usr/sbin/useradd -c "Terence Way" -m -G wheel terry
+    # /usr/sbin/useradd -c "Bill Donner" -m -G wheel bill
+    # /usr/sbin/useradd -c "Sean Doyle" -m -G wheel sean
+    # /usr/sbin/useradd -c "Simon Sadedin" -m -G wheel simon
+    # /usr/sbin/useradd -c "Keith Alan Rodwell" -m -G wheel keith
+
+Be sure to change passwords on these accounts.
+
+The options are '-c "Full Name"' to set the comment field in
+/etc/passwd, '-m' to make a directory, and '-G' to enable the user in
+the 'wheel' system administrators group.
+
+We can now enable 'wheel' in the sudoers file::
+
+    # /usr/sbin/visudo
+
+And uncomment the line::
+
+    # %wheel   ALL=(ALL)	ALL
+
+So it looks like:
+
+    %wheel    ALL=(ALL)	ALL
+
+Login Services
+==============
+We should not allow unencrypted access.  This means disabling telnet.  If
+the file /etc/xinetd.d/telnet exists, edit it::
+
+    # vi /etc/xinetd.d/telnet
+    ; change disable = no
+    ;     to disable = yes
+
+    # kill -HUP `cat /var/run/xinetd.pid`
+
+Note that those are backquotes ` and not regular quotes '
+
+We should not allow root to login using ssh::
+
+    # vi /etc/ssh/sshd_config
+    ; Uncomment #PermitRootLogin yes
+    ;  change to PermitRootLogin no
+
+    # kill -HUP `cat /var/run/sshd.pid`
+
+Test out the setup.  We should not be able to log in as 'root' using
+ssh, we should not be able to log in at ALL with telnet::
+
+    $ telnet 67.15.178.38
+    ...connection refused...
+
+    $ ssh root@67.15.178.38
+    ...despite our best attempts, we can't get in...
+
+    $ ssh terry@67.15.178.38
+    ...works...
+    [terry@plain ~] sudo su
+    Password: ...
+
+    [root@plain ~]# 
+
+When everything has been tested to our satisfaction, we delete the
+ev1servers' provided 'admin' account::
+
+    # /usr/sbin/userdel admin
+

@@ -1,0 +1,50 @@
+{% extends "form.html" %}
+
+{% load medcommons %}
+
+{% block title %}Create Account{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Accounts</a> &gt;
+Create Account
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<form method='post'
+      action='create'>
+
+  <table>
+    <tbody>
+      <tr>
+	<th><label for='id_mcid'>MCID:</label></th>
+	<td>
+	  <input type='text' readonly='readonly'
+	         name='mcid' id='id_mcid' value='{{ mcid|mcid }}' />
+	</td>
+      </tr>
+
+{{ form }}
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit' value='Save' class='default' />
+
+    <input type='submit'
+	   name='create'
+	   value='Save and create another' />
+
+    <input type='submit'
+	   name='edit'
+	   value='Save and continue editing' />
+
+  </div>
+</form>
+
+{% endblock %}

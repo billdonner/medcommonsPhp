@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Identity Providers{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+Identity Providers
+{% endblock %}
+
+{% block sidebar %}
+<ul class='object-tools'>
+  <li><a href='add' class='addlink'>Add <abbr title='Identity Provider'>IdP</abbr></a></li>
+  <li><a href='download' type='text/csv'>Download</a></li>
+  <li><a href='upload' class='addlink'>Upload</a></li>
+</ul>
+{% endblock sidebar %}
+
+{% block content %}
+
+<p>
+OpenID is currently
+{% if OpenIDMode %}
+{% ifequal OpenIDMode 1 %}open to whitelist entries (listed below) only{% endifequal %}
+{% ifequal OpenIDMode 2 %}open to all OpenID providers{% endifequal %}
+{% else %}disabled{% endif %}.
+
+[ <a href='../config/set_settings'>change</a> ]
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <!-- colspan='6' -->
+      <td></td>
+      <td>Source ID</td>
+      <td>Name</td>
+      <td>Website</td>
+      <td>Format</td>
+      <td>Logo</td>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan='6'>
+	<span style='float: left'>
+{% if has_previous %}
+<a href='?page=1'>&laquo; first</a>
+<a href='?page={{ previous }}'>&lt; prev</a>
+{% endif %}
+	</span>
+	<span style='float: right'>
+{% if has_next %}
+<a href='?page={{ next }}'>next &gt;</a>
+<a href='?page={{ pages }}'>last &raquo;</a>
+{% endif %}
+	</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='6'>
+	<span style='float: left'>
+	  <a href='add'>
+	    <img src='{{ media }}img/icon_addlink.gif' width='10' height='10'
+		 alt='Add Identity Provider' />
+	    add <abbr title='Identity Provider'>IdP</abbr>
+	  </a>
+	</span>
+	<span style='float: right'>
+Page {{ page }} of {{ pages }}
+	</span>
+      </td>
+    </tr>
+  </tfoot>
+
+  <tbody>
+{% for entry in object_list %}
+    <tr class='{% cycle a,b %}'>
+      <td>
+        <a href='edit?id={{ entry.id }}'>
+	  <img src='{{ media }}img/icon_changelink.gif' width='10' height='10'
+	       alt='Edit Identity Provider'  />
+	</a>
+	<a href='delete?id={{ entry.id }}'>
+	  <img src='{{ media }}img/icon_deletelink.gif' width='10' height='10'
+	       alt='Delete Identity Provider' />
+	</a>
+      </td>
+      <td>
+	<a href='details?id={{ entry.id }}'>{{ entry.source_id }}</a>
+      </td>
+      <td>
+        {{ entry.name }}
+      </td>
+      <td>
+        <a href='{{ entry.website }}'>{{ entry.website }}</a>
+      </td>
+      <td>
+        {{ entry.format }}
+      </td>
+      <td>
+	<img src='logo?id={{ entry.id }}' width='16' height='16'
+	     alt='{{ entry.name }}' />
+      </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

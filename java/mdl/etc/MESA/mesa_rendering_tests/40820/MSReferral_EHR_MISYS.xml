@@ -1,0 +1,430 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type='text/xsl' href='IMPL_CDAR2.xsl'?>
+<ClinicalDocument xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <realmCode code="US"/>
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId extension="IMPL_CDAR2_LEVEL1" root="2.16.840.1.113883.10"/>
+  <templateId extension="IMPL_CDAR2_LEVEL2" root="2.16.840.1.113883.10"/>
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.2"/>
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.3"/>
+  <id root="2.16.840.1.113883.3.65.2.353201.1"/>
+  <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SUMMARIZATION OF EPISODE NOTE"/>
+  <title>Referral Summary for Misys EHR_MISYS</title>
+  <effectiveTime value="20061203112006-0500"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" displayName="normal"/>
+  <languageCode code="en-US"/>
+  <setId root="2.16.840.1.113883.3.65.2" extension="353202.3"/>
+  <versionNumber value="1"/>
+  <recordTarget>
+    <patientRole>
+      <id extension="40003" root="2.16.840.1.113883.3.65.2"/>
+      <addr>
+        <streetAddressLine>4525 Scott Ave</streetAddressLine>
+        <city>St. Louis</city>
+        <state>MO</state>
+        <postalCode>63110</postalCode>
+        <country>USA</country>
+      </addr>
+      <telecom use="HP" value="tel:(314)5551671"/>
+      <patient>
+        <name>
+          <given>Misys</given>
+          <family>EHR_MISYS</family>
+          <prefix/>
+          <suffix/>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" displayName="Male"/>
+        <birthTime value="19590203"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value="20061203112007-0500"/>
+    <assignedAuthor>
+      <id extension="353203.4" root="2.16.840.1.113883.3.65.2"/>
+      <code code="SELF" codeSystem="2.16.840.1.113883.5.111" codeSystemName="PersonalRelationshipRoleType" displayName="Self"/>
+      <addr>
+        <streetAddressLine>700 Euclid Ave</streetAddressLine>
+        <city>St. Louis</city>
+        <state>MO</state>
+        <postalCode>63110</postalCode>
+        <country>USA</country>
+      </addr>
+      <telecom nullFlavor="UNK"/>
+      <assignedPerson>
+        <name>
+          <given>Hasselfeld</given>
+          <family>Brian</family>
+          <prefix/>
+          <suffix/>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <author>
+    <time value="20061203112007-0500"/>
+    <assignedAuthor>
+      <id extension="353200.5" root="2.16.840.1.113883.3.65.2"/>
+      <addr>
+        <streetAddressLine>8529 Six Forks Road</streetAddressLine>
+        <city>Raleigh</city>
+        <state>NC</state>
+        <postalCode>27615</postalCode>
+        <country>USA</country>
+      </addr>
+      <telecom use="WP" nullFlavor="UNK"/>
+      <assignedAuthoringDevice>
+        <manufacturerModelName/>
+        <softwareName>Misys Connect 2.0</softwareName>
+      </assignedAuthoringDevice>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id extension="353200.5" root="2.16.840.1.113883.3.65.2"/>
+        <name>Gateway Hospital</name>
+        <telecom use="WP" nullFlavor="UNK"/>
+        <addr>
+          <streetAddressLine>600 Euclid Ave</streetAddressLine>
+          <city>St. Louis</city>
+          <state>MO</state>
+          <postalCode>63110</postalCode>
+          <country>USA</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <documentationOf>
+    <serviceEvent classCode="PCPR">
+      <effectiveTime>
+        <low value="20060508000000-0400"/>
+        <high value="20061203112001-0500"/>
+      </effectiveTime>
+      <performer typeCode="PRF">
+        <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="ParticipatingFunction" displayName="primary care physician"/>
+        <time>
+          <low value="20061129000000-0500"/>
+        </time>
+        <assignedEntity>
+          <id extension="353204.4" root="2.16.840.1.113883.3.65.2"/>
+          <code code="59058001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="General Physician"/>
+          <addr>
+            <streetAddressLine>600 Euclid Ave</streetAddressLine>
+            <city>St. Louis</city>
+            <state>MO</state>
+            <postalCode>63110</postalCode>
+            <country>USA</country>
+          </addr>
+          <telecom use="WP" value="tel:3145551675"/>
+          <assignedPerson>
+            <name>
+              <given>Susan</given>
+              <family>Pickson</family>
+              <prefix/>
+              <suffix/>
+            </name>
+          </assignedPerson>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  <componentOf>
+    <encompassingEncounter>
+      <id extension="33726349" root="2.16.840.1.113883.3.65.2"/>
+      <effectiveTime>
+        <low value="20060508"/>
+      </effectiveTime>
+    </encompassingEncounter>
+  </componentOf>
+  <component>
+    <structuredBody>
+      <templateId extension="IMPL_CDAR2_LEVEL1-2REF_US_I2_2005SEP" root="2.16.840.1.113883.10"/>
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.1"/>
+          <code code="42349-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Reason for Referral"/>
+          <title>Reason for Referral</title>
+          <text>Severe problem and need special attention</text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.4"/>
+          <code code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Present Illness"/>
+          <title>History of Present Illness</title>
+          <text>No History</text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem List"/>
+          <title>Conditions</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Problem</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Comment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td ID="problem-Problem-0">CHRONIC PHARYNGITIS AND NASOPHARYNGITIS</td>
+                  <td ID="problem-Date-0">10/16/2006</td>
+                  <td ID="problem-Status-0">active</td>
+                  <td ID="problem-Comment-0">&amp;nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+              <id extension="353205.7" root="2.16.840.1.113883.3.65.2"/>
+              <code code="DX" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" displayName="Diagnosis"/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20061016000000-0400"/>
+              </effectiveTime>
+              <value xsi:type="CD" code="472.0" codeSystem="2.16.840.1.113883.6.2" codeSystemName="ICD9">
+                <originalText>
+                  <reference value="#problem-Problem-0"/>
+                </originalText>
+              </value>
+              <entryRelationship typeCode="SUBJ" inversionInd="true">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1.1"/>
+                  <code code="CLINSTATUS" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" displayName="Clinical Status"/>
+                  <statusCode code="completed"/>
+                  <value xsi:type="CD">
+                    <originalText>
+                      <reference value="#problem-Status-0"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ" inversionInd="true">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                  <code code="COMMENT" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" displayName="Comment"/>
+                  <text mediaType="text/xml">
+                    <reference value="#problem-Comment-0"/>
+                  </text>
+                  <statusCode code="completed"/>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+          <code code="10155-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Allergies"/>
+          <title>Allergies and Adverse Reactions</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Allergen</th>
+                  <th>Reaction</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td ID="allergy-Allergen-0">Animal Hair</td>
+                  <td ID="allergy-Reaction-0">Hives;Headache;Asthma;</td>
+                  <td ID="allergy-Date-0">10/16/2006</td>
+                </tr>
+                <tr>
+                  <td ID="allergy-Allergen-1">Lidocaine HCL (Cardiac)</td>
+                  <td ID="allergy-Reaction-1">Hives;Headache;Asthma;</td>
+                  <td ID="allergy-Date-1">07/11/2005</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+              <id extension="353206.7" root="2.16.840.1.113883.3.65.2"/>
+              <code code="ALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20061016000000-0400"/>
+              </effectiveTime>
+              <value xsi:type="CD"/>
+              <participant typeCode="CSM">
+                <participantRole classCode="MANU">
+                  <playingEntity classCode="MMAT">
+                    <code nullFlavor="UNK">
+                      <originalText>
+                        <reference value="#allergy-Allergen-0"/>
+                      </originalText>
+                    </code>
+                  </playingEntity>
+                </participantRole>
+              </participant>
+              <entryRelationship typeCode="MFST">
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <code code="RXNASSESS"/>
+                  <statusCode code="completed"/>
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <id extension="353207.7" root="2.16.840.1.113883.3.65.2"/>
+                      <code code="DX"/>
+                      <statusCode code="completed"/>
+                      <value xsi:type="CD">
+                        <originalText>
+                          <reference value="#allergy-Reaction-0"/>
+                        </originalText>
+                      </value>
+                    </observation>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+              <id extension="353208.7" root="2.16.840.1.113883.3.65.2"/>
+              <code code="ALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20050711000000-0400"/>
+              </effectiveTime>
+              <value xsi:type="CD"/>
+              <participant typeCode="CSM">
+                <participantRole classCode="MANU">
+                  <playingEntity classCode="MMAT">
+                    <code nullFlavor="UNK">
+                      <originalText>
+                        <reference value="#allergy-Allergen-1"/>
+                      </originalText>
+                    </code>
+                  </playingEntity>
+                </participantRole>
+              </participant>
+              <entryRelationship typeCode="MFST">
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6.1"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <code code="RXNASSESS"/>
+                  <statusCode code="completed"/>
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <id extension="353209.7" root="2.16.840.1.113883.3.65.2"/>
+                      <code code="DX"/>
+                      <statusCode code="completed"/>
+                      <value xsi:type="CD">
+                        <originalText>
+                          <reference value="#allergy-Reaction-1"/>
+                        </originalText>
+                      </value>
+                    </observation>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Medications"/>
+          <title>Medications</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Medication</th>
+                  <th>Sig</th>
+                  <th>OrderDate</th>
+                  <th>Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ID="order-0">
+                  <td ID="medication-Medication-0">Aspirin Buffered Oral Tablet 325 mg</td>
+                  <td ID="medication-Sig-0">1/2 q.a.m.</td>
+                  <td ID="medication-OrderDate-0">10/16/2006</td>
+                  <td ID="medication-Duration-0">2 weeks</td>
+                </tr>
+                <tr ID="order-1">
+                  <td ID="medication-Medication-1">Nitro-Time Oral Capsule Controlled Release 2.5 mg</td>
+                  <td ID="medication-Sig-1">1/2 q.h.  p.r.n.</td>
+                  <td ID="medication-OrderDate-1">10/16/2006</td>
+                  <td ID="medication-Duration-1">1 month</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="RQO">
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id extension="353210.8" root="2.16.840.1.113883.3.65.2"/>
+              <text mediaType="text/xml">
+                <reference value="#order-0"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20061016000000-0400"/>
+              </effectiveTime>
+              <consumable typeCode="CSM">
+                <manufacturedProduct classCode="MANU">
+                  <manufacturedLabeledDrug>
+                    <code code="55007" codeSystem="2.16.840.1.113883.6.69">
+                      <originalText>
+                        <reference value="#medication-Medication-0"/>
+                      </originalText>
+                    </code>
+                    <name>Aspirin Buffered Oral Tablet 325 mg</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="RQO">
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id extension="353211.8" root="2.16.840.1.113883.3.65.2"/>
+              <text mediaType="text/xml">
+                <reference value="#order-1"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20061016000000-0400"/>
+              </effectiveTime>
+              <consumable typeCode="CSM">
+                <manufacturedProduct classCode="MANU">
+                  <manufacturedLabeledDrug>
+                    <code code="90515" codeSystem="2.16.840.1.113883.6.69">
+                      <originalText>
+                        <reference value="#medication-Medication-1"/>
+                      </originalText>
+                    </code>
+                    <name>Nitro-Time Oral Capsule Controlled Release 2.5 mg</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

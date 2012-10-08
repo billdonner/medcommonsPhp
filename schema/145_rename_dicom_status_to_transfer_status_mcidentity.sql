@@ -1,0 +1,10 @@
+rename table dicom_status to transfer_state;
+alter table transfer_state change column  ds_key                 ts_key                 varchar(40);
+alter table transfer_state change column  ds_account_id          ts_account_id          decimal(16,0);
+alter table transfer_state change column  ds_status              ts_status              varchar(60);
+alter table transfer_state change column  ds_progress            ts_progress            decimal(6,3);
+alter table transfer_state change column  ds_modified_date_time  ts_modified_date_time  timestamp;
+alter table transfer_state change column  ds_create_date_time    ts_create_date_time    timestamp;
+alter table transfer_state change column  ds_type                ts_type                varchar(30);
+alter table transfer_state change column  ds_message             ts_message             text;
+alter table transfer_state change column  ds_owner_account_id    ts_owner_account_id    decimal(16,0);

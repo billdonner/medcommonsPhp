@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><ContinuityOfCareRecord xmlns="urn:astm-org:CCR"    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:astm-org:CCR    CCR_20051109.xsd">    <CCRDocumentObjectID>632664950510991250</CCRDocumentObjectID>    <Language>        <Text>English</Text>    </Language>    <Version>V1.0</Version>    <DateTime>        <ExactDateTime>2005-11-02T02:24:11Z</ExactDateTime>    </DateTime>    <Patient>        <ActorID>AA0001</ActorID>    </Patient>    <From>        <ActorLink>            <ActorID>AA0002</ActorID>        </ActorLink>    </From>    <Purpose>        <Description>            <Text>           MDL Export            </Text>        </Description>          </Purpose>    <Body>        </Body>    <Actors>        <Actor>            <ActorObjectID>AA0001</ActorObjectID>            <Person>                <Name>                    <CurrentName>                        <Given></Given>                        <Family></Family>                    </CurrentName>                </Name>                           </Person>            	              <Source>                <Actor>                    <ActorID>AA0002</ActorID>                </Actor>            </Source>        </Actor>
+		<Actor>
+			<ActorObjectID>AA0002</ActorObjectID>
+			<InformationSystem>
+				<Name>MedCommons Data Liberator</Name>
+				<Version>V1.0</Version>
+			</InformationSystem>
+			<Source>
+				<Actor>
+					<ActorID>AA0002</ActorID>
+				</Actor>
+			</Source>
+		</Actor>
+    </Actors>   </ContinuityOfCareRecord>

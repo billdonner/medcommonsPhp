@@ -1,0 +1,260 @@
+* {
+  margin:0;
+  padding:0;
+  font-family:verdana;
+  font-size:11px;
+}
+body {
+  width:720px;
+  background-color: #515151;
+} 
+
+#is_a_section {
+  float:left;
+  margin-top:40px;
+  width:320px;
+}
+
+#is_b_section {
+  width:400px;
+  margin-left:320px;
+}
+
+#is_footer {
+  clear:both;
+  width:720px;
+}
+
+
+#content {
+  background: #515151 url('../images/fadebg.gif') 0 0 repeat-x;
+  text-align:center;	
+}
+
+#is_header {
+	height:100px;
+}
+
+#logo {
+	float:right;
+	margin:10px 30px 10px 0;
+}
+
+#logo a img {
+border: none;   /* was only way to get rid of unsightly border around the IS logo*/
+}
+
+#leagueimg {    /* was incorrectly named teamimg */
+ float:left;
+ margin:10px 0 0 25px; /* pad only top and left */
+ max-width: 80px; /* force this */
+}
+
+#playerselect {
+  float:none;
+  position:absolute;
+  top:110px;
+  left:25px;
+}
+
+#playerimg {
+}
+
+#playernotes {
+  background-color:#fbfbcf;
+  width:160px;
+  height:60px;
+  color:brown;
+  text-align:left;
+  padding:5px;
+  font-weight:bold;
+  float:left;
+  overflow:hidden;
+  margin:10px 0 0 20px;
+}
+
+#playerlinks {
+  background-color:#fbfbcf;
+  color:#007dc9;
+  height:60px;
+  width:90px;
+  padding:5px;
+  text-align:left;
+  float:right;
+  margin:10px 20px 0 0;
+}
+
+#playerlinks a {
+  text-decoration:none;
+  line-height:15px;
+}
+
+
+#actionselect {
+  width:280px;
+  margin-top:10px;
+}
+
+#ajaxarea {
+/* I changed this from center, lets see what happens - bill */
+  text-align: left;
+  width:350px;
+  background-color:#eee;
+  height:100px;
+  padding:5px;
+  margin:10px 0 0 20px;
+}
+
+#ajaxarea input {margin-top:8px;}
+
+#linkarea {
+  color:white;
+  border-top:1px solid white;
+  text-align:center;
+  padding:5px 0;
+  width:680px;
+  margin:10px 0 0 20px;
+}
+
+#linkarea a {
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+}
+
+#linkarea a:hover {
+  background:#eee;
+  color:black;
+}
+
+#footer {
+  color:#eee;
+  border-top:1px solid white;
+  padding:5px 20px;
+  text-align:center;
+  font-size:9px;
+}
+
+#footer a {
+  color:#fff;
+  font-size:9px;
+}
+
+.acontent {
+  display:none;
+  background-color:#fff;
+  border:1px solid #ccc;
+  text-align:left;
+  padding:3px;
+}
+
+
+a img {
+border: none;
+}
+
+
+#teamroster, #queryarea {
+/* I changed this from center, lets see what happens - bill */
+	text-align: center;
+	clear:both;
+	width:270px;
+ 	background-color:#eee;
+  padding:5px;
+	margin:0px 0 0 20px;
+}
+
+#queryarea h4 { clear: both;}
+#queryarea p {	clear:both;font-size:10px;padding-top:3px;}
+#queryarea a { color: black; text-decoration:none;font-size:9px;}
+.clearfloat {clear:both;}
+
+#teamroster a { color: black; text-decoration:none;}
+
+.player_name {
+	display:block;
+	font-size:9px;
+}
+
+.team_member {
+	border:1px solid #eee;
+	float:left;
+	width:80px;
+	min-height:80px;
+	margin:5px 5px 0 3px;
+	background:#fff;
+	padding-top:6px;
+	border:1px solid #999;
+}
+
+.league_member {
+	border:1px solid #eee;
+	float:left;
+	width:60px;
+	min-height:60px;
+	margin:5px 5px 0 0;
+	padding-top:5px;
+	background:#fff;
+	border:1px solid #999;
+}
+
+.league_member:hover {
+	background-color:#fff; /* change later when images are transparent */
+}
+
+._pri_critical { color:black; background-color: #FCD8E0;}
+._pri_high { color: black; background-color:#FFFFD9;}
+._pri_normal { color: black; background-color: #D8E6D8;}
+ ._pri_none { color: black; background-color: #fff;}
+
+.form_summary {border: 1px solid; padding: 3px; margin: 3px; font-family: courier;background-color:#EEF; color:blue;}
+
+.amenu {
+  width:100%;
+  background:#ccc;
+  color:#333;
+  padding:2px;
+  border-top:1px solid #eee;
+  border-bottom:1px solid #666;
+  padding:5px 2px;
+  margin-left:-2px;
+  /*cursor:hand;*/
+}
+
+.subheader {
+  background:#ddd;
+  padding:5px 0 2px 2px;
+  margin-top:0;
+  border-top:1px solid #999;
+ }
+ 
+ .formitems {
+  margin-left:12px;
+}
+
+.formitems span {
+  white-space:nowrap;
+  margin-right:5px;
+}
+
+.in_form_row {
+  margin-bottom:5px;
+}
+
+#is_c_section .amenu {
+  margin:0;
+  padding:5px 0;
+}
+
+#is_c_section #ajaxarea  {
+  width:670px;
+}
+
+#is_c_section #queryarea, #is_c_section #teamroster{
+  width:670px;
+}
+
+.infield {margin-top: 30px; height: 24px; width: 80%;  font-size: 16px;}
+.infield_button {margin-top: 30px; }
+.infield_prompt {font-size: 16px;}
+.errfield {color: red; font-size: 16px;}

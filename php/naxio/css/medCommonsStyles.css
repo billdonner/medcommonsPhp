@@ -1,0 +1,222 @@
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,img,a,b,abbr,acronym,big,cite,code,del,em,i,ins,small,strike,strong,u,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td 
+{background:transparent;font-size:100%;padding:0;outline:0;border:0;margin:0;}
+
+ul.normal {list-style-type:disc;list-style-position:inside;padding-left: 60px;}
+ol.normal {margin: 0.8em 0em 0.8em 2.5em}
+
+body {color:#333;font:.75em/150% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+a,a:link,a:active,a:visited {color: #5987ac;text-decoration:none;outline:none;}
+a:focus {outline:none;}
+ul li {list-style-position: outside;} 
+.left {float:left;}
+.right {float:right;}
+.clear {clear:both;}
+.note {font-family:Georgia,"Times New Roman",Times,serif;font-style:italic;}
+.highlight {background-color:#f7f8b6;}
+.nomargin,#xs_main .nomargin {margin:0;}
+.noclear {clear:none;}
+.nopadding {padding:0;}
+ 
+ /* body width removed on jul2108, also added a bit of padding on the right */
+body {background-color:#fff; padding-top:6px; padding-left:10px; padding-right:10px;}
+body.break {background-color:#fff;}
+/* these are now sized at 760px*/
+#ContentBoxInterior   { padding-top: 2px;     padding-left: 0px;    margin-bottom: 5px;    text-align: left;    float:left;  width:760px;  }
+#ContentBoxInterior p { margin-left: 20px;  margin-right: 10px;}
+#ContentBoxInterior a:hover {text-decoration:underline;}
+#ContentBoxInterior h1,#ContentBoxInterior h2,#ContentBoxInterior h3,#ContentBoxInterior h4,#ContentBoxInterior h5,#ContentBoxInterior h6 {color:#3b5269;font:100% Rockwell,Georgia,"Times New Roman",Times,serif;margin-bottom:.5em;}
+#ContentBoxInterior h1 {font-size:240%;}
+#ContentBoxInterior h2 {font-size:170%;margin-top:1em;}
+#ContentBoxInterior h2 span {color:#999;font:70% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+#ContentBoxInterior h2.first {margin-top:0;}
+#ContentBoxInterior h3 {font:bold 120% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+#ContentBoxInterior p,#ContentBoxInterior ul,#ContentBoxInterior ol,#ContentBoxInterior blockquote {margin-bottom:1.2em;}
+#ContentBoxInterior small {color:#555;font-size:85%;}
+#ContentBoxInterior big {font-size:130%;}
+#ContentBoxInterior hr {height:1px;color:#ccc;background-color:#ccc;border:none;margin:2.5em 0;}
+#ContentBoxInterior ul {list-style-type:disc;list-style-position:inside;padding-left: 60px;}
+#ContentBoxInterior ul li { padding-bottom:.1em;}
+
+/* these variations are full width */
+#CBIWide   { padding-top: 2px;     padding-left: 0px;    margin-bottom: 5px;    text-align: left;    float:left;   }
+#CBIWide p { margin-left: 20px;  margin-right: 10px;}
+#CBIWide a:hover {text-decoration:underline;}
+#CBIWide h1,#CBIWide h2,#CBIWide h3,#CBIWide h4,#CBIWide h5,#CBIWide h6 {color:#3b5269;font:100% Rockwell,Georgia,"Times New Roman",Times,serif;margin-bottom:.5em;}
+#CBIWide h1 {font-size:240%;}
+#CBIWide h2 {font-size:170%;margin-top:1em;}
+#CBIWide h2 span {color:#999;font:70% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+#CBIWide h2.first {margin-top:0;}
+#CBIWide h3 {font:bold 120% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+#CBIWide p,#CBIWide ul,#CBIWide ol,#CBIWide blockquote {margin-bottom:1.2em;}
+#CBIWide small {color:#555;font-size:85%;}
+#CBIWide big {font-size:130%;}
+#CBIWide hr {height:1px;color:#ccc;background-color:#ccc;border:none;margin:2.5em 0;}
+#CBIWide ul {list-style-type:disc;list-style-position:inside;padding-left: 60px;}
+#CBIWide ul li { padding-bottom:.1em;}
+
+#ContentLeft{    padding: 0px 10px 0px 0px;     width:534px;      float: left;    border-right: 1px dashed #F2E9DA; }
+#ContentRight {  float: left;    width: 166px;     margin-left: 10px;    line-height: 10px;    font-size: 9px;    text-align: left;    position: relative;}
+#ContentRight h4 { line-height: 14px;    font-size: 12px;    text-align: left;    margin-left: 0px;    color: #5987ac;}
+#ContentRight img {  margin-top: 5px;    text-align: right}
+#ContentRight p {margin-left: 6px;    margin-right: 4px;}
+#ContentBottom{    float: left;    margin-top: 15px;    clear: both;}
+
+.flushleft {    text-align: left;}
+#poweredby {    text-align: center;    vertical-align: middle;}
+#sample_healthUrl a {    background: url(images/example_healthURL.gif) no-repeat left top;}
+#sample_healthUrl a:hover {    background: url(images/example_healthURL_ON.gif) no-repeat left top;}
+
+.errorAlert{    color: red; }
+
+.bottom_table                  {    padding: 0;    margin: 0 ;    border: none; }
+.bottom_table td             {    background-color: #fbf4e4;    color: Black;    padding: 7px;}
+.bottom_table .table_col {    background-color: #898770;    color: White;    padding: 7px;}
+.bottom_table .table_row {    background-color: #958f6d;    color: White;    padding: 7px;}
+
+/* added for good looking form input */
+
+div.f,form.p .f,form.p p  {      clear: both;      padding-top: 10px;}
+div.f span.n,form.p .n,form.p label {      float: left;      margin-left:50px;      width: 150px;      text-align: right;}
+div.f span.q,form.p .q {      float: left;      margin-left: 10px;      width: 400px;      text-align: left;}
+div.f span.q span.r,form.p .r {      padding: 10px;      font-size: .8em;}
+div.f span.q a,form.p a {      cursor: pointer}
+
+.tfm  {color:#3b5269;margin-bottom:.5em; font:bold 120% "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;}
+.pic  {text-align: left; margin-top: 0px;margin-bottom: 0px;padding: 0px;  }
+.pic a img {  padding-top: 7px;  border:  none; }
+  
+li.picsec {    color: #6D7E74;    font-weight: bold;    line-height: 17px;    list-style:none;    padding-top:10px;  }
+  
+ .c3 { padding-left: 40px; font-size:.9em; }
+ 
+ /* header floated to the left on july2108 and also moved to em sizing */
+ #footer {clear:both; float:left; color:#000;background:transparent;font-size:95%;  margin-top: 1.5em; border-top: .7em solid #494949;}
+#footer h3 {color:#000;background:transparent none no-repeat 0px 22px;font:140% Rockwell,Georgia,"Times New Roman",Times,serif;padding:12px 0 0 0;}
+#footer p {color:#000;background:transparent none no-repeat 0px 12px;font: 90% Rockwell,Georgia,"Times New Roman",Times,serif;padding:12px 0 0 0;}
+#footer h3, #footer p {margin-bottom:8px;}
+#footer ul {list-style:none;}
+#footer ul li {padding-left: 0; padding-bottom:.1em;}
+#footer a {color: #5987ac;}
+#footer a:hover {text-decoration:underline;}
+#footer div.column-group {clear:both;text-align:left;margin:0 auto;}
+#footer div.column {float:left;width:14em;padding-bottom:3em;}
+#footer div.last-child {float:right;text-align:right;padding-top:2em;}
+#footer .listinlinetiny {float:left;}  /* jul2108, clears up dashboard issue, why? */
+.screenshots h3 {margin-top:1em;}
+
+.listinline li {display: inline;}
+.listinlinetiny li {font-size: .8em; display: inline;}
+
+xmp {color: blue; background-color: #eee;}
+.custompiece {color: black; padding:1em; border: 1px solid;}
+.inperr {color:red;}
+.registerbox {color:blue; background-color: #ffc;}
+.registerbox p {clear:both;}
+.ablock h1,.ablock h2,.ablock h3 { display:inline;}
+.ablock {padding-top: 4em;}
+.big {font-size: 1.6em;background-color:black; color:white; margin-top:2em;}
+
+.thead {font-size:1.3em; font-weight: 700;  }
+.thead td {padding-top:2em; padding-bottom:1em;}
+
+.tfm {margin-top:20px; margin-bottom:20px;}
+
+#topleft img {border:0px; vertical-align:top; padding-top:2px;}
+#topleft right {border:0px; vertical-align:top;}
+#topleft  {text-align: left;vertical-align:top; white-space: nowrap}
+#topright  {text-align: right;vertical-align:top;}
+
+#amzpay {padding-left:200px; padding-top:30px; padding-bottom:20px;}
+#pickuprecs {font-size:1.3em; font-weight:600;}
+
+
+ td .actual {border:1px solid blue; padding: 0.5em;}
+
+#svctable th,#svctotals th {font-weight:500; font-size:.85em; padding-left:4px;}
+
+/*specific patch ups to make medcommons.net look good all around*/
+#usefullinks li {margin-left: -60px; list-style:none;}
+#voucherimg {margin-left: 80px; border:1px solid; margin-bottom: 20px; margin-top: 20px;  }
+#content h2 {padding: 5px 0 20px 0;}  /*fixes up settings*/
+#openid_url {background: #ffffff url('/images/openid-icon-small.gif') no-repeat scroll 0pt 50%; padding-left: 18px;}
+/*#featureboxes {padding-left: 30px; padding-top:30px;}/*fixes up dashboard*/
+#navcontainer {padding-top:6px;}
+
+.copyoption {    margin: 15px 0px;}
+.ff {list-style:none; font-size:1.2em; font-weight:600; padding: 3px;}
+
+.closed {border:none; background-color:#eee; margin:10px; padding: 25px 20px 20px 0px;  display: none ;}
+.closed ul li {font-size: 1.1em; list-style-type: decimal;padding-top:3px; padding-bottom:3px;} 
+.closed ul  ul li {font-size: 1.1em; list-style-type: lower-alpha; padding-top:2px;} 
+
+.subscribe, .getpaid {font-size:1.5em; color:blue;}
+
+#medlineinfo {display:block;}
+#sponsoredby {clear:both}
+#fulllist {padding-top: 10px;}
+#adspacer {clear: both}
+
+#ccrsearch {border:1px solid; padding:16px; margin: 20px; width:60em; background-color:#eee;}
+
+.h2accordian .closed {padding: 1em}
+.h2accordian {padding: .7em 0 1.3em 3em}
+.myh2 {font-size: 1.4em}
+
+
+.qem {font-size: .8em; font-weight: 400;  font-style: oblique;}
+.f .qem {padding:0px; margin:0px;}
+.centeredimage    {    text-align:center;   margin-left: -2em;  margin-top:0px;    margin-bottom:0px;    padding:0px;    }
+.dimmed {color: gray;}
+
+input.mainshort, button.mainshort, input.mainlarge, input.mainsmall, button.mainlarge, button.mainsmall, button.mainwide, input.primebutton, button.altsmall, input.altsmall, button.altshort, input.altshort, button.mainwide, input.mainwide {
+  font-family: verdana;  font-weight: bold;  text-align: left;  border-style: none;  color: white;  display: inline-block;  cursor: pointer;}
+button.mainlarge,input.mainlarge{  width: 195px;  font-size: 14px;  padding: 11px 0px 10px 1em;  background: transparent url(/images/button.png) no-repeat scroll 0pt 0pt;}
+button.mainshort,input.mainshort,input.primebutton , 
+button.mainsmall,input.mainsmall,button.altsmall, input.altsmall, button.altshort, input.altshort, button.mainwide, input.mainwide {
+  font-size: 12px;  padding: 7px 0px 6px 0.7em;
+}
+button.mainshort,input.mainshort {
+  width: 90px;  padding-left: 0.7em;  background: transparent url(/images/button_short.png) no-repeat scroll 0pt 0pt;
+}
+button.altshort,input.altshort {  width: 70px;  padding-left: 0.7em;
+  background: transparent url(/images/button_alt_short.png) no-repeat scroll 0pt 0pt;
+}
+button.mainsmall,input.mainsmall,input.primebutton  {
+  width: 118px;  background: transparent url(/images/button_small.png) no-repeat scroll 0pt 0pt;
+}
+button.altshort,input.altshort,button.altsmall,input.altsmall {  text-align: center;  padding-left:0px;  padding-right: 0px;}
+input.mainsmall,input.mainshort,input.primebutton,input.altsmall,input.altshort,input.mainwide {  padding-top: 7px;}
+input.mainlarge.smalltext {  padding-top: 14px;  padding-left: 6px;  font-size: 12px;}
+input.mainshort.smalltext,input.mainwide.smalltext {  padding-top: 8px;  font-size: 10px;}
+
+button.altsmall, input.altsmall  {  width: 125px;  background: transparent url(/images/button_alt_small.png) no-repeat scroll 0pt 0pt;}
+button.mainwide,input.mainwide {  width: 144px;  background: transparent url(/images/button_wide.png) no-repeat scroll 0pt 0pt;}
+table#svctotals {margin-top:20px;  border-collapse: collapse; border: 1px outset #4c7cc0}
+table#svctotals td {border:1px solid #4c7cc0; padding: 0.5em;}
+ 
+table#svctable {width: 100%; margin-top:20px;  border-collapse: collapse; border: 1px outset  #4c7cc0}
+table#svctable td {border:1px solid #4c7cc0; padding: 0.5em;}
+ td .actual {border:1px solid #958f6d; padding: 0.5em;}
+
+/* background color was #958f6d brown */
+#svctable th,#svctotals th {font-weight:500; font-size:.95em; padding-left:5px; padding-bottom:4px;padding-top:4px; margin-top:5px; background-color:#4c7cc0; color:white; font-size:12px; }
+#svctable a.deleteLink {  color: #ba8545;  font-weight: bold;  font-family: verdana;  font-size: 12px;  font-style: normal;  position: relative;  top: 0px;  text-decoration: none;}
+#svctable a.deleteLink:hover, #registryTable a.deleteLink:active {  color: #f02222;  text-decoration: none;}
+
+.fform {clear: both; background-color:#eee;padding:2em 0 2em 0;}
+.fform #err {display: block; padding: .1em 0 1em 0; font-size:1.1em; }
+.fform .field {display: block; padding: .46em;}
+.fform .field .n {      float: left;      margin-left:1em;  margin-right:2em;    width:24em;      text-align: right;}
+.fform .field .q {      float: left;    margin-left:20em;      width: 40em;    text-align: left;}
+.fform .field .q  select {      margin: .4em 0 .5em 0; width: 13.5em;      }
+.fform .field .q .r {font-size:.7em;color:#AAA; padding-left:2em}
+.fform .field .q .inperr { clear:both; display:block; margin-left:26em;padding:.3em 0 1em 1em; } 
+.fform .field {padding-top: 5px;} 
+
+.tinst {clear: both; width:100%; border:none;  padding:1em; margin-top: 2em; margin-bottom: 1em;  background-color:#EEE;}
+.tinstprint {clear: both; border:1px solid;  margin-top: 2em; margin-bottom: 1em;  background-color:#EEE;}
+.tinst .lcol {width: 30em; font-weight: 600;} 
+.tinst .rcol {}
+
+.closed textarea {margin-left: 10em; width:40em}
+.f .q .r em {font-size:1.4em} 

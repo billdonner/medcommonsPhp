@@ -1,0 +1,33 @@
+<html>
+<head><title>Export CVS BPM Readings to MedCommons</title>
+<script type="text/javascript" >
+               <!-- 
+function widgetkeypopup(url) {
+	newwindow=window.open(url,'_widget','height=200,width=700');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+// --> 
+</script>
+</head>
+<body>
+<small><i>You can embed your own version of this page into your own site</i></small><br>
+<small><i>You must supply a widget key to identify your MedCommons Account</i></small><br>
+<small><i>The system will compare the demographics reported by the device with your account.</i></small><br>
+<!-- The data encoding type, enctype, MUST be specified as below -->
+<form enctype="multipart/form-data" action="bp.php" method="POST">
+    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+	<h4>Please select the CVS BPM file to Transmit to Your PHR on MedCommons</h4>
+    <!-- MAX_FILE_SIZE must precede the file input field -->
+    <table>
+    <tr><td>medcommons widget key:</td><td> <input type=text value='' name=mckey /> &nbsp;
+    <a  onclick="return widgetkeypopup('../acct/widgetkey.php');" 
+                                     href='../acct/widgetkey.php' >show widget key</a></td></tr>
+
+    <!-- Name of input element determines name in $_FILES array -->
+    <tr><td>CSV file:</td><td> <input name="userfile" type="file" /></td></tr>	
+   <tr><td><input type="submit" value="Upload CVS BPM File" /></td><td> </td></tr>
+   </table>
+</form>
+</body>
+</html>

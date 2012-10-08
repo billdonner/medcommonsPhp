@@ -1,0 +1,40 @@
+{% extends "form.html" %}
+
+{% block title %}S3 Buckets{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Backups</a> &gt;
+<a href='buckets'>S3 Buckets</a> &gt;
+Create Bucket
+{% endblock %}
+
+{% block content %}
+
+<div class='breadcrumbs'>
+  <a href='keys'>1) S3 Keys</a> &gt;
+  <b>2) S3 Buckets</b> &gt;
+  3) Encryption &gt;
+  4) Publish
+</div>
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<form method='post' action='createbucket'>
+  <table>
+    <tbody>
+{{ form }}
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit'
+           name='add'
+	   value='Save and add another' />
+    <input type='submit' value='Save' class='default' />
+  </div>
+<form>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<trackerupdate xmlns="urn:oasis:names:tc:ubl:Order:1.0:0.70" 
+           xmlns:my="urn:oasis:names:tc:ubl:CommonAggregateTypes:1.0:0.70">
+  <sourceid></sourceid>
+        <tracker>
+          <name />
+          <value />
+        </tracker>
+ </trackerupdate>
+ 

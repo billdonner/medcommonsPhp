@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+Logs
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <th>Date/Time</th>
+      <th>Severity</th>
+      <th>Source</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan='2' style='text-align: left'>
+{% if has_previous %}
+<a href='list?page=1'>&laquo; first</a>
+<a href='list?page={{ previous }}'>&lt; prev</a>
+{% endif %}
+      </td>
+      <td colspan='2' style='text-align: right'>
+{% if has_next %}
+<a href='list?page={{ next }}'>next &gt;</a>
+<a href='list?page={{ pages }}'>last &raquo;</a>
+{% endif %}
+
+      </td>
+    </tr>
+    <tr>
+      <td colspan='4' style='text-align: right'>
+Page {{ page }} of {{ pages }}.
+      </td>
+    </tr>
+  </tfoot>
+
+  <tbody>
+{% for entry in object_list %}
+    <tr class='{% cycle a,b %}'>
+      <td>{{ entry.datetime }}</td>
+      <td>{{ entry.severity }}</td>
+      <td>{{ entry.source.name }}</td>
+      <td>{{ entry.message }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

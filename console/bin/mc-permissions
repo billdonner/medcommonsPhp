@@ -1,0 +1,144 @@
+#!/bin/sh
+
+WWW_ROOT=/var/www
+
+############
+# console...
+#
+chown -R root:root ${WWW_ROOT}/console
+
+if [ ! -d ${WWW_ROOT}/console/customize ]; then
+	mkdir ${WWW_ROOT}/console/customize
+fi
+
+chgrp -R mc_admin ${WWW_ROOT}/console/customize
+chmod -R g+w ${WWW_ROOT}/console/customize
+
+# ...console
+############
+
+############
+# cgi-bin...
+#
+chown -R mc_admin:mc_admin ${WWW_ROOT}/cgi-bin
+chmod 755 ${WWW_ROOT}/cgi-bin
+chmod 755 ${WWW_ROOT}/cgi-bin/publish
+
+# ...cgi-bin
+############
+
+########
+# php...
+#
+touch ${WWW_ROOT}/php/local_settings.php
+chown -R root:mc_admin ${WWW_ROOT}/php
+chmod 775 ${WWW_ROOT}/php
+chmod 664 ${WWW_ROOT}/php/*.*
+chmod 775 ${WWW_ROOT}/php/Auth
+
+# ...php
+########
+
+
+#################
+# images...
+#
+chown -R mc_admin:mc_admin ${WWW_ROOT}/html/images 
+chmod g+w -R ${WWW_ROOT}/html/images
+
+# ...images
+#################
+
+#################
+# mc_templates...
+#
+chgrp -R mc_admin ${WWW_ROOT}/html ${WWW_ROOT}/mc_templates
+chmod g+w -R ${WWW_ROOT}/html ${WWW_ROOT}/mc_templates
+
+# ...mc_templates
+#################
+
+################
+# Backup data...
+#
+if [ ! -f ${WWW_ROOT}/.aes-key ]; then
+	touch ${WWW_ROOT}/.aes-key
+fi
+
+chown apache:mc_admin ${WWW_ROOT}/.aes-key
+chmod 640 ${WWW_ROOT}/.aes-key
+
+if [ ! -f ~mc_backups/.aes-key ]; then
+	touch ~mc_backups/.aes-key
+fi
+
+chown mc_admin:mc_backups ~mc_backups/.aes-key ~mc_backups/mc_backups.rc
+chmod 640 ~mc_backups/.aes-key ~mc_backups/mc_backups.rc
+
+# ...backup data
+################
+
+##############
+# mc_locals...
+#
+
+chown mc_admin:mc_locals ~mc_locals/mc_locals.rc
+chmod 640 ~mc_locals/mc_locals.rc
+
+# ...mc_locals
+##############
+
+###############
+# user-icons...
+# After mc_templates, cuz ${WWW_ROOT}/html has been reset!
+
+if [ ! -d ${WWW_ROOT}/html/user-icons ]; then
+	mkdir ${WWW_ROOT}/html/user-icons
+fi
+
+if [ ! -d ${WWW_ROOT}/html/user-icons/200x240 ]; then
+	mkdir ${WWW_ROOT}/html/user-icons/200x240
+fi
+
+chgrp -R apache ${WWW_ROOT}/html/user-icons
+chmod -R g+w ${WWW_ROOT}/html/user-icons
+
+
+# ...user-icons
+###############
+
+###########################################
+# gateway LocalBootParameters.properties...
+#
+if [ "$CATALINA_BASE" = "" ]; then
+	CATALINA_BASE=/opt/gateway
+fi
+
+touch ${CATALINA_BASE}/conf/LocalBootParameters.properties
+
+chown gateway:mc_admin ${CATALINA_BASE}/conf
+chmod 775 ${CATALINA_BASE}/conf
+chown mc_admin:mc_admin ${CATALINA_BASE}/conf/LocalBootParameters.properties
+chmod 644 ${CATALINA_BASE}/conf/LocalBootParameters.properties
+
+touch ${CATALINA_BASE}/.aes-key
+chown mc_admin:gateway ${CATALINA_BASE}/.aes-key
+chmod 640 ${CATALINA_BASE}/.aes-key
+
+if [ ! -d ${CATALINA_BASE}/logs ]; then
+	mkdir ${CATALINA_BASE}/logs
+fi
+
+chown -R gateway:gateway ${CATALINA_BASE}/logs
+
+if [ ! -d ${CATALINA_BASE}/temp ]; then
+	mkdir ${CATALINA_BASE}/temp
+fi
+
+chown -R gateway:gateway ${CATALINA_BASE}/temp
+
+chmod 755 ${CATALINA_BASE}/bin/mc_restore
+
+# ...gateway LocalBootParameters.properties
+###########################################
+

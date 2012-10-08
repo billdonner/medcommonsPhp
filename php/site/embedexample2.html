@@ -1,0 +1,90 @@
+<style>
+.example {border: 1px solid; padding: 10px; background-color:#DFF;}
+.label {  clear: both; float: left; width: 200px; color:blue;}
+input { color:gray;}
+</style>
+
+<h2>More Sample Forms For Embedded ROI Requests</h2>
+<p>Copy the code off this page to embed into any website. You can adust the labelling, the CSS styles, and supply default form values
+as you see fit</p>
+
+<h3>A more sophisticated form with checkboxes</h3>
+<p>This version allows the user to choose which reports he wants</p>
+<div class=example>
+<form method=post action=https://healthurl2.medcommons.net/hipaaroireq.php >
+<input type=hidden name=repost value='https://healthurl2.medcommons.net/embedexample2.html' />
+<span class=label>Name:</span><input type=text name=name />&nbsp;<span id=name_err></span><br/>
+<span class=label>DOB:</span><input type=text name=dob />&nbsp;<span id=dob_err><i>this field is optional</i></span><br/>
+<span class=label>Email:</span><input type=text name=email />&nbsp;<span id=email_err></span><br/>
+<span class=label>provide acm report</span><input type=checkbox name=acm value='on' /><br/>
+<span class=label>provide isr report:</span><input type=checkbox name=isr  value='on' /><br/>
+<span class=label>provide lr report:</span><input type=checkbox name=lr value='on' /><br/>
+<span class=label>provide csr report:</span><input type=checkbox name=csr  value='on' /><br/>
+<span class=label>provide hds report:</span><input type=checkbox name=hds value='on' /><br/>
+<span class=label>provide cmd report:</span><input type=checkbox name=cmd value='on' /><br/>
+<input type=hidden name=note value="From Joes Imaging Website w checkboxes --- visit www.joeman.com " />
+<input class=label type=submit name=submit value="Generate Request for Records" />
+</form>
+</div>
+<script>
+// This function creates the args [] array and populates it with data
+    // found in the URL's search string:
+
+    function myunescape (str)
+    {
+    	str = '' + str;
+    	while (true)
+    	{
+    		var i = str . indexOf ('+');
+    		if (i < 0)
+    		break;
+    		str = str . substring (0, i) + ' ' + str . substring (i + 1, str . length);
+    	}
+    	return unescape (str);
+    }
+
+    // This function creates the args [] array and populates it with data
+    // found in the URL's search string:
+
+    var args;
+
+    function args_init ()
+    {
+    	args = new Array ();
+    	var argstring = window . location . search;
+    	if (argstring . charAt (0) != '?')
+    	return;
+    	argstring = argstring . substring (1, argstring . length);
+    	var argarray = argstring . split ('&');
+    	var i;
+    	var singlearg;
+    	for (i = 0; i < argarray . length; ++ i)
+    	{
+    		singlearg = argarray [i] . split ('=');
+    		if (singlearg . length != 2)
+    		continue;
+    		var key = myunescape (singlearg [0]);
+    		var value = myunescape (singlearg [1]);
+    		args [key] = value;
+    	}
+    }
+    var signed_on;
+    function wsinit()
+    {
+    	args_init();
+    	var logout = '';
+    	for (ix = 0; ix<10 ; ++ ix)
+    	{
+    		if (args['e'+ix]) 	if (args['p'+ix])
+    		{
+    			p = args['p'+ix];
+    			if (document.getElementById(p))
+    			document.getElementById(p).innerHTML = '** ' + args['e'+ix] + '**';
+    		}
+    		
+    	}
+    }
+  
+
+wsinit();
+</script>

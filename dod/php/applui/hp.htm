@@ -1,0 +1,110 @@
+<div id='content'>
+This is the basic MedCommons Appliance HomePage<br />
+    <br />
+ You will probably want to replace this asap<br />
+    <br />
+<hr style="width: 100%; height: 2px" />
+    <div id='loggedon'>
+        <h3>
+            My MedCommons Dashboard</h3>
+        <p>
+            <img alt='' src='$$$$SITE$$$$/acct/stamp.php' />
+            &nbsp;&nbsp;<a href='$$$$SITE$$$$/identity/logout?next=$$$$SITE$$$$index.html'>logout</a></p>
+    </div>
+    <div id='notloggedon'>
+        <h3>
+            Sign in to $$$$SITE$$$$</h3>
+        <form method='post' action='$$$$SITE$$$$/acct/login.php' id='login'>
+            <table>
+                <tr>
+                    <td width='225' align='right'>
+                        Email or MCID:</td>
+                    <td width='150' align='left'>
+                        <input class='infield' type='text' name='mcid' id='mcid' value='' /></td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td width='225' align='right'>
+                        Password:</td>
+                    <td width='150' align='left'>
+                        <input class='infield' type='password' name='password' id='password' /></td>
+                    <td>
+                        <input type='submit' value='Sign in' /></td>
+                </tr>
+            </table>
+        </form>
+        <ul>
+            <li><a href='rg.html' class='login'>Sign up for MedCommons</a></li>
+            <li><a href='fg.html' class='login'>I cannot access my account</a></li>
+            <li><a href='$$$$SITE$$$$/secure/gwredir.php?a=ImportCCR'>Import</a> or
+                <a href='$$$$SITE$$$$/secure/gwredir.php?a=CreateCCR'>Create</a> CCR
+                Anonymously Using MedCommons </li>
+        </ul>
+    </div>
+    <h3>
+        Search ALL MedCommons Appliances
+    </h3>
+    <form method='get' action='https://trout.medcommons.net/qmcid.php'>
+        <table>
+            <tr>
+                <td width='225' align='right'>
+                    MCID Lookup:</td>
+                <td width='150' align='left'>
+                    <input class='infield' type='text' name='q' value='' />
+                    <input type='hidden' name='p' value='m37' />
+                </td>
+                <td>
+                    <input class='infield' type='submit' value='Go' /><span id='m37' class='err'></span></td>
+            </tr>
+        </table>
+    </form>
+    <form method='get' action='https://trout.medcommons.net/qtn.php'>
+        <table>
+            <tr>
+                <td width='225' align='right'>
+                    Tracking Number Lookup:</td>
+                <td width='150' align='left'>
+                    <input class='infield' type='text' name='q' value='' />
+                    <input type='hidden' name='p' value='t41' />
+                </td>
+                <td>
+                    <input class='infield' type='submit' value='Go' /><span id='t41' class='err'></span>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <h3>
+        Demo Health URL Accounts on Your Appliance
+    </h3>
+    <ul>
+        <li><a href='dd.html' title="Open Doctor Demo">Login as Doctor</a> </li>
+        <li><a href='pd.html' title="Open Patient Demo">Login as Patient</a> </li>
+        <li>Login as Appliance Administrator [Screenshots] </li>
+        <li><a href='ft.html'>Feature Tour</a> </li>
+    </ul>
+ 
+    <h3>
+        FAQ About 
+    </h3>
+    <ul>
+        <li><a href='fq.html#faq-01'>Is the Health URL a Personal Health Record (PHR)?</a> </li>
+        <li><a href='fq.html#faq-02'>My EMR has a patient portal feature, why would I need a
+            Health URL?</a> </li>
+        <li><a href='fq.html#faq-03'>Do all MedCommons Health URL look alike?</a> </li>
+        <li><a href='fq.html#faq-04'>Who controls a Health URL?</a> </li>
+        <li><a href='fq.html#faq-05'>How is information entered into the Health URL?</a> </li>
+        <li><a href='fq.html#faq-06'>How does information leave the Health URL? </a></li>
+        <li><a href='fq.html#faq-07'>How will my EHR work with a patient's Health URL?</a> </li>
+        <li><a href='fq.html#faq-08'>Why do you call it an appliance?</a> </li>
+        <li><a href='fq.html#faq-09'>How are Health URLs secured?</a> </li>
+        <li><a href='fq.html#faq-10'>How much does it cost?</a> </li>
+    </ul>
+    <h3>
+        About Us
+    </h3>
+    <ul>
+        <li><a href='tu.html#terms-of-use'>Terms of Use</a> </li>
+        <li><a href='mailto:info@medcommons.net' title="Contact Us">Contact Us</a> </li>
+    </ul>
+</div>

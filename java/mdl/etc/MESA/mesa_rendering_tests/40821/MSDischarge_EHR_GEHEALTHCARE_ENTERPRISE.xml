@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="schematron-basic.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <realmCode      code="US"/>
+  <typeId      root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <templateId      root="2.16.840.1.113883.10" extension="IMPL_CDAR2_LEVEL1-2REF_US_I2_2005SEP"/>
+  <!--New-->
+  <templateId  root="1.3.6.1.4.1.19376.1.5.3.1.1.2" extension="Medical Summary"  />
+  <!--New-->
+  <templateId  root="1.3.6.1.4.1.19376.1.5.3.1.1.4" extension="Discharge Summary"  />
+  <id      root="1.3.6.1.4.1.11050.2" extension="50207592"/>
+  <code      displayName="SUMMARIZATION OF EPISODE NOTE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="34133-9"/>
+  <title     >Seaview Community Health Services  - Discharge Summary</title>
+  <effectiveTime      value="20060228015942-0800Z"/>
+  <confidentialityCode      codeSystem="2.16.840.1.113883.5.25" code="N"/>
+  <languageCode      code="en-US"/>
+  <setId      root="1.3.6.1.4.1.11050.1" extension="999021"/>
+  <versionNumber      value="1"/>
+  <recordTarget     >
+    <patientRole>
+      <!--New-->
+      <id extension="40004" root="1.3.6.1.4.1.21367.2006.1.2.103.1"/>
+      <addr>
+        <streetAddressLine>1625 Main</streetAddressLine>
+        <city>Seattle</city>
+        <state>WA</state>
+        <postalCode>98104</postalCode>
+        <country nullFlavor="UNK"/>
+      </addr>
+      <telecom value="tel:3145551672" use="HP"/>
+      <patient>
+        <name>
+          <prefix/>
+          <given>GE</given>
+          <family>EHR_GEHEALTHCARE_ENTERPRISE</family>
+        </name>
+        <!--New-->        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" displayName="Male"/>
+        <birthTime value="19480503"/>
+      </patient>
+      <providerOrganization>
+        <id root="1.3.6.1.4.1.11050.1.1" extension="M345"/>
+        <name>Seaview Community Health Services</name>
+        <telecom use="WP" value="tel:(206)622-9558"/>
+        <addr>
+          <streetAddressLine>419 2nd Avenue South</streetAddressLine>
+          <city>Seattle</city>
+          <state>WA</state>
+          <postalCode>98104</postalCode>
+          <country>USA</country>
+        </addr>
+      </providerOrganization>
+    </patientRole>
+  </recordTarget>
+  <author     >
+    <time value="20060228015942-0800Z"/>
+    <assignedAuthor>
+      <id root="1.3.6.1.4.1.4.1.2835.1" extension="1"/>
+      <code code="SELF" codeSystem="2.16.840.1.113883.5.111" displayName="Self"/>
+      <addr>
+        <streetAddressLine>419 2nd Avenue South</streetAddressLine>
+        <city>Seattle</city>
+        <state>WA</state>
+        <postalCode>98104</postalCode>
+        <country>USA</country>
+      </addr>
+      <telecom use="WP" value="tel:(206)622-9558"/>
+      <assignedPerson>
+        <name>
+          <prefix/>
+          <given>Hasselfeld</given>
+          <family>Brian</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <custodian     >
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="1.3.6.1.4.1.4.1.2835.3" extension="1"/>
+        <name>Seaview Community Health Services</name>
+        <telecom use="WP" value="tel:(206)622-9558"/>
+        <addr>
+          <streetAddressLine>419 2nd Avenue South</streetAddressLine>
+          <city>Seattle</city>
+          <state>WA</state>
+          <postalCode>98104</postalCode>
+          <country>USA</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <informationRecipient     >
+    <intendedRecipient>
+      <id root="1.3.6.1.4.1.4.1.2835.2" extension="4"/>
+      <addr>
+        <streetAddressLine>419 2nd Avenue South</streetAddressLine>
+        <city>Seattle</city>
+        <state>Wa</state>
+        <postalCode>98104</postalCode>
+        <country>USA</country>
+      </addr>
+      <telecom use="WP" value="tel:(206)622-9558"/>
+      <informationRecipient>
+        <name>
+          <prefix/>
+          <given>Eric</given>
+          <family>Rose</family>
+        </name>
+      </informationRecipient>
+      <receivedOrganization>
+        <name>Seaview Community Health Services</name>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+  <legalAuthenticator     >
+    <time value="20060228015942-0800Z"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id root="1.3.6.1.4.1.4.1.2835.1" extension="1"/>
+      <addr>
+        <streetAddressLine>419 2nd Avenue South</streetAddressLine>
+        <city>Seattle</city>
+        <state>Wa</state>
+        <postalCode>98104</postalCode>
+        <country>USA</country>
+      </addr>
+      <telecom use="WP" value="tel:(206)622-9558"/>
+      <assignedPerson>
+        <name>
+          <prefix/>
+          <given>Eric</given>
+          <family>Rose</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </legalAuthenticator>
+  <authenticator     >
+    <time value="20060228015942-0800Z"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id root="1.3.6.1.4.1.4.1.2835.1" extension="3"/>
+      <addr>
+        <streetAddressLine>419 2nd Avenue South</streetAddressLine>
+        <city>Seattle</city>
+        <state>Wa</state>
+        <postalCode>98104</postalCode>
+        <country>USA</country>
+      </addr>
+      <telecom use="WP" value="tel:(206)622-9558"/>
+      <assignedPerson>
+        <name>
+          <prefix/>
+          <given>Eric</given>
+          <family>Rose</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </authenticator>
+  <participant      typeCode="IND">
+    <time/>
+    <associatedEntity classCode="PRS">
+      <code codeSystem="1.3.6.1.4.1.11050.5.111" code="MTH"/>
+      <addr>
+        <streetAddressLine>1301 EAST 7TH ST</streetAddressLine>
+        <city>MADISONVILLE</city>
+        <state>KY</state>
+        <postalCode>42431</postalCode>
+        <country nullFlavor="UNK"/>
+      </addr>
+      <telecom value="tel:2066074566" use="WP"/>
+      <associatedPerson>
+        <name>
+          <prefix/>
+          <given>Martha</given>
+          <family>WILSON</family>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <documentationOf     >
+    <serviceEvent classCode="PCPR">
+      <effectiveTime>
+        <low value="19600127"/>
+        <high value="20050329"/>
+      </effectiveTime>
+      <performer typeCode="PRF">
+        <functionCode codeSystem="2.16.840.1.113883.5.88" code="PCP"/>
+        <time>
+          <low value="1998"/>
+          <high value="2005"/>
+        </time>
+        <assignedEntity>
+          <id root="1.3.6.1.4.1.4.1.2835.1" extension="1"/>
+          <code code="59058001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="General Physician"/>
+          <addr>
+            <streetAddressLine>21 Mystic Ave</streetAddressLine>
+            <city>Medford</city>
+            <state>NH</state>
+            <postalCode>02893</postalCode>
+            <country>USA</country>
+          </addr>
+          <telecom use="WP" value="tel:(999)555-1212"/>
+          <assignedPerson>
+            <name>
+              <given>Berl</given>
+              <family>Carlson</family>
+            </name>
+          </assignedPerson>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  <componentOf     >
+    <encompassingEncounter>
+      <id root="1.3.6.1.4.1.4.1.2835.12" extension="9937012"/>
+      <code codeSystemName="CPT-4" displayName="Evaluation and Managment" codeSystem="1.3.6.1.4.1.11050.6.12" code="99213"/>
+      <effectiveTime>
+        <low value="20051129"/>
+        <high value="20051129"/>
+      </effectiveTime>
+      <dischargeDispositionCode codeSystemName="UB92" displayName="Routine Discharge" codeSystem="1.3.6.1.4.1.11050.6.21" code="01"/>
+    </encompassingEncounter>
+  </componentOf>
+  <component     >
+    <structuredBody>
+      <templateId root="1.3.6.1.4.1.11050.10" extension="IMPL_CDAR2_LEVEL1-2REF_US_I2_2005SEP"/>
+      <component>
+        <section>
+          <!--New-->  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.7" extension="HOSPITAL DISCHARGE DX Template"/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="11535-2" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE DX"/>
+          <title>Discharge Diagnoses</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Diagnosis</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody/>
+            </table>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <!--New-->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6" extension="PROBLEM LIST Template"/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="11450-4" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
+          <title>Conditions</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Problem</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td ID="d697e2615">Accessory spleen</td>
+                  <td>01Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3019">Angioedema</td>
+                  <td>12Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2961">Dyspepsia</td>
+                  <td>01Feb2006</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2673">Accessory auricle</td>
+                  <td>01Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3189">Family history of cardiovascular disease</td>
+                  <td/>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3134">Coronary artery bypass</td>
+                  <td>20Apr05</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2730">Angina decubitus</td>
+                  <td>01Feb2006</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3077">Ear abrasion</td>
+                  <td>12Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3302">Hypercholesterolemia</td>
+                  <td>20 years</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2787">Angiodysplasia</td>
+                  <td>12Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3246">Hypertension</td>
+                  <td>20 years</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2845">Ascariasis</td>
+                  <td>01Feb06</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e3359">Angina</td>
+                  <td>22Feb04</td>
+                  <td>Current</td>
+                </tr>
+                <tr>
+                  <td ID="d697e2903">Anxiety reaction</td>
+                  <td>01Feb2006</td>
+                  <td>Current</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="01Feb06"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="759.0" codeSystem="2.16.840.1.113883.6.2" displayName="Accessory spleen" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e2615"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="12Feb06"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="995.1" codeSystem="2.16.840.1.113883.6.2" displayName="Angioedema" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e3019"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="01Feb2006"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="536.8" codeSystem="2.16.840.1.113883.6.2" displayName="Dyspepsia" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e2961"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="01Feb06"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="744.1" codeSystem="2.16.840.1.113883.6.2" displayName="Accessory auricle" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e2673"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value=""/>
+              </effectiveTime>
+              <value xsi:type="CV" code="V17.4" codeSystem="2.16.840.1.113883.6.2" displayName="Family history of cardiovascular disease" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e3189"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20Apr05"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="V45.81" codeSystem="2.16.840.1.113883.6.2" displayName="Coronary artery bypass" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e3134"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="01Feb2006"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="413.0" codeSystem="2.16.840.1.113883.6.2" displayName="Angina decubitus" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e2730"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="12Feb06"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="910.8" codeSystem="2.16.840.1.113883.6.2" displayName="Ear abrasion" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e3077"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20 years"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="272.0" codeSystem="2.16.840.1.113883.6.2" displayName="Hypercholesterolemia" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e3302"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="12Feb06"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="569.84" codeSystem="2.16.840.1.113883.6.2" displayName="Angiodysplasia" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e2787"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20 years"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="401.9" codeSystem="2.16.840.1.113883.6.2" displayName="Hypertension" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e3246"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="01Feb06"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="127.0" codeSystem="2.16.840.1.113883.6.2" displayName="Ascariasis" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e2845"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="22Feb04"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="413.9" codeSystem="2.16.840.1.113883.6.2" displayName="Angina" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e3359"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="" codeSystem="Any" codeSystemName="Any"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="01Feb2006"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="300.00" codeSystem="2.16.840.1.113883.6.2" displayName="Anxiety reaction" codeSystemName="ICD9">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e2903"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <!--New--> <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.22" extension="HISTORY OF ALLERGIES Template"/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="10155-0" codeSystemName="LOINC" displayName="HISTORY OF ALLERGIES"/>
+          <title>Allergies and Adverse Reactions</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Allergen</th>
+                  <th>Reaction</th>
+                  <th>Severity</th>
+                  <th>Onset</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td ID="d697e562">ANABAR</td>
+                  <td ID="d697e520">  Hive</td>
+                  <td ID="d697e569">Mild</td>
+                  <td>01Feb2006</td>
+                </tr>
+                <tr>
+                  <td ID="d697e503">PENICILLINS</td>
+                  <td ID="d697e461"> Rash</td>
+                  <td ID="d697e510">Mild</td>
+                  <td>18Jan05</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="Allergy" codeSystem="TBD" codeSystemName="ObservationAllergyCode"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20060201"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="" codeSystem="" displayName="ANABAR,  Hive" codeSystemName="">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e562"/>
+                </originalText>
+              </value>
+              <entryRelationship typeCode="SPRT">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="RXNASSESS"/>
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <id root="1.3.6.1.4.1.11050.1"/>
+                      <code code="DX"/>
+                      <statusCode code="completed"/>
+                      <value xsi:type="CV" code="" codeSystem="" displayName="ANABAR,  Hive" codeSystemName="">
+                        <originalText mediaType="text/xml">
+                          <reference value="#d697e520"/>
+                        </originalText>
+                      </value>
+                    </observation>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ" inversionInd="true">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="SEV"/>
+                  <statusCode code="completed"/>
+                  <value xsi:type="CV" code="TBD" codeSystem="TBD" codesystemName="TBD">
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e569"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+          <entry>
+            <observation classCode="COND" moodCode="EVN">
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <code code="Allergy" codeSystem="TBD" codeSystemName="ObservationAllergyCode"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low value="20050118"/>
+              </effectiveTime>
+              <value xsi:type="CV" code="" codeSystem="" displayName="PENICILLINS, Rash" codeSystemName="">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e503"/>
+                </originalText>
+              </value>
+              <entryRelationship typeCode="SPRT">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="RXNASSESS"/>
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <id root="1.3.6.1.4.1.11050.1"/>
+                      <code code="DX"/>
+                      <statusCode code="completed"/>
+                      <value xsi:type="CV" code="271807003" codeSystem="2.16.840.1.113883.6.96" displayName="PENICILLINS, Rash" codeSystemName="SNOMED-CT">
+                        <originalText mediaType="text/xml">
+                          <reference value="#d697e461"/>
+                        </originalText>
+                      </value>
+                    </observation>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ" inversionInd="true">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="SEV"/>
+                  <statusCode code="completed"/>
+                  <value xsi:type="CV" code="TBD" codeSystem="TBD" codesystemName="TBD">
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e510"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <!--New-->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13" extension="HOSPITAL DISCHARGE MEDICATIONS Template"/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="10183-2" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE MEDICATIONS"/>
+          <title>Discharge Medications</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Medication</th>
+                  <th>Prescription or Dose</th>
+                  <th>Dates of Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ID="d697e14980">
+                  <td ID="d697e14980a1900">Metoprolol 50mg, one tablet by mouth twice per day</td>
+                  <td>
+                    <content ID="d697e14980a190001"/>
+                  </td>
+                  <td>28Feb2006 - </td>
+                </tr>
+                <tr ID="d697e14981">
+                  <td ID="d697e14981a1900">Mevacor 40mg, one tablet by mouth each day</td>
+                  <td>
+                    <content ID="d697e14981a190001">40 mg</content>
+                  </td>
+                  <td>28Feb2006 - </td>
+                </tr>
+                <tr ID="d697e14982">
+                  <td ID="d697e14982a1900">Nitrostat Sub 0.4mg, one under tongue every five minutes for chest pain. Maximum use of three tablets and then call MD</td>
+                  <td>
+                    <content ID="d697e14982a190001">0,4 mg</content>
+                  </td>
+                  <td>28Feb2006 - </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="RQO">
+              <templatedId extension="medication" root="1.3.6.1.4.1.11050.1"/>
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <text mediaType="text/xml">
+                <reference value="#d697e14980"/>
+              </text>
+              <statusCode code="active"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value=""/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="TBD" codeSystemName="TBD">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e14980a1900"/>
+                </originalText>
+              </routeCode>
+              <doseQuantity>
+                <low value="1" unit="table">
+                  <translation>
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e14980a190001"/>
+                    </originalText>
+                  </translation>
+                </low>
+                <high value="2" unit="table">
+                  <translation>
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e14980a190001"/>
+                    </originalText>
+                  </translation>
+                </high>
+              </doseQuantity>
+              <rateQuantity>
+                <low>
+                  <translation>
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e14980a190001"/>
+                    </originalText>
+                  </translation>
+                </low>
+              </rateQuantity>
+              <consumable typeCode="CSM">
+                <manufacturedProduct classCode="MANU">
+                  <manufacturedLabeledDrug>
+                    <code code="68115023990" codeSystem="2.16.840.1.113883.12.549" displayName="METOPROLOL TARTRATE TABLETS--25MG" codeSystemName="NDC">
+                      <originalText mediaType="text/xml">
+                        <reference value="#d697e14980a1900"/>
+                      </originalText>
+                    </code>
+                    <name>Metoprolol 50mg, one tablet by mouth twice per day</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="RQO">
+              <templatedId extension="medication" root="1.3.6.1.4.1.11050.1"/>
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <text mediaType="text/xml">
+                <reference value="#d697e14981"/>
+              </text>
+              <statusCode code="active"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value=""/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="TBD" codeSystemName="TBD">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e14981a1900"/>
+                </originalText>
+              </routeCode>
+              <doseQuantity>
+                <low value="1" unit="table">
+                  <translation>
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e14981a190001"/>
+                    </originalText>
+                  </translation>
+                </low>
+                <high value="2" unit="table">
+                  <translation>
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e14981a190001"/>
+                    </originalText>
+                  </translation>
+                </high>
+              </doseQuantity>
+              <rateQuantity>
+                <low>
+                  <translation>
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e14981a190001"/>
+                    </originalText>
+                  </translation>
+                </low>
+              </rateQuantity>
+              <consumable typeCode="CSM">
+                <manufacturedProduct classCode="MANU">
+                  <manufacturedLabeledDrug>
+                    <code code="00006073287" codeSystem="2.16.840.1.113883.12.549" displayName="Mevacor 40mg, one tablet by mouth each day" codeSystemName="NDC">
+                      <originalText mediaType="text/xml">
+                        <reference value="#d697e14981a1900"/>
+                      </originalText>
+                    </code>
+                    <name>Mevacor 40mg, one tablet by mouth each day</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="RQO">
+              <templatedId extension="medication" root="1.3.6.1.4.1.11050.1"/>
+              <id root="1.3.6.1.4.1.11050.1"/>
+              <text mediaType="text/xml">
+                <reference value="#d697e14982"/>
+              </text>
+              <statusCode code="active"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value=""/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="TBD" codeSystemName="TBD">
+                <originalText mediaType="text/xml">
+                  <reference value="#d697e14982a1900"/>
+                </originalText>
+              </routeCode>
+              <doseQuantity>
+                <low value="1" unit="table">
+                  <translation>
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e14982a190001"/>
+                    </originalText>
+                  </translation>
+                </low>
+                <high value="2" unit="table">
+                  <translation>
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e14982a190001"/>
+                    </originalText>
+                  </translation>
+                </high>
+              </doseQuantity>
+              <rateQuantity>
+                <low>
+                  <translation>
+                    <originalText mediaType="text/xml">
+                      <reference value="#d697e14982a190001"/>
+                    </originalText>
+                  </translation>
+                </low>
+              </rateQuantity>
+              <consumable typeCode="CSM">
+                <manufacturedProduct classCode="MANU">
+                  <manufacturedLabeledDrug>
+                    <code code="00071041813" codeSystem="2.16.840.1.113883.12.549" displayName="Nitrostat Sub 0.4mg, one under tongue every five minutes for chest pain. Maximum use of three tablets" codeSystemName="NDC">
+                      <originalText mediaType="text/xml">
+                        <reference value="#d697e14982a1900"/>
+                      </originalText>
+                    </code>
+                    <name>Nitrostat Sub 0.4mg, one under tongue every five minutes for chest pain. Maximum use of three tablets and then call MD</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8716-3" displayName="VITAL SIGNS"/>
+          <title>Vital Signs</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Date / Time</th>
+                  <th>10Feb2006 18:32</th>
+                  <th>08Feb2006 01:36</th>
+                  <th>23Jan2006 08:23</th>
+                  <th>23Jan2006 08:20</th>
+                  <th>23Jan2006 08:00</th>
+                  <th>21Jan2006 09:00</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <b>Temperature (F)  (F)</b>
+                  </td>
+                  <td>98.6</td>
+                  <td/>
+                  <td/>
+                  <td/>
+                  <td/>
+                  <td/>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Pulse  (BPM)</b>
+                  </td>
+                  <td>60</td>
+                  <td>72</td>
+                  <td/>
+                  <td/>
+                  <td/>
+                  <td/>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Systolic BP  (MMHG)</b>
+                  </td>
+                  <td/>
+                  <td>114</td>
+                  <td/>
+                  <td>130</td>
+                  <td/>
+                  <td/>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Diastolic BP  (MMHG)</b>
+                  </td>
+                  <td/>
+                  <td>70</td>
+                  <td/>
+                  <td/>
+                  <td/>
+                  <td/>
+                </tr>
+                <tr>
+                  <td>
+                    <b>O2 Saturation  (%)</b>
+                  </td>
+                  <td>16</td>
+                  <td/>
+                  <td/>
+                  <td/>
+                  <td/>
+                  <td/>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Height - cm  (CM)</b>
+                  </td>
+                  <td/>
+                  <td/>
+                  <td/>
+                  <td/>
+                  <td>90.00</td>
+                  <td/>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Weight - kg  (KG)</b>
+                  </td>
+                  <td>80</td>
+                  <td/>
+                  <td/>
+                  <td/>
+                  <td>120.00</td>
+                  <td>120.00</td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>FS-Blood glucose</b>
+                  </td>
+                  <td/>
+                  <td/>
+                  <td>136</td>
+                  <td/>
+                  <td/>
+                  <td/>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <!--New-->          <templateId root='1.3.6.1.4.1.19376.1.5.3.1.3.31' extension='Plan of Care Template'/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="18776-5" codeSystemName="LOINC" displayName="TREATMENT PLAN"/>
+          <title>Plan of Care</title>
+          <text>
+            <paragraph/>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <!--New-->
+          <templateId root='1.3.6.1.4.1.19376.1.5.3.1.3.3' extension='HOSPITAL ADMISSION DX Template'/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="46241-6" codeSystemName="LOINC" displayName="HOSPITAL ADMISSION DX"/>
+          <title>Hospital Admission Diagnosis</title>
+          <text>
+            <paragraph/>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <!--New-->
+          <templateId root='1.3.6.1.4.1.19376.1.5.3.1.3.5' extension='HOSPITAL COURSE Template'/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="8648-8" codeSystemName="LOINC" displayName="HOSPITAL COURSE"/>
+          <title>Hospital Course</title>
+          <text>
+            <paragraph/>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <!--New-->
+          <templateId root='1.3.6.1.4.1.19376.1.5.3.1.3.8' extension='HISTORY OF PAST ILLNESS TEMPLATE'/>
+          <code codeSystem="2.16.840.1.113883.6.1" code="11348-0" codeSystemName="LOINC" displayName="HISTORY OF PAST ILLNESS"/>
+          <title>History of Present Illness</title>
+          <text>
+            <paragraph/>
+          </text>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

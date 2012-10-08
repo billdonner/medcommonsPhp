@@ -1,0 +1,21 @@
+{% extends "email/base.html" %}
+
+{% block trailer %}
+<p>
+HIPAA Security and Privacy Notice: The Study referenced in this 
+invitation contains Protected Health Information (PHI) covered under 
+the HEALTH INSURANCE PORTABILITY AND ACCOUNTABILITY ACT OF 1996 (HIPAA).
+The {{ CommonName }} user sending this invitation has set the security 
+requirements for your access to this study and you may be required to 
+register with {{ CommonName }} prior to viewing the PHI. Your access to this 
+Study will be logged and this log will be available for review by the 
+sender of this invitation and authorized security administrators.
+</p>
+
+<p>
+ <small>
+For more information about {{ CommonName }} privacy and security policies, 
+please visit <a href='http://www.medcommons.net/'>http://www.medcommons.net/</a>.
+ </small>
+</p>
+{% endblock trailer %}

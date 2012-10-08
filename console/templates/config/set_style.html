@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Configure Appliance Style
+{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Configuration</a> &gt;
+Configure Appliance Style
+{% endblock breadcrumbs %}
+
+{% block content %}
+
+<form method='post' action='set_style'>
+  <table>
+    {{ form }}
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit' value='Set Values' class='default' />
+  </div>
+</form>
+
+{% endblock content %}

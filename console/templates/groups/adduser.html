@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load medcommons %}
+
+{% block title %}Add User{% endblock %}
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Groups</a> &gt;
+<a href='group?id={{ group.groupinstanceid }}'>{{ group.name }}</a> &gt;
+Add User
+{% endblock %}
+
+{% block content %}
+
+{% include "groups/adduser.inc" %}
+
+<form method='post' action='{{ action }}'>
+  <div id='submit-row'>
+    <input type='submit' name='finish' class='default' value='Done' />
+  </div>
+</form>
+
+{% endblock %}

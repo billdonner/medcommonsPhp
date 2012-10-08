@@ -1,0 +1,13 @@
+<beans xmlns="http://xfire.codehaus.org/config/1.0">
+  <service>
+    <serviceClass>net.medcommons.identity.ws.AccountCreationServiceImpl</serviceClass>
+  </service>
+  <service>
+    <serviceClass>net.medcommons.identity.ws.TransferStatusServiceImpl</serviceClass>
+  </service>
+  <service>
+    <serviceClass>net.medcommons.identity.ws.GroupPatientQueryServiceImpl</serviceClass>
+  </service>
+</beans>
+
+

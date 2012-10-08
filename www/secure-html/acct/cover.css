@@ -1,0 +1,41 @@
+
+body {
+  margin: 0pt 10pt 0pt 10pt;
+  font-size: 11pt;
+  width: 7in;
+  height: 10in;
+}
+
+
+* {
+  font-family: arial,helvetica;
+}
+
+h1 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.annotation {
+  font-size: 80%;
+  font-style: italic;
+}
+
+.importantnumber {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.smallinstructions {
+  font-size: 0.7em;
+  clear: right;
+}
+
+.ul {
+  border-bottom: solid 1px black;
+}
+
+hr {
+  color: black;
+  background-color: black;
+}

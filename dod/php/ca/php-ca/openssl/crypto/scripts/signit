@@ -1,0 +1,2 @@
+export OPENSSL_CONF=/home/apache/htdocs/ca/php-ca/openssl/openssl.conf
+openssl ca -in ../cannellserver.pem

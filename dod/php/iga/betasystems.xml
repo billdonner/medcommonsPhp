@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <Template>
+    servers
+  </Template>
+  <PageName>
+    Beta.org Instance
+  </PageName>
+  <InstanceId>
+    0444747281919101
+  </InstanceId>
+  <ServerPic>
+    servers_files/yourserverherepic
+  </ServerPic>
+  <UsersPic>
+    servers_files/userspic
+  </UsersPic>
+  <GroupsPic>
+    servers_files/groupspic
+  </GroupsPic>
+  <Servers>
+    <Server>
+      <Type>DB</Type>
+      <Name>beta DB</Name>
+      <Poll>https://beta.medcommons.org/centralstatus.php</Poll>
+      <OnClick>https://beta.medcommons.org/centralstatus.php</OnClick>
+      <Xlinks>
+        <Xlink>
+          <PopUpUrl>
+            http://beta.medcommons.org/ops/console/user.php
+          </PopUpUrl>
+          <IconImage>
+            Images/User 3 32 n p.png
+          </IconImage>
+          <Label>
+            Users
+          </Label>
+        </Xlink>
+        <Xlink>
+          <PopUpUrl>
+            http://beta.medcommons.org/identity/Groups.action?list
+          </PopUpUrl>
+          <IconImage>
+            Images/Parcel Dispatch 32 n p.png
+          </IconImage>
+          <Label>
+            Groups
+          </Label>
+        </Xlink>
+      </Xlinks>
+    </Server>
+    <Server>
+      <Type>AP</Type>
+      <Name>beta AP</Name>
+      <Poll>https://beta.medcommons.org/appsrvstatus.php</Poll>
+      <OnClick>https://beta.medcommons.org/appsrvstatus.php</OnClick>
+    </Server>
+    <Server>
+      <Type>GW</Type>
+      <Name>gw01test</Name>
+      <Poll>https://gateway001.test.medcommons.net/router/status.do?fmt=xml</Poll>
+      <OnClick>https://gateway001.test.medcommons.net/router/status.do</OnClick>
+    </Server>
+    <Server>
+      <Type>GW</Type>
+      <Name>gw019090</Name>
+      <Poll>
+        https://gateway001.private.medcommons.net:9090/router/status.do?fmt=xml
+      </Poll>
+      <OnClick>https://gateway001.private.medcommons.net:9090/router/status.do</OnClick>
+    </Server>
+    <Server>
+      <Type>GW</Type>
+      <Name>gwmcpurple06</Name>
+      <Poll>
+        http://mcpurple06.homeip.net:9080/router/status.do?fmt=xml
+      </Poll>
+      <OnClick>http://mcpurple06.homeip.net:9080/router/status.do</OnClick>
+    </Server>
+  </Servers>
+</Config>

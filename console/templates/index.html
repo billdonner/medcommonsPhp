@@ -1,0 +1,369 @@
+{% extends "base.html" %}
+
+{% block title %}MedCommons Administration{% endblock %}
+
+{% block breadcrumbs %}
+Home
+{% endblock %}
+
+{% block header %}
+
+    <style type='text/css'><!--
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+}
+
+table#main td {
+  border-bottom: solid #cccccc;
+}
+
+h3, .icon_label {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.main_icon {
+  vertical-align: bottom;
+}
+
+.icon {
+  vertical-align: middle;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 14pt;
+  margin-top: 4px;
+}
+
+// --></style>
+
+{% endblock %}
+
+{% block content %}
+      <table border='0' id='main'>
+        <thead>
+	  <tr>
+	    <td colspan='2'>
+<h2>
+Configure and manage your
+MedCommons HealthURL appliance
+</h2>
+<h3>
+<a href='https://{{ META.SERVER_NAME }}/'>https://{{ META.SERVER_NAME }}</a>
+</h3>
+	    </td>
+	  </tr>
+	</thead>
+
+        <tbody>
+	  <tr>
+	    <td></td>
+	    <td>
+<h2>Appliance Status</h2>
+<table border='0'>
+  <tbody>
+    <tr>
+      <td>
+<img src="/ops/mpng.php?t=mc&amp;url=http://mcid.internal:1080/status&amp;name=Locals"
+     width='160' height='120' alt="Locals Status" />
+      </td>
+      <td>
+<img src='/ops/mpng.php?t=db&amp;url=https://{{ META.SERVER_NAME }}/centralstatus.php&amp;name=DB'
+     width='160' height='120' alt='DB Status' />
+      </td>
+      <td>
+<img src='/ops/mpng.php?t=ap&amp;url=https://{{ META.SERVER_NAME }}/appsrvstatus.php&amp;name=AP'
+     width='160' height='120' alt='App Server Status' />
+      </td>
+      <td>
+<img src="/ops/mpng.php?t=gw&amp;url=http://{{ META.SERVER_NAME }}:9080/router/status.do?fmt=xml&amp;name=GW"
+     width='160' height='120' alt='Gateway Status' />
+      </td>
+    </tr>
+<!--
+    <tr>
+      <td></td>
+      <td><a href='status'>apache</a>
+<a href='php.php'>php</a>
+      </td>
+      <td></td>
+    </tr>
+-->
+  </tbody>
+</table>
+
+            </td>
+          </tr>
+	  <tr>
+	    <td>
+      <a href='admins/'>
+        <img src='media/img/Gearwheel.png' width='20' height='20' border='0'
+	     alt='Administrators' class='main_icon' /></a>
+      <a href='admins/' class='icon_label'>Administrators</a>
+<br />
+	{{ admins_count }} Administrator{{ admins_count|pluralize }}
+            </td>
+	    <td>
+<h2>Manage Administrators</h2>
+<p>
+Administrators are special separate user accounts that
+have the authority to use this console, and manage the system.
+</p>
+<form method='get' action='admins/search'>
+<a href='admins/create'>
+    <img src='media/img/CreateAdmin.png' width='20' height='20' border='0'
+         alt='Create Administrator' class='icon' /></a>
+  <a href='admins/create'>create</a>
+&nbsp;|&nbsp;
+<a href='admins/'>
+  <img src='media/img/icon_list.gif' width='16' height='16' border='0'
+       alt='List Administrators' class='icon' /></a>
+<a href='admins/'>list</a>
+&nbsp;|&nbsp;
+
+  <input type='text' name='q' value='search' />
+
+  <input type='image' src='media/img/icon_searchbox.png' width='18' height='16'
+         name='search' alt='Search Admins' />
+</form>
+            </td>
+	  </tr>
+
+          <tr>
+            <td>
+      <a href='users/'>
+        <img src='media/img/User.png' width='20' height='20' border='0'
+	     alt='Manage Accounts' class='main_icon' /></a>
+
+      <a href='users/' class='icon_label'>Accounts</a>
+<br />
+  {{ users_count }} Account{{ users_count|pluralize }}
+            </td>
+            <td>
+<h2>Manage Accounts</h2>
+<p>
+Manage  Patient and Doctor  Accounts
+</p>
+
+<form method='get' action='users/search'>
+<a href='users/create'>
+    <img src='media/img/CreateUser.png' width='20' height='20' border='0'
+         alt='Create Account' /></a>
+  <a href='users/create'>create</a>
+&nbsp;|&nbsp;
+<a href='users/'>
+  <img src='media/img/icon_list.gif' width='16' height='16' border='0'
+       alt='List Accounts' class='icon' /></a>
+<a href='users/'>list</a>
+&nbsp;|&nbsp;
+
+  <input type='text' name='q' value='search' />
+
+  <input type='image' src='media/img/icon_searchbox.png' width='18' height='16'
+         name='search' alt='Search Accounts' />
+</form>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+      <a href='groups/'>
+        <img src='media/img/Users.png' width='20' height='20' border='0'
+	     alt='Manage Groups' class='main_icon' /></a>
+      <a href='groups/' class='icon_label'>Groups</a>
+<br />
+  {{ groups_count }} Group{{ groups_count|pluralize }}
+            </td>
+            <td>
+<h2>Manage Groups</h2>
+<p>
+Manage  Patient and Doctor  Groups
+</p>
+
+<form action='groups/search' method='get'>
+ <a href='groups/wiz_create'>
+    <img src='media/img/CreateGroup.png' width='20' height='20' border='0'
+         alt='Create Group' /></a>
+    <a href='groups/wiz_create'>create</a>
+
+&nbsp;|&nbsp;
+<a href='groups/'>
+  <img src='media/img/icon_list.gif' width='16' height='16' border='0'
+       alt='List Groups' class='icon' /></a>
+<a href='groups/'>list</a>
+&nbsp;|&nbsp;
+
+  <input type='text' name='q' value='search' />
+
+  <input type='image' src='media/img/icon_searchbox.png' width='18' height='16'
+         name='search' alt='Search Groups' />
+
+</form>
+            </td>
+          </tr>
+
+	  <tr>
+	    <td>
+<a href='idps/'>
+  <img src='media/img/Forward.png' width='20' height='20' border='0'
+       alt='Manage Identity Providers' class='main_icon' /></a>
+<a href='idps/' class='icon_label'>Identity Providers</a>
+<br />
+  {{ idps_count }} Identity Provider{{ idps_count|pluralize }}
+	    </td>
+	    <td>
+<h2>Manage Identity Providers</h2>
+<p>
+Users that log into other sites
+can log into this site, by
+configuring those sites as Identity Providers.
+</p>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td>
+<a href='config/'>
+  <img src='media/img/DocumentDraw.png' width='20' height='20' border='0'
+       alt='Modify Config' class='main_icon' /></a>
+<a href='config/' class='icon_label'>Configuration</a>
+	    </td>
+	    <td>
+<h2>Adjust the Appliance Configuration</h2>
+<p>
+<a href='config/wizard'>wizard</a>
+</p>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td>
+	      <a href='security/'>
+		<img src='media/img/Lock.png' width='20' height='20' border='0'
+		     alt='Security Management' class='main_icon' /></a>
+	      <a href='security/' class='icon_label'>Security</a>
+	    </td>
+	    <td>
+<h2>Security</h2>
+<p>
+Manage SSL Certificates.
+</p>
+	    </td>
+	  </tr>
+<!-- {#
+	  <tr>
+            <td>
+              <a href='fax.html'>
+	        <img src='media/img/Print.png' width='20' height='20' border='0'
+		     alt='Fax Management' class='main_icon' />
+              </a>
+	      <a href='fax.html' class='icon_label'>
+	        Fax
+	      </a>
+            </td>
+            <td>
+<h2>Manage Fax Services</h2>
+<p>
+</p>
+            </td>
+          </tr>
+#} -->
+	  <tr>
+	    <td>
+<a href='backups/'>
+  <img src='media/img/DataStore.png' width='20' height='20' border='0'
+       alt='Account Backup' class='main_icon' /></a>
+<a href='backups/' class='icon_label'>Backups</a>
+            </td>
+            <td>
+<h2>Backups</h2>
+
+{% if backups %}
+<table cellpadding='0' cellborder='0' border='0'
+       style='padding: 0; border: 0'>
+  <tbody style='padding: 0; border: 0'>
+    <tr style='padding: 0; border: 0'>
+{% if backup_permerrs %}
+<td style='background-color: red' width='{{ backup_permerrs }}%'>
+</td>
+{% endif %}
+{% if backup_temperrs %}
+<td style='background-color: yellow' width='{{ backup_temperrs }}%'>
+</td>
+{% endif %}
+{% if backup_finished %}
+<td style='background-color: green' width='{{ backup_finished }}%'>
+</td>
+{% endif %}
+
+    </tr>
+  </tbody>
+</table>
+{% endif %}
+
+<p>
+Backup and Restore Patient and Doctor Account Data
+</p>
+
+            </td>
+          </tr>
+
+
+	  <tr>
+	    <td>
+
+<a href='applications/'>
+  <img src='media/img/Application.png' width='20' height='20' border='0'
+       alt='Applications' class='main_icon' /></a>
+<a href='applications/' class='icon_label'>Applications</a>
+            </td>
+            <td>
+<h2>Manage Applications</h2>
+<p>Manage external applications and plugins for your appliance</p>
+            </td>
+          </tr>
+
+	  <tr>
+	    <td>
+
+<a href='logs/'>
+  <img src='media/img/EditBook.png' width='20' height='20' border='0'
+       alt='Access Logs' class='main_icon' /></a>
+<a href='logs/' class='icon_label'>Logs</a>
+            </td>
+            <td>
+<h2>Review Access Logs</h2>
+<p>
+<a href='logs/'>access logs</a>
+&nbsp;|&nbsp;
+<a href='logs/router'>router logs</a>
+</p>
+            </td>
+          </tr>
+<!-- {#
+	  <tr>
+	    <td>
+<a href='bill.html'>
+  <img src='media/img/Calculator.png' width='20' height='20' border='0'
+       alt='MedCommons Bill' class='main_icon' /></a>
+<a href='bill.html' class='icon_label'>Bill</a>
+	    </td>
+	    <td>
+<h2>Review your MedCommons Bill</h2>
+<p>
+</p>
+            </td>
+	  </tr>
+#} -->
+        </tbody>
+      </table>
+
+<p class='copyright'>
+Copyright &copy; 2007, MedCommons, Inc.
+</p>
+
+{% endblock %}
+

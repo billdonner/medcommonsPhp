@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# mc_globals      Start/Stop the mcid/tracking number global allocator daemon.
+#
+# chkconfig: 2345 90 60
+# description: mc_globals is a SOAP/REST server that allocates
+#              16-digit MedCommons IDs.  These MCIDs are globally unique
+#
+# processname: mc_globals
+# pidfile: /var/run/mc_globals.pid
+#
+# Source function library.
+. /etc/init.d/functions
+
+prog="mc_globals"
+
+start() {
+	echo -n $"Starting $prog: "
+	if [ -e /var/run/mc_globals.pid ] && [ -e /proc/`cat /var/run/mc_globals.pid` ]; then
+		echo -n $"Cannot start mc_globals: mc_globals is already running."
+		failure $"cannot start mc_globals: mc_globals already running."
+		echo
+		return 1
+	fi
+	daemon /usr/bin/python /opt/mc_globals/mc_globals.py -C /opt/mc_globals/mc_globals.rc
+	RETVAL=$?
+	echo
+	return $RETVAL
+}
+
+stop() {
+	echo -n $"Stopping $prog: "
+	if [ ! -e /var/run/mc_globals.pid ] || [ ! -e /proc/`cat /var/run/mc_globals.pid` ]; then
+		echo -n $"cannot stop mc_globals: mc_globals is not running.";
+		failure $"cannot stop mc_globals: mc_globals is not running."
+		echo
+		return 1;
+	fi
+	killproc mc_globals
+	RETVAL=$?
+	echo
+	return $RETVAL
+}
+
+rhstatus() {
+	status mc_globals
+}
+
+restart() {
+	stop
+	start
+}
+
+case "$1" in
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  restart)
+	restart
+	;;
+  reload)
+	restart
+	;;
+  status)
+	rhstatus
+	;;
+  *)
+	echo $"Usage: $0 {start|stop|status|reload|restart}"
+	exit 
+esac

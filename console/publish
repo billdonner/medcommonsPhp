@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# 1) Copy this file to /var/www/cgi-bin
+# 2) Copy console.conf to /etc/httpd/conf.d
+# 3) /usr/sbin/useradd -c "MedCommons Admin" -M -s /sbin/nologin mc_admin
+# 4) chown -R mc_admin:mc_admin /var/www/cgi-bin
+# 5) Profit!
+
+cat <<EOF
+Content-Type: text/html
+
+<html>
+  <head>
+    <style type='text/css'><!--
+.error {
+    background-color: red;
+    color: white;
+}
+// --></style>
+  </head>
+  <body>
+    <h1>Publishing...</h1>
+    <table>
+      <thead>
+	<tr>
+	  <th>Input</th>
+	  <th>Output</th>
+	</tr>
+      </thead>
+      <tbody>
+EOF
+if [ "$REQUEST_METHOD" == "POST" ]; then
+    cd ${DOCUMENT_ROOT}
+    cd ../console
+    bin/mc-publish outdir=${DOCUMENT_ROOT}/..
+    bin/mc-edit-settings
+fi
+
+cat <<EOF
+      </tbody>
+    </table>
+    <h2>Done!</h2>
+    <p>
+  Return back to <a href='/console/config/'>Console</a>, or <br />
+  <a href='/'>Browse new site</a>.
+    </p>
+  </body>
+</html>
+EOF

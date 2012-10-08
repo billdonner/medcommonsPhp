@@ -1,0 +1,38 @@
+{% extends "form.html" %}
+
+{% block title %}Add Identity Provider{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Identity Providers</a> &gt;
+Add
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<form method='post' action='add'
+      enctype='multipart/form-data'>
+  <table>
+    <tbody>
+{{ form }}
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit' value='Save' class='default' />
+
+    <input type='submit'
+	   name='add'
+	   value='Save and add another' />
+
+    <input type='submit'
+	   name='edit'
+	   value='Save and continue editing' />
+
+  </div></form>
+
+{% endblock %}

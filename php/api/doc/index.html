@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <link href='api.css' rel='stylesheet' type='text/css'/>
+  </head>
+  <body>
+    <h1>MedCommons API Documentation</h1>
+    <h2>1. Introduction</h2>
+    <p>This document describes how you can connect 3rd party applications and
+    web sites with MedCommons appliances.  MedCommons Appliances expose APIs
+    that you can call from your application to do things such as:</p>
+    <p><ul>
+        <li>Retrieve information from a person's health record</li>
+        <li>Update a person's health record</li>
+        <li>Manage permissions for who is allowed to access a person's health record (known as "consents").</li>
+      </ul>
+    </p>
+
+    <h2>2. Obtaining Authorization to Access MedCommons APIs</h2>
+    <p>Before you can call services in the MedCommons APIs you must
+    obtain authorization.  MedCommons uses a standard process known as <a href='http://oauth.net/core/1.0/'>OAuth</a>
+    for authorizing access.
+    There are two levels of authorization that
+    you need before you can successfully call a MedCommons service:
+    <ul>
+      <li>Your application must be registered with the Appliance that you want to access.
+      This is known as "Consumer" authorization.  Through the registration
+      process you will receive a Consumer key and secret pair that
+      you need to use in your API calls.</li>
+      <li>Once your application is registered, you can obtain permission for the specific
+      account that you wish to access.  In this part of the authorization you will receive
+      an "Access Token" that enables you to call the APIs that you wish to access, <i>for the specific
+      user whose account you are accessing</i>.  Typically
+      your application will store the Access Token for <i>each</i> user account</li>.  If 
+      you do not, you will need to obtain a new Access Token for each call you make.
+    </ul>
+    <p>All calls to the MedCommons API must be signed using the Consumer and Access credentials as
+       specified by the <a href='http://oauth.net/core/1.0/'>OAuth</a> specification.</p>
+
+    <h2>3. Understanding MedCommons Architecture</h2>
+    <p>MedCommons uses a tiered architecture to facilitate scalability. In this architecture, there
+    are 3 tiers:</p>
+    <ul>
+      <li>The <i>appliance</i> tier - this is the level at which accounts, groups and consents are managed.
+          Every patient is allocated to one and only one appliance in the MedCommons universe.
+          However actual medical data is not stored or served from this tier.</li>
+          <li>The <i>storage</i> tier - this is where actual PHI and imaging data is stored.  It is sometimes
+          referred to as the "storage layer", or the "gateway" or "router" (these last two are historical). 
+          A single appliance can be configured to store data across many separate storage instances (or gateways).
+          </li>
+          <li>The <i>global</i> tier - this is the highest level containing all appliances.  Some global services are
+        provided centrally from MedCommons at this level, such as locating a
+        patient's appliance from their account id.  This document does not describe these services.</li>
+      </ul>
+    <p>Because of this tiered architecture, some operations need to be performed in two stages:
+    <ol>
+      <li>Call the patient's appliance to find correct gateway holding the patient's data.   This 
+      is the purpose of the <a href='#find_storage'>find_storage</a> call in the API below.</li>
+      <li>Call the returned storage URL perform desired operation on the patient's data.</li>
+    </ol>
+    <p>A patient's data will be located at a gateway instance and will move only rarely
+       and any migration will be transparent to the caller.   Thus it is safe to store a URL
+       to patient's gateway for short periods of time, for example, up to 24 hours.</p>
+
+    <h2>4. API Reference</h2>
+    <p>This section describes the specific API calls that you can make to a MedCommons HealthURL Appliance.</p>
+    <p>Note: all examples in this section omit OAuth signature parameters for clarity.  However calls will not
+    succeed unless they are accompanied by a correct OAuth signature from an access token authorized to operate on
+    the user's account.</p>
+    <ul>
+    <li><a href='#request_token'>3.1 request_token </a> -  Obtain a request token</li>
+    <li><a href='#authorize'>3.2 authorize </a> -  authorize a request token</li>
+    <li><a href='#access_token'>3.3 access_token </a> -  obtain an access_token</li>
+    <li><a href='#set_consents'>3.4 set_consents </a> -  Set Access Permissions for an Account</li>
+    <li><a href='#find_storage'>3.5 find_storage </a> -  Resolve a gateway for accessing a user's content</li>
+    <li><a href='#ccr'>3.6 ccr </a> -  Retrieve Health Record for User</li>
+    <li><a href='#Activity'>3.7 Activity </a> -  Retrieve Activity Log for User</li>
+    <li><a href='#update_ccr'>3.8 update_ccr </a> -  Update Health Record for User</li>
+    <li><a href='#destroy_token'>3.9 destroy_token </a> -  Destroy a previously authorized token</li>
+    <li><a href='#share_phr'>3.10 Share PHR </a> -  Share access to an account using a Tracking Number and PIN</li>
+    <li><a href='#create_account'>3.11 Create Account</a> -  Create a new account</li>
+  </ul>
+    <h3><a name='request_token'>3.1 request_token - Obtain a request token</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/request_token.php</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td colspan="4">This is a standard OAuth call.  Please refer to OAuth specification for all parameters</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='authorize'>3.2 authorize - authorize a request token</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/authorize.php</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accid</td><td>16 digit MedCommons Account Id</td><td>1</td><td>16 digit MedCommons  Account Id to which access is to be authorized.</td></tr>
+          <tr><td class='param'>realm</td><td>arbitrary text value, max 200 chars, limited to alphanumeric characters, spaces and underscores</td><td>Optional</td><td>indicating a realm 
+            (group, role or other category) in your application to display
+            in reference to the given token.</td></tr>
+          <tr><td class='param'>oauth_token</td><td>OAuth request token</td><td>1</td><td>Value returned from request_token call. This is a standard OAuth parameter.</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.myhealthespace.com/api/authorize.php?oauth_token=bc644c382a404651e96af5533c82b1267304f987&amp;accid=1012576340589251&amp;realm=Bar</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='access_token'>3.3 access_token - obtain an access_token</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/access_token.php</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td colspan="4">This is a standard OAuth call.  Please refer to OAuth specification for all parameters</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='set_consents'>3.4 set_consents - Set Access Permissions for an Account</h3>
+      <table class='api'>
+        <thead>
+              <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/set_consents.php</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accid</td><td>16 digit MedCommons Account Id</td><td>1</td><td>The account that owns content for which consent to access will be modified.</td></tr>
+          <tr><td class='param'>&lt;account id&gt;</td>
+            <td>String value, one of "R", "W", "C" </td>
+            <td>1 or more</td>
+            <td>Indicates the type of consent to grant to specified account.  The account may be specified
+                as either a 16 digit MedCommons Account Id, or it may be specified in the form of a 
+                fully qualified OpenID URL.
+            </td>
+          </tr>
+          <tr><th>return</th><td colspan='3'>JSON encoded object with attribute "status" indicating "ok" if successful</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.myhealthespace.com/api/set_consents.php?accid=1013062431111407&1117658438174637=RW</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='find_storage'>3.5 find_storage - Resolve a gateway for accessing a user's content</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/find_storage.php</th></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accid</td><td>16 digit MedCommons Account Id</td><td>1</td><td>The account whose gateway URL is to be returned. The account must be located on the appliance to which the call is directed.</td></tr>
+          <tr><th>return</th><td colspan='3'>JSON encoded object with attribute "status" indicating "ok" and "result" with URL of gateway if successful</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.myhealthespace.com/api/find_storage.php?accid=1013062431111407</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='ccr'>3.6 ccr - Retrieve Health Record for User</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;gateway&gt;/ccrs/&lt;accountid&gt;[/&lt;guid&gt;]</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accountid</td><td>16 digit MedCommons Account Id</td><td>1</td><td>The account from which the CCR is to be retrieved.</td></tr>
+          <tr><td class='param'>guid</td><td>40 character guid (global identifier) of CCR</td><td>Optional</td><td>If not supplied the user's Current CCR will be returned.</td></tr>
+          <tr><td class='param'>fmt</td><td>one of 'xml' or 'json'</td><td>Optional</td>
+              <td>If not supplied the requested CCR is returned as a fully
+                functional, live HTML page.  If set to one of "xml" or
+                "json" then the CCR will be returned in the respective format.</td></tr>
+          <tr><th>return</th><td colspan='3'>The CCR in the format requested.  In all cases it will be streamed back directly (no wrapping, encoding etc. on top of the requested format).</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.myhealthespace.com/router/ccrs/1013062431111407?fmt=json</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='Activity'>3.7 Activity - Retrieve Activity Log for User</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;gateway&gt;/Activity.action</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>accid</td><td>16 digit MedCommons Account Id</td><td>1</td><td>The account for which the activity log should be retrieved.</td></tr>
+          <tr><td class='param'>since</td><td>long integer</td><td>Optional</td><td>Causes only records since given time in seconds since 1 Jan 1970 GMT to be returned.</td></tr>
+          <tr><td class='param'>max</td><td>integer</td><td>Optional</td><td>Maximum number of records to return</td></tr>
+          <tr><th>return</th><td colspan='3'>json object representing the activity log 
+                       *                     as an array of sessions, each with a list of events</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.myhealthespace.com/router/Activity.action?accid=1013062431111407&max=50&since=1205387193</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='update_ccr'>3.8 update_ccr - Update Health Record for User</h3>
+    <p>To be completed</p>
+
+    <h3><a name='destroy_token'>3.9 destroy_token - Destroy a previously authorized token</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;appliance&gt;/api/destroy_token.php</th></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>token</td><td>40 digit alphanumeric token</td><td>1</td><td>The token to be destroyed.  The token must have been issued by the calling consumer.</td></tr>
+          <tr><th>return</th><td colspan='3'>JSON encoded object with attribute "status" indicating "ok" if successful, otherwise "failed" and "error" with details</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.myhealthespace.com/api/destroy_token.php?token=d63aa792627e1c7b8e6f581991663e4d49cba50d</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='share_phr'>3.10 SharePHR - Share access to a user's health records using Tracking Number and PIN</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;gateway&gt;/SharePHR.action</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>fromAccount</td><td>16 digit MedCommons Account Id</td><td>1</td><td>The account to which access is to be shared</td></tr>
+          <tr><td class='param'>toEmail</td><td>email address</td><td>1</td><td>Email address to send notification to</td></tr>
+          <tr><td class='param'>pin</td><td>5 digit PIN</td><td>1</td><td>The secret PIN to assign as an access code.</td></tr>
+          <tr><td class='param'>auth</td><td>oauth access token</td><td>1</td><td>same as oauth_token in OAuth calls, redundant but required</td></tr>
+          <tr><th>return</th><td colspan='3'>json object with 'status'
+              attribute = 'ok' and 'trackingNumber' attribute indicating
+              Tracking Number created, or  'status' having another value and 'error' having diagnostic information.</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/router/SharePHR.action?fromAccount=1087997704966332&amp;<br/>toEmail=joeshmoe@some.email.com&amp;auth=97a49ea6137dc95bc02a3775282b5e19c47d7892&amp;pin=12345</td></tr>
+        </tbody>
+      </table>
+
+    <h3><a name='create_account'>3.11 NewPatient - Create a Patient Account</h3>
+      <table class='api'>
+        <thead>
+          <tr><th>api</th><th>&nbsp;</th><th colspan='2'>&lt;gateway&gt;/NewPatient.action</th></tr>
+              <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>parameter</th><th>type</th><th>required?</th><th>description</th></tr>
+          <tr><td class='param'>givenName</td><td>text, max 32 characters</td><td>1</td><td>Patient Given Name</td></tr>
+          <tr><td class='param'>familyName</td><td>text max 32 characters</td><td>1</td><td>Patient Family Name</td></tr>
+          <tr><td class='param'>dateOfBirth</td><td>date, mm/dd/yyyy</td><td>0,1</td><td>Patient Date of Birth</td></tr>
+          <tr><td class='param'>sex</td><td>Male or Female</td><td>0,1</td><td>Sex of Patient</td></tr>
+          <tr><td class='param'>height</td><td>numeric with units eg: 176 cm</td><td>0,1</td><td>Height of patient</td></tr>
+          <tr><td class='param'>weight</td><td>numeric with units eg: 178 lb</td><td>0,1</td><td>Weight of the patient</td></tr>
+          <tr><td class='param'>city</td><td>text, unlimited</td><td>0,1</td><td>City of patient address</td></tr>
+          <tr><td class='param'>state</td><td>text, unlimited</td><td>0,1</td><td>State / Province of patient address</td></tr>
+          <tr><td class='param'>photoUrl</td><td>URL, max 255 chars</td><td>0,1</td><td>URL to photo of patient</td></tr>
+          <tr><td class='param'>country</td><td>text, unlimited</td><td>0,1</td><td>Country of patient address</td></tr>
+          <tr><td class='param'>createCCR</td><td>true or false (default=true)</td><td>0,1</td><td>Whether to create an initial Current CCR for the patient</td></tr>
+          <tr><td class='param'>sponsorAccountId</td><td>16 digit account ID</td><td>0,1</td><td>MedCommons Account ID of account sponsoring the patient account.  Will be given full access rights to patient account.</td></tr>
+          <tr><td class='param'>activationKey</td><td>text</td><td>0,1</td><td>Amazon DevPay activation key for account.  If provided will activate account with this key so that account has long term storage paid for</td></tr>
+          <tr><td class='param'>activationProductCode</td><td>text</td><td>0,1</td><td>Amazon DevPay product code corresponding to activation key</td></tr>
+          <tr><td class='param'>auth</td><td>40 character token</td><td>0,1</td><td>Auth token that will be set as parent of token for created account.</td></tr>
+          <tr><th>return</th><td colspan='3'>json object with 'status'
+              attribute = 'ok', 'patientMedCommonsId' attribute indicating id of created account,
+              'auth' attribute indicating oauth access token, corresponding 'secret' attribute indicating secret. 
+              If CCR was created, currentCCRGuid attribute will also be present specifying guid of created CCR.</td></tr>
+          <tr class='spacer'><th colspan='4'>&nbsp;</th></tr>
+          <tr class='example'><th>example</th><td colspan='3'>https://healthurl.medcommons.net/router/NewPatient.action?<br/>givenName=joe&amp;familyName=shmoe&amp;auth=84547f4c4a7085a8c9960883d0fc60e06556604a</td></tr>
+        </tbody>
+      </table>
+
+    <h2>4. Client Example</h2>
+    <p>This example uses PHP along with an open source <a href='http://code.google.com/p/oauth/'>PHP OAuth library</a> to demonstrate how to call the MedCommons APIs.
+    It assumes that you have acquired Consumer and Access tokens and secrets via
+    standard OAuth methods (or otherwise).</p>
+
+
+    <div style='margin-left: 1.0in'>
+ <font face="monospace" size="2">
+<font color="#6a5acd">&lt;?</font><br>
+<font color="#a020f0">require_once</font>&nbsp;&quot;<font color="#008888">OAuth.php</font>&quot;;<br>
+<br>
+<font color="#0000ff">// Consumer - enter your application's token and secret here</font><br>
+<font color="#804040"><b>$</b></font><font color="#008080">consumer</font>&nbsp;&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#a020f0">new</font>&nbsp;OAuthConsumer<font color="#6a5acd">(</font>&quot;<font color="#008888">e0f2e36173ff6f79f8d3aa6f5f00bb87c324099f</font>&quot;, &quot;<font color="#008888">consumer secret</font>&quot;, <font color="#2e8b57"><b>NULL</b></font><font color="#6a5acd">)</font>;<br>
+<br>
+<font color="#0000ff">// Access Token - enter your the Access Token for the user you are calling here</font><br>
+<font color="#804040"><b>$</b></font><font color="#008080">acc_token</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#a020f0">new</font>&nbsp;OAuthToken<font color="#6a5acd">(</font>&quot;<font color="#008888">123456789012345678901234567890</font>&quot;, &quot;<font color="#008888">access secret</font>&quot;, <font color="#ff00ff">1</font><font color="#6a5acd">)</font>;<br>
+<font color="#804040"><b>$</b></font><font color="#008080">req</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;OAuthRequest<font color="#804040"><b>::</b></font>from_consumer_and_token<font color="#6a5acd">(</font><font color="#804040"><b>$</b></font><font color="#008080">consumer</font>, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">acc_token</font>, &quot;<font color="#008888">GET</font>&quot;, &quot;<font color="#008888"><a href="https://healthurl.myhealthespace.com/api/set_consents.php">https://healthurl.myhealthespace.com/api/set_consents.php</a></font>&quot;, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>array</b></font><font color="#6a5acd">(</font>&quot;<font color="#008888">accid</font>&quot;&nbsp;<font color="#804040"><b>=</b></font><font color="#804040"><b>&gt;</b></font>&nbsp;&quot;<font color="#008888">1013062431111407</font>&quot;, &quot;<font color="#008888">1117658438174637</font>&quot;&nbsp;<font color="#804040"><b>=</b></font><font color="#804040"><b>&gt;</b></font>&nbsp;&quot;<font color="#008888">R</font>&quot;<font color="#6a5acd">))</font>;<br>
+<br>
+<font color="#804040"><b>$</b></font><font color="#008080">req</font><font color="#2e8b57"><b>-&gt;</b></font>sign_request<font color="#6a5acd">(</font><font color="#a020f0">new</font>&nbsp;OAuthSignatureMethod_HMAC_SHA1<font color="#6a5acd">()</font>, <font color="#804040"><b>$</b></font><font color="#008080">consumer</font>, <font color="#804040"><b>$</b></font><font color="#008080">acc_token</font><font color="#6a5acd">)</font>;<br>
+<font color="#804040"><b>$</b></font><font color="#008080">result</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">file_get_contents</font><font color="#6a5acd">(</font><font color="#804040"><b>$</b></font><font color="#008080">req</font><font color="#2e8b57"><b>-&gt;</b></font>to_url<font color="#6a5acd">())</font>;<br>
+<br>
+<font color="#a020f0">echo</font>&nbsp;&quot;<font color="#008888">Raw result is </font>&quot;<font color="#804040"><b>.</b></font><font color="#804040"><b>$</b></font><font color="#008080">result</font>;<br>
+<br>
+<font color="#0000ff">// Parse JSON</font><br>
+<font color="#804040"><b>$</b></font><font color="#008080">out</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;json_decode<font color="#6a5acd">(</font><font color="#804040"><b>$</b></font><font color="#008080">result</font><font color="#6a5acd">)</font>;<br>
+<font color="#804040"><b>if</b></font><font color="#6a5acd">(</font><font color="#804040"><b>$</b></font><font color="#008080">out</font><font color="#2e8b57"><b>-&gt;</b></font>status&nbsp;<font color="#804040"><b>==</b></font>&nbsp;&quot;<font color="#008888">ok</font>&quot;<font color="#6a5acd">)</font>&nbsp;<font color="#6a5acd">{</font><br>
+&nbsp;&nbsp;<font color="#a020f0">echo</font>&nbsp;&quot;<font color="#008888">Call succeeded</font>&quot;;<br>
+<font color="#6a5acd">}</font><br>
+<font color="#804040"><b>else</b></font>&nbsp;<font color="#6a5acd">{</font><br>
+&nbsp;&nbsp;<font color="#a020f0">echo</font>&nbsp;&quot;<font color="#008888">Call failed:&nbsp;&nbsp;</font>&quot;<font color="#804040"><b>.</b></font><font color="#804040"><b>$</b></font><font color="#008080">out</font><font color="#2e8b57"><b>-&gt;</b></font>message;<br>
+<font color="#6a5acd">}</font><br>
+<font color="#6a5acd">?&gt;</font><br>
+</font>
+</div>
+  </body>
+</html>

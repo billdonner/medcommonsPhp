@@ -1,0 +1,34 @@
+<html><body>
+<h1>MedCommons.Net Collateral</h1>
+<p>This is where we are keeping things like facebook params,  console customizations and setup filesfor MedCommons.net</p>
+<p>The MedCommons.Net effort is organized currently as follows</p>
+<ul>
+<li>A website and N appliances for the Production MOD service</li>
+<li>A website and N appliances for the Integration Test MOD service</li>
+<li>A collection of facebook applications running on two servers</li>
+<li>A set of customizations for the MOD appliances that distinguish them from the off the shelf MedCommons appliances</li>
+<li>A status reporting and display system for monitoring the MOD systems</li>
+</ul>
+<h2>Alerts and Notifications</h2>
+<p>The csv file notifiers.csv determines who gets notified and when. The third column is the minimum number of seconds to wait before sending an additional alert. This file must be imported into the 'alertinfo.notifications' table on http://a.medcommons.net/ to take effect. </p>
+<h2>Facebook Params</h2>
+<p>These are screenshots of the facebook admin panel for each of our various applications as they are currently installed</p>
+<p>Please be advised the screens should be re-captured whenever they are changed by MedCommons operations</p>
+<h2>Setup Files</h2>
+Both /mod and /site need a setup file to get them configured properly
+<h3>Setup Development Box</h3>
+<p>Copy from /medcommonsdotnet/CI.../.... to target /var/www/html directory</p>
+<p>The CI machine is for development, and the website is currently embedded under /site on this appliance. It does not represent a full string</p>
+<h3>Setup Design Playpen Box</h3>
+<p>Copy from /medcommonsdotnet/Design Playpen.../.... to target /var/www/html directory</p>
+<p>This single box is a complete MOD website + appliace on a single amazon server s0010. It is intended that this box run ahead of CI with respect to visual design and other prototype issues</p>
+<h3>Setup WWW Production Network</h3>
+<p>Copy from /medcommonsdotnet/WWW /.... to target /var/www/html directory</p>
+<p>Adjust these files carefully if you must, and check them back into SVN</p>
+<h3>Setup SXXX Integration Test Network</h3>
+
+<p>Copy from /medcommonsdotnet/SXXX /.... to target /var/www/html directory</p>
+<p>Adjust these files carefully if you must, and check them back into SVN</p>
+<h2>Console Customizations</h2>
+<p>All console pages now use medCommonsStyles.css stylesheet as does the website, mod,...</p>
+</body></html>

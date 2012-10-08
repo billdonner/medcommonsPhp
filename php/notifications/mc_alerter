@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# mc_alerter        Start/Stop MC systems alerts process.
+#
+# chkconfig: 2345 90 60
+# description: mc_alerter is a PHP application that monitors the health of MC server systems
+#
+# processname: mc_alerter
+# pidfile: /var/run/mc_alerter.pid
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+progdir="/var/www/html/notifications"
+proglaunch="mc_launch_alerter"
+prog="mc_alerter"
+
+start() {
+	echo -n $"Starting $prog: "
+	if [ -e /var/run/${prog}.pid ] && [ -e /proc/`cat /var/run/${prog}.pid` ]; then
+		echo -n $"Cannot start ${prog}: ${prog} is already running."
+		failure $"cannot start ${prog}: ${prog} already running."
+		echo
+		return 1
+	fi
+	daemon --pidfile=/var/run/${prog} ${progdir}/${proglaunch} 
+	RETVAL=$?
+	echo
+	return $RETVAL
+}
+
+stop() {
+	echo -n $"Stopping $prog: "
+	if [ ! -e /var/run/${prog}.pid ] || [ ! -e /proc/`cat /var/run/${prog}.pid` ]; then
+		echo -n $"cannot stop ${prog}: ${prog} is not running.";
+		failure $"cannot stop ${prog}: ${prog} is not running."
+		echo
+		return 1;
+	fi
+	killproc ${prog}
+	RETVAL=$?
+	echo
+	return $RETVAL
+}
+
+rhstatus() {
+	status ${prog}
+}
+
+restart() {
+	stop
+	start
+}
+
+case "$1" in
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  restart)
+	restart
+	;;
+  reload)
+	restart
+	;;
+  status)
+	rhstatus
+	;;
+  *)
+	echo $"Usage: $0 {start|stop|status|reload|restart}"
+	exit 
+esac

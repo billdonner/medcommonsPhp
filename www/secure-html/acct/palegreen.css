@@ -1,0 +1,28 @@
+#footer {
+  display: none;
+}
+
+#patientcard {
+  background-color: transparent;
+}
+
+.insecureFormInput,.formInput {
+  border: none;
+  border-bottom: dotted;
+  border-width: 1px;
+  border-color: #dddddd;
+}
+
+.tabbody {
+  background-color: #ebf1e8;
+}
+
+.tabbody th {
+  background: #b7c2b4;
+}
+
+table.ccrtable tr th {
+  background: url("images/pggrad.png") repeat-x top left;
+}
+
+

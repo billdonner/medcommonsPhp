@@ -1,0 +1,54 @@
+{% extends "form.html" %}
+
+{% load medcommons %}
+
+{% block title %}Register Application{% endblock %}
+
+{% block header %}
+<style type='text/css'>
+  table tbody tr td.permission {
+    text-align: left;
+  }
+</style>
+{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Applications</a> &gt;
+Register Application
+{% endblock %}
+
+{% block content %}
+ 
+<p style='text-align: left;'>Before an outside application can access your appliance it must be registered.   Registering an application will generate
+a key for that application to use in accessing your appliance.  You must provide this key to the third party application, but keep it secret otherwise.</p>
+<form method='post' action='register_application'>
+  <table>
+    <tbody>
+      {% if existing %}
+      <input type="hidden" name="id" value="{{ea.ea_id}}"/>
+      {% endif %}
+
+      {{ form }}
+      <tr><td>Allow this Application to:</td>
+        <td class='permission'>
+          <input type='checkbox' checked="true" disabled="true" name='p_login'/>&nbsp;Log Users in to My Appliance<br/>
+          <input type='checkbox' checked="true" disabled="true" name='p_login'/>&nbsp;Read User Account Information<br/>
+          <input type='checkbox' checked="true" disabled="true" name='p_login'/>&nbsp;Read Patient Health Records<br/>
+          <input type='checkbox' checked="true" disabled="true" name='p_login'/>&nbsp;Store and Update Health Records<br/>
+          <input type='checkbox' checked="true" disabled="true" name='p_login'/>&nbsp;Register New Users<br/>
+          <input type='checkbox' checked="true" disabled="true" name='p_login'/>&nbsp;Create new Groups<br/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id='submit-row'>
+    {% if existing %}
+      <input type='submit' name='save' class='default' value='Save' />
+    {% else %}
+      <input type='submit' name='register' class='default' value='Register &gt;&gt;' />
+    {% endif %}
+  </div> 
+</form>
+
+{% endblock %}

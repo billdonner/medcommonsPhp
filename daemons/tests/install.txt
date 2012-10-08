@@ -1,0 +1,2 @@
+# /usr/sbin/useradd -c "MC global allocator" -M -s /sbin/nologin -d /opt/mc_globals mc_globals
+# /usr/sbin/useradd -c "MC local allocator" -M -s /sbin/nologin -d /opt/mc_locals mc_locals

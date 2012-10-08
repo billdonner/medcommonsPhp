@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+        <meta name="author" content="MedCommons"/>
+        <meta name="keywords" content="ccr, phr, privacy, patient, health, records, medical, w3c, web standards"/>
+        <meta name="description" content="MedCommons Home Page"/>
+        <meta name="robots" content="all"/>
+        <title>MedCommons - Interoperable and Private Personal Health Records</title>
+        <link rel="stylesheet" type="text/css" media="print" href="print.css"/>
+        <link rel="shortcut icon" href="images/favicon.gif" type="image/gif"/>
+        <style type="text/css" media="all"> @import "main.css"; </style>
+        <style type="text/css" media="all"> @import "theme.css"; </style>
+        <style type="text/css" media="all"> @import "theme.css.php"; </style>
+        <script src="MochiKit.js" type="text/javascript"></script>
+        <script src="params.js" type="text/javascript"></script>
+        <script src="utils.js" type="text/javascript"></script>
+    </head>
+    <body onload="initMainPage('commons');">
+        <script type="text/javascript">
+          var args = parseQueryString(window.location.search.substring(1));
+          if(args.css) {
+            document.write('<style type="text/css" media="all"> @import "'+args.css+'.css"; </style>');
+          }
+        </script>
+        <div id="container">
+            <div id="intro">
+              <div id="introcontainer">
+                <div id="trackingBox">
+                    <div id="trackboxOuter">
+                      <div id="trackboxTop" class="notLoggedInTrackboxTop">
+                        <form name="trackingForm" onsubmit='checkId();' action="secureredir.php" method="get">
+                          <input type="hidden" value="trackingbox" name="p">
+                          <input type="hidden" value="" name="returnurl2">
+                          <input type="hidden" value="" name="returnurl">
+                          <span id="tbTnLabel" style="vertical-align: middle;">Tracking# or ID</span>&nbsp;
+                          <span style="vertical-align: middle;">
+                            <input type="text" maxLength="64" size="16" name="trackingbox"/> 
+                            <input id="goButton" type="submit" value="Go"/>
+                          </span>
+                        </form>
+                        <script type="text/javascript">
+                          var www=document.location.href.replace('index.html','').replace(/\?.*$/,'');
+                          document.trackingForm.returnurl2.value=www+'/alreadyin.php';
+                          document.trackingForm.returnurl.value=www+'/?f=badtracknum.php';
+                        </script>
+                      </div>
+                      <div id="trackboxBottom">
+                        <div style="font-size: 10px; padding: 0px 6px">
+                          <span style="float: right;"><a href="logout.php" target="contentwindow" title="Log out from your MedCommons Account" onclick="showContentFrame();">logout</a></span>
+                          <b>Welcome, <span id='tbName'>&nbsp</span></b><br/>
+                          Acct <a href='#' onclick="showContentFrame($('accountLinkA').href); return false;"><span id='tbAccId'>&nbsp;</span></a><br/>
+                          Logged on, updated at <span id='tbDateTime'>&nbsp;</span>
+                        </div>
+                      </div>
+                    </div>
+                </div>            
+                <div id="pageHeader">
+                  <a href="index.html">
+                    <img alt="MedCommons" 
+                      id="logo"
+                      width="246"
+                      height="50"
+                      src="images/blank.gif"
+                      style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/mc_logo.png', sizingMethod='scale');"
+                    /></a>
+                </div>
+                <br/>
+                <span id="logofootnote" class="p2">a patient centric ccr transport and storage network</span>
+              </div><!--/introcontainer-->
+            </div><!--/intro-->
+            <div id="menubar">
+              <div id="actionLinks" class="bulletLink">
+                <div id="actionLabel">Get Started <img src="images/arrowhead.gif"/></div>
+                <ul>
+                  <li><A href="secureredir.php?p=gwredir&a=CreateCCR" title="Create a new CCR" target=_new>Create CCR</A></li>
+                  <img id="spacer" src="images/blank.gif"/>
+                  <li><A href="secureredir.php?p=gwredir&a=ImportCCR" title="Create a CCR by uploading a file to MedCommons" target=_new>Import CCR</A></li>
+                  <img id="spacer" src="images/blank.gif"/>
+                  <li><A href="secureredir.php?p=gwredir&a=OpenCCR" title="Open a CCR that you previously saved" target=_new>Open Saved CCR</A></li>
+                  <img id="spacer" src="images/blank.gif"/>
+                  <li id="menuBarAddDocLink">
+                    <a href="secureredir.php?p=gwredir&a=AddDocument" target='contentwindow' onClick="showContentFrame();" title="Add a new Document to your account">Add Document</a></li>
+                  <img id="spacer" src="images/blank.gif"/>
+                  <li id="menuBarLogInLink"><a href="loginredir.php" title="Log in to your MedCommons Account">Log In</a></li>
+                </ul>
+              </div>
+            </div>
+           </div><!--/menubar-->
+
+           <div id="status">
+            </div>
+
+            <div id="content">
+            
+            </div>
+
+            <div id="linkList" class="bulletLink">
+                <div id="linkList2">
+                    <div class="lside">
+                        <h3 class="resources">
+                            <span>BASICS</span>
+                        </h3>
+                        <!-- list of links begins here. There will be no more than 8 links per page -->
+                        <ul>
+                          <li>
+                            <a href="#"  onClick="ajaxServer('idinfo.php?a=commons');">Home</a>
+                          </li> 
+                          <li>
+                            <a href="#" class="emergencyccr" onClick="replaceContent('ered.php');"> <span class="emergencyccr">+Emergency CCR</span></a>
+                          </li>
+                          <li id="leftAccountLink">
+                            <a href="#" onclick="showContentFrame($('accountLinkA').href); return false;">My Account</a>
+                          </li>      
+                          <li id="leftRegisterLink">
+                            <a href="idredir.php?p=register" target="contentwindow" onclick="showContentFrame();">Register</a>
+                          </li>      
+                          <li>
+                          <a href="#" onClick="replaceContent('theme.html');">Personalize</a>
+                          </li>
+                          <li>
+                            <a onclick="alert('Enter PIN 99999 - Images Courtesy of Gordon Harris'); return true;"
+                                                 href="https://gateway001.medcommons.net/router/tracking.jsp?enc=0iH4Q8sj5yGZJtLF-jBKqDqGhlKAyuu0ywvTElkJGCDqoernevG_3Q6xAkR39nt67uJkCwBEB7PoiVYlrmgeLwT8l0PlcJ8Y00uqY5NitrA=&hmac=1065ebd941b23afa9ec8bde57d41bcbf1b336347" );">Demo Data</a>
+                          </li> 
+                          <li>
+                            <a target="_new" href="tour.html">Tour</a>
+                          </li>
+                          <li>
+                            <a href="#"  onClick="ajaxServer('idinfo.php?a=faq');">Frequently Asked Questions</a>
+                          </li>
+                          <li>
+                            <a href="#"  onClick="ajaxServer('idinfo.php?a=about');">About Us</a>
+                          </li>
+                          <li>
+                            <a href="#"  onClick="ajaxServer('idinfo.php?a=termsofuse');">Terms of Use</a>
+                          </li>
+                        </ul>
+                    </div>
+                    <div class="lside">
+                        <h3 class="archives">
+                            <span>PAPERS</span>
+                        </h3>
+                        <ul>
+                            <li>                          
+                              <a href="#"  onClick="ajaxServer('idinfo.php?a=cxp');">
+                                <acronym title="Commons eXchange Protocol">CXP</acronym> - A Public Domain Transfer Protocol <span style="font-size: smaller;"><b>(New)</b></span>
+                              </a>
+                            </li>
+                            <li>
+                                <a href="http://www.medcommons.net/affinity-driven_health_care_networks.pdf" target="_new"
+                                    >Affinity Driven Health Information Networks</a>&nbsp;</li>
+                            
+                            <li>
+                                <a href="http://www.medcommons.net/whitepapers/nhinrfiresponse.pdf" target="_new"
+                                    title="MedCommons Response to Request for Information from Dr. David Brailer">MedCommons Response to <acronym title="National Health Information Network"
+                                        >NHIN</acronym>
+                                    <acronym title="Request for Information">RFI</acronym></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lside">
+                        <h3 class="resources">
+                            <span>LINKS</span>
+                        </h3>
+                        <ul>
+                          <li>
+                              <a href="#"  onClick="ajaxServer('idinfo.php?a=press');">Press Room</a>
+                          </li>
+                          <li>
+                              <a href="http://www.centerforhit.org/x1556.xml" target="_new"><span>CCR-</span>Compatible Product Gallery</a>
+                          </li>
+                          <li>
+                              <a href="http://www.centerforhit.org/x201.xml" target="_new"><span>M</span>ore information on the CCR standard</a>
+                          </li>
+                          <li>
+                            <a href="#" onClick="ajaxServer('idinfo.php?a=liberty');">Liberty Alliance</a>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+         <div class="noprint">
+            <a href="http://validator.w3.org/check/referer" title="Check the validity of this
+                site&#8217;s XHTML">xhtml</a> &nbsp; <a
+                href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of
+                this site&#8217;s CSS">css</a> &nbsp;  <a
+                href="http://bobby.watchfire.com/bobby/bobbyServlet?URL=http%3A%2F%2Fwww.mezzoblue.com%2Fzengarden%2F&amp;output=Submit&amp;gl=sec508&amp;test="
+                title="Check the accessibility of this site according to U.S. Section 508">508</a>
+            &nbsp; <a
+                href="http://bobby.watchfire.com/bobby/bobbyServlet?URL=http%3A%2F%2Fwww.mezzoblue.com%2Fzengarden%2F&amp;output=Submit&amp;gl=wcag1-aaa&amp;test="
+                title="Check the accessibility of this site according to Web Content Accessibility
+                Guidelines 1.0">aaa</a>
+            </div>
+            <p class="p1">&#169; MedCommons 2006</p>
+        </div>
+    </body>
+</html>

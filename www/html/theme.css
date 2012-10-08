@@ -1,0 +1,165 @@
+#intro {
+  position: relative;
+  background-color: #ebf1e8;
+  width: 100%;
+  padding: 5px 0px;
+  height: 75px;
+}
+
+#introcontainer {
+  padding: 0px 9px;
+}
+
+#trackingBox {
+  display: inline;
+  float: right;
+  width: 280px;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#trackboxTop, #trackboxBottom {
+  background-color: #e6e6e6;
+  margin: 0px;
+  padding: 0px;
+}
+
+#trackboxTop {
+  background-color: #cbd6e3;
+  padding-bottom: 3px;
+}
+
+div.notLoggedInTrackboxTop {
+  background-color: transparent !important;
+}
+
+#trackboxBottom {
+  display: none;
+  padding-top: 3px;
+}
+
+#trackingBox form {
+  padding: 0px 6px;
+  margin: 0px;
+}
+
+.borderless {
+  border-style: none;
+  border-width: 0px;
+}
+
+#menubar {
+  position: relative;
+  background-image: url('images/pgbar.png');
+  background-repeat: repeat-x;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+#linkList h3 {
+  background-image: url('images/pggrad.png');
+}
+
+#actionLinks, #status {
+  position: absolute;
+  width: 720px;
+}
+
+#actionLinks {
+  left: 0px;
+}
+
+#actionLinks,#status {
+  top: 5px;
+}
+
+#menuBarAddDocLink {
+  display: none;
+}
+
+#status {
+  display: none;
+  z-index: 100;
+  right: 0px;
+  xfloat: right;
+  xborder-style: solid;
+  xborder-width: 1px;
+  width: 140px;
+}
+
+/* initially hidden displayed by script */
+#accountOuter, #statusouter {
+  display : none;
+}
+
+#statusouter {
+  padding: 0px;
+}
+
+#statusinfo, #statusouter {
+  background-color: #ebf1e8;
+  width: 140px
+}
+
+#accountOuter {
+  margin: 12px 0px 0px 0px;
+  padding: 0px;
+  width: 140px;
+}
+
+#accountOuter,#accountLink {
+  background-color: #b7c2b4;
+}
+
+#accountLink a:link,
+#accountLink a:visited,
+#accountLink a:hover,
+#accountLink a:active {
+  text-decoration: none;
+  color: white;
+}
+
+#accountLink a:hover {
+  color: #c22;
+  background-color: transparent;
+}
+
+#statusinfo {
+  padding: 3px 0px;
+}
+
+#accountLink, #statusinfo p {
+  margin: 0px 1px;
+  padding: 0px 5px;
+  font-size: 9px;
+}
+
+#accountLink {
+  background-image: url('images/orangeled.gif');
+  background-repeat: no-repeat;
+  background-position: 4px 2px;
+  padding-left: 18px;
+  padding-bottom: 5px;
+}
+
+#status .loggedIn {
+  width: 100px;
+}
+
+#actionLinks li {
+  display: inline;
+}
+
+#actionLinks #spacer {
+  width: 2%;
+  height: 1px;
+}
+
+#actionLabel {
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0px 45px 0px 20px;
+}
+

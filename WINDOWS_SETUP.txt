@@ -1,0 +1,19 @@
+A very terse description of setup on windows:
+
+1. install java
+2. install cygwin (inc. svn)
+2.1 checkout /services/trunk/php
+3. install xampp
+4. adjust php.ini,  httpd.conf
+  4.1 If using xampp 1.7, follow instructions here:  http://www.apachefriends.org/f/viewtopic.php?f=16&t=32617
+5. install python 2.5 (NOT 2.6)
+7. install python mysql support 
+   - download exe installer for mysql-python from http://sourceforge.net/projects/mysql-python
+8. install fpconst from http://pypi.python.org/packages/source/f/fpconst/fpconst-0.7.2.tar.gz#md5=10ba9e04129af23108d24c22c3a698b1
+   use 'python setup.py install' to install
+9. install SOAPpy from http://transact.dl.sourceforge.net/sourceforge/pywebsvcs/SOAPpy-0.11.1.tar.gz
+   NOTE: get .11.x, don't get .12, it's broken in python 2.5
+   use 'python setup.py install' to install
+10. Set $GLOBALS['Script_Domain'] = null in urls.inc.php - necessary because by default it's set to your domain, 
+    but script domain can't have less than two components to work in javascript.  So if your machine
+    is not referenced by fully qualified domain name (eg: localhost, 'foo') it won't work.

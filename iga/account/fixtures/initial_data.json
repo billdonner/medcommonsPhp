@@ -1,0 +1,2 @@
+[{"pk": "1", "model": "auth.user", "fields": {"username": "root", "first_name": "", "last_name": "", "is_active": 1, "is_superuser": 1, "is_staff": 1, "last_login": "2007-06-09 21:13:47", "groups": [], "user_permissions": [], "password": "sha1$b5d04$fdfb9f0886de2ea9184b0c82513df880f836edce", "email": "root@wayforward.net", "date_joined": "2007-06-09 21:13:47"}}
+]

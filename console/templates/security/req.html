@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+Generate a New CSR - Certificate Signing Request
+{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Security</a> &gt;
+New <acronym title='Certificate Signing Request'>CSR</acronym>
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<form method='post' action='req'>
+  <table>
+    <tr>
+      <td colspan='2'>
+This will generate a CSR (Certificate Signing Request).
+After filling out this form, you will be presented with
+text that must be sent to your Certificate Authority.
+      </td>
+    </tr>
+{{ form }}
+  </table>
+  <div id='submit-row'>
+    <input type='submit' value='Generate CSR' />
+  </div>
+</form>
+
+{% endblock content %}

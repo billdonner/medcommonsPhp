@@ -1,0 +1,93 @@
+{% extends "www/base.html" %}
+
+{% block head %}
+{% if GoogleMapKey %}
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key={{ GoogleMapKey }}"
+        type="text/javascript"></script>
+
+<script type="text/javascript">
+    //<![CDATA[
+
+    function load() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map"));
+        map.addControl(new GSmallMapControl());
+        map.addControl(new GMapTypeControl());
+        map.setCenter(new GLatLng({{ Latitude }}, {{ Longitude }}),11);
+
+        // Our info window content
+        var infoTabs = [
+          new GInfoWindowTab("World HQ", "100 Galen St. Watertown, Mass 02472"),
+          new GInfoWindowTab("Phone", "1.617.395.6744"),
+          new GInfoWindowTab("Email","info@medcommons.net")
+        ];
+
+        // Place a marker in the center of the map and open the info window
+        // automatically
+        var marker = new GMarker(map.getCenter());
+        GEvent.addListener(marker, "click", function() {
+          marker.openInfoWindowTabsHtml(infoTabs);
+        });
+        map.addOverlay(marker);
+        marker.openInfoWindowTabsHtml(infoTabs);
+      }
+
+      www_init();
+    }
+
+    //]]>
+    </script>
+
+{% endif %}
+{% endblock head %}
+
+{% block body %}onload="load()" onunload="GUnload()"{% endblock body %}
+
+{% block main %}
+<div id="contact-us">
+    <div id="content">
+        <h3>
+            Appliance Information:</h3>
+                    <div>  <table>
+                              <tr><td>appliance name:</td><td> {{ ApplianceName }}</td></tr>
+            <tr><td>message:</td><td>  {{ Message }} </td></tr>
+         <tr><td>alt:</td><td>  {{ Alt }} </td></tr>
+         <tr><td>email signature:</td><td>  {{ FromName }} {{ FromEmail }} </td></tr>
+         <tr><td>x509 common name: </td><td> {{ CommonName }} </td></tr>
+            <tr><td>x509 organization:</td><td>  {{ Organization }} </td></tr>
+            <tr><td>x509 organizational
+            unit:</td><td>  {{ OrganizationalUnit }}</td></tr> 
+            <tr><td>x509 locality: </td><td> {{ Locality }}</td></tr> 
+            <tr><td>x509 state: </td><td> {{ State }} </td></tr>
+            <tr><td>x509 country: </td><td> {{ Country }} </td></tr>
+            <tr><td>x509 latitude: </td><td> {{ Latitude }} </td></tr>
+            <tr><td>x509 longitude: </td><td> {{ Longitude }}  </td></tr> 
+    <tr><td>homepage: </td><td> {{ HomePage }} </td></tr>
+        <tr><td>owner: </td><td> {{ Owner }}</td></tr>
+           </table>
+        </div>
+
+    <h3>
+        General Information:</h3>
+    <em>For licensing inquiries <a href='mailto:cmo@medcommons.net'>please contact us</a></em>
+    <p>
+        MedCommons Main Office</p>
+    <div class='notiPhone'>
+        {% if GoogleMapKey %}
+        <div id='map' style='width: 500px; height: 300px'>
+        </div>
+        {% endif %}
+    </div>
+    <h3>
+        Sales:</h3>
+    <p>
+        Contact A. Gropper at <a href="tel:1.617.395.6744">1.617.395.6744</a></p>
+    <h3>
+        Employment:</h3>
+    <p>
+        Contact S. Doyle at <a href="tel:1.617.395.6744">1.617.395.6744</a></p>
+</div>
+</div>
+
+{% endblock main %} 

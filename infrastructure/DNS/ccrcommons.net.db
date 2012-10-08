@@ -1,0 +1,24 @@
+@ IN SOA ns1.medcommons.net. root.medcommons.net. (
+	2008112902	; serial
+	3h		; refresh
+	1h		; retry
+	7d		; expire
+	1d	)	; minimum ttl
+
+			in	ns	ns1.medcommons.net.
+			in	ns	ns2.medcommons.net.
+
+		2m	in	mx	10 mx00.1and1.com.
+		2m	in	mx	10 mx01.1and1.com.
+			in	txt	"v=spf1 ip4:67.15.178.32/28 ?all"
+
+		2m	in	a	67.202.21.144	; AWS i-95ac1efc (ami-8de90de4/nva-20080808-keypair - 112808@2342) - apps.medcommons.net
+www		2m	in	a	67.202.21.144	; AWS i-95ac1efc (ami-8de90de4/nva-20080808-keypair - 112808@2342) - apps.medcommons.net
+
+healthurl	2m	in	a	75.101.156.254 ; Amazon Elastic IP
+
+;
+; Terminated Instances/Retired Addresses
+;
+;		2m	in	a	69.55.231.52
+;www		2m	in	a	69.55.231.52

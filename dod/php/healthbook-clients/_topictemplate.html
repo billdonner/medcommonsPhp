@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="author" content="MedCommons, Inc." />
+    <meta name="description" content="MedCommons Website Version 219 Page Frequently Asked Questions" />
+    <meta name="keywords" 
+    content="medcommons, personal health records,ccr, phr, privacy, patient, health, records, medical records,
+						emergencyccr"/>
+    <meta name="robots" content="all"/>
+    <meta name="viewport" content="width=320" />
+    <title>**TITLE**</title>
+    <link rel="shortcut icon" href="http://www.medcommons.net/images/favicon.gif" type="image/gif" />
+
+    <link media="all"
+	href="http://www.medcommons.net/webSite.css" type="text/css" rel="stylesheet" />
+        <link media="only screen and (max-device-width: 480px)"
+	href="iPhoneWebSite.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+    // This function is included to overcome a bug in Netscape's implementation
+// of the escape () function:
+
+function myunescape (str)
+{
+	str = '' + str;
+	while (true)
+	{
+		var i = str . indexOf ('+');
+		if (i < 0)
+			break;
+		str = str . substring (0, i) + ' ' + str . substring (i + 1, str . length);
+	}
+	return unescape (str);
+}
+    var args;
+    
+    function i()
+{
+// parse args
+	args = new Array ();
+	var argstring = window . location . search;
+	if (argstring . charAt (0) != '?')
+		return;
+	argstring = argstring . substring (1, argstring . length);
+	var argarray = argstring . split ('&');
+	var i;
+	var singlearg;
+	for (i = 0; i < argarray . length; ++ i)
+	{
+		singlearg = argarray [i] . split ('=');
+		if (singlearg . length != 2)
+			continue;
+		var key = myunescape (singlearg [0]);
+		var value = myunescape (singlearg [1]);
+		args [key] = value;
+	}
+// if error then put it in the right place
+	if (args['error'])
+		if (args['p'])
+				{
+				p = args['p'];
+				document.getElementById(p).innerHTML = '<span class="errorAlert">'+args['error']+'</span>';
+				}
+}
+</script>
+</head>
+<body onload='i()'>
+<div id="search">
+	<span id='t41' class='err'><img border="0" src="http://www.medcommons.net/images/findURL.gif" width="130" height="12" /></span> 
+	    <form method='get' action='https://globals.myhealthespace.com/qtn.php'>
+                    <input id="searchfield" class='infield' type='text' name='q' value='' />
+                    <input type='hidden' name='p' value='t41' />
+    <span id="go"><input type='image' alt='Go' src="http://www.medcommons.net/images/go.gif" width="24" height="18" border="0" /></span></form>
+    	<a id="examples" href="searchExamples.html">
+	<img border="0" src="http://www.medcommons.net/images/searchExamples.gif" width="160" height="19" /></a>
+</div>
+    <div id="interior_mast">
+        <a href='index.html' title='MedCommons Homepage'><img border="0" src="http://www.medcommons.net/images/HP_logo.jpg" width="243" height="56" /></a>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">&nbsp;&nbsp;Home</a></li></ul>
+        <ul>
+            <li><a href="#">&nbsp;&nbsp;About Us<!--[if IE 7]><!--></a><!--<![endif]-->
+                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                <ul>
+                    <li><a href="cf.html">Concepts and Facilities</a></li>
+                    <li><a target="_blank" href="http://youtube.com/watch?v=CofNmbEj6OU">2min video</a></li>
+                    <li><a target="_blank" href="http://youtube.com/watch?v=676bNq-DzpQ">8min video</a></li>
+                    <li><a target="_blank" href="http://adrian.medcommons.net/">
+                        Blog</a></li>
+                    <li><a target="_blank" href="http://web.mac.com/medcommons/iWeb/Site/Presentation.html">Vision and Technology</a></li>
+                    <li><a href="about.html">Management</a></li>
+                    <li><a href="press.html">Press</a></li>
+                    <li class="notiPhone"><a href="contact.html">Contact Us</a></li>
+                    <li class="iPhone"><a href="contactiPhone.html">Contact Us</a></li>
+                    <li><a href="termsofuse.html">Terms of Use</a></li>
+                </ul>
+                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+            </li>
+            <li><a href="#">&nbsp;&nbsp;Demos<!--[if IE 7]><!--></a><!--<![endif]-->
+                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                <ul><li> <a  target='_new' href='https://healthurl.myhealthespace.com/1013062431111407'>
+                Demo Health URL</a></li>
+                    <li><a target='_new'  href="https://healthurl.myhealthespace.com/acct/logindd.php">Login as Doctor</a></li>
+                    <li><a href="ovs.html">Overview</a></li>
+                      <li><a href="ft.html">Feature Tour</a></li>
+                    <li><a href="https://healthurl.myhealthespace.com/acct/register.php">Register for Free Demo Account</a></li>
+                    <li><a href="https://healthurl.myhealthespace.com">Sign In Free Demo Account</a></li>
+                  
+                    <li><a target='_new'  href="https://healthurl.myhealthespace.com/secure/gwredir.php?a=ImportCCR">Import
+                        CCR Anonymously</a></li>
+                    <li><a target='_new'  href="https://healthurl.myhealthespace.com/secure/gwredir.php?a=CreateCCR">Create
+                        CCR Anonymously</a></li>
+                </ul>
+                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+            </li>
+            <li><a href="prodmenu.html">&nbsp;&nbsp;Products<!--[if IE 7]><!--></a><!--<![endif]-->
+                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                <ul>
+                    <li><a href="prodmenu.html#prod-01">Health URL Appliance</a></li>
+                    <li><a href="prodmenu.html#prod-02">DICOM Imaging Connector </a></li>
+                    <li><a href="prodmenu.html#prod-03">Diagnostic Workstation Plugin</a></li>
+                    <li><a href="prodmenu.html#prod-04">Federated Identity and SSO</a></li>
+                    <li><a href="prodmenu.html#prod-05">IHE Data Liberator</a></li>
+                </ul>
+                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+            </li>
+            <li><a href="ap.html">&nbsp;&nbsp;Applications<!--[if IE 7]><!--></a><!--<![endif]-->
+                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                <ul>
+                    <li><a href="ap.html#apps-01">Telemedicine</a></li>
+                    <li><a href="ap.html#apps-02">HIPAA Records Request</a></li>
+                    <li><a href="ap.html#apps-03">Outcomes Registry</a></li>
+                    <li><a href="ap.html#apps-04">Retail Clinics</a></li>
+                    <li><a href="ap.html#apps-05">Radiology Services</a></li>
+                    <li><a href="ap.html#apps-06">Home Care</a></li>
+                    <li><a href="ap.html#apps-07">Disease Management</a></li>
+                    <li><a href="ap.html#apps-08">Sports Medicine</a></li>
+                    <li><a href="ap.html#apps-09">Tertiary Care Referrals</a></li>
+                    <li><a href="ap.html#apps-10">Social Networks</a></li>
+                </ul>
+                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+            </li>
+            <li><a href="#">&nbsp;&nbsp;Standards<!--[if IE 7]><!--></a><!--<![endif]-->
+                <!--[if lte IE 6]><table><tr><td><![endif]-->
+                <ul>
+                    <li><a target='_new' href="http://www.centerforhit.org/x201.xml">CCR (ASTM Continuty of Care Record)</a></li>
+                    <li><a target='_new' href="http://www.aiim.org/standards.asp?ID=31832">PDF Healthcare (Portable Document
+                        Format for Healthcare)</a></li>
+                    <li><a target='_new' href="http://medical.nema.org/">DICOM (Digital Imaging and Communications in
+                        Medicine)</a></li>
+                    <li><a target='_new' href="http://www.oasis-open.org/committees/security/docs/draft-sstc-saml-reqs-01.pdf">
+                        SAML (Security Assertion Markup Language)</a></li>
+                    <li><a target='_new' href="http://www.projectliberty.org/">Liberty Alliance (Standards for Federated
+                        Identity Management on the Web)</a></li>
+                </ul>
+                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+            </li>
+        </ul>
+        <ul>
+            <li><a href="faq.html">&nbsp;&nbsp;FAQ</a></li></ul>
+    </div>
+    
+
+**BODY**
+
+        <div id="footer">
+	<h6>&#169; 2007 MedCommons, Inc.&nbsp;&nbsp;<a href='sitemap.html'>sitemap</a>&nbsp;|&nbsp;
+		<a href='termsofuse.html'>terms of use</a>&nbsp;|&nbsp;
+	<a href='contact.html'>contact us</a></h6>
+</div>
+         </div>
+        </body>
+     </html>

@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}Group Details{% endblock %}
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Groups</a> &gt;
+Group Details
+{% endblock %}
+
+{% block sidebar %}
+<ul class='object-tools'>
+  <li><a href='delete?id={{ group.groupinstanceid }}'>Delete Group</a></li>
+</ul>
+{% endblock sidebar %}
+
+{% block content %}
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+	<fieldset>
+	  <legend>Group Details</legend>
+<table>
+  <tbody>
+    <tr>
+      <th>Group Name:</th>
+      <td>{{ group.name }}</td>
+    </tr>
+
+    <tr>
+      <th>Group Logo:</th>
+      <td>
+{% if group.groupLogo %}
+<img src='{{ group.groupLogo }}' />
+<a href='{{ group.groupLogo }}'>{{ group.groupLogo }}</a>
+{% endif %}
+      </td>
+    </tr>
+
+    <tr>
+      <th>Admin URL:</th>
+      <td>
+{% if group.adminUrl %}
+<a href='{{ group.adminUrl }}'>{{ group.adminUrl }}</a>
+{% endif %}
+      </td>
+    </tr>
+
+    <tr>
+      <th>Member URL:</th>
+      <td>
+{% if group.memberUrl %}
+<a href='{{ group.memberUrl }}'>{{ group.memberUrl }}</a>
+{% endif %}
+      </td>
+    </tr>
+
+    <tr>
+      <th>Worklist Limit:</th>
+      <td>{{ group.worklist_limit }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+	<a href='edit?id={{ group.groupinstanceid }}'>
+	  <img src='{{ media }}img/icon_changelink.gif' width='10'
+	       height='10' alt='Edit Group' />change values</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+	</fieldset>
+      </td>
+    </tr>
+    <tr>
+      <td>
+	<fieldset>
+	  <legend>Group Members</legend>
+<table>
+  <tbody>
+    <tr>
+      <th>Owner:</th>
+      <td>
+<a href='../users/user?mcid={{ owner.mcid }}'>
+  {{ owner.pretty_mcid }}
+</a>
+  {{ owner.first_name }} {{ owner.last_name }}
+      </td>
+    </tr>
+
+    <tr>
+      <th>Members:</th>
+      <td>
+
+{% for u in users %} 
+<a href='../users/user?mcid={{ u.mcid }}'>
+  {{ u.pretty_mcid }}
+</a>
+{{ u.first_name }} {{ u.last_name }}
+<form method='post' action='remove_from_group' style='display: inline'>
+  <input type='hidden' name='mcid' value='{{ u.mcid }}' />
+  <input type='hidden' name='group' value='{{ group.groupinstanceid }}' />
+  <input type='image' name='delete' src='{{ media }}img/icon_deletelink.gif'
+	 width='10' height='10' alt='Remove User From Group' />
+</form>
+<br />
+{% endfor %}
+<a href='add_user?id={{ group.groupinstanceid }}'><img src='{{ media }}img/icon_addlink.gif' width='10' height='10'
+                   alt='Add User to Group' /></a>
+<a href='add_user?id={{ group.groupinstanceid }}'>add user</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+	</fieldset>
+      </td>
+    </tr>
+    <tr>
+      <td>
+	<a href='delete?id={{ group.groupinstanceid }}'>
+	  <img src='{{ media }}img/DeleteGroup.png' width='20' height='20'
+	       alt='Delete Group' />
+        </a>
+	<a href='delete?id={{ group.groupinstanceid }}'>
+	  delete group
+	</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

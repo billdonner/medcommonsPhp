@@ -1,0 +1,105 @@
+table#uploadTable {
+    width: 80%;
+    max-width: 580px;
+}
+table#uploadTable tr th {
+    width: 150px;
+    whitespace: nowrap;
+}
+table#uploadTable tr td textarea {
+    width: 80%;
+}
+table#uploadTable input {
+    width: 80%;
+    max-width: 300px;
+}
+#upload p {
+    padding: 4px 0px;
+}
+p.middled * {
+    vertical-align: middle;
+}
+.hidden {
+    display: none;
+}
+#step1boxes {
+    position: relative;
+    height: 80px;
+}
+#wholeStep1 {
+	position: relative;
+}
+#detecting, #installDDLStep, #foundDDL {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+#section {
+    height: 260px;
+}
+
+#voucherDetailsStep table#voucherTable {
+    margin-left: 40px;
+}
+
+#voucherDetailsStep table#voucherTable th {
+    text-align: right;
+    padding-right: 10px;
+}
+#voucherDetailsStep table td.buttons button {
+    margin: 5px 0px;
+}
+#helpbar {
+  position: relative;
+    margin-top: 1em;
+    width: 35em;
+    background-color: #89b7dC;
+    background-color: white;
+}
+
+#helpbar p {
+    padding: 0px 0px;
+  xcolor: white;
+}
+p.error { 
+    color: red;
+}
+ul {
+    padding-left: 3em;
+}
+#helpers {
+  margin-top: 1em;
+    background-color: #89b7dC;
+    color: white;
+    float: left;
+}
+#helpers a {
+    color: white;
+}
+#helpers div.inner, #helpers h5 {
+    margin: 0px 10px;
+}
+#helpers label, #helpers input {
+    display: block;
+    margin: 3px 0px;
+    font-size: 12px;
+}
+#helpers input {
+    font-size: 12px;
+}
+#problemResultFields a {
+  text-decoration: underline;
+}
+button {
+    font-size: 95%;
+    padding: 0px 3px;
+}
+
+#scanningMsg * {
+	vertical-align: middle;
+}
+
+
+#studies, #series {
+	padding-left: 8px;
+}

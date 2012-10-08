@@ -1,0 +1,46 @@
+html,body {
+  padding: 0px;
+  margin: 0px;
+}
+
+div#head {
+  margin: 0px;
+  height: 30px;
+  border-bottom: #666 ridge 3px;
+  background-color: #ddd;
+}
+
+div#head h1 {
+  margin: 0px 10px;
+  padding: 5px 0px;
+}
+
+div.content {
+  padding: 6px 10px;
+}
+
+* { 
+  font-family: arial,verdana;
+}
+h1 { 
+  font-size: 14px;
+}
+table * {
+  font-size: 12px;
+}
+
+fieldset {
+  float: left;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+#msg {
+  color: white;
+  background-color: green;
+  width: 80%;
+  display: none;
+  margin: 10px;
+}

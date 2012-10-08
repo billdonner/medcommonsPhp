@@ -1,0 +1,44 @@
+@ IN SOA ns1.medcommons.net. root.medcommons.net. (
+	2008112801	; serial
+	3h		; refresh
+	1h		; retry
+	7d		; expire
+	1d	)	; minimum ttl
+
+	in	ns	ns1.medcommons.net.
+	in	ns	ns2.medcommons.net.
+
+	in	txt	"v=spf1 ip4:67.15.178.32/28 ?all"
+
+	in	mx	10 mx00.1and1.com.
+	in	mx	10 mx01.1and1.com.
+
+mcpurple06	2m	in	a	66.92.68.51		; Medcommons/in-house
+globals		2m	in	a	66.92.68.129		; Medcommons/in-house
+ci		2m	in	a	66.92.68.129		; Medcommons/in-house
+stego		2m	in	a	74.94.173.178		; Medcommons/in-house
+
+qatest		2m	in	a	75.101.156.254		; AWS i-a56cabcc (ami-cf2dc8a6/ttw-20080408-keypair - 080408@2235)
+s0900		2m	in	a	75.101.156.254		; AWS i-a56cabcc (ami-cf2dc8a6/ttw-20080408-keypair - 080408@2235)
+testinstall	2m	in	a	75.101.209.202		; AWS i-2c5e9945 (ami-cf2dc8a6/swd-20080408-keypair - 080408@1056)
+s0901		2m	in	a	75.101.209.202		; AWS i-2c5e9945 (ami-cf2dc8a6/swd-20080408-keypair - 080408@1056)
+
+www		2m	in	a	75.101.214.175		; AWS i-61c81808 (ami-cf2dc8a6/nva-20080630-keypair - 070808@2322)
+s0902		2m	in	a	75.101.214.175		; AWS i-61c81808 (ami-cf2dc8a6/nva-20080630-keypair - 070808@2322)
+
+
+ehgt			in	a	67.202.2.249 		; AWS i-5229d83b (ami-cf2dc8a6/adrian-keypair - 071229@0640)
+s0904			in	a	67.202.2.249 		; AWS i-5229d83b (ami-cf2dc8a6/adrian-keypair - 071229@0640)
+
+healthurl	2m	in	a	75.101.156.33		; AWS i-3eef2d57 (ami-cf2dc8a6/adrian-keypair - 080426@0424)
+s0905		2m	in	a	75.101.156.33		; AWS i-3eef2d57 (ami-cf2dc8a6/adrian-keypair - 080426@0424)
+
+bam		2m	in	a	75.101.215.146		; AWS i-0e0ba667 (ami-8de90de4/nva-20080808-keypair - 100808@1445)
+s0908		2m	in	a	75.101.215.146		; AWS i-0e0ba667 (ami-8de90de4/nva-20080808-keypair - 100808@1445)
+
+;
+;Terminated
+;
+;s0909 - 101608@1023
+;box		2m	in	a	75.101.255.47		; AWS i-2b6eb442 (ami-cf2dc8a6/nva-20080808-keypair - 080826@1405)
+;s0903		2m	in	a	75.101.255.47		; AWS i-2b6eb442 (ami-cf2dc8a6/nva-20080808-keypair - 080826@1405)

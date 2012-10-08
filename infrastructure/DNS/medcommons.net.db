@@ -1,0 +1,102 @@
+@ IN SOA ns1.medcommons.net. root.medcommons.net. (
+	2008112907	; serial
+	3h		; refresh
+	1h		; retry
+	7d		; expire
+	1d		; minimum ttl
+	)
+
+	in	ns	ns1.medcommons.net.
+	in	ns	ns2.medcommons.net.
+
+	in	txt	"v=spf1 mx -all"
+
+;       in	a	69.55.236.141
+        in	mx	10 mx00.1and1.com.
+        in	mx	10 mx01.1and1.com.
+
+ns1		2m	in	a	69.55.236.141			; JohnCo s000
+v		2m	in	a	69.55.236.141			; JohnCo s000 (previously aka www)
+j0000		2m	in	a	69.55.236.141			; JohnCo s000 (previously aka www)
+
+ns2		2m	in	a	69.55.225.225			; ns2c.johncompanies.com 
+
+
+j0001		2m	in	a	69.55.231.50			; JohnCo s001
+j0002		2m	in	a	69.55.231.52			; JohnCo s002
+o0000		2m	in	a	82.165.252.14			; 1and1 s000
+
+media		2m	in	cname	s3.amazonaws.com.
+appliance	2m	in	cname	s3.amazonaws.com.
+fedora		2m	in	cname	s3.amazonaws.com.
+
+adrian		2m	in	cname	agropper.wordpress.com.
+
+mcpurple06	2m	in	a	66.92.68.51	; Medcommons/in-house
+spoon		2m	in	a	74.94.173.177	; Medcommons/in-house
+don		2m	in      a       67.202.25.86	; AWS (not medcommons??)
+ondemand	2m	in	a	72.44.44.59	; AWS (not medcommons??)
+
+public		2m	in      a       67.202.11.161	; AWS i-31728358 (ami-cf2dc8a6/adrian-keypair - 080102@0132)
+s0020		2m	in      a       67.202.11.161	; AWS i-31728358 (ami-cf2dc8a6/adrian-keypair - 080102@0132)
+
+fb01		2m	in	a	72.44.39.54	; AWS i-8ad80be4 (ami-cf2dc8a6/ttw-20080714-keypair - 080714@0028)
+s0021		2m	in	a	72.44.39.54	; AWS i-8ad80be4 (ami-cf2dc8a6/ttw-20080714-keypair - 080714@0028)
+fb02		2m	in	a	67.202.53.117	; AWS i-8dd80be4 (ami-cf2dc8a6/ttw-2008-714-keypair - 080714@0028)
+s0022		2m	in	a	67.202.53.117	; AWS i-8dd80be4 (ami-cf2dc8a6/ttw-2008-714-keypair - 080714@0028)
+
+healthurl	2m	in	a	75.101.239.135 	; AWS i-75a4011c (ami-8de90de4/nva-20080630-keypair - 082508@2356)
+s0025		2m	in	a	75.101.239.135 	; AWS i-75a4011c (ami-8de90de4/nva-20080630-keypair - 082508@2356)
+
+hot		2m	in	a	72.44.53.143	; AWS i-084a9061 (ami-8de90de4/nva-20080630-keypair - 082508@2355)
+s0026		2m	in	a	72.44.53.143	; AWS i-084a9061 (ami-8de90de4/nva-20080630-keypair - 082508@2355)
+
+		2m	in	a	67.202.30.246	; AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair - 082208@1502)
+www		2m	in	a	67.202.30.246	; AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair - 082208@1502)
+globals		2m	in	a	67.202.30.246	; AWS i-fc895395 (ami-8de90de4/nva-20080808-keypair - 082208@1502)
+s0024		2m	in	a	67.202.30.246	; AWS i-fc895395 (ami-21e20648/nva-20080808-keypair - 082208@1502)
+
+
+svn		2m	in	a	67.202.61.200	; AWS i-ef49ec86 (ami-21e20648/nva-20080808-keypair - 082908@1703)
+s0027		2m	in	a	67.202.61.200	; AWS i-ef49ec86 (ami-21e20648/nva-20080808-keypair - 082908@1703)
+
+n0000		2m	in	a	67.202.30.131	; AWS i-14b61f7d (ami-8de90de4/nva-20080808-keypair - 102208@1851) ; fluke - not typo
+s0048		2m	in	a	67.202.30.131	; AWS i-14b61f7d (ami-8de90de4/nva-20080808-keypair - 102208@1851) ; fluke - not typo
+n0001		2m	in	a	75.101.193.235	; AWS i-016ecf68 (ami-8de90de4/nva-20080808-keypair - 091708@2240)
+s0031		2m	in	a	75.101.193.235	; AWS i-016ecf68 (ami-8de90de4/nva-20080808-keypair - 091708@2240)
+
+tenth		2m	in	a	67.202.54.228	; AWS i-e6d5758f (ami-8de90de4/nva-20080808-keypair - 092108@1818)
+s0041		2m	in	a	67.202.54.228	; AWS i-e6d5758f (ami-8de90de4/nva-20080808-keypair - 092108@1818)
+
+box		2m	in	a	67.202.58.94	; AWS i-74923f1d (ami-8de90de4/nva-20080808-keypair - 100708@0154)
+mantis		2m	in	a	67.202.58.94	; AWS i-74923f1d (ami-8de90de4/nva-20080808-keypair - 100708@0154)
+s0043		2m	in	a	67.202.58.94	; AWS i-74923f1d (ami-8de90de4/nva-20080808-keypair - 100708@0154)
+
+forge		2m	in	a	67.202.38.199	; AWS i-c08322a9 (ami-8de90de4/adrian-keypair - 091708@0744)
+s0044		2m	in	a	67.202.38.199	; AWS i-c08322a9 (ami-8de90de4/adrian-keypair - 091708@0744)
+
+spare		2m	in	a	75.101.185.181	; AWS i-6c328705 (ami-8de90de4/nva-20081106-keypair - 110608@2151)
+s0050		2m	in	a	75.101.185.181	; AWS i-6c328705 (ami-8de90de4/nva-20081106-keypair - 110608@2151)
+
+
+b		2m	in	a	67.202.21.144	; AWS i-95ac1efc (ami-8de90de4/nva-20080808-keypair - 112808@2342)
+apps		2m	in	a	67.202.21.144	; AWS i-95ac1efc (ami-8de90de4/nva-20080808-keypair - 112808@2342)
+forum		2m	in	a	67.202.21.144	; AWS i-95ac1efc (ami-8de90de4/nva-20080808-keypair - 112808@2342)
+s0051		2m	in	a	67.202.21.144	; AWS i-95ac1efc (ami-8de90de4/nva-20080808-keypair - 112808@2342)
+
+; 
+; Terminated Instances/Retired Names
+;
+;s0049		2m	in	a	75.101.189.56	; AWS i-378d385e (ami-8de90de4/nva-20081106-keypair - 110608@0238)
+;s0030		2m	in	a	67.202.61.53	; AWS i-0e78da67 (ami-8de90de4/nva-20080808-keypair - 100208@2311)
+;s0047		2m	in	a	67.202.46.92	; AWS i-b9a50cd0 (ami-8de90de4/nva-20080808-keypair - 102208@1234)
+;s0046		2m	in	a	67.202.46.92	; AWS i-b9a50cd0 (ami-8de90de4/nva-20080808-keypair - 102208@1234)
+;s0045		2m	in	a	67.202.30.131	; AWS i-b6db72df (ami-8de90de4/nva-20080808-keypair - 102208@0114)
+;mantis		2m	in	cname	a.medcommons.net.
+;a		2m	in	a	69.55.231.50			; JohnCo s001
+;svn		2m	in	a	82.165.252.14	; 1and1 s000
+;svn2		2m	in	a	67.202.61.200	; AWS i-ef49ec86 (ami-21e20648/nva-20080808-keypair - 082908@1703)
+;virtual06	2m	in	a	82.165.252.14	; 1and1 s000
+;b		2m	in	a	69.55.231.52			; JohnCo s002
+;apps		2m	in	a	69.55.231.52			; JohnCo s002
+;forum		2m	in	a	69.55.231.52			; JohnCo s002

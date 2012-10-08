@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appservices>
+  <service>
+    <id>
+      404049304034add3
+    </id>
+    <name>
+      Personal Health Analysis from CINA
+    </name>
+    <visible>
+      A new option appears on the yellow sticky in the MedCommons Viewer
+    </visible>
+    <comment>
+      There are no prerequisites for this module
+    </comment>
+    <viewer>http://www.medcommons.net/apps/cina/cinasimulator.php</viewer>
+    <explanation>
+      <![CDATA[
+      <div>Your CCRs are analyzed and a CINA report is put into  MedCommons Account</div>
+      ]]>
+    </explanation>
+    <publisher>
+        <![CDATA[
+      <img src="http://cina-us.com/assets/images/logo.gif" alt="CINA US"></img>
+      ]]>
+    </publisher>
+    <charges>
+      <chargeclass>
+        <name>silver</name>
+        <setup></setup>
+        <perclick>100</perclick>
+        <perxmtgb>20</perxmtgb>
+        <perrcvgb>25</perrcvgb>
+      </chargeclass>
+      <chargeclass>
+        <name>bronze</name>
+        <setup>1000</setup>
+        <permonth>100</permonth>
+        <perclick>50</perclick>
+        <perxmtgb>23</perxmtgb>
+        <perrcvgb>29</perrcvgb>
+      </chargeclass>
+      <chargeclass>
+        <name>gold</name>
+        <setup></setup>
+        <perclick>5</perclick>
+        <perxmtgb>55</perxmtgb>
+        <perrcvgb>88</perrcvgb>
+      </chargeclass>
+    </charges>
+    <technical>
+        <![CDATA[
+    The CINA Service is called with the 'Current CCR', using the XXXX from Lewis Pringle and Records for Living
+    ]]>
+    </technical>
+  </service>
+</appservices>
+

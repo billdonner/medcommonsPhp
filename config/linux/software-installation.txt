@@ -1,0 +1,255 @@
+Installing Production Software
+==============================
+
+A general note on software installation on the production servers:
+
+Ride the escalator!  Use the built-in tools provided by the
+distribution.  In this case we're using Red Hat Enterprise, so we use
+`up2date` when we can.
+
+Software installation priority:
+
+1.  When able, use `up2date`::
+
+    # up2date --install mysql
+
+On the Fedora systems, use `yum`::
+
+    # yum install mysql
+
+2.  Otherwise, download and install an RPM::
+
+    $ wget ...
+    $ rpm --install ...rpm
+
+3.  For packages we need to customize extensively (PHP and Postfix)
+    we then download and manually configure, make, make install::
+
+    $ wget ...
+    $ tar xvzf ...
+    $ cd ...
+    $ ./configure
+    $ make
+    $ sudo make install
+
+Apache
+======
+Red Hat Enterprise Servers come with Apache 2.0 preconfigured.
+
+On Fedora::
+
+    # yum install httpd
+    # yum install mod_ssl
+
+SQLite
+======
+Both the binaries and the development headers::
+
+    $ wget http://apt.sw.be/packages/sqlite/sqlite-2.8.16-1.2.el4.rf.i386.rpm
+    $ wget http://apt.sw.be/packages/sqlite/sqlite-devel-2.8.16-1.2.el4.rf.i386.rpm
+    # rpm --install sqlite-2.8.16-1.2.el4.rf.i386.rpm
+    # rpm --install sqlite-devel-2.8.16-1.2.el4.rf.i386.rpm
+
+
+Getting PHP Installed
+=====================
+
+We have a couple of PHP extras compiled in.
+
+The 'apxs' utility::
+
+    # up2date httpd-devel
+
+GD (graphics library)::
+
+    # up2date libjpeg-devel
+    # up2date libpng-devel
+    # up2date gd-devel
+
+Mcrypt::
+
+    $ wget http://superb-west.dl.sourceforge.net/sourceforge/mcrypt/libmcrypt-2.5.7.tar.gz
+    $ tar xvzf libmcrypt-2.5.7.tar.gz
+    $ cd libmcrypt-2.5.7
+    $ ./configure --disable-posix-threads --enable-dynamic-loading
+    $ make
+    $ make check
+    # make install
+
+MySQL::
+
+    # up2date mysql-devel
+
+libcurl::
+
+    # update curl-devel
+
+PHP::
+
+    $ wget http://us3.php.net/get/php-5.1.4.tar.bz2/from/this/mirror
+    $ tar xvjf php-5.1.4.tar.bz2
+
+    $ cd php-5.1.4
+
+    $ ./configure --with-mysql --with-apxs2 --with-openssl
+    --enable-soap --with-gd --with-zlib --with-mcrypt --with-curl
+
+    $ make
+    $ make test
+    # make install
+
+Tomcat
+------
+
+Java: you must download a JRE 5 from java.sun.com onto your desktop PC,
+and then upload it to the machine.  Choose the self-extracting RPM file
+for linux.
+
+Once the jre-1_5_xxxx-linux-i586-rpm.bin file is on the machine::
+
+    $ sh jre-1_5_xxxx-linux-i586-rpm.bin
+    # rpm --install jre-1_5_xxxx-linux-i586.rpm
+
+This will install the JRE into the /usr/java directory.  Create
+a symbolic link::
+
+    $ ln -s jre1.5.xxxx  jre
+
+The tomcat installation is extracted into /opt::
+
+    $ cd ~
+    $ wget http://www.eng.lsu.edu/mirrors/apache/tomcat/tomcat-5/v5.5.17/bin/apache-tomcat-5.5.17.tar.gz
+
+    # cd /opt
+    # tar xvzf ~/apache-tomcat-5.5.17.tar.gz
+
+Running Tomcat as a Service/Daemon
+----------------------------------
+
+We *could* do a full build, but that would require a JDK, not just a JRE::
+
+    # cd /opt/apache-tomcat-5.5.17
+    # cd bin
+    # tar xvzf jsvc.tar.gz
+
+Or we could just copy a pre-built one::
+
+    # cd /opt/apache-tomcat-5.5.17
+    # cd bin
+    # scp terry@bilbo.medcommons.net:/opt/apache-tomcat-5.5.17/bin/jsvc .
+
+In either case, pull a recent version of 'catalina' into /etc/init.d and::
+
+    # /sbin/chkconfig --add catalina
+    # /sbin/chkconfig catalina on
+
+    # /sbin/service catalina start
+
+Separating Tomcat's Home and Base
+---------------------------------
+
+    # mkdir /var/apache-tomcat
+    # cp -R /opt/apache-tomcat-5.5.17/conf /var/apache-tomcat/conf
+    # mkdir /var/apache-tomcat/logs
+    # mkdir /var/apache-tomcat/temp
+    # mkdir /var/apache-tomcat/webapps
+    # mkdir /var/apache-tomcat/work
+
+Installing Tomcat/Apache connector
+----------------------------------
+
+You may need g++ installed.  You can tell::
+
+    # g++
+
+If it says::
+
+    g++: no input files
+
+then g++ is installed.  Otherwise::
+
+    # up2date install gcc-c++
+
+or::
+
+    # yum install gcc-c++
+
+Retrieve jakarta-tomcat-connectors-1.2.15-src.tar.gz
+
+Then::
+
+    # tar xvzf jakarta-tomcat-connectors-1.2.15-src.tar.gz
+    # cd jakarta-tomcat-connectors-1.2.15-src
+    # cd jk/native
+    # ./configure --with-apxs=/usr/sbin/apxs
+    # make
+    # make install
+
+Config Files
+------------
+The apache/php config files are checked into subversion:
+
+    http://svn.medcommons.net:6666/svn/services/trunk/config/linux
+
+
+PhpMyAdmin
+----------
+
+    $ curl -O http://superb-west.dl.sourceforge.net/sourceforge/phpmyadmin/phpMyAdmin-2.8.2.4.tar.bz2
+
+    # cd /var/www/secure-html
+    # tar xvjf ~/phpMyAdmin-2.8.2.4.tar.bz2
+    # ln -s phpMyAdmin-2.8.2.4 phpMyAdmin
+    # cd phpMyAdmin
+    # mkdir config
+    # chmod 
+
+Webmin
+------
+
+We want Webmin over SSL::
+
+    $ curl -O http://download.webmin.com/download/Net_SSLeay.pm-1.23.tar.gz
+    $ tar xvzf Net_SSLeay.pm-1.23.tar.gz
+    $ cd Net_SSLeay.pm-1.23
+    $ perl Makefile.PL
+    $ make
+    # make install
+
+Now we're ready for webmin itself::
+
+    $ curl -O http://superb-west.dl.sourceforge.net/sourceforge/webadmin/webmin-1.290-1.noarch.rpm
+
+    # rpm -U webmin-1.290-1.noarch.rpm
+
+Webmin is a perl script (!) running a webserver (!) under root (!)
+
+The two Webmin configuration files /etc/webmin/config and
+/etc/webmin/miniserv.conf are checked into subversion.
+
+These files restrict the webserver to port 81 on the local interface, so
+remote users cannot access Webmin.
+
+We then enable a reverse proxy on Apache.  The file
+/etc/httpd/conf.d/webmin.conf enables this.
+
+
+AWStats
+-------
+
+Download::
+
+    $ curl -O http://superb-west.dl.sourceforge.net/sourceforge/awstats/awstats-6.5.tar.gz
+
+Extract::
+
+    # cd /usr/local
+    # tar xvzf ~/awstats-6.5.tar.gz
+
+    # ln -s awstats-6.5 awstats
+
+Configure::
+
+    # cd /usr/local/awstats
+    # cd tools
+    # ./awstats_configure.pl

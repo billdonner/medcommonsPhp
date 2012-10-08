@@ -1,0 +1,39 @@
+[release-base]
+name=Release Base
+baseurl=http://fedora.medcommons.net/7/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+
+[release-updates]
+name=Release Updates
+baseurl=http://appliance.medcommons.net/0.3.7/updates/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+
+[release-dist]
+name=Release Dist
+baseurl=http://appliance.medcommons.net/0.3.12/dist/$basearch/
+enabled=1
+gpgcheck=0
+
+[testing-base]
+name=Testing Base
+baseurl=http://fedora.medcommons.net/7/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+
+[testing-updates]
+name=Testing Updates
+baseurl=http://appliance.medcommons.net/0.3.11/updates/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+
+[testing-dist]
+name=Testing Dist
+baseurl=http://appliance.medcommons.net/0.3.12/dist/$basearch/
+enabled=0
+gpgcheck=0

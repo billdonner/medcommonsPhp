@@ -1,0 +1,119 @@
+#!/bin/bash
+
+if [ $(whoami) != "root" ]
+then
+    echo "You must be root to run this command."
+    exit 1
+fi
+
+function enter() {
+    read -p "$1"
+}
+
+function error() {
+    echo
+    echo "Error $1"
+    echo
+    exit 1
+}
+
+function input() {
+    read -p "$1 [${!2}]: "
+    [ ! -z $REPLY ] && export $2="$REPLY"  
+}
+
+pushd /root/schema &> /dev/null
+
+python forge-admin.py &> /dev/null ||
+    error "creating MySQL administrator!"
+
+sh forge-create.sh &> /dev/null ||
+    error "creating MySQL database!"
+
+popd
+
+source /etc/sysconfig/network
+
+echo "Before starting the MedCommons Appliance, it is critically important that you"
+echo "correctly set the hostname by which the appliance will be known."
+echo
+echo "The hostname is currently set to ${HOSTNAME}.  If this is correct, press ENTER."
+echo "Otherwise, enter the correct hostname to continue."
+
+input "hostname?" HOSTNAME
+
+cd /var/www/console
+
+bin/mc-hostname $HOSTNAME ||
+    error "setting hostname!"
+
+python manage.py syncdb --noinput ||
+    error "initializing database!"
+
+bin/mc-request-certificate ||
+    error "installing certificate!"
+
+bin/mc-install-certificate ||
+    error "installing certificate!"
+
+bin/mc-publish ||
+    error "publishing content!"
+
+bin/mc-edit-settings ||
+    error "initalizing settings!"
+
+bin/mc-permissions ||
+    error "setting permissions!"
+
+#
+# Local Scripts
+#
+if [ -d /var/local/mc ]
+then
+    pushd /var/local/mc > /dev/null
+    LOCAL=`ls *.sh 2> /dev/null`
+    if [ ${#LOCAL} != 0 ]
+    then
+        echo -n "Found local config(s) in /var/local/mc: "
+        echo $LOCAL
+        echo ""
+        YES=n
+        input "Run them[y/N]?" YES
+        if [ $YES == "y" ]
+        then
+            echo ""
+            for i in $LOCAL
+            do
+                echo $i
+                sh $i
+                echo ""
+            done
+        fi
+    fi
+    popd > /dev/null
+fi
+
+/sbin/chkconfig mysqld on
+
+/sbin/chkconfig httpd on
+/sbin/chkconfig tomcat on
+/sbin/chkconfig mc_backups on
+/sbin/chkconfig mc_locals on
+/sbin/chkconfig gateway on
+
+#cho "01234567890123456789012345678901234567890123456789012345678901234567890123456789"
+
+echo "Congratulations on successfully installing your very own MedCommons appliance."
+echo "The only time you should need to log in as root again is in order to update"
+echo "the appliance to a later version.  The command to do this is simply:"
+echo
+echo "medcommons-update"
+echo
+echo "Note that this will momentarily shutdown the server while the updates are"
+echo "being downloaded and applied."
+echo 
+enter "Press RETURN to reboot the computer and start the MedCommons appliance."
+
+/sbin/reboot
+
+exit 0

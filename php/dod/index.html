@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>DICOM on Demand</title>
+<link rel="stylesheet"
+	href="http://yui.yahooapis.com/2.5.1/build/reset-fonts-grids/reset-fonts-grids.css"
+	type="text/css">
+<link rel="stylesheet" type="text/css"
+	href="http://yui.yahooapis.com/2.5.2/build/base/base-min.css">
+</head>
+<body>
+<div id="doc" class="yui-t7">
+<style type='text/css'>
+html {
+	color: #333;
+	background-color: black;
+}
+
+body {
+	min-height: 100%;
+}
+
+h1 {
+	margin: 0.7em 0em 0.0em 0em;
+}
+
+.byline {
+	font-style: italic;
+	margin: 0px;
+	padding: 0px;
+	font-size: 90%;
+}
+
+.hdband,h2 {
+	position: relative;
+	color: white;
+	background-color: #aaa;
+}
+
+#hd img {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+#hd {
+	background-color: black;
+	color: #655F3D;
+	height: 70px;
+}
+
+#voucherid {
+	width: 7em;
+}
+
+#voucherform {
+	position: absolute;
+	top: 50px;
+	right: 7px;
+}
+
+#bd,#hd,#ft {
+	font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
+}
+
+a:link,a:visited {
+	color: #5987AC;
+}
+
+a:hover,a:active {
+	color: #5987AC;
+}
+
+#ft a:link,#ft a:visited {
+	font-size: 95%;
+	text-decoration: none;
+}
+
+#ft a:hover,#ft a:active {
+	text-decoration: underline;
+}
+
+#bd,#ft {
+	background-color: white;
+}
+
+#ft {
+	padding: 0.2em 0em 0.1em 0em;
+}
+
+.leadin {
+	font-size: 118%;
+	font-weight: bold;
+}
+
+h2.first {
+	margin-top: 0px;
+}
+
+p,h2,#hd,ul {
+	padding: 0.2em 0.8em;
+}
+
+ol {
+	padding: 0em 1em 2em;
+}
+
+p.thinpar {
+	padding-top: 1.2em;
+	max-width: 508px;
+}
+
+#rls {
+	text-align: center;
+}
+
+form {
+	display: inline;
+}
+
+div#agreebuttons {
+	text-align: right;
+	margin-right: 30px;
+	margin-bottom: 30px;
+}
+
+#agreebuttons form {
+    padding:  0px 10px;
+}
+
+div#botleft {
+	position: absolute;
+	bottom: 30px;
+	left: 20px;
+}
+
+div.yui-g {
+	position: relative;
+}
+
+table {
+	margin-left: 20px;
+}
+
+table th {
+	border-style: none;
+	text-align: center;
+}
+
+table td {
+	border-style: none;
+	text-align: left;
+}
+input {
+  padding: 1px 5px;
+}
+</style>
+
+<div id="hd" class='hdband'></div>
+
+<div id="bd">
+<div class="yui-g">
+<h2 class='first'>DICOM on Demand by MedCommons</h2>
+<p><strong>Welcome to DICOM on Demand by MedCommons</strong></p>
+<p>This cloud-based image transfer service is intended for both doctors and patients.</p>
+<table>
+	<tr>
+		<th>
+		<form name='voucherform' id='voucherform'
+			action='https://healthurl.medcommons.net/mod/voucherclaim.php'>
+		<span>Voucher ID:</span> <input type='text'
+			title='Enter a Voucher ID here to look up and access voucher contents'
+			name='voucherid' id='voucherid'> <input type='image'
+			title='Click to lookup Voucher by ID' src='images/magnifier.png' /></form>
+		</th>
+	</tr>
+	<tr>
+		<td colspan='2'>
+		<hr />
+		</td>
+	</tr>
+	<tr>
+		<th><img
+			src='http://fb01.medcommons.net/facebook/common/images/mcimg60x60.jpg' /><br />
+		</th>
+		<td>
+		<h3><span>What is DICOM on Demand?</span></h3>
+
+		<p class='p1'>Upload DICOM CDs</p>
+		<p class='p1'>Access images from your Web browser</p>
+		<p class='p1'>Send images to and from your DICOM workstation or PACS</p>
+		<p class='p1'>$10 / patient voucher (Free during intro period) -
+	    Subscription accounts available</p>
+	    <p class='p1'> Create a DICOM Exchange Voucher to exchange DICOM with any other party </p>
+    
+   		<div id='agreebuttons'>
+	      <form
+	        action='https://healthurl.medcommons.net/acct/dod.php'><input type='submit' value='DICOM Exchange Voucher' /></form>
+		</td>
+	</tr>
+	<tr>
+		<td colspan='2'>
+		<hr />
+		</td>
+	</tr>
+	<tr>
+
+		<th><img src='images/settings.png' /><br />
+		<img src='images/grouptab.png' /></th>
+
+		<td>
+		<h3>Register Your Own Private Group</h3>
+		<p class='p1'>A simple cloud-based group for anyone anywhere to put or get DICOM in minutes</p>
+		<p class='p1'>Your practice can safely preview patient CDs on-line with optional DICOM send</p>
+		<p class='p1'>HIPAA-secure Vouchers can share imaging and reports with referring physicians</p>
+		<div id='agreebuttons'>
+	      <form
+	        action='https://healthurl.medcommons.net/acct/login.php?dod&next=https://healthurl.medcommons.net/acct/home.php'><input
+	        type='submit' value='Sign In ' /></form>
+		  <form
+				action='https://healthurl.medcommons.net/acct/register.php?dod&next=http%3A%2F%2Fdicomondemand.com%2Fgrouptips.html' method='POST'><input
+				type='submit' value='Register Here ' /></form>
+		</div>
+		
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td colspan='2'>
+		<hr />
+		</td>
+	</tr>
+	<tr>
+
+		<th><a href='http://www.medcommons.net/'><img height=30px
+			src='http://www.medcommons.net/images/MEDcommons_logo_246x50.gif' /></a></th>
+
+		<td>
+		<h3>What Else Do I Need To Know?</h3>
+		<p class='p1'>With MedCommons, you can communicate with doctors and patients, whether enrolled on MedCommons, or not.</p>
+		<p class='p1'>DICOM On Demand voucher accounts are not permanent but can be upgraded to long-term accounts (soon). See our <a
+			href='http://www.medcommons.net/termsofuse.php'>terms of use</a> and 
+		<a		href='http://www.medcommons.net/privacy.php'>privacy policy</a>.<//p>
+		
+		<p><span>You can also run your own DICOM on Demand service
+		under your own brand on your own <a href='http://www.medcommons.net/'>MedCommons
+		Appliance</a>.</p>
+		
+		<div id='agreebuttons'>
+		<form action='http://dicomondemand.com/demoagree.php'><input
+			type='submit' value='Go to Live Demo ' /></form>
+		</div>
+		</td>
+	</tr>
+</table>
+</div>
+</div>
+</div>
+
+</body>
+</html>

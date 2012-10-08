@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% load medcommons %}
+
+{% block title %}Security Certificates{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+Security Certificates
+{% endblock %}
+
+{% block sidebar %}
+<ul class='object-tools'>
+  <li><a href='req' class='addlink'>Create</a></li>
+</ul>
+{% endblock sidebar %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <th>Issue Date</th>
+      <th>Common Name</th>
+      <th><acronym title='Certificate Signing Request'>CSR</acronym></th>
+      <th>Certificate</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan='4'>
+	<span style='float: left'>
+{% if has_previous %}
+<a href='?page=1'>&laquo; first</a>
+<a href='?page={{ previous }}'>&lt; prev</a>
+{% endif %}
+	</span>
+	<span style='float: right'>
+{% if has_next %}
+<a href='?page={{ next }}'>next &gt;</a>
+<a href='?page={{ pages }}'>last &raquo;</a>
+{% endif %}
+	</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='4'>
+	<span style='float: left'>
+	  <a href='req'>
+	    <img src='{{ media }}img/CreateUser.png' width='20' height='20'
+		 alt='Create New Certificate' />
+	    create new certificate
+	  </a>
+	</span>
+	<span style='float: right'>
+Page {{ page }} of {{ pages }}.
+	</span>
+      </td>
+    </tr>
+  </tfoot>
+
+  <tbody>
+{% for entry in object_list %}
+    <tr class='{% cycle a,b %}'>
+      <td>{{ entry.issued }}</td>
+      <td>{{ entry.CN }}</td>
+      <td><a href='csr?id={{ entry.id }}'>csr</a></td>
+      <td>
+{% if entry.crt %}
+<img src='{{ media }}img/icon-yes.gif' width='10' height='10' alt='Certificate loaded' />
+{% else %}
+<a href='cert?id={{ entry.id }}'>load</a>
+{% endif %}
+      </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

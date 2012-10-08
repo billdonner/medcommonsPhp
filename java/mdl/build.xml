@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+
+<!-- ======================================================================
+     $Id: build.xml 1426 2006-10-26 05:24:16Z sdoyle $
+     ====================================================================== -->
+
+<!--
+WSDL for server is located at http://ibmod235.dal-ebis.ihost.com:8090/bridge/services/ohf-bridge?wsdl
+Client classes are constructed via the "generate-ohf-bridge-stub" target below.
+-->
+<project name="mdl" default="world">
+
+	<!-- === globals ======================================================== -->
+
+		<property name="build.compiler" value="modern" />
+
+
+		<!-- optional user settable properties -->
+		<property file="build.properties" />
+
+		<property name="build.modules.classes" value="build/modules/classes"/>
+
+	
+		<property name="version.files" value="net/medcommons/Version.class,*.txt"/>
+
+		<property name="build.debug" value="true"/>
+		<property name="build.stage.dir" value="build/stage"/>
+		<property name="build.stage.modules.dir" value="${build.stage.dir}/modules"/>
+		<property name="build.dist" value="build/dist"/>
+	    <property name="build.classes" value="build/classes"/>
+		<property name="build.jar" value="build/jar"/>
+		<property name="build.dist.applicationlib" value="build/dist/lib"/>
+		<property name="xfire.dir" value="lib/xfire-1.2.2"/>
+		<property name="xfire.distro.zip" value="lib/xfire-distribution-1.2.2.zip"/>
+		<property name="xfire.distro-all.jar" value="xfire-all-1.2.2.jar"/>
+	
+		<property name="stripes.dir" value="lib/stripes-1.4.2"/>
+	    <property name="stripes.distro.zip" value="lib/stripes-1.4.2.zip"/>
+	
+	    <property name="mochikit.dir" value="lib/MochiKit-1.3.1"/>
+	    <property name="mochikit.distro.zip" value="lib/MochiKit-1.3.1.zip"/>
+	
+		<property name="fop.distro.zip" value="lib/fop-0.92beta-bin-jdk1.4.zip"/>
+		<property name="fop.dir" value="lib/fop-0.92beta"/>
+	
+		<property name="cactus.dir" value="lib/jakarta-cactus-13-1.7.2"/>
+
+		<property name="ccr.xbean" value="build/dist/ccrxbean.jar"/>
+
+		<patternset id="jars.patternset">
+			<include name="*.jar" />
+		</patternset>
+		<patternset id="zips.patternset">
+			<include name="*.zip" />
+		</patternset>
+
+		<patternset id="libraries.patternset">
+			<patternset refid="jars.patternset" />
+			<patternset refid="zips.patternset" />
+		</patternset>
+		<path id="ohfruntime.path">
+				<pathelement location="${build.compile.dir}" />
+			<fileset dir="lib/ohf_jars">
+							<include name="*.jar"/>
+						</fileset>
+		</path>
+		<path id="compile.path">
+			<pathelement location="${build.compile.dir}" />
+			
+			
+			
+			<fileset dir="${stripes.dir}/lib">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="lib/medcommons">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="lib/ohf_jars">
+				<include name="*.jar"/>
+			</fileset>
+			<!--
+			<fileset dir="lib/json/"/>
+			<fileset dir="lib/hibernate/lib/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="lib/apache/">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="lib/tomcat/">
+				<include name="**/*.jar"/>
+			</fileset>
+			-->
+			<fileset dir="lib/apache/">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="${xfire.dir}">
+				<include name="${xfire.distro-all.jar}"/>
+			</fileset>
+			<fileset dir="${xfire.dir}/lib">
+				<include name="**/*.jar"/>
+				<!--<include name="commons-httpclient-3.0.jar"/> -->
+			</fileset>
+			<fileset dir="${xfire.dir}/modules">
+							<include name="**/*.jar"/>
+							<!--<include name="commons-httpclient-3.0.jar"/> -->
+						</fileset>
+			
+			
+		</path>
+	
+	<path id="axis.classpath">
+	  <fileset dir="lib/ohf_jars">
+	    <include name="*.jar" />
+	  </fileset>
+		<fileset dir="${xfire.dir}/lib">
+						<include name="*.jar"/>
+					
+					</fileset>
+	</path>
+
+
+	<taskdef resource="axis-tasks.properties"
+	  classpathref="axis.classpath" />
+
+	<target name="generate-ohf-bridge-stub" unless="generated_source.exists">
+
+	 <mkdir dir="generated_source"/>
+		<axis-wsdl2java
+		  output="generated_source"
+		  deployScope="Application"
+		  verbose="true"
+		  serverSide="false"
+		  testcase="true"
+			
+		  url="etc/ohf/ohf-bridge.xml">
+			<mapping namespace="OHFBridge" 
+			package="OHFBridgeStub"/>
+		 </axis-wsdl2java> 
+	</target>
+	<target name="prepare" depends="prepare-pretest, prepare-xfire, prepare-stripes,prepare-mochikit,generate-ohf-bridge-stub,prepare-bridge">
+			<available file="${xfire.dir}" property="xfire.exploded" value="true"/>
+			<available file="/lib/jakarta-cactus-13-1.7.2" property="cactus.exploded" value="true"/>
+	</target>
+
+	
+	<target name="prepare-pretest">
+			<available file="${xfire.dir}" property="xfire.exploded" value="true"/>
+		    <available file="${stripes.dir}" property="stripes.exploded" value="true"/>
+			<available file="${mochikit.dir}" property="mochikit.exploded" value="true"/>
+			<available file="lib/bridge" property="bridge.exploded" value="true"/>
+			<available file="generated_source" property="generated_source.exists" value="true"/>
+	<!--		<available file="${fop.dir}" property="fop.exploded" value="true"/> -->
+	</target>
+	
+
+	<target name="prepare-bridge" unless="bridge.exploded">
+		<unjar src="lib/bridge-20070209.zip" dest="lib"/>
+	</target>
+
+	<target name="prepare-xfire" unless="xfire.exploded">
+		<unjar src="${xfire.distro.zip}" dest="lib"/>
+	</target>
+	
+	<target name="prepare-stripes" unless="stripes.exploded">
+			<unjar src="${stripes.distro.zip}" dest="lib"/>
+	</target>
+	<target name="prepare-mochikit" unless="mochikit.exploded">
+			<unjar src="${mochikit.distro.zip}" dest="lib"/>
+	</target>
+<!--
+	<target name="prepare-fop" unless="fop.exploded">
+			<unjar src="${fop.distro.zip}" dest="lib"/>
+	</target>
+-->
+	<target name="package-mdl-jar" depends="prepare">
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${build.jar}" />
+		<javac 
+							classpathref="compile.path" 
+							destdir="${build.classes}"
+										srcdir="generated_source/" debug="${build.debug}"
+								       deprecation="on" includeAntRuntime="false" />
+		<javac 
+					classpathref="compile.path" 
+					destdir="${build.classes}"
+								srcdir="src/" debug="${build.debug}"
+						       deprecation="on" includeAntRuntime="false" />
+		<jar destfile="${build.jar}/mdl.jar" basedir="${build.classes}" includes="net/medcommons/**,org/cxp2/**,log4j.properties,localhost/**,OHFBridgeStub/**" />
+	</target>
+	<target name="package-mdl-war" depends="package-mdl-jar">
+			<mkdir dir="${build.dist}" />
+			<!-- -->
+			<war destfile="${build.dist}/mdl.war" webxml="src/net/medcommons/mdl/WEB-INF/web.xml" >
+				
+				<lib dir="${xfire.dir}/lib">
+					<patternset refid="libraries.patternset" />
+					<exclude name="servlet-api-2.3.jar"/>
+				</lib>
+				<lib dir="${stripes.dir}/lib">
+					<patternset refid="libraries.patternset" />
+				</lib>
+				<lib dir="lib/apache">
+					<patternset refid="libraries.patternset" />
+				</lib>
+				<lib dir="lib/tomcat/jstl">
+					<patternset refid="libraries.patternset" />
+				</lib>
+				<lib dir="lib/ohf_jars">
+					<patternset refid="libraries.patternset" />
+				</lib>
+				<lib dir="${xfire.dir}">
+					<include name="xfire-all-1.2.2.jar"/>
+				</lib>
+				<lib dir="lib/medcommons">
+					<patternset refid="libraries.patternset" />
+				</lib>
+				<!--
+				<lib dir="${build.stage.modules.dir}">
+					<patternset refid="libraries.patternset" />
+				</lib>
+				<lib dir="${xfire.dir}/modules">
+					<patternset refid="libraries.patternset" />
+				</lib>
+				
+				-->
+				<lib dir="${build.jar}">
+					<patternset refid="libraries.patternset" />
+				</lib>
+				<webinf dir="etc/resources" >
+				</webinf>
+				<classes dir="etc/resources/lib" includes="log4j.properties,commons-logging.properties,StripesResources.properties" >
+				</classes>
+				
+				<fileset dir="src/net/medcommons/mdl/jsp">
+								<include name="**"/>
+								<exclude name="**/.svn"/>
+				</fileset>
+				<fileset dir="etc/resources">
+								<include name="**"/>
+								<exclude name="**/.svn"/>
+				</fileset>
+				<fileset dir="etc/MESA">
+								<include name="**"/>
+								<exclude name="**/.svn"/>
+				</fileset>
+				<fileset dir="etc/MESA/mesa_xsl">
+							<include name="voc.xml"/>
+				</fileset>
+				<fileset dir="${mochikit.dir}/packed/MochiKit">
+					<include name="MochiKit.js"/>
+				</fileset>
+
+			</war>
+		</target>
+	<target name="runtest">
+		 <java classname="net.medcommons.ohfbridge.TestOHFBridge">
+		         <arg value="-h"/>
+		         <classpath>
+		         	<fileset dir="lib/ohf_jars">
+		         	</fileset>
+		           <pathelement location="${build.jar}/mdl.jar"/>
+		           <pathelement location="${xfire.dir}/lib/activation-1.1.jar"/>
+		           <pathelement location="${xfire.dir}/lib/mail-1.4.jar"/>
+		         
+		           <pathelement path="${ohfruntime.path}"/>
+		         
+		         </classpath>
+		       </java>
+	</target>
+	<target name="runccrtest" depends="package-mdl-jar">
+			 <java classname="net.medcommons.mdl.CCRGenerator" classpathref="compile.path">
+			      
+			 	
+			         <classpath>
+			         	
+			         	 <pathelement location="build/classes"/>
+			         	<pathelement location="lib/apache"/> <!-- for log4j.properties -->
+			         	<pathelement location="lib/apache/log4j-1.2.8.jar"/>
+			         	<pathelement location="lib/xfire-1.2.2/lib/jdom-1.0.jar"/>
+			         	<pathelement location="lib/xfire-1.2.2/lib/xercesImpl-2.6.2.jar"/>
+			         	<pathelement location="build/jar/mdl.jar"/>
+
+			           
+			         
+			         </classpath>
+			 	
+			       </java>
+		</target>
+	<target name="world" depends="package-mdl-war">
+	</target>
+	<target name="clean">
+		<delete dir="build/" />
+	</target>
+
+	</project>

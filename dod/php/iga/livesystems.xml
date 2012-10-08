@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <Template>
+    servers
+  </Template>
+  <PageName>
+    Retail Live System
+  </PageName>
+  <InstanceId>
+    023209309320932
+  </InstanceId>
+  <ServerPic>
+    servers_files/yourserverherepic
+  </ServerPic>
+  <UsersPic>
+    servers_files/userspic
+  </UsersPic>
+  <GroupsPic>
+    servers_files/groupspic
+  </GroupsPic>
+  <Servers>
+    <Server>
+      <Type>DB</Type>
+      <Name>WWW</Name>
+      <Poll>https://www.medcommons.net/centralstatus.php</Poll>
+      <OnClick>https://www.medcommons.net/centralstatus.php</OnClick>
+      <Xlinks>
+        <Xlink>
+          <PopUpUrl>
+            https://www.medcommons.net/ops/console/user.php
+          </PopUpUrl>
+          <IconImage>
+            Images/User 3 32 n p.png
+          </IconImage>
+          <Label>
+            Users
+          </Label>
+        </Xlink>
+        <Xlink>
+          <PopUpUrl>
+            http://www.medcommons.net/identity/Groups.action?list
+          </PopUpUrl>
+          <IconImage>
+            Images/Parcel Dispatch 32 n p.png
+          </IconImage>
+          <Label>
+            Groups
+          </Label>
+        </Xlink>
+      </Xlinks>
+    </Server>
+    <Server>
+      <Type>AP</Type>
+      <Name>Bilbo</Name>
+      <Poll>https://bilbo.medcommons.net/appsrvstatus.php</Poll>
+      <OnClick>https://bilbo.medcommons.net/appsrvstatus.php</OnClick>
+    </Server>
+    <Server>
+      <Type>AP</Type>
+      <Name>Frodo</Name>
+      <Poll>https://frodo.medcommons.net/appsrvstatus.php</Poll>
+      <OnClick>https://frodo.medcommons.net/appsrvstatus.php</OnClick>
+    </Server>
+    <Server>
+      <Type>GW</Type>
+      <Name>gw01private</Name>
+      <Poll>https://gateway001.private.medcommons.net/router/status.do?fmt=xml</Poll>
+      <OnClick>https://gateway001.private.medcommons.net/router/status.do</OnClick>
+    </Server>
+    <Server>
+      <Type>GW</Type>
+      <Name>gw01public</Name>
+      <Poll>
+        https://gateway001.medcommons.net/router/status.do?fmt=xml </Poll>
+        <OnClick>https://gateway001.medcommons.net/router/status.do</OnClick>
+      </Server>
+  </Servers>
+</Config>

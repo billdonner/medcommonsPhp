@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% load medcommons %}
+
+{% block title %}Delete Group{% endblock %}
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Groups</a> &gt;
+Delete Group
+{% endblock %}
+
+{% block content %}
+
+<p style='font-weight: bold; font-size: xx-large; color: red'>
+Delete this group?
+</p>
+<p>
+Deleting this group may result in some of the user accounts
+listed below becoming inaccessible.
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Group Name:</th>
+      <td>{{ group.name }}</td>
+    </tr>
+
+    <tr>
+      <th>Owner:</th>
+      <td>
+<a href='../users/user?mcid={{ group.accid.mcid }}'>
+  {{ group.accid.pretty_mcid }}
+</a>
+  {{ group.accid.first_name }} {{ group.accid.last_name }}
+      </td>
+    </tr>
+
+    <tr>
+      <th>Members:</th>
+      <td>
+
+{% for u in users %} 
+<a href='../users/user?mcid={{ u.mcid }}'>
+  {{ u.pretty_mcid }}
+</a>
+{{ u.first_name }} {{ u.last_name }}
+<form method='post' action='remove_from_group' style='display: inline'>
+  <input type='hidden' name='mcid' value='{{ u.mcid }}' />
+  <input type='hidden' name='group' value='{{ group.groupinstanceid }}' />
+  <input type='image' name='delete' src='{{ media }}img/icon_deletelink.gif'
+         width='10' height='10' alt='Remove User From Group' />
+</form>
+<br />
+{% endfor %}
+      </td>
+    </tr>
+
+    <tr>
+      <th>Group Logo:</th>
+      <td>
+{% if group.groupLogo %}
+<img src='{{ group.groupLogo }}' />
+<a href='{{ group.groupLogo }}'>{{ group.groupLogo }}</a>
+{% endif %}
+      </td>
+    </tr>
+
+    <tr>
+      <th>Admin URL:</th>
+      <td>
+{% if group.adminUrl %}
+<a href='{{ group.adminUrl }}'>{{ group.adminUrl }}</a>
+{% endif %}
+      </td>
+    </tr>
+
+    <tr>
+      <th>Member URL:</th>
+      <td>
+{% if group.memberUrl %}
+<a href='{{ group.memberUrl }}'>{{ group.memberUrl }}</a>
+{% endif %}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<form action='delete'
+      method='post'>
+  <div id='submit-row'>
+    <input type='hidden' name='id' value='{{ group.groupinstanceid }}' />
+    <input type='submit' name='cancel' class='default' value='Cancel' /> 
+    <input type='submit' name='delete' value='Delete' />
+  </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+if [ $(whoami) != "root" ]
+then
+    echo "You must be root to run this command."
+    exit 1
+fi
+
+USAGE='usage: medcommons-control [start|stop]'
+
+if [ -z $1 ]
+then
+    echo $USAGE
+    exit 1
+fi
+
+case $1 in
+    start)
+	CHK=on;;
+    stop)
+	CHK=off;;
+    *)
+	echo $USAGE
+	exit 1
+esac
+
+for SERVICE in httpd tomcat mc_backups mc_locals gateway; do
+    /sbin/chkconfig $SERVICE $CHK
+    if [ $SERVICE == "tomcat" ]
+    then
+	/etc/init.d/$SERVICE $1 || echo "${SERVICE} failed to $1!"
+	if [ $CHK == "off" ]
+	then
+	    echo "(kill -9 tomcat)";
+	    pkill -9 -u tomcat jsvc || echo "${SERVICE} failed to die";
+	fi
+    else
+	/etc/init.d/$SERVICE $1 || echo "${SERVICE} failed to $1!"
+    fi
+done
+
+/sbin/chkconfig yum-updatesd off

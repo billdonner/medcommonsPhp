@@ -1,0 +1,77 @@
+<project name="zxidservlet" default="compile" basedir=".">
+    <description>
+        simple example build file
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+  <property name="zxid"  value="zxid-0.15"/>
+	<property name="build.debug" value="true"/>
+
+<path id="compile.path">
+  <pathelement location="${zxid}"/>
+
+<fileset dir="lib">
+  <include name="*.jar"/>
+</fileset>
+</path>
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+	<mkdir dir="${build}/classes"/>
+	<mkdir dir="${build}/dist"/>
+  </target>
+
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac classpathref="compile.path" srcdir="${src}" destdir="${build}/classes" debug="${build.debug}"/>
+  </target>
+
+  <target name="dist" depends="compile"
+        description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${build}/zxidservlet"/>
+	
+    <copy todir="${build}/zxidservlet">
+        <fileset dir="etc">
+		</fileset>
+    </copy>
+
+    <copy todir="${build}/zxidservlet/WEB-INF/classes">
+        <fileset dir="build/classes">
+			<exclude name="*.o"/>
+			<exclude name="*.c"/>
+			<exclude name="libzxidjni.*"/>
+		</fileset>
+    </copy>
+	  <copy todir="${build}/zxidservlet/WEB-INF/classes">
+        <fileset dir="${zxid}">
+			<include name="**.class"/>
+			<include name="*/*.class"/>
+		</fileset>
+    </copy>
+	<copy todir="${build}/zxidservlet/WEB-INF/lib">
+        <fileset dir="lib">
+			<include name="*.jar"/>
+			<exclude name="servlet-api.jar"/>
+		</fileset>
+    </copy>
+	  
+	 
+	  <jar destfile="${build}/dist/medcommons-zxid.jar"
+				       basedir="${build}/zxidservlet/WEB-INF/classes"
+				  />
+		
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+</project>

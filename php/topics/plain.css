@@ -1,0 +1,312 @@
+/* remove browser specific styling 
+body, h1,h2,h3,h4,h5,h6,p,ol,ul,form,blockquote {
+	padding:0;
+	margin:0;
+	}
+	
+h1,h2,h3,h4,h5,h6,pre,code {
+font-size:1em;
+}
+a {text-decoration: none;}
+a img {border:none;}
+*/
+
+body
+{
+    margin: 5px 30px 5px 30px;
+   /* width: 740px;
+    max-width: 740px;
+    min-width: 500px;
+    */
+    background-color: #FFFFF0; /*ivory;*/
+    color: #102536;
+    font-family: Tahoma, "Lucinda Grande" , Arial, sans-serif;
+    font-weight: bold;
+    background-image: url(MEDcommons_logo_246x50T.gif);
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    float: none;
+}
+#menu
+{
+    float: left;
+    font-size: 10px;
+    color: Gray;
+}
+#menu a
+{
+    text-decoration: none;
+}
+#menu a:hover
+{
+    text-decoration: underline;
+}
+table tr.odd *
+{
+    background: #EEE;
+}
+tr.odd, tr.even
+{
+    border-bottom: 1px solid #EEE;
+}
+div
+{
+    font-weight: normal;
+}
+
+iframe
+{
+    margin-left: 10px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    color: #14556B;
+}
+h2.header
+{
+    width: 300px;
+    float: right;
+    text-align: right;
+    margin: 0 0 0 0;
+}
+
+h3
+{
+    font-size: 1.2em;
+    color: #14556B;
+}
+h4
+{
+    font-size: 1.1em;
+    color: #14556B;
+}
+h5
+{
+    float: left;
+    font-size: 1.0em;
+    color: #14556B;
+}
+p.hype
+{
+    float: left;
+    font-size: 1.1em;
+    font-style: italic;
+    color: #14556B;
+}
+img
+{
+    border: none;
+}
+.slogon
+{
+    font-size: 8px;
+    font-variant: small-caps;
+    color: gray;
+}
+
+.bottom
+{
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-size: 8px;
+}
+
+.bottom a, .bottom a:link, .bottom a:visited
+{
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.bottom a:hover
+{
+    text-decoration: underline;
+}
+.picsanchor a, .picsanchor a:link, .picsanchor a:visited
+{
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.picsanchor a:hover
+{
+    text-decoration: underline;
+}
+div.mc-xrefs a img {height: 0; width: 0; border-width: 0;}
+
+div.mc-xrefs a:hover img {position: absolute;
+  z-index:+100;
+  border-top: solid gray;
+  border-right: solid gray;
+  border-bottom: solid gray;
+  border-left: solid gray;
+
+    top: 190px; left: 150px; height: 300px; width: 400px;}
+
+
+.up a
+{
+    color: #000033;
+}
+
+.in`a
+{
+    color: #333333;
+}
+
+.ext a
+{
+    color: #6666CC;
+}
+
+.nih a
+{
+    color: #006600;
+}
+
+.tag a
+{
+    color: #666699;
+}
+
+.S
+{
+    font-size: 12px;
+}
+
+.M
+{
+    font-size: 14px;
+}
+
+.L
+{
+    font-size: 18px;
+}
+
+.XL
+{
+    font-size: 20px;
+}
+
+.mclink a, .mclink a:link, .mclink a:visited
+{
+    font-weight: normal;
+    text-decoration: none;
+}
+.mclink a:hover
+{
+    text-decoration: underline;
+}
+
+/*
+
+/www/product styles
+
+*/
+
+.top, .middle
+{
+    float: left;
+    font-size: 14px;
+    color: black;
+}
+.featurebenefit
+{
+    float: left;
+    margin-top: 10px;
+}
+.feature
+{
+    margin-left: 30px;
+    font-size: 14px;
+    color: black;
+}
+.details
+{
+    float: right;
+    margin-right: 30px;
+    font-size: 12px;
+    color: gray;
+    width: 300px;
+}
+.applist
+{
+    margin-left: 20px;
+    float: left;
+    text-align: left;
+}
+.standardslist
+{
+    margin-right: 20px;
+    float: right;
+    text-align: left;
+}
+
+.topic
+{
+    margin-top: 20px;
+}
+
+.productname
+{
+    font-style: italic;
+    color: #191970;
+}
+.info
+{
+    margin-left: 20px;
+    float: left;
+    text-align: left;
+}
+.info p
+{
+    float: left;
+    font-size: 12px;
+}
+
+.info a
+{
+    text-decoration: none;
+}
+
+
+ul.top {list-style-type: none;}
+ul.sub {list-style-type: none;
+        padding: 0 0 0 5px;
+}
+.tiny {font-size: 8pt; color: blue;	}
+.vetted {font-size: 8pt; color: green;	}
+.clones {font-size: 8pt; color: red;	}
+.outer { font-size: 11pt; color: grey;}
+.inner { font-size: 9pt; color: grey;}
+.top a, .top a:link, .top a:visited
+{
+
+    font-weight: normal;
+    text-decoration: none;
+}
+.top a:hover
+{
+    text-decoration: underline;
+}
+.top .sub a, .top .sub a:link, .top .sub a:visited
+{
+
+    font-weight: normal;
+    text-decoration: none;
+}
+.top .sub a:hover
+{
+    text-decoration: underline;
+}
+
+
+a img {border:none;}

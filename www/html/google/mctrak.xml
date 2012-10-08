@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="MedCommons Tracking Service" description="Locate a CCR in MedCommons" 
+               title_url="http://www.medcommons.net" author="Bill Donner" height="30" 
+               scaling="false" render_inline="optional" />
+      <Content type="html">
+    <![CDATA[ 
+          
+        <form method=post target="_new"action='https://secure.medcommons.net/secure/trackemail.php'>
+        <table><tr><td><img border="0" alt="Photo" 
+                src="http://www.medcommons.net/images/mclogotiny.png" 
+                title="MedCommons - A Patient Centric CCR Transport and Storage Service" /></td><td>    
+        #&nbsp;<input type=text name=a size=12>&nbsp;<input type=submit value='Go'></td></tr></table>
+        </form>
+     ]]>
+  </Content>
+ </Module>

@@ -1,0 +1,34 @@
+{% extends "form.html" %}
+
+{% block title %}File System Paths{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Configuration</a> &gt;
+File System Paths
+{% endblock %}
+
+{% block content %}
+
+<p>
+The Appliance configuration is stored on the filesystem
+in various places.
+</p>
+<p>
+These filenames cannot be modified by the Console,
+but are listed here for your convenience.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+{% endblock %}

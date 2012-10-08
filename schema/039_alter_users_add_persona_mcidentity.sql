@@ -1,0 +1,2 @@
+
+ALTER TABLE `users` ADD `persona` VARCHAR(255) NOT NULL;

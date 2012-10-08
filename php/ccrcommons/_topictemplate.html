@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="author" content="MedCommons, Inc." />
+    <meta name="description" content="**DESCRIPTION** by MedCommons" />
+    <meta name="keywords" 
+    content=" **KEYWORDS** medcommons, personal health records,ccr, phr, privacy, patient, health, records, medical records,
+						emergencyccr"/>
+    <meta name="robots" content="all"/>
+    <meta name="viewport" content="width=320" />
+    <title>**TITLE**</title>
+    <link rel="shortcut icon" href="http://www.medcommons.net/images/favicon.gif" type="image/gif" />
+
+    <link media="all"
+	href="http://www.medcommons.net/css/medCommonsStyles.css" type="text/css" rel="stylesheet" />
+      <script type="text/javascript">
+    // This function is included to overcome a bug in Netscape's implementation
+// of the escape () function:
+
+function myunescape (str)
+{
+	str = '' + str;
+	while (true)
+	{
+		var i = str . indexOf ('+');
+		if (i < 0)
+			break;
+		str = str . substring (0, i) + ' ' + str . substring (i + 1, str . length);
+	}
+	return unescape (str);
+}
+    var args;
+    
+    function i()
+{
+// parse args
+	args = new Array ();
+	var argstring = window . location . search;
+	if (argstring . charAt (0) != '?')
+		return;
+	argstring = argstring . substring (1, argstring . length);
+	var argarray = argstring . split ('&');
+	var i;
+	var singlearg;
+	for (i = 0; i < argarray . length; ++ i)
+	{
+		singlearg = argarray [i] . split ('=');
+		if (singlearg . length != 2)
+			continue;
+		var key = myunescape (singlearg [0]);
+		var value = myunescape (singlearg [1]);
+		args [key] = value;
+	}
+// if error then put it in the right place
+	if (args['error'])
+		if (args['p'])
+				{
+				p = args['p'];
+				document.getElementById(p).innerHTML = '<span class="errorAlert">'+args['error']+'</span>';
+				}
+}
+</script>
+<style type="text/css" >
+body {width: 100%;}
+.purl {font-family: courier; font-size: 10px;}
+.purl .a {background-color: white;}
+.purl .b {background-color: #CCC;}
+.purl .c {background-color: white;}
+.purl .d {background-color:#B98D42;}
+.purl .e {background-color: #DDD;}
+.purl .f {background-color:  #B98D42;}
+.purl .g {background-color:white;}
+</style>
+</head>
+<body onload='i()'>
+<a style='text-decoration:none;' href='http://ccrcommons.net/'>
+<h1 style='padding: 55px 0 50px 0; font-size:72px;font-family:courier;'>(CCR Commons)</h1></a>
+<div id=bodypart>
+**BODY**
+<div id=sponsoredby > <small>sponsored by</small>
+ <a  href='http://www.medcommons.net/' title='MedCommons Homepage'><img border="0" src="http://www.medcommons.net/images/mclogotiny.png"  /></a>
+</div>
+ <div id=fulllist >A full list of all topics is available <a href='http://ccrcommons.net/index.php' >here</a>
+</div>
+</div>
+<div id=adspacer>
+&nbsp;</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-1328730632722962";
+/* 728x90, created 4/8/08 */
+google_ad_slot = "5489044501";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        <div id="footer">
+	<h6>&#169; 2008 MedCommons, Inc.&nbsp;&nbsp;<a href='http://www.medcommons.net/'>home</a>&nbsp;|&nbsp;
+		<a href='http://www.medcommons.net/termsofuse.php'>terms of use</a>&nbsp;|&nbsp;
+	<a href='http://www.medcommons.net/contact.php'>contact us</a></h6>
+</div>
+        </body>
+     </html>

@@ -1,0 +1,42 @@
+{% extends "form.html" %}
+
+{% block title %}Create Group{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Groups</a> &gt;
+Create Group
+{% endblock %}
+
+{% block content %}
+
+<div class='breadcrumbs'>
+<a href='wiz_create?id={{ id }}'>1) Choose Group Owner</a> &gt;
+<b>2) Choose Group Name</b> &gt;
+3) Choose Other Members
+</div>
+
+<form method='post' action='wiz_name'>
+  <table>
+    <tbody>
+{{ form }}
+    </tbody>
+  </table>
+
+  <table id='submit-row'>
+    <tr>
+      <td></td>
+      <td rowspan='2' style='vertical-align:bottom'>
+	<input tabindex='2' type='submit' class='default' value='Next &gt;&gt;' />
+      </td>
+    </tr>
+    <tr>
+      <td>
+	<input tabindex='1' type='submit' name='prev' value='&lt;&lt; Prev' />
+      </td>
+    </tr>
+  </table>
+</form>
+
+{% endblock content %}
+

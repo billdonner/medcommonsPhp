@@ -1,0 +1,52 @@
+{% extends "form.html" %}
+
+{% block title %}Restore Console Configuration From Backup{% endblock %}
+
+{% block header %}
+<style type='text/css'><!--
+div#box {
+  width: 400px;
+  text-align: left;
+}
+
+input {
+  display: block;
+}
+// --></style>
+{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Configuration</a> &gt;
+Restore From Backup
+{% endblock %}
+
+{% block content %}
+
+<div id='box'>
+<p>
+This will restore the console configuration from a backup created by the
+<a href='backup' type='application/octet-stream'>Console Backup Utility</a>.
+</p>
+<p>
+All console settings,
+as well as any security certificates, external identity providers,
+and customized HTML, images, and CSS, will be overwritten.
+</p>
+
+<form method='post' action='restore'
+      enctype='multipart/form-data'>
+  <label>Upload file:
+    <input type='file' name='file' />
+  </label>
+
+  <input type='submit' value='Restore' />
+</form>
+</div>
+
+{% if errors %}
+<pre class='errors'>
+{{ errors }}
+</pre>
+{% endif %}
+{% endblock %}

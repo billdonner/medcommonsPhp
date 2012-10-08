@@ -1,0 +1,193 @@
+{% extends "www/base.html" %}
+
+{% block main %}
+<div id='FAQ'>
+    <div id="content">
+        <div id='faq-01'>
+            <div class='faq'>
+                <h3 class='faq-question'>
+                    How does a Health URL fit with my Web site and EHR?
+                </h3>
+                <p class='faq-answer'>
+                    Like your Web site server, the Health URL Appliance is located outside the firewall
+                    of your institution (sometimes called the DMZ). Also like a Web site, the Health
+                    URL server can be physically located in the computer room or hosted by a service
+                    provider. Whether locally installed or hosted, the institution that licenses the
+                    Health URL Appliance is in full control of policies, branding and private health
+                    information on the Health URL Appliance.
+                    <br/>
+                    <br/>
+                    Your EHR, databases and other practice management systems are typically located
+                    on the local area network (LAN) inside the firewall of your institution. The Health
+                    URL Appliance uses standard document formats and standard Web service protocols
+                    to communicate with the EHR, clinical data repository, PACS, Web browsers and other
+                    software applications that are secured behind your firewall.
+                </p>
+            </div>
+        </div>
+        <div id='faq-02'>
+            <div class='faq'>
+                <h3 class='faq-question'>
+                    Is the MedCommons Health URL a PHR (personal health record)?
+                </h3>
+                <p class='faq-answer'>
+                    No. As implemented by MedCommons, the Health URL is an authoritative, EHR-quality
+                    archive made accessible through Web interfaces. Because we handle diagnostic imaging,
+                    the MedCommons Health URL Appliance is FDA registered as a medical device. Both
+                    PHRs and EHRs can connect to a Health URL.
+                    <br/>
+                    <br/>
+                    Physicians are reluctant to use a health record that may have been modified by the
+                    patient. To reduce this objection, MedCommons uses the ASTM-standard Continuity
+                    of Care Record (CCR) as the native data model because of its ability to assign attribution
+                    and manage digital signatures for each and every component of the health record.
+                    Individual lab results, vaccinations, radiology reports, etc... retain their chain
+                    of custody even in cases where different practices and the patient himself are actively
+                    collaborating around a Health URL.
+                </p>
+            </div>
+        </div>
+        <div id='faq-03'>
+            <div class='faq'>
+                <h3 class='faq-question'>
+                    My EMR has a patient portal feature, why would I install a HealthURL appliance?
+                </h3>
+                <p class='faq-answer'>
+                    Scalability. Patient portals are difficult to use by clinicians outside of your
+                    organization which limits your ability to offer clinical and disease management
+                    services in a home or community setting. A Health URL reduces the risk of collaboration
+                    with each patient's extended care team by serving as an "airlock" for clinical information
+                    passing in and out of your internal systems. Your clinicians have an opportunity
+                    to review information and import selectively into the EMR. The Appliance's Group
+                    Worklists, Consent, Authorization and patient-accessible Activity Log features are
+                    designed to complement your routine workflows even as you extend patient-centered
+                    collaboration in your practice. Because it is based on a CCR-standard patient model,
+                    the Health URL account can markedly reduce interface and integration costs in large
+                    institutions, regional and national-scale systems that must accommodate diverse
+                    health IT systems.
+                </p>
+            </div>
+        </div>
+        <div id='faq-04'>
+            <div class='faq'>
+                <h3 class='faq-question'>
+                    Do all MedCommons Health URLs look alike?
+                </h3>
+                <p class='faq-answer'>
+                    No. The Health URL Appliance provides separate components and numerous standard
+                    interfaces that facilitate branding and integration into patient portals, PHR, telemedicine
+                    and EHR systems. Login, workflow and privacy components are separate and can be
+                    modified and embedded as needed. Emails, printouts, cell phone SMS messages and
+                    fax cover sheets are customized from provided templates. Web services interfaces
+                    are provided for creating new accounts and moving documents and images in and out
+                    including DICOM images and HIPAA authorization documents.
+                </p>
+            </div>
+        </div>
+        <div id='faq-05'>
+            <div class='faq'>
+                <h3 class='faq-question'>
+                    Who controls a MedCommons Health URL?
+                </h3>
+                <p class='faq-answer'>
+                    It depends. Access to an Account is managed by the Appliance on the basis of XACML-coded
+                    policy documents. Separate policies are established at the Appliance, User Group
+                    and Account levels. Each Account is encrypted separately. As the Appliance receives
+                    requests for information it applies XACML processing standards to combine applicable
+                    policies into an access control decision. By default, Accounts are under the control
+                    of the Group that initially created the Account. In short-term, telemedicine consultations
+                    the patient may never realize that they have a Health URL Account. In some cases,
+                    the patient will take control of their Health URL or transfer control to a family
+                    member by changing the Account-level policy document. In cases where an Account
+                    is moved from one Appliance to another, the applicable XACML policy and authorization
+                    documents will be transferred along with the CCR, DICOM and PDF documents.
+                </p>
+            </div>
+        </div>
+        <div id='faq-06'>
+            <div class='faq'>
+                <h3 class='faq-question'>
+                    How is information entered into the Health URL?
+                </h3>
+                <p class='faq-answer'>
+                    Information flows in through compatible documents and forms. The MedCommons Health
+                    URL automatically assembles the information into a Current CCR, ready for export
+                    or on-line review. PDF documents, DICOM imaging studies and JPEG images become references
+                    in the CCR. Original source documents, including imaging, are archived and available
+                    whether or not they are kept as part of the Current CCR. Documents can be faxed
+                    directly into an account using custom bar-coded cover sheets. A range of forms is
+                    available for direct on-line entry of information including patient consent and
+                    release authorizations. Forms creation and scripting tools enable rapid development
+                    of custom forms supported by built-in CCR standard encoding and validation tests.
+                    MedCommons contributes to a range of open source health information management tools
+                    that currently includes IHE-compliant interfaces based on the Eclipse Open Health
+                    Framework, the OsiriX diagnostic imaging workstation and a simple DICOM service
+                    utility that connects imaging modalities and PACS directly to a MedCommons Health
+                    URL.
+                </p>
+            </div>
+        </div>
+        <div id='faq-07'>
+            <div class='faq'>
+                <h3 class='faq-question'>
+                    How does information leave the Health URL?
+                </h3>
+                <p class='faq-answer'>
+                    Information is retrieved from the Health URL Account as original documents and live
+                    collaboration documents such as the Current CCR. A complete backup of all documents
+                    is accessible with a single click. Information related to Account activity is sent
+                    out by email, SMS message and RSS feed.
+                </p>
+            </div>
+        </div>
+        <div id='faq-08'>
+            <div class='faq'>
+                <h3 class='faq-question'>
+                    Why do you license the MedCommons Health URL as an appliance?
+                </h3>
+                <p class='faq-answer'>
+                    Security. An appliance is designed and optimized for a particular purpose. The HealthURL
+                    Appliance is designed to reduce privacy and security risks as health care practices
+                    connect to the Internet. The major components of the appliance (color in Fig 2 at
+                    right) have been selected to reduce both cost and risk by making it easy document
+                    support for HIPAA and state regulations. The use of standard and public-domain protocols
+                    to access the appliance (arrows in Fig 2) increases security and promotes innovation
+                    in both health IT and Web services.
+                </p>
+            </div>
+        </div>
+        <div id='faq-09'>
+            <div class='faq'>
+                <h3 class='faq-question'>
+                    How are Health URL Accounts secured?
+                </h3>
+                <p class='faq-answer'>
+                    Access to Health URL Accounts is controlled directly, through interfaces to an enterprise
+                    directory and under standards-based federated identity services. Direct access is
+                    granted to authorized users that have registrations on the Health URL Appliance
+                    itself. Larger installations can interface the Appliance to their LDAP-compatible
+                    directory. For the largest regional and national-scale networks, Health URL Appliances
+                    support federated identity protocols.
+                </p>
+            </div>
+        </div>
+        <div id='faq-10'>
+            <div class='faq'>
+                <h3 class='faq-question'>
+                    How much does it cost?
+                </h3>
+                <p class='faq-answer'>
+                    $1/yr. The MedCommons Health URL appliance is licensed for installation on approved
+                    hardware configurations for $1 / patient account / year with a $1,000 minimum. This
+                    price includes MedCommons Logo certification that allows the licensee to advertise
+                    seamless interoperability with any other Health URL displaying the MedCommons logo.
+                    Your actual costs will add hardware and storage, off-site backup, fax processing
+                    and administration. For average size Health URLs, these costs may add $0.50 / Account
+                    / year or more.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

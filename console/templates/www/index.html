@@ -1,0 +1,78 @@
+{% extends "www/base.html" %} {% block main %}
+
+<div id='content'>
+<h2>MedCommons Public Access Appliance</h2>
+    <p>
+        This is an off the shelf MedCommons Appliance, running as a free publicly accessible
+        service. Feel free to use this all you like for sending and receiving CCRs and DICOM,
+        subject to our <a href="tu.html">terms of use</a>.</p>
+    <p>
+        For information on how you can optionally customize and run your own appliance within
+        your enterprise, or at a hosting site, please visit the <a href="http://www.medcommons.net/">
+            MedCommons</a> website.</p>
+    <div id='notloggedon'>
+        <h3>
+            Sign in to {{ Site }}</h3>
+<form method='post' action='{{ Site }}/acct/login.php' name='login' id='login'>
+  <input type='hidden' name='next' value='{{ Site }}/acct/home.php' />
+
+  <table>
+    <tbody>
+<!-- BILL DON'T TOUCH THIS -->
+            {% include "www/login.inc" %}
+<!-- JUST DON'T -->
+    </tbody>
+  </table>
+</form>
+        <ul>
+{% if DemoDoctor %}
+            <li><a href='{{ Site }}/acct/logindd.php' class='bold_link'>Demo Sign In <span class='bold_carrot'>></span></a></li>
+{% endif %}
+            {% if OnlineRegistration %}
+            <li><a href='{{ Site }}/acct/register.php' class='login'>Sign up for MedCommons</a></li>
+            {% endif %}
+            <li><a href='{{ Site }}/acct/forgot.php' class='login'>I cannot access my account</a></li>
+        </ul>
+    </div>
+
+    
+     <h3>
+        Try This Appliance
+    </h3>
+
+    <ul>
+       <li><a  href='searchExamples.html'>Search</a></li>
+        <li><a target='_new' href='{{ Site }}/secure/gwredir.php?a=CreateCCR'>Create CCR Anonymously
+            Using MedCommons</a></li>
+        <li><a target='_new' href='{{ Site }}/secure/gwredir.php?a=ImportCCR'>Import CCR Anonymously
+            Using MedCommons</a></li>
+        <li><a href='ft.html'>Feature Tour</a> </li>
+        <li><a href='http://web.mac.com/medcommons/iWeb/console/Console.html'>Administrative
+            Console Tour</a></li>
+    </ul>
+    <h3>
+        FAQ About MedCommons Appliances
+    </h3>
+    <ul>
+        <li><a href='fq.html#faq-01'>Is the Health URL a Personal Health Record (PHR)?</a> </li>
+        <li><a href='fq.html#faq-02'>My EMR has a patient portal feature, why would I need a
+            Health URL?</a> </li>
+        <li><a href='fq.html#faq-03'>Do all MedCommons Health URL look alike?</a> </li>
+        <li><a href='fq.html#faq-04'>Who controls a Health URL?</a> </li>
+        <li><a href='fq.html#faq-05'>How is information entered into the Health URL?</a> </li>
+        <li><a href='fq.html#faq-06'>How does information leave the Health URL? </a></li>
+        <li><a href='fq.html#faq-07'>How will my EHR work with a patient's Health URL?</a> </li>
+        <li><a href='fq.html#faq-08'>Why do you call it an appliance?</a> </li>
+        <li><a href='fq.html#faq-09'>How are Health URLs secured?</a> </li>
+        <li><a href='fq.html#faq-10'>How much does it cost?</a> </li>
+    </ul>
+    <h3>
+        About Us
+    </h3>
+    <ul>
+        <li><a href='tu.html#terms-of-use'>Terms of Use</a> </li>
+        <li><a href='contact.html' title="Contact Us">Contact Us</a> </li>
+    </ul>
+</div>
+
+{% endblock main %} 

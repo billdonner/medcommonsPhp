@@ -1,0 +1,32 @@
+ @import url("style.css");
+body{background-color: white;}
+#is_body, #is_header {margin: 20px;}
+#is_body fieldset {background-color:#F4F7C2;}
+.menuDisplays { margin: 10px; padding: 10px; }
+.menuButton
+	{
+	border: 1px solid #000;
+	display: inline;
+	padding: 3px 5px;
+	background-color:#eee;
+	text-decoration: none;
+	}
+.menuButton:hover {background-color:#ccb;}
+	
+.onmenuButton
+	{
+	border: 1px solid #000;
+	border-bottom: 0px solid #F4F7C2;
+	display: inline;
+	padding: 5px;
+	background-color:#f4f7c2;
+	}
+
+.menu, .ispanel
+	{
+	position: relative;
+	margin: 0px; padding: 10px; 
+	background-color: #F4F7C2;
+	width:700px;
+	border: 1px solid #000;
+	}

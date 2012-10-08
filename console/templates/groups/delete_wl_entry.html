@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load medcommons %}
+
+{% block title %}Delete Worklist Entry{% endblock %}
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Groups</a> &gt;
+Delete Worklist Entry
+{% endblock %}
+
+{% block content %}
+
+<p>
+Delete this worklist entry?
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Name:</th>
+      <td>{{ entry.PatientFamilyName }}, {{ entry.PatientGivenName }}</td>
+    </tr>
+    <tr>
+      <th>Comment:</th>
+      <td>{{ entry.Comment }}</td>
+    </tr>
+    <tr>
+      <th>Guid:</th>
+      <td>{{ entry.Guid }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<form action='delete_wl_entry'
+      method='post'>
+  <div id='submit-row'>
+    <input type='hidden' name='pid' value='{{ practice.practiceid }}' />
+    <input type='hidden' name='guid' value='{{ entry.Guid }}' />
+    <input type='submit' name='cancel' class='default' value='Cancel' /> 
+    <input type='submit' name='delete' value='Delete' />
+  </div>
+</form>
+
+{% endblock %}

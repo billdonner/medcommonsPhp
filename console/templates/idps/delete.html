@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Confirm Delete Identity Provider{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Identity Providers</a> &gt;
+Delete {{ object.source_id }}
+{% endblock %}
+
+{% block content %}
+
+<p>
+Delete this identity provider?
+</p>
+
+{% if count %}
+<p>
+Deleting this identity provider will prevent the {{ count }} user{{ count|pluralize }} from logging in
+from this identity provider.
+</p>
+{% endif %}
+
+<p>
+After deleting this identity provider, <a href='../config/'>republish</a> the appliance web site
+to remove the IdP logo from appearing on the login forms.
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Name:</th>
+      <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+      <th>Source ID:</th>
+      <td>{{ object.source_id }}</td>
+    </tr>
+    <tr>
+      <th>Format:</th>
+      <td>{{ object.format }}</td>
+    </tr>
+    <tr>
+      <th>Users:</th>
+      <td>{{ count }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<form method='post' action='delete'>
+  <div id='submit-row'>
+    <input type='hidden' name='id' value='{{ object.id }}' />
+    <input type='submit' name='cancel' class='default' value='Cancel' />
+    <input type='submit' name='delete' value='Delete' />
+  </div> 
+</form>
+
+{% endblock %}

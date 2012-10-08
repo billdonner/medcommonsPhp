@@ -1,0 +1,16 @@
+function vx($a,$b,$c,$d,$e,$f,$g,$h,$i,$j)
+{ 
+$signature = "MEDCOMMONSDEVELOPERKEYGOESHERE"; // MedCommons Developer Key
+$xml="<vxm>
+<deviceMsgCCR>
+	 <model>$a</model>
+	 <vendor>$b</vendor>
+	 <serial>$c</serial>
+	 <mode>$d</mode>
+	 <commstring>$e</commstring>
+	 <ccrxpath>$f</ccrxpath>
+	 <sha1>$g</sha1>
+</deviceMsgCCR>
+</vxm>";
+return array($signature,$xml);
+}

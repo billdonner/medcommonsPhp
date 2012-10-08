@@ -1,0 +1,125 @@
+{% extends "form.html" %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Appliances</a> &gt;
+<b>Merge Appliance</b>
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+      <th>Last IP Addr</th>
+      <td>{{ object.ipaddr }}</td>
+    </tr>
+    <tr>
+      <th>URL</th>
+      <td>{{ object.url }}</td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>{{ object.email }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>Merge this appliance entry</h1>
+
+<p>
+When an appliance's name changes, a new appliance entry is created.
+
+So, two appliance entries exist for the same machine.
+</p>
+
+<p>
+If this has happened to this appliance ({{ object.name }}), you
+can move this appliance and all the MCIDs and tracking numbers allocated
+to the new entry, with the new name.
+</p>
+{% if same_objects %}
+<p>
+The new appliance is probably one of these entries:
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>IP Addr</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for o in same_objects %}
+    <tr class='{% cycle a,b %}'>
+      <td>{{ o.name }}</td>
+      <td>{{ o.ipaddr }}</td>
+      <td>{{ o.url }}</td>
+      <td><form method='post' action='merge'>
+<input type='hidden' name='id' value='{{ object.id }}' />
+<input type='hidden' name='to' value='{{ o.id }}' />
+<input type='image' name='merge' src='{{ media }}img/DataStore.png' width='20' height='20' alt='Merge' />
+          </form>
+       </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+</p>
+{% endif %}
+{% if diff_objects %}
+<p>
+It may be one of these entries:
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>IP Addr</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for o in diff_objects %}
+    <tr class='{% cycle a,b %}'>
+      <td>{{ o.name }}</td>
+      <td>{{ o.ipaddr }}</td>
+      <td>{{ o.url }}</td>
+      <td><form method='post' action='merge'>
+<input type='hidden' name='id' value='{{ object.id }}' />
+<input type='hidden' name='to' value='{{ o.id }}' />
+<input type='image' name='merge' src='{{ media }}img/DataStore.png' width='20' height='20' alt='Merge' />
+          </form>
+       </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+</p>
+{% endif %}
+
+<h1>
+Delete this appliance entry
+</h1>
+
+<p>
+If you are <strong>absolutely sure</strong> that
+no patient data is stored on this machine, you
+can delete this entry.
+</p>
+<form method='post' action='delete'>
+  <div id='submit-row'>
+    <input type='hidden' name='id' value='{{ object.id }}' />
+    <input type='submit' name='cancel' value='No/Cancel' class='default' />
+    <input type='submit' name='delete' value='Yes/Delete' />
+  </div>
+</form>
+
+{% endblock content %}
+

@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<title>Set the identity cookie</title>
+
+<script language="JavaScript">
+<!--
+
+
+function SetCookie(cookieName,cookieValue,nDays) {
+ var today = new Date();
+ var expire = new Date();
+ if (nDays==null || nDays==0) nDays=1;
+ expire.setTime(today.getTime() + 3600000*24*nDays);
+ document.cookie = cookieName+"="+escape(cookieValue)
+                 + ";expires="+expire.toGMTString();
+                 + ";path=/:";
+
+      /*         
+( ( expires ) ? ";expires=" + expires_date.toGMTString() : "" ) + 
+( ( path ) ? ";path=" + path : "" ) + 
+( ( domain ) ? ";domain=" + domain : "" ) +
+( ( secure ) ? ";secure" : "" );
+
+*/
+}
+
+function CreateCookieString(mcid, from, firstName, lastName, email){
+	var cookieValue = "";
+	cookieValue+="mcid=";
+	cookieValue+=mcid;
+	cookieValue+=",from=";
+	cookieValue+=from;
+	cookieValue+=",fn=";
+	cookieValue+=firstName;
+	cookieValue+=",ln=";
+	cookieValue+=lastName;
+	cookieValue+=",email=";
+	cookieValue+=email;
+	return cookieValue;
+	//return(encodeURIComponent(cookieValue));
+	
+}
+function setIdentityCookie(cookieName, mcid, from, firstName, lastName, email, nDays){
+	
+	var cookieValue = CreateCookieString(mcid, from, firstName, lastName, email);
+	SetCookie(cookieName, cookieValue, nDays);
+	alert("Set cookie '" + cookieName + "'"
+		+ "\nvalue   = " + cookieValue 
+		+ "\ndecoded = " + decodeURIComponent(cookieValue)); 
+	
+	
+}
+
+//-->
+</script>
+
+</HEAD>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#660099"
+onLoad="if(top.changeAD)top.changeAD()">
+<a name="top"></a>
+
+<h3>Set Cookie</h3>
+This web page generates an identity cookie of the same sort that the Account server does.
+
+
+
+
+
+<form name="setCookie">
+<table border=0 cellpadding=3 cellspacing=3>
+<tr><td>MedCommonsID:&nbsp;
+
+</td><td><input name=t1 type=text size=20 value="">
+</td></tr>
+<tr><td>From:&nbsp;
+</td><td><input name=t2 type=text size=20 value="">
+</td></tr>
+<tr><td>Firstname:&nbsp;
+</td><td><input name=t3 type=text size=20 value="">
+</td></tr>
+<tr><td>Lastname:&nbsp;
+</td><td><input name=t4 type=text size=20 value="">
+</td></tr>
+<tr><td>Email:&nbsp;
+</td><td><input name=t5 type=text size=20 value="">
+</td></tr>
+<tr><td>Must expire in:&nbsp;
+</td><td><input name=t6 type=text size=3 value="5"> days from today
+</td></tr>
+<tr><td></td><td><input name=b1 type=button value="Set Identity Cookie"
+onClick="setIdentityCookie('mc',this.form.t1.value,this.form.t2.value,this.form.t3.value,this.form.t4.value,this.form.t5.value,this.form.t6.value);">
+
+</td></tr>
+</table>
+</form>
+
+
+
+
+</BODY>
+</HTML>

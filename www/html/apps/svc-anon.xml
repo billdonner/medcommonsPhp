@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appservices>
+  <service>
+    <id>
+      32p2309abc30020ad0309
+    </id>
+    <name>
+      CCR Obfuscation Service from Obfuscators, Inc
+    </name>
+    <visible>
+      A new button appears next to this CCR with the label 'anonymizer'
+    </visible>
+    <comment>
+      There are no prerequisites for this module
+    </comment>
+    <explanation>
+      <![CDATA[
+      <div>Your CCR is anonymized so that you can talk safely with an untrusted service or  party</div>
+      ]]>
+    </explanation>
+    <publisher>
+      <![CDATA[
+      <img src="http://www.medcommons.net/apps/images/obfuscators.jpg" alt="obfuscators.or"></img>
+      ]]>
+    </publisher>
+    <charges>
+      <![CDATA[
+      <div>This is a free service</div>
+      ]]>
+    </charges>
+    <technical>
+      <![CDATA[
+    The Obfuscator Service is called with the 'Current CCR', using CXP
+    ]]>
+    </technical>
+  </service>
+</appservices>
+
+

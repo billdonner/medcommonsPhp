@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Medcommons and Trackers</title>
+    
+</head>
+<body>
+<table><tr><td><a href="index.html" ><img border="0" alt="MedCommons" 
+                src="../images/mclogotiny.png" 
+                title="MedCommons and Trackers" /></a>
+                </td><td>Trackers HomePage <small><i>for internal use only</i>
+                 </small></td>
+</tr></table>
+<h3>MedCommons Support for Trackers</h3>
+<p>This note describes the implementation of Trackers within MedCommons. Trackers are implemented as a MedCommons Extension.
+Code for Trackers is in /trunk/php/trackers
+</p>
+<h4>What is a Tracker?</h4>
+<p>At this point, a Tracker is just a named object that maintains a timeseries history of values. It is associated with a MedCommons Account.
+Each user, within his own account, accumulates an ever increasing collection of objects, representing weight, blood pressure,
+glucose and blood test results, and more. A user adds each named Tracker to his account at his discretion, normally
+utilizing the <a href=trackerEditor.php>Tracker Editor</a> and selecting from a dropdown list</p>
+<p>Third parties can create libraries of additional trackers, either by simply building forms (either 
+handmade or via <a href=/trackers/xform>xforms</a>) or by writing their own code (e.g. for data acquisition or display)
+MedCommons can sell, rent, and bill for usages of these libraries. These third party libraries are also 
+implemented as MedCommons Extensions </p>
+<h4>Adding Tracker Support to Your MedCommons Account</h4>
+Just get to the Extensions Page via:
+<br>
+<b>My Account > Apps and Services > Add Tracker Support </b>
+<br>
+<br>
+You must add tracker support before you add any other Tracker Extension libraries from the Apps and Services Page
+<h4>Using Trackers in Your Account </h4>
+<p>You must be logged on to your account to use Trackers, unless you have hardwired the Tracker Gadget to your account.
+You can <a href =viewTrackers.php>view</a> your Trackers anytime. </p><p>
+Use the <a href=trackerEditor.php>editor</a> to choose and personalize your Trackers. You can set many properties of both the display system and the
+means of data acquisiton.
+<p>You can also utilize Trackers via your personal Google Homepage.</P> 
+<h4>Defining New Trackers</h4>
+There are two steps to making new trackers available on MedCommons.
+<ul>
+<li>Define a Catalog of your New Trackers </li>
+<li>Wire the Catalog into the MedCommons Apps and Services Extension system </li>
+</ul>
+<p>The catalog is simply a list of trackers, their units, and some other simple properties. Here are some catalogs:
+<a href=http://medcommons.net/apps/trackers/catalog-trackers-bcdmg.xml>blood catalog</a>,
+<a href=http://medcommons.net/apps/trackers/catalog-trackers-gps.xml>gps catalog</a>, and finally the
+<a href=http://medcommons.net/apps/trackers/catalog-trackers-builtin.xml>builtins</a> that get autoloaded when the Tracker Extension is installed.,
+Note that these are just plain URLs, and might point to any website, not necessarily inside MedCommons</p>
+<p>Wiring in Extensions to MedCommons is described <a href='../appsrv/index.html'>here</a> but we provide links to the 
+<a href=http://medcommons.net/apps/trackers/svc-trackers-bcdmg-package.xml>blood extension</a> and
+<a href=http://medcommons.net/apps/trackers/svc-trackers-gps-package.xml>gps extension</a>. There is no 
+extension for the builtins. <i>You need to make sure the 'id' field' in both the Catalog xml file and the Extension xml file are
+identical</i>
+</p>
+<h4>Add Your Own Code to the Tracker System</h4>
+You can extend the Tracker System in various ways:
+<ul>
+<li>You can plug in your own xForms compatible remote input source to deliver Tracker Messages into your account</li>
+<li>You can write your own Graphics code that runs inside the user's Account</li>
+<li>You can write a custom viewer in PHP or Java that completely replaces the builtin tracker display</li>
+<li>You can write a background program that transparently updates the users Trackers as needed</li>
+</ul>
+It's a little vague right now on how to do this on a personal level, but all of the callbacks are in place in both the 
+catalogs and extension xml files. You can just edit these xml files to play with this for now.
+<h4>Adding 3rd Party Code to the Trackers</h4>
+Most users will not add their own code, but rather buy or rent code from 3rd parties. MedCommons acts as a broker in this
+situation, taking a service fee for providing access to the account and for billing. 
+
+<fieldset>
+<legend>
+links
+</legend>
+<ul>
+<li><a target="_trackerEditor" href=trackerEditor.php>Editor</a></li>
+<li><a href=help.html>User Help on Trackers</a></li>
+<li><a href=showTrackers.php>Internal Dump of SQLite Trackers DB</a></li>
+<li><a href='../../appsrv/index.html'>Apps and Services</a></li>
+</ul>
+</fieldset>
+</body>
+</html>

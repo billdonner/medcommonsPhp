@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModulePrefs title="MedCommons - My Trackers" description="View MedCommons Personal Trackers from Google Homepage"  
+                title_url="https://secure.test.medcommons.net/trackers/index.html"
+                 author="william donner" scrolling="true" 
+                    author_affiliation="http://www.medcommons.net"/>
+  <UserPref name="mckey" display_name="medcommons tracker key (at www.medcommons.net/key)"/>
+  <Content type="url" href="https://secure.test.medcommons.net/trackers/ggtrackers.php"/>
+</Module>

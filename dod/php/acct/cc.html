@@ -1,0 +1,17 @@
+<html><head><title>Clone MedCommons Account</title></head>
+<body><p>To clone an account, please create the new account using normal MedCommons Account Registration, and use the new account id as the destination id.
+</p>
+<form method=POST action=cc.php>
+<table>
+<tr><td>Source MedCommons Account ID</td><td><input type=text value='9999999999999999' name=src></td></tr>
+<tr><td>Destination MedCommons Account ID</td><td><input type=text size=16 name=dst></td></tr>
+</table>
+<p>
+     <input type="radio" name="operation" value="1" checked>all CCRs</input>&nbsp;&nbsp;
+    <input type="radio" name="operation" value="2">only emergency CCR</input>&nbsp;&nbsp;
+</p>
+<input type=submit name=submit value="clone">
+</form> 
+ 
+ 
+ 

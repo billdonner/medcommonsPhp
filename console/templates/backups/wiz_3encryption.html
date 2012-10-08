@@ -1,0 +1,53 @@
+{% extends "form.html" %}
+
+{% block title %}Encryption{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Backups</a> &gt;
+Encryption
+{% endblock %}
+
+{% block content %}
+
+<div class='breadcrumbs'>
+  <a href='keys'>1) S3 Keys</a> &gt;
+  <a href='buckets'>2) S3 Buckets</a> &gt;
+  <b>3) Encryption</b> &gt
+  4) Publish
+</div>
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<img src='{{ media }}img/Circle_3.png' width='20' height='20' alt='3' />
+<p>
+Backups are encrypted using 256-bit
+<acronym title='Advanced Encryption Standard'>AES</acronym>
+with <acronym title='Cipher Block Chaining'>CBC</acronym>.
+</p>
+
+<form method='post' action='encryption'>
+  <table>
+    <tbody>
+{{ form }}
+    </tbody>
+  </table>
+
+  <table id='submit-row'>
+    <tr>
+      <td></td>
+      <td rowspan='2' style='vertical-align:bottom'>
+        <input tabindex='2' type='submit' class='default' name='next' value='Next &gt;&gt;' />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input tabindex='1' type='submit' name='prev' value='&lt;&lt; Prev' />
+      </td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

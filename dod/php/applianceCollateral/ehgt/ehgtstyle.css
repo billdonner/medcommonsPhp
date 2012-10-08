@@ -1,0 +1,156 @@
+/* ehgtstyle.css
+
+-- 25 may 2007
+
+-- this was hacked out from the ehgt style sheet on the main site of ehgt
+
+-- all of the css errors were removed and existing styles were used directly where possible
+
+-- the info block was turned off, and other features removed, but regrettably this can not all be done in css
+and thus the .html markup has also been hacked
+
+*/
+
+@import "/style.css";
+
+
+body {
+	background-color: #005481;
+       font-family: Arial, Helvetica, sans-serif;
+}
+
+
+a {color: #777777;}
+
+
+#rightside { float: right; vertical-align: top;}
+
+
+#pbmclogo { margin-top: 5px;height: 25px;
+    margin-left: auto;
+    margin-right: auto}
+
+
+.cs_faq_a
+
+{
+
+	line-height:150%;
+
+	font-size: 10pt;
+
+	text-align: left;
+
+	color: #777777;
+
+}
+
+
+.cs_faq_q
+
+{
+
+	line-height:150%;
+
+	font-size: 10pt;
+
+	text-align: left;
+
+	color: #005481;
+
+}
+
+
+.cs_press_txt , h3
+
+{
+
+	line-height:150%;
+
+	font-size: 10pt;
+
+	text-align: left;
+
+	color: #777777;
+
+}
+
+.cs_normal, p
+
+{
+
+	line-height:150%;
+
+	font-size: 10pt;
+
+	text-align: left;
+
+	color: #777777;
+
+}
+
+
+.cs_normal_ni, li
+{
+
+	line-height:150%;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 10pt;
+
+	text-align: left;
+
+	color: black;
+
+}
+
+.cs_login
+
+{
+	line-height:100%;
+
+	font-size: 10pt;
+
+	font-weight: bold;
+
+	text-align: left;
+
+	color: #005481;
+
+}
+
+
+.cs_headlines
+
+{
+
+	line-height:100%;
+
+	font-size: 18pt;
+
+	font-weight: bold;
+
+	text-align: center;
+
+	color: #005481;
+
+}
+
+#cs_copyright, #volatile
+
+{
+	display: block;
+
+	line-height:100%;
+
+	font-size: 8pt;
+
+	font-weight: bold;
+
+	text-align: left;
+
+	color: black;
+
+}
+

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="MedCommons, Inc." />
+    <meta name="keywords" content="Appliance,CCR,PHR,HealthRecords" />
+    <meta name="description" content="MedCommons Health Records Appliance" />
+    <meta name="robots" content="all" />
+    {% block meta %} {% endblock %} <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ RootPath }}/images/favicon.gif" type="image/gif" />
+    <LINK rel="alternate" TYPE="application/rss+xml" TITLE="RSS" HREF="{{ RootPath }}/acct/rss.php"/>
+    <style type="text/css" media="all">
+@import "{{ RootPath }}/style.css";
+{% if StyleSheet %}
+@import "{{ StyleSheet }}";
+{% endif %}
+</style>
+
+    <script type="text/javascript" src="{{ RootPath }}/base.js"></script>
+
+    <script type="text/javascript">
+    if(getCookie('mc'))
+      document.write("<style type='text/css'> #loggedon, #visi { display: block; }   #invisi { display: none; }</style>");
+      else document.write("<style type='text/css'> #invisi { display: block; }</style>");
+    </script>
+
+    {% block head %}{% endblock %}
+</head>
+<body id='{{ bodyid }}' {% block body %}onload='www_init()'{% endblock %}>
+   
+    <div id='wrapper'>
+        <div id='header'>
+            <a href='/'>
+                <img alt='{{ Alt }}' id='logo' src="{{ Logo }}" />
+            </a>
+            <div id='info'>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td >
+                                {{ Alt }} <a class='tiny' href="http://www.ehgt.com/">info></a>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td>
+               <div id="navcontainer">
+                    
+                </div>               
+               </td></tr>
+                    </tbody>
+                </table>
+            </div>
+              <div id='visi'>
+                <a href='{{ RootPath }}/acct/home.php'>
+                    <img alt='' id='stamp' src='{{ Site }}{{ RootPath }}/acct/stamp.php' width='260' height='60' /></a>            
+          </div>
+                 <div id='invisi' align="right">
+                <a href='http://ehealthglobaltech.com/eHealthConnect.html'>
+                    <img alt='/images/ehealth.color.gif' id='stamp' src='/images/ehealth.color.gif'  /></a>
+          </div>
+            </div>
+        <br />
+        <div id='main'>
+                   {% block main %} {% endblock main %}
+        </div>
+        <div id='footer'>
+            {% block footer %} {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

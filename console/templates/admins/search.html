@@ -1,0 +1,82 @@
+{% extends "form.html" %}
+
+{% block title %}Administrator Search{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Administrators</a> &gt;
+Search
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Username</th> 
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan='3' style='text-align: left'>
+{% if has_previous %}
+<a href='list?page=1'>&laquo; first</a>
+<a href='list?page={{ previous }}'>&lt; prev</a>
+{% endif %}
+      </td>
+      <td style='text-align: right'>
+{% if has_next %}
+<a href='list?page={{ next }}'>next &gt;</a>
+<a href='list?page={{ pages }}'>last &raquo;</a>
+{% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td colspan='3'>
+        <a href='create'>
+	  <img src='{{ media }}img/CreateAdmin.png' width='20' height='20'
+	       alt='Create Administrator' />
+	  create administrator
+	</a>
+      </td>
+
+      <td style='text-align: right'>
+Page {{ page }} of {{ pages }}.
+      </td>
+    </tr>
+  </tfoot>
+
+  <tbody>
+{% for entry in object_list %}
+    <tr class='{% cycle a,b %}'>
+      <td>
+        <a href='edit?id={{ entry.id }}'>
+	  <img src='{{ media }}img/icon_changelink.gif' width='10' height='10' 
+	       alt='Edit Administrator' />
+	</a>
+	{% ifnotequal hits 1 %}
+        <a href='disable?admin={{ entry.username }}'>
+	  <img src='{{ media }}img/icon_deletelink.gif' width='10' height='10'
+	       alt='Disable Administrator' />
+	</a>
+	{% endifnotequal %}
+      </td>
+      <td>{{ entry.username }}</td>
+      <td>{{ entry.first_name }} {{ entry.last_name }}</td>
+      <td>{{ entry.email }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+<form action='search' method='get'>
+  <label>Search again:
+    <input type='text' name='q' value='{{ q }}' /></label>
+  <input type='image' src='{{ media }}img/icon_searchbox.png'
+         name='search' width='18' height='16' alt='Search Administrators' />
+</form>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "form.html" %}
+
+{% block title %}S3 Buckets{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Backups</a> &gt;
+S3 Buckets
+{% endblock %}
+
+{% block content %}
+
+<div class='breadcrumbs'>
+  <a href='keys'>1) S3 Keys</a> &gt;
+  <b>2) S3 Buckets</b> &gt;
+  3) Encryption &gt;
+  4) Publish
+</div>
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<img src='{{ media }}img/Circle_2.png' width='20' height='20'
+     alt='2' />
+<p>
+You may backup to any of your existing S3 Buckets.
+You may need to create a new bucket.
+</p>
+<p>
+You may also use an S3 Bucket created by another S3 user,
+as long as you have write access to the bucket.
+</p>
+
+<form method='post' action='buckets'>
+  <table>
+    <tbody>
+      <tr>
+        <th>S3 Account:</th>
+	<td>{{ owner.DisplayName }}</td>
+      </tr>
+      <tr>
+        <th>S3 Account ID:</th>
+	<td>{{ owner.ID }}</td>
+      </tr>
+      <tr>
+        <th>S3 Buckets:</th>
+	<td>
+{% for b in buckets %}
+  <a href='buckets?bucket={{ b.Name }}'>{{ b.Name }}</a><br />
+{% endfor %}
+
+<a href='createbucket'>
+  <img src='{{ media }}img/icon_addlink.gif' width='10' height='10'
+       alt='Create Bucket' /> create bucket</a>
+        </td>
+      </tr>
+{{ form }}
+    </tbody>
+  </table>
+
+  <table id='submit-row'>
+    <tr>
+      <td></td>
+      <td rowspan='2' style='vertical-align:bottom'>
+        <input tabindex='2' type='submit' class='default' name='next' value='Next &gt;&gt;' />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input tabindex='1' type='submit' name='prev' value='&lt;&lt; Prev' />
+      </td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

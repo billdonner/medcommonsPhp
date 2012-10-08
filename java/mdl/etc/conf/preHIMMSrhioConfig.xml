@@ -1,0 +1,694 @@
+<ohf:rhioConfigurations xmlns:ohf="http://model.conf.bridge.ohf.eclipse.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/rhio.xsd http://localhost/rhio.xsd">
+
+    <!--==================================================================-->
+    <!--======================== RHIO CONFIGS ============================-->
+    <!--==================================================================-->
+
+    <!-- *****************************  IBM RHIO ************************ -->
+    <rhio>
+        <name>ibmod235-all</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>ibmod235</registryId>
+            <repositoryId>ibmod235</repositoryId>
+            <pixId>ibmod235</pixId>
+            <auditId>ibmod235</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>lswin10-xds, ibmod235-pix</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>lswin10</registryId>
+            <repositoryId>lswin10</repositoryId>
+            <pixId>ibmod235</pixId>
+            <auditId>lswin10</auditId>
+        </config>
+    </rhio>
+
+    <!-- *****************************  NIST RHIO *********************** -->
+    <rhio>
+        <name>NIST</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+        </config>
+    </rhio>
+
+    <!-- *****************************  PP MESA *********************** -->
+
+    <rhio>
+        <name>PP MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>PP MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</pixId>
+            <auditId>pp-mesapc</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>PP MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>PP MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</pixId>
+            <auditId>pp-mesapc</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>PP MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>PP MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</pixId>
+            <auditId>pp-mesapc</auditId>
+        </config>
+    </rhio>
+
+    <!-- *****************************  CapMed MESA ******************* -->
+
+    <rhio>
+        <name>CapMed MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>CapMed MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</pixId>
+            <auditId>capmed-mesapc</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>CapMed MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>CapMed MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</pixId>
+            <auditId>capmed-mesapc</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>CapMed MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>CapMed MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</pixId>
+            <auditId>capmed-mesapc</auditId>
+        </config>
+    </rhio>
+
+    <!-- *****************************  Possibility Forge MESA ******************* -->
+
+    <rhio>
+        <name>PF MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>PF MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</pixId>
+            <auditId>PF-mesapc</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>PF MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>PF MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</pixId>
+            <auditId>PF-mesapc</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>PF MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>PF MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</pixId>
+            <auditId>PF-mesapc</auditId>
+        </config>
+    </rhio>
+
+    <!-- *****************************  MedCommons MESA ******************* -->
+
+    <rhio>
+        <name>MC MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>MC MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</pixId>
+            <auditId>MC-mesapc</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>MC MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>MC MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</pixId>
+            <auditId>MC-mesapc</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>MC MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>MC MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</pixId>
+            <auditId>MC-mesapc</auditId>
+        </config>
+    </rhio>
+
+    <!-- *****************************  BELL MESA ******************* -->
+
+    <rhio>
+        <name>BELL MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>BELL MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</pixId>
+            <auditId>BELL-mesapc</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>BELL MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>BELL MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</pixId>
+            <auditId>BELL-mesapc</auditId>
+        </config>
+    </rhio>
+    <rhio>
+        <name>BELL MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</name>
+        <publicHealthcareAffinityDomain>false</publicHealthcareAffinityDomain>
+        <config>
+            <registryId>nist</registryId>
+            <repositoryId>nist</repositoryId>
+            <pixId>BELL MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</pixId>
+            <auditId>BELL-mesapc</auditId>
+        </config>
+    </rhio>
+
+    <!--==================================================================-->
+    <!--======================== REGISTRY CONFIGS ========================-->
+    <!--==================================================================-->
+
+    <registry>
+        <id>nist</id>
+        <noneStoredQueriesUrl>
+            <unsecured>http://hcxw2k1.nist.gov:8080/xdsServices2/registry/soap/portals/yr3a/query</unsecured>
+            <!-- secured>https://hcxw2k1.nist.gov:8443/xdsServices2/registry/soap/portals/yr3a/query</secured -->
+        </noneStoredQueriesUrl>
+        <storedQueriesUrl>
+            <unsecured>http://hcxw2k1.nist.gov:8080/xdsServices2/registry/soap/portals/yr3a/storedquery</unsecured>
+            <!-- secured>https://hcxw2k1.nist.gov:8443/xdsServices2/registry/soap/portals/yr3a/storedquery</secured -->
+        </storedQueriesUrl>
+    </registry>
+
+    <registry>
+        <id>lswin10</id>
+        <storedQueriesUrl>
+            <unsecured>http://lswin10.dfw.ibm.com:9080/XDSRegistryWS/services/XDSRegistry</unsecured>
+            <!--<unsecured>http://localhost:9999/XDSRegistryWS/services/XDSRegistry</unsecured>-->
+            <secured>http://lswin10.dfw.ibm.com:9044/XDSRegistryWS/services/XDSRegistry</secured>
+        </storedQueriesUrl>
+        <mllp>
+            <unsecured>mllp://lswin10.dfw.ibm.com:3777</unsecured>
+            <secured>mllps://lswin10.dfw.ibm.com:3778</secured>
+        </mllp>
+    </registry>
+
+    <registry>
+        <id>ibmod235</id>
+        <noneStoredQueriesUrl>
+            <unsecured>http://ibmod235.dal-ebis.ihost.com:9080/ihii/registry/soap</unsecured>
+            <secured>http://ibmod235.dal-ebis.ihost.com:9080/ihii/registry/soap</secured>
+        </noneStoredQueriesUrl>
+        <mllp>
+            <unsecured>mllp://ibmod235.dal-ebis.ihost.com:2100</unsecured>
+        </mllp>
+    </registry>
+
+    <!--==================================================================-->
+    <!--======================== REPOSITORY CONFIGS ======================-->
+    <!--==================================================================-->
+
+    <repository>
+        <id>nist</id>
+        <url>
+            <unsecured>http://hcxw2k1.nist.gov:8080/xdsServices2/registry/soap/portals/yr3a/repository</unsecured>
+            <!-- secured>https://hcxw2k1.nist.gov:8443/xdsServices2/registry/soap/portals/yr3a/repository</secured -->
+        </url>
+    </repository>
+
+    <repository>
+        <id>lswin10</id>
+        <url>
+            <unsecured>http://lswin10.dfw.ibm.com:9080/IHIIRepository/SubmissionSetReceiver</unsecured>
+            <secured>https://lswin10.dfw.ibm.com:9044/IHIIRepository/SubmissionSetReceiver</secured>
+        </url>
+    </repository>
+
+    <repository>
+        <id>ibmod235</id>
+        <url>
+            <unsecured>http://ibmod235.dal-ebis.ihost.com:9080/IHIIRepository/SubmissionSetReceiver</unsecured>
+            <secured>https://ibmod235.dal-ebis.ihost.com:9044/IHIIRepository/SubmissionSetReceiver</secured>
+        </url>
+    </repository>
+
+    <!--==================================================================-->
+    <!--======================== PIX CONFIGS =============================-->
+    <!--==================================================================-->
+
+    <pix>
+        <id>ibmod235</id>
+        <mllp>
+            <unsecured>mllp://ibmod235.dal-ebis.ihost.com:3600</unsecured>
+         
+        </mllp>
+        <pixServerPropertiesId>IBM PAT_IDENTITY_X_REF_MGR_IBM1</pixServerPropertiesId>
+        <pixSourcePropertiesId>OTHER_KIOSK</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>OHFConsumer1</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>OTHER_KIOSK</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId>OHFConsumer1</pdqConsumerPropertiesId>
+    </pix>
+
+    <!--==================================================================-->
+
+    <pix>
+        <id>PP MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://63.113.199.225:3600</unsecured>
+        </mllp>
+        <!--1-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>PP MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://63.113.199.225:3700</unsecured>
+        </mllp>
+        <!--2-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>PP MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://63.113.199.225:3600</unsecured>
+        </mllp>
+        <!--3-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_OP</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA MESA_ADT XYZ_ADMITTING</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <!--==================================================================-->
+
+    <pix>
+        <id>CapMed MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://66.208.187.184:3600</unsecured>
+        </mllp>
+        <!--1-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>CapMed MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://66.208.187.184:3700</unsecured>
+        </mllp>
+        <!--2-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>CapMed MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://66.208.187.184:3600</unsecured>
+        </mllp>
+        <!--3-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_OP</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA MESA_ADT XYZ_ADMITTING</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultClientPropertiesId>MESA MESA_ADT XYZ_ADMITTING</defaultClientPropertiesId>
+    </pix>
+
+    <!--==================================================================-->
+
+    <pix>
+        <id>PF MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://209.33.206.86:3600</unsecured>
+        </mllp>
+        <!--1-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>PF MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://209.33.206.86:3700</unsecured>
+        </mllp>
+        <!--2-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>PF MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://209.33.206.86:3600</unsecured>
+        </mllp>
+        <!--3-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_OP</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA MESA_ADT XYZ_ADMITTING</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultClientPropertiesId>MESA MESA_ADT XYZ_ADMITTING</defaultClientPropertiesId>
+    </pix>
+
+    <!--==================================================================-->
+
+    <pix>
+        <id>IBM MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://mesapc.rchland.ibm.com:3600</unsecured>
+        </mllp>
+        <!--1-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>IBM MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://mesapc.rchland.ibm.com:3700</unsecured>
+        </mllp>
+        <!--2-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>IBM MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://mesapc.rchland.ibm.com:3600</unsecured>
+        </mllp>
+        <!--3-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_OP</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA MESA_ADT XYZ_ADMITTING</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultClientPropertiesId>MESA MESA_ADT XYZ_ADMITTING</defaultClientPropertiesId>
+    </pix>
+
+    <!--=========================================== MC ============================================-->
+
+    <pix>
+        <id>MC MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://mesozoic.homeip.net:3600</unsecured>
+        </mllp>
+        <!--1-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>MC MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://mesozoic.homeip.net:3700</unsecured>
+        </mllp>
+        <!--2-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>MC MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://mesozoic.homeip.net:3600</unsecured>
+        </mllp>
+        <!--3-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_OP</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA MESA_ADT XYZ_ADMITTING</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultClientPropertiesId>MESA MESA_ADT XYZ_ADMITTING</defaultClientPropertiesId>
+    </pix>
+
+    <!--=========================================== BELL ============================================-->
+    <pix>
+        <id>BELL MESA consumer port 3600 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://mesa.pbj.ca:3600</unsecured>
+        </mllp>
+        <!--1-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>BELL MESA consumer port 3700 receiving app MESA_XREF and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://mesa.pbj.ca:3700</unsecured>
+        </mllp>
+        <!--2-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pdqConsumerPropertiesId>
+        <defaultMessageQueryNameId>IHEDEMO</defaultMessageQueryNameId>
+    </pix>
+
+    <pix>
+        <id>BELL MESA Source port 3600 receiving application MESA_OP and facility XYZ_HOSPITAL</id>
+        <mllp>
+            <unsecured>mllp://mesa.pbj.ca:3600</unsecured>
+        </mllp>
+        <!--3-->
+        <pixServerPropertiesId>MESA XYZ_HOSPITAL MESA_OP</pixServerPropertiesId>
+        <pixSourcePropertiesId>MESA MESA_ADT XYZ_ADMITTING</pixSourcePropertiesId>
+        <pixConsumerPropertiesId>MESA MESA_ADT DOMAIN1_ADMITTING</pixConsumerPropertiesId>
+        <pdqServerPropertiesId>MESA XYZ_HOSPITAL MESA_XREF</pdqServerPropertiesId>
+        <pdqConsumerPropertiesId></pdqConsumerPropertiesId>
+        <defaultClientPropertiesId>MESA MESA_ADT XYZ_ADMITTING</defaultClientPropertiesId>
+    </pix>
+
+    <!--==================================================================-->
+    <!--======================== PIX MESSAGE QUERY =======================-->
+    <!--==================================================================-->
+
+    <messageQueryName>
+        <id>IHEDEMO</id>
+        <qpd11Identifier>QRY_PDQ_1001</qpd11Identifier>
+        <qpd12Text>Query By Name</qpd12Text>
+        <qpd13NameOfCodingSystem>IHEDEMO</qpd13NameOfCodingSystem>
+    </messageQueryName>
+
+    <!--==================================================================-->
+    <!--======================== PIX PROPERTIES ==========================-->
+    <!--==================================================================-->
+
+    <pixProperties>
+        <id>MESA XYZ_HOSPITAL MESA_XREF</id>
+        <facility>XYZ_HOSPITAL</facility>
+        <application>MESA_XREF</application>
+        <assigningAuthorityNamespaceId>HIMSS2005</assigningAuthorityNamespaceId>
+        <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+        <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+    </pixProperties>
+
+    <pixProperties>
+        <id>MESA XYZ_HOSPITAL MESA_OP</id>
+        <facility>XYZ_HOSPITAL</facility>
+        <application>MESA_OP</application>
+        <assigningAuthorityNamespaceId>HIMSS2005</assigningAuthorityNamespaceId>
+        <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+        <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+    </pixProperties>
+
+    <pixProperties>
+        <id>MESA MESA_ADT DOMAIN1_ADMITTING</id>
+        <application>MESA_ADT</application>
+        <facility>DOMAIN1_ADMITTING</facility>
+        <assigningAuthorityNamespaceId>OHF1</assigningAuthorityNamespaceId>
+        <assigningAuthorityNamespaceId>HIMSS2005</assigningAuthorityNamespaceId>
+        <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+        <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+    </pixProperties>
+
+    <pixProperties>
+        <id>MESA MESA_ADT XYZ_ADMITTING</id>
+        <application>MESA_ADT</application>
+        <facility>XYZ_ADMITTING</facility>
+        <assigningAuthorityNamespaceId>OHF1</assigningAuthorityNamespaceId>
+        <assigningAuthorityNamespaceId>HIMSS2005</assigningAuthorityNamespaceId>
+        <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+        <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+    </pixProperties>
+
+
+    <pixProperties>
+        <id>IBM PAT_IDENTITY_X_REF_MGR_IBM1</id>
+        <facility>IBM</facility>
+        <application>PAT_IDENTITY_X_REF_MGR_IBM1</application>
+        <assigningAuthorityNamespaceId>HIMSS2005</assigningAuthorityNamespaceId>
+        <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+        <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+    </pixProperties>
+
+    <pixProperties>
+        <id>OTHER_KIOSK</id>
+        <application>OTHER_KIOSK</application>
+        <facility>HIMSSSANDIEGO</facility>
+        <assigningAuthorityNamespaceId>HIMSS2005</assigningAuthorityNamespaceId>
+        <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+        <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+    </pixProperties>
+
+    <pixProperties>
+        <id>OHFConsumer1</id>
+        <application>OHFConsumer1</application>
+        <facility>OHFFacility1</facility>
+        <assigningAuthorityNamespaceId>HIMSS2005</assigningAuthorityNamespaceId>
+        <assigningAuthorityUniversalId>1.3.6.1.4.1.21367.2005.1.1</assigningAuthorityUniversalId>
+        <assigningAuthorityUniversalIdType>ISO</assigningAuthorityUniversalIdType>
+    </pixProperties>
+
+
+    <!--==================================================================-->
+    <!--======================== AUDIT PROPERTIES ========================-->
+    <!--==================================================================-->
+
+    <audit>
+        <id>ibmod235</id>
+        <url>
+            <unsecured>udp://ibmod235.dal-ebis.ihost.com:514</unsecured>
+        </url>
+    </audit>
+
+    <audit>
+        <id>lswin10</id>
+        <url>
+            <unsecured>udp://lswin10.dfw.ibm.com:515</unsecured>
+        </url>
+    </audit>
+
+    <audit>
+        <id>pp-mesapc</id>
+        <url>
+            <unsecured>udp://63.113.199.225:4000</unsecured>
+        </url>
+    </audit>
+
+    <audit>
+        <id>capmed-mesapc</id>
+        <url>
+            <unsecured>udp://66.208.187.184:4000</unsecured>
+        </url>
+    </audit>
+
+    <audit>
+        <id>PF-mesapc</id>
+        <url>
+            <unsecured>udp://209.33.206.86:4000</unsecured>
+        </url>
+    </audit>
+
+    <audit>
+        <id>MC-mesapc</id>
+        <url>
+            <unsecured>udp://mesozoic.homeip.net:4000</unsecured>
+        </url>
+    </audit>
+
+    <audit>
+        <id>BELL-mesapc</id>
+        <url>
+            <unsecured>udp://mesa.pbj.ca:4000</unsecured>
+        </url>
+    </audit>
+
+
+    <audit>
+        <id>ibm-mesapc</id>
+        <url>
+            <unsecured>udp://mesapc.rchland.ibm.com:4000</unsecured>
+        </url>
+    </audit>
+</ohf:rhioConfigurations>

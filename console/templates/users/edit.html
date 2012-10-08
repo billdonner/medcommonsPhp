@@ -1,0 +1,51 @@
+{% extends "form.html" %}
+
+{% block title %}Edit Account{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Accounts</a> &gt;
+Edit {{ mcuser.pretty_mcid }} {{ mcuser.first_name }} {{ mcuser.last_name }}
+{% endblock %}
+
+{% block sidebar %}
+<ul class='object-tools'>
+{% include "users/tools.inc" %}
+  <li><a href='user?mcid={{ mcuser.mcid }}'>View Account</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<form method='post'
+      action='edit'>
+
+  <table>
+    <tbody>
+      <tr>
+        <th><label for='id_mcid'>MCID:</label></th>
+	<td><input type='text' readonly='readonly' name='mcid' id='id_mcid'
+	           value='{{ mcuser.pretty_mcid }}' /></td>
+      </tr>
+{{ form }}
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit' value='Save' class='default' />
+
+    <input type='submit'
+	   name='create'
+	   value='Save and create another' />
+
+    <input type='submit'
+	   name='edit'
+	   value='Save and continue editing' />
+  </div>
+</form>
+
+{% endblock %}

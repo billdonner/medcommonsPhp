@@ -1,0 +1,940 @@
+-- phpMyAdmin SQL Dump
+-- version 2.8.2.4
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Aug 31, 2006 at 10:08 AM
+-- Server version: 3.23.58
+-- PHP Version: 5.1.4
+-- 
+-- Database: `mcextio`
+-- 
+CREATE DATABASE `mcextio`;
+USE mcextio;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `ccstatus`
+-- 
+
+DROP TABLE IF EXISTS `ccstatus`;
+CREATE TABLE IF NOT EXISTS `ccstatus` (
+  `time` timestamp(14) NOT NULL,
+  `authcode` varchar(255) NOT NULL default '',
+  `avsdata` varchar(255) NOT NULL default '',
+  `hostcode` varchar(255) NOT NULL default '',
+  `pnref` varchar(255) NOT NULL default '',
+  `respmsg` varchar(255) NOT NULL default '',
+  `csmatch` varchar(255) NOT NULL default '',
+  `custid` varchar(255) NOT NULL default '',
+  `amount` varchar(255) NOT NULL default '',
+  `user1` varchar(255) NOT NULL default '',
+  `user2` varchar(255) NOT NULL default '',
+  `user3` varchar(255) NOT NULL default '',
+  `user4` varchar(255) NOT NULL default '',
+  `user5` varchar(255) NOT NULL default '',
+  `user6` varchar(255) NOT NULL default '',
+  `user7` varchar(255) NOT NULL default '',
+  `user8` varchar(255) NOT NULL default '',
+  `user9` varchar(255) NOT NULL default '',
+  `type` varchar(255) NOT NULL default ''
+) TYPE=MyISAM COMMENT='gets silent posts back from ecomm proider';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `clicktracks`
+-- 
+
+DROP TABLE IF EXISTS `clicktracks`;
+CREATE TABLE IF NOT EXISTS `clicktracks` (
+  `requestuid` varchar(255) NOT NULL default '',
+  `time` timestamp(14) NOT NULL,
+  `id` int(11) NOT NULL auto_increment,
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM COMMENT='click table' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `cxpproblems`
+-- 
+
+DROP TABLE IF EXISTS `cxpproblems`;
+CREATE TABLE IF NOT EXISTS `cxpproblems` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `timestamp` timestamp(14) NOT NULL,
+  `sender` varchar(255) NOT NULL default '',
+  `version` varchar(255) NOT NULL default '',
+  `problemdata` blob NOT NULL,
+  `trackingnumber` varchar(255) NOT NULL default '',
+  `pin` varchar(255) NOT NULL default '',
+  `description` varchar(255) NOT NULL default '',
+  `useragent` varchar(255) NOT NULL default '',
+  `email` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM COMMENT='holds problem reports' AUTO_INCREMENT=10 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `downloaders`
+-- 
+
+DROP TABLE IF EXISTS `downloaders`;
+CREATE TABLE IF NOT EXISTS `downloaders` (
+  `email` varchar(255) NOT NULL default '',
+  `time` timestamp(14) NOT NULL,
+  `id` int(11) NOT NULL auto_increment,
+  `remoteaddr` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM COMMENT='user details of downloaders of cxp' AUTO_INCREMENT=122 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `emailstatus`
+-- 
+
+DROP TABLE IF EXISTS `emailstatus`;
+CREATE TABLE IF NOT EXISTS `emailstatus` (
+  `status` varchar(255) NOT NULL default '',
+  `time` timestamp(14) NOT NULL,
+  `requesturi` varchar(255) NOT NULL default '',
+  `sendermcid` varchar(255) NOT NULL default '',
+  `rcvremail` varchar(255) NOT NULL default '',
+  `template` varchar(255) NOT NULL default '',
+  `arga` varchar(255) NOT NULL default '',
+  `argb` varchar(255) NOT NULL default '',
+  `argc` varchar(255) NOT NULL default '',
+  `argd` varchar(255) NOT NULL default '',
+  `arge` varchar(255) NOT NULL default '',
+  `argf` varchar(255) NOT NULL default '',
+  `argg` varchar(255) NOT NULL default '',
+  `message` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`arga`)
+) TYPE=MyISAM COMMENT='tracks email progress';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `faxstatus`
+-- 
+
+DROP TABLE IF EXISTS `faxstatus`;
+CREATE TABLE IF NOT EXISTS `faxstatus` (
+  `xmtTime` timestamp(14) NOT NULL,
+  `xmtService` varchar(255) NOT NULL default '',
+  `xmtTransmissionID` varchar(255) NOT NULL default '',
+  `xmtDOCID` varchar(255) NOT NULL default '',
+  `xmtStatusCode` varchar(255) NOT NULL default '',
+  `xmtStatusDescription` varchar(255) NOT NULL default '',
+  `xmtErrorLevel` varchar(255) NOT NULL default '',
+  `xmtErrorMessage` varchar(255) NOT NULL default '',
+  `faxnum` varchar(255) NOT NULL default '',
+  `filespec` varchar(255) NOT NULL default '',
+  `filetype` varchar(255) NOT NULL default '',
+  `dispCompletionDate` varchar(255) NOT NULL default '',
+  `dispFaxStatus` varchar(255) NOT NULL default '',
+  `dispRecipientCSID` varchar(255) NOT NULL default '',
+  `dispDuration` varchar(255) NOT NULL default '',
+  `dispPagesSent` varchar(255) NOT NULL default '',
+  `dispNumberOfRetries` varchar(255) NOT NULL default ''
+) TYPE=MyISAM COMMENT='holds responses from fax service';
+-- 
+-- Database: `mcidentity`
+-- 
+CREATE DATABASE `mcidentity`;
+USE mcidentity;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `account_log`
+-- 
+
+DROP TABLE IF EXISTS `account_log`;
+CREATE TABLE IF NOT EXISTS `account_log` (
+  `datetime` timestamp(14) NOT NULL,
+  `mcid` decimal(16,0) NOT NULL default '0',
+  `username` varchar(64) default NULL,
+  `provider_id` int(11) default NULL,
+  `operation` varchar(16) default NULL
+) TYPE=MyISAM;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `account_notifications`
+-- 
+
+DROP TABLE IF EXISTS `account_notifications`;
+CREATE TABLE IF NOT EXISTS `account_notifications` (
+  `id` int(12) unsigned NOT NULL auto_increment,
+  `mcid` decimal(16,0) default NULL,
+  `recipient` varchar(60) default NULL,
+  `status` varchar(30) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `acct_notifications_key` (`recipient`)
+) TYPE=MyISAM AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `addresses`
+-- 
+
+DROP TABLE IF EXISTS `addresses`;
+CREATE TABLE IF NOT EXISTS `addresses` (
+  `mcid` decimal(16,0) NOT NULL default '0',
+  `comment` varchar(255) NOT NULL default '',
+  `address1` varchar(255) NOT NULL default '',
+  `address2` varchar(255) default NULL,
+  `city` varchar(64) NOT NULL default '',
+  `state` varchar(8) NOT NULL default '',
+  `postcode` varchar(16) NOT NULL default '',
+  `country` char(2) NOT NULL default 'US',
+  `telephone` varchar(32) default NULL,
+  `DOB` varchar(32) NOT NULL default '',
+  `Age` tinyint(4) NOT NULL default '0',
+  `Sex` varchar(32) NOT NULL default '',
+  PRIMARY KEY  (`mcid`,`comment`)
+) TYPE=MyISAM;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `affiliates`
+-- 
+
+DROP TABLE IF EXISTS `affiliates`;
+CREATE TABLE IF NOT EXISTS `affiliates` (
+  `affiliatelogo` varchar(255) NOT NULL default '',
+  `affiliateid` int(11) NOT NULL default '0',
+  `affiliatename` varchar(255) NOT NULL default ''
+) TYPE=MyISAM COMMENT='one entry for each affiliate and logo';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `appeventlog`
+-- 
+
+DROP TABLE IF EXISTS `appeventlog`;
+CREATE TABLE IF NOT EXISTS `appeventlog` (
+  `accid` varchar(16) NOT NULL default '',
+  `appserviceid` varchar(32) NOT NULL default '',
+  `eventname` varchar(255) NOT NULL default '',
+  `param1` varchar(255) NOT NULL default '',
+  `time` int(11) NOT NULL default '0',
+  `chargeclass` varchar(255) NOT NULL default ''
+) TYPE=MyISAM COMMENT='log of billable events';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `appservicechargeclasses`
+-- 
+
+DROP TABLE IF EXISTS `appservicechargeclasses`;
+CREATE TABLE IF NOT EXISTS `appservicechargeclasses` (
+  `appserviceid` varchar(32) NOT NULL default '',
+  `chargeclass` varchar(255) NOT NULL default '',
+  `permonth` int(11) NOT NULL default '0',
+  `perclick` int(11) NOT NULL default '0',
+  `perxmtgb` int(11) NOT NULL default '0',
+  `perrcvgb` int(11) NOT NULL default '0',
+  `setup` int(11) NOT NULL default '0',
+  `perstoredgb` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`appserviceid`,`chargeclass`)
+) TYPE=MyISAM COMMENT='pricing for this service';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `appservicecontracts`
+-- 
+
+DROP TABLE IF EXISTS `appservicecontracts`;
+CREATE TABLE IF NOT EXISTS `appservicecontracts` (
+  `accid` varchar(16) NOT NULL default '',
+  `appserviceid` varchar(32) NOT NULL default '',
+  `time` time default NULL,
+  PRIMARY KEY  (`accid`,`appserviceid`)
+) TYPE=MyISAM;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `appservicedependencies`
+-- 
+
+DROP TABLE IF EXISTS `appservicedependencies`;
+CREATE TABLE IF NOT EXISTS `appservicedependencies` (
+  `appserviceid` varchar(32) NOT NULL default '',
+  `dependson` varchar(32) NOT NULL default '',
+  PRIMARY KEY  (`appserviceid`,`dependson`)
+) TYPE=MyISAM COMMENT='details appservice loading/unloading dependencies';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `appservices`
+-- 
+
+DROP TABLE IF EXISTS `appservices`;
+CREATE TABLE IF NOT EXISTS `appservices` (
+  `name` varchar(255) NOT NULL default '',
+  `serviceurl` varchar(255) NOT NULL default '',
+  `publisher` varchar(255) NOT NULL default '',
+  `description` varchar(255) NOT NULL default '',
+  `appserviceid` varchar(32) NOT NULL default '',
+  `createurl` varchar(255) NOT NULL default '',
+  `removeurl` varchar(255) NOT NULL default '',
+  `viewurl` varchar(255) NOT NULL default '',
+  `builtin` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`appserviceid`)
+) TYPE=MyISAM COMMENT='3rd party apps and services ';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `ccdata`
+-- 
+
+DROP TABLE IF EXISTS `ccdata`;
+CREATE TABLE IF NOT EXISTS `ccdata` (
+  `accid` varchar(16) NOT NULL default '',
+  `nikname` varchar(16) NOT NULL default '',
+  `name` varchar(255) NOT NULL default '',
+  `addr` varchar(255) NOT NULL default '',
+  `city` varchar(255) NOT NULL default '',
+  `state` varchar(255) NOT NULL default '',
+  `zip` varchar(16) NOT NULL default '',
+  `cardnum` varchar(16) NOT NULL default '',
+  `expdate` varchar(16) NOT NULL default ''
+) TYPE=MyISAM COMMENT='stores all cc details for all users ';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `ccrlog`
+-- 
+
+DROP TABLE IF EXISTS `ccrlog`;
+CREATE TABLE IF NOT EXISTS `ccrlog` (
+  `id` int(11) NOT NULL auto_increment,
+  `accid` decimal(16,0) NOT NULL default '0',
+  `idp` varchar(255) NOT NULL default '',
+  `guid` varchar(64) NOT NULL default '0',
+  `doctype` varchar(16) NOT NULL default 'CCR',
+  `tracking` varchar(12) NOT NULL default '',
+  `status` varchar(12) NOT NULL default '',
+  `date` timestamp(14) NOT NULL,
+  `src` varchar(255) NOT NULL default '',
+  `dest` varchar(255) NOT NULL default '',
+  `subject` varchar(255) NOT NULL default '',
+  `einfo` text,
+  `merge_status` varchar(32) NOT NULL default '',
+  PRIMARY KEY  (`id`),
+  KEY `accid` (`accid`)
+) TYPE=MyISAM COMMENT='every touch of a document' AUTO_INCREMENT=201648 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `cover`
+-- 
+
+DROP TABLE IF EXISTS `cover`;
+CREATE TABLE IF NOT EXISTS `cover` (
+  `cover_id` int(10) unsigned NOT NULL auto_increment,
+  `cover_account_id` varchar(20) NOT NULL default '',
+  `cover_notification` varchar(120) default NULL,
+  `cover_encrypted_pin` varchar(64) default NULL,
+  `cover_provider_code` varchar(30) default NULL,
+  PRIMARY KEY  (`cover_id`)
+) TYPE=MyISAM AUTO_INCREMENT=32 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `document_type`
+-- 
+
+DROP TABLE IF EXISTS `document_type`;
+CREATE TABLE IF NOT EXISTS `document_type` (
+  `dt_id` int(10) unsigned NOT NULL auto_increment,
+  `dt_account_id` varchar(20) NOT NULL default '',
+  `dt_type` varchar(30) NOT NULL default '',
+  `dt_tracking_number` varchar(20) NOT NULL default '',
+  `dt_privacy_level` varchar(30) NOT NULL default '',
+  `dt_guid` varchar(40) default NULL,
+  `dt_create_date_time` timestamp(14) NOT NULL,
+  `dt_comment` varchar(255) default NULL,
+  PRIMARY KEY  (`dt_id`),
+  KEY `idx_dt_account_id` (`dt_account_id`),
+  KEY `idx_dt_tracking_number` (`dt_tracking_number`),
+  KEY `idx_dt_type` (`dt_type`)
+) TYPE=MyISAM AUTO_INCREMENT=21 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `external_users`
+-- 
+
+DROP TABLE IF EXISTS `external_users`;
+CREATE TABLE IF NOT EXISTS `external_users` (
+  `mcid` decimal(16,0) NOT NULL default '0',
+  `provider_id` int(11) NOT NULL default '0',
+  `username` varchar(64) NOT NULL default '',
+  PRIMARY KEY  (`provider_id`,`username`)
+) TYPE=MyISAM;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `groupadmins`
+-- 
+
+DROP TABLE IF EXISTS `groupadmins`;
+CREATE TABLE IF NOT EXISTS `groupadmins` (
+  `groupinstanceid` int(11) NOT NULL default '0',
+  `adminaccid` decimal(16,0) NOT NULL default '0',
+  `comment` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`groupinstanceid`,`adminaccid`),
+  KEY `memberaccid` (`adminaccid`)
+) TYPE=MyISAM COMMENT='every member of any group';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `groupccrevents`
+-- 
+
+DROP TABLE IF EXISTS `groupccrevents`;
+CREATE TABLE IF NOT EXISTS `groupccrevents` (
+  `groupinstanceid` int(11) NOT NULL default '0',
+  `PatientGivenName` varchar(64) NOT NULL default '',
+  `PatientFamilyName` varchar(64) NOT NULL default '',
+  `PatientIdentifier` varchar(64) NOT NULL default '',
+  `PatientIdentifierSource` varchar(64) NOT NULL default '',
+  `Guid` varchar(64) NOT NULL default '',
+  `Purpose` varchar(64) NOT NULL default '',
+  `SenderProviderId` varchar(64) NOT NULL default '',
+  `ReceiverProviderId` varchar(64) NOT NULL default '',
+  `DOB` varchar(64) NOT NULL default '',
+  `CXPServerURL` varchar(255) NOT NULL default '',
+  `CXPServerVendor` varchar(255) NOT NULL default '',
+  `ViewerURL` varchar(255) NOT NULL default '',
+  `Comment` varchar(255) NOT NULL default '',
+  `CreationDateTime` bigint(20) NOT NULL default '0',
+  `ConfirmationCode` varchar(64) NOT NULL default '',
+  `RegistrySecret` varchar(64) NOT NULL default '',
+  `PatientSex` varchar(64) default NULL,
+  `PatientAge` varchar(64) default NULL,
+  `Status` varchar(30) default NULL,
+  KEY `ccrevents_status_idx` (`Status`),
+  KEY `groupinstanceid` (`groupinstanceid`)
+) TYPE=MyISAM;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `groupinstances`
+-- 
+
+DROP TABLE IF EXISTS `groupinstances`;
+CREATE TABLE IF NOT EXISTS `groupinstances` (
+  `groupinstanceid` int(11) NOT NULL default '0',
+  `grouptypeid` int(11) NOT NULL default '0',
+  `name` varchar(255) NOT NULL default '',
+  `groupLogo` varchar(255) NOT NULL default '',
+  `adminUrl` varchar(255) NOT NULL default '',
+  `memberUrl` varchar(255) NOT NULL default '',
+  `parentid` int(11) NOT NULL default '0',
+  `accid` varchar(16) NOT NULL default '',
+  PRIMARY KEY  (`groupinstanceid`),
+  KEY `name` (`name`)
+) TYPE=MyISAM COMMENT='one row for each practice group or sig group...';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `groupmembers`
+-- 
+
+DROP TABLE IF EXISTS `groupmembers`;
+CREATE TABLE IF NOT EXISTS `groupmembers` (
+  `groupinstanceid` int(11) NOT NULL default '0',
+  `memberaccid` decimal(16,0) NOT NULL default '0',
+  `comment` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`groupinstanceid`,`memberaccid`),
+  KEY `adminaccid` (`memberaccid`)
+) TYPE=MyISAM COMMENT='every member of any group';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `groupproperties`
+-- 
+
+DROP TABLE IF EXISTS `groupproperties`;
+CREATE TABLE IF NOT EXISTS `groupproperties` (
+  `groupinstanceid` int(11) NOT NULL default '0',
+  `property` varchar(255) NOT NULL default '',
+  `value` varchar(255) NOT NULL default '',
+  `comment` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`groupinstanceid`,`property`)
+) TYPE=MyISAM COMMENT='properties for specific group types';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `grouptypes`
+-- 
+
+DROP TABLE IF EXISTS `grouptypes`;
+CREATE TABLE IF NOT EXISTS `grouptypes` (
+  `grouptypeid` int(11) NOT NULL default '0',
+  `name` varchar(32) NOT NULL default '',
+  `infoUrl` varchar(255) NOT NULL default '',
+  `rulesUrl` varchar(255) NOT NULL default '',
+  `supportPageUrl` varchar(255) NOT NULL default '',
+  `internalgroup` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`grouptypeid`),
+  KEY `name` (`name`)
+) TYPE=MyISAM COMMENT='one row for each type of MedCommons Group';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `identity_providers`
+-- 
+
+DROP TABLE IF EXISTS `identity_providers`;
+CREATE TABLE IF NOT EXISTS `identity_providers` (
+  `id` int(11) NOT NULL auto_increment,
+  `source_id` varchar(40) NOT NULL default '',
+  `name` varchar(80) NOT NULL default '',
+  `logo` varchar(64) default NULL,
+  `domain` varchar(64) default NULL,
+  `logouturl` varchar(128) default NULL,
+  `website` varchar(64) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `source_id` (`source_id`)
+) TYPE=MyISAM AUTO_INCREMENT=9 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `log`
+-- 
+
+DROP TABLE IF EXISTS `log`;
+CREATE TABLE IF NOT EXISTS `log` (
+  `content` varchar(255) NOT NULL default '',
+  `time` time NOT NULL default '00:00:00',
+  KEY `time` (`time`)
+) TYPE=MyISAM;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `personas`
+-- 
+
+DROP TABLE IF EXISTS `personas`;
+CREATE TABLE IF NOT EXISTS `personas` (
+  `accid` decimal(16,0) NOT NULL default '0',
+  `persona` varchar(32) NOT NULL default '',
+  `personanum` tinyint(4) NOT NULL default '0',
+  `personagif` varchar(255) NOT NULL default '',
+  `isactive` tinyint(4) NOT NULL default '0',
+  `phone` varchar(255) NOT NULL default '',
+  `exposephone` tinyint(4) NOT NULL default '0',
+  `inheritphone` tinyint(4) NOT NULL default '0',
+  `myid` varchar(255) NOT NULL default '',
+  `exposemyid` tinyint(4) NOT NULL default '0',
+  `inheritmyid` tinyint(4) NOT NULL default '0',
+  `email` varchar(255) NOT NULL default '',
+  `exposeemail` tinyint(4) NOT NULL default '0',
+  `inheritemail` tinyint(4) NOT NULL default '0',
+  `name` varchar(255) NOT NULL default '',
+  `exposename` tinyint(4) NOT NULL default '0',
+  `inheritname` tinyint(4) NOT NULL default '0',
+  `address` varchar(255) NOT NULL default '',
+  `exposeaddress` tinyint(4) NOT NULL default '0',
+  `inheritaddress` tinyint(4) NOT NULL default '0',
+  `dob` varchar(255) NOT NULL default '',
+  `exposedob` tinyint(4) NOT NULL default '0',
+  `inheritdob` tinyint(4) NOT NULL default '0',
+  `sex` varchar(255) NOT NULL default '',
+  `exposesex` tinyint(4) NOT NULL default '0',
+  `inheritsex` tinyint(4) NOT NULL default '0',
+  `ccrsectionconsents` varchar(255) NOT NULL default '',
+  `qualitativeandmultichoice` varchar(255) NOT NULL default '',
+  `distancecalcmin` varchar(255) NOT NULL default '',
+  `nooldccrs` tinyint(4) NOT NULL default '0',
+  `excluderefs` tinyint(4) NOT NULL default '0',
+  `requiresms` tinyint(4) NOT NULL default '0',
+  `promptmissing` tinyint(4) NOT NULL default '0',
+  `mergeccr` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`accid`,`persona`)
+) TYPE=MyISAM COMMENT='persona';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `practice`
+-- 
+
+DROP TABLE IF EXISTS `practice`;
+CREATE TABLE IF NOT EXISTS `practice` (
+  `practiceid` int(11) NOT NULL default '0',
+  `practicename` varchar(32) NOT NULL default '',
+  `providergroupid` int(11) NOT NULL default '0',
+  `patientgroupid` int(11) NOT NULL default '0',
+  `practiceRlsUrl` varchar(255) NOT NULL default '',
+  `practiceLogoUrl` varchar(255) NOT NULL default '',
+  `accid` decimal(16,0) NOT NULL default '0',
+  PRIMARY KEY  (`practiceid`)
+) TYPE=MyISAM COMMENT='Defines a Practice';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `rssheadlines`
+-- 
+
+DROP TABLE IF EXISTS `rssheadlines`;
+CREATE TABLE IF NOT EXISTS `rssheadlines` (
+  `id` int(11) NOT NULL auto_increment,
+  `sourceid` smallint(6) NOT NULL default '0',
+  `title` varchar(255) NOT NULL default '',
+  `link` varchar(255) NOT NULL default '',
+  `description` tinytext NOT NULL,
+  `pubDate` varchar(255) NOT NULL default '',
+  `time` time NOT NULL default '00:00:00',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM COMMENT='entires copied from rss feeds' AUTO_INCREMENT=5 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `rsssources`
+-- 
+
+DROP TABLE IF EXISTS `rsssources`;
+CREATE TABLE IF NOT EXISTS `rsssources` (
+  `id` smallint(6) NOT NULL auto_increment,
+  `title` varchar(255) NOT NULL default '',
+  `link` varchar(255) NOT NULL default '',
+  `copyright` varchar(255) NOT NULL default '',
+  `language` varchar(255) NOT NULL default '',
+  `description` varchar(255) NOT NULL default '',
+  `webMaster` varchar(255) NOT NULL default '',
+  `managingEditor` varchar(255) NOT NULL default '',
+  `rssversion` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM COMMENT='details on rss sources' AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `servers`
+-- 
+
+DROP TABLE IF EXISTS `servers`;
+CREATE TABLE IF NOT EXISTS `servers` (
+  `id` int(11) NOT NULL auto_increment,
+  `url` varchar(128) NOT NULL default '',
+  PRIMARY KEY  (`id`),
+  KEY `url` (`url`)
+) TYPE=MyISAM AUTO_INCREMENT=8 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `todir`
+-- 
+
+DROP TABLE IF EXISTS `todir`;
+CREATE TABLE IF NOT EXISTS `todir` (
+  `id` int(11) NOT NULL auto_increment,
+  `groupid` int(11) NOT NULL default '0',
+  `xid` varchar(255) NOT NULL default '',
+  `alias` varchar(255) NOT NULL default '',
+  `contactlist` varchar(255) NOT NULL default '',
+  `sharedgroup` tinyint(4) NOT NULL default '0',
+  `pinstate` tinyint(4) NOT NULL default '0',
+  `accid` varchar(16) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM COMMENT='holds mappings for to and replyto fields' AUTO_INCREMENT=61 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `users`
+-- 
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `mcid` decimal(16,0) NOT NULL default '0',
+  `email` varchar(64) NOT NULL default '',
+  `sha1` varchar(40) NOT NULL default '',
+  `server_id` mediumint(9) NOT NULL default '0',
+  `since` timestamp(14) NOT NULL,
+  `first_name` varchar(32) NOT NULL default '',
+  `middle_name` varchar(32) NOT NULL default '',
+  `last_name` varchar(32) NOT NULL default '',
+  `mobile` varchar(64) default NULL,
+  `smslogin` tinyint(4) default NULL,
+  `updatetime` int(11) NOT NULL default '0',
+  `ccrlogupdatetime` int(11) NOT NULL default '0',
+  `photoUrl` varchar(255) NOT NULL default '',
+  `chargeclass` varchar(255) NOT NULL default '',
+  `rolehack` varchar(255) NOT NULL default '',
+  `affiliationgroupid` int(11) NOT NULL default '0',
+  `startparams` varchar(255) NOT NULL default '',
+  `stylesheetUrl` varchar(255) NOT NULL default '',
+  `picslayout` varchar(255) NOT NULL default '',
+  `acctype` varchar(255) NOT NULL default '',
+  `persona` varchar(255) default NULL,
+  `validparams` varchar(255) default NULL,
+  PRIMARY KEY  (`mcid`),
+  UNIQUE KEY `email` (`email`)
+) TYPE=MyISAM;
+-- 
+-- Database: `mcpayments`
+-- 
+CREATE DATABASE `mcpayments`;
+USE mcpayments;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `ccdata`
+-- 
+
+DROP TABLE IF EXISTS `ccdata`;
+CREATE TABLE IF NOT EXISTS `ccdata` (
+  `accid` varchar(16) NOT NULL default '',
+  `nikname` varchar(16) NOT NULL default '',
+  `name` varchar(255) NOT NULL default '',
+  `addr` varchar(255) NOT NULL default '',
+  `city` varchar(255) NOT NULL default '',
+  `state` varchar(255) NOT NULL default '',
+  `zip` varchar(16) NOT NULL default '',
+  `cardnum` varchar(16) NOT NULL default '',
+  `expdate` varchar(16) NOT NULL default ''
+) TYPE=MyISAM COMMENT='stores all cc details for all users ';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `ccstatus`
+-- 
+
+DROP TABLE IF EXISTS `ccstatus`;
+CREATE TABLE IF NOT EXISTS `ccstatus` (
+  `time` timestamp(14) NOT NULL,
+  `authcode` varchar(255) NOT NULL default '',
+  `avsdata` varchar(255) NOT NULL default '',
+  `hostcode` varchar(255) NOT NULL default '',
+  `pnref` varchar(255) NOT NULL default '',
+  `respmsg` varchar(255) NOT NULL default '',
+  `csmatch` varchar(255) NOT NULL default '',
+  `custid` varchar(255) NOT NULL default '',
+  `amount` varchar(255) NOT NULL default '',
+  `user1` varchar(255) NOT NULL default '',
+  `user2` varchar(255) NOT NULL default '',
+  `user3` varchar(255) NOT NULL default '',
+  `user4` varchar(255) NOT NULL default '',
+  `user5` varchar(255) NOT NULL default '',
+  `user6` varchar(255) NOT NULL default '',
+  `user7` varchar(255) NOT NULL default '',
+  `user8` varchar(255) NOT NULL default '',
+  `user9` varchar(255) NOT NULL default '',
+  `type` varchar(255) NOT NULL default ''
+) TYPE=MyISAM COMMENT='gets silent posts back from ecomm proider';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `merchantservices`
+-- 
+
+DROP TABLE IF EXISTS `merchantservices`;
+CREATE TABLE IF NOT EXISTS `merchantservices` (
+  `name` varchar(255) NOT NULL default '',
+  `description` varchar(255) NOT NULL default '',
+  `posturl` varchar(255) NOT NULL default '',
+  `returnurl` varchar(255) NOT NULL default '',
+  `silentposturl` varchar(255) NOT NULL default ''
+) TYPE=MyISAM COMMENT='Merchant Service Provider Table';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `paytokens`
+-- 
+
+DROP TABLE IF EXISTS `paytokens`;
+CREATE TABLE IF NOT EXISTS `paytokens` (
+  `accid` varchar(16) NOT NULL default '',
+  `sku` varchar(16) NOT NULL default '',
+  `purchased` varchar(255) default NULL,
+  `expires` varchar(255) default NULL
+) TYPE=MyISAM COMMENT='purchases by account';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `pricesheet`
+-- 
+
+DROP TABLE IF EXISTS `pricesheet`;
+CREATE TABLE IF NOT EXISTS `pricesheet` (
+  `payclass` varchar(16) NOT NULL default '',
+  `sku` varchar(16) NOT NULL default '',
+  `price` mediumint(9) NOT NULL default '0',
+  `unit` varchar(16) NOT NULL default '',
+  PRIMARY KEY  (`payclass`,`sku`)
+) TYPE=MyISAM COMMENT='prices for different classes of customers';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `productcatalog`
+-- 
+
+DROP TABLE IF EXISTS `productcatalog`;
+CREATE TABLE IF NOT EXISTS `productcatalog` (
+  `sku` varchar(16) NOT NULL default '',
+  `description` varchar(255) NOT NULL default '',
+  `url` varchar(255) NOT NULL default '',
+  `duration` mediumint(9) NOT NULL default '0',
+  PRIMARY KEY  (`sku`)
+) TYPE=MyISAM COMMENT='all products for sale on medcommons';
+-- 
+-- Database: `mcx`
+-- 
+CREATE DATABASE `mcx`;
+USE mcx;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `document`
+-- 
+
+DROP TABLE IF EXISTS `document`;
+CREATE TABLE IF NOT EXISTS `document` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `guid` varchar(64) NOT NULL default '',
+  `creation_time` timestamp(14) NOT NULL,
+  `rights_time` timestamp(14) NOT NULL,
+  `encrypted_hash` varchar(64) default NULL,
+  `attributions` varchar(255) default NULL,
+  `storage_account_id` varchar(32) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `document_guid_idx` (`guid`)
+) TYPE=MyISAM AUTO_INCREMENT=1569 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `document_location`
+-- 
+
+DROP TABLE IF EXISTS `document_location`;
+CREATE TABLE IF NOT EXISTS `document_location` (
+  `document_id` int(10) unsigned NOT NULL default '0',
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `node_node_id` bigint(20) NOT NULL default '0',
+  `integrity_check` timestamp(14) NOT NULL,
+  `integrity_status` int(10) unsigned default NULL,
+  `encrypted_key` varchar(64) default NULL,
+  `copy_number` int(10) unsigned default NULL,
+  PRIMARY KEY  (`document_id`,`id`,`node_node_id`),
+  KEY `DocumentLocation_FKIndex2` (`document_id`)
+) TYPE=MyISAM AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `mcproperties`
+-- 
+
+DROP TABLE IF EXISTS `mcproperties`;
+CREATE TABLE IF NOT EXISTS `mcproperties` (
+  `property` varchar(255) NOT NULL default '',
+  `value` varchar(255) NOT NULL default '',
+  `infourl` varchar(255) NOT NULL default '',
+  `comment` varchar(255) NOT NULL default ''
+) TYPE=MyISAM COMMENT='MedCommons System Parameters';
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `node`
+-- 
+
+DROP TABLE IF EXISTS `node`;
+CREATE TABLE IF NOT EXISTS `node` (
+  `node_id` bigint(20) NOT NULL default '0',
+  `admin_id` varchar(32) default NULL,
+  `e_key` bigint(20) default NULL,
+  `m_key` bigint(20) default NULL,
+  `display_name` varchar(64) default NULL,
+  `hostname` varchar(64) default NULL,
+  `fixed_ip` varchar(30) default NULL,
+  `node_type` int(11) default NULL,
+  `creation_time` timestamp(14) NOT NULL,
+  `logging_server` varchar(128) default NULL,
+  PRIMARY KEY  (`node_id`),
+  UNIQUE KEY `node_fixed_ip_idx` (`fixed_ip`),
+  UNIQUE KEY `node_id` (`node_id`)
+) TYPE=MyISAM;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `rights`
+-- 
+
+DROP TABLE IF EXISTS `rights`;
+CREATE TABLE IF NOT EXISTS `rights` (
+  `rights_id` int(10) unsigned NOT NULL auto_increment,
+  `groups_group_number` int(10) unsigned NOT NULL default '0',
+  `user_medcommons_user_id` varchar(32) default NULL,
+  `document_ID` int(10) unsigned default NULL,
+  `rights` varchar(32) NOT NULL default '',
+  `creation_time` timestamp(14) NOT NULL,
+  `expiration_time` timestamp(14) NOT NULL,
+  `rights_time` timestamp(14) NOT NULL,
+  `accepted_status` varchar(30) default NULL,
+  `storage_account_id` varchar(32) default NULL,
+  PRIMARY KEY  (`rights_id`),
+  KEY `Rights_FKIndex3` (`groups_group_number`),
+  KEY `Rights_FKIndex2` (`user_medcommons_user_id`),
+  KEY `Right_FKIndex3` (`document_ID`)
+) TYPE=MyISAM AUTO_INCREMENT=1469 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `tracking_number`
+-- 
+
+DROP TABLE IF EXISTS `tracking_number`;
+CREATE TABLE IF NOT EXISTS `tracking_number` (
+  `tracking_number` varchar(64) NOT NULL default '',
+  `rights_id` int(10) unsigned NOT NULL default '0',
+  `encrypted_pin` varchar(64) default NULL,
+  PRIMARY KEY  (`tracking_number`),
+  KEY `TrackingNumber_FKIndex1` (`rights_id`)
+) TYPE=MyISAM;

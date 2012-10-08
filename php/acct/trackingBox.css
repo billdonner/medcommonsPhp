@@ -1,0 +1,63 @@
+body { 
+  font-family: verdana, helvetica, arial, sans-serif;
+  color: #333;
+  margin: 0px;
+  padding: 0px;
+}
+
+a, a:link, a:visited {  
+  color: #777;
+}
+
+a:hover {  
+  color: #c22;
+}
+
+#trackingBox a:link,
+#trackingBox a:visited,
+#trackingBox a:hover,
+#trackingBox a:active {
+  text-decoration: none;
+}
+
+#trackingBox {
+  display: inline;
+  float: right;
+  width: 280px;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* 
+  NOTE: due to a rather annoying FF problem
+  the colors of top and bottom are also
+  hard coded into the javascript.
+*/
+#trackboxTop, #trackboxBottom {
+  background-color: #e6e6e6;
+  margin: 0px;
+  padding: 0px;
+  display: none;
+}
+
+#trackboxTop {
+  background-color: #cbd6e3;
+  padding-bottom: 3px;
+}
+
+div.notLoggedInTrackboxTop {
+  background-color: transparent !important;
+}
+
+#trackboxBottom {
+  display: none;
+  padding-top: 3px;
+}
+
+#trackingBox form {
+  font-size:10px;
+  padding: 0px 6px;
+  margin: 0px;
+}
+

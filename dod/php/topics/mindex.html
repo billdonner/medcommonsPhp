@@ -1,0 +1,39 @@
+<html><head><title>medcommons harvester home</title></head><body>
+<h2>MedLine Manipulation Release 6</h2>
+<p>These functions combine to build a set of web pages for various Health Topics as published by the NIH's Medline Plus
+web service. The resulting pages on MedCommons containing links harvested from Medline and other sources, as well as a set of
+internal navigation links within MedCommons</p>
+<ul>
+<li><a href="mxinit.php?db=mcx&title=All+Topics&url=http://www.nlm.nih.gov/medlineplus/healthtopics.html">
+Prepare</a> to shred the NIH Healthtopics Site Metadata into Mysql DB</li>
+<li><a href="mx.php?db=mcx&p=http://www.nlm.nih.gov/medlineplus&s=medline-urls-skip.html">Spider</a>
+into Medline>Healthtopics area and store Metadata into Mysql DB</li>
+<li><a href="medline-urls-skip.html">List of URLS to Ignore</a></li>
+<li><a href="medline-noise-words.html">List of Noise Words</a></li>
+<li><a href="munch.php?db=mcx&op=scan&noise=medline-noise-words.html&pre=http://www.nlm.nih.gov/medlineplus">
+(re-) Compute Links and Tags</a> for each page </li>
+<li><a href="mdir.php?db=mcx">
+(re-) Build Topics Directory</a></li>
+<li><a href="mgsitemap.php?db=mcx&pre=http://www.nlm.nih.gov/medlineplus&out=http://www.medcommons.net/interests/">
+(re-) Build Google Site Map</a></li>
+<li><a href="mlinks.php?db=mcx&out=">
+(re-) Generate File of Links for HTML to JPEG Converter</a></li>
+<li><a href="mkw.php?db=mcx">
+(re-) Parse Each Page for Keywords and Dublin Core Metadata</a></li>
+</ul>
+<p>These are the most commonly needed functions for just generating a fresh set of pages whenever the file layout.tpl.php
+changes</p>
+<ul>
+<li><a href="mtemplate.php?db=mcx&pre=http://www.nlm.nih.gov/medlineplus&out=hometemplate.htm" />
+(re-) Build new hometemplate.htm template for /interests from layout.tpl</a></li>
+<li><a href="../mhtml.php" />
+(re-) Build new set of .html pages for better performance, puts files where they belong</a></li>
+<li><a href="../mxhtml.php" />
+(re-) Build new set of .html pages for better performance, puts file in /interests/www/ must be copied</a></li>
+<li><a href="mgen.php?db=mcx&op=make&xsites=match-sources.html&template=hometemplate.htm&pre=http://www.nlm.nih.gov/medlineplus&out=">
+(re-) Publish PageSet Files with (.html links) in MedCommons Style</a> to /interests </li>
+<li><a href="mgen.php?db=mcx&op=display&xsites=match-sources.html&template=hometemplate.htm&pre=http://www.nlm.nih.gov/medlineplus">
+Preview PageSet Files</a> in your browser</li>
+<li>Go to the <a href="index.html">Topics Home</a></li>
+</ul>
+</body></html>

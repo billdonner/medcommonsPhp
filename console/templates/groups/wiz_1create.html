@@ -1,0 +1,92 @@
+{% extends "form.html" %}
+
+{% load medcommons %}
+
+{% block title %}Create Group{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Groups</a> &gt;
+Create Group
+{% endblock %}
+
+{% block content %}
+
+<div class='breadcrumbs'>
+<b>1) Choose Group Owner</b> &gt;
+2) Choose Group Name &gt;
+3) Choose Other Members
+</div>
+
+<form method='post' action='{{ action }}'>
+  <table>
+    <tbody>
+{{ form }}
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <td>MCID</td>
+	<td>Name</td>
+	<td>Email</td>
+	<td>Account Created</td>
+	<td>CCR Log Updated</td>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+	<td colspan='5'>
+	  <div style='text-align: left'>
+{% if has_previous %}
+<a href='{{ action }}&amp;page=1'>&laquo; first</a>
+<a href='{{ action }}&amp;page={{ previous }}'>&lt; prev</a>
+{% endif %}
+	  </div>
+	  <div style='text-align: right'>
+{% if has_next %}
+<a href='{{ action }}&amp;page={{ next }}'>next &gt;</a>
+<a href='{{ action }}&amp;page={{ pages }}'>last &raquo;</a>
+{% endif %}
+	  </div>
+	</td>
+      </tr>
+      <tr>
+	<td colspan='5' style='text-align: right'>
+Page {{ page }} of {{ pages }}.
+	</td>
+      </tr>
+      <tr>
+      <td colspan='5'>
+  <label>Search Users:
+    <input type='text' name='q' /></label>
+  <input type='image' src='{{ media }}img/icon_searchbox.png' width='18' height='16'
+         name='search' alt='Search Users' />
+	</td>
+      </tr>
+    </tfoot>
+
+    <tbody>
+{% for entry in object_list %}
+    <tr class='{% cycle a,b %}'>
+      <td>
+        <a href='{{ action }}&amp;mcid={{ entry.mcid }}'>{{ entry.pretty_mcid }}</a>
+      </td>
+      <td>{{ entry.first_name }} {{ entry.last_name }}</td>
+      <td>{{ entry.email }}</td>
+      <td>{{ entry.since }}</td>
+      <td>{{ entry.ccrlogupdatetime|timestamp }}</td>
+
+    </tr>
+{% endfor %}
+
+  </tbody>
+</table>
+
+  <div id='submit-row'>
+    <input type='submit' class='default' value='Next &gt;&gt;' />
+  </div> 
+</form>
+
+{% endblock %}

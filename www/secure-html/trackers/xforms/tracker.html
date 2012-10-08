@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xforms="http://www.w3.org/2002/xforms"
+>
+<head>
+<title>Sample Tracker XForm</title>
+
+<!-- this mumbo jumbo may or may not work based upon what's going on with your browser, plugins,
+activex doodads and other stuff -->
+<object id="FormsPlayer" classid="CLSID:4D0ABA11-C5F0-4478-991A-375C4B648F58" id="behaviour">
+       <b>formsPlayer has failed to load!</b>
+</object>
+<?import namespace="xforms" implementation="#FormsPlayer">
+
+<style>
+     .label {width:150px;}
+</style>
+    
+<!-- the xform model and prefilled trackermsg instance,allows detailed control, will be parameterized in future php version -->
+
+<xforms:model id="mTrackers">
+     <xforms:instance id="iTrackerMsg" src="agropper-bloodpressure-tracker-setup.xml" />
+     <xforms:bind nodeset="/trackerupdatemsg/sourceid/name/value" required="1"/>
+ 
+     <!-- submission element, everything goes to the same place -->
+     <xforms:submission action="handleTrackerMsg.php" 
+                        ref="instance('iTrackerMsg')" 
+                        method="post" 
+                        id="postdata"
+                        omit-xml-declaration="false"
+                        replace="all"
+                        />
+    
+       
+</xforms:model>
+</head>
+<body>
+
+<h2>Tracker Input Sampler</h2>
+
+<xforms:output ref="instance('iTrackerMsg')/tracker/name">
+     <xforms:label class="label">Tracker Name</xforms:label>
+</xforms:output><br />
+			     
+<xforms:input ref="instance('iTrackerMsg')/tracker/value">
+     <xforms:label class="label">Tracker Value</xforms:label>
+</xforms:input><br />
+
+<xforms:submit id="postdata">
+     <xforms:label>Submit Data</xforms:label>
+</xforms:input>
+
+</body>
+</html>

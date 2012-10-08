@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModulePrefs title="MedCommons - Personalized Account " description="No need to logon" height="600" 
+               title_url="medcommons.net"
+               author="bill donner" scaling="false" render_inline="optional" 
+                    author_affiliation="http://www.medcommons.net"/>
+  <UserPref name="mckey" required="true" display_name="medcommons widget key (at www.medcommons.net/widgets)"/>
+  <UserPref name="mcswitches" required="true" display_name="widget sections (at www.medcommons.net/widgets)"/>
+
+  <Content type="url" href="https://secure.test.medcommons.net/acct/googlewidget.php "/>
+</Module>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Xforms and Trackers</title>
+</head>
+<body>
+<h3>Xform Support for Trackers</h3>
+<p>This note details progress towards the implementation of Xforms within MedCommons Trackers.
+</p>
+<h4>The Tracker Input Message Format is an XForms 'Instance'</h4>
+<p>Because MedCommons is so keen on standards, and there really isn't any standard, we can
+use XML and Xforms to define a Message Format for Trackers. This will allow any forms system, PDA, or 
+lab system that utilizes Xforms to send Tracker messages into a MedCommons account</p>
+<p>Here is a sample Tracker Message: 
+<br /><a href="<A HREF="38292038291938392-10305066999-trackermsg.xml">38292038291938392-10305066999-trackermsg.xml</A>
+Here is another:
+<br /><a href="<A HREF="38292038291938392-1030506434-trackermsg.xml">38292038291938392-10305066434-trackermsg.xml</A>
+</p>
+<p>You can send either of these files to the Tracker Xforms handler at 
+/trackers/xform/handleTrackerMsg.php?file=</p><br />
+<a href=handleTrackerMsg.php?file=38292038291938392-10305066434-trackermsg.xml>Try it</a>
+<h4>A schema for Tracker Messages</h4>
+<p>This is used by the Model part of Xforms
+<A HREF="trackerschema.xsd">trackerschema.xsd</A>
+&nbsp; But, because xForms is working poorly in both Firefox and IE7 right now, it is not possible to demonstrate
+without third party flash plugins. I am confident we will find the right library to make all of this happen</p>
+<h4>Using the Xform Model</h4>
+<p>The basic file format for Trackers is laid out here in<A HREF="tracker.html">tracker.html</A> 
+It is what drives xform processing. Note that the 'instance' part is kept in another file over <A HREF="agropper-bloodpressure-tracker-setup.xml">here</A> It's been especially tailored for Adrian</p>
+<h4>What's next?</h4>
+So far, we have shown that Trackers can be driven by Xforms, if only we somehow get Xforms to work as we need it to.
+Here are some more things to do
+<ul>
+<li>find browsers and javascript that actually work decently with xforms</li>
+<li>find tools that adrian likes to build these xforms</li>
+<li>with selected tools, allow 3rd parties to customize trackers without programming</li>
+<li>move xForms into other, more complicated parts of MedCommons</li>
+</body>
+</html>

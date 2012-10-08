@@ -1,0 +1,11 @@
+yum install apr-devel.i386
+yum install apr-util-devel.i386
+yum install cyrus-sasl-devel.i386
+yum install db4-devel.i386
+yum install expat-devel.i386
+yum install mod_dav_svn.i386
+yum install neon.i386
+yum install openldap-devel.i386
+yum install perl-URI.noarch
+yum install subversion-devel.i386
+yum install subversion.i386

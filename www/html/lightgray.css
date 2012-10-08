@@ -1,0 +1,23 @@
+.lightBackground,#intro {
+  background-color: #f3f3f3;
+}
+
+#linkList h3 {
+  background-image: url('images/lbgrad.png');
+}
+
+#menubar {
+  background-image: url('images/lbbar.png');
+}
+
+/* The TOP of the account box */
+#accountOuter,#accountLink {
+  background-color: #ccc;
+}
+
+/* The BOTTOM of the account box */
+#statusinfo, #statusouter {
+  background-color: #f2f2f2;
+}
+
+

@@ -1,0 +1,10 @@
+function vx($a,$b,$c,$d,$e,$f,$g,$h,$i,$j)
+{ 
+$signature = "MEDCOMMONSDEVELOPERKEYGOESHERE"; // MedCommons Developer Key
+$xml="<vxm>
+<reversed>
+$j $i $h $g $f $e $d $c $b $a
+</reversed>
+</vxm>";
+return array($signature,$xml);
+}

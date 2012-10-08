@@ -1,0 +1,40 @@
+{% extends "form.html" %}
+
+{% block content %}
+
+<p>
+Enter either your username, or your e-mail address.
+</p>
+<p>
+Instructions will be sent to the email address on file.
+Follow these instructions to recover your account.
+</p>
+
+<form method='post'
+      action='forgot'>
+  <table>
+    <tbody>
+      <tr>
+	<td><label for='username'>Username:</label></td>
+	<td>
+	  <input type='text' name='username' id='username'
+		 value='{{ username }}' />
+	</td>
+      </tr>
+
+      <tr>
+	<td></td>
+	<td><input type='submit' value='Send new password' class='default' /></td>
+      </tr>
+<!--
+      <tr>
+	<td></td>
+	<td><a href='register'>register new account</a></td>
+      </tr>  -->
+    </tbody>
+  </table>
+</form>
+
+
+
+{% endblock %}

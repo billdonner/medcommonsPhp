@@ -1,0 +1,33 @@
+injuryid,personid,createuser,createdate,createtime,modifyuser,modifydate,modifytime,season,sport,teamnumber,teamname,closed,closedate,submitted,submitdate,injuryno,injurydate,enterdate,reportdate,returndate,wcomp,workrelate,disabled,dateon,numberdays,dateoff,daymissed,gamemiss1,gamemiss2,daylimited,daypractic,position,descrip,typeinjury,injury,bodypart,severity,injuryhow,activity,nonactive,active,medication,location,where,surface,field,weather,temperate,daynight,comment,dictation,subjective,objective,assessment,plan,daydl,dldayoff,images,injurytype,iss,isschar01,isschar02,isschar03,isschar04,isschar05,isschar06,isschar07,isschar08,isschar09,isschar10,isspd01,isspd02,isspd03,isspd04,isspd05,isspd06,isspd07,isspd08,isspd09,isspd10,isslog01,isslog02,isslog03,isslog04,isslog05,isslog06,isslog07,isslog08,isslog09,isslog10,issmemo1,workrel2,injurytime,chgmark
+9910000025,9910000003,LEV1,2/1/2006,12:43:53,LEV1,11/3/2008,11:57:22,2006,Baseball,12,Team Name,T,4/22/2006,T,2/13/2006,1/6/10032,2/1/2006,2/1/2006,2/1/2006,4/20/2006,T,F,T,2/10/2006,7,2/17/2006,0,0,0,0,0,Pitcher,Lateral Lt Elbow Tendonitis,Assessment of Injury Goes Here,"Tendonitis                              
+","Elbow, Left Lateral                     
+",4th Degree,"Pitching in game 
+",Pitching,"Doctor                                  
+Ice Pack                                
+",,"Indocin 50mg                            
+",Tucson,Game,Grass,Dry,Warm,60,5th Inning,Ralph came out of the game after complaining of some lateral elbow pain.  Exam was within normal limits and Dr. felt that this was a mild case of tendonitis.  Recommends local modalities and Indocin.  Prognosis is good.,Dictation goes here,subjective goes here,objective goes here,assessment goes here,plan goes here,0,/  /,,Overuse,F,,,,,,,,,,,,,,,,,,,,,F,F,F,F,F,F,F,F,F,F,,T,02:15 p.m.,A
+9910000027,9910000003,LEV1,3/12/2004,18:53:01,LEV1,11/3/2008,12:05:25,2004,Baseball,1,Team Name,T,6/10/2004,F,/  /,1/4/10040,3/12/2004,3/13/2004,3/13/2004,6/10/2004,F,F,F,/  /,0,/  /,0,0,0,0,0,Pitcher Right Handed,"Strain, Right Hamstring","Assessment of Injury
+
+","Strain                                  
+","Hamstring, Right                        
+",,,,"Hot Packs                               
+Ice Pack                                
+Massage                                 
+","Starimaster                             
+",,,,,,,0,,,,,,,,0,/  /,,Chronic,F,,,,,,,,,,,,,,,,,,,,,F,F,F,F,F,F,F,F,F,F,,T,,A
+9910000029,9910000003,LEV1,2/21/2004,20:55:47,LEV1,11/3/2008,12:05:58,2004,Baseball,1,Team Name,T,3/15/2004,F,/  /,INJURY #,2/21/2004,2/21/2004,2/21/2004,3/10/2004,F,T,F,/  /,0,/  /,0,0,0,0,0,Pitcher Right Handed,Knee Left Contusion,,"Contusion                               
+","Knee, Left                              
+",,,,"Ice Pack                                
+Massage                                 
+Wrap                                    
+",,,,,,,,0,,,,,,,,0,/  /,,Acute,F,,,,,,,,,,,,,,,,,,,,,F,F,F,F,F,F,F,F,F,F,,F,,A
+9910000037,9910000005,LEV1,9/15/2008,,LEV1,11/3/2008,11:50:12,2008,Baseball,12,Organization Name,F,/  /,F,/  /,1/8/10034,9/15/2008,9/15/2008,9/15/2008,/  /,F,F,F,/  /,0,/  /,0,0,0,0,0,Pitcher,Inflamation of Rt Hip,Inflamation of external rotators of the right hip,"Inflamed                                
+","Hip, Right                              
+",Mild,Throwing on his side day.,Pitching,"Acuscope                                
+Grastech                                
+Hot Packs                               
+Stretch                                 
+Ultrasound                              
+Whirlpool, Warm","Bag Weights                             
+","Cataflam 50mg                           
+",Chicago,Mound Work on the Side,Grass,Good,Cold,45,,Frank is complaining of some pain just distal and posterior to his greater trochanter.  Will treat him conservatively with medication and local modalities.,,,,,,0,/  /,,Pre Existing,F,,,,,,,,,,,,,,,,,,,,,F,F,F,F,F,F,F,F,F,F,,T,08:34 p.m.,A

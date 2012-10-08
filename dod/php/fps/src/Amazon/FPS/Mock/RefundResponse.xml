@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RefundResponse xmlns="http://fps.amazonaws.com/doc/2008-05-01/">
+  <ResponseMetadata>
+    <RequestId>string</RequestId>
+  </ResponseMetadata>
+  <RefundResult>
+    <TransactionStatus>string</TransactionStatus>
+    <TransactionId>string</TransactionId>
+    <!--Optional:-->
+    <PendingReason>string</PendingReason>
+  </RefundResult>
+</RefundResponse>

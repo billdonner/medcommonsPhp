@@ -1,0 +1,83 @@
+* { 
+  font-family: arial;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+body #content {
+  position: relative;
+  margin: 5px 10px;
+}
+
+.header {
+	padding: 2px 0px 0px 25px;
+	margin-bottom: 20px;
+	background-color: #FFF2CC;
+	background-position: 6px 2px;
+	background-repeat: no-repeat;
+	border-bottom-style: solid;
+	border-bottom-width: 4px;
+	border-bottom-color: #FFD452;
+}
+
+h2 {
+  font-size: 16px; 
+}
+
+h3 {
+  color: #444;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+a:link, a:visited {
+  color: #527DFF;
+}
+a:hover,a:active {
+  color: #8FABFF;
+}
+
+#registryTable tr th {
+  text-align: left;
+  font-size: 13px;
+}
+
+#registryTable tbody tr th {
+  font-weight: normal;
+}
+
+#registryTable tr td {
+  text-align: center;
+  font-size: 13px;
+  padding: 0px 6px;
+  color: #333;
+}
+
+#registryTable tr.odd {
+  background-color: #f2f2f2;
+}
+
+#registryTable a:link, #registryTable a:visited {
+  font-size: 13px;
+  color: blue;
+}
+
+#registryTable a:hover, #registryTable a:active  {
+  font-size: 13px;
+  color: #527DFF;
+}
+
+.editStatusImg {
+  cursor: pointer;
+}
+
+.statusInput {
+  border: none 0px transparent;
+  background-color: transparent;
+}

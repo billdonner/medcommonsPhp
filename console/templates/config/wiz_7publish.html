@@ -1,0 +1,121 @@
+{% extends "form.html" %}
+
+{% block title %}Configure Appliance Wizard{% endblock %}
+
+{% block header %}
+<style type='text/css'><!--
+.group {
+	text-align: left
+}
+// --></style>
+{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Configuration</a> &gt;
+Configure Appliance
+{% endblock %}
+
+{% block content %}
+
+<div class='breadcrumbs'>
+<a href='wiz_name'>1) Name</a> &gt;
+<a href='wiz_location'>2) Location</a> &gt;
+<a href='wiz_web'>3) Web</a> &gt;
+<a href='wiz_email'>4) Email</a> &gt;
+<a href='wiz_style'>5) Style</a> &gt;
+<a href='wiz_settings'>6) Settings</a> &gt;
+<b>7) Publish</b>
+</div>
+
+<table style='width: 400px'>
+  <tr>
+    <td>
+      <img src='{{ media }}img/Circle_7.png' width='20' height='20' alt='7' />
+    </td>
+    <td>
+<p>
+Please review the settings below.
+</p>
+<p>
+If you're satisfied with these settings, press
+the 'Finish' button to publish the changes.
+</p>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th class='group' rowspan='{{ name_fields|length }}'>
+<a href='wiz_name'>1) Name</a></th>
+{% for field in name_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ location_fields|length }}'>
+<a href='wiz_location'>2) Location</a></th>
+{% for field in location_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ web_fields|length }}'>
+<a href='wiz_web'>3) Web</a></th>
+{% for field in web_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+     <th class='group' rowspan='{{ email_fields|length }}'>
+<a href='wiz_email'>4) Email</a></th>
+{% for field in email_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ style_fields|length }}'>
+<a href='wiz_style'>5) Style</a></th>
+{% for field in style_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+    <th class='group' rowspan='{{ settings_fields|length }}'>
+<a href='wiz_settings'>6) Settings</a></th>
+{% for field in settings_fields %}
+     <th>{{ field.key }}</th>
+     <td>{{ field.value }}</td>
+  </tr>
+  <tr>
+{% endfor %}
+
+  </tr>
+</table>
+
+<div id='submit-row'>
+  <form method='get' action='wiz_settings' style='display: inline'>
+    <input type='submit' value='&lt;&lt; Prev' name='prev' />
+  </form>
+
+  <form method='post' action='preview' target='_new' style='display: inline'>
+    <input type='submit' value='Preview' />
+  </form>
+
+  <form method='post' action='/cgi-bin/publish' style='display: inline'>
+    <input type='submit' class='default' value='Finish' />
+  </form>
+</div>
+
+{% endblock %}

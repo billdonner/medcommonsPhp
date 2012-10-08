@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% load medcommons %}
+
+{% block header %}
+<style type='text/css'><!--
+table.subtable, table.subtable tbody, table.subtable tbody tr {
+   border: 0;
+   padding: 0;
+}
+
+table.subtable tbody tr td, table.subtable tbody tr th {
+   padding: 0 0 5px 5px;
+   border: 0;
+}
+// --></style>
+{% endblock %}
+
+{% block title %}MedCommons Account Details{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Accounts</a> &gt;
+{{ mcuser.pretty_mcid }} {{ mcuser.first_name }} {{ mcuser.last_name }}
+{% endblock %}
+
+{% block sidebar %}
+<ul class='object-tools'>
+{% include 'users/tools.inc' %}
+  <li><a href='edit?mcid={{ mcuser.mcid }}'>Edit Account</a></li>
+</ul>
+{% endblock sidebar %}
+{% block content %}
+
+<fieldset style='width: 400px'>
+  <legend>Account Details</legend>
+<table>
+  <tbody>
+    <tr>
+      <th>MCID:</th>
+      <td>{{ mcuser.pretty_mcid }}</td>
+    </tr>
+    <tr>
+      <th>Name:</th>
+      <td>{{ mcuser.first_name }} {{ mcuser.last_name }}</td>
+    </tr>
+{% if mcuser.email %}
+    <tr>
+      <th>Email:</th>
+      <td>
+        <a href='mailto:{{ mcuser.email }}'>{{ mcuser.email }}</a><br />
+	<span style='font-size: smaller; font-style: italic; color: gray'>
+	  (search for <a href='search?q={{ mcuser.email }}'>other accounts</a>
+	  with this email)</span>
+      </td>
+    </tr>
+{% endif %}
+    <tr>
+      <th>Status:</th>
+      <td>
+	{{ mcuser.get_acctype_display }}
+      </td>
+    </tr>
+   <tr>
+      <th>Since:</th>
+      <td>
+        {{ mcuser.since }}<br />
+        ({{ mcuser.since|timesince }})
+      </td>
+    </tr>
+    <tr>
+      <th>CCR Log Updated:</th>
+      <td>
+        {{ mcuser.ccrlogupdatetime|timestamp }}<br />
+	{% if mcuser.ccrlogupdatetime %}
+        ({{ ccrlogupdatetime|timesince }})
+	{% endif %}
+	</td>
+    </tr>
+    <tr>
+      <th>Group:</th>
+      <td>
+{% if member_of %}
+	<a href='../groups/group?id={{ member_of.groupinstanceid }}'>
+	  {{ member_of.name }}
+	</a>
+	<a href='remove_from_group?mcid={{ mcuser.mcid }}&amp;group={{ member_of.groupinstanceid }}'>
+  <img src='{{ media }}img/icon_deletelink.gif' width='10' height='10'
+       alt='Remove account from this group' />
+	</a>
+{% else %}
+<em>None</em><br />
+<a href='groups?mcid={{ mcuser.mcid }}'>
+  <img src='{{ media }}img/icon_addlink.gif' width='10' height='10'
+       alt='Add to group' />
+  add to group
+</a>
+{% endif %}
+      </td>
+    </tr>
+    <tr>
+      <th>External identities:</th>
+      <td>
+{% if accounts %}
+<table class='subtable'>
+  <tbody>
+{% for x in accounts %}
+    <tr>
+      <td>
+	<a href='../idps/details?id={{ x.id }}'>
+	  <img src='../idps/logo?id={{ x.id }}'
+	       width='16' height='16' alt='{{ x.name }}' />{{ x.name }}
+	</a>
+      </td>
+      <td>{{ x.display_name }}</td>
+      <td>
+	<form method='post' action='unlink_idp'>
+	  <input type='hidden' name='mcid' value='{{ mcuser.mcid }}' />
+	  <input type='hidden' name='idp' value='{{ x.id }}' />
+	  <input type='hidden' name='username' value='{{ x.username }}' />
+	  <input type='image' src='{{ media }}img/icon_deletelink.gif' width='10' height='10'
+			      alt='Unlink account from this external identity' />
+	</form>
+      </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% else %}
+<em>None</em>
+{% endif %}
+      </td>
+    </tr>
+  </tbody>
+</table>
+</fieldset>
+
+{% endblock %}

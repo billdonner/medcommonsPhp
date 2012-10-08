@@ -1,0 +1,47 @@
+{% extends "form.html" %}
+
+{% block title %}Claim Account{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Accounts</a> &gt;
+Claim Account {{ mcuser.pretty_mcid }} ({{ mcuser.first_name }} {{ mcuser.last_name }})
+{% endblock %}
+
+{% block content %}
+
+<p>
+A person must verify his/her identity with you
+before you release this password.
+</p>
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<form method='post'
+      action='claim'>
+
+  <table>
+    <tbody>
+      <tr>
+        <th><label for='id_mcid'>MCID:</label></th>
+	<td><input type='text' readonly='readonly' name='mcid' id='id_mcid'
+	           value='{{ mcuser.pretty_mcid }}' /></td>
+      </tr>
+{{ form }}
+      <tr>
+	<td></td>
+	<td>
+<a href='claim?mcid={{ mcuser.mcid }}'>new random password</a>
+	</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+    <input type='submit' value='Claim' class='default' />
+  </div>
+</form>
+
+{% endblock %}

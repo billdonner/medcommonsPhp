@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# mcid_server        Start/Stop the mcid_server daemon.
+#
+# chkconfig: 2345 90 60
+# description: mcid_server is a SOAP/REST server that allocates
+#              16-digit MedCommons IDs.  These MCIDs are unique
+#              per server instance.
+# processname: mcid_server
+# pidfile: /var/run/mcid_server.pid
+#
+# Source function library.
+. /etc/init.d/functions
+
+prog="mcid_server"
+
+start() {
+	echo -n $"Starting $prog: "
+	if [ -e /var/run/mcid_server.pid ] && [ -e /proc/`cat /var/run/mcid_server.pid` ]; then
+		echo -n $"Cannot start mcid_server: mcid_server is already running."
+		failure $"cannot start mcid_server: mcid_server already running."
+		echo
+		return 1
+	fi
+	daemon /opt/mcid_server/mcid_server.py -db /opt/mcid_server/db/mcids
+	RETVAL=$?
+	echo
+	return $RETVAL
+}
+
+stop() {
+	echo -n $"Stopping $prog: "
+	if [ ! -e /var/run/mcid_server.pid ] || [ ! -e /proc/`cat /var/run/mcid_server.pid` ]; then
+		echo -n $"cannot stop mcid_server: mcid_server is not running.";
+		failure $"cannot stop mcid_server: mcid_server is not running."
+		echo
+		return 1;
+	fi
+	killproc mcid_server
+	RETVAL=$?
+	echo
+	return $RETVAL
+}
+
+rhstatus() {
+	status mcid_server
+}
+
+restart() {
+	stop
+	start
+}
+
+case "$1" in
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  restart)
+	restart
+	;;
+  reload)
+	restart
+	;;
+  status)
+	rhstatus
+	;;
+  *)
+	echo $"Usage: $0 {start|stop|status|reload|restart}"
+	exit 
+esac

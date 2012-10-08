@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<appservices>
+  <servicelist>
+    <specfile builtin="true">
+      http://www.medcommons.net/apps/svc-builtin.xml
+    </specfile>
+    <xspecfile >
+      http://www.medcommons.net/apps/svc-trackers.xml
+    </xspecfile>
+    <xspecfile>
+      http://www.medcommons.net/apps/trackers/svc-trackers-gps-package.xml
+    </xspecfile>
+    <xspecfile>
+      http://www.medcommons.net/apps/trackers/svc-trackers-bcdmg-package.xml
+    </xspecfile>
+    <xspecfile>
+      http://www.medcommons.net/apps/svc-anon.xml
+    </xspecfile>
+    <specfile>
+      http://www.medcommons.net/apps/svc-fax.xml
+    </specfile>
+    <xspecfile>
+      http://www.medcommons.net/apps/svc-faxout.xml
+    </xspecfile>
+    <specfile>
+      http://www.medcommons.net/apps/svc-cina.xml
+    </specfile>
+    <xspecfile>
+      http://www.medcommons.net/apps/svc-diagnose.xml
+    </xspecfile>
+  </servicelist>
+</appservices>

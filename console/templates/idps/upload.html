@@ -1,0 +1,48 @@
+{% extends "form.html" %}
+
+{% block title %}Upload Identity Provider{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Identity Providers</a> &gt;
+Upload Identity Providers
+{% endblock %}
+
+{% block content %}
+
+<form method='post' action='upload' enctype='multipart/form-data'>
+
+  <table>
+    <tr>
+      <th rowspan='2'><label for='csv'>Upload file</label>:</th>
+      <td>
+        <input type='file' name='csv' id='csv' />
+      </td>
+    </tr>
+    <tr>
+      <td>
+You can upload a file previously downloaded using
+the <a href='download' type='text/csv'>download</a> link.
+      </td>
+    </tr>
+    <tr>
+      <th rowspan='2'><label for='url'>Upload url</label>:</th>
+      <td>
+        <input type='text' name='url' id='url' size='40' />
+      </td>
+    </tr>
+    <tr>
+      <td>
+You can upload directly from another console.
+<br />
+Upload URLs typically look like:<br />
+<tt>http://{appliance}/console/idps/download</tt>
+      </td>
+    </tr>
+  </table>
+  <div id='submit-row'>
+    <input type='submit' value='Upload' class='default' />
+
+  </div></form>
+
+{% endblock %}

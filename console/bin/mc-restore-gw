@@ -1,0 +1,26 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin:/var/www/console/bin
+ETC=/var/www
+
+if [ "$1" = "" ]
+then
+   host=`hostname`
+else
+   host=$1
+fi
+
+  s3cat.py -mcproperties ${host}-%Y-%m-%d.tar.bz2.enc \
+| openssl			\
+	enc			\
+	-d			\
+	-aes-256-cbc		\
+	-kfile ${ETC}/.aes-key	\
+| bunzip2			\
+	--quiet			\
+	--stdout		\
+	--decompress		\
+| tar				\
+	--extract		\
+	--file -		\
+	--directory /

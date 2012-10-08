@@ -1,0 +1,7 @@
+{{ ApplianceName }}
+
+{% block content %}
+{% endblock %}
+{% block trailer %}
+Thank you for using {{ CommonName }}.
+{% endblock %}

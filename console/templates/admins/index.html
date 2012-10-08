@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Administrators{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt; Administrators
+{% endblock %}
+
+{% block sidebar %}
+<ul class='object-tools'>
+  <li><a href='create' class='addlink'>Create</a></li>
+</ul>
+{% endblock sidebar %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Username</th> 
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan='5'>
+	<span style='float: left'>
+{% if has_previous %}
+<a href='list?page=1'>&laquo; first</a>
+<a href='list?page={{ previous }}'>&lt; prev</a>
+{% endif %}
+	</span>
+	<span style='float: right'>
+{% if has_next %}
+<a href='list?page={{ next }}'>next &gt;</a>
+<a href='list?page={{ pages }}'>last &raquo;</a>
+{% endif %}
+	</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='5'>
+	<span style='float: left'>
+	  <a href='create'>
+	    <img src='{{ media }}img/CreateAdmin.png' width='20' height='20'
+		 alt='Create Administrator' />
+	    create administrator
+	  </a>
+	</span>
+	<span style='float: right'>
+Page {{ page }} of {{ pages }}.
+	</span>
+      </td>
+    </tr>
+  </tfoot>
+
+  <tbody>
+{% for entry in object_list %}
+    <tr class='{% cycle a,b %}'>
+      <td>
+        {% if entry.is_active %}
+	<img src='{{ media }}img/icon-yes.gif' width='10' height='10'
+	     alt='Active' />
+	{% else %}
+	<img src='{{ media }}/img/icon-no.gif' width='10' height='10'
+	     alt='Inactive' />
+	{% endif %}
+      </td>
+      <td>{{ entry.username }}</td>
+      <td>{{ entry.first_name }} {{ entry.last_name }}</td>
+      <td><a href='mailto:{{entry.email}}'>{{ entry.email }}</a></td>
+
+      <td>
+        <a href='edit?id={{ entry.id }}'>
+	  <img src='{{ media }}img/icon_changelink.gif' width='10' height='10' 
+	       alt='Edit Administrator' />
+	</a>
+      </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

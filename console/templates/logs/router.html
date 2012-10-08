@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Router Log{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Logs</a> &gt;
+Router Log
+{% endblock %}
+
+{% block content %}
+
+<iframe src='http://{{ META.SERVER_NAME }}:9080/router/log.do'
+        type='text/plain' width='580' height='200' scrollable='yes' />
+
+{% endblock %}

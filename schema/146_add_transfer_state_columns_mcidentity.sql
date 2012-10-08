@@ -1,0 +1,14 @@
+alter table transfer_state add column ts_num_series int(9);
+alter table transfer_state add column ts_total_images int(9);
+alter table transfer_state add column ts_total_bytes int(14);
+alter table transfer_state add column ts_bytes_transferred int(14);
+alter table transfer_state add column ts_ccr_file_name varchar(200);
+alter table transfer_state add column ts_view_url varchar(200);
+alter table transfer_state add column ts_study_instance_uid varchar(200);
+alter table transfer_state add column ts_kb_per_second decimal(9,2);
+alter table transfer_state add column ts_host varchar(200);
+alter table transfer_state add column ts_path varchar(200);
+alter table transfer_state add column ts_protocol varchar(20);
+alter table transfer_state add column ts_group_account_id varchar(200);
+alter table transfer_state add column ts_group_name varchar(200);
+alter table transfer_state add column ts_auth char(40);

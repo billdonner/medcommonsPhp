@@ -1,0 +1,114 @@
+<style>
+.example {border: 1px solid; padding: 10px; background-color:#DFF;}
+.label {  clear: both; float: left; width: 200px; color:blue;}
+input { color:gray;}
+</style>
+
+<h2>Sample Forms For Embedded ROI Requests</h2>
+<p>Copy the code off this page to embed into any website. You can adust the labelling, the CSS styles, and supply default form values
+as you see fit</p>
+<h3>A small but meaningful form:</h3>
+<p>If any errors are present, they are handled by the MOD user interface</p>
+<div class=example>
+<form method=post action=https://healthurl2.medcommons.net/hipaaroireq.php >
+<input type=hidden name=repost value='' />
+<span class=label>Name:</span><input type=text name=name /><br/>
+<span class=label>DOB:</span><input type=text name=dob /><br/>
+<span class=label>Email: </span><input type=text name=email /><br/>
+<input type=hidden name=acm value='on' />
+<input type=hidden name=isr  value='on' />
+<input type=hidden name=lr value='on' />
+<input type=hidden name=csr  value='on' />
+<input type=hidden name=hds value='on' />
+<input type=hidden name=cmd value='on' />
+<input type=hidden name=note value="From Joes Imaging Website --- visit www.joeman.com " />
+<input class=label type=submit name=submit value="Generate Request for Records" />
+</form>
+
+</div>
+<br/><br/>
+<h3>Same form with Javascript error handling</h3>
+<p>If any errors are present, they are handled right inline here. The script is available by viewing the source. A more sophisticated form
+would merge in the errors with the current field values</p>
+<div class=example>
+<form method=post action=https://healthurl2.medcommons.net/hipaaroireq.php >
+<input type=hidden name=repost value='https://healthurl2.medcommons.net/embedexample.html' />
+<span class=label>Name:</span><input type=text name=name />&nbsp;<span id=name_err></span><br/>
+<span class=label>DOB:</span><input type=text name=dob />&nbsp;<span id=dob_err><i>this field is optional</i></span><br/>
+<span class=label>Email:</span><input type=text name=email />&nbsp;<span id=email_err></span><br/>
+<input type=hidden name=acm value='on' />
+<input type=hidden name=isr  value='on' />
+<input type=hidden name=lr value='on' />
+<input type=hidden name=csr  value='on' />
+<input type=hidden name=hds value='on' />
+<input type=hidden name=cmd value='on' />
+<input type=hidden name=note value="From Joes Imaging Website w javascript --- visit www.joeman.com " />
+<input class=label type=submit name=submit value="Generate Request for Records" />
+</form>
+</div>
+
+<h3>More examples</h3>
+<p>More examples are <a href=embedexample2.html>here</a>. We've moved them to another page because the id tags for the error
+fields can not be duplicated in the same html page with violating w3c standards.</p>
+<script>
+// This function creates the args [] array and populates it with data
+    // found in the URL's search string:
+
+    function myunescape (str)
+    {
+    	str = '' + str;
+    	while (true)
+    	{
+    		var i = str . indexOf ('+');
+    		if (i < 0)
+    		break;
+    		str = str . substring (0, i) + ' ' + str . substring (i + 1, str . length);
+    	}
+    	return unescape (str);
+    }
+
+    // This function creates the args [] array and populates it with data
+    // found in the URL's search string:
+
+    var args;
+
+    function args_init ()
+    {
+    	args = new Array ();
+    	var argstring = window . location . search;
+    	if (argstring . charAt (0) != '?')
+    	return;
+    	argstring = argstring . substring (1, argstring . length);
+    	var argarray = argstring . split ('&');
+    	var i;
+    	var singlearg;
+    	for (i = 0; i < argarray . length; ++ i)
+    	{
+    		singlearg = argarray [i] . split ('=');
+    		if (singlearg . length != 2)
+    		continue;
+    		var key = myunescape (singlearg [0]);
+    		var value = myunescape (singlearg [1]);
+    		args [key] = value;
+    	}
+    }
+    var signed_on;
+    function wsinit()
+    {
+    	args_init();
+    	var logout = '';
+    	for (ix = 0; ix<10 ; ++ ix)
+    	{
+    		if (args['e'+ix]) 	if (args['p'+ix])
+    		{
+    			p = args['p'+ix];
+    			if (document.getElementById(p))
+    			document.getElementById(p).innerHTML = '** ' + args['e'+ix] + '**';
+    		}
+    		
+    	}
+    }
+  
+
+wsinit();
+</script>

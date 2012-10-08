@@ -1,0 +1,17 @@
+@ IN SOA ns1.medcommons.net. root.medcommons.net. (
+	2008062301	; serial
+	3h		; refresh
+	1h		; retry
+	7d		; expire
+	1d	)	; minimum ttl
+
+	in	ns	ns1.medcommons.net.
+	in	ns	ns2.medcommons.net.
+
+	in	txt	"v=spf1 ip4:67.15.178.32/28 ?all"
+
+	in	a	82.165.129.107
+	in	mx	10 mx00.1and1.com.
+	in	mx	10 mx01.1and1.com.
+
+media	in	cname	s3.amazonaws.com.

@@ -1,0 +1,5 @@
+MANIFEST
+mc_locals.rc
+init.d/mc_locals
+mc_locals.py
+setup.py

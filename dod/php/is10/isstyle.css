@@ -1,0 +1,52 @@
+body {
+  width:320px;
+}
+
+#is_a_section {
+  float:none;
+  margin-top:0;
+  width:auto;
+}
+
+#is_b_section {
+  width:auto;
+  margin-left:0;
+}
+#is_footer {
+  clear:both;
+  width:auto;
+}
+#footer {
+  text-align:left;
+}
+
+#ajaxarea {
+  width:270px;
+}
+
+#linkarea {
+  width:280px;
+}
+
+#playerselect {
+  width:230px;
+  float:right;
+  margin:0 25px 10px 0;
+  position:inherit;
+}
+
+#leagueimg {    
+  margin-left:10px;
+}
+
+#is_c_section .amenu {
+  padding:5px 2px;
+}
+
+#is_c_section #ajaxarea  {
+  width:350px;
+ }
+
+#is_c_section #queryarea, #is_c_section #teamroster {
+  width:270px;
+}

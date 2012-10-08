@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+        <meta name="author" content="MedCommons"/>
+        <meta name="keywords" content="ccr, phr, privacy, patient, health, records, medical, w3c,
+            web standards"/>
+        <meta name="description" content="MedCommons CXP Client Demo Instructions"/>
+        <meta name="robots" content="all"/>
+        <title>MedCommons CXP Client Demo Instructons</title>
+        <link rel="stylesheet" type="text/css" media="print" href="print.css"/>
+        <link rel="shortcut icon" href="images/favicon.gif" type="image/gif"/>
+        <style type="text/css" media="all"> @import "main.css"; </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="intro">
+                <div id="pageHeader">
+                    <a href="index.html"><img alt="MedCommons" src="images/MEDcommons_logo_246x50.gif"/></a>
+                    <iframe src="uinfo.php" height="50"  width="246" scrolling="no" name="uinfo" frameborder="0" ></iframe>
+                </div>
+                <div id="quickSummary">
+                    <p class="p2">
+                        <span>a patient centric ccr transport and storage network</span>
+                    </p>
+                </div>
+            </div>
+            <div id="supportingText" title="mouse over any acronym to reveal its definition">
+                <div id="preamble">
+                    <h3>CCR Demonstration</h3>
+                    <div id="content">
+                        <p class="p2">v 1.22</p>
+                        <h3>MedCommons CXP/CCR Client Demo Instructions 9/27/05</h3>
+                        <div id="warningbox">
+                            <h3>WARNING:</h3>
+                            <p class="p2">INSECURE PUBLIC DEMO. DO NOT USE ANY IDENTIFIABLE PATIENT
+                                INFORMATION!</p>
+                        </div>
+                        <p class="p2">Contents:</p>
+                        <ul>
+                            <li>
+                                <a href="#1">About the CXP Protocol</a>
+                            </li>
+                            <li>
+                                <a href="#2">About the MedCommons CCR Client</a>
+                            </li>
+                            <li>
+                                <a href="#3">CCR Client Installation Instructions</a>
+                            </li>
+                        </ul>
+                        <a name="1"/>
+                        <h3>CXP Protocol</h3>
+                        <p class="p2">CXP is an example of point-to-point CCR transport between EHR
+                            systems. MedCommons has placed CXP into the public domain in order to
+                            stimulate comment from EHR vendors and other interested parties.</p>
+                        <p class="p2">The CXP protocols are demonstrated by a Firefox extension
+                            (PC/Mac) that makes it convenient to cross firewalls separating EHR
+                            applications by using a Web accessible CXP server as intermediary. You
+                            are free to install your own CXP server from the public domain
+                            distribution. </p>
+                        <p class="p2">MedCommons operates an enhanced CXP server (<a
+                                href="https://gateway001.medcommons.net/router/CxpServlet"
+                                >https://gateway001.medcommons.net/router/CxpServlet</a>) that
+                            anyone can use. This server will send a MedCommons email notification
+                            based on emails found in the TO and FROM actors of a CCR. MedCommons
+                            tracks this email activity. We hope you will use the MedCommons server
+                            as much as possible - it's free - please send feedback to <a
+                                href="mailto:cmo@medcommons.net">cmo@medcommons.net</a> or to the
+                            CCR Accelerator Group. </p>
+                        <p class="p2">This note, and the public domain CXP software it refers to is
+                            located at <a href="http://www.medcommons.net/cxp/"
+                                >http://www.medcommons.net/cxp/</a>
+                        </p>
+                        <p class="p2">The documentation for the CXP protocol is at <a
+                                href="http://www.medcommons.net/cxp/collateral/cxp_protocol_specification.pdf"
+                                >http://www.medcommons.net/cxp/collateral/cxp_protocol_specification.pdf</a>
+                        </p>
+                        <a name="2"/>
+                        <h3>CCR Client</h3>
+                        <img alt="demoshot1" class="inlinepic" src="images/demoshot_1.jpg"/>
+                        <p class="caption">Figure 1</p>
+                        <p class="p2">The CCR Client demonstrates EHR to Web and direct EHR to EHR
+                            transport using the CXP Protocol. A CCR saved from an EHR is picked up
+                            by the local CCR Client, transported by MedCommons using CXP and becomes
+                            available to any other EHR user that has a CCR Client installed.</p>
+                        <p class="p2">MedCommons, acting as the intermediary transport agent,
+                            facilitates interoperability testing by adding:</p>
+                        <ul>
+                            <li>an email notification feature based on Actors in the CCR itself, </li>
+                            <li>an online CCR viewer, and </li>
+                            <li>a central problem blog to facilitate community-based resolution of
+                                incompatibilities and other interoperability problems.</li>
+                        </ul>
+                        <p class="p2">The CCR Client is just an interoperability testing tool. It is
+                            assumed that all CCRs are completely anonymous and created explicitly to
+                            demonstrate the implementation of various features of the ASTM CCR
+                            standard by participating EHR vendors.</p>
+                        <a name="3"/>
+                        <h3>CCR Client Installation</h3>
+                        <ol>
+                            <li>Install Firefox and the CCR Client Firefox Extension <ul>
+                                    <li>Download and install Firefox (FF go to <a
+                                            href="http://www.mozilla.org">www.mozilla.org</a> to get
+                                        a copy). Please ensure your Firefox is at version 1.0.6 or
+                                        later.</li>
+                                    <li>Download the most recent version of the CCR Client , from
+                                        the link on the MedCommons home page to your hard drive. (<a
+                                            href="http://www.medcommons.net/ccr_client/1.22/mccxp_0.9.22.xpi"
+                                            >http://www.medcommons.net/ccr_client/1.21/mccxp_0.9.21.xpi</a>)</li>
+                                    <li>Exit Firefox and double-click the extension file. It will
+                                        open with Firefox. Click the Install button when it appears</li>
+                                    <li>Note: you must have "allow websites to install plug-ins"
+                                        checked in your preferences</li>
+                                    <li>After installation, be sure to restart Firefox completely -
+                                        all windows must be closed for the extension to install
+                                        properly.</li>
+                                    <li>When installation is successful and the client is installed,
+                                        an option labelled &quot;CCR Client&quot; will
+                                        appear in the <span style="font-weight:bold;">Tools</span>
+                                        menu as pictured below:</li>
+                                    <li>
+                                        <img alt="demoshot2" style="border:1px solid #000;"
+                                            src="images/demoshot_2.jpg"/>
+                                        <p class="caption">Figure 2</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Prepare a CCR with Embedded Email Address(es) (optional) <ul>
+                                    <li>If your CCR Client Settings are utilizing a MedCommons CXP
+                                        Server, a notification email can be sent to the TO Actors in
+                                        the CCR when your CCR is processed. If you are using the
+                                        barebones CXP public domain software, the contents of the
+                                        CCR will be ignored. A supported MedCommons CXP server is
+                                        preset in the CCR Client extension. You may change it at
+                                        will, but note that Notification, Validation and Security
+                                        features may not be supported by different CXP server
+                                        implementations.</li>
+                                    <li>Create or open a CCR in your EHR. CCR samples are in <a
+                                            href="cxp/collateral/"
+                                            >http://www.medcommons.net/cxp/collateral/</a>. </li>
+                                    <li>If possible, enter a notification email address for
+                                        MedCommons to use directly into your EHR software, otherwise
+                                        you will have an opportunity to enter a notification address
+                                        in Step 3.</li>
+                                    <li>Save the file as myccr.xml (or another name if you like) on
+                                        your local file system.</li>
+                                </ul>
+                            </li>
+                            <li>Run CCR Client to Send CCR <ul>
+                                    <li>Open FF if not already open, go to Tools>CCR Client (Fig 2,
+                                        above) it will look similar to Fig. 1.</li>
+                                    <li>Browse to the file myccr.xml wherever it is stored in local
+                                        file system. Patient name, CCR Date and size information
+                                        will be presented for validation. (Fig 3, top).</li>
+                                    <li>Enter the email address of the party you would like
+                                        MedCommons to Notify, and click Send. The CCR Client will
+                                        add or change the email address of the TO Actor accordingly.
+                                        You may change the Assigned PIN to one your destination user
+                                        already knows and you can even add the PIN and a brief
+                                        message to the Notification Subject box. If this was real
+                                        patient data, you should not be so careless with the PIN and
+                                        the system may issue a warning.</li>
+                                    <li>When accepted, note that a Transaction ID and the PIN are
+                                        added to your History list for future reference. (Fig 3,
+                                        bottom)</li>
+                                    <li>
+                                        <img alt="demoshot3" style="border:1px solid #000;"
+                                            src="images/demoshot_3.jpg"/>
+                                        <p class="caption">Figure 3</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>View the CCR via MedCommons <ul>
+                                    <li>Double click the entry in History to preview how others will
+                                        see the CCR online.</li>
+                                    <li>Anyone can view the CCR you sent by clicking on the Tracking
+                                        Number link in the Notification email sent by MedCommons, by
+                                        manually entering the Tracking Number at the MedCommons Home
+                                        Page, and, if anyone posts it, by using &quot;Report a
+                                        problem with CCR&quot; in the CCR Client, by clicking in
+                                        the community blog at <a
+                                            href="https://ops.medcommons.net/cxpblog.php"
+                                            >https://ops.medcommons.net/cxpblog.php</a></li>
+                                    <li>They will need to get the PIN from you by some means and
+                                        enter it when challenged to prove that they are your
+                                        intended recipient. </li>
+                                </ul>
+                            </li>
+                            <li>Get the CCR into Destination EHR <ul>
+                                    <li>If the destination EHR has not natively implemented CXP, the
+                                        receiving user may install Firefox and the CCR Client as in
+                                        step 1, above.</li>
+                                    <li>While viewing the CCR on line, click the Get. button (Fig 3- middle) this will avoid having to reenter the PIN.</li>
+                                    <li>If you are not viewing the CCR on line, enter Tracking ID
+                                        and PIN and click Get. If you are the original sender, just
+                                        select the CCR in History and Get.</li>
+                                    <li>Enter a somename.xml and click Save to your local drive</li>
+                                    <li>Open somename.xml in the destination EHR</li>
+                                </ul>
+                            </li>
+                            <li>Report Problems <ul>
+                                    <li>The &quot;Report a Problem with a CCR&quot; link on
+                                        the CCR Client will add the Tracking ID and PIN along with
+                                        your free text comment to a running blog that is accessible
+                                        to all. </li>
+                                    <li>Do not post a CCR or a report to this blog that has any
+                                        personally identifiable information - you would be sharing
+                                        it with the world.</li>
+                                    <li>You may review the blog at <a
+                                            href="https://secure.medcommons.net/cxpblog.php"
+                                            >https://secure.medcommons.net/cxpblog.php</a></li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <p class="p2">Please send feedback and comments to <a
+                                href="mailto:cmo@medcommons.net">cmo@medcommons.net</a></p>
+                        <p class="p2">Thank you!</p>
+                    </div>
+                </div>
+            </div>
+            <div id="trackingBox">
+                <form method="post"
+                    action="https://secure.medcommons.net/trackinghandler.php">
+                    <input type="hidden" name="returnurl"
+                        value="http://www.medcommons.net/hp.html?trackingerror=yes"/> MedCommons
+                    Tracking Number <p>
+                        <input type="text" name="trackingNumber" size="16" maxlength="16"/>
+                    </p>
+                    <input type="submit" value="Go"/>
+                </form>
+            </div>
+            <div id="linkList">
+                <!--extra div for flexibility - this list will probably be the trickiest spot you'll deal with -->
+                <div id="linkList2">
+                    <!-- If you're wondering about the extra &nbsp; at the end of the link, it's a hack to meet WCAG 1 Accessibility. -->
+                    <!-- I don't like having to do it, but this is a visual exercise. It's a compromise. -->
+                    <div class="lside">
+                        <h3 class="resources">
+                            <span>BASICS</span>
+                        </h3>
+                        <!-- list of links begins here. There will be no more than 8 links per page -->
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="tour.html">Tour</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">
+                                    <acronym title="Frequently Asked Questions">FA<span
+                                        class="accesskey">Q</span></acronym>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a href="termsofuse.html">Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="sendccr.html">Send a Private
+                                    <acronym title="Continuity of Care Record">CCR</acronym></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lside">
+                        <h3 class="archives">
+                            <span>PAPERS</span>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a
+                                    href="http://www.medcommons.net/affinity-driven_health_care_networks.pdf" target="_new"
+                                    ><span class="accesskey">A</span>ffinity Driven Health
+                                    Information Networks</a>&nbsp;</li>
+                            
+                            <li>
+                                <a href="http://www.medcommons.net/cxp/collateral/cxp_protocol_specification.pdf" target="_new"
+                                    title="Patient-centered medical information transport." ><acronym title="CCR Exchange Protocol">C<span
+                                        class="accesskey">XP</span></acronym> - A Public Domain
+                                    <acronym title="Continuity of Care Record">CCR</acronym>
+                                    Transfer Protocol</a>
+                            </li>
+                            <li>
+                                <a href="http://www.medcommons.net/whitepapers/nhinrfiresponse.pdf" target="_new"
+                                    title="MedCommons Response to Request for Information from Dr.
+                                    David Brailer"><span class="accesskey">M</span>edCommons
+                                    Response to <acronym title="National Health Information Network"
+                                        >NHIN</acronym>
+                                    <acronym title="Request for Information">RFI</acronym></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lside">
+                        <h3 class="resources">
+                            <span>LINKS</span>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="http://www.centerforhit.org/x1556.xml" target="_new"><span>CCR-</span>Compatible
+                                    Product  <acronym title="Continuity of Care Record"
+                                        >Gallery</acronym></a>
+                            </li>
+                            <li>
+                                <a href="http://www.centerforhit.org/x201.xml" target="_new"><span>M</span>ore
+                                    information on the <acronym title="Continuity of Care Record"
+                                        >CCR</acronym> standard</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lside">
+                        <h3 class="resources">
+                            <span>DOWNLOAD</span>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="cxpclient.html" target="_new"
+                                    ><acronym title="Continuity of Care Record">CCR</acronym>
+                                    <span class="accesskey">P</span>lugin for Firefox</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <a href="http://validator.w3.org/check/referer" title="Check the validity of this
+                site&#8217;s XHTML">xhtml</a> &nbsp; <a
+                href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of
+                this site&#8217;s CSS">css</a> &nbsp; <a
+                href="http://creativecommons.org/licenses/by-nc-sa/1.0/" title="View details of the
+                license of this site, courtesy of Creative Commons.">cc</a> &nbsp; <a
+                href="http://bobby.watchfire.com/bobby/bobbyServlet?URL=http%3A%2F%2Fwww.mezzoblue.com%2Fzengarden%2F&amp;output=Submit&amp;gl=sec508&amp;test="
+                title="Check the accessibility of this site according to U.S. Section 508">508</a>
+            &nbsp; <a
+                href="http://bobby.watchfire.com/bobby/bobbyServlet?URL=http%3A%2F%2Fwww.mezzoblue.com%2Fzengarden%2F&amp;output=Submit&amp;gl=wcag1-aaa&amp;test="
+                title="Check the accessibility of this site according to Web Content Accessibility
+                Guidelines 1.0">aaa</a>
+            <p class="p1">&#169; MedCommons 2006</p>
+        </div>
+    </body>
+</html>

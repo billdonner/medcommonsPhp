@@ -1,0 +1,803 @@
+#!/usr/bin/env python
+#
+# mysqldiff.py
+# Intelligent MySQL database dump and update utility.
+# Can dump a single MySQL database, in a format similar
+# to mysqldump.
+#
+# Can also compare two MySQL databases, producing the
+# DDL to update one to the other.
+#
+# Program structure
+# -----------------
+# 1. Initialization
+#       main(args)
+#       usage()
+#       get_options(args)
+#
+# 2. Database inspection
+#       inspect(connection, schema)
+#       query(cursor, statement, *args)
+#       cursor_columns(cursor)
+#
+# 3. Database differences
+#       diff(db1, db2, hints, hint_filename)
+#       array_diff(a, b, cmp)
+#
+# 3.1. Table differences
+#       add_table(t)
+#       del_table(t)
+#       rename_table(table, new_name)
+#       eql_table(new_table, old_table, hints, hint_filename)
+#       cmp_table_name(t1, t2)
+#
+# 3.2. Column differences
+#       add_column(c, new_table, old_table)
+#       column_suffix(column, new_columns, old_columns)
+#       find_column_def(column, table)
+#       del_column(c, t)
+#       rename_column(new_column, old_column, table)
+#       eql_column(new_column, new_table, old_column, old_table)
+#       cmp_column(c1, c2)
+#       cmp_column_name(c1, c2)
+#
+# 3.3 Index and key differences
+#       add_index((name, columns), table, alters, output)
+#       del_index((name, columns), table, alters, output)
+#       eql_index(new_index, old_index, table, alters, output)
+#       cmp_index_name(i1, i2)
+#
+# 3.4. Procedure and routine differences
+#       add_routine(r)
+#       del_routine(r)
+#       eql_routine(r1, r2)
+#       cmp_routine_name(r1, r2)
+#
+# 3.5. Trigger differences
+#
+# 4. Miscellaneous functions#
+#       quote(s)
+#       column_tuple(c)
+#       column_value(column, value)
+#       coward(rows, rowkey, **kwargs)
+"""
+"""
+
+__author__ = "Terence Way"
+__email__ = "terry@wayforward.net"
+__version__ = "1.1: April 11, 2008"
+
+from sys import argv, exit, stderr, stdout
+from os import popen
+from os.path import expanduser, join
+from getpass import getpass
+from ConfigParser import ConfigParser
+from cPickle import dump, load
+from cStringIO import StringIO
+
+import re
+
+from MySQLdb import connect
+
+USAGE = """Usage: mysqldiff [OPTIONS] {database1} [database2]
+  -?, --help          Display this help and exit.
+  -h, --host=name     Connect to host.
+  -u, --user=name     User for login if not current user.
+  -p, --password[=name]
+                      Password to use when connecting to server.  If password is
+                      not given it's asked from the tty.
+
+  -n, --hints={file}  Hints on what to do with deleted or renamed tables and
+                      columns.
+
+  -o   {output file}  Where to output SQL statements
+
+  {database1}         A MySQL database name
+  [database2]         Another MYSQL database name
+
+Examples:
+    The primary purpose of 'mysqldiff' is for version control of
+    MySQL databases.
+
+    Once developers are happy with a database, the database
+    definitions can be frozen:
+        $ mysqldiff {dbname} >{dbname}.sql
+
+    The resultant {dbname}.sql file can be checked into a revision
+    control system.  The above command can be repeated as often as
+    necessary.
+
+    A developer can see what differences exist between his/her
+    version of a database and that in {dbname}.sql:
+        $ mysql diff:temp <{dbname}.sql
+        $ mysqldiff {dbname} diff:temp
+
+    The {dbname}.sql file can also be shipped with the software.
+    The SQL to update the local database with the global schema
+    can be issued:
+        $ mysql diff:temp <{dbname}.sql
+        $ mysqldiff diff:temp {dbname} -o update.sql
+        $ mysql {dbname} <update.sql
+
+    Now only the updates necessary to update the client database
+    are issued, no matter how old the client database schema is.
+"""
+
+HEAD = """SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT;
+SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS;
+SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION;
+SET CHARACTER_SET_CLIENT = utf8;
+SET NAMES utf8;
+SET @OLD_TIME_ZONE=@@TIME_ZONE;
+SET TIME_ZONE='+00:00';
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
+SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0;
+"""
+
+TAIL = """SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT;
+SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS;
+SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION;
+SET SQL_NOTES=@OLD_SQL_NOTES;
+"""
+
+AUTO_INCREMENT_RE = re.compile(r'AUTO_INCREMENT\s*\=\s*(\d+)')
+
+connection = None
+mysql_options = ''
+output = stdout
+primary_key_memos = {}
+
+DROP = None
+IGNORE = 0
+
+class Database:
+    __slots__ = ['tables', 'routines']
+
+    def __init__(self):
+        self.tables = {}
+        self.routines = {}
+
+######################
+# 1. Initialization...
+#
+def main(args):
+    global connection
+
+    options, args = get_options(args[1:])
+
+    if not (1 <= len(args) <= 2):
+        usage()
+
+    if 'hints' in options:
+        hint_filename = options.pop('hints')
+    else:
+        hint_filename = args[0] + '_hints.py'
+
+    try:
+        f = file(hint_filename)
+    except IOError:
+        hints = {}
+    else:
+        hints = eval(f.read(), dict(DROP=DROP, IGNORE=IGNORE))
+
+    connection = connect(**options)
+
+    if '.' in args[0]:
+        db1name, tablename = args[0].split('.', 1)
+    else:
+        db1name = args[0]
+        tablename = None        
+
+    db1 = inspect(connection, db1name)
+
+    if len(args) > 1:
+        db2 = inspect(connection, args[1])
+    else:
+        db2 = Database()
+
+    output.write(HEAD)
+
+    if tablename is None:
+        diff(db1, db2, hints, hint_filename)
+    elif tablename not in db1:
+        print >>stderr, "Error: can't find table `%s` in `%s`" % \
+                        (tablename, db1name)
+    elif tablename not in db2:
+        print >>stderr, "Error: can't find table `%s` in `%s`" % \
+                        (tablename, args[1])
+    else:
+        eql_table(db1[tablename], db2[tablename], hints, hint_filename)
+
+    output.write(TAIL)
+
+def usage():
+    print >>stderr, USAGE
+    exit(1)
+
+def get_options(args):
+    """Returns a tuple (map, args) where map is a set of options
+    parsed from the command line, or from configuration files,
+    and args is the modified argument list.
+    """
+    parser = ConfigParser(dict(host='localhost', user='medcommons'))
+    parser.add_section('client')
+    parser.read([join(expanduser('~'), '.my.cnf'), 'mysqldiff.rc'])
+
+    options = {}
+    new_args = []
+    for key, value in parser.items('client'):
+        options[key] = value
+
+    while args:
+        arg = args.pop(0)
+        if arg == '-h' and args:
+            options['host'] = args.pop(0)
+        elif arg.startswith('--host='):
+            options['host'] = arg[7:]
+
+        elif arg == '-u' and args:
+            options['user'] = args.pop(0)
+        elif arg.startswith('--user'):
+            options['user'] = arg[7:]
+
+        # password options
+        elif arg == '-p' or arg == '--password':
+            options['password'] = getpass('Password: ')
+        elif arg.startswith('-p'):
+            options['password'] = arg[2:]
+        elif arg.startswith('--password='):
+            options['password'] = arg[11:]
+
+        elif arg == '-o' and args:
+            global output
+            output = file(args.pop(0), 'w')
+
+        elif arg.startswith('--hints='):
+            options['hints'] = arg[8:]
+        elif arg == '-n' and args:
+            options['hints'] = args.pop(0)
+
+        elif arg.startswith('-'):
+            usage()
+
+        else:
+            new_args.append(arg)
+
+    if 'password' in options:
+        options['passwd'] = options.pop('password')
+
+    return options, new_args
+
+# ...1. Initialization
+######################
+
+###########################
+# 2. Database inspection...
+#
+def inspect(connection, schema):
+    cursor = connection.cursor()
+
+    db = Database()
+
+    try:
+
+        ###########
+        # Tables...
+        a = query(cursor,
+                  """SELECT *
+                     FROM information_schema.tables
+                     WHERE table_schema = %s""", schema)
+
+        result_columns = cursor_columns(cursor)
+
+        for row in a:
+            table = dict(zip(result_columns, row))
+
+            name = table['table_name']
+
+            table['columns'] = []
+            table['indices'] = {}
+
+            sql = query(cursor,
+                        'SHOW CREATE TABLE %s.%s' % (quote(schema),
+                                                     quote(name)))
+
+            sql = sql[0][1] + ';\n'
+
+            table['sql'] = sql
+
+            # oh yeah, auto_increment in information_schema.tables
+            # is kak...
+            m = AUTO_INCREMENT_RE.search(sql)
+            if m:
+                table['auto_increment'] = int(m.group(1))
+
+            db.tables[name] = table
+
+        # ...tables
+        ###########
+
+        ############
+        # Columns...
+        #
+        a = query(cursor,
+                  """SELECT *
+                     FROM information_schema.columns
+                     WHERE table_schema = %s
+                     ORDER BY table_name, ordinal_position""", schema)
+        result_columns = cursor_columns(cursor)
+
+        for row in a:
+            column = dict(zip(result_columns, row))
+
+            table = db.tables[column['table_name']]
+            table['columns'].append(column)
+
+        # ...columns
+        ############
+
+        #####################
+        # Indices and keys...
+        #
+        a = query(cursor,
+                  """SELECT *
+                     FROM information_schema.statistics
+                     WHERE table_schema = %s
+                     ORDER BY index_name, seq_in_index""", schema)
+        result_columns = cursor_columns(cursor)
+
+        for row in a:
+            index = dict(zip(result_columns, row))
+
+            table = db.tables[index['table_name']]
+
+            indices = table['indices']
+            if index['seq_in_index'] == 1:
+                indices[index['index_name']] = [index]
+            else:
+                indices[index['index_name']].append(index)
+
+        # ...indices and keys
+        #####################
+
+        ############################
+        # Procedures and routines...
+        #
+        a = query(cursor,
+                  """SELECT *
+                     FROM information_schema.routines
+                     WHERE routine_schema = %s
+                     ORDER BY routine_name""", schema)
+        result_columns = cursor_columns(cursor)
+
+        for row in a:
+            routine = dict(zip(result_columns, row))
+
+            name = routine['routine_name']
+            type = routine['routine_type']
+
+            sql = query(cursor,
+                        'SHOW CREATE %s %s.%s' % (type, quote(schema),
+                                                  quote(name)))
+            sql = sql[0][1] + ';\n'
+
+            routine['sql'] = sql
+            
+            db.routines[name] = routine
+
+        return db
+    finally:
+        cursor.close()
+
+def query(cursor, statement, *args):
+    cursor.execute(statement, args)
+    return cursor.fetchall()
+
+def cursor_columns(cursor):
+    """Given a MySQL cursor that has just completed a query,
+    returns a list of column names, in the same order as the query
+    results."""
+    return [c[0].lower() for c in cursor.description]
+
+# ...2. Database inspection
+###########################
+
+############################
+# 3. Database differences...
+#
+def diff(db1, db2, hints, hint_filename):
+    adds, dels, eqls = array_diff(db1.tables.values(),
+                                  db2.tables.values(),
+                                  cmp = cmp_table_name)
+
+    for table in dels:
+        table_name = table['table_name']
+
+        if table_name not in hints:
+            coward(type = 'table', name = table_name, hints = hint_filename,
+                   rows = adds, rowkey = 'table_name')
+            continue
+
+        hint = hints[table_name]
+
+        if isinstance(hint, (str, unicode)):
+            for t in adds:
+                if t['table_name'] == hint:
+                    break
+            else:
+                print >>stderr, "Warning: can't find renamed table", hint
+                exit(1)
+
+            adds.remove(t)
+            eqls.append( (t, table) )
+
+            rename_table(table, hint)
+        elif hint == DROP:
+            del_table(table)
+
+    for table in adds:
+        add_table(table)
+
+    for new_table, old_table in eqls:
+        eql_table(new_table, old_table, hints, hint_filename)
+
+    adds, dels, eqls = array_diff(db1.routines.values(), db2.routines.values(),
+                                  cmp = cmp_routine_name)
+
+    for routine in dels:
+        del_routine(routine)
+
+    for routine in adds:
+        add_routine(routine)
+
+    for new_routine, old_routine in eqls:
+        eql_routine(new_routine, old_routine)
+
+def array_diff(a, b, cmp):
+    """Compares two arrays.
+
+    Returns three lists (adds, dels, eqls)
+
+    adds is the list of objects in _a_ and not in _b_
+    dels is the list of objects in _b_ and not in _a_
+    eqls is the list of objects in both.
+    """
+    a = sorted(a, cmp = cmp)
+    b = sorted(b, cmp = cmp)
+
+    adds = []
+    dels = []
+    eqls = []
+
+    while a and b:
+        a1 = a[0]
+        b1 = b[0]
+
+        c = cmp(a1, b1)
+
+        if c < 0:
+            adds.append(a1)
+            a.pop(0)
+        elif c > 0:
+            dels.append(b1)
+            b.pop(0)
+        else:
+            eqls.append( (a1, b1) )
+            a.pop(0)
+            b.pop(0)
+
+    adds += a
+    dels += b
+
+    return adds, dels, eqls
+
+# 3.1. Table differences...
+
+def add_table(t):
+    output.write(t['sql'])
+
+def del_table(t):
+    print >>output, 'DROP TABLE', quote(t['table_name']), ';'
+
+def rename_table(table, new_name):
+    print >>output, 'ALTER TABLE', quote(table['table_name'])
+    print >>output, 'RENAME TO', quote(new_name), ';'
+
+def eql_table(new_table, old_table, hints, hint_filename):
+    quoted_table_name = quote(new_table['table_name'])
+
+    s = StringIO()
+    alters = []
+
+    new_columns = new_table['columns'][:]
+    old_columns = old_table['columns'][:]
+    c_adds, c_dels, c_eqls = array_diff(new_columns, old_columns,
+                                        cmp = cmp_column_name)
+
+    c_dels.sort(cmp = cmp_column, reverse = True)
+    for col in c_dels:
+        hintname = '%s.%s' % (new_table['table_name'], col['column_name'])
+
+        if hintname not in hints:
+            coward(type = 'column', name = hintname, hints = hint_filename,
+                   rows = c_adds, rowkey = 'column_name')
+            continue
+
+        hint = hints[hintname]
+
+        if isinstance(hint, (str, unicode)):
+            if '.' in hint:
+                hint = hint.split('.', 1)[1]
+
+            for c in c_adds:
+                if c['column_name'] == hint:
+                    break
+            else:
+                print >>stderr, "Error: can't find renamed column %s in %s" % (hin, quoted_table_name)
+
+            c_adds.remove(c)
+            c_eqls.append( (c, col) )
+            rename_column(c, col, new_table)
+
+        elif hint == DROP:
+            del_column(col, new_table)
+            old_columns.remove(col)
+
+            # Remove any indices based on this column
+            for index_name, columns in old_table['indices'].items():
+                for index_column in columns:
+                    if index_column['column_name'] == col['column_name']:
+                        columns.remove(index_column)
+
+                if not columns:
+                    old_table['indices'].pop(index_name)
+
+    c_adds.sort(cmp = cmp_column)
+    for col in c_adds:
+        add_column(col, new_table, old_table)
+        old_columns.insert(col['ordinal_position'], col)
+
+    # we've been editing old_columns while adding/dropping columns
+    # now we see if there's any order changes
+    assert len(new_columns) == len(old_columns)
+
+    for i in range(len(new_columns)):
+        new_column = new_columns[i]
+        old_column = old_columns[i]
+        old_column['ordinal_position'] = i + 1
+
+        if new_column['column_name'] != old_column['column_name']:
+            for col in old_columns:
+                if col['column_name'] == new_column['column_name']:
+                    old_columns.remove(col)
+                    old_columns.insert(i, col)
+                    break
+
+    for new_column, old_column in c_eqls:
+        eql_column(new_column, new_table, old_column, old_table)
+
+    if new_table['engine'] != old_table['engine']:
+        alters.append('ENGINE=%s' % new_table['engine'])
+
+    if new_table['auto_increment'] and new_table['auto_increment'] != old_table['auto_increment']:
+        alters.append('AUTO_INCREMENT = %s' % new_table['auto_increment'])
+
+    i_adds, i_dels, i_eqls = array_diff(new_table['indices'].items(),
+                                        old_table['indices'].items(),
+                                        cmp = cmp_index_name)
+
+    for index in i_adds:
+        add_index(index, new_table, alters, s)
+
+    for index in i_dels:
+        del_index(index, new_table, alters, s)
+
+    for new_index, old_index in i_eqls:
+        eql_index(new_index, old_index, new_table, alters, s)
+
+    if alters:
+        print >>output, 'ALTER TABLE', quoted_table_name
+        print >>output, ',\n'.join(alters) + ';'
+
+    output.write(s.getvalue())
+
+def cmp_table_name(t1, t2):
+    return cmp(t1['table_name'], t2['table_name'])
+
+# 3.2. Column differences...
+
+def add_column(c, new_table, old_table):
+    quoted_column_name = quote(c['column_name'])
+
+    column_def = find_column_def(c, new_table)
+
+    if not column_def:
+        print >>stderr, "Cannot find column", quoted_column_name
+        exit(1)
+ 
+    print >>output, 'ALTER TABLE', quote(c['table_name'])
+    print >>output, 'ADD COLUMN', column_def,
+
+    if c['column_key'] == 'PRI':
+        primary_key_memos[column_tuple(c)] = True
+        print >>output, 'PRIMARY KEY',
+
+    print >>output, column_suffix(c, new_table['columns'], old_table['columns'])
+
+def column_suffix(column, new_columns, old_columns):
+    ordinal_position = column['ordinal_position'] - 1
+
+    if ordinal_position == 0:
+        return ' FIRST;'
+
+    elif ordinal_position < len(new_columns):
+        after_col = new_columns[ordinal_position - 1]
+
+        return ' AFTER `%s`;' % after_col['column_name']
+
+    return ';'
+
+def find_column_def(column, table):
+    quoted_column_name = quote(column['column_name'])
+
+    for line in StringIO(table['sql']):
+        line = line.rstrip()
+        if line.endswith(','):
+            line = line[:-1]
+
+        defn = line.strip()
+
+        if defn.startswith(quoted_column_name):
+            return line
+
+    return None
+
+def del_column(c, t):
+    print >>output, 'ALTER TABLE', quote(c['table_name'])
+    print >>output, 'DROP COLUMN', quote(c['column_name']), ';'
+
+def rename_column(new_column, old_column, table):
+    print >>output, 'ALTER TABLE', quote(table['table_name'])
+    print >>output, 'CHANGE COLUMN', quote(old_column['column_name'])
+    print >>output, find_column_def(new_column, table), ';'
+
+def eql_column(new_column, new_table, old_column, old_table):
+    if new_column['column_type'] != old_column['column_type'] or \
+       new_column['extra'] != old_column['extra'] or \
+       new_column['ordinal_position'] != old_column['ordinal_position'] or \
+       new_column['is_nullable'] != old_column['is_nullable']:
+        print >>output, 'ALTER TABLE', quote(new_column['table_name'])
+        print >>output, 'MODIFY COLUMN', find_column_def(new_column, new_table)
+        if new_column['column_key'] == 'PRI' and old_column['column_key'] != 'PRI':
+            primary_key_memos[column_tuple(new_column)] = True
+            print >>output, 'PRIMARY KEY',
+
+        print >>output, column_suffix(new_column, new_table['columns'], old_table['columns'])
+
+    elif new_column['column_default'] != old_column['column_default']:
+        print >>output, 'ALTER TABLE', quote(new_column['table_name'])
+        print >>output, 'ALTER COLUMN', quote(new_column['column_name'])
+
+        if new_column['column_default'] is None:
+            print >>output, 'DROP DEFAULT;'
+        else:
+            print >>output, 'SET DEFAULT %s;' % \
+                column_value(new_column, new_column['column_default'])
+
+def cmp_column(c1, c2):
+    return cmp(c1['ordinal_position'], c2['ordinal_position'])
+
+def cmp_column_name(c1, c2):
+    return cmp(c1['column_name'], c2['column_name'])
+
+# 3.3. Index and key differences...
+
+def add_index((name, columns), table, alters, output):
+    key = ', '.join([quote(c['column_name']) for c in columns])
+
+    if name == 'PRIMARY':
+        if len(columns) != 1 or \
+           not primary_key_memos.get(column_tuple(columns[0]), False):
+            alters.append('ADD PRIMARY KEY (%s)' % key)
+    else:
+        print >>output, 'CREATE',
+        if not columns[0]['non_unique']:
+            print >>output, 'UNIQUE',
+        print >>output, 'INDEX', quote(name),
+        print >>output, 'ON %s(%s);' % (quote(table['table_name']), key)
+
+def del_index((name, columns), table, alters, output):
+    if name == 'PRIMARY':
+        alters.append('DROP PRIMARY KEY')
+    else:
+        alters.append('DROP INDEX %s' % quote(name))
+
+def eql_index(new_index, old_index, table, alters, output):
+    IMPORTANT_INDEX_KEYS = ['index_type', 'sub_part', \
+                            'non_unique', 'comment', 'collation']
+    new_info = [new_index[1][0][key] for key in IMPORTANT_INDEX_KEYS]
+    old_info = [old_index[1][0][key] for key in IMPORTANT_INDEX_KEYS]
+
+    new_columns = [l['column_name'] for l in new_index[1]]
+    old_columns = [l['column_name'] for l in old_index[1]]
+
+    if new_info != old_info or len(new_columns) != len(old_columns):
+        del_index(old_index, table, alters, output)
+        add_index(new_index, table, alters, output)
+
+def cmp_index_name(i1, i2):
+    return cmp(i1[0], i2[0])
+
+# 3.4. Procedure and routine differences...
+
+def add_routine(r):
+    output.write(r['sql'])
+
+def del_routine(r):
+    print >>output, 'DROP', r['routine_type'], quote(r['routine_name']), ';'
+
+def eql_routine(new_routine, old_routine):
+    if new_routine['sql'] != old_routine['sql']:
+        del_routine(old_routine)
+        add_routine(new_routine)
+
+def cmp_routine_name(r1, r2):
+    return cmp(r1['routine_name'], r2['routine_name'])
+
+# 4. Miscellaneous functions...
+
+def quote(s):
+    """Quotes a name to be used as a MySQL schema name.
+
+    Examples:
+    >>> quote('foo')
+    '`foo`'
+
+    >>> quote('foo`bar')
+    '`foo``bar`'
+    """
+    return '`' + '``'.join(s.split('`')) + '`'
+
+def column_tuple(c):
+    return (c['table_name'], c['column_name'])
+
+def column_value(column, value):
+    t = connection.escape_string(value)
+
+    if column['data_type'] in ['char', 'varchar', 'text']:
+        return "'" + t + "'"
+    else:
+        return t
+
+COWARD_HEAD = """******************************************************************
+*** Cowardly refusing to drop a %(type)s.  This might be a rename.
+*** Edit the file '%(hints)s' and add either:
+***     '%(name)s': DROP,
+*** or
+***     '%(name)s': IGNORE,"""
+
+COWARD_ROW = """*** or
+***     '%s': '%s',"""
+
+def coward(rows, rowkey, **kwargs):
+    print >>stderr, COWARD_HEAD % kwargs
+
+    name = kwargs['name']
+
+    for row in rows:
+        print >>stderr, COWARD_ROW % (name, row[rowkey])
+
+    print >>stderr, COWARD_ROW % (name, '{new name}')
+
+    print >>stderr, "******************************************************************"
+
+    exit(1)
+
+if __name__ == '__main__':
+    main(argv)
+

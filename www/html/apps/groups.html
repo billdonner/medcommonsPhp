@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>MedCommons Group Theory</title>
+</head>
+<body>
+<h3>MedCommons Group Requirements</h3>
+This is a discussion document prior to finalizing the design. My goal is to have this code done and running by the weekend.
+<h4>A MedCommons Group Is Distinguished by Type</h4>
+The types of interest right now include (PRACTICE, SIG). A Practice Group binds healthcare providers together under a common
+data sharing and accounting infrastructure. A Sig - Special Interest Group binds like minded individuals according to some special
+interest, and may include access to special content or tools, etc. Any number of types of groups can be established. For now
+the types of group is completely controlled by MedCommons. 
+<p>There has been some discussion about whether patients are somehow involved in a practice group. I think that we 
+can imagine another group type, a PRACTICEPATIENT group, if we really have to, and deal witgh all of that later</p>
+<h4>Each Type of Group Has Its Own Special Additional Needs</h4>
+For example, a Practice Group specifies its RLS. a Special Interest Group might have a set of bookmarks to share, and a 3rd party
+vendor like CINA might set up a group as a means of offering content, components or service extensions to its members.
+<h4>A MedCommons Group Has Members</h4>
+These members are represented by their identities, whether provided by MedCommons or not. 
+But each member has a medcommons id which implicitly points to the member's account record on MedCommons
+<h4>A MedCommons Group Has Administrators</h4>
+An administrator can add, remove, and delete members of a group. Depending on configuration settings, a group administrator
+can also create beneficial identities (accounts) on MedCommons. 
+There can be multiple administrators of a group, all with equal access to the group administration functions.
+The administrators of a group may or may not be members of the group.
+<h3>How Groups and Accounts Are Related</h3>
+<h4>MedCommons Accounts Maintain Identity</h4>
+There is no particular requirement that a MedCommons Account represent an individual, but typically they represent
+patients, doctors, and administrators who have either created accounts directly on MedCommons or via a Liberty like 
+identity provider, or via Microsoft InfoCard.
+<p>In fact, it is useful to set up a distinguished account for every group, so that the group itself can maintain a billing identity,etc.
+</p>
+<h4>MedCommons Accounts Maintain Account Balances and Billing Info</h4>
+These are accounts, and hence it is sensible to view them as the entities of interest for billing. So, for example, if a Practice Group
+wants to assume the charges for the patients for which it is creating beneficial accounts, can be easily accommodated.
+<h3>Implementation Notes</h3>
+The implementaion is completely generic with one singular set of tables and one webservice for all of MedCommons.
+<h4>Tables Maintained to Support Groups</h4>
+<ul>
+<li>Group Type Table - one row for each type of (PRACTICE, SIG, etc) - maintained by MedCommons</li>
+<li>Group Instance Table - one row for each practice, sig, enrolled on MedCommons</li>
+<li>Group Properties Table - one row for each property associated with any group instance</li>
+<li>Group Member Table - maps MedCommons IDs into Group Instances</li>
+<li>Group Administrator Table - maps MedCommons IDs into Group Instances</li>
+</ul>
+<h4>Defining a New Group Instance</h4>
+The process for defining a new Group requires the preparation of an bilaterally signed XML Contract Specification between MedCommons and 
+the Group getting set up (eg Jaroka, or HughTaylor Associates). This contract identifies any charging or revenue sharing
+strucutres, and specifies one or more MedCommons IDs of users who can administer this group. (More can be added lagter)
+<h4>Admin UI</h4>
+A small set of screens allows maintance of the tables. Presumably, they will be specialized to accommodate a Practice Admin
+(who wants to talk about Providers) versus a SIG Admin (who wants to talk about Members), etc.
+<p>Adding a new group type is a manual process for now</p>
+
+
+</body>
+</html>

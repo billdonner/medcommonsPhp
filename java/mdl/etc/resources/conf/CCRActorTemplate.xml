@@ -1,0 +1,16 @@
+<Actor xmlns="urn:astm-org:CCR">
+  <ActorObjectID></ActorObjectID> 
+  <InformationSystem>
+    <Name>MedCommons Notification</Name> 
+    <Type>Repository</Type> 
+  </InformationSystem>
+  <EMail>
+    <Value></Value> 
+  </EMail>
+  <Source>
+    <Actor>
+      <ActorID> </ActorID> 
+    </Actor>
+  </Source>
+</Actor>
+

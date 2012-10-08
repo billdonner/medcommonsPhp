@@ -1,0 +1,94 @@
+DNS Setup for ev1servers
+========================
+
+Pick one of the machines to be the primary, or 'master', and one to be
+secondary, or 'slave'.
+
+Master Setup
+============
+
+`Bind`, aka `named` comes installed by default on Red Hat.  All we need
+to do is configure it, populate it with data, and start it up.
+
+Initial data
+------------
+
+Initial root data::
+
+    # dig >  /var/named/named.root
+
+This creates entries for the root servers [A-G].ROOT-SERVERS.NET.
+
+The following files need to be restored from Subversion
+(http://svn.medcommons.net:6666/svn/services/trunk/config/linux/bilbo/)::
+
+    /etc/named.conf
+    /var/named/localhost.rev
+    /var/named/master/master.medcommons.net
+    /var/named/master/master.template
+    /var/named/master.localhost
+
+The permissions should be set::
+
+    # cd /var/named
+    # chgrp -R named *
+    # chmod 640 *.*
+    # chmod 750 data master slaves
+
+Enable automatic startup of 'named'
+-----------------------------------
+
+On Red Hat::
+
+    # /sbin/chkconfig named on 2,3,4,5
+
+Then, start it up::
+
+    # /etc/init.d/named start
+
+
+Slave Setup
+===========
+
+Initial root data::
+
+    # dig > named.root
+
+The following files from Subversion
+(http://svn.medcommons.net:6666/svn/services/trunk/config/linux/frodo/)::
+
+    /etc/named.conf
+    /var/named/localhost.rev
+    /var/named/master.localhost
+
+The permissions should be set::
+
+    # cd /var/named
+    # chgrp -R named *
+    # chmod 640 *.*
+    # chmod 750 data master slaves
+
+Enable automatic startup of 'named'
+-----------------------------------
+
+On Red Hat::
+
+    # /sbin/chkconfig named on 2,3,4,5
+
+Then, start it up::
+
+    # /etc/init.d/named start
+
+
+Testing
+=======
+
+From another machine::
+
+    $ nslookup
+
+    set server 67.15.178.38
+    medcommons.net
+
+    set server 67.15.178.42
+    medcommons.net

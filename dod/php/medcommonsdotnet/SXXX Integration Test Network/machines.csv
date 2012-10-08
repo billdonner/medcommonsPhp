@@ -1,0 +1,16 @@
+name,type,attrs
+ci.myhealthespace.com,Build Integration/Test - aka globals.myhealthespace.com (MC/in-house)
+globals.myhealthespace.com,Build Integration/Test - aka ci.myhealthespace.com (MC/in-house)
+healthurl.myhealthespace.com,Test (EC2/i-3eef2d57)
+hoover.wayforward.net,DISABLED
+laforge.ehealthglobaltech.com,DISABLED
+localhost.localdomain,DISABLED
+mcpurple01.homeip.net,VNC Server - HealthFrame Test (external)
+mcpurple05.homeip.net,Wave Server - BadBoy Test (external)
+mcpurple06.myhealthespace.com,Server (MC/in-house)
+osa-viewer-01.osa.demo,DISABLED
+qatest.myhealthespace.com,QA Test (EC2/i-a56cabcc)
+stego.myhealthespace.com,Sean's Desktop (MC/in-house)
+testinstall.myhealthespace.com,Forge Build/HealthFrame Test (EC2/i-2c5e9945)
+www.myhealthespace.com,MedCommons Website for Myhealthespace (EC2/i-61c81808)
+ehgt.myhealthespace.com,eHGT/eHealthChart Server (EC2/i-5229d83b)

@@ -1,0 +1,109 @@
+<div id="ContentBoxInterior" mainTitle="DICOM Data Liberator">
+	<div class="content">
+
+		
+<div id='main'>
+                   
+<SCRIPT language="javascript">
+var detect = navigator.userAgent.toLowerCase();
+var windowsIE = (checkPlatform("msie") && checkPlatform("win"));
+
+var host=  "tenth.medcommons.net";
+var protocol = "http";
+var jnlpURL = protocol + "://" + host + "/DDL/app/ddl.jnlp";
+
+function launchApp() {
+
+if (windowsIE) {
+  document.write("<OBJECT CODEBASE=http://java.sun.com/update/1.6.0/jinstall-6-windows-i586.cab#Version=6,0,0,0 CLASSID=clsid:5852F5ED-8BF4-11D4-A245-0080C6F74284 HEIGHT=0 WIDTH=0>");
+  document.write("<PARAM NAME=app VALUE=" + jnlpURL + ">");
+  document.write("<PARAM NAME=back VALUE=false>");
+  document.write("</OBJECT>");
+  }
+  else {
+        if (navigator.mimeTypes && navigator.mimeTypes.length) {
+
+            if (!webstartVersionCheck("1.5")) {
+               alert("Java Web Start not installed");
+               // Java Web Start not installed; open browser window to install site
+               window.open("http://jdl.sun.com/webapps/getjava/BrowserRedirect?locale=en&host=java.com",
+               "needdownload");
+	           return;
+            }
+           window.open(jnlpURL);
+        }
+		else{
+			alert("Debug: no navigator.mimeTypes");
+		}
+    }
+}
+function webstartVersionCheck(versionString) {
+    navigator.plugins.refresh(true);
+    // First, determine if Webstart is available
+    if (navigator.mimeTypes['application/x-java-jnlp-file']) {
+        // Next, check for appropriate version family
+        for (var i = 0; i < navigator.mimeTypes.length; ++i) {
+           var pluginType = navigator.mimeTypes[i].type;
+          // alert("Plugin type:" + pluginType);
+           if (pluginType == "application/x-java-applet;version=" +  versionString) {
+               return true;
+           }
+       }
+    }
+}
+
+function checkPlatform(string) {
+place = detect.indexOf(string) + 1;
+thestring = string;
+return place;
+}
+</SCRIPT>
+<div id="osirix">
+
+    <div id="content">
+<h1>DICOM Data Liberator (DDL) Installer</h1>
+	
+<p>
+This is the installer page for the DICOM Data Liberator (DDL). The DDL is a Java Web Start application which is installed on your local client machine.
+Currently this installer runs best under Microsoft Windows and Linux. Other operating systems (MacOSX)  will be fully supported
+in future releases.
+</p>
+    <p>
+        A notification window is displayed when DDL has completed startup.
+    </p>
+    <br/><br/>
+
+<a href="javascript:launchApp()">Install DDL</a>
+    <br/><br/>
+ <p>   
+     <i>Instructions</i>
+If Java is not already installed on the client machine, it will automatically download and
+start the install of Java 6, and then after the install, it will launch the
+DDL Application automatically.
+</p>
+<p>
+If you are prompted with a certificate challenge - select 'trust' to trust Sun (for Java) and MedCommons (for DDL).
+</p>
+<p>
+If your browser can not detect that Java6 Java Web Start has been installed (this may be the case in MacOSX) you may directly
+invoke the DDL <a href="http://tenth.medcommons.net/DDL/app/ddl.jnlp">here</a>. Depending on your browser configuration this
+may launch the DDL or just download the <i>ddl.jnlp</i> file to your browser's download directory. If this is the case
+then open the download folder and then open this file.
+</p>
+
+
+<h3>Credits</h3>
+DDL is an open source application which is built on top of several other open source projects.
+<ul>
+<li>dcm4che</li>
+<li>jetty</li>
+<li>xmlbeans</li>
+<li>Hibernate</li>
+<li>Apache httpclient, log, xerces, commons </li>
+<li>HSQL</li>
+<li>Stripes</li>
+<li>XFire</li>
+</ul>
+</div>
+</div>
+</div>

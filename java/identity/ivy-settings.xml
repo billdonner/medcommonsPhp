@@ -1,0 +1,17 @@
+<ivysettings>
+  <settings defaultResolver="public"/>
+  <resolvers>
+    <chain name="public" returnFirst="true">
+      <filesystem name="local-repo">
+        <ivy pattern="${mc.ivy.repo}/[module]/[artifact]-[revision].xml" />
+        <artifact pattern="${mc.ivy.repo}/[module]/[artifact]-[revision].[ext]" />
+      </filesystem>
+      <cache name="cache"/>
+<!--      <ivyrep name="ivy"/> -->
+      <url name="p04">
+        <ivy pattern="http://ci.myhealthespace.com/repo/[module]/ivy-[revision].xml" />
+        <artifact pattern="http://ci.myhealthespace.com/repo/[module]/[artifact]-[revision].[ext]" />
+      </url>
+    </chain>
+  </resolvers>
+</ivysettings>

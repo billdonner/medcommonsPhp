@@ -1,0 +1,44 @@
+{% extends "form.html" %}
+
+{% block title %}S3 Keys{% endblock %}
+
+{% block breadcrumbs %}
+<a href='..'>Home</a> &gt;
+<a href='.'>Backups</a> &gt;
+S3 Keys
+{% endblock %}
+
+{% block content %}
+
+<div class='breadcrumbs'>
+  <b>1) S3 Keys</b> &gt;
+  2) S3 Buckets &gt;
+  3) Encryption &gt;
+  4) Publish
+</div>
+
+{% if form.errors %}
+<h2>Please correct the following error{{ form.errors|pluralize }}:</h2>
+{% endif %}
+
+<img src='{{ media }}img/Circle_1.png' width='20' height='20'
+     alt='1' />
+<p>
+To backup documents to Amazon S3,
+you must have an <a href='http://aws.amazon.com'>Amazon AWS account</a>.
+</p>
+
+<form method='post' action='keys'>
+  <table>
+    <tbody>
+{{ form }}
+    </tbody>
+  </table>
+
+  <div id='submit-row'>
+
+    <input type='submit' name='next' class='default' value='Next &gt;&gt;' />
+  </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,183 @@
+Medcommons Email
+================
+
+The MTA
+=======
+
+Cyrus SASL
+----------
+
+Download::
+
+    $ curl -O ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/cyrus-sasl-2.1.22.tar.gz
+
+Extract::
+
+    $ tar xvzf cyrus-sasl-2.1.22.tar.gz
+    $ cd cyrus-sasl-2.1.22.tar.gz
+
+Remove existing SASL::
+
+    # rpm -e cyrus-sasl-devel --nodeps
+    # rpm -e cyrus-sasl --nodeps
+
+Configure and install::
+
+    $ ./configure
+    $ make
+    $ make check
+
+    # make install
+
+Plugins are being installed into /usr/local/lib/sasl2, but the library
+will look for them in /usr/lib/sasl2.  You need to make sure that the
+plugins will eventually be in /usr/lib/sasl2 -- the easiest way is to
+make a symbolic link from /usr/lib/sasl2 to /usr/local/lib/sasl2, but
+this may not be appropriate for your site, so this installation
+procedure won't do it for you::
+
+    # ln -s /usr/local/lib/sasl2 /usr/lib/sasl2
+
+    # cat >/etc/ld.so.conf.d/sasl.conf
+    /usr/local/lib/sasl2
+    /usr/local/lib
+
+    # ldconfig
+
+Edit /usr/lib/sasl2/smtpd.conf::
+
+    pwcheck_method: saslauthd
+    mech_list: plain login
+
+OpenSSL is included in Red Hat.
+
+openssl-0.9.8b.tar.gz::
+    $ ./config no-fips shared
+    $ make depend
+    $ make test
+    $ make
+
+Procmail 3.22
+-------------
+
+Download and verify::
+
+    $ gpg --recv-keys 0x4a25d351
+    $ curl -O http://www.procmail.org/procmail-3.22.tar.gz.sig
+    $ curl -O ftp://ftp.ucsb.edu/pub/mirrors/procmail/procmail-3.22.tar.gz
+
+    $ gpg --verify procmail-3.22.tar.gz.sig
+
+Unpack and install::
+
+    $ tar xvzf procmail-3.22.tar.gz
+    $ cd procmail-3.22
+
+    edit config.h, uncomment GROUP_PER_USER
+
+    $ make
+    # make install-suid
+
+Postfix 2.3.1
+-------------
+
+First, we use RPM and up2date to at least get the config files right::
+
+    # up2date postfix
+
+Download and verify::
+
+    $ curl -O ftp://ftp.porcupine.org/mirrors/postfix-release/official/postfix-2.3.2.tar.gz
+
+Wietse Venema's PGP key::
+
+    $ curl -O ftp://ftp.porcupine.org/mirrors/postfix-release/wietse.pgp
+    $ gpg --import wietse.pgp
+
+The distribution signature::
+
+    $ curl -O ftp://ftp.porcupine.org/mirrors/postfix-release/official/postfix-2.3.2.tar.gz.sig
+
+    $ gpg --verify postfix-2.3.2.tar.gz.sig
+
+Extract and build::
+
+    $ tar xvzf postfix-2.3.2.tar.gz
+    $ cd postfix-2.3.2
+
+    $ make makefiles CCARGS="-DUSE_CYRUS_SASL -DUSE_SASL_AUTH -I/usr/local/include/sasl -DUSE_TLS -I/usr/local/include" AUXLIBS="-L/usr/local/lib -lsasl2 -lssl -lcrypto"
+
+    $ make
+
+    # make install
+    # rm /usr/lib/sendmail
+    # ln -s /usr/sbin/sendmail /usr/lib/sendmail
+
+/etc/passwd::
+	postfix:*:12345:12345:postfix:/no/where:/no/shell
+
+/etc/group::
+	postfix:*:12345:
+	postdrop:*:12346:
+
+Configured with:
+  * SASL authentication
+  * STARTTLS session encryption
+
+Now, enable at startup::
+
+    # /sbin/chkconfig --add postfix
+    # /sbin/chkconfig postfix on
+
+    # /sbin/service postfix start
+
+---
+
+Add user mc_email
+    * no shell
+    * home directory
+
+Attached files 'main.cf'  'domains'  'virtual'  'aliases'  'access'
+
+Compile the configuration files::
+
+    # /usr/sbin/postmap access
+    # /usr/sbin/postmap domains
+    # /usr/sbin/postmap virtual
+    # /usr/sbin/postmap main.cf
+
+    # newaliases
+
+Generate CSR::
+    # mkdir /etc/postfix/ssl
+	 chmod 700 /etc/postfix/ssl
+	 cd /etc/postfix/ssl
+
+	 openssl genrsa -out mx1.medcommons.net.key 1024
+	 openssl req -new -key ...key -out mx1.medcommons.net.csr
+
+Import cacert.pem and new key into /etc/postfix/ssl
+
+
+---
+
+Create Maildir in /usr/share/skel
+
+ -rwx------      Maildir
+ -rwx------          /cur
+ -rwx------          /new
+ -rwx------          /tmp
+
+---
+
+Python-2.4.3.tgz
+	./configure
+	make
+	make test
+	make install
+
+---
+
+Attached .procmailrc into ~mc_email
+
+Attached mc_email.py into /usr/local/bin

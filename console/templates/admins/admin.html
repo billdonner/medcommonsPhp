@@ -1,0 +1,50 @@
+  <table>
+    <tbody>
+      <tr>
+	<th><label for='username'>Username:</label></th>
+	<td>{{ form.username }}
+	  {% if form.username.errors %}
+	  <p class='error'>{{ form.username.errors|join:", " }}</p>
+	  {% endif %}
+	  {% if already %}
+	  <p class='error'>Username already exists</p>
+	  {% endif %}
+	</td>
+      </tr>
+      <tr>
+	<th><label for='first_name'>First Name:</label></th>
+	<td>{{ form.first_name }}
+	  {% if form.first_name.errors %}
+	  <p class='error'>{{ form.first_name.errors|join:", " }}</p>
+	  {% endif %}
+	</td>
+      </tr>
+      <tr>
+	<th><label for='last_name'>Last Name:</label></th>
+	<td>{{ form.last_name }}
+	  {% if form.last_name.errors %}
+	  <p class='error'>{{ form.last_name.errors|join:", " }}</p>
+	  {% endif %}
+	</td>
+      </tr>
+
+      <tr>
+	<td><label for='pw1'>Password:</label></td>
+	<td>
+	  {% if mismatch %}
+	  <p class='error'>Passwords must match</p>
+	  {% endif %}
+	  <input type='password' name='pw1' />
+	</td>
+      </tr>
+
+      <tr>
+	<td><label for='pw2'>Password (again):</label></td>
+	<td>
+	  <input type='password' name='pw2' />
+	</td>
+      </tr>
+
+
+    </tbody>
+  </table>

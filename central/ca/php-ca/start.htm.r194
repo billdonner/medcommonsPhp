@@ -1,0 +1,65 @@
+<html><head><title>MedCommons CA Overview</title></head><body>
+<table border="0"> <tbody><tr><td><img src="images/MEDcommons_logo_246x50.gif" alt="medcommons, inc." height="50" width="246"></td>
+<td><h4>MedCommons Certificate Authority </h4></td><td><small><a href="http://www.medcommons.net/">home</a></small></td></tr></tbody></table><br>
+<p>
+This page would normally be accessed only by MedCommons Operations and Customer Support.
+<br>The following links will be utilized:
+<br>
+</p><ul>
+<li><a href="/ca/php-ca/index.php?area=apply&o=medcom&t=MedCommons">issue a cert for a member of the medcommons operations team to access virtual03.medcommons.net</a></li>
+<li><a href="/ca/php-ca/index.php?area=apply&o=qa&amp;t=quality-assurance">issue a cert for qa access to secure.test.medcommons.net</a></li>
+<li><a href="/ca/php-ca/index.php?area=apply&o=private&amp;t=double-super-secret-group">issue a cert for user access to secure.private.medcommons.net:8080 
+													and gateway001.private.medcommons.net:8443</a></li>
+<li><a href="/ca/php-ca/index.php?area=apply&o=mcpurple01&amp;t=friends-of-mcpurple01">issue a cert for user access to mcpurple01.homeip.net</a></li>											
+
+</ul>
+<p>
+Once you have generated a certificate for a particular user she will
+receive an email from MedCommons with an invitation to install that
+certificate into their browser.
+</p><p>
+You can, at any time, revoke a certificate for any reason whatsoever. Use these links:
+<br>
+</p><ul>
+<li><a href="/ca/php-ca/index.php?area=apply&stage=list">revoke cert for a member of the medcommons operations team </a></li>
+<li><a href="/ca/php-ca/index.php?area=apply&stage=list">revoke cert for qa access to secure.test.medcommons.net</a></li>
+<li><a href="/ca/php-ca/index.php?area=apply&stage=list">revoke cert for user access to secure.private.medcommons.net:8080 
+													and gateway001.private.medcommons.net:8443</a></li>
+<li><a href="/ca/php-ca/index.php?area=apply&stage=list">revoke cert for user access to mcpurple01.homeip.net</a></li>					
+</ul>
+
+<p>
+Some embodiements of MedCommons will allow users to generate their own certs. 
+</p><p>These will have slightly different screens in order to fit into their own branding scheme.
+</p><p>
+Right now, we are only allowing self generation of certs on mcpurple01 and secure.test.medcommons.net
+<br>Here are links that users can reach to generate their own certs
+<br>
+</p><ul>
+	<li><a href="/ca/php-ca/index.php?area=apply&o=qa&amp;t=quality-assurance">make cert for myself for qa access to secure.test.medcommons.net</a></li>
+	<li><a href="/ca/php-ca/index.php?area=apply&o=mcpurple01&amp;t=friends-of-mcpurple01">make cert for myself for user access to mcpurple01.homeip.net</a></li>				
+</ul>
+
+
+<p>IN PROGRESS
+These links will become available to validate the certs are working after installation. They are not all working right now.
+</p><p>There are several outcomes for validation. If you haven/t
+installed a MedCommons Certificate at all, you will get a file not
+found error. If you have installed a MedCommons Cert, it might have the
+wrong O field.
+<br>
+</p><ul>
+	<li><a href="https://virtual03.medcommons.net/ca/securearea">validate certificate - Works</a></li>
+	<li><a href="https://secure.private.medcommons.net/ca/showcerts.php">validate secure.private.medcommons.net</a></li>
+	<li><a href="https://secure.private.test.net/ca/showcerts.php">validate secure.test.medcommons.net</a></li>
+	<li><a href="https://mcpurple01.homeip.net/ca/showcerts.php">validate mcpurple01.homeip.net</a></li>
+	<li><a href="https://virtual03.medcommons.net/ca/showcerts.php">validate mcpurple03</a></li>
+				
+</ul>
+<P>
+Database Lookup of customer/certificates: 
+</p><ul>
+	<li><a href="/ca/php-ca/index.php?area=apply&stage=list">Certificate Administration</a></li>
+				
+</ul>
+</body></html>

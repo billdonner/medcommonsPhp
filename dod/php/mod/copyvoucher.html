@@ -1,0 +1,61 @@
+<script type='text/javascript'>
+  function showRegisterTip() {
+    alert('Please Note:  You will be taken first to an Amazon payment page and then\n'
+        + 'returned to a MedCommons Registration Page where you can register your\n'
+        + 'new account.\n\n'
+        + 'Make sure you complete the registration, and check your email afterwards to\n'
+        + 'confirm your email address by clicking the link it contains.');
+  }
+</script>
+<div class=copycoupon>
+<table id=copyvoucher>
+<tbody>
+  <tr class=thead><td class=lcol><span class=tfm>Copy  Voucher</span></td><td class=rcol>**HD**</td></tr>
+  <tr><td>Name</td><td>**SPN**</td></tr>
+  <tr><td>Description</td><td>**SD**</td></tr>
+  <tr><td>Expires</td><td>**SXD**</td></tr>
+  <tr><td>Voucher ID</td><td>**VI**</td></tr>
+</tbody>
+</table>
+<br/>
+<br/>
+<div id='existing' class='copyoption'>
+  <h3>Option 1 - Copy to Existing Permanent HealthURL</h3>
+  <p>Enter your HealthURL below and click 'Copy' to transfer to your HealthURL provider to
+     begin the copy.</p>
+  <form method='POST'>
+    <div class=f>
+      <span class=n>&nbsp;&nbsp;</span><span class=q><input  name='hurl' type='text' style='width: 22em;'/></span>
+      <br style='clear: both;'/>
+      <span class=n>&nbsp;&nbsp;</span><span class=q style='font-style: italic; font-size: 85%;'>For Example: https://ci.myhealthespace.com/9184416725815686</span>
+    <span class=n>&nbsp;&nbsp;</span>
+    <span class=q><input type='submit' name='copy' value='Copy' /><span class=r>&nbsp;</span></span>
+  </div>
+  </form>
+  <br/>
+</div>
+<br style='clear: both;'/>
+<br/>
+<div id='newacct' class='copyoption'>
+  <h3>Option 2 - Create New HealthURL</h3>
+  <p>Click the button below if you do not already have a permanent HealthURL.  You will
+     be transfered to a payment screen where you can purchase an account.</p>
+   <p>
+<form method='post' action="**PAYURL**">
+  <div class='f'>
+    <span class='n'>&nbsp;</span>
+    <span class='q'>
+      <input type='submit' value='Purchase New HealthURL' onclick='showRegisterTip();' />
+    </span>
+  </div>
+</form>
+    </p>
+</div>
+<table class=tinst><tbody>
+<tr><td class=lcol >Instructions</td><td class=rcol > 
+    Decide which of Option 1 and Option 2 above best suits you and click the appropriate button
+    in your chosen option to proceed to the next step in copying your content.
+  </td>
+</tr>
+</table>
+</div>

@@ -1,0 +1,29 @@
+table.api {
+  border-collapse: collapse;
+  margin-left: 1.0in;
+  margin-right: 1.0in;
+}
+
+table.api thead {
+  background-color: #e8e8e8;
+}
+
+table.api thead tr.spacer {
+  background-color: white;
+}
+
+table.api td, table.api th {
+  border: solid 1px black;
+  padding: 4px;
+}
+
+table.api tr.example td {
+  font-family: courier;
+  font-size: 10px;
+}
+
+table.api td.param {
+  white-space: nowrap;
+  text-align: center;
+}
+

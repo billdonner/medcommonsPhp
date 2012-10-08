@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<trackerbundle>
+  <id>
+    36623b22567657222dabc
+  </id>
+  <name>
+    Builtin Trackers (auto installed when the platform is selected)
+  </name>
+  <publisher>
+    friends of medcommons
+  </publisher>
+  <graphics>
+    https://secure.test.medcommons.net/trackers/plugins/mc/graphTracker.php
+  </graphics>
+  <input>
+    https://secure.test.medcommons.net/trackers/plugins/mc/grabInput.php
+  </input>
+  <trackers>
+    <tracker>
+      <name>diastolic blood pressure</name>
+      <abbrev>bp-diastolic</abbrev>
+      <units>mm3</units>
+      <lowrange>70</lowrange>
+      <highrange>85</highrange>
+      <info>http://familydoctor.org/092.xml</info>
+    </tracker>
+    <tracker>
+      <name>systolic blood pressure</name>
+      <abbrev>bp-systolic</abbrev>
+      <units>mm3</units>
+      <lowrange>100</lowrange>
+      <highrange>130</highrange>
+      <info>http://familydoctor.org/092.xml</info>
+    </tracker>
+    <tracker>
+      <name>cholesterol  ldl</name>
+      <abbrev>ldl</abbrev>
+      <units>mm3</units>
+      <lowrange>70</lowrange>
+      <highrange>85</highrange>
+      <info>http://www.americanheart.org/presenter.jhtml?identifier=1516</info>
+    </tracker>
+    <tracker>
+      <name>cholesterol  hdl</name>
+      <abbrev>hdl</abbrev>
+      <units>mm3</units>
+      <lowrange>100</lowrange>
+      <highrange>130</highrange>
+      <info>http://www.americanheart.org/presenter.jhtml?identifier=1516</info>
+    </tracker>
+    <tracker>
+      <name>weight</name>
+      <abbrev>lbs</abbrev>
+      <units>lbs</units>
+      <lowrange>100</lowrange>
+      <highrange>500</highrange>
+      <info>http://www.cdc.gov/nccdphp/dnpa/obesity/</info>
+    </tracker>
+    <tracker>
+      <name>bmi</name>
+      <abbrev>bmi</abbrev>
+      <units>null</units>
+      <lowrange>22</lowrange>
+      <highrange>26</highrange>
+      <info>http://www.halls.md/body-mass-index/bmi.htm</info>
+    </tracker>
+  </trackers>
+</trackerbundle>
+
